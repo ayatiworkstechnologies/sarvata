@@ -69,30 +69,43 @@ export default function LearningPathways() {
               `}
               style={{ transitionDelay: `${i * 120}ms` }}
             >
-              <div className="group rounded overflow-hidden bg-white shadow-sm hover:shadow-lg transition">
+              {/* CARD */}
+              <div className="
+                group h-full
+                flex flex-col
+                rounded overflow-hidden
+                bg-white shadow-sm hover:shadow-lg transition
+              ">
 
                 {/* Image */}
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-74 w-full overflow-hidden">
                   <img
                     src={item.image}
                     alt={item.title}
-                    className=" object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full object-cover
+                               transition-transform duration-500
+                               group-hover:scale-105"
                   />
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <h3 className="font-semibold mb-2">{item.title}</h3>
+                <div className="p-6 flex flex-col flex-1">
+                  <h3 className="font-semibold mb-2">
+                    {item.title}
+                  </h3>
+
                   <p className="text-muted text-sm mb-4">
                     {item.desc}
                   </p>
 
+                  {/* CTA pinned to bottom */}
                   <Link
                     href={item.link}
-                    className="inline-flex items-center gap-1 text-primary text-sm font-medium hover:gap-2 transition-all"
+                    className="mt-auto inline-flex items-center gap-1
+                               text-primary text-sm font-medium
+                               hover:gap-2 transition-all"
                   >
-                    Discover
-                    <span>→</span>
+                    Discover <span>→</span>
                   </Link>
                 </div>
 

@@ -9,7 +9,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t">
+    <footer className="bg-white border-t border-t-black/20">
       
       {/* MAIN FOOTER */}
       <div className="container-max py-14 grid gap-10 md:grid-cols-4">
@@ -151,7 +151,7 @@ export default function Footer() {
       </div>
 
       {/* COPYRIGHT */}
-      <div className="border-t">
+      <div className="border-t border-t-black/20">
         <div className="container-max py-4 text-center text-sm text-muted">
           © {new Date().getFullYear()} Sarvata Educational Consultancy. All rights reserved.
         </div>
