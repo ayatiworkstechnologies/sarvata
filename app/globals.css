@@ -1,26 +1,272 @@
 @import "tailwindcss";
 
+/* ======================================================
+   BASE DESIGN TOKENS
+====================================================== */
 :root {
+  /* Core colors */
   --background: #ffffff;
   --foreground: #171717;
+
+  --primary: #A066AA;
+  --secondary: #E2C473;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --soft-bg: #faf7fc;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
 }
 
+/* ======================================================
+   TAILWIND 4.1 INLINE THEME
+====================================================== */
 @theme inline {
+  /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-soft: var(--soft-bg);
+
+  /* Fonts */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-heading: var(--font-playfair), serif;
+  --font-mono: var(--font-geist-mono), monospace;
+
+  /* Radius */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
+
+/* ======================================================
+   BASE STYLES
+====================================================== */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+p {
+  color: var(--color-muted);
+  line-height: 1.75;
+  font-size: 15px;
+}
+
+/* ======================================================
+   COMMON LAYOUT UTILITIES
+====================================================== */
+.section {
+  padding: 4rem 1.5rem;
+}
+
+.section-sm {
+  padding: 2.5rem 1.5rem;
+}
+
+.section-lg {
+  padding: 6rem 1.5rem;
+}
+
+.container-max {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* ======================================================
+   CARDS
+====================================================== */
+.card {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  border-color: var(--color-primary);
+}
+
+/* ======================================================
+   BUTTON SYSTEM
+====================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-lg);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #8d5497;
+}
+
+.btn-outline {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* ======================================================
+   FORMS
+====================================================== */
+.input,
+.textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* ======================================================
+   TEXT HELPERS
+====================================================== */
+.heading-xl {
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-weight: 700;
+}
+
+.heading-lg {
+  font-size: clamp(1.9rem, 4vw, 2.4rem);
+  font-weight: 700;
+}
+
+.heading-md {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+/* ======================================================
+   SIMPLE ANIMATIONS
+====================================================== */
+.fade-in {
+  animation: fadeIn 0.45s ease-out both;
+}
+
+.slide-up {
+  animation: slideUp 0.45s ease-out both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(14px) }
+  to { opacity: 1; transform: translateY(0) }
+}
+
+/* ======================================================
+   SCROLLBAR (DESKTOP)
+====================================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 8px;
+}
+
+/* ===============================
+   SEED GLOW POINTS
+================================ */
+.seed {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 9999px;
+  cursor: pointer;
+
+  background: radial-gradient(
+    circle,
+    #ffe6a3 0%,
+    var(--color-secondary) 45%,
+    rgba(226, 196, 115, 0.15) 65%,
+    transparent 72%
+  );
+
+  box-shadow:
+    0 0 14px rgba(226, 196, 115, 0.9),
+    0 0 34px rgba(226, 196, 115, 0.7);
+
+  animation: seedPulse 3s ease-in-out infinite;
+  opacity: 1;
+  z-index: 20;
+}
+
+/* Positions – adjust if needed */
+.seed-1 { bottom: 23%; left: 38%; animation-delay: 0s; }
+.seed-2 { bottom: 14%; left: 48%; animation-delay: 0.6s; }
+.seed-3 { bottom: 32%; left: 49%; animation-delay: 1.2s; }
+.seed-4 { bottom: 23%; left: 58%; animation-delay: 1.8s; }
+
+/* Hover (UX feedback) */
+.seed:hover {
+  transform: scale(1.6);
+  box-shadow:
+    0 0 20px rgba(226, 196, 115, 1),
+    0 0 48px rgba(226, 196, 115, 0.9);
+}
+
+
+@keyframes seedPulse {
+  0%, 100% {
+    transform: scale(0.85);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
 }
