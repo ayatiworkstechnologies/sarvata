@@ -8,25 +8,25 @@ const PATHWAYS = [
   {
     title: "Educators",
     desc: "You see it every day. The student who finishes early and is bored.",
-    image: "/learns-1.png",
+    image: "/img-1.jpg",
     link: "/pathways/educators",
   },
   {
     title: "Leaders",
     desc: "Leading a school today means navigating complex landscapes.",
-    image: "/learns-2.png",
+    image: "/img-2.jpg",
     link: "/pathways/leaders",
   },
   {
     title: "Parents",
     desc: "Parenting today means guiding your child through an ever-evolving world.",
-    image: "/learns-3.png",
+    image: "/img-3.jpg",
     link: "/pathways/parents",
   },
   {
     title: "Learners",
     desc: "School is more than just classes and grades.",
-    image: "/learns-4.png",
+    image: "/img-4.jpg",
     link: "/pathways/learners",
   },
 ];
@@ -62,7 +62,6 @@ export default function LearningPathways() {
   return (
     <section className="section bg-white">
       <div className="container-max">
-
         {/* Heading */}
         <motion.div
           className="text-center max-w-2xl mx-auto mb-14"
@@ -71,13 +70,14 @@ export default function LearningPathways() {
           viewport={{ once: true }}
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <span className="inline-block text-xs tracking-wider text-secondary mb-3">
+          <span className="inline-block px-2 py-1 font-primary font-bold text-base border-black/10 bg-secondary tracking-wider text-white mb-3">
             Educational Journeys
           </span>
-          <h2 className="heading-lg mb-3">Learning Pathways</h2>
-          <p className="text-muted text-sm">
+          <h2 className="heading-xl mb-3">Learning Pathways</h2>
+          <p className="text-black text-sm">
             We are a premier educational resource, empowering schools,
-            educators, and families to unlock every student’s full potential.
+            educators, and families to unlock every students full potential.
+            Explore our resources to find the support you need.
           </p>
         </motion.div>
 
@@ -106,7 +106,6 @@ export default function LearningPathways() {
                   group h-full flex flex-col
                   rounded overflow-hidden
                   bg-white
-                  shadow-[0_10px_30px_rgba(0,0,0,0.08)]
                   hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]
                   transition-shadow duration-300
                 "
@@ -134,20 +133,16 @@ export default function LearningPathways() {
 
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="font-semibold mb-2">
-                    {item.title}
-                  </h3>
+                  <h3 className="font-semibold text-2xl mb-2">{item.title}</h3>
 
-                  <p className="text-muted text-sm mb-4">
-                    {item.desc}
-                  </p>
+                  <p className="text-muted mb-4">{item.desc}</p>
 
                   {/* CTA */}
                   <Link
                     href={item.link}
                     className="
-                      mt-auto inline-flex items-center gap-1
-                      text-primary text-sm font-medium
+                      mt-auto font-primary inline-flex items-center gap-1
+                      text-primary text-xl font-medium
                       transition-all
                       group-hover:gap-2
                     "
@@ -159,7 +154,6 @@ export default function LearningPathways() {
             </motion.div>
           ))}
         </motion.div>
-
       </div>
     </section>
   );

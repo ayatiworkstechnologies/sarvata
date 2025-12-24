@@ -1,5 +1,22 @@
 @import "tailwindcss";
 
+/* ===============================
+   FONT FACE DEFINITIONS
+================================ */
+@font-face {
+  font-family: "Grift";
+  src: url("/fonts/Grift.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aloevera";
+  src: url("/fonts/Aloevera.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ======================================================
    BASE DESIGN TOKENS
 ====================================================== */
@@ -10,9 +27,12 @@
 
   --primary: #A066AA;
   --secondary: #E2C473;
-  --muted: #6b7280;
+  --muted: #0f0f0f;
   --border: #e5e7eb;
   --soft-bg: #faf7fc;
+
+  --font-primary: "Grift";
+  --font-secondary: "Aloevera";
 
   /* Radius */
   --radius-sm: 6px;
@@ -33,11 +53,6 @@
   --color-border: var(--border);
   --color-soft: var(--soft-bg);
 
-  /* Fonts */
-  --font-sans: var(--font-inter), system-ui, sans-serif;
-  --font-heading: var(--font-playfair), serif;
-  --font-mono: var(--font-geist-mono), monospace;
-
   /* Radius */
   --radius-sm: var(--radius-sm);
   --radius-md: var(--radius-md);
@@ -52,21 +67,20 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
+  font-family: var(--font-primary);
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: var(--font-heading);
-  font-weight: 600;
+  font-family: var(--font-primary);
   letter-spacing: -0.015em;
 }
 
 p {
-  color: var(--color-muted);
+  font-family: var(--font-secondary);
   line-height: 1.75;
-  font-size: 15px;
+  font-size: 18px;
 }
 
 /* ======================================================
@@ -171,7 +185,7 @@ p {
   font-weight: 700;
 }
 
-.heading-lg {
+.heading-xl {
   font-size: clamp(1.9rem, 4vw, 2.4rem);
   font-weight: 700;
 }

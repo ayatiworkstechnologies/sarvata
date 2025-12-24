@@ -57,7 +57,7 @@ export default function Advantages() {
   return (
     <section
       className="relative section bg-cover bg-center"
-      style={{ backgroundImage: "url('/advantages-bg.png')" }}
+      style={{ backgroundImage: "url('/glass-img.jpg')" }}
     >
       {/* Dark overlay */}
       <div className="absolute inset-0" />
@@ -67,18 +67,16 @@ export default function Advantages() {
         {/* LEFT — STICKY */}
         <div className="text-white lg:sticky lg:top-32 self-start">
           <h2 className="text-3xl md:text-4xl font-semibold mb-4">
-            Discover the Advantages of <br /> Sarvata Academy
+            Discover the Advantages of Sarvata Academy
           </h2>
 
-          <p className="text-white/80 max-w-md">
-            Become part of an energetic learning community where you can engage
-            and collaborate. Connect with fellow enthusiasts and exchange
-            valuable ideas.
+          <p className="mt-5">
+            Become part of an energetic learning community where you can engage and collaborate. Connect with fellow enthusiasts and exchange valuable ideas!
           </p>
         </div>
 
         {/* RIGHT — SCROLL AREA */}
-        <div className="relative max-h-[520px] space-y-6 overflow-y-scroll pr-2 scrollbar-hide">
+        <div className="relative max-h-130 space-y-6 overflow-y-scroll pr-2 scrollbar-hide">
           {FEATURES.map((item, i) => {
             const isActive = current === i;
 
@@ -99,7 +97,7 @@ export default function Advantages() {
                 <AnimatePresence>
                   {isActive && (
                     <motion.div
-                      className="absolute inset-0 bg-[color:var(--color-secondary)]"
+                      className="absolute inset-0 bg-secondary"
                       initial={{ scaleX: 0 }}
                       animate={{ scaleX: 1 }}
                       exit={{ scaleX: 0 }}
@@ -112,8 +110,8 @@ export default function Advantages() {
                 {/* CONTENT */}
                 <div
                   className={`
-                    relative p-6 transition-colors duration-300
-                    ${isActive ? "text-black" : "bg-white/90 text-black"}
+                    relative p-6 transition-colors duration-300 border-b-2 border-primary
+                    ${isActive ? "text-white" : "bg-white/90 text-black"}
                   `}
                 >
                   <h4 className="font-semibold mb-2">
@@ -122,7 +120,9 @@ export default function Advantages() {
                   <p className="text-sm leading-relaxed opacity-80">
                     {item.desc}
                   </p>
+                 
                 </div>
+                
               </motion.div>
             );
           })}

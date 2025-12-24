@@ -1,19 +1,15 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaLinkedinIn,
-} from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
+/* Animation variants */
 const container = {
   hidden: {},
   show: {
-    transition: {
-      staggerChildren: 0.12,
-    },
+    transition: { staggerChildren: 0.12 },
   },
 };
 
@@ -28,155 +24,135 @@ const item = {
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-t-black/20">
+    <footer className="bg-white border-t border-black/20">
 
-      {/* MAIN FOOTER */}
+      {/* ================= MAIN FOOTER ================= */}
       <motion.div
         className="
-          container-max py-14
-          grid gap-10
-          sm:grid-cols-2
-          md:grid-cols-4
+          container-max
+          pt-10 pb-14
+          grid grid-cols-12 gap-y-10 gap-x-6
         "
         variants={container}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
       >
-        {/* BRAND + CONTACT */}
-        <motion.div variants={item} className="space-y-4">
+
+        {/* LOGO (FULL WIDTH MOBILE) */}
+        <motion.div
+          variants={item}
+          className="col-span-12 flex justify-start"
+        >
           <Link href="/">
-            <img
+            <Image
               src="/logo.svg"
               alt="Sarvata"
-              className="h-16 md:h-20"
+              width={180}
+              height={80}
+              className="h-20 md:h-20 w-auto"
+              priority
             />
           </Link>
+        </motion.div>
 
-          <h4 className="font-semibold">Contact Us</h4>
+        {/* CONTACT (FULL WIDTH MOBILE) */}
+        <motion.div
+          variants={item}
+          className="col-span-12 md:col-span-4 space-y-4"
+        >
+          <h4 className="font-semibold text-2xl text-primary border-b border-secondary inline-block pb-1">
+            Contact Us
+          </h4>
 
-          <p className="text-sm">
+          <p className="font-secondary font-normal">
             Sarvata Educational Consultancy
           </p>
 
-          <p className="text-sm">
+          <p className="font-secondary font-normal">
             <span className="font-medium">Email :</span>{" "}
             <a
               href="mailto:sarvata.edu@gmail.com"
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary transition"
             >
               sarvata.edu@gmail.com
             </a>
           </p>
 
-          <p className="text-sm">
+          <p className="font-secondary font-normal">
             <span className="font-medium">Phone :</span>{" "}
             <a
               href="tel:+919150418101"
-              className="hover:text-primary transition-colors"
+              className="hover:text-primary transition"
             >
               +91 91504 18101
             </a>
           </p>
         </motion.div>
 
-        {/* QUICK LINKS */}
-        <motion.div variants={item}>
-          <h4 className="font-semibold mb-4 border-b border-primary inline-block pb-1">
+        {/* QUICK LINKS (50% MOBILE) */}
+        <motion.div
+          variants={item}
+          className="col-span-6 md:col-span-3"
+        >
+          <h4 className="font-semibold text-2xl text-primary border-b border-secondary inline-block pb-1 mb-4">
             Quick Links
           </h4>
-          <ul className="space-y-3 text-sm">
-            {[
-              { name: "Home", href: "/" },
-              { name: "About Us", href: "/about" },
-              { name: "Our Philosophy", href: "/philosophy" },
-              { name: "Contact Us", href: "/contact" },
-            ].map((l) => (
-              <li key={l.name}>
-                <Link
-                  href={l.href}
-                  className="
-                    inline-block
-                    hover:text-primary
-                    transition-all
-                    hover:translate-x-1
-                  "
-                >
-                  {l.name}
-                </Link>
-              </li>
-            ))}
+
+          <ul className="space-y-3 font-secondary font-normal text-base">
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/about">About Us</Link></li>
+            <li><Link href="/philosophy">Our Philosophy</Link></li>
+            <li><Link href="/contact">Contact Us</Link></li>
           </ul>
         </motion.div>
 
-        {/* LEARNING PATHWAYS */}
-        <motion.div variants={item}>
-          <h4 className="font-semibold mb-4 border-b border-primary inline-block pb-1">
+        {/* LEARNING PATHWAYS (50% MOBILE) */}
+        <motion.div
+          variants={item}
+          className="col-span-6 md:col-span-3"
+        >
+          <h4 className="font-semibold text-2xl text-primary border-b border-secondary inline-block pb-1 mb-4">
             Learning Pathways
           </h4>
-          <ul className="space-y-3 text-sm">
-            {[
-              { name: "For Educators", href: "/pathways/educators" },
-              { name: "For Leaders", href: "/pathways/leaders" },
-              { name: "For Parents", href: "/pathways/parents" },
-              { name: "For Learners", href: "/pathways/learners" },
-            ].map((l) => (
-              <li key={l.name}>
-                <Link
-                  href={l.href}
-                  className="
-                    inline-block
-                    hover:text-primary
-                    transition-all
-                    hover:translate-x-1
-                  "
-                >
-                  {l.name}
-                </Link>
-              </li>
-            ))}
+
+          <ul className="space-y-3 font-secondary font-normal text-base">
+            <li><Link href="/pathways/educators">For Educators</Link></li>
+            <li><Link href="/pathways/leaders">For Leaders</Link></li>
+            <li><Link href="/pathways/parents">For Parents</Link></li>
+            <li><Link href="/pathways/learners">For Learners</Link></li>
           </ul>
         </motion.div>
 
-        {/* SOCIAL */}
-        <motion.div variants={item}>
-          <h4 className="font-semibold mb-4 border-b border-primary inline-block pb-1">
+        {/* SOCIAL (FULL WIDTH MOBILE) */}
+        <motion.div
+          variants={item}
+          className="col-span-12 md:col-span-2"
+        >
+          <h4 className="font-semibold text-2xl text-primary border-b border-secondary inline-block pb-1 mb-4">
             Follow Us
           </h4>
 
-          <div className="flex items-center gap-4 text-primary">
-            {[
-              { icon: <FaFacebookF size={16} />, href: "https://facebook.com", label: "Facebook" },
-              { icon: <FaInstagram size={16} />, href: "https://instagram.com", label: "Instagram" },
-              { icon: <FaLinkedinIn size={16} />, href: "https://linkedin.com", label: "LinkedIn" },
-            ].map((s) => (
+          <div className="flex gap-4 text-primary">
+            {[FaFacebookF, FaInstagram, FaLinkedinIn].map((Icon, i) => (
               <motion.a
-                key={s.label}
-                href={s.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={s.label}
+                key={i}
                 whileHover={{ scale: 1.15 }}
                 whileTap={{ scale: 0.95 }}
-                className="
-                  w-9 h-9 rounded-full
-                  flex items-center justify-center
-                  bg-primary/10
-                  hover:bg-primary/20
-                  transition-colors
-                "
+                className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition"
               >
-                {s.icon}
+                <Icon size={16} />
               </motion.a>
             ))}
           </div>
         </motion.div>
+
       </motion.div>
 
-      {/* COPYRIGHT */}
-      <div className="border-t border-t-black/20">
+      {/* ================= COPYRIGHT ================= */}
+      <div className="border-t border-black/20">
         <motion.div
-          className="container-max py-4 text-center text-sm text-muted"
+          className="container-max py-4 text-center font-secondary font-normal text-sm text-muted"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}

@@ -26,7 +26,7 @@ export default function PersonalisedLearningCTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="heading-lg mb-4">
+          <h2 className="heading-xl mb-4">
             Personalised Learning Experience
           </h2>
 

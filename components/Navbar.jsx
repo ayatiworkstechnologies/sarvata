@@ -2,87 +2,126 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
-      setScrolled(window.scrollY > 40);
-    };
-
+    const onScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Learning Pathways", href: "/learning-pathways" },
+    { name: "Contact Us", href: "/contact" },
+  ];
+
   return (
-    <header
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
-        ${
-          scrolled
-            ? "bg-white/10 backdrop-blur-xl shadow-sm"
-            : "bg-transparent"
-        }`}
+    <motion.header
+      initial={{ y: -80 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className={`
+        fixed top-0 left-0 w-full z-50
+        transition-all duration-300
+        ${scrolled
+          ? "bg-black/70 backdrop-blur-xl shadow-sm"
+          : "bg-transparent"}
+      `}
     >
       <div className="container-max h-20 flex items-center justify-between">
-        
-        {/* Logo */}
+
+        {/* LOGO */}
         <Link href="/" className="flex items-center">
           <img
             src="/logo.svg"
             alt="Sarvata"
-            className="h-20 w-auto"
+            className="h-16 w-auto"
           />
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-10 text-sm font-medium">
-          <Link href="/" className="hover:text-primary transition">
-            Home
-          </Link>
-          <Link href="/about" className="hover:text-primary transition">
-            About
-          </Link>
-          <Link href="/learning-pathways" className="hover:text-primary transition">
-            Learning Pathways
-          </Link>
-          <Link href="/contact" className="hover:text-primary transition">
-            Contact Us
-          </Link>
+        {/* DESKTOP NAV */}
+        <nav className="hidden md:flex items-center gap-10 text-sm font-medium text-white">
+          {navLinks.map((link) => (
+            <motion.div
+              key={link.name}
+              className="relative"
+              whileHover="hover"
+            >
+              <Link href={link.href} className="transition-colors">
+                {link.name}
+              </Link>
+
+              {/* Underline */}
+              <motion.span
+                variants={{
+                  hover: { scaleX: 1 },
+                  initial: { scaleX: 0 },
+                }}
+                initial="initial"
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="
+                  absolute left-0 -bottom-1
+                  h-[2px] w-full
+                  bg-white
+                  origin-left
+                "
+              />
+            </motion.div>
+          ))}
         </nav>
 
-        {/* Mobile Menu Toggle */}
+        {/* MOBILE TOGGLE */}
         <button
-          className="md:hidden flex flex-col justify-center gap-1"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
+          className="md:hidden relative w-8 h-8 text-white"
         >
-          <span className="block w-6 h-[2px] bg-current"></span>
-          <span className="block w-6 h-[2px] bg-current"></span>
-          <span className="block w-6 h-[2px] bg-current"></span>
+          <motion.span
+            animate={menuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+            className="absolute top-2 left-0 w-8 h-[2px] bg-white"
+          />
+          <motion.span
+            animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
+            className="absolute top-4 left-0 w-8 h-[2px] bg-white"
+          />
+          <motion.span
+            animate={menuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+            className="absolute top-6 left-0 w-8 h-[2px] bg-white"
+          />
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-xl border-t">
-          <nav className="flex flex-col gap-5 px-6 py-6 text-sm font-medium">
-            <Link href="/" onClick={() => setMenuOpen(false)}>
-              Home
-            </Link>
-            <Link href="/about" onClick={() => setMenuOpen(false)}>
-              About
-            </Link>
-            <Link href="/learning-pathways" onClick={() => setMenuOpen(false)}>
-              Learning Pathways
-            </Link>
-            <Link href="/contact" onClick={() => setMenuOpen(false)}>
-              Contact Us
-            </Link>
-          </nav>
-        </div>
-      )}
-    </header>
+      {/* MOBILE MENU */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="md:hidden bg-black/80 backdrop-blur-xl border-t border-white/10"
+          >
+            <nav className="flex flex-col gap-6 px-6 py-8 text-sm font-medium text-white">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMenuOpen(false)}
+                  className="hover:translate-x-1 transition-transform"
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 }
