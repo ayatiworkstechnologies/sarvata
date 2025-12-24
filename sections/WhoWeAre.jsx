@@ -23,7 +23,7 @@ export default function WhoWeAre() {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <motion.div
-              className="w-full max-w-[260px] md:max-w-none"
+              className="w-full max-w-65 md:max-w-none"
               animate={{ y: [0, -6, 0] }}
               transition={{
                 duration: 4,

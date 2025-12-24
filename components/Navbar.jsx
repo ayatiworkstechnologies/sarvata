@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -20,6 +22,9 @@ export default function Header() {
     { name: "Learning Pathways", href: "/learning-pathways" },
     { name: "Contact Us", href: "/contact" },
   ];
+
+  const isActive = (href) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
     <motion.header
@@ -38,42 +43,47 @@ export default function Header() {
 
         {/* LOGO */}
         <Link href="/" className="flex items-center">
-          <img
-            src="/logo.svg"
-            alt="Sarvata"
-            className="h-16 w-auto"
-          />
+          <img src="/logo.svg" alt="Sarvata" className="h-16 w-auto" />
         </Link>
 
         {/* DESKTOP NAV */}
         <nav className="hidden md:flex items-center gap-10 text-sm font-medium text-white">
-          {navLinks.map((link) => (
-            <motion.div
-              key={link.name}
-              className="relative"
-              whileHover="hover"
-            >
-              <Link href={link.href} className="transition-colors">
-                {link.name}
-              </Link>
+          {navLinks.map((link) => {
+            const active = isActive(link.href);
 
-              {/* Underline */}
-              <motion.span
-                variants={{
-                  hover: { scaleX: 1 },
-                  initial: { scaleX: 0 },
-                }}
-                initial="initial"
-                transition={{ duration: 0.3, ease: "easeOut" }}
-                className="
-                  absolute left-0 -bottom-1
-                  h-[2px] w-full
-                  bg-white
-                  origin-left
-                "
-              />
-            </motion.div>
-          ))}
+            return (
+              <motion.div
+                key={link.name}
+                className="relative"
+                whileHover="hover"
+              >
+                <Link
+                  href={link.href}
+                  className={`transition-colors ${
+                    active ? "text-secondary" : "text-white/80"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+
+                {/* UNDERLINE */}
+                <motion.span
+                  initial={false}
+                  animate={{
+                    scaleX: active ? 1 : 0,
+                  }}
+                  whileHover={{ scaleX: 1 }}
+                  transition={{ duration: 0.3, ease: "easeOut" }}
+                  className="
+                    absolute left-0 -bottom-1
+                    h-[2px] w-full
+                    bg-secondary
+                    origin-left
+                  "
+                />
+              </motion.div>
+            );
+          })}
         </nav>
 
         {/* MOBILE TOGGLE */}
@@ -108,16 +118,24 @@ export default function Header() {
             className="md:hidden bg-black/80 backdrop-blur-xl border-t border-white/10"
           >
             <nav className="flex flex-col gap-6 px-6 py-8 text-sm font-medium text-white">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="hover:translate-x-1 transition-transform"
-                >
-                  {link.name}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const active = isActive(link.href);
+
+                return (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`
+                      transition-transform
+                      ${active ? "text-white font-semibold" : "text-white/80"}
+                      hover:translate-x-1
+                    `}
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
             </nav>
           </motion.div>
         )}
