@@ -1,26 +1,55 @@
 "use client";
 
 import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
 } from "react-icons/fa";
 
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.12,
+    },
+  },
+};
+
+const item = {
+  hidden: { opacity: 0, y: 24 },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" },
+  },
+};
+
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-t-black/20">
-      
-      {/* MAIN FOOTER */}
-      <div className="container-max py-14 grid gap-10 md:grid-cols-4">
 
+      {/* MAIN FOOTER */}
+      <motion.div
+        className="
+          container-max py-14
+          grid gap-10
+          sm:grid-cols-2
+          md:grid-cols-4
+        "
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
         {/* BRAND + CONTACT */}
-        <div className="space-y-4">
+        <motion.div variants={item} className="space-y-4">
           <Link href="/">
             <img
-              src="/logo.png"
+              src="/logo.svg"
               alt="Sarvata"
-              className="h-20"
+              className="h-16 md:h-20"
             />
           </Link>
 
@@ -34,7 +63,7 @@ export default function Footer() {
             <span className="font-medium">Email :</span>{" "}
             <a
               href="mailto:sarvata.edu@gmail.com"
-              className="hover:text-primary"
+              className="hover:text-primary transition-colors"
             >
               sarvata.edu@gmail.com
             </a>
@@ -44,117 +73,117 @@ export default function Footer() {
             <span className="font-medium">Phone :</span>{" "}
             <a
               href="tel:+919150418101"
-              className="hover:text-primary"
+              className="hover:text-primary transition-colors"
             >
               +91 91504 18101
             </a>
           </p>
-        </div>
+        </motion.div>
 
         {/* QUICK LINKS */}
-        <div>
+        <motion.div variants={item}>
           <h4 className="font-semibold mb-4 border-b border-primary inline-block pb-1">
             Quick Links
           </h4>
           <ul className="space-y-3 text-sm">
-            <li>
-              <Link href="/" className="hover:text-primary">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="hover:text-primary">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link href="/philosophy" className="hover:text-primary">
-                Our Philosophy
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="hover:text-primary">
-                Contact Us
-              </Link>
-            </li>
+            {[
+              { name: "Home", href: "/" },
+              { name: "About Us", href: "/about" },
+              { name: "Our Philosophy", href: "/philosophy" },
+              { name: "Contact Us", href: "/contact" },
+            ].map((l) => (
+              <li key={l.name}>
+                <Link
+                  href={l.href}
+                  className="
+                    inline-block
+                    hover:text-primary
+                    transition-all
+                    hover:translate-x-1
+                  "
+                >
+                  {l.name}
+                </Link>
+              </li>
+            ))}
           </ul>
-        </div>
+        </motion.div>
 
         {/* LEARNING PATHWAYS */}
-        <div>
+        <motion.div variants={item}>
           <h4 className="font-semibold mb-4 border-b border-primary inline-block pb-1">
             Learning Pathways
           </h4>
           <ul className="space-y-3 text-sm">
-            <li>
-              <Link href="/pathways/educators" className="hover:text-primary">
-                For Educators
-              </Link>
-            </li>
-            <li>
-              <Link href="/pathways/leaders" className="hover:text-primary">
-                For Leaders
-              </Link>
-            </li>
-            <li>
-              <Link href="/pathways/parents" className="hover:text-primary">
-                For Parents
-              </Link>
-            </li>
-            <li>
-              <Link href="/pathways/learners" className="hover:text-primary">
-                For Learners
-              </Link>
-            </li>
+            {[
+              { name: "For Educators", href: "/pathways/educators" },
+              { name: "For Leaders", href: "/pathways/leaders" },
+              { name: "For Parents", href: "/pathways/parents" },
+              { name: "For Learners", href: "/pathways/learners" },
+            ].map((l) => (
+              <li key={l.name}>
+                <Link
+                  href={l.href}
+                  className="
+                    inline-block
+                    hover:text-primary
+                    transition-all
+                    hover:translate-x-1
+                  "
+                >
+                  {l.name}
+                </Link>
+              </li>
+            ))}
           </ul>
-        </div>
+        </motion.div>
 
         {/* SOCIAL */}
-        <div>
+        <motion.div variants={item}>
           <h4 className="font-semibold mb-4 border-b border-primary inline-block pb-1">
             Follow Us
           </h4>
 
           <div className="flex items-center gap-4 text-primary">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-              className="hover:scale-110 transition"
-            >
-              <FaFacebookF size={16} />
-            </a>
-
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-              className="hover:scale-110 transition"
-            >
-              <FaInstagram size={16} />
-            </a>
-
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="hover:scale-110 transition"
-            >
-              <FaLinkedinIn size={16} />
-            </a>
+            {[
+              { icon: <FaFacebookF size={16} />, href: "https://facebook.com", label: "Facebook" },
+              { icon: <FaInstagram size={16} />, href: "https://instagram.com", label: "Instagram" },
+              { icon: <FaLinkedinIn size={16} />, href: "https://linkedin.com", label: "LinkedIn" },
+            ].map((s) => (
+              <motion.a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                whileHover={{ scale: 1.15 }}
+                whileTap={{ scale: 0.95 }}
+                className="
+                  w-9 h-9 rounded-full
+                  flex items-center justify-center
+                  bg-primary/10
+                  hover:bg-primary/20
+                  transition-colors
+                "
+              >
+                {s.icon}
+              </motion.a>
+            ))}
           </div>
-        </div>
-
-      </div>
+        </motion.div>
+      </motion.div>
 
       {/* COPYRIGHT */}
       <div className="border-t border-t-black/20">
-        <div className="container-max py-4 text-center text-sm text-muted">
+        <motion.div
+          className="container-max py-4 text-center text-sm text-muted"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
           © {new Date().getFullYear()} Sarvata Educational Consultancy. All rights reserved.
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

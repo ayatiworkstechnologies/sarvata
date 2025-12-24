@@ -1,52 +1,84 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      
-      {/* Background Image */}
-      <img
-        src="/banner.png"
-        alt="Growth and learning"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
 
-      {/* Optional soft overlay (keep light so seeds show) */}
+      {/* ===== DESKTOP IMAGE ===== */}
+      <motion.div
+        className="absolute inset-0 hidden md:block"
+        initial={{ scale: 1.08 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.8, ease: "easeOut" }}
+      >
+        <Image
+          src="/web-banner.jpg"
+          alt="Growth and learning"
+          fill
+          priority
+          className="object-cover"
+        />
+      </motion.div>
+
+      {/* ===== MOBILE IMAGE ===== */}
+      <motion.div
+        className="absolute inset-0 block md:hidden"
+        initial={{ scale: 1.1 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.6, ease: "easeOut" }}
+      >
+        <Image
+          src="/mobile-banner.jpg"
+          alt="Growth and learning"
+          fill
+          priority
+          className="object-cover"
+        />
+      </motion.div>
+
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/10" />
 
-      {/* CLICKABLE GLOW SEEDS */}
-      <div className="absolute inset-0 z-10">
-        
-        {/* Educators */}
-        <Link
-          href="/pathways/educators"
-          className="seed seed-1"
-          aria-label="For Educators"
-        />
-
-        {/* Leaders */}
-        <Link
-          href="/pathways/leaders"
-          className="seed seed-2"
-          aria-label="For Leaders"
-        />
-
-        {/* Parents */}
-        <Link
-          href="/pathways/parents"
-          className="seed seed-3"
-          aria-label="For Parents"
-        />
-
-        {/* Learners */}
-        <Link
-          href="/pathways/learners"
-          className="seed seed-4"
-          aria-label="For Learners"
-        />
-      </div>
+      {/* ===== SEED NODES ===== */}
+      <motion.div
+        className="absolute inset-0 z-10"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: {},
+          visible: {
+            transition: { staggerChildren: 0.15 }
+          }
+        }}
+      >
+        {[
+          { href: "/pathways/educators", cls: "node-educators" },
+          { href: "/pathways/leaders", cls: "node-leaders" },
+          { href: "/pathways/parents", cls: "node-parents" },
+          { href: "/pathways/learners", cls: "node-learners" },
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            variants={{
+              hidden: { opacity: 0, scale: 0.6 },
+              visible: {
+                opacity: 1,
+                scale: 1,
+                transition: { type: "spring", stiffness: 120 }
+              }
+            }}
+          >
+            <Link
+              href={item.href}
+              className={`static-node ${item.cls}`}
+            />
+          </motion.div>
+        ))}
+      </motion.div>
 
     </section>
   );

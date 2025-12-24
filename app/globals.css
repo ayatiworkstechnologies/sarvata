@@ -218,55 +218,111 @@ p {
   border-radius: 8px;
 }
 
+/* Hide scrollbar but keep scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari */
+}
+
 /* ===============================
-   SEED GLOW POINTS
+   SEED / NODE INDICATOR (UPDATED)
 ================================ */
-.seed {
+/* ===============================
+   SEED / NODE INDICATOR
+================================ */
+.static-node {
   position: absolute;
-  width: 38px;
-  height: 38px;
-  border-radius: 9999px;
+  display: block;
+
+  width: 64px;
+  height: 64px;
+
+  border-radius: 50%;
   cursor: pointer;
+  background: transparent;
 
-  background: radial-gradient(
-    circle,
-    #ffe6a3 0%,
-    var(--color-secondary) 45%,
-    rgba(226, 196, 115, 0.15) 65%,
-    transparent 72%
-  );
+  /* border: 4px solid #E2C473; */
 
-  box-shadow:
-    0 0 14px rgba(226, 196, 115, 0.9),
-    0 0 34px rgba(226, 196, 115, 0.7);
+  z-index: 10;
 
-  animation: seedPulse 3s ease-in-out infinite;
-  opacity: 1;
-  z-index: 20;
+  animation: pulse-glow 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-/* Positions – adjust if needed */
-.seed-1 { bottom: 23%; left: 38%; animation-delay: 0s; }
-.seed-2 { bottom: 14%; left: 48%; animation-delay: 0.6s; }
-.seed-3 { bottom: 32%; left: 49%; animation-delay: 1.2s; }
-.seed-4 { bottom: 23%; left: 58%; animation-delay: 1.8s; }
-
-/* Hover (UX feedback) */
-.seed:hover {
-  transform: scale(1.6);
-  box-shadow:
-    0 0 20px rgba(226, 196, 115, 1),
-    0 0 48px rgba(226, 196, 115, 0.9);
-}
-
-
-@keyframes seedPulse {
-  0%, 100% {
-    transform: scale(0.85);
-    opacity: 0.6;
+/* ACCURATE PULSE (BREATHING) */
+@keyframes pulse-glow {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.35);
+    opacity: 0.5;
   }
-  50% {
-    transform: scale(1.3);
+
+  60% {
+    transform: scale(1);
+    box-shadow: 0 0 0 28px rgba(255, 165, 0, 0);
     opacity: 1;
   }
+
+  100% {
+    transform: scale(0.95);
+    /* box-shadow: 0 0 0 0 rgba(255, 165, 0, 0); */
+    opacity: 0.5;
+  }
+}
+
+/* ===== DESKTOP POSITIONS ===== */
+.node-educators { top: 59%; left: 49%; }
+.node-leaders   { top: 67%; left: 39%; }
+.node-parents   { top: 65%; left: 56%; }
+.node-learners  { top: 80%; left: 47%; }
+
+/* ===== MOBILE OVERRIDES ===== */
+@media (max-width: 640px) {
+  .static-node {
+    width: 72px;
+    height: 72px;
+    /* border-width: 4px; */
+  }
+
+  .node-educators { top: 60%; left: 50%; }
+  .node-leaders   { top: 67%; left: 81%; }
+  .node-parents   { top: 69%; left: 8%; }
+  .node-learners  { top: 83%; left: 46%; }
+}
+
+/* ===============================
+   SUBTLE FLOAT (IMAGE)
+================================ */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ===============================
+   SOFT FADE (SECOND IMAGE)
+================================ */
+@keyframes softFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-softFade {
+  animation: softFade 0.8s ease-out both;
 }

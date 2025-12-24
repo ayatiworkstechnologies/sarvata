@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const PATHWAYS = [
   {
@@ -30,25 +31,46 @@ const PATHWAYS = [
   },
 ];
 
+const container = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.14,
+      delayChildren: 0.2,
+    },
+  },
+};
+
+const card = {
+  hidden: {
+    opacity: 0,
+    y: 40,
+    rotateX: -8,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    rotateX: 0,
+    transition: {
+      duration: 0.7,
+      ease: [0.22, 1, 0.36, 1], // modern easing
+    },
+  },
+};
+
 export default function LearningPathways() {
-  const ref = useRef(null);
-  const [show, setShow] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => entry.isIntersecting && setShow(true),
-      { threshold: 0.2 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
-
   return (
-    <section ref={ref} className="section bg-white">
+    <section className="section bg-white">
       <div className="container-max">
 
         {/* Heading */}
-        <div className="text-center max-w-2xl mx-auto mb-14">
+        <motion.div
+          className="text-center max-w-2xl mx-auto mb-14"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <span className="inline-block text-xs tracking-wider text-secondary mb-3">
             Educational Journeys
           </span>
@@ -57,35 +79,57 @@ export default function LearningPathways() {
             We are a premier educational resource, empowering schools,
             educators, and families to unlock every student’s full potential.
           </p>
-        </div>
+        </motion.div>
 
         {/* Cards */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <motion.div
+          className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4"
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.25 }}
+        >
           {PATHWAYS.map((item, i) => (
-            <div
+            <motion.div
               key={i}
-              className={`transition-all duration-700
-                ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
-              `}
-              style={{ transitionDelay: `${i * 120}ms` }}
+              variants={card}
+              whileHover={{
+                y: -6,
+                rotateX: 2,
+                transition: { duration: 0.3 },
+              }}
+              style={{ transformStyle: "preserve-3d" }}
             >
               {/* CARD */}
-              <div className="
-                group h-full
-                flex flex-col
-                rounded overflow-hidden
-                bg-white shadow-sm hover:shadow-lg transition
-              ">
-
-                {/* Image */}
-                <div className="relative h-74 w-full overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full object-cover
-                               transition-transform duration-500
-                               group-hover:scale-105"
-                  />
+              <div
+                className="
+                  group h-full flex flex-col
+                  rounded overflow-hidden
+                  bg-white
+                  shadow-[0_10px_30px_rgba(0,0,0,0.08)]
+                  hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]
+                  transition-shadow duration-300
+                "
+              >
+                {/* Image Reveal */}
+                <div className="relative h-72 overflow-hidden">
+                  <motion.div
+                    initial={{ y: "100%" }}
+                    whileInView={{ y: "0%" }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.8,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </motion.div>
                 </div>
 
                 {/* Content */}
@@ -98,21 +142,23 @@ export default function LearningPathways() {
                     {item.desc}
                   </p>
 
-                  {/* CTA pinned to bottom */}
+                  {/* CTA */}
                   <Link
                     href={item.link}
-                    className="mt-auto inline-flex items-center gap-1
-                               text-primary text-sm font-medium
-                               hover:gap-2 transition-all"
+                    className="
+                      mt-auto inline-flex items-center gap-1
+                      text-primary text-sm font-medium
+                      transition-all
+                      group-hover:gap-2
+                    "
                   >
                     Discover <span>→</span>
                   </Link>
                 </div>
-
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>

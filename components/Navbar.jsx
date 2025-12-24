@@ -21,7 +21,7 @@ export default function Header() {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300
         ${
           scrolled
-            ? "bg-white/10 backdrop-blur-xl shadow-sm border-b"
+            ? "bg-white/10 backdrop-blur-xl shadow-sm"
             : "bg-transparent"
         }`}
     >
@@ -30,7 +30,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <img
-            src="/logo.png"
+            src="/logo.svg"
             alt="Sarvata"
             className="h-20 w-auto"
           />
