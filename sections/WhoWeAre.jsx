@@ -32,7 +32,7 @@ export default function WhoWeAre() {
               }}
             >
               <Image
-                src="/about.png"
+                src="/about.jpg"
                 alt="Educator"
                 width={380}
                 height={420}
