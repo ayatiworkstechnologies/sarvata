@@ -74,7 +74,7 @@ body {
 
 h1, h2, h3, h4, h5 {
   font-family: var(--font-primary);
-  letter-spacing: -0.015em;
+  /* letter-spacing: -0.015em; */
 }
 
 p {
@@ -96,6 +96,12 @@ p {
 
 .section-lg {
   padding: 6rem 1.5rem;
+}
+
+.container {
+  max-width: 1200px; /* or 1280px */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .container-max {
@@ -185,7 +191,7 @@ p {
   font-weight: 700;
 }
 
-.heading-xl {
+.heading-lg {
   font-size: clamp(1.9rem, 4vw, 2.4rem);
   font-weight: 700;
 }
