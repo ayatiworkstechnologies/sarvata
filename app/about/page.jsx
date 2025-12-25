@@ -10,9 +10,9 @@ export default function AboutPage() {
   return (
     <main className="bg-white">
       <MainHero
-        webImage="/web-banner.jpg"
-        mobileImage="/mobile-banner.jpg"
-        title="About Us"
+        webImage="/about-banner.jpg"
+        mobileImage="/about-banner.jpg"
+        title="Cultivating Wholeness in Education"
         breadcrumbs={[{ label: "About Us" }]}
       />
 

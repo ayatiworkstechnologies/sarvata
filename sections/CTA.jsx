@@ -44,8 +44,7 @@ export default function PersonalisedLearningCTA() {
             className="
               inline-flex items-center justify-center
               px-7 py-3 rounded
-              bg-[color:var(--color-primary)]
-              text-white text-sm font-semibold
+              btn btn-primary
               shadow-lg shadow-black/10
             "
           >

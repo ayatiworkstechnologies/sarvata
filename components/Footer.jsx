@@ -117,10 +117,10 @@ export default function Footer() {
           </h4>
 
           <ul className="space-y-3 font-secondary font-normal text-base">
-            <li><Link href="/pathways/educators">For Educators</Link></li>
-            <li><Link href="/pathways/leaders">For Leaders</Link></li>
-            <li><Link href="/pathways/parents">For Parents</Link></li>
-            <li><Link href="/pathways/learners">For Learners</Link></li>
+            <li><Link href="/pathway-educators">For Educators</Link></li>
+            <li><Link href="/pathway-leaders">For Leaders</Link></li>
+            <li><Link href="/pathway-parents">For Parents</Link></li>
+            <li><Link href="/pathway-learners">For Learners</Link></li>
           </ul>
         </motion.div>
 

@@ -6,48 +6,57 @@ import { motion } from "framer-motion";
 export default function PhilosophySection({ title, intro, image, points }) {
   return (
     <section className="section">
-      <div className="container grid grid-cols-12 gap-12 items-start">
-        {/* ================= LEFT — STICKY IMAGE + INTRO ================= */}
+      <div className="container grid grid-cols-12 gap-8 md:gap-12 items-start">
+
+        {/* ================= LEFT — INTRO + IMAGE ================= */}
         <motion.div
           className="
-    col-span-12 md:col-span-5
-    md:sticky md:top-28
-    self-start
-  "
+            col-span-12 md:col-span-5
+            md:sticky md:top-28
+            self-start
+          "
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          {/* CONTENT WRAPPER — controls width */}
-          <div className=" ">
+          <div className="max-w-sm sm:max-w-md mx-auto md:mx-0 text-center md:text-left">
+
             {/* TITLE */}
-            <h2 className="heading-lg">{title}</h2>
+            <h2 className="heading-lg text-xl sm:text-2xl md:text-3xl mb-4">
+              {title}
+            </h2>
 
             {/* INTRO */}
-            <p className="text-muted font-secondary">{intro}</p>
+            <p className="text-muted font-secondary text-sm sm:text-base mb-5">
+              {intro}
+            </p>
 
-            {/* ACCENT LINE */}
-            <div className="border-t border-secondary w-16 mb-5" />
+            {/* ACCENT */}
+            <div className="border-t border-secondary w-16 mb-6 mx-auto md:mx-0" />
 
-            {/* IMAGE — fits exactly same width */}
+            {/* IMAGE */}
             <Image
               src={image}
               alt={title}
               width={420}
               height={520}
-              className="w-full h-auto rounded object-cover"
+              className="
+                w-full h-auto
+                rounded-lg object-cover
+              "
             />
           </div>
         </motion.div>
 
-        {/* ================= RIGHT — SCROLL AREA (HIDDEN SCROLLBAR) ================= */}
+        {/* ================= RIGHT — PHILOSOPHY POINTS ================= */}
         <motion.div
           className="
             col-span-12 md:col-span-7
+            space-y-8 sm:space-y-10 md:space-y-12
+            
             md:overflow-y-auto
-            space-y-12
-            scrollbar-hide
+            md:scrollbar-hide
           "
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -61,21 +70,24 @@ export default function PhilosophySection({ title, intro, image, points }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="relative pl-10"
+              className="relative pl-10 max-w-2xl mx-auto md:mx-0"
             >
               {/* NUMBER */}
-              <span className="absolute left-0 top-0 text-secondary font-semibold">
+              <span className="absolute left-0 top-0 text-secondary text-lg sm:text-xl md:text-2xl font-semibold">
                 {String(i + 1).padStart(2, "0")}
               </span>
 
-              <h4 className="heading-md mb-2">{item.title}</h4>
+              <h4 className="heading-md mb-2 text-base sm:text-lg">
+                {item.title}
+              </h4>
 
-              <p className="text-muted font-secondary leading-relaxed">
+              <p className="text-muted font-secondary text-sm sm:text-base leading-relaxed">
                 {item.desc}
               </p>
             </motion.div>
           ))}
         </motion.div>
+
       </div>
     </section>
   );

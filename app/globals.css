@@ -1,9 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Outfit:wght@100..900&display=swap");
+
 @import "tailwindcss";
 
 /* ===============================
    FONT FACE DEFINITIONS
 ================================ */
-@font-face {
+/* @font-face {
   font-family: "Grift";
   src: url("/fonts/Grift.ttf") format("truetype");
   font-style: normal;
@@ -15,7 +17,7 @@
   src: url("/fonts/Aloevera.ttf") format("truetype");
   font-style: normal;
   font-display: swap;
-}
+} */
 
 /* ======================================================
    BASE DESIGN TOKENS
@@ -31,8 +33,12 @@
   --border: #e5e7eb;
   --soft-bg: #faf7fc;
 
-  --font-primary: "Grift";
-  --font-secondary: "Aloevera";
+  /* --font-primary: "Grift";
+  --font-secondary: "Aloevera"; */
+
+  --font-primary: "Lexend", system-ui, sans-serif;
+--font-secondary: "Outfit", system-ui, sans-serif;
+
 
   /* Radius */
   --radius-sm: 6px;
@@ -172,9 +178,10 @@ p {
   width: 100%;
   padding: 0.75rem 1rem;
   border-radius: var(--radius-md);
-  border: 1px solid var(--border);
+  border: 1px solid var(--primary);
   background: var(--background);
-  color: var(--foreground);
+  color: var(--color-black);
+  
 }
 
 .input:focus,
@@ -235,7 +242,7 @@ p {
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-primary);
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 /* Hide scrollbar but keep scrolling */
