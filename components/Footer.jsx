@@ -46,7 +46,7 @@ export default function Footer() {
         >
           <Link href="/">
             <Image
-              src="/logo.svg"
+              src="/logo-1.svg"
               alt="Sarvata"
               width={180}
               height={80}
@@ -66,7 +66,7 @@ export default function Footer() {
           </h4>
 
           <p className="font-secondary font-normal">
-            Sarvata Educational Consultancy
+            Sarvata Transforming Learing
           </p>
 
           <p className="font-secondary font-normal">
@@ -152,13 +152,13 @@ export default function Footer() {
       {/* ================= COPYRIGHT ================= */}
       <div className="border-t border-black/20">
         <motion.div
-          className="container-max py-4 text-center font-secondary font-normal text-sm text-muted"
+          className="container-max py-4 text-center font-secondary font-normal text-lg text-muted"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          © {new Date().getFullYear()} Sarvata Educational Consultancy. All rights reserved.
+          © {new Date().getFullYear()} Sarvata Transforming Learing. All rights reserved.
         </motion.div>
       </div>
     </footer>

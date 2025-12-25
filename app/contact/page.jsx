@@ -7,9 +7,9 @@ export default function ContactPage() {
   return (
     <main className="bg-white">
       <MainHero
-        webImage="/web-banner.jpg"
-        mobileImage="/mobile-banner.jpg"
-        title="Contact Us"
+        webImage="/contact-web.jpg"
+        mobileImage="/contact-mobile.jpg"
+        title="Let's Connect"
         breadcrumbs={[{ label: "Contact Us" }]}
       />
 

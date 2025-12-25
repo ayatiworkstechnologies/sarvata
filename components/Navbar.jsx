@@ -59,7 +59,7 @@ export default function Header() {
         {/* LOGO */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo.svg"
+            src="/logo-1.svg"
             alt="Sarvata"
             width={160}
             height={64}

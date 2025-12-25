@@ -56,10 +56,10 @@ export default function Hero() {
         }}
       >
         {[
-          { href: "/pathways/educators", cls: "node-educators" },
-          { href: "/pathways/leaders", cls: "node-leaders" },
-          { href: "/pathways/parents", cls: "node-parents" },
-          { href: "/pathways/learners", cls: "node-learners" },
+          { href: "/pathway-educators", cls: "node-educators" },
+          { href: "/pathway-leaders", cls: "node-leaders" },
+          { href: "/pathway-parents", cls: "node-parents" },
+          { href: "/pathway-learners", cls: "node-learners" },
         ].map((item, i) => (
           <motion.div
             key={i}
