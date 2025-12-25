@@ -111,7 +111,7 @@ export default function Advantages() {
                 <div
                   className={`
                     relative p-6 transition-colors duration-300 border-b-2 border-primary
-                    ${isActive ? "text-white" : "bg-white/90 text-black"}
+                    ${isActive ? "text-white" : " text-white"}
                   `}
                 >
                   <h4 className="font-semibold mb-2">
