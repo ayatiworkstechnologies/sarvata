@@ -107,10 +107,10 @@ export default function Header() {
                     <Link
                       key={item.name}
                       href={item.href}
-                      className={`block px-5 py-3 text-sm transition ${
+                      className={`block px-5 py-3 text-base transition ${
                         pathname === item.href
                           ? "bg-primary/70 text-white"
-                          : "hover:bg-primary/40"
+                          : "hover:bg-primary/50 text-black hover:text-white"
                       }`}
                     >
                       {item.name}

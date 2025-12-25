@@ -23,7 +23,7 @@ export default function WhoWeAre() {
             transition={{ duration: 0.7, ease: "easeOut" }}
           >
             <motion.div
-              className="w-full max-w-65 md:max-w-none"
+              className="w-full max-w-full md:max-w-none"
               animate={{ y: [0, -6, 0] }}
               transition={{
                 duration: 4,
@@ -35,7 +35,7 @@ export default function WhoWeAre() {
                 src="/about.jpg"
                 alt="Educator"
                 width={380}
-                height={420}
+                height={520}
                 className=" w-full h-auto"
               />
             </motion.div>

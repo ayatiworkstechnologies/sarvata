@@ -30,7 +30,7 @@ export default function StorySection({
             width={500}
             height={600}
             className="
-              rounded-lg
+              rounded
               w-full
               max-w-xs sm:max-w-sm md:max-w-full
               h-auto

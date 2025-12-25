@@ -10,14 +10,14 @@ export default function AboutPage() {
   return (
     <main className="bg-white">
       <MainHero
-        webImage="/about-banner.jpg"
-        mobileImage="/about-banner.jpg"
+        webImage="/about-web.jpg"
+        mobileImage="/about-mobile.jpg"
         title="Cultivating Wholeness in Education"
         breadcrumbs={[{ label: "About Us" }]}
       />
 
       <StorySection
-        image="/about-2.jpg"
+        image="/our-story.jpg"
         title="Our Story"
         subtitle="Why Sarvata Exists"
         paragraphs={[
@@ -35,7 +35,7 @@ export default function AboutPage() {
       <PhilosophySection
         title="Our Philosophy: The Personalization Imperative"
         intro="The true next wave of educational innovation isn't about technology; it's about shifting our focus from the outcomes of learning to the human learner at the heart of the process. It’s about moving beyond the one-size-fits-all model towards learning that is deeply personal, profoundly engaging, and relentlessly focused on the individual."
-        image="/about-1.png"
+        image="/about-1.jpg"
         points={[
           {
             title: "Redefining Personalization: Moving from 'What' to 'How'",

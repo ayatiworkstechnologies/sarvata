@@ -9,25 +9,25 @@ const PATHWAYS = [
     title: "Educators",
     desc: "You see it every day. The student who finishes early and is bored.",
     image: "/img-1.jpg",
-    link: "/pathways/educators",
+    link: "/pathway-educators",
   },
   {
     title: "Leaders",
     desc: "Leading a school today means navigating complex landscapes.",
     image: "/img-2.jpg",
-    link: "/pathways/leaders",
+    link: "/pathway-leaders",
   },
   {
     title: "Parents",
     desc: "Parenting today means guiding your child through an ever-evolving world.",
     image: "/img-3.jpg",
-    link: "/pathways/parents",
+    link: "/pathway-parents",
   },
   {
     title: "Learners",
     desc: "School is more than just classes and grades.",
     image: "/img-4.jpg",
-    link: "/pathways/learners",
+    link: "/pathway-learners",
   },
 ];
 

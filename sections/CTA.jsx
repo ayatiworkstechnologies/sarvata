@@ -109,7 +109,7 @@ export default function PersonalisedLearningCTA() {
                       w-full rounded border border-black/10
                       px-4 py-2.5 text-sm
                       focus:outline-none focus:ring-2
-                      focus:ring-[color:var(--color-primary)]
+                      focus:ring-primary
                     "
                   />
                 </div>
@@ -120,7 +120,7 @@ export default function PersonalisedLearningCTA() {
                     type="checkbox"
                     checked={agree}
                     onChange={(e) => setAgree(e.target.checked)}
-                    className="mt-0.5 accent-[color:var(--color-primary)]"
+                    className="mt-0.5 accent-primary"
                     required
                   />
                   I agree to receive learning updates and communication.
@@ -147,7 +147,7 @@ export default function PersonalisedLearningCTA() {
                     whileTap={{ scale: 0.97 }}
                     className="
                       flex-1 py-2.5 rounded
-                      bg-[color:var(--color-primary)]
+                      bg-primary
                       text-white text-sm font-semibold
                     "
                   >
