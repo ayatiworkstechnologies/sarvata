@@ -9,6 +9,16 @@ export default function SupportGridSection({
   title,
   items = [],
 }) {
+  const itemCount = items.length;
+
+  /* ===== GRID VARIANTS ===== */
+  const gridCols =
+    itemCount === 3
+      ? "lg:grid-cols-3 lg:max-w-5xl"
+      : itemCount === 2
+      ? "lg:grid-cols-2 lg:max-w-4xl"
+      : "lg:grid-cols-4";
+
   return (
     <section className="section bg-[#f6f6f6]">
       <div className="container">
@@ -26,12 +36,20 @@ export default function SupportGridSection({
               {eyebrow}
             </span>
           )}
-
           <h2 className="heading-xl">{title}</h2>
         </motion.div>
 
         {/* ================= GRID ================= */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div
+          className={`
+            mx-auto
+            grid
+            grid-cols-1
+            sm:grid-cols-2
+            ${gridCols}
+            gap-8
+          `}
+        >
           {items.map((item, i) => (
             <motion.div
               key={i}
@@ -41,7 +59,6 @@ export default function SupportGridSection({
               transition={{ delay: i * 0.1 }}
               className="
                 bg-white
-                
                 rounded
                 p-6
                 flex flex-col
@@ -57,7 +74,6 @@ export default function SupportGridSection({
                   alt={item.title}
                   width={28}
                   height={28}
-                  className="object-contain"
                 />
               </div>
 
@@ -66,7 +82,6 @@ export default function SupportGridSection({
                 <h4 className="font-semibold mb-3">
                   {item.title}
                 </h4>
-
                 <p className="text-muted font-secondary text-sm leading-relaxed">
                   {item.description}
                 </p>
@@ -83,8 +98,7 @@ export default function SupportGridSection({
                     transition-transform
                   "
                 >
-                  Discover
-                  <span className="text-secondary">›</span>
+                  Discover <span className="text-secondary">›</span>
                 </Link>
               </div>
             </motion.div>

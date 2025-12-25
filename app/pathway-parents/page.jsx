@@ -16,48 +16,40 @@ export default function ParentsPage() {
 
  <StorySection
          image="/our-story.jpg"
-         title="The Impossible Balancing Act"
+         title="Navigating Education, Together"
          // subtitle="Why Sarvata Exists"
          paragraphs={[
-           "You see it every day. The student who finishes early and is bored. The student who struggles with the pace and feels left behind. The student who is bright and creative, but their gifts don't fit into a standardized test box.",
-           `You're constantly pulled in 25 different directions, trying to be everything to everyone. You know the "one-size-fits-all" model is failing your students, but finding the time and the tools to differentiate for everyone feels overwhelming.`
+           `Parenting today means guiding your child through an ever-evolving educational landscape. You celebrate their strengths, navigate their challenges, and champion their unique potential. We understand that this journey can sometimes feel complex, especially when supporting diverse learning needs.`,
+           `You are not alone. Sarvata offers a supportive space for parents, providing insights, practical strategies, and clear guidance. We partner with you to better understand your child's learning profile and empower you to become an even stronger advocate and partner in their educational journey.`
           ]}
-         link="/learning-pathways"
-         linkText="The goal is no longer to 'cover the curriculum.' The goal is to 'uncover the learner."
-       />
+          />
  
         <SupportGridSection
          eyebrow="Support"
-         title="Find the Support You Need"
+         title="Support for Your Family"
          items={[
            {
              icon: "/icon/icon-1.svg",
-             title: "Workshops & Training",
+             title: "Support for Your Family",
              description:
-               "Gain practical strategies to build learner-centric classrooms. Explore programs on differentiation, fostering metacognition, and true personalization.",
-             href: "/support/workshops",
+               "Access professional academic and psycho-counseling support tailored to help you understand your child's unique learning profile, strengths, and areas for growth.",
+             href: "#",
            },
            {
              icon: "/icon/icon-1.svg",
-             title: "In-Class Mentoring",
+             title: "Parent Workshops",
              description:
-               "Ready to become a learning mentor? Our consultants partner with you through classroom observations and co-planning to guide students’ internal development.",
-             href: "/support/mentoring",
+               "Participate in workshops designed for parents, offering practical, evidence-based strategies to support diverse learning needs, including neurodiversity, within your home environment.",
+             href: "#",
            },
            {
              icon: "/icon/icon-1.svg",
-             title: "Free Resources & Tools",
+             title: "School Partnership & Advocacy",
              description:
-               "Download free checklists for identifying student strengths, lesson plan templates, and guides for creating choice-based activities.",
-             href: "/support/resources",
+               "Discover effective strategies to foster open communication and strong collaboration with educators, strengthening the home-school connection for your child's success.",
+             href: "#",
            },
-           {
-             icon: "/icon/icon-1.svg",
-             title: "Our Core Principles",
-             description:
-               "What do we mean by “learning as a verb”? Read our foundational manifestos on the future of education and the path of self-actualization.",
-             href: "/support/principles",
-           },
+           
          ]}
        />
  

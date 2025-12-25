@@ -14,55 +14,50 @@ export default function LeadersPage() {
         breadcrumbs={[{ label: "for leaders" }]}
       />
 
-<StorySection
+      <StorySection
         image="/our-story.jpg"
-        title="The Impossible Balancing Act"
+        title="Leading Beyond the Status Quo"
         // subtitle="Why Sarvata Exists"
         paragraphs={[
-          "You see it every day. The student who finishes early and is bored. The student who struggles with the pace and feels left behind. The student who is bright and creative, but their gifts don't fit into a standardized test box.",
-          `You're constantly pulled in 25 different directions, trying to be everything to everyone. You know the "one-size-fits-all" model is failing your students, but finding the time and the tools to differentiate for everyone feels overwhelming.`
-         ]}
-        link="/learning-pathways"
-        linkText="The goal is no longer to 'cover the curriculum.' The goal is to 'uncover the learner."
-      />
+          `Leading a school today means navigating a complex landscape. You balance the vital demands of daily operations with the imperative to innovate, fostering an environment where both students and educators thrive. It requires a vision that looks beyond standardised outcomes towards cultivating a truly learner-centric culture.`,
+          `Sarvata is your strategic partner in this essential work. We provide the expertise, frameworks, and collaborative support to help you move from visionary ideas to tangible, school-wide transformation. Let us help you architect a future-ready learning environment built on the principles of inclusion, personalization, and mentorship.`,
+        ]}
+         />
 
-       <SupportGridSection
+      <SupportGridSection
         eyebrow="Support"
-        title="Find the Support You Need"
+        title="Building a Thriving Educational Ecosystem"
         items={[
           {
             icon: "/icon/icon-1.svg",
-            title: "Workshops & Training",
+            title: "Inclusion Audits & Roadmaps",
             description:
-              "Gain practical strategies to build learner-centric classrooms. Explore programs on differentiation, fostering metacognition, and true personalization.",
-            href: "/support/workshops",
+              "Partner with us for comprehensive inclusion audits and data-driven implementation roadmaps designed to embed responsive, equitable practices throughout your school community.",
+            href: "#",
           },
           {
             icon: "/icon/icon-1.svg",
-            title: "In-Class Mentoring",
+            title: "Faculty & Leadership Mentoring",
             description:
-              "Ready to become a learning mentor? Our consultants partner with you through classroom observations and co-planning to guide students’ internal development.",
-            href: "/support/mentoring",
+              "Engage in bespoke mentoring for your leadership team and faculty, fostering a shared vision, enhancing pedagogical practice, and building internal capacity for sustained growth.",
+            href: "#",
           },
           {
             icon: "/icon/icon-1.svg",
-            title: "Free Resources & Tools",
+            title: "Strategic Planning & Systems",
             description:
-              "Download free checklists for identifying student strengths, lesson plan templates, and guides for creating choice-based activities.",
-            href: "/support/resources",
+              "Enhance academic administration and optimise key processes, freeing your leadership to concentrate on strategic goals and mentoring your educators.",
+            href: "#",
           },
           {
             icon: "/icon/icon-1.svg",
             title: "Our Core Principles",
             description:
-              "What do we mean by “learning as a verb”? Read our foundational manifestos on the future of education and the path of self-actualization.",
-            href: "/support/principles",
+              `What do we mean by "learning as a verb"? Read our foundational manifestos on the future of education and the path to self-actualization.`,
+            href: "#",
           },
         ]}
       />
-
- 
-
     </main>
   );
 }
