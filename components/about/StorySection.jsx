@@ -2,12 +2,15 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function StorySection({
   image,
   title,
   subtitle,
   paragraphs,
+  link,
+  linkText
 }) {
   return (
     <section className="section">
@@ -75,6 +78,25 @@ export default function StorySection({
               </p>
             ))}
           </div>
+
+          <Link
+              href={link ? link : '#' }
+              className="
+                group inline-block mt-4
+                text-primary text-lg font-medium
+                relative
+              "
+            >
+             {linkText}
+              <span
+                className="
+                  absolute left-0 -bottom-1 h-px w-full
+                  bg-secondary
+                  scale-x-0 group-hover:scale-x-100
+                  transition-transform duration-300 origin-left
+                "
+              />
+            </Link>
 
           {/* ACCENT LINE */}
           <div className="border-t border-secondary w-20 mt-6 mx-auto md:mx-0" />

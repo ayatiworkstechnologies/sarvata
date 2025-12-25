@@ -18,25 +18,31 @@ export default function ContactSection() {
 
   return (
     <section className="section bg-white">
-      <div className="container grid grid-cols-12 gap-12 items-start">
+      <div className="container grid grid-cols-12 gap-8 md:gap-12 items-start">
 
         {/* ================= LEFT CONTENT ================= */}
         <motion.div
-          className="col-span-12 md:col-span-5 space-y-6"
+          className="
+            col-span-12 md:col-span-5
+            space-y-5
+            text-center md:text-left
+          "
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="heading-lg">Get in Touch</h2>
+          <h2 className="heading-lg text-xl sm:text-2xl md:text-3xl">
+            Get in Touch
+          </h2>
 
-          <p className="text-muted font-secondary max-w-md">
+          <p className="text-muted font-secondary text-sm sm:text-base max-w-md mx-auto md:mx-0">
             We partner with educators, leaders, and parents to build learner-centric
             ecosystems. Whether you have a question about our workshops,
             mentoring, or philosophy, we’d love to hear from you.
           </p>
 
-          <div className="space-y-2 font-secondary">
+          <div className="space-y-2 font-secondary text-sm sm:text-base">
             <p>
               <span className="font-medium">Email :</span>{" "}
               <a
@@ -61,7 +67,10 @@ export default function ContactSection() {
         {/* ================= FORM ================= */}
         <motion.form
           onSubmit={handleSubmit(onSubmit)}
-          className="col-span-12 md:col-span-7 space-y-5"
+          className="
+            col-span-12 md:col-span-7
+            space-y-4 sm:space-y-5
+          "
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -75,7 +84,7 @@ export default function ContactSection() {
               <input
                 {...register("name", { required: "Name is required" })}
                 placeholder="Enter Your Name"
-                className="input"
+                className="input w-full"
               />
             }
           />
@@ -95,7 +104,7 @@ export default function ContactSection() {
                   },
                 })}
                 placeholder="Enter Your Email"
-                className="input"
+                className="input w-full"
               />
             }
           />
@@ -108,7 +117,7 @@ export default function ContactSection() {
               <input
                 {...register("subject", { required: "Subject is required" })}
                 placeholder="Enter Your Subject"
-                className="input"
+                className="input w-full"
               />
             }
           />
@@ -122,7 +131,7 @@ export default function ContactSection() {
                 {...register("message", { required: "Message is required" })}
                 placeholder="Write your message"
                 rows={4}
-                className="textarea"
+                className="textarea w-full"
               />
             }
           />
@@ -132,7 +141,11 @@ export default function ContactSection() {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             disabled={isSubmitting}
-            className="btn btn-primary mt-2"
+            className="
+              btn btn-primary
+              mt-3
+              w-full sm:w-auto
+            "
           >
             {isSubmitting ? "Sending..." : "Send Message"}
           </motion.button>
