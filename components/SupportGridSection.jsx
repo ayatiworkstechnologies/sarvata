@@ -47,7 +47,7 @@ export default function SupportGridSection({
             grid-cols-1
             sm:grid-cols-2
             ${gridCols}
-            gap-8
+            gap-4
           `}
         >
           {items.map((item, i) => (
@@ -72,17 +72,17 @@ export default function SupportGridSection({
                 <Image
                   src={item.icon}
                   alt={item.title}
-                  width={28}
-                  height={28}
+                  width={35}
+                  height={35}
                 />
               </div>
 
               {/* CONTENT */}
               <div className="flex-1">
-                <h4 className="font-semibold mb-3">
+                <h4 className="font-semibold text-2xl mb-3">
                   {item.title}
                 </h4>
-                <p className="text-muted font-secondary text-sm leading-relaxed">
+                <p className="text-muted font-secondary leading-relaxed">
                   {item.description}
                 </p>
               </div>
@@ -98,7 +98,7 @@ export default function SupportGridSection({
                     transition-transform
                   "
                 >
-                  Discover <span className="text-secondary">›</span>
+                  Learn More <span className="text-secondary">›</span>
                 </Link>
               </div>
             </motion.div>

@@ -8,14 +8,14 @@ export default function LeadersPage() {
   return (
     <main className="bg-white">
       <MainHero
-        webImage="/web-banner.jpg"
-        mobileImage="/mobile-banner.jpg"
+        webImage="/leaders-web.jpg"
+        mobileImage="/leaders-mobile.jpg"
         title="For Leaders"
         breadcrumbs={[{ label: "for leaders" }]}
       />
 
       <StorySection
-        image="/our-story.jpg"
+        image="/img-7.jpg"
         title="Leading Beyond the Status Quo"
         // subtitle="Why Sarvata Exists"
         paragraphs={[
@@ -29,28 +29,28 @@ export default function LeadersPage() {
         title="Building a Thriving Educational Ecosystem"
         items={[
           {
-            icon: "/icon/icon-1.svg",
+            icon: "/icon/icon-8.svg",
             title: "Inclusion Audits & Roadmaps",
             description:
               "Partner with us for comprehensive inclusion audits and data-driven implementation roadmaps designed to embed responsive, equitable practices throughout your school community.",
             href: "#",
           },
           {
-            icon: "/icon/icon-1.svg",
+            icon: "/icon/icon-9.svg",
             title: "Faculty & Leadership Mentoring",
             description:
               "Engage in bespoke mentoring for your leadership team and faculty, fostering a shared vision, enhancing pedagogical practice, and building internal capacity for sustained growth.",
             href: "#",
           },
           {
-            icon: "/icon/icon-1.svg",
+            icon: "/icon/icon-10.svg",
             title: "Strategic Planning & Systems",
             description:
               "Enhance academic administration and optimise key processes, freeing your leadership to concentrate on strategic goals and mentoring your educators.",
             href: "#",
           },
           {
-            icon: "/icon/icon-1.svg",
+            icon: "/icon/icon-11.svg",
             title: "Our Core Principles",
             description:
               `What do we mean by "learning as a verb"? Read our foundational manifestos on the future of education and the path to self-actualization.`,

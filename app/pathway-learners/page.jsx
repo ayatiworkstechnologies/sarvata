@@ -8,14 +8,14 @@ export default function LearnersPage() {
   return (
     <main className="bg-white">
       <MainHero
-        webImage="/web-banner.jpg"
-        mobileImage="/mobile-banner.jpg"
+        webImage="/leaners-web.jpg"
+        mobileImage="/leaners-mobile.jpg"
         title="For Learners"
         breadcrumbs={[{ label: "for Learners" }]}
       />
 
       <StorySection
-        image="/our-story.jpg"
+        image="/img-8.jpg"
         title="Your Journey, Your Voice"
         // subtitle="Why Sarvata Exists"
         paragraphs={[
@@ -29,13 +29,13 @@ export default function LearnersPage() {
         title="Tools for Your Growth"
         items={[
           {
-            icon: "/icon/icon-1.svg",
+            icon: "/icon/icon-15.svg",
             title: "Cyber Safety & Digital Citizenship",
             description: `Join interactive workshops to learn about cyber safety, managing your digital footprint, and using technology responsibly and creatively in today's world.`,
             href: "#",
           },
           {
-            icon: "/icon/icon-1.svg",
+            icon: "/icon/icon-16.svg",
             title: "Mental Health & Well-being",
             description: `
 Explore sessions focused on building self-awareness, understanding emotions, managing stress, developing resilience, and taking care of your mental well-being.`,
@@ -43,7 +43,7 @@ Explore sessions focused on building self-awareness, understanding emotions, man
           },
 
           {
-            icon: "/icon/icon-1.svg",
+            icon: "/icon/icon-17.svg",
             title: "Healthy Relationships & Boundaries",
             description: `
 Get accurate information and join supportive discussions about growing up, consent, boundaries, and building healthy, respectful relationships.`,

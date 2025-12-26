@@ -10,14 +10,14 @@ export default function EducatorsPage() {
   return (
     <main className="bg-white">
       <MainHero
-        webImage="/web-banner.jpg"
-        mobileImage="/mobile-banner.jpg"
+        webImage="/eudcators-web.jpg"
+        mobileImage="/eudcators-mobile.jpg"
         title="For Educators"
         breadcrumbs={[{ label: "for educators" }]}
       />
 
       <StorySection
-        image="/our-story.jpg"
+        image="/img-5.jpg"
         title="The Impossible Balancing Act"
         // subtitle="Why Sarvata Exists"
         paragraphs={[
@@ -35,7 +35,7 @@ export default function EducatorsPage() {
     "True Personalization is handing the menu to the learner.",
   ]}
   description="At Sarvata, we help you make this shift. We focus on learning as a verb, not a noun. When students have genuine choice and agency over their process, they build intrinsic motivation and profound, lasting ownership of their education."
-  image="/our-story.jpg"
+  image="/img-6.jpg"
   imageAlt="Educator holding a book"
 />
 
@@ -46,28 +46,28 @@ export default function EducatorsPage() {
   title="Find the Support You Need"
   items={[
     {
-      icon: "/icon/icon-1.svg",
+      icon: "/icon/icon-4.svg",
       title: "Workshops & Training",
       description:
         "Gain practical strategies to build learner-centric classrooms. Explore programs on differentiation, fostering metacognition, and true personalization.",
       href: "#",
     },
     {
-      icon: "/icon/icon-1.svg",
+      icon: "/icon/icon-5.svg",
       title: "In-Class Mentoring",
       description:
         "Ready to become a learning mentor? Our consultants partner with you through classroom observations and co-planning to guide students’ internal development.",
       href: "#",
     },
     {
-      icon: "/icon/icon-1.svg",
+      icon: "/icon/icon-6.svg",
       title: "Free Resources & Tools",
       description:
         "Download free checklists for identifying student strengths, lesson plan templates, and guides for creating choice-based activities.",
       href: "#",
     },
     {
-      icon: "/icon/icon-1.svg",
+      icon: "/icon/icon-7.svg",
       title: "Our Core Principles",
       description:
         "What do we mean by “learning as a verb”? Read our foundational manifestos on the future of education and the path of self-actualization.",
