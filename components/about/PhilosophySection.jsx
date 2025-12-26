@@ -7,13 +7,12 @@ export default function PhilosophySection({ title, intro, image, points }) {
   return (
     <section className="section">
       <div className="container grid grid-cols-12 gap-8 md:gap-12 items-start">
-
         {/* ================= LEFT — INTRO + IMAGE ================= */}
         <motion.div
           className="
             col-span-12 md:col-span-5
             md:sticky md:top-28
-            self-start
+            self-start 
           "
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -21,7 +20,6 @@ export default function PhilosophySection({ title, intro, image, points }) {
           transition={{ duration: 0.7 }}
         >
           <div className="max-w-sm sm:max-w-md mx-auto md:mx-0 text-center md:text-left">
-
             {/* TITLE */}
             <h2 className="heading-lg text-xl sm:text-2xl md:text-3xl mb-4">
               {title}
@@ -54,9 +52,9 @@ export default function PhilosophySection({ title, intro, image, points }) {
           className="
             col-span-12 md:col-span-7
             space-y-8 sm:space-y-10 md:space-y-12
-            
-            md:overflow-y-auto
-            md:scrollbar-hide
+             md:max-h-[calc(100vh-160px)]
+    md:overflow-y-auto
+    scrollbar-hide
           "
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -87,7 +85,6 @@ export default function PhilosophySection({ title, intro, image, points }) {
             </motion.div>
           ))}
         </motion.div>
-
       </div>
     </section>
   );
