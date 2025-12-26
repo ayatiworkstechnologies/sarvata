@@ -7,7 +7,7 @@ export default function PhilosophySection({ title, intro, image, points }) {
   return (
     <section className="section">
       <div className="container grid grid-cols-12 gap-8 md:gap-12 items-start">
-        {/* ================= LEFT — INTRO + IMAGE ================= */}
+        {/* ================= LEFT - INTRO + IMAGE ================= */}
         <motion.div
           className="
             col-span-12 md:col-span-5
@@ -47,7 +47,7 @@ export default function PhilosophySection({ title, intro, image, points }) {
           </div>
         </motion.div>
 
-        {/* ================= RIGHT — PHILOSOPHY POINTS ================= */}
+        {/* ================= RIGHT - PHILOSOPHY POINTS ================= */}
         <motion.div
           className="
             col-span-12 md:col-span-7

@@ -64,7 +64,7 @@ export default function Advantages() {
 
       <div className="relative container-max grid lg:grid-cols-2 gap-14 items-start">
 
-        {/* LEFT — STICKY */}
+        {/* LEFT - STICKY */}
         <div className="text-white lg:sticky lg:top-32 self-start">
           <h2 className="text-3xl md:text-4xl font-semibold mb-4">
             Discover the Advantages of Sarvata Academy
@@ -75,7 +75,7 @@ export default function Advantages() {
           </p>
         </div>
 
-        {/* RIGHT — SCROLL AREA */}
+        {/* RIGHT - SCROLL AREA */}
         <div className="relative max-h-130 space-y-6 overflow-y-scroll pr-2 scrollbar-hide">
           {FEATURES.map((item, i) => {
             const isActive = current === i;
@@ -93,7 +93,7 @@ export default function Advantages() {
                 transition={{ duration: 0.25, ease: "easeOut" }}
                 className="relative overflow-hidden rounded"
               >
-                {/* SECONDARY BG — INK SPREAD */}
+                {/* SECONDARY BG - INK SPREAD */}
                 <AnimatePresence>
                   {isActive && (
                     <motion.div

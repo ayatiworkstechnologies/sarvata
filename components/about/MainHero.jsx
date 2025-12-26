@@ -66,7 +66,7 @@ export default function MainHero({
             </motion.h1>
           )}
 
-          {/* BREADCRUMB — BOTTOM LEFT */}
+          {/* BREADCRUMB - BOTTOM LEFT */}
           {breadcrumbs.length > 0 && (
             <nav className="text-sm font-secondary text-white/80">
               <ol className="flex items-center justify-start gap-2">

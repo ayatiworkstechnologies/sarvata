@@ -39,19 +39,19 @@ export default function AboutPage() {
         points={[
           {
             title: "Redefining Personalization: Moving from 'What' to 'How'",
-            desc: "For too long, we've confused 'customization'—offering optimized pathways—with true 'personalization.' Real personalization hands the menu to the learner. It cedes control, giving students genuine agency and choice in how they explore a concept. When learners direct their own process, they ignite intrinsic motivation and build profound, lasting ownership of their education. We must see learning as a dynamic verb, not a static noun.",
+            desc: "For too long, we've confused 'customization'-offering optimized pathways-with true 'personalization.' Real personalization hands the menu to the learner. It cedes control, giving students genuine agency and choice in how they explore a concept. When learners direct their own process, they ignite intrinsic motivation and build profound, lasting ownership of their education. We must see learning as a dynamic verb, not a static noun.",
           },
           {
             title: "The New Role of the Teacher: From Facilitator to Mentor",
-            desc: "A facilitator manages the external learning environment. A mentor guides the internal one. The next wave demands that educators transcend content delivery to embrace this profound role. The focus shifts to fostering metacognition—helping learners reflect on how they learn and who they are becoming through the process. We empower educators to mentor the development of self-aware, self-directed human beings.",
+            desc: "A facilitator manages the external learning environment. A mentor guides the internal one. The next wave demands that educators transcend content delivery to embrace this profound role. The focus shifts to fostering metacognition-helping learners reflect on how they learn and who they are becoming through the process. We empower educators to mentor the development of self-aware, self-directed human beings.",
           },
           {
             title: "The True Purpose: Education as a Path to Self-Actualization",
-            desc: "When we center the learner, empowering them with choice and mentored reflection, we do more than teach subjects—we guide them towards self-realization. By understanding how they learn, students begin to understand who they are. This is the foundation for fulfilling their potential and finding their place in the world.",
+            desc: "When we center the learner, empowering them with choice and mentored reflection, we do more than teach subjects-we guide them towards self-realization. By understanding how they learn, students begin to understand who they are. This is the foundation for fulfilling their potential and finding their place in the world.",
           },
            {
             title: "The True Purpose: Education as a Path to Self-Actualization",
-            desc: "When we center the learner, empowering them with choice and mentored reflection, we do more than teach subjects—we guide them towards self-realization. By understanding how they learn, students begin to understand who they are. This is the foundation for fulfilling their potential and finding their place in the world.",
+            desc: "When we center the learner, empowering them with choice and mentored reflection, we do more than teach subjects-we guide them towards self-realization. By understanding how they learn, students begin to understand who they are. This is the foundation for fulfilling their potential and finding their place in the world.",
           },
         ]}
       />
@@ -62,7 +62,7 @@ export default function AboutPage() {
   steps={[
     {
       title: "Listen & Understand",
-      desc: "We begin by listening. We seek to understand your unique culture, goals, and challenges—not with a generic audit, but with a deep, empathetic discovery.",
+      desc: "We begin by listening. We seek to understand your unique culture, goals, and challenges-not with a generic audit, but with a deep, empathetic discovery.",
       icon: "/icon/icon-1.svg",
     },
     {
