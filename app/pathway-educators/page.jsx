@@ -12,7 +12,7 @@ export default function EducatorsPage() {
       <MainHero
         webImage="/eudcators-web.jpg"
         mobileImage="/eudcators-mobile.jpg"
-        title="For Educators"
+        title="Partner With Us to Support Students More Effectively"
         breadcrumbs={[{ label: "for educators" }]}
       />
 

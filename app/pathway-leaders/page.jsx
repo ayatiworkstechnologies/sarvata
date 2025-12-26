@@ -10,7 +10,7 @@ export default function LeadersPage() {
       <MainHero
         webImage="/leaders-web.jpg"
         mobileImage="/leaders-mobile.jpg"
-        title="For Leaders"
+        title="Let’s Work Together to Create Stronger, Safer School Systems"
         breadcrumbs={[{ label: "for leaders" }]}
       />
 

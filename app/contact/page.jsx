@@ -9,7 +9,7 @@ export default function ContactPage() {
       <MainHero
         webImage="/contact-web.jpg"
         mobileImage="/contact-mobile.jpg"
-        title="Let's Connect"
+        title="Have a Question or Need Support? We’re Here to Help"
         breadcrumbs={[{ label: "Contact Us" }]}
       />
 

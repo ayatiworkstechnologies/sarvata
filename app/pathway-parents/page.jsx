@@ -10,7 +10,7 @@ export default function ParentsPage() {
       <MainHero
         webImage="/parents-web.jpg"
         mobileImage="/parents-mobile.jpg"
-        title="For Parents"
+        title="Have Concerns or Questions About Your Child’s Well-Being? Reach Out"
         breadcrumbs={[{ label: "For Parents" }]}
       />
 

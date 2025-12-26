@@ -12,7 +12,7 @@ export default function AboutPage() {
       <MainHero
         webImage="/about-web.jpg"
         mobileImage="/about-mobile.jpg"
-        title="Cultivating Wholeness in Education"
+        title="Want to Learn More About Our Approach? Start a Conversation"
         breadcrumbs={[{ label: "About Us" }]}
       />
 

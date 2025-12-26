@@ -10,7 +10,7 @@ export default function LearnersPage() {
       <MainHero
         webImage="/leaners-web.jpg"
         mobileImage="/leaners-mobile.jpg"
-        title="For Learners"
+        title="Need Guidance or Support? You Don’t Have to Figure It Out Alone"
         breadcrumbs={[{ label: "for Learners" }]}
       />
 
