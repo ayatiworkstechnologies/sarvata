@@ -1,73 +1,67 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section
-      className="
-        relative w-full overflow-hidden
-        h-160
-      "
-    >
-      {/* ===== DESKTOP VIDEO ===== */}
+    <section className="relative h-screen w-full overflow-hidden">
+      {/* ===== DESKTOP IMAGE ===== */}
       <motion.div
         className="absolute inset-0 hidden md:block"
         initial={{ scale: 1.08 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1.8, ease: "easeOut" }}
       >
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          src="/hero.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
+        <Image
+          src="/web-banner.jpg"
+          alt="Growth and learning"
+          fill
+          priority
+          className="object-cover"
         />
       </motion.div>
 
-      {/* ===== MOBILE VIDEO ===== */}
+      {/* ===== MOBILE IMAGE ===== */}
       <motion.div
         className="absolute inset-0 block md:hidden"
-        initial={{ scale: 1.05 }}
+        initial={{ scale: 1.1 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1.6, ease: "easeOut" }}
       >
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          src="/hero.mp4"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
+        <Image
+          src="/mobile-banner.jpg"
+          alt="Growth and learning"
+          fill
+          priority
+          className="object-cover"
         />
       </motion.div>
 
-      {/* ===== OVERLAY ===== */}
-      <div className="absolute inset-0 bg-black/20 z-10" />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black/20" />
 
-      {/* ===== HERO TITLE (optional) ===== */}
+      {/* ===== HERO TITLE ===== */}
       <motion.div
-        className="absolute inset-0 z-20 flex items-center justify-center px-6 text-center pointer-events-none"
+        className="absolute inset-0 z-10 flex items-center justify-center px-6 text-center pointer-events-none"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
       >
-        {/* Title intentionally empty */}
+        
       </motion.div>
 
       {/* ===== SEED NODES ===== */}
       <motion.div
-        className="absolute inset-0 z-30"
+        className="absolute inset-0 z-20"
         initial="hidden"
         animate="visible"
         variants={{
           hidden: {},
-          visible: { transition: { staggerChildren: 0.15 } },
+          visible: {
+            transition: { staggerChildren: 0.15 },
+          },
         }}
       >
         {[
