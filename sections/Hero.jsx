@@ -8,7 +8,7 @@ export default function Hero() {
     <section
       className="
         relative w-full overflow-hidden
-        h-160
+        h-145
       "
     >
       {/* ===== DESKTOP VIDEO ===== */}
