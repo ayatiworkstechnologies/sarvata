@@ -2,22 +2,42 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function Hero() {
+  const [tooltip, setTooltip] = useState({
+    label: "",
+    x: 0,
+    y: 0,
+    visible: false,
+  });
+
+  const seeds = [
+    { href: "/pathway-educators", cls: "node-educators", label: "Educators Pathway" },
+    { href: "/pathway-leaders", cls: "node-leaders", label: "Leaders Pathway" },
+    { href: "/pathway-parents", cls: "node-parents", label: "Parents Pathway" },
+    { href: "/pathway-learners", cls: "node-learners", label: "Learners Pathway" },
+  ];
+
+  const showTooltip = (e, label) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+
+    setTooltip({
+      label,
+      x: rect.left + rect.width / 2,
+      y: rect.top - 10,
+      visible: true,
+    });
+  };
+
+  const hideTooltip = () => {
+    setTooltip((prev) => ({ ...prev, visible: false }));
+  };
+
   return (
-    <section
-      className="
-        relative w-full overflow-hidden
-        h-145
-      "
-    >
-      {/* ===== DESKTOP VIDEO ===== */}
-      <motion.div
-        className="absolute inset-0 hidden md:block"
-        initial={{ scale: 1.08 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 1.8, ease: "easeOut" }}
-      >
+    <section className="relative w-full overflow-hidden h-screen">
+      {/* VIDEO */}
+      <div className="absolute inset-0 hidden md:block">
         <video
           className="absolute inset-0 w-full h-full object-cover"
           src="/hero.mp4"
@@ -25,17 +45,10 @@ export default function Hero() {
           muted
           loop
           playsInline
-          preload="auto"
         />
-      </motion.div>
+      </div>
 
-      {/* ===== MOBILE VIDEO ===== */}
-      <motion.div
-        className="absolute inset-0 block md:hidden"
-        initial={{ scale: 1.05 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 1.6, ease: "easeOut" }}
-      >
+      <div className="absolute inset-0 block md:hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover"
           src="/hero.mp4"
@@ -43,24 +56,31 @@ export default function Hero() {
           muted
           loop
           playsInline
-          preload="auto"
         />
-      </motion.div>
+      </div>
 
-      {/* ===== OVERLAY ===== */}
+      {/* OVERLAY */}
       <div className="absolute inset-0 bg-black/20 z-10" />
 
-      {/* ===== HERO TITLE (optional) ===== */}
+      {/* DYNAMIC TOOLTIP */}
       <motion.div
-        className="absolute inset-0 z-20 flex items-center justify-center px-6 text-center pointer-events-none"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut" }}
+        className="absolute z-40 pointer-events-none"
+        initial={false}
+        animate={{
+          opacity: tooltip.visible ? 1 : 0,
+          scale: tooltip.visible ? 1 : 0.96,
+          left: tooltip.x,
+          top: tooltip.y,
+        }}
+        transition={{ duration: 0.2, ease: "easeOut" }}
+        style={{ transform: "translate(-50%, -100%)" }}
       >
-        {/* Title intentionally empty */}
+        {tooltip.visible && (
+          <div className="seed-tooltip">{tooltip.label}</div>
+        )}
       </motion.div>
 
-      {/* ===== SEED NODES ===== */}
+      {/* SEED NODES */}
       <motion.div
         className="absolute inset-0 z-30"
         initial="hidden"
@@ -70,12 +90,7 @@ export default function Hero() {
           visible: { transition: { staggerChildren: 0.15 } },
         }}
       >
-        {[
-          { href: "/pathway-educators", cls: "node-educators" },
-          { href: "/pathway-leaders", cls: "node-leaders" },
-          { href: "/pathway-parents", cls: "node-parents" },
-          { href: "/pathway-learners", cls: "node-learners" },
-        ].map((item, i) => (
+        {seeds.map((item, i) => (
           <motion.div
             key={i}
             variants={{
@@ -87,7 +102,14 @@ export default function Hero() {
               },
             }}
           >
-            <Link href={item.href} className={`static-node ${item.cls}`} />
+            <Link
+              href={item.href}
+              className={`static-node ${item.cls}`}
+              onMouseEnter={(e) => showTooltip(e, item.label)}
+              onMouseLeave={hideTooltip}
+              onFocus={(e) => showTooltip(e, item.label)}
+              onBlur={hideTooltip}
+            />
           </motion.div>
         ))}
       </motion.div>

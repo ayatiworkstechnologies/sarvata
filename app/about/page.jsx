@@ -1,6 +1,6 @@
 "use client";
 
-import MainHero from "@/components/about/MainHero";
+import MainHero from "@/components/MainHero";
 import JourneySection from "@/components/about/JourneySection";
 import MissionSection from "@/components/about/MissionSection";
 import PhilosophySection from "@/components/about/PhilosophySection";

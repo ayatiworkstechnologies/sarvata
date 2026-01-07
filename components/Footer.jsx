@@ -46,7 +46,7 @@ export default function Footer() {
         >
           <Link href="/">
             <Image
-              src="/logo-1.svg"
+              src="/logo-new.png"
               alt="Sarvata"
               width={180}
               height={80}

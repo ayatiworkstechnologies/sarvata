@@ -13,8 +13,13 @@ export default function MainHero({
   title,
   breadcrumbs = [],
 }) {
+  const HEADER_HEIGHT = 80; // h-20
+
   return (
-    <section className="relative w-full overflow-hidden">
+    <section
+      className="relative w-full overflow-hidden"
+      style={{ paddingTop: HEADER_HEIGHT }}
+    >
       {/* ================= IMAGE WRAPPER ================= */}
       <motion.div
         initial={{ scale: 1.06 }}
@@ -46,7 +51,7 @@ export default function MainHero({
 
       {/* ================= CONTENT ================= */}
       <div className="container absolute inset-0 flex items-end">
-        <div className="px-15 pb-6 md:pb-10">
+        <div className="px-4 md:px-0 pb-6 md:pb-10">
           {/* TITLE */}
           {title && (
             <motion.h1
@@ -54,23 +59,22 @@ export default function MainHero({
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.25, duration: 0.6 }}
               className="
-    text-white
-    font-heading
-    text-3xl md:text-4xl
-    font-semibold
-    mb-2
-    drop-shadow-[0_8px_24px_rgba(0,0,0,0.55)]
-  "
+                text-white
+                font-heading
+                text-3xl md:text-4xl
+                font-semibold
+                mb-2
+                drop-shadow-[0_8px_24px_rgba(0,0,0,0.55)]
+              "
             >
               {title}
             </motion.h1>
           )}
 
-          {/* BREADCRUMB - BOTTOM LEFT */}
+          {/* BREADCRUMB */}
           {breadcrumbs.length > 0 && (
             <nav className="text-sm font-secondary text-white/80">
-              <ol className="flex items-center justify-start gap-2">
-                {/* HOME */}
+              <ol className="flex items-center gap-2">
                 <li className="flex items-center gap-1">
                   <HiHome className="text-white text-base" />
                   <Link href="/" className="hover:text-white transition">
@@ -80,7 +84,7 @@ export default function MainHero({
 
                 {breadcrumbs.map((item, i) => (
                   <li key={i} className="flex items-center gap-2">
-                    <span className="opacity-60"> <GrNext /> </span>
+                    <GrNext className="opacity-60 text-xs" />
                     {item.href ? (
                       <Link
                         href={item.href}

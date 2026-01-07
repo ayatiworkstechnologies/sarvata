@@ -1,6 +1,6 @@
 "use client";
 
-import MainHero from "@/components/about/MainHero";
+import MainHero from "@/components/MainHero";
 import StorySection from "@/components/about/StorySection";
 import SupportGridSection from "@/components/SupportGridSection";
 
@@ -22,38 +22,38 @@ export default function LeadersPage() {
           `Leading a school today means navigating a complex landscape. You balance the vital demands of daily operations with the imperative to innovate, fostering an environment where both students and educators thrive. It requires a vision that looks beyond standardised outcomes towards cultivating a truly learner-centric culture.`,
           `Sarvata is your strategic partner in this essential work. We provide the expertise, frameworks, and collaborative support to help you move from visionary ideas to tangible, school-wide transformation. Let us help you architect a future-ready learning environment built on the principles of inclusion, personalization, and mentorship.`,
         ]}
-         />
+      />
 
       <SupportGridSection
         eyebrow="Support"
         title="Building a Thriving Educational Ecosystem"
         items={[
           {
-            icon: "/icon/icon-8.svg",
-            title: "Inclusion Audits & Roadmaps",
-            description:
-              "Partner with us for comprehensive inclusion audits and data-driven implementation roadmaps designed to embed responsive, equitable practices throughout your school community.",
+            icon: "/icon/icon-15.svg",
+            title: "Cyber Safety & Digital Citizenship",
+            description: `Join interactive workshops to learn about cyber safety, managing your digital footprint, and using technology responsibly and creatively in today's world.`,
             href: "#",
           },
           {
-            icon: "/icon/icon-9.svg",
-            title: "Faculty & Leadership Mentoring",
-            description:
-              "Engage in bespoke mentoring for your leadership team and faculty, fostering a shared vision, enhancing pedagogical practice, and building internal capacity for sustained growth.",
+            icon: "/icon/icon-16.svg",
+            title: "Mental Health & Well-being",
+            description: `
+Explore sessions focused on building self-awareness, understanding emotions, managing stress, developing resilience, and taking care of your mental well-being.`,
+            href: "#",
+          },
+
+          {
+            icon: "/icon/icon-17.svg",
+            title: "Healthy Relationships & Boundaries",
+            description: `
+Get accurate information and join supportive discussions about growing up, consent, boundaries, and building healthy, respectful relationships.`,
             href: "#",
           },
           {
-            icon: "/icon/icon-10.svg",
-            title: "Strategic Planning & Systems",
-            description:
-              "Enhance academic administration and optimise key processes, freeing your leadership to concentrate on strategic goals and mentoring your educators.",
-            href: "#",
-          },
-          {
-            icon: "/icon/icon-11.svg",
-            title: "Our Core Principles",
-            description:
-              `What do we mean by "learning as a verb"? Read our foundational manifestos on the future of education and the path to self-actualization.`,
+            icon: "/icon/icon-1.svg",
+            title: "Understanding How You Learn",
+            description: `
+Discover tools and strategies to understand your unique learning style, explore your passions, and (most importantly) learn *how* you learn best.`,
             href: "#",
           },
         ]}

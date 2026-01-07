@@ -8,17 +8,10 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [lpOpen, setLpOpen] = useState(false);
   const [mobileLP, setMobileLP] = useState(false);
   const closeTimer = useRef(null);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const isActive = (href) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
@@ -48,18 +41,18 @@ export default function Header() {
       initial={{ y: -80 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-black/70 backdrop-blur-xl shadow-sm"
-          : "bg-transparent"
-      }`}
+      className="
+        fixed top-0 left-0 w-full z-50
+        bg-white
+        border-b border-black/5
+      "
     >
       <div className="container-max h-20 flex items-center justify-between">
 
         {/* LOGO */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo-1.svg"
+            src="/logo-new.png"
             alt="Sarvata"
             width={160}
             height={64}
@@ -69,11 +62,11 @@ export default function Header() {
         </Link>
 
         {/* ================= DESKTOP NAV ================= */}
-        <nav className="hidden md:flex items-center gap-10 text-lg font-medium text-white">
+        <nav className="hidden md:flex items-center gap-10 text-lg font-medium">
           <NavItem name="Home" href="/" active={isActive("/")} />
           <NavItem name="About" href="/about" active={isActive("/about")} />
 
-          {/* LEARNING PATHWAYS (DESKTOP DROPDOWN) */}
+          {/* LEARNING PATHWAYS */}
           <div
             className="relative"
             onMouseEnter={openLP}
@@ -81,7 +74,7 @@ export default function Header() {
           >
             <span
               className={`cursor-pointer transition-colors ${
-                isPathwaysActive ? "text-secondary" : "text-white/80"
+                isPathwaysActive ? "text-secondary" : "text-primary"
               }`}
             >
               Learning Pathways
@@ -90,7 +83,6 @@ export default function Header() {
             <motion.span
               animate={{ scaleX: isPathwaysActive ? 1 : 0 }}
               whileHover={{ scaleX: 1 }}
-              transition={{ duration: 0.3 }}
               className="absolute left-0 -bottom-1 h-0.5 w-full bg-secondary origin-left"
             />
 
@@ -101,7 +93,10 @@ export default function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 10 }}
                   transition={{ duration: 0.25 }}
-                  className="absolute top-full left-0 mt-8 w-64 bg-white rounded shadow-xl overflow-hidden"
+                  className="
+                    absolute top-full left-0 mt-8 w-64
+                    bg-white rounded shadow-xl overflow-hidden
+                  "
                 >
                   {pathways.map((item) => (
                     <Link
@@ -109,8 +104,8 @@ export default function Header() {
                       href={item.href}
                       className={`block px-5 py-3 text-base transition ${
                         pathname === item.href
-                          ? "bg-primary/70 text-white"
-                          : "hover:bg-primary/50 text-black hover:text-white"
+                          ? "bg-primary text-white"
+                          : "hover:bg-primary/10 text-black hover:text-primary"
                       }`}
                     >
                       {item.name}
@@ -131,19 +126,19 @@ export default function Header() {
         {/* ================= MOBILE TOGGLE ================= */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden relative w-8 h-8 text-white"
+          className="md:hidden relative w-8 h-8 text-primary"
         >
           <motion.span
             animate={menuOpen ? { rotate: 45, y: 6 } : {}}
-            className="absolute top-2 w-8 h-0.5 bg-white"
+            className="absolute top-2 w-8 h-0.5 bg-primary"
           />
           <motion.span
             animate={menuOpen ? { opacity: 0 } : {}}
-            className="absolute top-4 w-8 h-0.5 bg-white"
+            className="absolute top-4 w-8 h-0.5 bg-primary"
           />
           <motion.span
             animate={menuOpen ? { rotate: -45, y: -6 } : {}}
-            className="absolute top-6 w-8 h-0.5 bg-white"
+            className="absolute top-6 w-8 h-0.5 bg-primary"
           />
         </button>
       </div>
@@ -155,10 +150,10 @@ export default function Header() {
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="md:hidden bg-black/90 backdrop-blur-xl border-t border-white/10"
+            transition={{ duration: 0.35 }}
+            className="md:hidden bg-black text-white"
           >
-            <nav className="px-6 py-8 space-y-5 text-white text-base">
+            <nav className="px-6 py-8 space-y-5 text-base">
 
               <MobileLink name="Home" href="/" pathname={pathname} setMenuOpen={setMenuOpen} />
               <MobileLink name="About" href="/about" pathname={pathname} setMenuOpen={setMenuOpen} />
@@ -166,7 +161,7 @@ export default function Header() {
               {/* MOBILE LEARNING PATHWAYS */}
               <button
                 onClick={() => setMobileLP(!mobileLP)}
-                className={`w-full text-left flex justify-between items-center ${
+                className={`w-full flex justify-between items-center ${
                   isPathwaysActive ? "text-secondary" : "text-white/80"
                 }`}
               >
@@ -218,7 +213,7 @@ function NavItem({ name, href, active }) {
       <Link
         href={href}
         className={`transition-colors ${
-          active ? "text-secondary" : "text-white/80"
+          active ? "text-secondary" : "text-primary"
         }`}
       >
         {name}

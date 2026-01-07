@@ -90,7 +90,7 @@ export default function Advantages() {
                 animate={{
                   scale: isActive ? 1.03 : 1,
                 }}
-                transition={{ duration: 0.25, ease: "easeOut" }}
+                transition={{ duration: 0.45, ease: "easeOut" }}
                 className="relative overflow-hidden rounded"
               >
                 {/* SECONDARY BG - INK SPREAD */}

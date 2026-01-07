@@ -1,6 +1,6 @@
 "use client";
 
-import MainHero from "@/components/about/MainHero";
+import MainHero from "@/components/MainHero";
 import ContactSection from "@/components/ContactSection";
 
 export default function ContactPage() {

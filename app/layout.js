@@ -1,7 +1,11 @@
 import { Geist, Geist_Mono, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import { Suspense } from "react";
+
 import Header from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SarvataLoader from "@/components/SarvataLoader";
+import ScrollUI from "@/components/ScrollUI";
 
 /* UI Fonts */
 const geistSans = Geist({
@@ -46,9 +50,13 @@ export default function RootLayout({ children }) {
           antialiased
         `}
       >
-        <Header />
-        {children}
+         <Header />
+        <Suspense fallback={<SarvataLoader />}>
+          {children}
+          <ScrollUI />
+        </Suspense>
         <Footer />
+
       </body>
     </html>
   );
