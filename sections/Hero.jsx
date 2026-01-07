@@ -43,7 +43,7 @@ export default function Hero() {
           src="/hero.mp4"
           autoPlay
           muted
-          loop
+          
           playsInline
         />
       </div>
@@ -54,7 +54,7 @@ export default function Hero() {
           src="/hero.mp4"
           autoPlay
           muted
-          loop
+          
           playsInline
         />
       </div>
