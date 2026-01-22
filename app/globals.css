@@ -370,3 +370,308 @@ p {
 .animate-softFade {
   animation: softFade 0.8s ease-out both;
 }
+
+
+/* ======================================================
+   LEAF COMPONENT STYLES
+====================================================== */
+
+
+.leaf-shape {
+  width: 72px;
+  height: 115px;
+  background:
+    radial-gradient(circle at 30% 20%, #9fffbd, transparent 40%),
+    linear-gradient(145deg, #45e08a, #0f4d2c);
+  border-radius: 100% 0 100% 0;
+  transform-origin: bottom center;
+  box-shadow:
+    inset -8px -12px 18px rgba(0, 0, 0, 0.3),
+    0 6px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* leaf connector */
+.leaf-shape::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 7px;
+  height: 16px;
+  background: linear-gradient(to bottom, #45e08a, #0f4d2c);
+  transform: translateX(-50%);
+  border-radius: 4px;
+}
+
+/* veins */
+.leaf-vein {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.leaf-vein.center {
+  top: 12px;
+  height: 90px;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.1));
+}
+
+.leaf-vein.side {
+  height: 22px;
+  width: 1px;
+  background: linear-gradient(to right, rgba(255,255,255,0.6), rgba(255,255,255,0));
+  transform: translateX(-50%) rotate(30deg);
+}
+
+.bg-soil-texture {
+  background-image:
+    radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,0.12) 1px, transparent 1px);
+  background-size: 6px 6px, 10px 10px;
+  background-position: 0 0, 3px 3px;
+}
+
+
+/* New */
+
+/* Tailwind v4 is already injected by framework */
+
+/* ===== Leaf motion ===== */
+@keyframes leafWind {
+  0%,100% { transform: rotate(0deg); }
+  50% { transform: rotate(6deg); }
+}
+
+/* ===== Stem growth ===== */
+@keyframes stemGrow {
+  from { height: 0px; }
+  to { height: 170px; }
+}
+
+/* ===== Roots draw ===== */
+@keyframes rootGrow {
+  from { stroke-dashoffset: 320; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* ===== Energy flow ===== */
+@keyframes energyFlow {
+  0% { stroke-dashoffset: 320; opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0.3; }
+}
+
+.leaf-top {
+  animation: leafWind 5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.leaf-side {
+  animation: leafWind 6s ease-in-out infinite;
+  transform-origin: right center;
+}
+
+.stem-natural {
+  animation: stemGrow 2.2s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+.root-path {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+}
+
+.root-animate {
+  animation: rootGrow 2.8s ease-out forwards;
+}
+
+.energy-path {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  animation: energyFlow 3s ease-in-out infinite;
+}
+
+.soil-texture {
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 6px 6px;
+}
+
+.soil-fade {
+  background: linear-gradient(to top, #3a2616 60%, transparent);
+}
+
+
+/* Stem */
+.stem-body {
+  width: 10px;
+  height: 180px;
+  background: linear-gradient(#5fa36a, #3f7f4a);
+  border-radius: 10px;
+  animation: growStem 4s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+/* Leaves */
+.leaf {
+  position: absolute;
+  background: linear-gradient(135deg, #7bcf90, #4fa66a);
+  border-radius: 50% 50% 50% 0;
+  transform-origin: bottom center;
+  animation: sway 5s ease-in-out infinite;
+}
+
+.leaf.large {
+  width: 70px;
+  height: 120px;
+}
+
+.leaf.small {
+  width: 35px;
+  height: 60px;
+}
+
+/* Leaf Positions */
+.left {
+  left: -80px;
+  top: 0;
+  transform: rotate(-20deg);
+}
+
+.center {
+  left: -10px;
+  top: -20px;
+}
+
+.right {
+  left: 60px;
+  top: 0;
+  transform: rotate(20deg);
+}
+
+.small-left {
+  left: -40px;
+  top: 80px;
+}
+
+.small-right {
+  left: 25px;
+  top: 80px;
+}
+
+/* Roots */
+.roots {
+  animation: rootSpread 6s ease-in-out infinite;
+}
+
+.root {
+  width: 6px;
+  height: 80px;
+  background: #8b6f4e;
+  border-radius: 50%;
+  transform: rotate(20deg);
+}
+
+/* Animations */
+@keyframes sway {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes growStem {
+  0% { transform: scaleY(0.95); }
+  50% { transform: scaleY(1); }
+  100% { transform: scaleY(0.95); }
+}
+
+@keyframes rootSpread {
+  0% { transform: scaleX(0.9); }
+  /* Leaves */
+
+  50% { transform: scaleX(1); }
+  100% { transform: scaleX(0.9); }
+}
+
+/* Leaves */
+.leaf {
+  position: absolute;
+  background: linear-gradient(135deg, #7ecf98, #4a9f6a);
+  border-radius: 60% 40% 60% 40%;
+  filter: blur(0.2px);
+}
+
+.leaf.big {
+  width: 90px;
+  height: 150px;
+}
+
+.leaf.small {
+  width: 45px;
+  height: 70px;
+}
+
+/* Stem */
+.stem {
+  width: 12px;
+  height: 220px;
+  background: linear-gradient(#6ea97b, #3e7f55);
+  border-radius: 12px;
+}
+
+/* Roots */
+.root {
+  width: 6px;
+  height: 120px;
+  background: #8b6a45;
+  border-radius: 50%;
+}
+
+/* Seeds */
+.seed {
+  width: 14px;
+  height: 18px;
+  background: #6b4f2a;
+  border-radius: 50%;
+}
+
+.leaf {
+  position: absolute;
+  background: linear-gradient(135deg, #7ecf98, #4a9f6a);
+  border-radius: 60% 40% 60% 40%;
+  filter: blur(0.2px);
+}
+
+.leaf.big {
+  width: 90px;
+  height: 150px;
+}
+
+.leaf.small {
+  width: 45px;
+  height: 70px;
+}
+
+/* Stem */
+.stem {
+  width: 12px;
+  height: 220px;
+  background: linear-gradient(#6ea97b, #3e7f55);
+  border-radius: 12px;
+}
+
+/* Roots */
+.root {
+  width: 6px;
+  height: 120px;
+  background: #8b6a45;
+  border-radius: 50%;
+}
+
+/* Seeds */
+.seed {
+  width: 14px;
+  height: 18px;
+  background: #6b4f2a;
+  border-radius: 50%;
+}

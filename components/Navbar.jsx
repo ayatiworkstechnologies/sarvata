@@ -41,14 +41,9 @@ export default function Header() {
       initial={{ y: -80 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="
-        fixed top-0 left-0 w-full z-50
-        bg-white
-        border-b border-black/5
-      "
+      className=" fixed top-0 left-0 w-full z-5 bg-white border-b border-black/5"
     >
       <div className="container-max h-20 flex items-center justify-between">
-
         {/* LOGO */}
         <Link href="/" className="flex items-center">
           <Image
@@ -154,9 +149,18 @@ export default function Header() {
             className="md:hidden bg-black text-white"
           >
             <nav className="px-6 py-8 space-y-5 text-base">
-
-              <MobileLink name="Home" href="/" pathname={pathname} setMenuOpen={setMenuOpen} />
-              <MobileLink name="About" href="/about" pathname={pathname} setMenuOpen={setMenuOpen} />
+              <MobileLink
+                name="Home"
+                href="/"
+                pathname={pathname}
+                setMenuOpen={setMenuOpen}
+              />
+              <MobileLink
+                name="About"
+                href="/about"
+                pathname={pathname}
+                setMenuOpen={setMenuOpen}
+              />
 
               {/* MOBILE LEARNING PATHWAYS */}
               <button
@@ -195,8 +199,12 @@ export default function Header() {
                 )}
               </AnimatePresence>
 
-              <MobileLink name="Contact Us" href="/contact" pathname={pathname} setMenuOpen={setMenuOpen} />
-
+              <MobileLink
+                name="Contact Us"
+                href="/contact"
+                pathname={pathname}
+                setMenuOpen={setMenuOpen}
+              />
             </nav>
           </motion.div>
         )}
