@@ -59,7 +59,7 @@ const GlowingSeedOverlay = ({ seed, progress }) => {
     return (
         <motion.a
             href={seed.href}
-            className="absolute w-20 h-20 -ml-10 -mt-10 cursor-pointer z-50 pointer-events-auto"
+            className="absolute w-12 h-12 -ml-6 -mt-6 md:w-20 md:h-20 md:-ml-10 md:-mt-10 cursor-pointer z-50 pointer-events-auto"
             style={{ left: seed.x, top: seed.y, scale }}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
@@ -135,7 +135,10 @@ const FloatingParticles = ({ type = "pollen" }) => {
     const [particles, setParticles] = React.useState([]);
 
     React.useEffect(() => {
-        const count = type === "pollen" ? 20 : 30;
+        // Reduce particle count on mobile for performance
+        const isMobile = window.innerWidth < 768;
+        const baseCount = type === "pollen" ? 20 : 30;
+        const count = isMobile ? Math.floor(baseCount / 2) : baseCount;
         setParticles(Array.from({ length: count }).map((_, i) => ({
             id: i,
             x: Math.random() * 100 + "%",
@@ -246,11 +249,13 @@ export default function NaturalEffectHero() {
 
     // Parallax & Smooth Scroll
     // Parallax & Smooth Scroll - Organic "Weighted" Physics
-    const smoothProgress = useSpring(scrollYProgress, { mass: 0.2, stiffness: 30, damping: 20 });
+    // Parallax & Smooth Scroll - Organic "Weighted" Physics
+    // Increased mass/stiffness for less jitter ("glits")
+    const smoothProgress = useSpring(scrollYProgress, { mass: 0.5, stiffness: 50, damping: 20 });
     const bgY = useTransform(smoothProgress, [0, 1], ["0%", "20%"]);
 
     // Parallax for Plant Moving Up
-    const plantY = useTransform(smoothProgress, [0, 1], ["0vh", "-60vh"]);
+    const plantY = useTransform(smoothProgress, [0, 1], ["0vh", "-10vh"]);
 
     // STAGGERED ROOT GROWTH TRIGGERS
     const mainRootGrowth = useTransform(smoothProgress, [0.1, 0.5], [0, 1]);
@@ -273,22 +278,22 @@ export default function NaturalEffectHero() {
     };
 
     return (
-        <div ref={containerRef} onMouseMove={handleMouseMove} className="relative w-full h-[200vh] bg-[#2d1b16]">
+        <div ref={containerRef} onMouseMove={handleMouseMove} className="relative w-full h-[200vh] bg-[#0d0706] overflow-x-hidden">
 
             {/* 1. ABOVE GROUND (Animated Parallax) */}
             <motion.div
                 style={{ y: plantY }}
-                className="sticky top-0 w-full h-screen overflow-hidden bg-white flex flex-col items-center justify-end z-0"
+                className="sticky top-0 w-full h-screen overflow-hidden bg-white flex flex-col items-center justify-end z-0 will-change-transform pt-24 md:pt-0"
             >
 
                 {/* Background Ambience */}
                 <motion.div style={{ y: bgY }} className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-0 w-full h-full bg-gradient-to-b from-[#f1f8e9] to-[#ffffff]" />
-                    {/* Sun / Godrays */}
-                    <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-yellow-100/40 rounded-full blur-[100px]" />
-                    <div className="absolute top-0 right-10 w-[2px] h-[600px] bg-white/20 rotate-12 blur-sm" />
-                    <div className="absolute top-0 right-28 w-[20px] h-[700px] bg-white/10 rotate-12 blur-sm" />
-                    <div className="absolute top-0 right-48 w-[50px] h-[500px] bg-white/5 rotate-12 blur-md" />
+                    <div className="absolute top-0 w-full h-full bg-[conic-gradient(at_top_right,var(--tw-gradient-stops))] from-amber-100/40 via-white to-transparent opacity-60" />
+                    {/* Sun / Godrays - Enhanced */}
+                    <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-amber-200/30 rounded-full blur-[120px] mix-blend-screen" />
+                    <div className="absolute top-0 right-20 w-[4px] h-[80vh] bg-linear-to-b from-white/40 to-transparent rotate-15 blur-[2px]" />
+                    <div className="absolute top-0 right-48 w-[30px] h-[90vh] bg-linear-to-b from-white/20 to-transparent rotate-15 blur-md" />
+                    <div className="absolute top-0 right-80 w-[60px] h-[70vh] bg-linear-to-b from-white/10 to-transparent rotate-15 blur-xl" />
 
                     {/* Add Particles - Pollen */}
                     <FloatingParticles type="pollen" />
@@ -296,20 +301,35 @@ export default function NaturalEffectHero() {
 
                 {/* Soil Mound */}
                 <div className="absolute bottom-0 w-full flex justify-center z-20 pointer-events-none">
-                    <svg width="700" height="130" viewBox="0 0 700 130" className="w-[110%] md:w-[700px] h-auto translate-y-1">
-                        <path d="M50 130 L 650 130 Q 600 70, 500 80 Q 400 30, 350 40 Q 250 20, 150 60 Q 80 70, 50 130 Z" fill="#2d1b16" />
+                    <svg width="700" height="130" viewBox="0 0 700 130" shapeRendering="geometricPrecision" className="w-[140%] sm:w-[110%] md:w-[700px] h-auto translate-y-2">
+                        <defs>
+                            <filter id="soilNoise">
+                                <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" />
+                                <feColorMatrix type="saturate" values="0" />
+                                <feComponentTransfer><feFuncA type="linear" slope="0.2" /></feComponentTransfer>
+                                <feComposite operator="in" in2="SourceGraphic" result="noise" />
+                                <feBlend mode="multiply" in="noise" in2="SourceGraphic" />
+                            </filter>
+                            <linearGradient id="darkSandGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stopColor="#2d1b16" />
+                                <stop offset="100%" stopColor="#0d0706" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M50 130 L 650 130 Q 600 70, 500 80 Q 400 30, 350 40 Q 250 20, 150 60 Q 80 70, 50 130 Z" fill="url(#darkSandGrad)" filter="url(#soilNoise)" />
                     </svg>
                 </div>
 
                 {/* PLANT CONTAINER */}
-                <div className="relative w-[500px] h-[600px] z-10 mb-5 flex justify-center items-end">
+                <div className="relative w-[300px] h-[360px] sm:w-[500px] sm:h-[600px] z-10 mb-0 flex justify-center items-end">
                     {/* STEM */}
-                    <svg className="absolute bottom-4 w-full h-full overflow-visible" viewBox="0 0 500 600" preserveAspectRatio="xMidYBottom meet">
+                    <svg className="absolute bottom-4 w-full h-full overflow-visible" shapeRendering="geometricPrecision" viewBox="0 0 500 600" preserveAspectRatio="xMidYBottom meet">
                         <defs>
-                            <linearGradient id="stemGradient" x1="0%" y1="100%" x2="0%" y2="0%">
-                                <stop offset="0%" stopColor="#1b5e20" />
-                                <stop offset="50%" stopColor="#33691e" />
-                                <stop offset="100%" stopColor="#558b2f" />
+                            <linearGradient id="stemGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stopColor="#0d380e" />
+                                <stop offset="30%" stopColor="#2e7d32" />
+                                <stop offset="60%" stopColor="#66bb6a" />
+                                <stop offset="85%" stopColor="#a5d6a7" />
+                                <stop offset="100%" stopColor="#1b5e20" />
                             </linearGradient>
                             <clipPath id="growClip">
                                 <motion.rect x="0" y="0" width="500" height="600" initial={{ y: 600 }} animate={{ y: 0 }} transition={{ duration: 2.0, ease: "easeInOut", delay: 1.0 }} />
@@ -321,28 +341,50 @@ export default function NaturalEffectHero() {
                             <path d="M255 360 Q 260 340, 310 320 L 308 324 Q 265 345, 256 370 Z" fill="url(#stemGradient)" />
                         </g>
                     </svg>
+                    {/* Sand Overlay for Buried Stem Effect */}
+                    <div className="absolute bottom-0 w-full h-12 bg-linear-to-t from-[#1b0f0b] via-[#2d1b16]/80 to-transparent z-20 pointer-events-none blur-[2px]" />
 
                     {/* LEAVES */}
                     <motion.div className="absolute left-[40.2%] bottom-[36.33%]" initial={{ scale: 0 }} animate={{ scale: 0.7 }} transition={{ delay: 1.8, type: "spring" }}>
-                        <UserLeaf className="w-28 h-36" rotate={-70} delay={1.8} duration={6.5} />
+                        <UserLeaf className="w-16 h-24 sm:w-28 sm:h-36" rotate={-70} delay={1.8} duration={6.5} />
                     </motion.div>
                     <motion.div className="absolute left-[61.8%] bottom-[46.33%]" initial={{ scale: 0 }} animate={{ scale: 0.7 }} transition={{ delay: 2.0, type: "spring" }}>
-                        <UserLeaf className="w-28 h-36" rotate={60} delay={2.0} duration={5.8} />
+                        <UserLeaf className="w-16 h-24 sm:w-28 sm:h-36" rotate={60} delay={2.0} duration={5.8} />
                     </motion.div>
                     <motion.div className="absolute left-[50%] bottom-[75%]" initial={{ scale: 0 }} animate={{ scale: 1.2 }} transition={{ delay: 3.0, type: "spring" }}>
-                        <UserLeaf className="w-36 h-48" rotate={-5} delay={3.0} duration={7.2} />
+                        <UserLeaf className="w-24 h-32 sm:w-36 sm:h-48" rotate={-5} delay={3.0} duration={7.2} />
                     </motion.div>
                     <motion.div className="absolute left-[50%] bottom-[75%]" initial={{ scale: 0 }} animate={{ scale: 1.0 }} transition={{ delay: 2.5, type: "spring" }}>
-                        <UserLeaf className="w-36 h-48" rotate={-50} delay={2.5} duration={6.1} />
+                        <UserLeaf className="w-24 h-32 sm:w-36 sm:h-48" rotate={-50} delay={2.5} duration={6.1} />
                     </motion.div>
                     <motion.div className="absolute left-[50%] bottom-[75%]" initial={{ scale: 0 }} animate={{ scale: 1.0 }} transition={{ delay: 2.7, type: "spring" }}>
-                        <UserLeaf className="w-36 h-48" rotate={40} delay={2.7} duration={5.5} />
+                        <UserLeaf className="w-24 h-32 sm:w-36 sm:h-48" rotate={40} delay={2.7} duration={5.5} />
                     </motion.div>
                 </div>
             </motion.div>
 
             {/* 2. UNDERGROUND (Scroll Reveal) */}
-            <div className="relative w-full h-screen bg-gradient-to-b from-[#2d1b16] via-[#1a0f0d] to-[#0d0706] flex justify-center items-start pt-0 z-0 overflow-hidden">
+            <div className="relative w-full h-screen bg-gradient-to-b from-[#2d1b16] via-[#1a0f0d] to-[#0d0706] flex justify-center items-start pt-0 z-0 overflow-hidden mt-[-2px]">
+
+                {/* SOIL CAP (Moves with Underground to prevent gap on scroll) */}
+                <div className="absolute top-0 left-0 w-full flex justify-center z-30 pointer-events-none -translate-y-[99%]">
+                    <svg width="700" height="130" viewBox="0 0 700 130" shapeRendering="geometricPrecision" className="w-[140%] sm:w-[110%] md:w-[700px] h-auto translate-y-1">
+                        <defs>
+                            <filter id="soilNoiseCap">
+                                <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch" />
+                                <feColorMatrix type="saturate" values="0" />
+                                <feComponentTransfer><feFuncA type="linear" slope="0.2" /></feComponentTransfer>
+                                <feComposite operator="in" in2="SourceGraphic" result="noise" />
+                                <feBlend mode="multiply" in="noise" in2="SourceGraphic" />
+                            </filter>
+                            <linearGradient id="darkSandGradCap" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stopColor="#2d1b16" />
+                                <stop offset="100%" stopColor="#0d0706" />
+                            </linearGradient>
+                        </defs>
+                        <path d="M50 130 L 650 130 Q 600 70, 500 80 Q 400 30, 350 40 Q 250 20, 150 60 Q 80 70, 50 130 Z" fill="url(#darkSandGradCap)" filter="url(#soilNoiseCap)" />
+                    </svg>
+                </div>
 
                 {/* Sprit Light Follower */}
                 <motion.div
@@ -361,14 +403,17 @@ export default function NaturalEffectHero() {
                     <FloatingParticles type="motes" />
                 </div>
 
+                {/* Vignette Overlay for Depth */}
+                <div className="absolute inset-0 pointer-events-none z-10 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.4)_100%)] mix-blend-multiply" />
+
                 {/* Texture / Noise Overlay for Soil */}
                 <div className="absolute inset-0 opacity-10 pointer-events-none"
                     style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }}
                 />
 
                 {/* Main Roots Container */}
-                <div className="relative w-[600px] h-[90vh] mt-[-50px]">
-                    <svg className="w-full h-full overflow-visible" viewBox="0 0 600 800" preserveAspectRatio="xMidYTop meet">
+                <div className="relative w-full max-w-[350px] md:max-w-[600px] h-[70vh] md:h-[90vh] mt-[-30px] md:mt-[-50px]">
+                    <svg className="w-full h-full overflow-visible" shapeRendering="geometricPrecision" viewBox="0 0 600 800" preserveAspectRatio="xMidYTop meet">
                         <defs>
                             <filter id="glowRoot" x="-20%" y="-20%" width="140%" height="140%">
                                 <feGaussianBlur stdDeviation="2" result="blur" />
@@ -416,13 +461,13 @@ export default function NaturalEffectHero() {
                         </defs>
 
                         {/* Central Strong Taproot (MAIN) - Organic Wiggle */}
-                        <RootPath d="M300 0 C 310 100, 290 200, 300 350 C 305 450, 295 600, 300 750" strokeWidth={12} progress={mainRootGrowth} color="#bcaaa4" flow={true} />
+                        <RootPath d="M300 -100 C 300 -20, 290 200, 300 350 C 305 450, 295 600, 300 750" strokeWidth={12} progress={mainRootGrowth} color="#bcaaa4" flow={true} />
 
                         {/* Left Main Root (MAIN) - Twisted */}
-                        <RootPath d="M300 50 C 260 120, 200 180, 180 300 C 160 420, 120 480, 100 500" strokeWidth={8} progress={mainRootGrowth} color="#a1887f" flow={true} />
+                        <RootPath d="M300 -50 C 280 20, 200 180, 180 300 C 160 420, 120 480, 100 500" strokeWidth={8} progress={mainRootGrowth} color="#a1887f" flow={true} />
 
                         {/* Right Main Root (MAIN) - Twisted */}
-                        <RootPath d="M300 50 C 340 120, 400 180, 420 300 C 440 420, 480 480, 500 500" strokeWidth={8} progress={mainRootGrowth} color="#a1887f" flow={true} />
+                        <RootPath d="M300 -50 C 320 20, 400 180, 420 300 C 440 420, 480 480, 500 500" strokeWidth={8} progress={mainRootGrowth} color="#a1887f" flow={true} />
 
                         {/* Deep Side Root Left (MAIN) */}
                         <RootPath d="M300 300 C 270 350, 220 500, 180 750" strokeWidth={6} progress={mainRootGrowth} color="#8d6e63" flow={true} />
@@ -453,7 +498,7 @@ export default function NaturalEffectHero() {
                         <RootPath d="M420 750 C 440 780, 460 800, 480 820" strokeWidth={1} progress={subRootGrowth} color="#efebe9" />
 
                         {/* Nutrient Flow Pulse */}
-                        <motion.path d="M300 0 C 310 100, 290 200, 300 350 C 305 450, 295 600, 300 750"
+                        <motion.path d="M300 -100 C 300 -20, 290 200, 300 350 C 305 450, 295 600, 300 750"
                             fill="none"
                             stroke="#ffcc80"
                             strokeWidth="2"

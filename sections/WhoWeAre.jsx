@@ -91,66 +91,66 @@ export default function WhoWeAre() {
               />
             </Link>
 
-           
+
           </motion.div>
         </div>
       </section>
 
       {/* ===== SECOND SECTION ===== */}
       <section
-      className="
-        relative 
-        overflow-hidden
-        bg-center bg-cover
-      "
-      style={{
-        backgroundImage: "url('/bg-pattern.jpg')", // 🔁 change bg image here
-      }}
-    >
-      {/* Optional subtle overlay for readability */}
-      {/* <div className="absolute inset-0 bg-white/80 md:bg-white/70" /> */}
-
-      {/* Bottom Color Strip */}
-      <motion.div
         className="
+        relative 
+        bg-center bg-cover
+        pt-12 pb-0
+      "
+        style={{
+          backgroundImage: "url('/bg-pattern.jpg')", // 🔁 change bg image here
+        }}
+      >
+        {/* Optional subtle overlay for readability */}
+        {/* <div className="absolute inset-0 bg-white/80 md:bg-white/70" /> */}
+
+        {/* Bottom Color Strip */}
+        <motion.div
+          className="
           absolute left-0 right-0
           bottom-0 md:bottom-0
           h-24 md:h-40
           bg-secondary
           z-0
         "
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
-        style={{ transformOrigin: 'left' }}
-      />
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+          style={{ transformOrigin: 'left' }}
+        />
 
-      {/* Center Image */}
-      <motion.div
-        className="
-          relative z-10
+        {/* Center Image */}
+        <motion.div
+          className="
+          relative
           container-max
           flex justify-center
         "
-        initial={{ opacity: 0, y: 24 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
-      >
-        <Image
-          src="/img.png"
-          alt="Students"
-          width={900}
-          height={420}
-          className="
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.7, ease: 'easeOut' }}
+        >
+          <Image
+            src="/img.png"
+            alt="Students"
+            width={900}
+            height={420}
+            className="
             w-full
             max-w-xs sm:max-w-md md:max-w-3xl
             object-contain
           "
-        />
-      </motion.div>
-    </section>
+          />
+        </motion.div>
+      </section>
     </>
   );
 }
