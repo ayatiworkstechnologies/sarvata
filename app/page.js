@@ -15,16 +15,16 @@ export default function Home() {
   return (
     <main>
       {/* <ModernRootSystem /> */}
-      <NaturalEffectHero />
+      {/* <NaturalEffectHero /> */}
       {/* <PlantHero /> */}
       {/* <PlantHeroNew /> */}
       {/* <PlantHeroClassicOrganic /> */}
       {/* <ModernPlantHero /> */}
-      {/* <Hero /> */}
+      <Hero />
       <WhoWeAre />
       <LearningPathways />
       <Advantages />
       <PersonalisedLearningCTA />
-      </main>
+    </main>
   );
 }
