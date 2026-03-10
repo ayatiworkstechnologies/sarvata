@@ -1,0 +1,677 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Outfit:wght@100..900&display=swap");
+
+@import "tailwindcss";
+
+/* ===============================
+   FONT FACE DEFINITIONS
+================================ */
+/* @font-face {
+  font-family: "Grift";
+  src: url("/fonts/Grift.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Aloevera";
+  src: url("/fonts/Aloevera.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+} */
+
+/* ======================================================
+   BASE DESIGN TOKENS
+====================================================== */
+:root {
+  /* Core colors */
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --primary: #A066AA;
+  --secondary: #E2C473;
+  --muted: #0f0f0f;
+  --border: #e5e7eb;
+  --soft-bg: #faf7fc;
+
+  /* --font-primary: "Grift";
+  --font-secondary: "Aloevera"; */
+
+  --font-primary: "Lexend", system-ui, sans-serif;
+--font-secondary: "Outfit", system-ui, sans-serif;
+
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+}
+
+/* ======================================================
+   TAILWIND 4.1 INLINE THEME
+====================================================== */
+@theme inline {
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-soft: var(--soft-bg);
+
+  /* Radius */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+}
+
+
+
+/* ======================================================
+   BASE STYLES
+====================================================== */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-primary);
+  /* letter-spacing: -0.015em; */
+}
+
+p {
+  font-family: var(--font-secondary);
+  line-height: 1.75;
+  font-size: 18px;
+}
+
+/* ======================================================
+   COMMON LAYOUT UTILITIES
+====================================================== */
+.section {
+  padding: 4rem 1.5rem;
+}
+
+.section-sm {
+  padding: 2.5rem 1.5rem;
+}
+
+.section-lg {
+  padding: 6rem 1.5rem;
+}
+
+.container {
+  max-width: 1200px; /* or 1280px */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-max {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* ======================================================
+   CARDS
+====================================================== */
+.card {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  border-color: var(--color-primary);
+}
+
+/* ======================================================
+   BUTTON SYSTEM
+====================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-sm);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #8d5497;
+}
+
+.btn-outline {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: white;
+}
+
+/* ======================================================
+   FORMS
+====================================================== */
+.input,
+.textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--secondary);
+  background: var(--background);
+  color: var(--color-black);
+  
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+/* ======================================================
+   TEXT HELPERS
+====================================================== */
+.heading-xl {
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-weight: 700;
+}
+
+.heading-lg {
+  font-size: clamp(1.9rem, 4vw, 2.4rem);
+  font-weight: 700;
+}
+
+.heading-md {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.text-muted {
+  color: var(--color-muted);
+}
+
+/* ======================================================
+   SIMPLE ANIMATIONS
+====================================================== */
+.fade-in {
+  animation: fadeIn 0.45s ease-out both;
+}
+
+.slide-up {
+  animation: slideUp 0.45s ease-out both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(14px) }
+  to { opacity: 1; transform: translateY(0) }
+}
+
+/* ======================================================
+   SCROLLBAR (DESKTOP)
+====================================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+/* Hide scrollbar but keep scrolling */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari */
+}
+
+/* ===============================
+   SEED / NODE INDICATOR
+================================ */
+.static-node {
+  position: absolute;
+  display: block;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: transparent;
+  z-index: 10;
+  animation: pulse-glow 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* ACCURATE PULSE (BREATHING) */
+@keyframes pulse-glow {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.35);
+    opacity: 0.5;
+  }
+  60% {
+    transform: scale(1);
+    box-shadow: 0 0 0 28px rgba(255, 165, 0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+}
+
+/* ===== DESKTOP POSITIONS ===== */
+.node-educators { top: 59%; left: 49%; }
+.node-leaders   { top: 67%; left: 39%; }
+.node-parents   { top: 65%; left: 56%; }
+.node-learners  { top: 80%; left: 47%; }
+
+/* ===============================
+   SHARED SEED TOOLTIP
+   (Single fixed tooltip)
+================================ */
+.seed-tooltip {
+  position: relative;
+  z-index: 40;
+
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  background: rgba(0, 0, 0, 0.78);
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+
+  pointer-events: none;
+
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  box-shadow:
+    0 0 0 0 rgba(255, 165, 0, 0.25),
+    0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== MOBILE OVERRIDES ===== */
+@media (max-width: 640px) {
+  .static-node {
+    width: 72px;
+    height: 72px;
+  }
+
+  .node-educators { top: 60%; left: 50%; }
+  .node-leaders   { top: 67%; left: 81%; }
+  .node-parents   { top: 69%; left: 8%; }
+  .node-learners  { top: 83%; left: 46%; }
+
+  .seed-tooltip {
+    font-size: 13px;
+    padding: 9px 16px;
+  }
+}
+
+/* ===============================
+   SUBTLE FLOAT (IMAGE)
+================================ */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ===============================
+   SOFT FADE (SECOND IMAGE)
+================================ */
+@keyframes softFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-softFade {
+  animation: softFade 0.8s ease-out both;
+}
+
+
+/* ======================================================
+   LEAF COMPONENT STYLES
+====================================================== */
+
+
+.leaf-shape {
+  width: 72px;
+  height: 115px;
+  background:
+    radial-gradient(circle at 30% 20%, #9fffbd, transparent 40%),
+    linear-gradient(145deg, #45e08a, #0f4d2c);
+  border-radius: 100% 0 100% 0;
+  transform-origin: bottom center;
+  box-shadow:
+    inset -8px -12px 18px rgba(0, 0, 0, 0.3),
+    0 6px 12px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* leaf connector */
+.leaf-shape::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 7px;
+  height: 16px;
+  background: linear-gradient(to bottom, #45e08a, #0f4d2c);
+  transform: translateX(-50%);
+  border-radius: 4px;
+}
+
+/* veins */
+.leaf-vein {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.leaf-vein.center {
+  top: 12px;
+  height: 90px;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.1));
+}
+
+.leaf-vein.side {
+  height: 22px;
+  width: 1px;
+  background: linear-gradient(to right, rgba(255,255,255,0.6), rgba(255,255,255,0));
+  transform: translateX(-50%) rotate(30deg);
+}
+
+.bg-soil-texture {
+  background-image:
+    radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,0.12) 1px, transparent 1px);
+  background-size: 6px 6px, 10px 10px;
+  background-position: 0 0, 3px 3px;
+}
+
+
+/* New */
+
+/* Tailwind v4 is already injected by framework */
+
+/* ===== Leaf motion ===== */
+@keyframes leafWind {
+  0%,100% { transform: rotate(0deg); }
+  50% { transform: rotate(6deg); }
+}
+
+/* ===== Stem growth ===== */
+@keyframes stemGrow {
+  from { height: 0px; }
+  to { height: 170px; }
+}
+
+/* ===== Roots draw ===== */
+@keyframes rootGrow {
+  from { stroke-dashoffset: 320; }
+  to { stroke-dashoffset: 0; }
+}
+
+/* ===== Energy flow ===== */
+@keyframes energyFlow {
+  0% { stroke-dashoffset: 320; opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0.3; }
+}
+
+.leaf-top {
+  animation: leafWind 5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.leaf-side {
+  animation: leafWind 6s ease-in-out infinite;
+  transform-origin: right center;
+}
+
+.stem-natural {
+  animation: stemGrow 2.2s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+.root-path {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+}
+
+.root-animate {
+  animation: rootGrow 2.8s ease-out forwards;
+}
+
+.energy-path {
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  animation: energyFlow 3s ease-in-out infinite;
+}
+
+.soil-texture {
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 6px 6px;
+}
+
+.soil-fade {
+  background: linear-gradient(to top, #3a2616 60%, transparent);
+}
+
+
+/* Stem */
+.stem-body {
+  width: 10px;
+  height: 180px;
+  background: linear-gradient(#5fa36a, #3f7f4a);
+  border-radius: 10px;
+  animation: growStem 4s ease-in-out infinite;
+  transform-origin: bottom;
+}
+
+/* Leaves */
+.leaf {
+  position: absolute;
+  background: linear-gradient(135deg, #7bcf90, #4fa66a);
+  border-radius: 50% 50% 50% 0;
+  transform-origin: bottom center;
+  animation: sway 5s ease-in-out infinite;
+}
+
+.leaf.large {
+  width: 70px;
+  height: 120px;
+}
+
+.leaf.small {
+  width: 35px;
+  height: 60px;
+}
+
+/* Leaf Positions */
+.left {
+  left: -80px;
+  top: 0;
+  transform: rotate(-20deg);
+}
+
+.center {
+  left: -10px;
+  top: -20px;
+}
+
+.right {
+  left: 60px;
+  top: 0;
+  transform: rotate(20deg);
+}
+
+.small-left {
+  left: -40px;
+  top: 80px;
+}
+
+.small-right {
+  left: 25px;
+  top: 80px;
+}
+
+/* Roots */
+.roots {
+  animation: rootSpread 6s ease-in-out infinite;
+}
+
+.root {
+  width: 6px;
+  height: 80px;
+  background: #8b6f4e;
+  border-radius: 50%;
+  transform: rotate(20deg);
+}
+
+/* Animations */
+@keyframes sway {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+@keyframes growStem {
+  0% { transform: scaleY(0.95); }
+  50% { transform: scaleY(1); }
+  100% { transform: scaleY(0.95); }
+}
+
+@keyframes rootSpread {
+  0% { transform: scaleX(0.9); }
+  /* Leaves */
+
+  50% { transform: scaleX(1); }
+  100% { transform: scaleX(0.9); }
+}
+
+/* Leaves */
+.leaf {
+  position: absolute;
+  background: linear-gradient(135deg, #7ecf98, #4a9f6a);
+  border-radius: 60% 40% 60% 40%;
+  filter: blur(0.2px);
+}
+
+.leaf.big {
+  width: 90px;
+  height: 150px;
+}
+
+.leaf.small {
+  width: 45px;
+  height: 70px;
+}
+
+/* Stem */
+.stem {
+  width: 12px;
+  height: 220px;
+  background: linear-gradient(#6ea97b, #3e7f55);
+  border-radius: 12px;
+}
+
+/* Roots */
+.root {
+  width: 6px;
+  height: 120px;
+  background: #8b6a45;
+  border-radius: 50%;
+}
+
+/* Seeds */
+.seed {
+  width: 14px;
+  height: 18px;
+  background: #6b4f2a;
+  border-radius: 50%;
+}
+
+.leaf {
+  position: absolute;
+  background: linear-gradient(135deg, #7ecf98, #4a9f6a);
+  border-radius: 60% 40% 60% 40%;
+  filter: blur(0.2px);
+}
+
+.leaf.big {
+  width: 90px;
+  height: 150px;
+}
+
+.leaf.small {
+  width: 45px;
+  height: 70px;
+}
+
+/* Stem */
+.stem {
+  width: 12px;
+  height: 220px;
+  background: linear-gradient(#6ea97b, #3e7f55);
+  border-radius: 12px;
+}
+
+/* Roots */
+.root {
+  width: 6px;
+  height: 120px;
+  background: #8b6a45;
+  border-radius: 50%;
+}
+
+/* Seeds */
+.seed {
+  width: 14px;
+  height: 18px;
+  background: #6b4f2a;
+  border-radius: 50%;
+}
