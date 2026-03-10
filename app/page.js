@@ -1,30 +1,15 @@
-import LearningPathways from "@/sections/LearningPathways";
-import NaturalEffectHero from "@/components/NaturalEffectHero";
-import Hero from "@/sections/Hero";
-import WhoWeAre from "@/sections/WhoWeAre";
-import Image from "next/image";
-import Advantages from "@/sections/Advantages";
-import PersonalisedLearningCTA from "@/sections/CTA";
-import ModernRootSystem from "@/sections/GrowthBanner";
-import PlantHero from "@/components/PlantHero";
-import PlantHeroNew from "@/components/PlantHeroNew";
-import PlantHeroClassicOrganic from "@/components/PlantHeroClassicOrganic";
-import ModernPlantHero from "@/components/ModernPlantHero";
+import ThreeDExperience from "@/components/ThreeDExperience";
+import WhatWeDo from "@/sections/WhatWeDo";
+import OurApproach from "@/sections/OurApproach";
+import GetStarted from "@/sections/GetStarted";
 
 export default function Home() {
   return (
     <main>
-      {/* <ModernRootSystem /> */}
-      {/* <NaturalEffectHero /> */}
-      {/* <PlantHero /> */}
-      {/* <PlantHeroNew /> */}
-      {/* <PlantHeroClassicOrganic /> */}
-      {/* <ModernPlantHero /> */}
-      <Hero />
-      <WhoWeAre />
-      <LearningPathways />
-      <Advantages />
-      <PersonalisedLearningCTA />
+      <ThreeDExperience />
+      <WhatWeDo />
+      <OurApproach />
+      <GetStarted />
     </main>
   );
 }
