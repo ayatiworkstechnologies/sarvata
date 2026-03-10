@@ -1,26 +1,13 @@
-import LearningPathways from "@/sections/LearningPathways";
-import NaturalEffectHero from "@/components/NaturalEffectHero";
-import Hero from "@/sections/Hero";
+import Home3DExperience from "@/sections/Home3DExperience";
 import WhoWeAre from "@/sections/WhoWeAre";
-import Image from "next/image";
+import LearningPathways from "@/sections/LearningPathways";
 import Advantages from "@/sections/Advantages";
 import PersonalisedLearningCTA from "@/sections/CTA";
-import ModernRootSystem from "@/sections/GrowthBanner";
-import PlantHero from "@/components/PlantHero";
-import PlantHeroNew from "@/components/PlantHeroNew";
-import PlantHeroClassicOrganic from "@/components/PlantHeroClassicOrganic";
-import ModernPlantHero from "@/components/ModernPlantHero";
 
 export default function Home() {
   return (
     <main>
-      {/* <ModernRootSystem /> */}
-      {/* <NaturalEffectHero /> */}
-      {/* <PlantHero /> */}
-      {/* <PlantHeroNew /> */}
-      {/* <PlantHeroClassicOrganic /> */}
-      {/* <ModernPlantHero /> */}
-      <Hero />
+      <Home3DExperience />
       <WhoWeAre />
       <LearningPathways />
       <Advantages />
