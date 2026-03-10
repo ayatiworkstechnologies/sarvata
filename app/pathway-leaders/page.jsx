@@ -10,50 +10,39 @@ export default function LeadersPage() {
       <MainHero
         webImage="/leaders-web.jpg"
         mobileImage="/leaders-mobile.jpg"
-        title="Let’s Work Together to Create Stronger, Safer School Systems"
-        breadcrumbs={[{ label: "for leaders" }]}
+        title="Leading Sustainable Educational Change"
+        breadcrumbs={[{ label: "For Leaders" }]}
       />
 
       <StorySection
         image="/img-7.jpg"
-        title="Leading Beyond the Status Quo"
-        // subtitle="Why Sarvata Exists"
+        title="Partnership, Not Prescription"
         paragraphs={[
-          `Leading a school today means navigating a complex landscape. You balance the vital demands of daily operations with the imperative to innovate, fostering an environment where both students and educators thrive. It requires a vision that looks beyond standardised outcomes towards cultivating a truly learner-centric culture.`,
-          `Sarvata is your strategic partner in this essential work. We provide the expertise, frameworks, and collaborative support to help you move from visionary ideas to tangible, school-wide transformation. Let us help you architect a future-ready learning environment built on the principles of inclusion, personalization, and mentorship.`,
+          "Meaningful change is slow, contextual, and requires deep cultural shifts beyond policy updates.",
+          "You know your community, culture, and constraints. We bring frameworks, research, and external perspectives. Together, we develop approaches that are both aspirational and realistic.",
         ]}
       />
 
       <SupportGridSection
-        eyebrow="Support"
-        title="Building a Thriving Educational Ecosystem"
+        eyebrow="Services"
+        title="How We Support School Leaders"
         items={[
           {
             icon: "/icon/icon-15.svg",
-            title: "Cyber Safety & Digital Citizenship",
-            description: `Join interactive workshops to learn about cyber safety, managing your digital footprint, and using technology responsibly and creatively in today's world.`,
+            title: "Inclusion Audits & Strategic Roadmaps",
+            description: "Objective assessment of current practices with prioritized, actionable recommendations.",
             href: "#",
           },
           {
             icon: "/icon/icon-16.svg",
-            title: "Mental Health & Well-being",
-            description: `
-Explore sessions focused on building self-awareness, understanding emotions, managing stress, developing resilience, and taking care of your mental well-being.`,
+            title: "Faculty & Leadership Mentoring",
+            description: "Build internal capacity through confidential mentoring and job-embedded professional learning.",
             href: "#",
           },
-
           {
             icon: "/icon/icon-17.svg",
-            title: "Healthy Relationships & Boundaries",
-            description: `
-Get accurate information and join supportive discussions about growing up, consent, boundaries, and building healthy, respectful relationships.`,
-            href: "#",
-          },
-          {
-            icon: "/icon/icon-1.svg",
-            title: "Understanding How You Learn",
-            description: `
-Discover tools and strategies to understand your unique learning style, explore your passions, and (most importantly) learn *how* you learn best.`,
+            title: "Strategic Planning & Systems",
+            description: "Design the operational infrastructure needed to align daily practice with long-term vision.",
             href: "#",
           },
         ]}
