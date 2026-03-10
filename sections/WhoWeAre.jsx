@@ -54,7 +54,7 @@ export default function WhoWeAre() {
             transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }}
           >
             <h2 className="heading-xl mb-4">
-              Welcome to Sarvata
+              Why Sarvata
             </h2>
 
             <motion.p
@@ -68,19 +68,19 @@ export default function WhoWeAre() {
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.6 }}
             >
-              We are an educational consultancy dedicated to helping schools, educators, parents, and learners cultivate their unique potential. Explore our portals to find the support you need.
+              Sarvata means “whole.” Our work supports the holistic development of schools, educators, and families through practical, research-driven implementation support.
             </motion.p>
 
             {/* LINK */}
             <Link
-              href="/learning-pathways"
+              href="/about"
               className="
                 group inline-block
                 text-primary text-lg font-medium
                 relative
               "
             >
-              Click one of the glowing nodes in the image above to explore our portals.
+              Read our story and philosophy.
               <span
                 className="
                   absolute left-0 -bottom-1 h-px w-full
