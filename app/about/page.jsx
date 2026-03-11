@@ -1,14 +1,16 @@
 "use client";
 
 import MainHero from "@/components/MainHero";
-import JourneySection from "@/components/about/JourneySection";
+import StorySection from "@/components/about/StorySection";
 import MissionSection from "@/components/about/MissionSection";
 import PhilosophySection from "@/components/about/PhilosophySection";
-import StorySection from "@/components/about/StorySection";
+import JourneySection from "@/components/about/JourneySection";
+import TestimonialsSection from "@/components/about/TestimonialsSection";
+import ImpactSection from "@/components/about/ImpactSection";
 
 export default function AboutPage() {
   return (
-    <main className="bg-white">
+    <main className="bg-background">
       <MainHero
         webImage="/about-web.jpg"
         mobileImage="/about-mobile.jpg"
@@ -17,66 +19,86 @@ export default function AboutPage() {
       />
 
       <StorySection
-        image="/our-story.jpg"
         title="Our Story"
         subtitle="Why Sarvata Exists"
         paragraphs={[
-          "Sarvata means ‘whole’. Our work is dedicated to the holistic development of schools and educators. We were born from a desire to offer transformative programmes that guide teachers and school managements to become truly inclusive and responsive in their processes. We saw a need to move beyond theory and embed practical, research-driven strategies into the daily life of schools.",
-          "At the heart of everything we do is the design of Personalised Learning not just as a technique, but as a fundamental belief in the unique potential of every individual learner. We partner with schools to build environments where this potential can truly flourish.",
+          "Sarvata means ‘whole’. Our work is dedicated to the holistic development of schools and educators.",
+          "We were born from years of working alongside teachers and school leaders wrestling with how to translate ideals of inclusion and personalization into systematic, sustainable practice. We guide teachers and school leaders to become truly inclusive and responsive in their practice. We embed practical, research-driven strategies into the daily life of schools, moving educators from aspiration to implementation.",
+          "At the heart of everything we do is Personalised Learning, not as a technique, but as a fundamental belief in the unique potential of every learner. We partner with schools to build the environments, systems, and educator capacities where this potential can truly flourish."
         ]}
+        founderTitle="Founder’s Journey"
+        founderText="Our founder established Sarvata with a profound commitment to educational equity and the belief that every child deserves a school environment designed for their unique potential. Drawing from decades of firsthand experience in diverse classrooms, the vision was to bridge the gap between aspirational pedagogy and daily practice."
+        image="/about-1.jpg"
       />
 
       <MissionSection
         title="Our Mission"
-        highlight="Our mission is simple yet profound: to inspire and create better educators and schools every day."
-        description="We strive to be mindful, providing a vibrant and supportive environment for growth. We impart knowledge and experience through reflective teaching and learning, advancing the aspirations of students, teachers, and leaders while upholding integrity and trust. We believe deeply that it's not about how good we are; it's about striving to be better, together."
+        highlight="Our mission is simple yet profound: to inspire and create better educators and schools, every day."
+        paragraphs={[
+          "We strive to be mindful in our approach, providing a vibrant and supportive environment for growth. We impart knowledge and experience through reflective teaching and learning, advancing the aspirations of students, teachers, and leaders while upholding integrity and trust.",
+          "It’s not about how good we are. It’s about striving to be better, together."
+        ]}
       />
 
       <PhilosophySection
-        title="Our Philosophy: The Personalization Imperative"
-        intro="The true next wave of educational innovation isn't about technology; it's about shifting our focus from the outcomes of learning to the human learner at the heart of the process. It’s about moving beyond the one-size-fits-all model towards learning that is deeply personal, profoundly engaging, and relentlessly focused on the individual."
-        image="/about-1.jpg"
+        title="Our Philosophy"
+        subtitle="Learning is a Verb, Not a Noun"
+        intro="Education’s next frontier isn’t technological. It’s human. It’s the shift from focusing on learning outcomes to focusing on the learner at the center of the process. We build our work on three interconnected principles:"
         points={[
           {
-            title: "Redefining Personalization: Moving from 'What' to 'How'",
-            desc: "For too long, we've confused 'customization'-offering optimized pathways-with true 'personalization.' Real personalization hands the menu to the learner. It cedes control, giving students genuine agency and choice in how they explore a concept. When learners direct their own process, they ignite intrinsic motivation and build profound, lasting ownership of their education. We must see learning as a dynamic verb, not a static noun.",
+            title: "Expanding Learner Agency",
+            desc: "Personalization isn’t about optimizing a single pathway for each student. It’s about creating multiple pathways and progressively giving learners choice over which route they take. When students experience genuine autonomy in how they explore a concept, many often demonstrate stronger intrinsic motivation. This doesn’t mean eliminating structure. It means building agency as competence develops.",
           },
           {
-            title: "The New Role of the Teacher: From Facilitator to Mentor",
-            desc: "A facilitator manages the external learning environment. A mentor guides the internal one. The next wave demands that educators transcend content delivery to embrace this profound role. The focus shifts to fostering metacognition-helping learners reflect on how they learn and who they are becoming through the process. We empower educators to mentor the development of self-aware, self-directed human beings.",
+            title: "Guiding the Internal Environment",
+            desc: "Beyond managing classrooms and delivering content, educators have the opportunity to guide students’ internal development: how learners think about their thinking, regulate themselves, and build identity as learners. This mentorship dimension helps students understand not just what they learn but how they learn. Over time, this metacognitive awareness can support greater independence across academic and non-academic contexts.",
           },
           {
-            title: "The True Purpose: Education as a Path to Self-Actualization",
-            desc: "When we center the learner, empowering them with choice and mentored reflection, we do more than teach subjects-we guide them towards self-realization. By understanding how they learn, students begin to understand who they are. This is the foundation for fulfilling their potential and finding their place in the world.",
+            title: "Developing Self-Direction",
+            desc: "Alongside content mastery, many schools are exploring how to support learners in gradually directing their own growth. This capacity builds through explicit strategy instruction, supported practice, and progressive independence.",
+          }
+        ]}
+        researchTitle="Research Foundation"
+        researchText="These principles draw from decades of research in metacognition, self-determination theory, and expertise development. We also acknowledge reality: implementation varies by context, developmental stage matters, and real-world constraints shape what’s possible. Our role is helping schools navigate that complexity."
+      />
+
+      <JourneySection
+        title="Our Collaborative Journey"
+        intro="We believe in partnership, not prescriptions. Lasting change emerges when we work with you, not on you. Our approach unfolds in three phases:"
+        steps={[
+          {
+            title: "Phase 1: Understand Your Context",
+            desc: "We begin by learning from you. What are your goals? What’s working? Where’s the friction between aspiration and reality? This isn’t a generic audit. It's a genuine discovery of your unique culture, constraints, and aspirations—what you’re building toward and what’s standing in the way.",
           },
-           {
-            title: "The True Purpose: Education as a Path to Self-Actualization",
-            desc: "When we center the learner, empowering them with choice and mentored reflection, we do more than teach subjects-we guide them towards self-realization. By understanding how they learn, students begin to understand who they are. This is the foundation for fulfilling their potential and finding their place in the world.",
+          {
+            title: "Phase 2: Co-Create Solutions",
+            desc: "We adapt frameworks to your context and co-develop materials with your team. You bring deep expertise in your students and setting. We bring additional perspectives, research-informed strategies, and tools refined across diverse contexts. Together, we create approaches that fit your reality, not a template.",
+          },
+          {
+            title: "Phase 3: Build Sustainability",
+            desc: "We develop your internal capacity by mentoring teacher leaders, embedding practices into your daily routines, and creating structures that sustain themselves. Success means the approaches become how you naturally operate—part of your culture, not an initiative.",
           },
         ]}
       />
 
-      <JourneySection
-  title="Our Collaborative Journey"
-  intro="We believe in partnership, not just process. We work with you to embed lasting, meaningful change by moving through three collaborative phases."
-  steps={[
-    {
-      title: "Listen & Understand",
-      desc: "We begin by listening. We seek to understand your unique culture, goals, and challenges-not with a generic audit, but with a deep, empathetic discovery.",
-      icon: "/icon/icon-1.svg",
-    },
-    {
-      title: "Mentor & Co-Create",
-      desc: "We act as mentors, not just consultants. We co-create solutions with your team, co-developing lesson plans and mentoring your educators to build self-sustaining internal expertise.",
-      icon: "/icon/icon-2.svg",
-    },
-    {
-      title: "Embed & Sustain",
-      desc: "Our goal is to make ourselves obsolete. We help you embed these new, learner-centric practices into your school's DNA, creating a culture that sustains and refines itself long after our work is done.",
-      icon: "/icon/icon-3.svg",
-    },
-  ]}
-/>
+      <TestimonialsSection 
+        title="What Educators Say"
+        testimonials={[
+          { quote: "Sarvata transformed how we approach inclusive education. Their strategies are practical and immediately applicable.", author: "Sarah Jenkins, School Principal" },
+          { quote: "The mentorship provided by Sarvata gave our teachers the confidence to truly personalize learning for every student.", author: "David Chen, Lead Educator" },
+          { quote: "As a parent, seeing the shift in my child's engagement and autonomy has been nothing short of remarkable.", author: "Priya Sharma, Parent" }
+        ]}
+      />
+
+      <ImpactSection 
+        title="Our Impact Snapshot"
+        metrics={[
+          { value: 50, suffix: "+", label: "Partner Schools" },
+          { value: 2000, suffix: "+", label: "Educators Mentored" },
+          { value: 50000, suffix: "+", label: "Students Impacted" },
+          { value: 100, suffix: "%", label: "Commitment to Equity" }
+        ]}
+      />
 
     </main>
   );

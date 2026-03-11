@@ -171,7 +171,7 @@ const ModernPlantHero = () => {
         <div className="absolute right-12 bottom-12 flex flex-col items-end gap-3 pointer-events-none z-20">
           <div className="text-right text-[#1a2e05]">
             <span className="block text-[10px] font-bold opacity-30 tracking-[0.4em] uppercase">Strata Depth</span>
-            <span className="text-3xl font-light font-mono">
+            <span className="text-3xl font-light font-secondary">
               {displayDepth}m
             </span>
           </div>

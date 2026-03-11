@@ -13,19 +13,14 @@ export default function MainHero({
   title,
   breadcrumbs = [],
 }) {
-  const HEADER_HEIGHT = 80; // h-20
-
   return (
-    <section
-      className="relative w-full overflow-hidden"
-      style={{ paddingTop: HEADER_HEIGHT }}
-    >
+    <section className="relative w-full overflow-hidden">
       {/* ================= IMAGE WRAPPER ================= */}
       <motion.div
         initial={{ scale: 1.06 }}
         animate={{ scale: 1 }}
         transition={{ duration: 1.1, ease: "easeOut" }}
-        className="relative w-full h-[600px] sm:h-[320px] md:h-[400px]"
+        className="relative w-full h-[500px] sm:h-[380px] md:h-[460px]"
       >
         {/* WEB IMAGE */}
         <Image
@@ -46,12 +41,12 @@ export default function MainHero({
         />
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-black/10" />
       </motion.div>
 
       {/* ================= CONTENT ================= */}
-      <div className="container absolute inset-0 flex items-end">
-        <div className="px-4 md:px-0 pb-6 md:pb-10">
+      <div className="absolute inset-0 flex items-end">
+        <div className="container px-4 md:px-0 pb-8 md:pb-12">
           {/* TITLE */}
           {title && (
             <motion.h1
@@ -60,11 +55,10 @@ export default function MainHero({
               transition={{ delay: 0.25, duration: 0.6 }}
               className="
                 text-white
-                font-heading
-                text-3xl md:text-4xl
-                font-semibold
-                mb-2
-                drop-shadow-[0_8px_24px_rgba(0,0,0,0.55)]
+                text-3xl md:text-4xl lg:text-5xl
+                font-bold
+                mb-3
+                drop-shadow-[0_4px_16px_rgba(0,0,0,0.4)]
               "
             >
               {title}

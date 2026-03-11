@@ -1,7 +1,8 @@
 "use client";
 
 import MainHero from "@/components/MainHero";
-import ContactSection from "@/components/ContactSection";
+import ContactLayout from "@/components/contact/ContactLayout";
+import TakeFirstStep from "@/components/contact/TakeFirstStep";
 
 export default function ContactPage() {
   return (
@@ -9,12 +10,12 @@ export default function ContactPage() {
       <MainHero
         webImage="/contact-web.jpg"
         mobileImage="/contact-mobile.jpg"
-        title="Have a Question or Need Support? We’re Here to Help"
+        title="Have a Question or Need Support? We're Here to Help"
         breadcrumbs={[{ label: "Contact Us" }]}
       />
 
-    <ContactSection />
-
+      <ContactLayout />
+      {/* <TakeFirstStep /> */}
     </main>
   );
 }

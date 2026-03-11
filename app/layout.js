@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono, Inter, Playfair_Display } from "next/font/google";
+import { Manrope, Inter } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
 
@@ -7,29 +7,18 @@ import Footer from "@/components/Footer";
 import SarvataLoader from "@/components/SarvataLoader";
 import ScrollUI from "@/components/ScrollUI";
 
-/* UI Fonts */
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+/* Primary Heading font - Manrope */
+const primaryFont = Manrope({
+  variable: "--font-primary",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+/* Secondary Body font - Inter */
+const secondaryFont = Inter({
+  variable: "--font-secondary",
   subsets: ["latin"],
-});
-
-/* Body font */
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-});
-
-/* Elegant heading font */
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata = {
@@ -43,11 +32,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`
-          ${geistSans.variable}
-          ${geistMono.variable}
-          ${inter.variable}
-          ${playfair.variable}
+          ${primaryFont.variable}
+          ${secondaryFont.variable}
           antialiased
+          bg-background text-foreground
         `}
       >
          <Header />
