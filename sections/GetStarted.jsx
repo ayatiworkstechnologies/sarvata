@@ -6,35 +6,35 @@ import Image from "next/image";
 
 const actions = [
     {
+        tag: "Exploring options?",
         label: "Learn about our services",
-        description: "Exploring options?",
         href: "/services",
-        style: "primary",
+        variant: "primary",
     },
     {
+        tag: "Ready to talk?",
         label: "Schedule a consultation",
-        description: "Ready to talk?",
         href: "/contact",
-        style: "secondary",
+        variant: "secondary",
     },
     {
+        tag: "Questions?",
         label: "Contact us",
-        description: "Questions?",
         href: "/contact",
-        style: "tertiary",
+        variant: "outline",
     },
 ];
 
 export default function GetStarted() {
     return (
         <section className="relative bg-white py-24 md:py-32 overflow-hidden">
-            {/* Bright animated background accents */}
+            {/* Background accents */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(160,102,170,0.05),transparent_50%)] pointer-events-none" />
             <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
 
-            <div className="relative mx-auto max-w-5xl px-6 md:px-10 z-10">
+            <div className="relative mx-auto max-w-6xl px-6 md:px-10 z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    
+
                     {/* Left content */}
                     <div className="lg:col-span-7 select-none text-center lg:text-left">
                         <motion.div
@@ -43,13 +43,12 @@ export default function GetStarted() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
                         >
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary mb-8 text-sm font-medium">
-                                <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                            <p className="text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4">
                                 Take the First Step
-                            </div>
+                            </p>
                         </motion.div>
 
-                        <motion.h2 
+                        <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -60,7 +59,7 @@ export default function GetStarted() {
                             <span className="text-gradient">your community?</span>
                         </motion.h2>
 
-                        <motion.p 
+                        <motion.p
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
@@ -70,40 +69,37 @@ export default function GetStarted() {
                             Wherever you are in your journey, we&apos;re ready to meet you there with tailored, actionable support.
                         </motion.p>
 
-                        <motion.div 
+                        {/* ── Upgraded Buttons ── */}
+                        <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.3 }}
-                            className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-4"
+                            className="mt-10 flex flex-col sm:flex-row items-center lg:items-stretch gap-6"
                         >
                             {actions.map((action, i) => (
-                                <Link
-                                    key={i}
-                                    href={action.href}
-                                    className={`group relative flex flex-col items-center justify-center overflow-hidden rounded-xl w-full sm:w-auto px-8 py-4 transition-all duration-300
-                                        ${action.style === "primary"
-                                            ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg hover:shadow-primary/30 hover:-translate-y-1"
-                                            : action.style === "secondary"
-                                                ? "border-2 border-primary/20 text-foreground hover:border-primary bg-white hover:-translate-y-1"
-                                                : "text-muted hover:text-primary hover:-translate-y-1"
-                                        }`}
-                                >
-                                    <span className={`text-xs font-secondary mb-0.5 ${action.style === "primary" ? "text-white/80" : "text-muted/70"}`}>
-                                        {action.description}
+                                <div key={i} className="flex flex-col items-start gap-2 flex-1 min-w-0">
+                                    {/* Tag — outside the button */}
+                                    <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-muted/70">
+                                        {action.tag}
                                     </span>
-                                    <span className="text-base font-bold flex items-center gap-2 z-10 whitespace-nowrap">
+
+                                    {/* Button */}
+                                    <Link
+                                        href={action.href}
+                                        className={`btn w-full ${action.variant === "primary"
+                                            ? "btn-primary"
+                                            : action.variant === "secondary"
+                                                ? "btn-secondary"
+                                                : "btn-outline"
+                                            }`}
+                                    >
                                         {action.label}
-                                        <motion.svg 
-                                            className="w-4 h-4" 
-                                            fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
-                                            initial={{ x: 0 }}
-                                            whileHover={{ x: 4 }}
-                                        >
+                                        <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                                             <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-                                        </motion.svg>
-                                    </span>
-                                </Link>
+                                        </svg>
+                                    </Link>
+                                </div>
                             ))}
                         </motion.div>
                     </div>
@@ -117,18 +113,18 @@ export default function GetStarted() {
                             transition={{ duration: 0.8 }}
                             className="relative h-[450px] w-full rounded-[2rem] overflow-hidden shadow-2xl border border-border/50"
                         >
-                            <Image 
-                                src="/home-contact.jpg" 
+                            <Image
+                                src="/home-contact.jpg"
                                 alt="Get Started with Sarvata"
                                 fill
                                 className="object-cover"
                             />
-                            {/* Inner glow/shadow for depth */}
                             <div className="absolute inset-0 rounded-[2rem] shadow-[inset_0_0_40px_rgba(0,0,0,0.1)] pointer-events-none" />
                         </motion.div>
                     </div>
 
                 </div>
+
             </div>
         </section>
     );

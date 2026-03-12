@@ -64,9 +64,9 @@ export default function ServicesLayout() {
             transition={{ duration: 0.7 }}
             className="text-center max-w-3xl mx-auto mb-20"
           >
-            <div className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary font-semibold text-sm mb-6 tracking-wide">
+            <p className="text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4">
               SERVICES
-            </div>
+            </p>
             <h2 className="heading-xl mb-6">
               How We Support Your{" "}
               <span className="text-gradient">Educational Community</span>
@@ -162,32 +162,25 @@ export default function ServicesLayout() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-            <motion.button
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.97 }}
-              className="px-8 py-4 rounded-xl bg-gradient-to-r from-primary to-secondary text-white font-bold text-base shadow-xl hover:shadow-primary/40 transition-shadow w-full sm:w-auto"
-            >
+            <Link href="/services" className="btn btn-primary w-full sm:w-auto">
               Download Services Guide
-            </motion.button>
-
-            <Link href="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                className="px-8 py-4 rounded-xl bg-white border border-border text-foreground font-bold text-base hover:border-primary/50 hover:text-primary hover:shadow-lg transition-all w-full sm:w-auto"
-              >
-                Schedule Consultation
-              </motion.button>
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </Link>
 
-            <Link href="/contact">
-              <motion.button
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.97 }}
-                className="px-8 py-4 rounded-xl bg-white border border-border text-foreground font-bold text-base hover:border-primary/50 hover:text-primary hover:shadow-lg transition-all w-full sm:w-auto"
-              >
-                Contact Us
-              </motion.button>
+            <Link href="/contact" className="btn btn-secondary w-full sm:w-auto">
+              Schedule Consultation
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </Link>
+
+            <Link href="/contact" className="btn btn-outline w-full sm:w-auto">
+              Contact Us
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </Link>
           </div>
         </motion.div>

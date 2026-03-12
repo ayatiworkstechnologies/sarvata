@@ -116,10 +116,10 @@ export default function ThreeDExperience() {
                         className="max-w-2xl"
                     >
                         <motion.p
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ duration: 1, delay: 1 }}
-                            className="text-[11px] uppercase tracking-[0.4em] text-primary font-bold mb-4"
+                            initial={{ opacity: 0, y: 15 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.9 }}
+                            className="text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4"
                         >
                             Sarvata
                         </motion.p>

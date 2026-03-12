@@ -16,9 +16,9 @@ export default function MissionSection({ title, highlight, paragraphs }) {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 text-emerald-700 mb-8 text-sm font-bold tracking-widest uppercase shadow-sm">
+          <p className="text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4 text-center">
             {title}
-          </div>
+          </p>
           
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-light leading-tight text-foreground mb-12 tracking-tight max-w-4xl mx-auto">
              {highlight.split('every day.').map((part, i, arr) => (

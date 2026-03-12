@@ -27,13 +27,12 @@ export default function StorySection({
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-[12px] uppercase tracking-[0.3em] text-[#6bcf8e] font-bold mb-4">
-              {title}
+            <p className="text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4">
+              Our Story
             </p>
             <h2 className="text-4xl font-light leading-tight text-foreground md:text-5xl lg:text-6xl tracking-tight mb-8">
-              {subtitle}
+              &ldquo;The education is not the learning of facts, but the training of the mind to think.&rdquo;
             </h2>
-            
             <div className="space-y-6 text-[17px] leading-relaxed text-muted-foreground font-light text-justify">
               {paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
@@ -45,7 +44,7 @@ export default function StorySection({
                <div className="absolute inset-0 bg-gradient-to-br from-[#6bcf8e]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                <h3 className="text-xl md:text-2xl font-medium text-foreground mb-4 relative z-10">{founderTitle}</h3>
                <p className="text-muted-foreground font-light text-[16px] leading-relaxed relative z-10">
-                 "{founderText}"
+                 &ldquo;{founderText}&rdquo;
                </p>
             </div>
           </motion.div>

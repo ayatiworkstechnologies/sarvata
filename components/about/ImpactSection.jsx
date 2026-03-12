@@ -5,20 +5,12 @@ import { useRef, useEffect } from "react";
 
 function AnimatedNumber({ value }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-50px" });
-  
-  const spring = useSpring(0, {
-    mass: 0.8,
-    stiffness: 75,
-    damping: 15
-  });
-  
-  const display = useTransform(spring, (current) => Math.floor(current));
+  const inView = useInView(ref, { once: true, margin: "-10px" });
+  const spring = useSpring(0, { stiffness: 40, damping: 20 });
+  const display = useTransform(spring, (current) => Math.floor(current).toLocaleString());
 
   useEffect(() => {
-    if (inView) {
-      spring.set(value);
-    }
+    if (inView) spring.set(value);
   }, [inView, value, spring]);
 
   return <motion.span ref={ref}>{display}</motion.span>;
@@ -26,50 +18,51 @@ function AnimatedNumber({ value }) {
 
 export default function ImpactSection({ title, metrics }) {
   return (
-    <section className="relative bg-white py-24 md:py-32 overflow-hidden border-t border-black/5">
-      {/* Background graphic */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none translate-x-1/2 -translate-y-1/2" />
-      
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10">
-        
-        <motion.div
-           initial={{ opacity: 0, y: 30 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true, margin: "-100px" }}
-           transition={{ duration: 0.8 }}
-           className="text-center mb-20"
-        >
-          <p className="text-[12px] uppercase tracking-[0.3em] text-primary font-bold mb-4">
-            At a Glance
-          </p>
-          <h2 className="text-3xl md:text-5xl font-light text-foreground tracking-tight">
-            {title}
-          </h2>
-        </motion.div>
+    <section className="relative bg-white py-24 md:py-40">
+      <div className="mx-auto max-w-7xl px-6">
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
-          {metrics.map((m, i) => (
-             <motion.div
-               key={i}
-               initial={{ opacity: 0, y: 40 }}
-               whileInView={{ opacity: 1, y: 0 }}
-               viewport={{ once: true, margin: "-50px" }}
-               transition={{ duration: 0.6, delay: i * 0.1 }}
-               className="text-center group"
-             >
-               <div className="w-full max-w-[200px] mx-auto flex flex-col items-center justify-center aspect-square rounded-full bg-primary/5 mb-6 group-hover:bg-primary/10 transition-colors duration-500 border border-primary/10 shadow-sm">
-                  <span className="text-4xl md:text-5xl lg:text-6xl font-light text-primary font-secondary tracking-tighter">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+          {/* Text Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-4"
+          >
+            <h2 className="text-4xl md:text-5xl font-extralight text-slate-900 leading-[1.1] mb-6">
+              Empowering <span className="text-primary font-medium italic">growth</span> at every scale.
+            </h2>
+            <p className="text-slate-500 text-lg font-light leading-relaxed">
+              Our data reflects a commitment to transforming the educational landscape through inclusive practices and dedicated mentorship.
+            </p>
+          </motion.div>
+
+          {/* Metrics Grid */}
+          <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {metrics.map((m, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className={`p-10 rounded-[2.5rem] border border-slate-100 flex flex-col justify-between group transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.08)] hover:-translate-y-2 
+                ${i % 2 === 1 ? 'mt-0 md:mt-12 bg-primary/[0.02]' : 'bg-white'}`}
+              >
+                <div>
+                  <span className="text-5xl md:text-6xl font-secondary text-slate-900 tracking-tighter block mb-4">
                     <AnimatedNumber value={m.value} />
-                    {m.suffix}
+                    <span className="text-primary">{m.suffix}</span>
                   </span>
-               </div>
-               <p className="text-muted-foreground font-medium text-[15px] md:text-[17px] px-4">
-                 {m.label}
-               </p>
-             </motion.div>
-          ))}
+                  <div className="w-12 h-1 bg-primary/20 group-hover:w-20 transition-all duration-500 rounded-full" />
+                </div>
+                <p className="mt-8 text-slate-500 font-medium tracking-wide uppercase text-xs">
+                  {m.label}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
-
       </div>
     </section>
   );

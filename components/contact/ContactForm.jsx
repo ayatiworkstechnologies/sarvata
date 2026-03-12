@@ -132,11 +132,7 @@ export default function ContactForm() {
             whileTap={{ scale: 0.98 }}
             disabled={isSubmitting}
             className="
-              w-full py-3 rounded-xl text-white font-bold text-sm
-              bg-gradient-to-r from-primary to-secondary
-              hover:shadow-lg hover:shadow-primary/20
-              transition-all duration-300
-              flex items-center justify-center gap-2
+              btn btn-primary w-full
             "
           >
             {isSubmitting ? (

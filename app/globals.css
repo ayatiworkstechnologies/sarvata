@@ -76,7 +76,11 @@ body {
   scroll-behavior: smooth;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: var(--font-primary);
   /* letter-spacing: -0.015em; */
 }
@@ -114,6 +118,209 @@ p {
 }
 
 /* ======================================================
+   PREMIUM BUTTON SYSTEM
+====================================================== */
+.btn {
+  --btn-bg: linear-gradient(135deg, var(--primary) 0%, #b77fc0 55%, var(--secondary) 100%);
+  --btn-text: #ffffff;
+  --btn-border: rgba(255, 255, 255, 0.2);
+  --btn-shadow: 0 14px 35px rgba(160, 102, 170, 0.22);
+  --btn-shadow-hover: 0 20px 45px rgba(160, 102, 170, 0.32);
+  --btn-curve: var(--primary);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+
+  padding: 0.95rem 2.1rem;
+  min-height: 54px;
+
+  border-radius: 9999px;
+  border: 1px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--btn-text);
+
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  overflow: visible;
+  isolation: isolate;
+
+  box-shadow:
+    var(--btn-shadow),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease;
+}
+
+/* glossy top shine */
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  border-radius: inherit;
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.26) 0%,
+      rgba(255, 255, 255, 0.08) 22%,
+      rgba(255, 255, 255, 0) 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* outer decorative curves */
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: -5px;
+  border-radius: inherit;
+  border: 1.5px solid color-mix(in srgb, var(--btn-curve) 60%, transparent);
+  opacity: 0.45;
+  transform: scale(0.96);
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.btn>* {
+  position: relative;
+  z-index: 1;
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow:
+    var(--btn-shadow-hover),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.btn:hover::after {
+  transform: scale(1.03);
+  opacity: 0.75;
+}
+
+.btn:active {
+  transform: translateY(-1px) scale(0.995);
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 4px rgba(160, 102, 170, 0.18),
+    var(--btn-shadow-hover);
+}
+
+/* icon animation */
+.btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* ======================================================
+   PRIMARY BUTTON
+====================================================== */
+.btn-primary {
+  --btn-bg: linear-gradient(135deg, #8d5497 0%, var(--primary) 38%, #c89855 100%);
+  --btn-text: #ffffff;
+  --btn-border: rgba(255, 255, 255, 0.14);
+  --btn-shadow: 0 14px 34px rgba(160, 102, 170, 0.24);
+  --btn-shadow-hover: 0 22px 48px rgba(160, 102, 170, 0.34);
+  --btn-curve: var(--primary);
+}
+
+/* ======================================================
+   SECONDARY BUTTON
+====================================================== */
+.btn-secondary {
+  --btn-bg: linear-gradient(135deg, #1f1724 0%, #2c1d31 100%);
+  --btn-text: #ffffff;
+  --btn-border: rgba(255, 255, 255, 0.08);
+  --btn-shadow: 0 12px 30px rgba(23, 23, 23, 0.18);
+  --btn-shadow-hover: 0 18px 42px rgba(23, 23, 23, 0.26);
+  --btn-curve: #2c1d31;
+}
+
+.btn-secondary:hover {
+  --btn-bg: linear-gradient(135deg, #2c1d31 0%, var(--primary) 100%);
+}
+
+/* ======================================================
+   OUTLINE BUTTON
+====================================================== */
+.btn-outline {
+  --btn-bg: rgba(255, 255, 255, 0.76);
+  --btn-text: var(--foreground);
+  --btn-border: rgba(160, 102, 170, 0.22);
+  --btn-shadow: 0 10px 28px rgba(160, 102, 170, 0.08);
+  --btn-shadow-hover: 0 16px 36px rgba(160, 102, 170, 0.16);
+  --btn-curve: var(--primary);
+
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.btn-outline:hover {
+  --btn-bg: linear-gradient(135deg, rgba(160, 102, 170, 0.08), rgba(226, 196, 115, 0.14));
+  --btn-text: var(--primary);
+  --btn-border: rgba(160, 102, 170, 0.35);
+}
+
+/* ======================================================
+   SOFT GOLD BUTTON
+====================================================== */
+.btn-gold {
+  --btn-bg: linear-gradient(135deg, #d8b968 0%, var(--secondary) 50%, #f2dc96 100%);
+  --btn-text: #2a1b0f;
+  --btn-border: rgba(255, 255, 255, 0.18);
+  --btn-shadow: 0 14px 34px rgba(226, 196, 115, 0.24);
+  --btn-shadow-hover: 0 20px 44px rgba(226, 196, 115, 0.32);
+  --btn-curve: var(--secondary);
+}
+
+/* ======================================================
+   SIZE HELPERS
+====================================================== */
+.btn-sm {
+  min-height: 44px;
+  padding: 0.75rem 1.4rem;
+  font-size: 0.85rem;
+}
+
+.btn-lg {
+  min-height: 60px;
+  padding: 1.05rem 2.5rem;
+  font-size: 1rem;
+}
+
+/* ======================================================
+   MOBILE
+====================================================== */
+@media (max-width: 640px) {
+  .btn {
+    padding: 0.9rem 1.6rem;
+    min-height: 50px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ======================================================
    COMMON LAYOUT UTILITIES
 ====================================================== */
 .section {
@@ -129,7 +336,8 @@ p {
 }
 
 .container {
-  max-width: 1200px; /* or 1280px */
+  max-width: 1200px;
+  /* or 1280px */
   margin-left: auto;
   margin-right: auto;
 }
@@ -205,7 +413,7 @@ p {
   border: 1px solid var(--secondary);
   background: var(--background);
   color: var(--color-black);
-  
+
 }
 
 .input:focus,
@@ -265,13 +473,25 @@ p {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0 }
-  to { opacity: 1 }
+  from {
+    opacity: 0
+  }
+
+  to {
+    opacity: 1
+  }
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(14px) }
-  to { opacity: 1; transform: translateY(0) }
+  from {
+    opacity: 0;
+    transform: translateY(14px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
 }
 
 /* ======================================================
@@ -288,12 +508,15 @@ p {
 
 /* Hide scrollbar but keep scrolling */
 .scrollbar-hide {
-  -ms-overflow-style: none;  /* IE & Edge */
-  scrollbar-width: none;     /* Firefox */
+  -ms-overflow-style: none;
+  /* IE & Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none;             /* Chrome, Safari */
+  display: none;
+  /* Chrome, Safari */
 }
 
 /* ===============================
@@ -318,11 +541,13 @@ p {
     box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.35);
     opacity: 0.5;
   }
+
   60% {
     transform: scale(1);
     box-shadow: 0 0 0 28px rgba(255, 165, 0, 0);
     opacity: 1;
   }
+
   100% {
     transform: scale(0.95);
     opacity: 0.5;
@@ -330,10 +555,25 @@ p {
 }
 
 /* ===== DESKTOP POSITIONS ===== */
-.node-educators { top: 59%; left: 49%; }
-.node-leaders   { top: 67%; left: 39%; }
-.node-parents   { top: 65%; left: 56%; }
-.node-learners  { top: 80%; left: 47%; }
+.node-educators {
+  top: 59%;
+  left: 49%;
+}
+
+.node-leaders {
+  top: 67%;
+  left: 39%;
+}
+
+.node-parents {
+  top: 65%;
+  left: 56%;
+}
+
+.node-learners {
+  top: 80%;
+  left: 47%;
+}
 
 /* ===============================
    SHARED SEED TOOLTIP
@@ -371,10 +611,25 @@ p {
     height: 72px;
   }
 
-  .node-educators { top: 60%; left: 50%; }
-  .node-leaders   { top: 67%; left: 81%; }
-  .node-parents   { top: 69%; left: 8%; }
-  .node-learners  { top: 83%; left: 46%; }
+  .node-educators {
+    top: 60%;
+    left: 50%;
+  }
+
+  .node-leaders {
+    top: 67%;
+    left: 81%;
+  }
+
+  .node-parents {
+    top: 69%;
+    left: 8%;
+  }
+
+  .node-learners {
+    top: 83%;
+    left: 46%;
+  }
 
   .seed-tooltip {
     font-size: 13px;
@@ -386,8 +641,15 @@ p {
    SUBTLE FLOAT (IMAGE)
 ================================ */
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
 }
 
 .animate-float {
@@ -402,6 +664,7 @@ p {
     opacity: 0;
     transform: translateY(12px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -456,20 +719,20 @@ p {
   top: 12px;
   height: 90px;
   width: 2px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.7), rgba(255,255,255,0.1));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1));
 }
 
 .leaf-vein.side {
   height: 22px;
   width: 1px;
-  background: linear-gradient(to right, rgba(255,255,255,0.6), rgba(255,255,255,0));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
   transform: translateX(-50%) rotate(30deg);
 }
 
 .bg-soil-texture {
   background-image:
-    radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
-    radial-gradient(rgba(0,0,0,0.12) 1px, transparent 1px);
+    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    radial-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px);
   background-size: 6px 6px, 10px 10px;
   background-position: 0 0, 3px 3px;
 }
@@ -481,27 +744,54 @@ p {
 
 /* ===== Leaf motion ===== */
 @keyframes leafWind {
-  0%,100% { transform: rotate(0deg); }
-  50% { transform: rotate(6deg); }
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(6deg);
+  }
 }
 
 /* ===== Stem growth ===== */
 @keyframes stemGrow {
-  from { height: 0px; }
-  to { height: 170px; }
+  from {
+    height: 0px;
+  }
+
+  to {
+    height: 170px;
+  }
 }
 
 /* ===== Roots draw ===== */
 @keyframes rootGrow {
-  from { stroke-dashoffset: 320; }
-  to { stroke-dashoffset: 0; }
+  from {
+    stroke-dashoffset: 320;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 /* ===== Energy flow ===== */
 @keyframes energyFlow {
-  0% { stroke-dashoffset: 320; opacity: 0.3; }
-  50% { opacity: 1; }
-  100% { stroke-dashoffset: 0; opacity: 0.3; }
+  0% {
+    stroke-dashoffset: 320;
+    opacity: 0.3;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.3;
+  }
 }
 
 .leaf-top {
@@ -515,7 +805,7 @@ p {
 }
 
 .stem-natural {
-  animation: stemGrow 2.2s cubic-bezier(.22,.61,.36,1) forwards;
+  animation: stemGrow 2.2s cubic-bezier(.22, .61, .36, 1) forwards;
 }
 
 .root-path {
@@ -534,7 +824,7 @@ p {
 }
 
 .soil-texture {
-  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: 6px 6px;
 }
 
@@ -615,23 +905,47 @@ p {
 
 /* Animations */
 @keyframes sway {
-  0% { transform: rotate(0deg); }
-  50% { transform: rotate(5deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @keyframes growStem {
-  0% { transform: scaleY(0.95); }
-  50% { transform: scaleY(1); }
-  100% { transform: scaleY(0.95); }
+  0% {
+    transform: scaleY(0.95);
+  }
+
+  50% {
+    transform: scaleY(1);
+  }
+
+  100% {
+    transform: scaleY(0.95);
+  }
 }
 
 @keyframes rootSpread {
-  0% { transform: scaleX(0.9); }
+  0% {
+    transform: scaleX(0.9);
+  }
+
   /* Leaves */
 
-  50% { transform: scaleX(1); }
-  100% { transform: scaleX(0.9); }
+  50% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0.9);
+  }
 }
 
 /* Leaves */

@@ -181,7 +181,7 @@ const PlantHero = () => {
 
           {/* ================= POLLEN ================= */}
           <motion.g style={{ opacity: pollenOpacity }}>
-            {[...Array(8)].map((_, i) => (
+            {[20, 45, 15, 60, 30, 10, 55, 40].map((randY, i) => (
               <motion.circle
                 key={i}
                 r="1.4"
@@ -189,11 +189,11 @@ const PlantHero = () => {
                 initial={{ cx: 100, cy: 150 }}
                 animate={{
                   cx: [100, 100 + (i - 4) * 22],
-                  cy: [150, 100 - Math.random() * 60],
+                  cy: [150, 100 - randY],
                   opacity: [0, 1, 0],
                 }}
                 transition={{
-                  duration: 4 + Math.random() * 2,
+                  duration: 4 + (i % 3),
                   repeat: Infinity,
                   delay: i * 0.4,
                 }}
@@ -206,7 +206,7 @@ const PlantHero = () => {
         <div className="absolute bottom-10 flex flex-col items-center">
           <motion.span
             style={{ opacity: useTransform(scrollYProgress, [0, 0.1], [1, 0]) }}
-            className="mb-2 text-xs uppercase tracking-[0.4em] text-stone-400"
+            className="text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4"
           >
             Scroll to Plant
           </motion.span>
