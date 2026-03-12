@@ -115,7 +115,7 @@ export default function ServicesLayout() {
                     {/* CTA */}
                     <Link
                       href={service.href}
-                      className={`inline-flex items-center gap-2 font-semibold text-base bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent group-hover:gap-4 transition-all duration-300`}
+                      className="inline-flex items-center gap-2 font-semibold text-base text-primary group-hover:gap-4 transition-all duration-300"
                     >
                       {service.cta}
                       <svg
@@ -140,7 +140,7 @@ export default function ServicesLayout() {
         </div>
       </section>
 
-      {/* ================= GET STARTED BANNER ================= */}
+      {/* ================= Schedule Consultation BANNER ================= */}
       <section className="relative bg-soft-bg overflow-hidden border-t border-border/50">
         {/* Vibrant light glow */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-primary/10 via-secondary/10 to-transparent rounded-full blur-[100px] pointer-events-none" />
@@ -154,7 +154,7 @@ export default function ServicesLayout() {
           transition={{ duration: 0.7 }}
         >
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
-            Ready to <span className="text-gradient">Get Started?</span>
+            Ready to <span className="text-gradient">Schedule Consultation?</span>
           </h2>
           <p className="text-muted font-secondary text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
             Take the first step toward building a truly learner-centered

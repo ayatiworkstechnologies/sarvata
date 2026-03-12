@@ -24,7 +24,7 @@ export default function MissionSection({ title, highlight, paragraphs }) {
              {highlight.split('every day.').map((part, i, arr) => (
                 <span key={i}>
                   {part}
-                  {i < arr.length - 1 && <span className="font-semibold bg-gradient-to-r from-emerald-600 to-teal-600 bg-clip-text text-transparent">every day.</span>}
+                  {i < arr.length - 1 && <span className="font-semibold text-emerald-600">every day.</span>}
                 </span>
              ))}
              {/* Fallback rendering */}

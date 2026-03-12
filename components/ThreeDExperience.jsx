@@ -125,7 +125,7 @@ export default function ThreeDExperience() {
                         </motion.p>
                         <h1 className="text-4xl font-bold leading-[1.1] text-foreground md:text-5xl lg:text-7xl tracking-tight">
                             Transforming <br /> Educators &<br />
-                            <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Schools, Every Day</span>
+                            <span className="font-extrabold text-primary">Schools, Every Day</span>
                         </h1>
                         <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted font-secondary drop-shadow-sm">
                             We partner with schools, educators, and parents to create truly

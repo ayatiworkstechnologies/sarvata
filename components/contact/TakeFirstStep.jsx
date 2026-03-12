@@ -54,7 +54,7 @@ export default function TakeFirstStep() {
           >
             Ready to transform
             <br />
-            <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+            <span className="text-primary">
               your community?
             </span>
           </motion.h2>
@@ -86,34 +86,12 @@ export default function TakeFirstStep() {
                   {action.question}
                 </p>
 
-                {action.variant === "primary" ? (
-                  <Link
-                    href={action.href}
-                    className="
-                      w-full py-4 px-6 rounded-2xl font-bold text-base text-white
-                      bg-gradient-to-r from-primary to-secondary
-                      shadow-xl shadow-primary/30
-                      hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-1
-                      transition-all duration-300
-                      text-center border border-transparent
-                    "
-                  >
-                    {action.cta}
-                  </Link>
-                ) : (
-                  <Link
-                    href={action.href}
-                    className="
-                      w-full py-4 px-6 rounded-2xl font-bold text-base text-foreground
-                      border border-border bg-white shadow-sm
-                      hover:border-primary/50 hover:text-primary hover:shadow-lg hover:-translate-y-1
-                      transition-all duration-300
-                      text-center
-                    "
-                  >
-                    {action.cta}
-                  </Link>
-                )}
+                <Link
+                  href={action.href}
+                  className={`btn w-full ${action.variant === "primary" ? "btn-primary" : "btn-outline"}`}
+                >
+                  {action.cta}
+                </Link>
               </motion.div>
             ))}
           </div>

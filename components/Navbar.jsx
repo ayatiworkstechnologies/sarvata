@@ -5,184 +5,269 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+import ConsultationModal from "./ConsultationModal";
 
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [openConsultation, setOpenConsultation] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
+    const handleScroll = () => setScrolled(window.scrollY > 16);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const isActive = (href) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
+
+  const isActive = (href) => {
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
+
+  const servicesActive =
+    isActive("/services") ||
+    isActive("/pathway-educators") ||
+    isActive("/pathway-leaders") ||
+    isActive("/pathway-parents");
 
   return (
-    <motion.header
-      initial={{ y: -80 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/95 backdrop-blur-xl shadow-sm border-b border-black/5"
-          : "bg-white/80 backdrop-blur-lg"
-      }`}
-    >
-      <div className="container-max h-20 flex items-center justify-between">
-        {/* LOGO */}
-        <Link href="/" className="flex items-center shrink-0">
-          <Image
-            src="/logo-new.png"
-            alt="Sarvata"
-            width={160}
-            height={64}
-            priority
-            className="h-14 w-auto hover:opacity-80 transition-opacity"
-          />
-        </Link>
-
-        {/* ================= DESKTOP NAV ================= */}
-        <nav className="hidden md:flex items-center gap-8 lg:gap-10 text-[15px] font-semibold h-full">
-          <NavItem name="Home" href="/" active={isActive("/")} />
-          <NavItem name="About" href="/about" active={isActive("/about")} />
-          <NavItem
-            name="Services"
-            href="/services"
-            active={isActive("/services") || isActive("/pathway")}
-            dropdownItems={[
-              { name: "For Educators", href: "/pathway-educators" },
-              { name: "For School Leaders", href: "/pathway-leaders" },
-              { name: "For Parents", href: "/pathway-parents" },
-            ]}
-          />
-          <NavItem name="Contact" href="/contact" active={isActive("/contact")} />
-        </nav>
-
-        {/* ================= DESKTOP CTA ================= */}
-        <div className="hidden md:flex items-center shrink-0">
-          <Link href="/contact" className="btn btn-secondary text-sm">
-            Get Started
-          </Link>
-        </div>
-
-        {/* ================= MOBILE TOGGLE ================= */}
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="md:hidden relative w-10 h-10 flex items-center justify-center text-foreground"
-          aria-label="Toggle menu"
-        >
-          <motion.span
-            animate={menuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="absolute top-2.5 w-6 h-[2px] bg-current rounded-full"
-          />
-          <motion.span
-            animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
-            transition={{ duration: 0.2 }}
-            className="absolute top-[18px] w-6 h-[2px] bg-current rounded-full"
-          />
-          <motion.span
-            animate={menuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
-            transition={{ duration: 0.3 }}
-            className="absolute top-[26px] w-6 h-[2px] bg-current rounded-full"
-          />
-        </button>
-      </div>
-
-      {/* ================= MOBILE MENU ================= */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
-            className="md:hidden bg-white border-t border-border/40 overflow-hidden"
+    <>
+      <motion.header
+        initial={{ y: -80, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+        className="fixed inset-x-0 top-0 z-50"
+      >
+        <div className="px-4 pt-4 md:px-6 lg:px-8">
+          <div
+            className={`mx-auto max-w-7xl rounded-2xl transition-all duration-300 ${scrolled
+                ? "bg-white/80 backdrop-blur-2xl shadow-[0_12px_40px_rgba(15,23,42,0.08)] ring-1 ring-black/5"
+                : "bg-white/65 backdrop-blur-xl ring-1 ring-white/40"
+              }`}
           >
-            <nav className="px-6 py-8 space-y-1">
-              <MobileLink name="Home" href="/" pathname={pathname} setMenuOpen={setMenuOpen} />
-              <MobileLink name="About" href="/about" pathname={pathname} setMenuOpen={setMenuOpen} />
-              
-              {/* Expandable Services */}
-              <div className="py-2">
-                <MobileLink name="Services" href="/services" pathname={pathname} setMenuOpen={setMenuOpen} />
-                <div className="ml-4 mt-2 space-y-1 border-l-2 border-primary/10">
-                  <MobileLink name="For Educators" href="/pathway-educators" pathname={pathname} setMenuOpen={setMenuOpen} isSub />
-                  <MobileLink name="For School Leaders" href="/pathway-leaders" pathname={pathname} setMenuOpen={setMenuOpen} isSub />
-                  <MobileLink name="For Parents" href="/pathway-parents" pathname={pathname} setMenuOpen={setMenuOpen} isSub />
+            <div className="flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
+              {/* LOGO */}
+              <Link href="/" className="flex items-center shrink-0">
+                <Image
+                  src="/logo-new.png"
+                  alt="Sarvata"
+                  width={160}
+                  height={64}
+                  priority
+                  className="h-12 w-auto md:h-14 transition duration-300 hover:opacity-90"
+                />
+              </Link>
+
+              {/* DESKTOP NAV */}
+              <nav className="hidden md:flex items-center">
+                <div className="flex items-center gap-2 rounded-full bg-black/[0.03] p-1.5">
+                  <NavItem name="Home" href="/" active={isActive("/")} />
+                  <NavItem name="About" href="/about" active={isActive("/about")} />
+                  <NavItem
+                    name="Services"
+                    href="/services"
+                    active={servicesActive}
+                    dropdownItems={[
+                      { name: "For Educators", href: "/pathway-educators" },
+                      { name: "For School Leaders", href: "/pathway-leaders" },
+                      { name: "For Parents", href: "/pathway-parents" },
+                    ]}
+                  />
+                  <NavItem name="Contact" href="/contact" active={isActive("/contact")} />
                 </div>
+              </nav>
+
+              {/* DESKTOP CTA */}
+              <div className="hidden md:flex items-center shrink-0">
+                <button
+                  type="button"
+                  onClick={() => setOpenConsultation(true)}
+                  className="inline-flex items-center justify-center rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-black/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary"
+                >
+                  Schedule Consultation
+                </button>
               </div>
 
-              <MobileLink name="Contact" href="/contact" pathname={pathname} setMenuOpen={setMenuOpen} />
-              <div className="pt-6">
-                <Link
-                  href="/contact"
-                  onClick={() => setMenuOpen(false)}
-                  className="btn btn-secondary w-full text-sm"
+              {/* MOBILE TOGGLE */}
+              <button
+                onClick={() => setMenuOpen(!menuOpen)}
+                className="md:hidden relative flex h-11 w-11 items-center justify-center rounded-full bg-black/[0.04] text-foreground transition hover:bg-black/[0.06]"
+                aria-label="Toggle menu"
+              >
+                <motion.span
+                  animate={menuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+                  transition={{ duration: 0.25 }}
+                  className="absolute h-[2px] w-5 rounded-full bg-current"
+                  style={{ top: "15px" }}
+                />
+                <motion.span
+                  animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute h-[2px] w-5 rounded-full bg-current"
+                  style={{ top: "21px" }}
+                />
+                <motion.span
+                  animate={menuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+                  transition={{ duration: 0.25 }}
+                  className="absolute h-[2px] w-5 rounded-full bg-current"
+                  style={{ top: "27px" }}
+                />
+              </button>
+            </div>
+
+            {/* MOBILE MENU */}
+            <AnimatePresence>
+              {menuOpen && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                  className="overflow-hidden md:hidden"
                 >
-                  Get Started
-                </Link>
-              </div>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.header>
+                  <div className="border-t border-black/5 px-4 pb-4 pt-3">
+                    <div className="space-y-1 rounded-2xl bg-black/[0.02] p-2">
+                      <MobileLink
+                        name="Home"
+                        href="/"
+                        pathname={pathname}
+                        setMenuOpen={setMenuOpen}
+                      />
+                      <MobileLink
+                        name="About"
+                        href="/about"
+                        pathname={pathname}
+                        setMenuOpen={setMenuOpen}
+                      />
+
+                      <div className="rounded-xl bg-white/70 p-1">
+                        <MobileLink
+                          name="Services"
+                          href="/services"
+                          pathname={pathname}
+                          setMenuOpen={setMenuOpen}
+                        />
+                        <div className="ml-3 mt-1 space-y-1 border-l border-primary/15 pl-3">
+                          <MobileLink
+                            name="For Educators"
+                            href="/pathway-educators"
+                            pathname={pathname}
+                            setMenuOpen={setMenuOpen}
+                            isSub
+                          />
+                          <MobileLink
+                            name="For School Leaders"
+                            href="/pathway-leaders"
+                            pathname={pathname}
+                            setMenuOpen={setMenuOpen}
+                            isSub
+                          />
+                          <MobileLink
+                            name="For Parents"
+                            href="/pathway-parents"
+                            pathname={pathname}
+                            setMenuOpen={setMenuOpen}
+                            isSub
+                          />
+                        </div>
+                      </div>
+
+                      <MobileLink
+                        name="Contact"
+                        href="/contact"
+                        pathname={pathname}
+                        setMenuOpen={setMenuOpen}
+                      />
+                    </div>
+
+                    <div className="pt-4">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setMenuOpen(false);
+                          setOpenConsultation(true);
+                        }}
+                        className="inline-flex w-full items-center justify-center rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-primary"
+                      >
+                        Schedule Consultation
+                      </button>
+                    </div>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </div>
+      </motion.header>
+
+      <ConsultationModal
+        open={openConsultation}
+        onClose={() => setOpenConsultation(false)}
+      />
+    </>
   );
 }
 
-/* ================= HELPERS ================= */
+/* ================= NAV ITEM ================= */
 
 function NavItem({ name, href, active, dropdownItems }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
-      className="relative h-full flex items-center group"
+      className="relative"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       <Link
         href={href}
-        className={`relative transition-colors duration-200 flex items-center gap-1.5 ${
-          active ? "text-primary" : "text-foreground hover:text-primary"
-        }`}
-      >
-        {name}
-        {dropdownItems && (
-          <svg className={`w-4 h-4 transition-transform duration-300 ${isHovered ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-          </svg>
-        )}
-        <span
-          className={`absolute left-0 -bottom-1 h-[2px] w-full bg-primary rounded-full transition-transform duration-300 origin-left ${
-            active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+        className={`relative flex items-center gap-1.5 rounded-full px-4 py-2.5 text-[14px] font-semibold transition-all duration-300 ${active ? "text-primary" : "text-foreground/75 hover:text-foreground"
           }`}
-        />
+      >
+        {active && (
+          <motion.span
+            layoutId="desktop-active-pill"
+            className="absolute inset-0 rounded-full bg-white shadow-sm ring-1 ring-black/5"
+            transition={{ type: "spring", stiffness: 380, damping: 30 }}
+          />
+        )}
+
+        <span className="relative z-10">{name}</span>
+
+        {dropdownItems && (
+          <ChevronDown
+            className={`relative z-10 h-4 w-4 transition-transform duration-300 ${isHovered ? "rotate-180" : ""
+              }`}
+          />
+        )}
       </Link>
 
-      {/* DROPDOWN MENU */}
       {dropdownItems && (
         <AnimatePresence>
           {isHovered && (
             <motion.div
-              initial={{ opacity: 0, y: 10, scale: 0.95 }}
+              initial={{ opacity: 0, y: 12, scale: 0.96 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 10, scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-              className="absolute top-full left-1/2 -translate-x-1/2 pt-4 min-w-[200px]"
+              exit={{ opacity: 0, y: 10, scale: 0.96 }}
+              transition={{ duration: 0.22 }}
+              className="absolute left-1/2 top-full z-50 min-w-[250px] -translate-x-1/2 pt-4"
             >
-              <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] border border-black/5 overflow-hidden p-2">
+              <div className="overflow-hidden rounded-2xl border border-black/5 bg-white/95 p-2 shadow-[0_24px_60px_rgba(15,23,42,0.12)] backdrop-blur-xl">
                 {dropdownItems.map((item, idx) => (
                   <Link
                     key={idx}
                     href={item.href}
-                    className="block px-5 py-3 rounded-xl text-[14px] text-foreground/80 hover:text-primary hover:bg-primary/5 transition-all whitespace-nowrap"
+                    className="group flex items-center justify-between rounded-xl px-4 py-3 text-[14px] font-medium text-foreground/75 transition-all duration-200 hover:bg-primary/5 hover:text-primary"
                   >
-                    {item.name}
+                    <span>{item.name}</span>
+                    <span className="translate-x-0 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100">
+                      →
+                    </span>
                   </Link>
                 ))}
               </div>
@@ -194,21 +279,25 @@ function NavItem({ name, href, active, dropdownItems }) {
   );
 }
 
+/* ================= MOBILE LINK ================= */
+
 function MobileLink({ name, href, pathname, setMenuOpen, isSub = false }) {
-  const active = pathname === href;
+  const active = pathname === href || (href !== "/" && pathname.startsWith(href));
+
   return (
     <Link
       href={href}
       onClick={() => setMenuOpen(false)}
-      className={`block px-4 py-3 rounded-lg transition-all font-semibold ${
-        isSub ? "text-[14px] py-2" : "text-[16px]"
-      } ${
-        active
-          ? "bg-primary/5 text-primary"
-          : "text-foreground/80 hover:bg-black/5 hover:text-foreground"
-      }`}
+      className={`relative block rounded-xl px-4 transition-all duration-300 ${isSub ? "py-2.5 text-[14px]" : "py-3 text-[15px]"
+        } ${active
+          ? "bg-primary/8 text-primary"
+          : "text-foreground/75 hover:bg-white hover:text-foreground"
+        }`}
     >
-      {name}
+      <div className="flex items-center justify-between">
+        <span className="font-semibold">{name}</span>
+        {active && <span className="h-2 w-2 rounded-full bg-primary" />}
+      </div>
     </Link>
   );
 }

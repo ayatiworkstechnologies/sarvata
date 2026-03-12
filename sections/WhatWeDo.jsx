@@ -78,7 +78,7 @@ export default function WhatWeDo() {
 
             <div className="container-max relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-                    
+
                     {/* Left: Text & Image */}
                     <div className="lg:col-span-5 space-y-8">
                         <motion.div
@@ -87,9 +87,12 @@ export default function WhatWeDo() {
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
                         >
-                            <div className="inline-block px-4 py-1.5 rounded-full bg-white shadow-sm border border-border/50 text-primary font-semibold text-xs mb-6 tracking-widest uppercase">
+                            {/* <div className="inline-block px-4 py-1.5 rounded-full bg-white shadow-sm border border-border/50 text-primary font-semibold text-xs mb-6 tracking-widest uppercase">
                                 What We Do
-                            </div>
+                            </div> */}
+                            <p className="text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4">
+                                What We Do
+                            </p>
                             <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-6">
                                 Supporting your <br />
                                 <span className="text-gradient">educational community</span>
@@ -99,8 +102,8 @@ export default function WhatWeDo() {
                             </p>
 
                             <div className="relative h-[280px] w-full rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
-                                <Image 
-                                    src="/about-web.jpg" 
+                                <Image
+                                    src="/about-web.jpg"
                                     alt="Educational community working together"
                                     fill
                                     className="object-cover"
@@ -112,7 +115,7 @@ export default function WhatWeDo() {
 
                     {/* Right: Cards */}
                     <div className="lg:col-span-7">
-                        <motion.div 
+                        <motion.div
                             variants={containerVariants}
                             initial="hidden"
                             whileInView="show"
@@ -126,8 +129,8 @@ export default function WhatWeDo() {
                                     className="group relative bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-border/40 hover:border-transparent overflow-hidden"
                                 >
                                     {/* Hover gradient line on left */}
-                                    <div className={`absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} />
-                                    
+                                    {/* <div className={`absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} /> */}
+
                                     <div className="flex flex-col sm:flex-row gap-6 items-start">
                                         <div className={`shrink-0 w-16 h-16 rounded-2xl ${item.lightBg} ${item.accent} flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
                                             {item.icon}

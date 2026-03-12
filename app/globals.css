@@ -2,72 +2,56 @@
 
 @import "tailwindcss";
 
-/* ===============================
-   FONT FACE DEFINITIONS
-================================ */
-/* @font-face {
-  font-family: "Grift";
-  src: url("/fonts/Grift.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Aloevera";
-  src: url("/fonts/Aloevera.ttf") format("truetype");
-  font-style: normal;
-  font-display: swap;
-} */
-
 /* ======================================================
-   BASE DESIGN TOKENS
+   DESIGN TOKENS
 ====================================================== */
+
 :root {
-  /* Core colors */
+
   --background: #ffffff;
   --foreground: #171717;
 
   --primary: #A066AA;
   --secondary: #E2C473;
-  --muted: #0f0f0f;
+
+  --muted: #6b7280;
   --border: #e5e7eb;
+
   --soft-bg: #faf7fc;
 
-  /* --font-primary: "Lexend", system-ui, sans-serif;
-  --font-secondary: "Outfit", system-ui, sans-serif; */
-  --font-primary: var(--font-primary, system-ui, sans-serif);
-  --font-secondary: var(--font-secondary, system-ui, sans-serif);
+  --font-primary: "Lexend", system-ui, sans-serif;
+  --font-secondary: "Outfit", system-ui, sans-serif;
 
-  /* Radius */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
 }
 
 /* ======================================================
-   TAILWIND 4.1 INLINE THEME
+   TAILWIND INLINE THEME
 ====================================================== */
+
 @theme inline {
-  /* Colors */
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
   --color-primary: var(--primary);
   --color-secondary: var(--secondary);
+
   --color-muted: var(--muted);
   --color-border: var(--border);
   --color-soft: var(--soft-bg);
 
-  /* Radius */
   --radius-sm: var(--radius-sm);
   --radius-md: var(--radius-md);
   --radius-lg: var(--radius-lg);
 }
 
-
-
 /* ======================================================
    BASE STYLES
 ====================================================== */
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -82,366 +66,26 @@ h3,
 h4,
 h5 {
   font-family: var(--font-primary);
-  /* letter-spacing: -0.015em; */
 }
 
 p {
   font-family: var(--font-secondary);
-  line-height: 1.75;
   font-size: 18px;
-}
-
-/* ======================================================
-   PREMIUM DESIGN TOKENS
-====================================================== */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
-}
-
-.text-gradient {
-  background: linear-gradient(135deg, #a88ee0 0%, #6bcf8e 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.aurora-bg {
-  position: absolute;
-  filter: blur(80px);
-  opacity: 0.15;
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-/* ======================================================
-   PREMIUM BUTTON SYSTEM
-====================================================== */
-.btn {
-  --btn-bg: linear-gradient(135deg, var(--primary) 0%, #b77fc0 55%, var(--secondary) 100%);
-  --btn-text: #ffffff;
-  --btn-border: rgba(255, 255, 255, 0.2);
-  --btn-shadow: 0 14px 35px rgba(160, 102, 170, 0.22);
-  --btn-shadow-hover: 0 20px 45px rgba(160, 102, 170, 0.32);
-  --btn-curve: var(--primary);
-
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.65rem;
-
-  padding: 0.95rem 2.1rem;
-  min-height: 54px;
-
-  border-radius: 9999px;
-  border: 1px solid var(--btn-border);
-  background: var(--btn-bg);
-  color: var(--btn-text);
-
-  font-family: var(--font-primary);
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  line-height: 1;
-
-  text-decoration: none;
-  white-space: nowrap;
-  cursor: pointer;
-  overflow: visible;
-  isolation: isolate;
-
-  box-shadow:
-    var(--btn-shadow),
-    inset 0 1px 0 rgba(255, 255, 255, 0.22);
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    background 0.35s ease,
-    border-color 0.35s ease,
-    color 0.35s ease;
-}
-
-/* glossy top shine */
-.btn::before {
-  content: "";
-  position: absolute;
-  inset: 1px;
-  border-radius: inherit;
-  background: linear-gradient(180deg,
-      rgba(255, 255, 255, 0.26) 0%,
-      rgba(255, 255, 255, 0.08) 22%,
-      rgba(255, 255, 255, 0) 50%);
-  pointer-events: none;
-  z-index: 0;
-}
-
-/* outer decorative curves */
-.btn::after {
-  content: "";
-  position: absolute;
-  inset: -5px;
-  border-radius: inherit;
-  border: 1.5px solid color-mix(in srgb, var(--btn-curve) 60%, transparent);
-  opacity: 0.45;
-  transform: scale(0.96);
-  transition: transform 0.35s ease, opacity 0.35s ease;
-  pointer-events: none;
-  z-index: -1;
-}
-
-.btn>* {
-  position: relative;
-  z-index: 1;
-}
-
-.btn:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow:
-    var(--btn-shadow-hover),
-    inset 0 1px 0 rgba(255, 255, 255, 0.28);
-}
-
-.btn:hover::after {
-  transform: scale(1.03);
-  opacity: 0.75;
-}
-
-.btn:active {
-  transform: translateY(-1px) scale(0.995);
-}
-
-.btn:focus-visible {
-  outline: none;
-  box-shadow:
-    0 0 0 4px rgba(160, 102, 170, 0.18),
-    var(--btn-shadow-hover);
-}
-
-/* icon animation */
-.btn svg {
-  width: 18px;
-  height: 18px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.btn:hover svg {
-  transform: translateX(4px);
-}
-
-/* ======================================================
-   PRIMARY BUTTON
-====================================================== */
-.btn-primary {
-  --btn-bg: linear-gradient(135deg, #8d5497 0%, var(--primary) 38%, #c89855 100%);
-  --btn-text: #ffffff;
-  --btn-border: rgba(255, 255, 255, 0.14);
-  --btn-shadow: 0 14px 34px rgba(160, 102, 170, 0.24);
-  --btn-shadow-hover: 0 22px 48px rgba(160, 102, 170, 0.34);
-  --btn-curve: var(--primary);
-}
-
-/* ======================================================
-   SECONDARY BUTTON
-====================================================== */
-.btn-secondary {
-  --btn-bg: linear-gradient(135deg, #1f1724 0%, #2c1d31 100%);
-  --btn-text: #ffffff;
-  --btn-border: rgba(255, 255, 255, 0.08);
-  --btn-shadow: 0 12px 30px rgba(23, 23, 23, 0.18);
-  --btn-shadow-hover: 0 18px 42px rgba(23, 23, 23, 0.26);
-  --btn-curve: #2c1d31;
-}
-
-.btn-secondary:hover {
-  --btn-bg: linear-gradient(135deg, #2c1d31 0%, var(--primary) 100%);
-}
-
-/* ======================================================
-   OUTLINE BUTTON
-====================================================== */
-.btn-outline {
-  --btn-bg: rgba(255, 255, 255, 0.76);
-  --btn-text: var(--foreground);
-  --btn-border: rgba(160, 102, 170, 0.22);
-  --btn-shadow: 0 10px 28px rgba(160, 102, 170, 0.08);
-  --btn-shadow-hover: 0 16px 36px rgba(160, 102, 170, 0.16);
-  --btn-curve: var(--primary);
-
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.btn-outline:hover {
-  --btn-bg: linear-gradient(135deg, rgba(160, 102, 170, 0.08), rgba(226, 196, 115, 0.14));
-  --btn-text: var(--primary);
-  --btn-border: rgba(160, 102, 170, 0.35);
-}
-
-/* ======================================================
-   SOFT GOLD BUTTON
-====================================================== */
-.btn-gold {
-  --btn-bg: linear-gradient(135deg, #d8b968 0%, var(--secondary) 50%, #f2dc96 100%);
-  --btn-text: #2a1b0f;
-  --btn-border: rgba(255, 255, 255, 0.18);
-  --btn-shadow: 0 14px 34px rgba(226, 196, 115, 0.24);
-  --btn-shadow-hover: 0 20px 44px rgba(226, 196, 115, 0.32);
-  --btn-curve: var(--secondary);
-}
-
-/* ======================================================
-   SIZE HELPERS
-====================================================== */
-.btn-sm {
-  min-height: 44px;
-  padding: 0.75rem 1.4rem;
-  font-size: 0.85rem;
-}
-
-.btn-lg {
-  min-height: 60px;
-  padding: 1.05rem 2.5rem;
-  font-size: 1rem;
-}
-
-/* ======================================================
-   MOBILE
-====================================================== */
-@media (max-width: 640px) {
-  .btn {
-    padding: 0.9rem 1.6rem;
-    min-height: 50px;
-    font-size: 0.9rem;
-  }
-}
-
-/* ======================================================
-   COMMON LAYOUT UTILITIES
-====================================================== */
-.section {
-  padding: 4rem 1.5rem;
-}
-
-.section-sm {
-  padding: 2.5rem 1.5rem;
-}
-
-.section-lg {
-  padding: 6rem 1.5rem;
-}
-
-.container {
-  max-width: 1200px;
-  /* or 1280px */
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.container-max {
-  max-width: 80rem;
-  margin-inline: auto;
-  padding-inline: 1.5rem;
-}
-
-/* ======================================================
-   CARDS
-====================================================== */
-.card {
-  background: var(--background);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 1.75rem;
-  transition: all 0.25s ease;
-}
-
-.card:hover {
-  border-color: var(--color-primary);
-}
-
-/* ======================================================
-   BUTTON SYSTEM
-====================================================== */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-
-  padding: 0.75rem 1.75rem;
-  border-radius: var(--radius-sm);
-
-  font-size: 14px;
-  font-weight: 600;
-
-  transition: all 0.25s ease;
-  cursor: pointer;
-}
-
-.btn-primary {
-  background: var(--color-primary);
-  color: white;
-}
-
-.btn-primary:hover {
-  background: #8d5497;
-}
-
-.btn-outline {
-  border: 1px solid var(--color-primary);
-  color: var(--color-primary);
-  background: transparent;
-}
-
-.btn-outline:hover {
-  background: var(--color-primary);
-  color: white;
-}
-
-/* ======================================================
-   FORMS
-====================================================== */
-.input,
-.textarea {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--secondary);
-  background: var(--background);
-  color: var(--color-black);
-
-}
-
-.input:focus,
-.textarea:focus {
-  outline: none;
-  border-color: var(--color-primary);
-}
-
-.input-sm {
-  width: 100%;
-  padding: 0.55rem 0.85rem;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  background: var(--background);
-  color: var(--foreground);
-  font-size: 0.875rem;
-  transition: border-color 0.2s, background 0.2s;
-}
-
-.input-sm:focus {
-  outline: none;
-  border-color: var(--primary);
-  background: #fff;
+  line-height: 1.75;
 }
 
 /* ======================================================
    TEXT HELPERS
 ====================================================== */
+
+.text-muted {
+  color: var(--muted);
+}
+
+.text-gradient {
+  color: var(--primary);
+}
+
 .heading-xl {
   font-size: clamp(2.4rem, 5vw, 3.4rem);
   font-weight: 700;
@@ -452,24 +96,176 @@ p {
   font-weight: 700;
 }
 
-.heading-md {
-  font-size: 1.5rem;
-  font-weight: 600;
+/* ======================================================
+   LAYOUT
+====================================================== */
+
+.container {
+  max-width: 1200px;
+  margin: auto;
 }
 
-.text-muted {
-  color: var(--color-muted);
+.container-max {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.section {
+  padding: 4rem 1.5rem;
+}
+
+.section-lg {
+  padding: 6rem 1.5rem;
+}
+
+/* ======================================================
+   CARD SYSTEM
+====================================================== */
+
+.card {
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  transition: all .25s ease;
+}
+
+.card:hover {
+  border-color: var(--primary);
+}
+
+/* ======================================================
+   PREMIUM BUTTON SYSTEM
+====================================================== */
+
+.btn {
+
+  --btn-bg: var(--primary);
+  --btn-text: #fff;
+  --btn-border: rgba(255, 255, 255, .1);
+
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+
+  padding: .9rem 2rem;
+  min-height: 52px;
+
+  border-radius: 999px;
+  border: 1px solid var(--btn-border);
+
+  background: var(--btn-bg);
+  color: var(--btn-text);
+
+  font-family: var(--font-primary);
+  font-size: .95rem;
+  font-weight: 700;
+
+  transition: all .35s ease;
+}
+
+.btn:hover {
+  transform: translateY(-4px) scale(1.02);
+}
+
+.btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform .3s;
+}
+
+.btn:hover svg {
+  transform: translateX(4px);
+}
+
+/* Button Variants */
+
+.btn-primary {
+  --btn-bg: var(--primary);
+}
+
+.btn-secondary {
+  --btn-bg: var(--foreground);
+}
+
+.btn-secondary:hover {
+  --btn-bg: var(--primary);
+}
+
+.btn-outline {
+
+  --btn-bg: transparent;
+  --btn-text: var(--foreground);
+  --btn-border: var(--primary);
+
+}
+
+.btn-outline:hover {
+
+  --btn-bg: var(--primary);
+  --btn-text: #fff;
+
+}
+
+.btn-gold {
+
+  --btn-bg: var(--secondary);
+  --btn-text: #2a1b0f;
+
+}
+
+/* ======================================================
+   FORM ELEMENTS
+====================================================== */
+
+.input,
+.textarea {
+
+  width: 100%;
+  padding: .75rem 1rem;
+
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+
+  background: var(--background);
+  color: var(--foreground);
+}
+
+.input:focus,
+.textarea:focus {
+
+  outline: none;
+  border-color: var(--primary);
+
+}
+
+/* ======================================================
+   GLASS EFFECT
+====================================================== */
+
+.glass-panel {
+
+  background: rgba(255, 255, 255, .03);
+  backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 255, 255, .08);
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .2);
 }
 
 /* ======================================================
    SIMPLE ANIMATIONS
 ====================================================== */
+
 .fade-in {
-  animation: fadeIn 0.45s ease-out both;
+  animation: fadeIn .45s ease-out both;
 }
 
 .slide-up {
-  animation: slideUp 0.45s ease-out both;
+  animation: slideUp .45s ease-out both;
 }
 
 @keyframes fadeIn {
@@ -495,117 +291,101 @@ p {
 }
 
 /* ======================================================
-   SCROLLBAR (DESKTOP)
+   FLOAT ANIMATION
 ====================================================== */
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0)
+  }
+
+  50% {
+    transform: translateY(-6px)
+  }
+
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* ======================================================
+   SCROLLBAR
+====================================================== */
+
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
+  background: var(--primary);
   border-radius: 4px;
 }
 
-/* Hide scrollbar but keep scrolling */
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  /* IE & Edge */
-  scrollbar-width: none;
-  /* Firefox */
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
-  /* Chrome, Safari */
-}
-
-/* ===============================
+/* ======================================================
    SEED / NODE INDICATOR
-================================ */
+====================================================== */
+
 .static-node {
+
   position: absolute;
-  display: block;
   width: 64px;
   height: 64px;
+
   border-radius: 50%;
   cursor: pointer;
-  background: transparent;
-  z-index: 10;
-  animation: pulse-glow 2.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+
+  animation: pulse-glow 2.8s cubic-bezier(.4, 0, .2, 1) infinite;
 }
 
-/* ACCURATE PULSE (BREATHING) */
 @keyframes pulse-glow {
+
   0% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.35);
-    opacity: 0.5;
+    transform: scale(.95);
+    box-shadow: 0 0 0 0 rgba(255, 165, 0, .35);
   }
 
   60% {
     transform: scale(1);
     box-shadow: 0 0 0 28px rgba(255, 165, 0, 0);
-    opacity: 1;
   }
 
   100% {
-    transform: scale(0.95);
-    opacity: 0.5;
+    transform: scale(.95);
   }
+
 }
 
-/* ===== DESKTOP POSITIONS ===== */
+/* Desktop positions */
+
 .node-educators {
   top: 59%;
-  left: 49%;
+  left: 49%
 }
 
 .node-leaders {
   top: 67%;
-  left: 39%;
+  left: 39%
 }
 
 .node-parents {
   top: 65%;
-  left: 56%;
+  left: 56%
 }
 
 .node-learners {
   top: 80%;
-  left: 47%;
+  left: 47%
 }
 
-/* ===============================
-   SHARED SEED TOOLTIP
-   (Single fixed tooltip)
-================================ */
-.seed-tooltip {
-  position: relative;
-  z-index: 40;
+/* ======================================================
+   MOBILE
+====================================================== */
 
-  padding: 10px 18px;
-  border-radius: 999px;
+@media (max-width:640px) {
 
-  background: rgba(0, 0, 0, 0.78);
-  color: #ffffff;
-
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.2px;
-  white-space: nowrap;
-
-  pointer-events: none;
-
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-
-  box-shadow:
-    0 0 0 0 rgba(255, 165, 0, 0.25),
-    0 10px 30px rgba(0, 0, 0, 0.25);
-}
-
-/* ===== MOBILE OVERRIDES ===== */
-@media (max-width: 640px) {
   .static-node {
     width: 72px;
     height: 72px;
@@ -613,347 +393,36 @@ p {
 
   .node-educators {
     top: 60%;
-    left: 50%;
+    left: 50%
   }
 
   .node-leaders {
     top: 67%;
-    left: 81%;
+    left: 81%
   }
 
   .node-parents {
     top: 69%;
-    left: 8%;
+    left: 8%
   }
 
   .node-learners {
     top: 83%;
-    left: 46%;
+    left: 46%
   }
 
-  .seed-tooltip {
-    font-size: 13px;
-    padding: 9px 16px;
-  }
 }
-
-/* ===============================
-   SUBTLE FLOAT (IMAGE)
-================================ */
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-6px);
-  }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-/* ===============================
-   SOFT FADE (SECOND IMAGE)
-================================ */
-@keyframes softFade {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-softFade {
-  animation: softFade 0.8s ease-out both;
-}
-
 
 /* ======================================================
-   LEAF COMPONENT STYLES
+   LEAF COMPONENT
 ====================================================== */
 
-
-.leaf-shape {
-  width: 72px;
-  height: 115px;
-  background:
-    radial-gradient(circle at 30% 20%, #9fffbd, transparent 40%),
-    linear-gradient(145deg, #45e08a, #0f4d2c);
-  border-radius: 100% 0 100% 0;
-  transform-origin: bottom center;
-  box-shadow:
-    inset -8px -12px 18px rgba(0, 0, 0, 0.3),
-    0 6px 12px rgba(0, 0, 0, 0.3);
-  position: relative;
-}
-
-/* leaf connector */
-.leaf-shape::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  width: 7px;
-  height: 16px;
-  background: linear-gradient(to bottom, #45e08a, #0f4d2c);
-  transform: translateX(-50%);
-  border-radius: 4px;
-}
-
-/* veins */
-.leaf-vein {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.leaf-vein.center {
-  top: 12px;
-  height: 90px;
-  width: 2px;
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.1));
-}
-
-.leaf-vein.side {
-  height: 22px;
-  width: 1px;
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
-  transform: translateX(-50%) rotate(30deg);
-}
-
-.bg-soil-texture {
-  background-image:
-    radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    radial-gradient(rgba(0, 0, 0, 0.12) 1px, transparent 1px);
-  background-size: 6px 6px, 10px 10px;
-  background-position: 0 0, 3px 3px;
-}
-
-
-/* New */
-
-/* Tailwind v4 is already injected by framework */
-
-/* ===== Leaf motion ===== */
-@keyframes leafWind {
-
-  0%,
-  100% {
-    transform: rotate(0deg);
-  }
-
-  50% {
-    transform: rotate(6deg);
-  }
-}
-
-/* ===== Stem growth ===== */
-@keyframes stemGrow {
-  from {
-    height: 0px;
-  }
-
-  to {
-    height: 170px;
-  }
-}
-
-/* ===== Roots draw ===== */
-@keyframes rootGrow {
-  from {
-    stroke-dashoffset: 320;
-  }
-
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-/* ===== Energy flow ===== */
-@keyframes energyFlow {
-  0% {
-    stroke-dashoffset: 320;
-    opacity: 0.3;
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    stroke-dashoffset: 0;
-    opacity: 0.3;
-  }
-}
-
-.leaf-top {
-  animation: leafWind 5s ease-in-out infinite;
-  transform-origin: bottom center;
-}
-
-.leaf-side {
-  animation: leafWind 6s ease-in-out infinite;
-  transform-origin: right center;
-}
-
-.stem-natural {
-  animation: stemGrow 2.2s cubic-bezier(.22, .61, .36, 1) forwards;
-}
-
-.root-path {
-  stroke-dasharray: 320;
-  stroke-dashoffset: 320;
-}
-
-.root-animate {
-  animation: rootGrow 2.8s ease-out forwards;
-}
-
-.energy-path {
-  stroke-dasharray: 320;
-  stroke-dashoffset: 320;
-  animation: energyFlow 3s ease-in-out infinite;
-}
-
-.soil-texture {
-  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 6px 6px;
-}
-
-.soil-fade {
-  background: linear-gradient(to top, #3a2616 60%, transparent);
-}
-
-
-/* Stem */
-.stem-body {
-  width: 10px;
-  height: 180px;
-  background: linear-gradient(#5fa36a, #3f7f4a);
-  border-radius: 10px;
-  animation: growStem 4s ease-in-out infinite;
-  transform-origin: bottom;
-}
-
-/* Leaves */
 .leaf {
-  position: absolute;
-  background: linear-gradient(135deg, #7bcf90, #4fa66a);
-  border-radius: 50% 50% 50% 0;
-  transform-origin: bottom center;
-  animation: sway 5s ease-in-out infinite;
-}
 
-.leaf.large {
-  width: 70px;
-  height: 120px;
-}
-
-.leaf.small {
-  width: 35px;
-  height: 60px;
-}
-
-/* Leaf Positions */
-.left {
-  left: -80px;
-  top: 0;
-  transform: rotate(-20deg);
-}
-
-.center {
-  left: -10px;
-  top: -20px;
-}
-
-.right {
-  left: 60px;
-  top: 0;
-  transform: rotate(20deg);
-}
-
-.small-left {
-  left: -40px;
-  top: 80px;
-}
-
-.small-right {
-  left: 25px;
-  top: 80px;
-}
-
-/* Roots */
-.roots {
-  animation: rootSpread 6s ease-in-out infinite;
-}
-
-.root {
-  width: 6px;
-  height: 80px;
-  background: #8b6f4e;
-  border-radius: 50%;
-  transform: rotate(20deg);
-}
-
-/* Animations */
-@keyframes sway {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  50% {
-    transform: rotate(5deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes growStem {
-  0% {
-    transform: scaleY(0.95);
-  }
-
-  50% {
-    transform: scaleY(1);
-  }
-
-  100% {
-    transform: scaleY(0.95);
-  }
-}
-
-@keyframes rootSpread {
-  0% {
-    transform: scaleX(0.9);
-  }
-
-  /* Leaves */
-
-  50% {
-    transform: scaleX(1);
-  }
-
-  100% {
-    transform: scaleX(0.9);
-  }
-}
-
-/* Leaves */
-.leaf {
   position: absolute;
   background: linear-gradient(135deg, #7ecf98, #4a9f6a);
   border-radius: 60% 40% 60% 40%;
-  filter: blur(0.2px);
+
 }
 
 .leaf.big {
@@ -966,67 +435,68 @@ p {
   height: 70px;
 }
 
-/* Stem */
 .stem {
+
   width: 12px;
   height: 220px;
+
   background: linear-gradient(#6ea97b, #3e7f55);
+
   border-radius: 12px;
+
 }
 
-/* Roots */
 .root {
+
   width: 6px;
   height: 120px;
+
   background: #8b6a45;
   border-radius: 50%;
+
 }
 
-/* Seeds */
 .seed {
+
   width: 14px;
   height: 18px;
   background: #6b4f2a;
   border-radius: 50%;
+
 }
 
-.leaf {
-  position: absolute;
-  background: linear-gradient(135deg, #7ecf98, #4a9f6a);
-  border-radius: 60% 40% 60% 40%;
-  filter: blur(0.2px);
+.form-control {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: #fff;
+  padding: 0.9rem 1rem;
+  font-size: 0.95rem;
+  color: var(--foreground);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 
-.leaf.big {
-  width: 90px;
-  height: 150px;
+.form-control::placeholder {
+  color: #94a3b8;
 }
 
-.leaf.small {
-  width: 45px;
-  height: 70px;
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 4px rgba(160, 102, 170, 0.12);
 }
 
-/* Stem */
-.stem {
-  width: 12px;
-  height: 220px;
-  background: linear-gradient(#6ea97b, #3e7f55);
-  border-radius: 12px;
+.form-control-error {
+  border-color: #ef4444;
 }
 
-/* Roots */
-.root {
-  width: 6px;
-  height: 120px;
-  background: #8b6a45;
-  border-radius: 50%;
+.form-control-error:focus {
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.12);
 }
 
-/* Seeds */
-.seed {
-  width: 14px;
-  height: 18px;
-  background: #6b4f2a;
-  border-radius: 50%;
+.form-select {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 2.8rem;
 }
