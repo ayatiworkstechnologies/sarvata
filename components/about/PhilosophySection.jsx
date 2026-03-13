@@ -53,7 +53,7 @@ export default function PhilosophySection({ title, subtitle, intro, points, rese
               <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-4 pr-6 leading-snug relative z-10">
                 {pt.title}
               </h3>
-              <p className="text-muted-foreground font-light leading-relaxed text-[15px] relative z-10">
+              <p className="text-muted-foreground font-light leading-relaxed text-[15px] relative z-10 whitespace-pre-line">
                 {pt.desc}
               </p>
             </motion.div>

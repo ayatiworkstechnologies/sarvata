@@ -44,22 +44,22 @@ export default function ParentsPage() {
         webImage="/banners/for-parents.jpg"
         mobileImage="/banners/for-parents-mob.jpg"
         title="Partnering in Your Child's Journey"
-        breadcrumbs={[{ label: "For Parents" }]}
+        breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Parents" }]}
       />
 
       {/* ── THE CHALLENGE ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="Navigating Education, Together"
-        title="You Champion Your Child's Potential - We Help You Understand It"
+        // title="You Champion Your Child's Potential - We Help You Understand It"
         paragraphs={[
           "You celebrate your child's strengths, navigate their challenges, and champion their unique potential. This journey can feel complex, especially when supporting diverse learning needs.",
           "Sarvata partners with you to understand your child's learning profile and empowers you to become a stronger advocate in their educational journey.",
-          "You are not alone. We offer a supportive space for parents - professional insights, practical strategies, and clear guidance, every step of the way.",
+
         ]}
       />
 
       {/* ── OUR APPROACH ────────────────────────────────────────── */}
-      <PathwayApproachSection
+      {/* <PathwayApproachSection
         eyebrow="How We Work With You"
         title="Understanding, Empowering, Advocating"
         items={[
@@ -79,7 +79,7 @@ export default function ParentsPage() {
               "Strategies to foster open communication with educators and build a strong, collaborative partnership between home and school.",
           },
         ]}
-      />
+      /> */}
 
       {/* ── SERVICES ────────────────────────────────────────────── */}
       <PathwayServicesSection

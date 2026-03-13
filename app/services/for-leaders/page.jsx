@@ -44,13 +44,13 @@ export default function LeadersPage() {
         webImage="/banners/for-school-leaders.jpg"
         mobileImage="/banners/for-school-leaders-mob.jpg"
         title="Leading Sustainable Educational Change"
-        breadcrumbs={[{ label: "For Leaders" }]}
+        breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Leaders" }]}
       />
 
       {/* ── THE CHALLENGE ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="The Leadership Challenge"
-        title="Holding Competing Imperatives with Clarity & Conviction"
+        // title="Holding Competing Imperatives with Clarity & Conviction"
         paragraphs={[
           "In your hands rests not just an institution, but the promise of tomorrow. As school leaders, you stand at the crossroads of powerful and often competing imperatives.",
           "Managing the immediacy of daily operations while safeguarding long-term vision, upholding accountability without losing sight of authentic learning, empowering faculty despite constraints, and harmonising the varied expectations of stakeholders.",

@@ -45,9 +45,6 @@ export default function MainHero({
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0.02)_35%,rgba(0,0,0,0.12)_100%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(160,102,170,0.16),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(226,196,115,0.12),transparent_30%)]" />
 
-        {/* Decorative glow */}
-        <div className="pointer-events-none absolute -left-16 bottom-8 h-48 w-48 rounded-full bg-primary/15 blur-3xl" />
-        <div className="pointer-events-none absolute right-0 top-12 h-52 w-52 rounded-full bg-secondary/12 blur-3xl" />
       </div>
 
       {/* Main Content */}
@@ -57,14 +54,14 @@ export default function MainHero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="max-w-4xl rounded-3xl border border-white/20 bg-white/10 p-6 shadow-md backdrop-blur-md sm:p-8 md:p-10"
+            className="max-w-4xl rounded-3xl border border-white/30 bg-white/15 p-6 shadow-xl sm:p-8 md:p-10"
           >
             {title && (
               <motion.h1
                 initial={{ opacity: 0, y: 22 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15, duration: 0.65 }}
-                className="max-w-3xl text-3xl font-bold leading-[1.05] tracking-tight text-black drop-shadow-[0_8px_24px_rgba(0,0,0,0.18)] sm:text-4xl md:text-5xl lg:text-6xl"
+                className="max-w-3xl text-2xl font-bold leading-[1.05] tracking-tight text-black/80 sm:text-3xl md:text-4xl lg:text-5xl"
               >
                 {title}
               </motion.h1>
@@ -75,7 +72,7 @@ export default function MainHero({
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.25, duration: 0.6 }}
-                className="mt-4 max-w-2xl text-[15px] leading-7 text-white/90 drop-shadow-[0_4px_14px_rgba(0,0,0,0.12)] md:mt-5 md:text-lg"
+                className="mt-4 max-w-2xl text-[15px] leading-7 text-white/90 md:mt-5 md:text-lg"
               >
                 {subtitle}
               </motion.p>
@@ -99,9 +96,9 @@ export default function MainHero({
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.2 }}
-              className="inline-flex max-w-full rounded-full border border-white/20 bg-white/10 px-5 py-2.5 backdrop-blur-md shadow-sm"
+              className="inline-flex max-w-full rounded-full border border-white/30 bg-white/15 px-5 py-2.5 shadow-lg"
             >
-              <ol className="flex flex-wrap items-center gap-2.5 text-[15px] font-semibold text-white drop-shadow-md">
+              <ol className="flex flex-wrap items-center gap-2.5 text-[15px] font-semibold text-white">
                 <li className="flex items-center gap-2">
                   <HiHome className="text-lg text-white" />
                   <Link href="/" className="transition hover:text-white/80">

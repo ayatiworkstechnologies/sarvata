@@ -8,28 +8,28 @@ import Image from "next/image";
 const ITEMS = [
   {
     title: "Grounded in Practice",
-    description: "We're educators who've lived the gap between vision and reality. Our frameworks are shaped by classrooms, not just research papers.",
+    description: "We’re educators who’ve lived the gap between vision and reality.",
     icon: <Image src="/icon/1.svg" alt="Practice Icon" width={56} height={56} className="h-14 w-auto object-contain drop-shadow-sm" />,
     color: "#10b981",
     bg: "rgba(16,185,129,0.10)",
   },
   {
     title: "Systems Thinking",
-    description: "Real change isn't one workshop. We address culture, pedagogy, and operational systems in tandem so improvements compound.",
+    description: "We address culture, pedagogy, and operational systems together.",
     icon: <Image src="/icon/2.svg" alt="Systems Icon" width={56} height={56} className="h-14 w-auto object-contain drop-shadow-sm" />,
     color: "#6366f1",
     bg: "rgba(99,102,241,0.10)",
   },
   {
     title: "Building Independence",
-    description: "We build your internal capacity, not dependence on us. Success is when our approaches become how you naturally operate.",
+    description: "Our goal is your capacity, not your dependency.",
     icon: <Image src="/icon/3.svg" alt="Independence Icon" width={56} height={56} className="h-14 w-auto object-contain drop-shadow-sm" />,
     color: "#E2C473",
     bg: "rgba(226,196,115,0.15)",
   },
   {
     title: "Sustained Partnership",
-    description: "We stay through implementation. Showing up for after the workshop is where the most important work happens.",
+    description: "We support implementation, not just deliver workshops.",
     icon: <Image src="/icon/4.svg" alt="Partnership Icon" width={56} height={56} className="h-14 w-auto object-contain drop-shadow-sm" />,
     color: "#A066AA",
     bg: "rgba(160,102,170,0.10)",
@@ -134,7 +134,7 @@ export default function OurApproach() {
                 }}>Not Prescription</span>
               </h2>
               <p className="text-[17px] leading-8 text-[#6b7280]" style={{ fontFamily: "var(--font-secondary)" }}>
-                We don't arrive with generic solutions. We begin by understanding your context, goals, and challenges - then co-create approaches that are both aspirational and realistic.
+                We don’t arrive with generic solutions. We begin by understanding your context, your goals, and your challenges. You bring expertise in your community. We bring frameworks, research, and external perspectives. Together, we build approaches that are both aspirational and realistic.
               </p>
             </motion.div>
 

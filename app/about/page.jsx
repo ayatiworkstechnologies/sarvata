@@ -50,7 +50,7 @@ export default function AboutPage() {
         title="Our Story"
         subtitle="Why Sarvata Exists"
         paragraphs={[
-          "Sarvata means 'whole'. Our work is dedicated to the holistic development of schools and educators.",
+          "Sarvata means ‘whole’. Our work is dedicated to the holistic development of schools and educators.",
           "We were born from years of working alongside teachers and school leaders wrestling with how to translate ideals of inclusion and personalization into systematic, sustainable practice. We guide teachers and school leaders to become truly inclusive and responsive in their practice. We embed practical, research-driven strategies into the daily life of schools, moving educators from aspiration to implementation.",
           "At the heart of everything we do is Personalised Learning, not as a technique, but as a fundamental belief in the unique potential of every learner. We partner with schools to build the environments, systems, and educator capacities where this potential can truly flourish.",
         ]}
@@ -64,7 +64,7 @@ export default function AboutPage() {
         highlight="Our mission is simple yet profound: to inspire and create better educators and schools, every day."
         paragraphs={[
           "We strive to be mindful in our approach, providing a vibrant and supportive environment for growth. We impart knowledge and experience through reflective teaching and learning, advancing the aspirations of students, teachers, and leaders while upholding integrity and trust.",
-          "It's not about how good we are. It's about striving to be better, together.",
+          "It’s not about how good we are. It’s about striving to be better, together.",
         ]}
       />
 
@@ -75,19 +75,23 @@ export default function AboutPage() {
         points={[
           {
             title: "Expanding Learner Agency",
-            desc: "Personalization isn't about optimizing a single pathway for each student. It's about creating multiple pathways and progressively giving learners choice over which route they take. When students experience genuine autonomy in how they explore a concept, many often demonstrate stronger intrinsic motivation. This doesn't mean eliminating structure. It means building agency as competence develops.",
+            desc: `Personalization isn’t about optimizing a single pathway for each student. It’s about creating multiple pathways and progressively giving learners choice over which route they take.
+
+When students experience genuine autonomy in how they explore a concept, many often demonstrate stronger intrinsic motivation. This doesn’t mean eliminating structure. It means building agency as competence develops.`
           },
           {
             title: "Guiding the Internal Environment",
-            desc: "Beyond managing classrooms and delivering content, educators have the opportunity to guide students' internal development: how learners think about their thinking, regulate themselves, and build identity as learners. This mentorship dimension helps students understand not just what they learn but how they learn. Over time, this metacognitive awareness can support greater independence across academic and non-academic contexts.",
+            desc: `Beyond managing classrooms and delivering content, educators have the opportunity to guide students’ internal development: how learners think about their thinking, regulate themselves, and build identity as learners.
+
+This mentorship dimension helps students understand not just what they learn but how they learn. Over time, this metacognitive awareness can support greater independence across academic and non-academic contexts.`,
           },
           {
             title: "Developing Self-Direction",
-            desc: "Alongside content mastery, many schools are exploring how to support learners in gradually directing their own growth. This capacity builds through explicit strategy instruction, supported practice, and progressive independence.",
+            desc: "Alongside content mastery, many schools are exploring how to support learners in gradually directing their own growth. This capacity builds through explicit strategy instruction, supported practice, and progressive independence",
           },
         ]}
         researchTitle="Research Foundation"
-        researchText="These principles draw from decades of research in metacognition, self-determination theory, and expertise development. We also acknowledge reality: implementation varies by context, developmental stage matters, and real-world constraints shape what's possible. Our role is helping schools navigate that complexity."
+        researchText="These principles draw from decades of research in metacognition, self-determination theory, and expertise development. We also acknowledge reality: implementation varies by context, developmental stage matters, and real-world constraints shape what’s possible. Our role is helping schools navigate that complexity."
       />
 
       <JourneySection

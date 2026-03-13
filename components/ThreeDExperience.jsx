@@ -9,7 +9,7 @@ import * as THREE from "three";
 import { motion } from "framer-motion";
 
 /* ─── Shared scroll context ─── */
-const scrollCtx = { offset: 0, target: 0 };
+const scrollCtx = { offset: 0, target: 0, rafId: 0 };
 
 /* ═══════════════════════════════════════════════════════════════════════════
    PAGE COMPONENT
@@ -20,15 +20,23 @@ export default function ThreeDExperience() {
 
     useEffect(() => {
         const onScroll = () => {
-            if (!wrapperRef.current) return;
-            const rect = wrapperRef.current.getBoundingClientRect();
-            const wrapperHeight = wrapperRef.current.offsetHeight;
-            const vh = window.innerHeight;
-            scrollCtx.target = Math.max(0, Math.min(1, -rect.top / (wrapperHeight - vh)));
+            if (scrollCtx.rafId) cancelAnimationFrame(scrollCtx.rafId);
+            scrollCtx.rafId = requestAnimationFrame(() => {
+                if (!wrapperRef.current) return;
+                const rect = wrapperRef.current.getBoundingClientRect();
+                const wrapperHeight = wrapperRef.current.offsetHeight;
+                const vh = window.innerHeight;
+                const divisor = wrapperHeight - vh;
+                if (divisor <= 0) return;
+                scrollCtx.target = Math.max(0, Math.min(1, -rect.top / divisor));
+            });
         };
         window.addEventListener("scroll", onScroll, { passive: true });
         onScroll(); // initial measurement
-        return () => window.removeEventListener("scroll", onScroll);
+        return () => {
+            window.removeEventListener("scroll", onScroll);
+            if (scrollCtx.rafId) cancelAnimationFrame(scrollCtx.rafId);
+        };
     }, []);
 
     // We removed the forced mobile fallback so 3D works on mobile.
@@ -42,14 +50,16 @@ export default function ThreeDExperience() {
                     camera={{ position: [0, 1.2, 3.5], fov: 45 }}
                     gl={{
                         antialias: true,
+                        alpha: false,
+                        stencil: false,
+                        depth: true,
                         powerPreference: "high-performance",
                         toneMapping: THREE.ACESFilmicToneMapping,
-                        toneMappingExposure: 1.2,
+                        toneMappingExposure: 1.15,
                     }}
                     shadows
                 >
                     <color attach="background" args={["#f0fdf4"]} />
-                    <fog attach="fog" args={["#f0fdf4", 4, 18]} />
 
                     {/* Highly atmospheric lighting for bright theme */}
                     <ambientLight intensity={0.9} color="#ffffff" />
@@ -73,8 +83,8 @@ export default function ThreeDExperience() {
                     <Suspense fallback={null}>
                         <Scene />
                         <EffectComposer disableNormalPass>
-                            <Bloom luminanceThreshold={1.2} mipmapBlur intensity={1.5} />
-                            <Vignette eskil={false} offset={0.15} darkness={0.5} />
+                            <Bloom luminanceThreshold={1.5} intensity={0.5} radius={0.4} />
+                            <Vignette eskil={false} offset={0.15} darkness={0.4} />
                         </EffectComposer>
                     </Suspense>
                 </Canvas>
@@ -93,15 +103,15 @@ export default function ThreeDExperience() {
                         initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, delay: 0.9 }}
-                        className="text-[10px] md:text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4 drop-shadow-sm"
+                        className="text-[10px] md:text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4"
                     >
                         Sarvata
                     </motion.p>
-                    <h1 className="text-3xl font-bold leading-[1.15] text-foreground md:text-5xl lg:text-7xl tracking-tight drop-shadow-md">
+                    <h1 className="text-3xl font-bold leading-[1.15] text-foreground md:text-5xl lg:text-7xl tracking-tight">
                         Transforming <br /> Educators &<br />
                         <span className="font-extrabold text-primary">Schools, Every Day</span>
                     </h1>
-                    <p className="mt-4 md:mt-6 max-w-[90%] md:max-w-xl text-[15px] md:text-[17px] leading-relaxed text-white font-secondary drop-shadow-sm">
+                    <p className="mt-4 md:mt-6 max-w-[90%] md:max-w-xl text-[15px] md:text-[17px] leading-relaxed text-white font-secondary">
                         We partner with schools, educators, and parents to create truly
                         inclusive, learner-centered educational environments.
                     </p>
@@ -118,8 +128,9 @@ export default function ThreeDExperience() {
 
 function Scene() {
     useFrame((state, delta) => {
-        // Smoothly interpolate the scroll offset instead of hard snapping
-        scrollCtx.offset = THREE.MathUtils.damp(scrollCtx.offset, scrollCtx.target, 3, delta);
+        // Smoothly interpolate the scroll offset — clamp delta to prevent jumps on tab-switch
+        const clampedDelta = Math.min(delta, 0.1);
+        scrollCtx.offset = THREE.MathUtils.damp(scrollCtx.offset, scrollCtx.target, 3, clampedDelta);
 
         const t = scrollCtx.offset;
 
@@ -136,14 +147,10 @@ function Scene() {
         // Very subtle side drift for panoramic feel
         const driftX = Math.sin(t * Math.PI) * 0.15;
 
-        // Pointer parallax effect
-        const pointerX = state.pointer.x * 0.4;
-        const pointerY = state.pointer.y * 0.2;
-
-        state.camera.position.x = THREE.MathUtils.damp(state.camera.position.x, driftX + pointerX, 2.5, delta);
-        state.camera.position.y = THREE.MathUtils.damp(state.camera.position.y, camY + pointerY, 2.5, delta);
-        state.camera.position.z = THREE.MathUtils.damp(state.camera.position.z, camZ, 2.5, delta);
-        state.camera.lookAt(driftX * 0.5 + pointerX * 0.5, lookY + pointerY * 0.5, 0);
+        state.camera.position.x = THREE.MathUtils.damp(state.camera.position.x, driftX, 2.5, clampedDelta);
+        state.camera.position.y = THREE.MathUtils.damp(state.camera.position.y, camY, 2.5, clampedDelta);
+        state.camera.position.z = THREE.MathUtils.damp(state.camera.position.z, camZ, 2.5, clampedDelta);
+        state.camera.lookAt(driftX * 0.5, lookY, 0);
     });
 
     return (
@@ -681,9 +688,9 @@ function OrganicSeed({ position, rotation, scale, color, seedId }) {
     useFrame(({ clock }) => {
         if (matRef.current && meshRef.current) {
             const t = clock.getElapsedTime();
-            // Sharp bio-luminescent blink effect shifted slightly per seed
-            const blink = Math.pow(Math.abs(Math.sin(t * 1.8 + seedId * 2.5)), 30);
-            matRef.current.emissiveIntensity = 0.15 + blink * 4.5;
+            // Gentle bio-luminescent glow — softened to prevent visual glitch/flash
+            const glow = Math.pow(Math.abs(Math.sin(t * 1.2 + seedId * 2.5)), 6);
+            matRef.current.emissiveIntensity = 0.15 + glow * 1.5;
 
             // Subtle organic breathing scale effect for realism
             const breath = 1 + Math.sin(t * 1.2 + seedId * 1.5) * 0.03;
@@ -792,7 +799,7 @@ function RootTube({ curve, i, radius, fine = false }) {
         const reveal = smoothstep(0.1, 0.8, scrollCtx.offset);
         if (matRef.current) {
             matRef.current.opacity = (fine ? 0.02 : 0.08) + reveal * (fine ? 0.4 : 0.85);
-            matRef.current.emissiveIntensity = 0.02 + reveal * (fine ? 0.4 : 1.8); // High intensity for bloom
+            matRef.current.emissiveIntensity = 0.02 + reveal * (fine ? 0.35 : 1.2);
         }
     });
 
@@ -804,6 +811,7 @@ function RootTube({ curve, i, radius, fine = false }) {
                 emissive="#4ea864"
                 roughness={0.9}
                 transparent opacity={0.8}
+                depthWrite={false}
                 toneMapped={false}
             />
         </Tube>
@@ -812,7 +820,6 @@ function RootTube({ curve, i, radius, fine = false }) {
 
 function HubNode({ pos, title, href, delay, color }) {
     const router = useRouter();
-    const [hover, setHover] = useState(false);
     const scaleRef = useRef();
 
     useFrame((state, delta) => {
@@ -823,7 +830,7 @@ function HubNode({ pos, title, href, delay, color }) {
         const pulse = 1 + Math.sin(state.clock.elapsedTime * 1.5 + pos[0]) * 0.04;
 
         if (scaleRef.current) {
-            const targetScale = (0.2 + appear * 0.8 + (hover ? 0.1 : 0)) * pulse;
+            const targetScale = (0.2 + appear * 0.8) * pulse;
             scaleRef.current.scale.setScalar(THREE.MathUtils.damp(scaleRef.current.scale.x, targetScale, 4, delta));
             scaleRef.current.rotation.y += delta * 0.3;
             scaleRef.current.rotation.x += delta * 0.15;
@@ -836,35 +843,36 @@ function HubNode({ pos, title, href, delay, color }) {
     });
 
     return (
-        <Float speed={0.8} rotationIntensity={0.02} floatIntensity={0.05}>
-            <group position={pos} ref={scaleRef}>
-                {/* Translucent hard shell */}
-                <mesh>
-                    <icosahedronGeometry args={[0.3, 1]} />
-                    <meshStandardMaterial color="#111812" roughness={0.8} metalness={0.1} transparent opacity={0.3} emissive={color} emissiveIntensity={0.05} />
-                </mesh>
+        <group position={pos}>
+            <Float speed={0.8} rotationIntensity={0.02} floatIntensity={0.05}>
+                <group ref={scaleRef}>
+                    {/* Translucent hard shell */}
+                    <mesh>
+                        <icosahedronGeometry args={[0.3, 1]} />
+                        <meshStandardMaterial color="#111812" roughness={0.8} metalness={0.1} transparent opacity={0.3} depthWrite={false} emissive={color} emissiveIntensity={0.05} />
+                    </mesh>
 
-                {/* Glowing dense core (Clickable) */}
-                <mesh
-                    onClick={() => router.push(href)}
-                    onPointerEnter={() => { setHover(true); document.body.style.cursor = "pointer"; }}
-                    onPointerLeave={() => { setHover(false); document.body.style.cursor = "auto"; }}
-                >
-                    <octahedronGeometry args={[0.12, 0]} />
-                    <meshStandardMaterial color={color} roughness={0.2} emissive={color} emissiveIntensity={hover ? 6.0 : 2.5} toneMapped={false} />
-                </mesh>
+                    {/* Glowing dense core (Clickable) */}
+                    <mesh 
+                        onClick={() => router.push(href)}
+                        onPointerEnter={() => { document.body.style.cursor = "pointer"; }}
+                                onPointerLeave={() => { document.body.style.cursor = "auto"; }}
+                    >
+                        <octahedronGeometry args={[0.12, 0]} />
+                        <meshStandardMaterial color={color} roughness={0.2} emissive={color} emissiveIntensity={1.8} toneMapped={false} />
+                    </mesh>
+                </group>
+            </Float>
 
-                {hover && (
-                    <Html center distanceFactor={5} zIndexRange={[100, 0]}>
-                        <div className="rounded-full border border-border px-4 py-1.5 text-[12px] font-bold text-foreground backdrop-blur-md shadow-lg pointer-events-none transition-all duration-300 bg-white/90"
-                            style={{
-                                boxShadow: `0 8px 32px ${color}33`,
-                            }}
-                        >{title}</div>
-                    </Html>
-                )}
-            </group>
-        </Float>
+            {/* Static Label on the right */}
+            <Html position={[0.65, 0, 0]} center distanceFactor={5} zIndexRange={[100, 0]} style={{ whiteSpace: 'nowrap' }}>
+                <div className="rounded-full border border-border px-4 py-1.5 text-[12px] font-bold text-foreground backdrop-blur-md shadow-lg pointer-events-none bg-white/90"
+                    style={{
+                        boxShadow: `0 8px 32px ${color}33`,
+                    }}
+                >{title}</div>
+            </Html>
+        </group>
     );
 }
 

@@ -15,6 +15,7 @@ const COMMUNITIES = [
     icon: (
       <Image src="/icon/icons-1.svg" alt="Educators Icon" width={64} height={64} className="h-16 w-auto object-contain drop-shadow-sm" />
     ),
+    button: "Explore Services for Educators",
     accent: "#10b981",      /* emerald */
     accentLight: "#d1fae5",
     num: "01",
@@ -24,6 +25,7 @@ const COMMUNITIES = [
     subtitle: "Strategic Partnership",
     description: "Systems thinking and strategic partnership to build the culture, capacity, and infrastructure for lasting educational change.",
     href: "/services/for-leaders",
+    button: "Explore Services for Leaders",
     icon: (
       <Image src="/icon/icons-3.svg" alt="School Leaders Icon" width={64} height={64} className="h-16 w-auto object-contain drop-shadow-sm" />
     ),
@@ -36,6 +38,7 @@ const COMMUNITIES = [
     subtitle: "Family Empowerment",
     description: "Professional support to understand your child's unique learning profile and become a confident, effective advocate in their education.",
     href: "/services/for-parents",
+    button: "Explore Services for Parents",
     icon: (
       <Image src="/icon/icons-2.svg" alt="Parents Icon" width={64} height={64} className="h-16 w-auto object-contain drop-shadow-sm" />
     ),
@@ -88,7 +91,7 @@ export default function WhatWeDo() {
         >
           <span className="inline-flex items-center gap-2 mb-5">
             <span className="h-[2px] w-6 rounded-full" style={{ background: "#A066AA" }} />
-            <p className="text-[11px] font-bold uppercase tracking-[0.32em]" style={{ color: "#A066AA" }}>Who We Serve</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.32em]" style={{ color: "#A066AA" }}>Who We Do</p>
           </span>
           <h2 className="text-4xl md:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#171717]">
             Supporting your<br />
@@ -146,7 +149,7 @@ export default function WhatWeDo() {
                     className="mt-6 inline-flex items-center gap-2 text-sm font-bold transition-all duration-300 group-hover:gap-3"
                     style={{ color: item.accent }}
                   >
-                    Explore Services
+                    {item.button}
                     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
                     </svg>

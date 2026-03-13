@@ -44,17 +44,17 @@ export default function EducatorsPage() {
         webImage="/banners/for-eudcators.jpg"
         mobileImage="/banners/for-eudcators-mob.jpg"
         title="You're Already Doing This Work. We Help You Do It More Sustainably."
-        breadcrumbs={[{ label: "For Educators" }]}
+        breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Educators" }]}
       />
 
       {/* ── THE CHALLENGE ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="The Challenge"
-        title="Responsive Teaching Is Exhausting Without the Right Structures"
+        // title="Responsive Teaching Is Exhausting Without the Right Structures"
         paragraphs={[
           "You're already responding to diverse learners - the student who finishes early, the one who struggles with pace, the creative thinker whose brilliance doesn't fit the test. The challenge is making it sustainable.",
           "Limited time, large classes, curriculum requirements, and the cognitive load of attending to 25+ individuals simultaneously make responsive practice exhausting.",
-          "What we offer: Frameworks that systematize what you already do intuitively, moving from moment-to-moment responses to sustainable, structured differentiation.",
+          <><strong>What we offer:</strong> Frameworks that systematize what you already do intuitively, moving from moment-to-moment responses to sustainable, structured differentiation.</>,
         ]}
       />
 
@@ -107,13 +107,7 @@ export default function EducatorsPage() {
             href: "#resources",
             cta: "Access Resources",
           },
-          {
-            title: "Our Core Principles",
-            description:
-              "What do we mean by 'learning as a verb'? Read our foundational frameworks on the future of education and the path of self-actualization.",
-            href: "#principles",
-            cta: "Read More",
-          },
+
         ]}
       />
 
@@ -136,7 +130,7 @@ export default function EducatorsPage() {
             description:
               "Find hands-on workshops designed to build practical, immediately usable frameworks.",
             href: "#workshops",
-            cta: "View Workshops",
+            cta: "View workshops and training",
           },
           {
             label: "Want Partnership",

@@ -19,7 +19,7 @@ export default function StorySection({
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
-          
+
           {/* CONTENT COLUMN */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -30,9 +30,9 @@ export default function StorySection({
             <p className="text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4">
               Our Story
             </p>
-            <h2 className="text-4xl font-light leading-tight text-foreground md:text-5xl lg:text-6xl tracking-tight mb-8">
+            {/* <h2 className="text-4xl font-light leading-tight text-foreground md:text-5xl lg:text-6xl tracking-tight mb-8">
               &ldquo;The education is not the learning of facts, but the training of the mind to think.&rdquo;
-            </h2>
+            </h2> */}
             <div className="space-y-6 text-[17px] leading-relaxed text-muted-foreground font-light text-justify">
               {paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
@@ -41,11 +41,11 @@ export default function StorySection({
 
             {/* FOUNDER BLOCK - GLASSMORPHISM */}
             <div className="mt-12 p-8 md:p-10 rounded-3xl bg-white/40 backdrop-blur-xl border border-white shadow-[0_8px_32px_rgba(0,0,0,0.03)] relative overflow-hidden group">
-               <div className="absolute inset-0 bg-gradient-to-br from-[#6bcf8e]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-               <h3 className="text-xl md:text-2xl font-medium text-foreground mb-4 relative z-10">{founderTitle}</h3>
-               <p className="text-muted-foreground font-light text-[16px] leading-relaxed relative z-10">
-                 &ldquo;{founderText}&rdquo;
-               </p>
+              <div className="absolute inset-0 bg-gradient-to-br from-[#6bcf8e]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+              <h3 className="text-xl md:text-2xl font-medium text-foreground mb-4 relative z-10">{founderTitle}</h3>
+              <p className="text-muted-foreground font-light text-[16px] leading-relaxed relative z-10">
+                &ldquo;{founderText}&rdquo;
+              </p>
             </div>
           </motion.div>
 
@@ -58,13 +58,13 @@ export default function StorySection({
             className="lg:sticky lg:top-32"
           >
             <div className="relative rounded-[2.5rem] overflow-hidden aspect-[4/5] shadow-2xl border-[8px] border-white bg-white">
-               <Image
-                 src={image || "/placeholder.jpg"}
-                 alt={title}
-                 fill
-                 className="object-cover hover:scale-105 transition-transform duration-700"
-               />
-               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+              <Image
+                src={image || "/placeholder.jpg"}
+                alt={title}
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
             </div>
           </motion.div>
 
