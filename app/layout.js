@@ -1,4 +1,4 @@
-import { Manrope, Inter } from "next/font/google";
+import { Lexend, Mulish } from "next/font/google";
 import "./globals.css";
 import { Suspense } from "react";
 
@@ -9,15 +9,15 @@ import ScrollUI from "@/components/ScrollUI";
 import { ConsultationProvider } from "@/context/ConsultationContext";
 import ConsultationModalWrapper from "@/components/ConsultationModalWrapper";
 
-/* Primary Heading font - Manrope */
-const primaryFont = Manrope({
+/* Primary Heading font - Lexend */
+const primaryFont = Lexend({
   variable: "--font-primary",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-/* Secondary Body font - Inter */
-const secondaryFont = Inter({
+/* Secondary Body font - Mulish */
+const secondaryFont = Mulish({
   variable: "--font-secondary",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],

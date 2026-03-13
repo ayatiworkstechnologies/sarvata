@@ -10,13 +10,10 @@ const COMMUNITIES = [
   {
     title: "Educators",
     subtitle: "Sustainable Practice",
-    description: "Practical frameworks and job-embedded support to make responsive, differentiated teaching sustainable—not exhausting.",
+    description: "Practical frameworks and job-embedded support to make responsive, differentiated teaching sustainable - not exhausting.",
     href: "/services/for-educators",
     icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-      </svg>
+      <Image src="/icon/icons-1.svg" alt="Educators Icon" width={64} height={64} className="h-16 w-auto object-contain drop-shadow-sm" />
     ),
     accent: "#10b981",      /* emerald */
     accentLight: "#d1fae5",
@@ -28,9 +25,7 @@ const COMMUNITIES = [
     description: "Systems thinking and strategic partnership to build the culture, capacity, and infrastructure for lasting educational change.",
     href: "/services/for-leaders",
     icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-      </svg>
+      <Image src="/icon/icons-3.svg" alt="School Leaders Icon" width={64} height={64} className="h-16 w-auto object-contain drop-shadow-sm" />
     ),
     accent: "#6366f1",      /* indigo */
     accentLight: "#e0e7ff",
@@ -42,9 +37,7 @@ const COMMUNITIES = [
     description: "Professional support to understand your child's unique learning profile and become a confident, effective advocate in their education.",
     href: "/services/for-parents",
     icon: (
-      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
+      <Image src="/icon/icons-2.svg" alt="Parents Icon" width={64} height={64} className="h-16 w-auto object-contain drop-shadow-sm" />
     ),
     accent: "#A066AA",      /* brand primary */
     accentLight: "#f3e8ff",
@@ -74,9 +67,9 @@ export default function WhatWeDo() {
       style={{ background: "linear-gradient(180deg, #faf7fc 0%, #ffffff 100%)" }}
     >
       {/* ── floating 3-D orbs (parallax) ── */}
-      <motion.div style={{ y: y1 }} className="pointer-events-none absolute -top-32 -right-32 h-[520px] w-[520px] rounded-full opacity-25 blur-[90px]"
+      <motion.div className="pointer-events-none absolute -top-32 -right-32 h-[520px] w-[520px] rounded-full opacity-25 blur-[90px]"
         aria-hidden style={{ y: y1, background: "linear-gradient(135deg, #A066AA 0%, #7a45a0 60%, #4e2a7a 100%)" }} />
-      <motion.div style={{ y: y2 }} className="pointer-events-none absolute bottom-0 -left-32 h-[420px] w-[420px] rounded-full opacity-15 blur-[80px]"
+      <motion.div className="pointer-events-none absolute bottom-0 -left-32 h-[420px] w-[420px] rounded-full opacity-15 blur-[80px]"
         aria-hidden style={{ y: y2, background: "radial-gradient(circle, #E2C473, transparent 70%)" }} />
 
       {/* ── 3-D perspective grid in bg ── */}
@@ -132,8 +125,7 @@ export default function WhatWeDo() {
                 <div className="p-8">
                   {/* number + icon row */}
                   <div className="flex items-start justify-between mb-6">
-                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl shadow-sm"
-                      style={{ background: item.accentLight, color: item.accent }}>
+                    <div className="flex h-16 items-center justify-center">
                       {item.icon}
                     </div>
                     <span className="text-4xl font-black leading-none" style={{ color: item.accent + "18" }}>{item.num}</span>

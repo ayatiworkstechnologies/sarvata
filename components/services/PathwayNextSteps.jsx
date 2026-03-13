@@ -65,7 +65,7 @@ export default function PathwayNextSteps({ eyebrow = "Next Steps", title, steps 
           ))}
         </div>
 
-        {/* Bottom CTA Buttons — passed as children optionally */}
+        {/* Bottom CTA Buttons  -  passed as children optionally */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}

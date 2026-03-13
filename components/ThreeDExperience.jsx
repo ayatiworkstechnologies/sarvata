@@ -123,14 +123,14 @@ function Scene() {
 
         const t = scrollCtx.offset;
 
-        // On mobile/portrait screens, we push the camera further back so the width fits
+        // On mobile/portrait screens, we look slightly higher to balance the vertical stack
         const aspect = state.viewport.aspect;
-        const zPush = aspect < 1 ? 2.6 : 0; // Move back 2.6 units on narrow screens
-        const yPush = aspect < 1 ? 0.8 : 0; // Look slightly higher on narrow screens to center the seeds
+        const yPush = aspect < 1 ? 0.6 : 0;
+        const zPush = aspect < 1 ? 0.8 : 0; // Much gentler Z-push now that seeds are centered
 
-        // Deep descent path — camera starts high so ground is at the bottom
+        // Deep descent path  -  camera starts high so ground is at the bottom. 
         const camY = THREE.MathUtils.lerp(1.2, -5.6 + yPush, easeInOut(t));
-        const camZ = THREE.MathUtils.lerp(3.5 + zPush, 3.4 + zPush, easeInOut(Math.min(t * 1.2, 1)));
+        const camZ = THREE.MathUtils.lerp(3.5, 3.4 + zPush, easeInOut(Math.min(t * 1.2, 1)));
         const lookY = THREE.MathUtils.lerp(-0.3, -4.8 + yPush, easeInOut(t));
 
         // Very subtle side drift for panoramic feel
@@ -333,7 +333,7 @@ function RealisticPlant() {
             const x = pos.getX(i);
             const y = pos.getY(i);
 
-            // Asymmetric width envelope — real leaves aren't perfectly symmetric
+            // Asymmetric width envelope  -  real leaves aren't perfectly symmetric
             const asymmetry = 1 + Math.sin(y * 7.3 + 0.5) * 0.06;
             const baseWidth = Math.sin(y * Math.PI) * 0.45 + (1 - y) * 0.03;
             const width = baseWidth * (x > 0 ? asymmetry : (2 - asymmetry));
@@ -709,11 +709,11 @@ function OrganicSeed({ position, rotation, scale, color, seedId }) {
    PROCEDURAL ROOT SYSTEM
    ═══════════════════════════════════════════════════════════════════════════ */
 
-// Hardcoded target coordinates for the 3 hub nodes
+// Tightly packed target coordinates for the 3 hub nodes to ensure mobile visibility
 const HUB_NODES = [
-    { title: "for Educators ", href: "/services/for-educators", pos: [-1.8, -3.2, 0.4], color: "#6bcf8e" },
-    { title: "for Leaders ", href: "/services/for-leaders", pos: [1.7, -4.0, 0.2], color: "#58c4d4" },
-    { title: "for Parents ", href: "/services/for-parents", pos: [-0.9, -5.0, 0.8], color: "#a88ee0" },
+    { title: "for Educators ", href: "/services/for-educators", pos: [-0.95, -3.2, 0.4], color: "#6bcf8e" },
+    { title: "for Leaders ", href: "/services/for-leaders", pos: [0.95, -4.1, 0.2], color: "#58c4d4" },
+    { title: "for Parents ", href: "/services/for-parents", pos: [-0.4, -5.0, 0.8], color: "#a88ee0" },
 ];
 
 function makeSquigglyCurve(start, end, segments, noiseStr = 0.5) {

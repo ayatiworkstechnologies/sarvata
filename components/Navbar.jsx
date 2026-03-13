@@ -59,7 +59,7 @@ export default function Header() {
                   width={160}
                   height={64}
                   priority
-                  className="h-12 w-auto md:h-14 transition duration-300 hover:opacity-90"
+                  className="h-15 w-auto md:h-15 transition duration-300 hover:opacity-90"
                 />
               </Link>
 
@@ -222,7 +222,7 @@ function NavItem({ name, href, active, dropdownItems }) {
     >
       <Link
         href={href}
-        className={`relative flex items-center gap-1.5 rounded-full px-4 py-2.5 text-[14px] font-semibold transition-all duration-300 ${active ? "text-primary" : "text-foreground/75 hover:text-primary"
+        className={`relative flex items-center gap-1.5 rounded-full px-4 py-2.5 text-[14px] font-semibold transition-all duration-300 ${active ? "bg-white text-primary shadow-[0_4px_12px_rgba(0,0,0,0.05)] ring-1 ring-black/5" : "text-foreground/75 hover:text-primary"
           }`}
       >
 
@@ -279,7 +279,7 @@ function MobileLink({ name, href, pathname, setMenuOpen, isSub = false }) {
       onClick={() => setMenuOpen(false)}
       className={`relative block rounded-xl px-4 transition-all duration-300 ${isSub ? "py-2.5 text-[14px]" : "py-3 text-[15px]"
         } ${active
-          ? "text-primary"
+          ? "bg-white text-primary shadow-[0_4px_12px_rgba(0,0,0,0.05)] ring-1 ring-black/5"
           : "text-foreground/75 hover:text-primary"
         }`}
     >

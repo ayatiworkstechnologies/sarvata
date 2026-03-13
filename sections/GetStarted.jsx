@@ -169,7 +169,7 @@ export default function GetStarted() {
                         >
                             <div className="absolute inset-0 overflow-hidden border border-black/5 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.10)] transition-all duration-500 group-hover:shadow-[0_28px_70px_rgba(15,23,42,0.20)]">
                                 <Image
-                                    src="/img.png"
+                                    src="/img-home.jpg"
                                     alt="Schedule Consultation with Sarvata"
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"

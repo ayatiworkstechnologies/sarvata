@@ -50,11 +50,11 @@ export default function ParentsPage() {
       {/* ── THE CHALLENGE ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="Navigating Education, Together"
-        title="You Champion Your Child's Potential—We Help You Understand It"
+        title="You Champion Your Child's Potential - We Help You Understand It"
         paragraphs={[
           "You celebrate your child's strengths, navigate their challenges, and champion their unique potential. This journey can feel complex, especially when supporting diverse learning needs.",
           "Sarvata partners with you to understand your child's learning profile and empowers you to become a stronger advocate in their educational journey.",
-          "You are not alone. We offer a supportive space for parents—professional insights, practical strategies, and clear guidance, every step of the way.",
+          "You are not alone. We offer a supportive space for parents - professional insights, practical strategies, and clear guidance, every step of the way.",
         ]}
       />
 
@@ -71,7 +71,7 @@ export default function ParentsPage() {
           {
             title: "Building Practical Strategies",
             description:
-              "Evidence-based workshops and tailored guidance that give you tools to support your child's learning at home—in ways that actually work.",
+              "Evidence-based workshops and tailored guidance that give you tools to support your child's learning at home - in ways that actually work.",
           },
           {
             title: "Strengthening the Home-School Connection",
@@ -89,7 +89,7 @@ export default function ParentsPage() {
           {
             title: "Insights & Guidance",
             description:
-              "Professional assessment and counseling to understand your child's unique learning profile, strengths, and growth areas—delivered with clarity and compassion.",
+              "Professional assessment and counseling to understand your child's unique learning profile, strengths, and growth areas - delivered with clarity and compassion.",
             href: "#insights",
             cta: "Learn More",
           },
@@ -126,7 +126,7 @@ export default function ParentsPage() {
             label: "Get Informed",
             title: "Download the Parent Services Guide",
             description:
-              "A clear overview of all the ways Sarvata partners with families—what to expect and how to begin.",
+              "A clear overview of all the ways Sarvata partners with families - what to expect and how to begin.",
             href: "#guide",
             cta: "Download Guide",
           },

@@ -30,7 +30,7 @@ export default function ScheduleConsultationButton({
     lg: "h-14 px-8 text-base",
   }[size];
 
-  /* Variant map — mirrors the existing .btn system but as inline Tailwind */
+  /* Variant map  -  mirrors the existing .btn system but as inline Tailwind */
   const variantClass = {
     primary:
       "bg-primary text-white shadow-[0_8px_24px_rgba(160,102,170,0.28)] hover:shadow-[0_14px_32px_rgba(160,102,170,0.36)] hover:-translate-y-0.5",

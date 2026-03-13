@@ -56,7 +56,7 @@ export default function AboutPage() {
         ]}
         founderTitle="Founder's Journey"
         founderText="Our founder established Sarvata with a profound commitment to educational equity and the belief that every child deserves a school environment designed for their unique potential. Drawing from decades of firsthand experience in diverse classrooms, the vision was to bridge the gap between aspirational pedagogy and daily practice."
-        image="/about-1.jpg"
+        image="/about.jpg"
       />
 
       <MissionSection
@@ -96,7 +96,7 @@ export default function AboutPage() {
         steps={[
           {
             title: "Phase 1: Understand Your Context",
-            desc: "We begin by learning from you. What are your goals? What's working? Where's the friction between aspiration and reality? This isn't a generic audit. It's a genuine discovery of your unique culture, constraints, and aspirations—what you're building toward and what's standing in the way.",
+            desc: "We begin by learning from you. What are your goals? What's working? Where's the friction between aspiration and reality? This isn't a generic audit. It's a genuine discovery of your unique culture, constraints, and aspirations - what you're building toward and what's standing in the way.",
           },
           {
             title: "Phase 2: Co-Create Solutions",
@@ -104,7 +104,7 @@ export default function AboutPage() {
           },
           {
             title: "Phase 3: Build Sustainability",
-            desc: "We develop your internal capacity by mentoring teacher leaders, embedding practices into your daily routines, and creating structures that sustain themselves. Success means the approaches become how you naturally operate—part of your culture, not an initiative.",
+            desc: "We develop your internal capacity by mentoring teacher leaders, embedding practices into your daily routines, and creating structures that sustain themselves. Success means the approaches become how you naturally operate - part of your culture, not an initiative.",
           },
         ]}
       />

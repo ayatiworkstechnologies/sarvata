@@ -53,13 +53,18 @@ export default function MainHero({
       {/* Main Content */}
       <div className="absolute inset-0 flex items-center">
         <div className="container-max pt-20 md:pt-24">
-          <div className="max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl rounded-3xl border border-white/20 bg-white/10 p-6 shadow-md backdrop-blur-md sm:p-8 md:p-10"
+          >
             {title && (
               <motion.h1
                 initial={{ opacity: 0, y: 22 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15, duration: 0.65 }}
-                className="max-w-3xl text-3xl font-bold leading-[1.05] tracking-tight text-white drop-shadow-[0_8px_24px_rgba(0,0,0,0.18)] sm:text-4xl md:text-5xl lg:text-6xl"
+                className="max-w-3xl text-3xl font-bold leading-[1.05] tracking-tight text-black drop-shadow-[0_8px_24px_rgba(0,0,0,0.18)] sm:text-4xl md:text-5xl lg:text-6xl"
               >
                 {title}
               </motion.h1>
@@ -82,7 +87,7 @@ export default function MainHero({
               transition={{ delay: 0.35, duration: 0.6 }}
               className="mt-6 h-[3px] w-24 origin-left rounded-full bg-gradient-to-r from-primary via-secondary to-white/70 md:mt-8"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
 
@@ -94,21 +99,21 @@ export default function MainHero({
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, delay: 0.2 }}
-              className="inline-flex max-w-full rounded-full border border-white/20 bg-white/12 px-4 py-2.5 backdrop-blur-md"
+              className="inline-flex max-w-full rounded-full border border-white/20 bg-white/10 px-5 py-2.5 backdrop-blur-md shadow-sm"
             >
-              <ol className="flex flex-wrap items-center gap-2 text-sm font-medium text-white/90">
+              <ol className="flex flex-wrap items-center gap-2.5 text-[15px] font-semibold text-white drop-shadow-md">
                 <li className="flex items-center gap-2">
-                  <HiHome className="text-base text-white" />
-                  <Link href="/" className="transition hover:text-white">
+                  <HiHome className="text-lg text-white" />
+                  <Link href="/" className="transition hover:text-white/80">
                     Home
                   </Link>
                 </li>
 
                 {breadcrumbs.map((item, i) => (
-                  <li key={i} className="flex items-center gap-2">
-                    <GrNext className="text-[10px] opacity-70" />
+                  <li key={i} className="flex items-center gap-2.5">
+                    <GrNext className="text-[11px] text-white/70" />
                     {item.href ? (
-                      <Link href={item.href} className="transition hover:text-white">
+                      <Link href={item.href} className="transition hover:text-white/80">
                         {item.label}
                       </Link>
                     ) : (

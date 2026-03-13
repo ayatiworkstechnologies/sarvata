@@ -7,7 +7,7 @@ import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 export const metadata = {
   title: "Services for School Leaders - Strategic Partnership & School Transformation | Sarvata",
   description:
-    "Sarvata partners with school leaders to build systems, culture, and capacity for meaningful, lasting educational change. From inclusion audits to faculty mentoring—strategic support grounded in your school's reality.",
+    "Sarvata partners with school leaders to build systems, culture, and capacity for meaningful, lasting educational change. From inclusion audits to faculty mentoring - strategic support grounded in your school's reality.",
   keywords: [
     "school leadership coaching",
     "school transformation",
@@ -54,7 +54,7 @@ export default function LeadersPage() {
         paragraphs={[
           "In your hands rests not just an institution, but the promise of tomorrow. As school leaders, you stand at the crossroads of powerful and often competing imperatives.",
           "Managing the immediacy of daily operations while safeguarding long-term vision, upholding accountability without losing sight of authentic learning, empowering faculty despite constraints, and harmonising the varied expectations of stakeholders.",
-          "Meaningful change is slow, contextual, and requires deep cultural shifts—far beyond policy updates. That's where partnership makes the difference.",
+          "Meaningful change is slow, contextual, and requires deep cultural shifts - far beyond policy updates. That's where partnership makes the difference.",
         ]}
       />
 
@@ -89,7 +89,7 @@ export default function LeadersPage() {
           {
             title: "Inclusion Audits & Strategic Roadmaps",
             description:
-              "Objective assessment of current practices and data-driven planning for systemic improvement—giving you a clear, actionable picture of where you are and where you're headed.",
+              "Objective assessment of current practices and data-driven planning for systemic improvement - giving you a clear, actionable picture of where you are and where you're headed.",
             href: "#audits",
             cta: "Learn More",
           },
@@ -110,7 +110,7 @@ export default function LeadersPage() {
           {
             title: "Programs for Your Students",
             description:
-              "Workshops on digital citizenship, mental health and well-being, and healthy relationships—directly serving the young people in your care.",
+              "Workshops on digital citizenship, mental health and well-being, and healthy relationships - directly serving the young people in your care.",
             href: "#student-programs",
             cta: "Learn More",
           },

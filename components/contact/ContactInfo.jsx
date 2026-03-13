@@ -144,7 +144,7 @@ export default function ContactInfo() {
             </div>
           </div>
 
-          {/* Follow Us — inline after Office Hours */}
+          {/* Follow Us  -  inline after Office Hours */}
           <div className="space-y-3">
             <h3 className="text-xs uppercase tracking-[0.2em] text-muted font-semibold border-b border-border pb-3">
               Follow Us

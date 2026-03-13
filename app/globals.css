@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Outfit:wght@100..900&display=swap");
-
 @import "tailwindcss";
 
 /* ======================================================
@@ -18,9 +16,6 @@
   --border: #e5e7eb;
 
   --soft-bg: #faf7fc;
-
-  --font-primary: "Lexend", system-ui, sans-serif;
-  --font-secondary: "Outfit", system-ui, sans-serif;
 
   --radius-sm: 6px;
   --radius-md: 10px;

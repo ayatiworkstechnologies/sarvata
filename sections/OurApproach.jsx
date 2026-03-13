@@ -9,28 +9,28 @@ const ITEMS = [
   {
     title: "Grounded in Practice",
     description: "We're educators who've lived the gap between vision and reality. Our frameworks are shaped by classrooms, not just research papers.",
-    icon: "M12 3v1m0 16v1m8.66-13l-.87.5M4.21 16.5l-.87.5M20.66 16.5l-.87-.5M4.21 7.5l-.87-.5M21 12h-1M4 12H3",
+    icon: <Image src="/icon/1.svg" alt="Practice Icon" width={56} height={56} className="h-14 w-auto object-contain drop-shadow-sm" />,
     color: "#10b981",
     bg: "rgba(16,185,129,0.10)",
   },
   {
     title: "Systems Thinking",
     description: "Real change isn't one workshop. We address culture, pedagogy, and operational systems in tandem so improvements compound.",
-    icon: "M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1",
+    icon: <Image src="/icon/2.svg" alt="Systems Icon" width={56} height={56} className="h-14 w-auto object-contain drop-shadow-sm" />,
     color: "#6366f1",
     bg: "rgba(99,102,241,0.10)",
   },
   {
     title: "Building Independence",
     description: "We build your internal capacity, not dependence on us. Success is when our approaches become how you naturally operate.",
-    icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z",
+    icon: <Image src="/icon/3.svg" alt="Independence Icon" width={56} height={56} className="h-14 w-auto object-contain drop-shadow-sm" />,
     color: "#E2C473",
     bg: "rgba(226,196,115,0.15)",
   },
   {
     title: "Sustained Partnership",
     description: "We stay through implementation. Showing up for after the workshop is where the most important work happens.",
-    icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0",
+    icon: <Image src="/icon/4.svg" alt="Partnership Icon" width={56} height={56} className="h-14 w-auto object-contain drop-shadow-sm" />,
     color: "#A066AA",
     bg: "rgba(160,102,170,0.10)",
   },
@@ -59,11 +59,11 @@ export default function OurApproach() {
 
       {/* ── particles ── */}
       {[
-        { x: "8%",  y: "15%", size: 10, color: "#A066AA40", delay: 0 },
-        { x: "85%", y: "20%", size: 7,  color: "#E2C47360", delay: 1.2 },
+        { x: "8%", y: "15%", size: 10, color: "#A066AA40", delay: 0 },
+        { x: "85%", y: "20%", size: 7, color: "#E2C47360", delay: 1.2 },
         { x: "70%", y: "70%", size: 12, color: "#6366f130", delay: 0.7 },
-        { x: "20%", y: "75%", size: 8,  color: "#10b98130", delay: 1.8 },
-        { x: "50%", y: "10%", size: 6,  color: "#A066AA50", delay: 2.4 },
+        { x: "20%", y: "75%", size: 8, color: "#10b98130", delay: 1.8 },
+        { x: "50%", y: "10%", size: 6, color: "#A066AA50", delay: 2.4 },
       ].map((p, i) => <Particle key={i} {...p} />)}
 
       {/* ambient glows */}
@@ -75,7 +75,7 @@ export default function OurApproach() {
       <div className="container-max relative z-10">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20 items-center">
 
-          {/* ══ LEFT — 3D Image Stack ══ */}
+          {/* ══ LEFT  -  3D Image Stack ══ */}
           <div className="relative h-[520px] hidden lg:block" style={{ perspective: "1000px" }}>
 
             {/* back plate */}
@@ -102,7 +102,7 @@ export default function OurApproach() {
               className="absolute inset-0 rounded-[28px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.18)] border border-white/80"
             >
               <motion.div style={{ y: imgY }} className="h-full w-full">
-                <Image src="/home-contact.jpg" alt="Educators collaborating" fill className="object-cover" />
+                <Image src="/approach.jpg" alt="Educators collaborating" fill className="object-cover" />
               </motion.div>
               {/* overlay */}
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(78,42,122,0.45) 0%, rgba(160,102,170,0.15) 50%, transparent 100%)" }} />
@@ -111,7 +111,7 @@ export default function OurApproach() {
 
           </div>
 
-          {/* ══ RIGHT — text + items ══ */}
+          {/* ══ RIGHT  -  text + items ══ */}
           <div>
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -134,7 +134,7 @@ export default function OurApproach() {
                 }}>Not Prescription</span>
               </h2>
               <p className="text-[17px] leading-8 text-[#6b7280]" style={{ fontFamily: "var(--font-secondary)" }}>
-                We don't arrive with generic solutions. We begin by understanding your context, goals, and challenges—then co-create approaches that are both aspirational and realistic.
+                We don't arrive with generic solutions. We begin by understanding your context, goals, and challenges - then co-create approaches that are both aspirational and realistic.
               </p>
             </motion.div>
 
@@ -151,11 +151,8 @@ export default function OurApproach() {
                   style={{ background: "transparent" }}
                 >
                   {/* icon */}
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-110"
-                    style={{ background: item.bg, color: item.color }}>
-                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
-                    </svg>
+                  <div className="flex shrink-0 items-center justify-center transition-transform duration-300 group-hover:scale-110 pr-2">
+                    {item.icon}
                   </div>
                   {/* text */}
                   <div>

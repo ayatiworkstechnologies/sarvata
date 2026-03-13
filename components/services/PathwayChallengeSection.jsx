@@ -54,7 +54,7 @@ export default function PathwayChallengeSection({ eyebrow, title, paragraphs, ac
               {/* Big decorative quote mark */}
               <div className="text-[120px] leading-none font-bold text-primary/10 select-none mb-2">"</div>
               <p className="text-xl md:text-2xl font-semibold text-foreground leading-snug tracking-tight -mt-10">
-                The goal is not to cover the curriculum—it is to uncover the learner.
+                The goal is not to cover the curriculum - it is to uncover the learner.
               </p>
               <div className="mt-6 h-px w-full bg-border" />
               <p className="mt-5 text-sm text-muted font-secondary">
