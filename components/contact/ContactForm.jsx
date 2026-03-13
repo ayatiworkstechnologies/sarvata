@@ -25,10 +25,10 @@ export default function ContactForm() {
       className="relative overflow-hidden rounded-[28px] border border-border bg-background p-6 shadow-[0_16px_40px_rgba(23,23,23,0.06)] sm:p-8"
     >
       {/* Top Accent */}
-      <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-primary via-secondary to-primary" />
+      {/* <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-primary via-secondary to-primary" /> */}
 
       {/* Soft glow */}
-      <div className="pointer-events-none absolute right-0 top-0 h-36 w-36 rounded-full bg-primary/8 blur-3xl" />
+      {/* <div className="pointer-events-none absolute right-0 top-0 h-36 w-36 rounded-full bg-primary/8 blur-3xl" /> */}
 
       <div className="relative">
         <div className="mb-6">

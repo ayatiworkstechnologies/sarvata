@@ -27,12 +27,24 @@ const actions = [
 ];
 
 export default function GetStarted() {
-  const { openModal } = useConsultation();
+    const { openModal } = useConsultation();
+
     return (
         <section className="relative overflow-hidden bg-white py-24 md:py-32">
-            <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(ellipse at top right, rgba(160,102,170,0.07), transparent 55%)" }} />
-            <div className="pointer-events-none absolute bottom-0 left-1/2 h-[400px] w-[800px] -translate-x-1/2 rounded-full blur-[120px] opacity-30"
-              style={{ background: "linear-gradient(135deg, #A066AA 0%, #7a45a0 60%, #4e2a7a 100%)" }} />
+            <div
+                className="pointer-events-none absolute inset-0"
+                style={{
+                    background:
+                        "radial-gradient(ellipse at top right, rgba(160,102,170,0.07), transparent 55%)",
+                }}
+            />
+            <div
+                className="pointer-events-none absolute bottom-0 left-1/2 h-[400px] w-[800px] -translate-x-1/2 rounded-full blur-[120px] opacity-30"
+                style={{
+                    background:
+                        "linear-gradient(135deg, #A066AA 0%, #7a45a0 60%, #4e2a7a 100%)",
+                }}
+            />
 
             <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-10">
                 <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12">
@@ -58,12 +70,17 @@ export default function GetStarted() {
                         >
                             Ready to transform
                             <br />
-                            <span style={{
-                              background: "linear-gradient(135deg, #A066AA 0%, #7a45a0 60%, #4e2a7a 100%)",
-                              WebkitBackgroundClip: "text",
-                              WebkitTextFillColor: "transparent",
-                              backgroundClip: "text",
-                            }}>your community?</span>
+                            <span
+                                style={{
+                                    background:
+                                        "linear-gradient(135deg, #A066AA 0%, #7a45a0 60%, #4e2a7a 100%)",
+                                    WebkitBackgroundClip: "text",
+                                    WebkitTextFillColor: "transparent",
+                                    backgroundClip: "text",
+                                }}
+                            >
+                                your community?
+                            </span>
                         </motion.h2>
 
                         <motion.p
@@ -95,11 +112,21 @@ export default function GetStarted() {
                                         <button
                                             type="button"
                                             onClick={openModal}
-                                            className={`group inline-flex min-h-[58px] w-full items-center justify-between rounded-2xl px-5 py-4 text-left text-sm font-semibold transition-all duration-300 bg-secondary text-white shadow-lg shadow-secondary/20 hover:-translate-y-1 hover:shadow-xl hover:shadow-secondary/25`}
+                                            className="group inline-flex min-h-[58px] w-full items-center justify-between rounded-2xl bg-secondary px-5 py-4 text-left text-sm font-semibold text-white shadow-lg shadow-secondary/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-secondary/25"
                                         >
                                             <span className="pr-4 leading-snug">{action.label}</span>
-                                            <svg className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                                                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                                            <svg
+                                                className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                                strokeWidth={2.5}
+                                            >
+                                                <path
+                                                    d="M5 12h14M12 5l7 7-7 7"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
                                             </svg>
                                         </button>
                                     ) : (
@@ -111,8 +138,18 @@ export default function GetStarted() {
                                                 }`}
                                         >
                                             <span className="pr-4 leading-snug">{action.label}</span>
-                                            <svg className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                                                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                                            <svg
+                                                className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                                strokeWidth={2.5}
+                                            >
+                                                <path
+                                                    d="M5 12h14M12 5l7 7-7 7"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                />
                                             </svg>
                                         </Link>
                                     )}
@@ -128,43 +165,16 @@ export default function GetStarted() {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8 }}
-                            className="relative mx-auto h-[500px] w-full max-w-[440px]"
+                            className="group relative mx-auto h-[500px] w-full max-w-[460px]"
                         >
-                            {/* Back layer */}
-                            <div className="absolute -left-5 top-8 h-[88%] w-[88%] rounded-[2.25rem] bg-primary/10 blur-sm" />
-
-                            {/* Main image shape */}
-                            <div className="absolute inset-0 overflow-hidden rounded-[2.5rem] border border-black/5 bg-white shadow-[0_30px_80px_rgba(15,23,42,0.16)]">
+                            <div className="absolute inset-0 overflow-hidden border border-black/5 bg-white shadow-[0_18px_45px_rgba(15,23,42,0.10)] transition-all duration-500 group-hover:shadow-[0_28px_70px_rgba(15,23,42,0.20)]">
                                 <Image
-                                    src="/home-contact.jpg"
+                                    src="/img.png"
                                     alt="Schedule Consultation with Sarvata"
                                     fill
-                                    className="object-cover"
+                                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                                 />
-
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/5 to-white/10" />
-                                <div className="pointer-events-none absolute inset-0 shadow-[inset_0_0_50px_rgba(0,0,0,0.08)]" />
-                            </div>
-
-                            {/* Floating info card */}
-                            <div className="absolute -bottom-6 -left-8 max-w-[240px] rounded-[1.5rem] border border-white/70 bg-white/90 p-5 shadow-[0_20px_50px_rgba(15,23,42,0.14)] backdrop-blur-xl">
-                                <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
-                                    Tailored Support
-                                </p>
-                                <p className="mt-2 text-sm font-medium leading-6 text-foreground/80">
-                                    Practical guidance designed for educators, families, and school
-                                    leaders.
-                                </p>
-                            </div>
-
-                            {/* Small accent badge */}
-                            <div className="absolute right-[-14px] top-8 rounded-2xl border border-border/60 bg-white/95 px-4 py-3 shadow-[0_14px_40px_rgba(15,23,42,0.10)] backdrop-blur-xl">
-                                <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-muted">
-                                    Trusted Pathways
-                                </p>
-                                <p className="mt-1 text-sm font-semibold text-foreground">
-                                    Start with confidence
-                                </p>
+                                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent" />
                             </div>
                         </motion.div>
                     </div>

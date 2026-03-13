@@ -41,8 +41,8 @@ export default function EducatorsPage() {
 
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        webImage="/eudcators-web.jpg"
-        mobileImage="/eudcators-mobile.jpg"
+        webImage="/banners/for-eudcators.jpg"
+        mobileImage="/banners/for-eudcators-mob.jpg"
         title="You're Already Doing This Work. We Help You Do It More Sustainably."
         breadcrumbs={[{ label: "For Educators" }]}
       />

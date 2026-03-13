@@ -35,7 +35,7 @@ export default function ScheduleConsultationButton({
     primary:
       "bg-primary text-white shadow-[0_8px_24px_rgba(160,102,170,0.28)] hover:shadow-[0_14px_32px_rgba(160,102,170,0.36)] hover:-translate-y-0.5",
     secondary:
-      "bg-foreground text-white hover:bg-primary hover:-translate-y-0.5",
+      "bg-primary/90 text-white hover:bg-primary hover:-translate-y-0.5 shadow-md shadow-primary/10",
     outline:
       "border border-primary text-foreground hover:bg-primary hover:text-white hover:-translate-y-0.5",
     ghost:

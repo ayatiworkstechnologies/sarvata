@@ -41,8 +41,8 @@ export default function ParentsPage() {
 
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        webImage="/parents-web.jpg"
-        mobileImage="/parents-mobile.jpg"
+        webImage="/banners/for-parents.jpg"
+        mobileImage="/banners/for-parents-mob.jpg"
         title="Partnering in Your Child's Journey"
         breadcrumbs={[{ label: "For Parents" }]}
       />

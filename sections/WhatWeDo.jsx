@@ -127,7 +127,7 @@ export default function WhatWeDo() {
               <div className="group relative h-full rounded-[24px] overflow-hidden border border-[#e5e7eb] bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-shadow duration-300 hover:shadow-[0_24px_60px_rgba(0,0,0,0.12)]">
 
                 {/* top accent line */}
-                <div className="h-[3px] w-full" style={{ background: item.accent }} />
+                {/* <div className="h-[3px] w-full" style={{ background: item.accent }} /> */}
 
                 <div className="p-8">
                   {/* number + icon row */}

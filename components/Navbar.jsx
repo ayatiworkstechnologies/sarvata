@@ -222,16 +222,9 @@ function NavItem({ name, href, active, dropdownItems }) {
     >
       <Link
         href={href}
-        className={`relative flex items-center gap-1.5 rounded-full px-4 py-2.5 text-[14px] font-semibold transition-all duration-300 ${active ? "text-primary" : "text-foreground/75 hover:text-foreground"
+        className={`relative flex items-center gap-1.5 rounded-full px-4 py-2.5 text-[14px] font-semibold transition-all duration-300 ${active ? "text-primary" : "text-foreground/75 hover:text-primary"
           }`}
       >
-        {active && (
-          <motion.span
-            layoutId="desktop-active-pill"
-            className="absolute inset-0 rounded-full bg-white shadow-sm ring-1 ring-black/5"
-            transition={{ type: "spring", stiffness: 380, damping: 30 }}
-          />
-        )}
 
         <span className="relative z-10">{name}</span>
 
@@ -258,7 +251,7 @@ function NavItem({ name, href, active, dropdownItems }) {
                   <Link
                     key={idx}
                     href={item.href}
-                    className="group flex items-center justify-between rounded-xl px-4 py-3 text-[14px] font-medium text-foreground/75 transition-all duration-200 hover:bg-primary/5 hover:text-primary"
+                    className="group flex items-center justify-between rounded-xl px-4 py-3 text-[14px] font-medium text-foreground/75 transition-all duration-200 hover:text-primary"
                   >
                     <span>{item.name}</span>
                     <span className="translate-x-0 opacity-0 transition-all duration-200 group-hover:translate-x-0.5 group-hover:opacity-100">
@@ -286,8 +279,8 @@ function MobileLink({ name, href, pathname, setMenuOpen, isSub = false }) {
       onClick={() => setMenuOpen(false)}
       className={`relative block rounded-xl px-4 transition-all duration-300 ${isSub ? "py-2.5 text-[14px]" : "py-3 text-[15px]"
         } ${active
-          ? "bg-primary/8 text-primary"
-          : "text-foreground/75 hover:bg-white hover:text-foreground"
+          ? "text-primary"
+          : "text-foreground/75 hover:text-primary"
         }`}
     >
       <div className="flex items-center justify-between">

@@ -16,14 +16,7 @@ const scrollCtx = { offset: 0, target: 0 };
    ═══════════════════════════════════════════════════════════════════════════ */
 
 export default function ThreeDExperience() {
-    const [isMobileFallback, setIsMobileFallback] = useState(false);
     const wrapperRef = useRef(null);
-
-    useEffect(() => {
-        const mobile = window.innerWidth < 768;
-        const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        setIsMobileFallback(mobile || reduced);
-    }, []);
 
     useEffect(() => {
         const onScroll = () => {
@@ -38,29 +31,8 @@ export default function ThreeDExperience() {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
-    if (isMobileFallback) {
-        return (
-            <section className="relative h-screen w-full overflow-hidden bg-emerald-50 text-foreground border-b border-border/50">
-                <video
-                    className="absolute inset-0 h-full w-full object-cover opacity-80"
-                    src="/videos/home-organic-fallback.mp4"
-                    autoPlay muted loop playsInline
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/50 to-transparent" />
-                <div className="absolute inset-0 z-10 flex items-end">
-                    <div className="px-6 pb-14 md:px-10">
-                        <h1 className="text-3xl font-bold leading-[1.1] md:text-5xl text-foreground">
-                            Transforming Educators<br />and Schools, Every Day
-                        </h1>
-                        <p className="mt-4 max-w-lg text-[15px] font-secondary text-muted">
-                            We partner with schools, educators, and parents to create truly
-                            inclusive, learner-centered educational environments.
-                        </p>
-                    </div>
-                </div>
-            </section>
-        );
-    }
+    // We removed the forced mobile fallback so 3D works on mobile.
+    // If you want a fallback for reduced motion, you can bring it back here.
 
     return (
         <section ref={wrapperRef} className="relative w-full" style={{ height: "600vh" }}>
@@ -107,46 +79,34 @@ export default function ThreeDExperience() {
                     </Suspense>
                 </Canvas>
 
-                {/* HUD */}
-                <div className="pointer-events-none absolute inset-0 z-20 flex items-end justify-between p-6 pb-12 md:p-14 md:pb-20">
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-                        className="max-w-2xl"
-                    >
-                        <motion.p
-                            initial={{ opacity: 0, y: 15 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6, delay: 0.9 }}
-                            className="text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4"
-                        >
-                            Sarvata
-                        </motion.p>
-                        <h1 className="text-4xl font-bold leading-[1.1] text-foreground md:text-5xl lg:text-7xl tracking-tight">
-                            Transforming <br /> Educators &<br />
-                            <span className="font-extrabold text-primary">Schools, Every Day</span>
-                        </h1>
-                        <p className="mt-6 max-w-xl text-[17px] leading-relaxed text-muted font-secondary drop-shadow-sm">
-                            We partner with schools, educators, and parents to create truly
-                            inclusive, learner-centered educational environments.
-                        </p>
-                    </motion.div>
+            </div>
 
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+            {/* Non-sticky HUD (Scrolls up and away naturally) */}
+            <div className="pointer-events-none absolute top-0 left-0 w-full h-screen z-20 flex items-end justify-between p-6 pb-24 md:p-14 md:pb-20">
+                <motion.div
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+                    className="max-w-2xl"
+                >
+                    <motion.p
+                        initial={{ opacity: 0, y: 15 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, delay: 2 }}
-                        className="hidden text-right text-[12px] text-foreground/50 md:flex flex-col items-center gap-3 font-bold self-end"
+                        transition={{ duration: 0.6, delay: 0.9 }}
+                        className="text-[10px] md:text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4 drop-shadow-sm"
                     >
-                        <span className="tracking-[0.2em] uppercase">Scroll to Discover</span>
-                        <motion.div
-                            animate={{ y: [0, 8, 0] }}
-                            transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
-                            className="w-[2px] h-12 bg-gradient-to-b from-primary to-transparent"
-                        />
-                    </motion.div>
-                </div>
+                        Sarvata
+                    </motion.p>
+                    <h1 className="text-3xl font-bold leading-[1.15] text-foreground md:text-5xl lg:text-7xl tracking-tight drop-shadow-md">
+                        Transforming <br /> Educators &<br />
+                        <span className="font-extrabold text-primary">Schools, Every Day</span>
+                    </h1>
+                    <p className="mt-4 md:mt-6 max-w-[90%] md:max-w-xl text-[15px] md:text-[17px] leading-relaxed text-white font-secondary drop-shadow-sm">
+                        We partner with schools, educators, and parents to create truly
+                        inclusive, learner-centered educational environments.
+                    </p>
+                </motion.div>
+
             </div>
         </section>
     );
@@ -163,18 +123,27 @@ function Scene() {
 
         const t = scrollCtx.offset;
 
+        // On mobile/portrait screens, we push the camera further back so the width fits
+        const aspect = state.viewport.aspect;
+        const zPush = aspect < 1 ? 2.6 : 0; // Move back 2.6 units on narrow screens
+        const yPush = aspect < 1 ? 0.8 : 0; // Look slightly higher on narrow screens to center the seeds
+
         // Deep descent path — camera starts high so ground is at the bottom
-        const camY = THREE.MathUtils.lerp(1.2, -5.6, easeInOut(t));
-        const camZ = THREE.MathUtils.lerp(3.5, 3.4, easeInOut(Math.min(t * 1.2, 1)));
-        const lookY = THREE.MathUtils.lerp(-0.3, -4.8, easeInOut(t));
+        const camY = THREE.MathUtils.lerp(1.2, -5.6 + yPush, easeInOut(t));
+        const camZ = THREE.MathUtils.lerp(3.5 + zPush, 3.4 + zPush, easeInOut(Math.min(t * 1.2, 1)));
+        const lookY = THREE.MathUtils.lerp(-0.3, -4.8 + yPush, easeInOut(t));
 
         // Very subtle side drift for panoramic feel
         const driftX = Math.sin(t * Math.PI) * 0.15;
 
-        state.camera.position.x = THREE.MathUtils.damp(state.camera.position.x, driftX, 2.5, delta);
-        state.camera.position.y = THREE.MathUtils.damp(state.camera.position.y, camY, 2.5, delta);
+        // Pointer parallax effect
+        const pointerX = state.pointer.x * 0.4;
+        const pointerY = state.pointer.y * 0.2;
+
+        state.camera.position.x = THREE.MathUtils.damp(state.camera.position.x, driftX + pointerX, 2.5, delta);
+        state.camera.position.y = THREE.MathUtils.damp(state.camera.position.y, camY + pointerY, 2.5, delta);
         state.camera.position.z = THREE.MathUtils.damp(state.camera.position.z, camZ, 2.5, delta);
-        state.camera.lookAt(driftX * 0.5, lookY, 0);
+        state.camera.lookAt(driftX * 0.5 + pointerX * 0.5, lookY + pointerY * 0.5, 0);
     });
 
     return (
@@ -706,13 +675,30 @@ function OrganicSeed({ position, rotation, scale, color, seedId }) {
         return { geo: geometry, seedTex: new THREE.CanvasTexture(c) };
     }, [seedId]);
 
+    const matRef = useRef();
+    const meshRef = useRef();
+
+    useFrame(({ clock }) => {
+        if (matRef.current && meshRef.current) {
+            const t = clock.getElapsedTime();
+            // Sharp bio-luminescent blink effect shifted slightly per seed
+            const blink = Math.pow(Math.abs(Math.sin(t * 1.8 + seedId * 2.5)), 30);
+            matRef.current.emissiveIntensity = 0.15 + blink * 4.5;
+
+            // Subtle organic breathing scale effect for realism
+            const breath = 1 + Math.sin(t * 1.2 + seedId * 1.5) * 0.03;
+            meshRef.current.scale.set(scale[0] * breath, scale[1] * breath, scale[2] * breath);
+        }
+    });
+
     return (
-        <mesh position={position} rotation={rotation} scale={scale} castShadow geometry={geo}>
+        <mesh ref={meshRef} position={position} rotation={rotation} scale={scale} castShadow geometry={geo}>
             <meshStandardMaterial
+                ref={matRef}
                 map={seedTex}
                 color={color}
                 roughness={0.85}
-                emissive="#1a0f08"
+                emissive="#94d07b"
                 emissiveIntensity={0.15}
             />
         </mesh>
@@ -723,12 +709,11 @@ function OrganicSeed({ position, rotation, scale, color, seedId }) {
    PROCEDURAL ROOT SYSTEM
    ═══════════════════════════════════════════════════════════════════════════ */
 
-// Hardcoded target coordinates for the 4 hub nodes
+// Hardcoded target coordinates for the 3 hub nodes
 const HUB_NODES = [
-    { title: "Educators", href: "/hub-one", pos: [-1.8, -3.2, 0.4], color: "#6bcf8e" },
-    { title: "Leaders", href: "/hub-two", pos: [1.7, -4.0, 0.2], color: "#58c4d4" },
-    { title: "Parents", href: "/hub-three", pos: [-0.9, -5.0, 0.8], color: "#a88ee0" },
-    { title: "Partners", href: "/hub-four", pos: [1.2, -5.6, 0.5], color: "#e0b85e" },
+    { title: "for Educators ", href: "/services/for-educators", pos: [-1.8, -3.2, 0.4], color: "#6bcf8e" },
+    { title: "for Leaders ", href: "/services/for-leaders", pos: [1.7, -4.0, 0.2], color: "#58c4d4" },
+    { title: "for Parents ", href: "/services/for-parents", pos: [-0.9, -5.0, 0.8], color: "#a88ee0" },
 ];
 
 function makeSquigglyCurve(start, end, segments, noiseStr = 0.5) {

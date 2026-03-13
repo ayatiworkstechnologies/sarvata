@@ -40,8 +40,8 @@ export default function AboutPage() {
   return (
     <main className="bg-background">
       <MainHero
-        webImage="/about-web.jpg"
-        mobileImage="/about-mobile.jpg"
+        webImage="/banners/about.jpg"
+        mobileImage="/banners/about-mob.jpg"
         title="Want to Learn More About Our Approach? Start a Conversation"
         breadcrumbs={[{ label: "About Us" }]}
       />

@@ -41,8 +41,8 @@ export default function LeadersPage() {
 
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        webImage="/leaders-web.jpg"
-        mobileImage="/leaders-mobile.jpg"
+        webImage="/banners/for-school-leaders.jpg"
+        mobileImage="/banners/for-school-leaders-mob.jpg"
         title="Leading Sustainable Educational Change"
         breadcrumbs={[{ label: "For Leaders" }]}
       />
