@@ -71,7 +71,7 @@ export default function ContactForm() {
               <h4 className="text-lg font-bold text-green-800">Thank You!</h4>
               <p className="mt-2 text-sm leading-7 text-green-700">
                 Your message has been sent successfully. We&apos;ll reply within
-                1–2 business days.
+                1-2 business days.
               </p>
 
               <button

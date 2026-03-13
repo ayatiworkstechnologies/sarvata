@@ -1,163 +1,195 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-const containerVariants = {
-    hidden: { opacity: 0 },
-    show: {
-        opacity: 1,
-        transition: { staggerChildren: 0.15 },
-    },
-};
-
-const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-};
-
-const communities = [
-    {
-        title: "Educators",
-        description: "Practical frameworks and job-embedded support to make responsive practice sustainable.",
-        cta: "Explore Services",
-        href: "/services",
-        icon: (
-            <svg className="w-7 h-7" fill="none" viewBox="0 0 32 32" stroke="currentColor" strokeWidth={1.5}>
-                <circle cx="16" cy="10" r="5" />
-                <path d="M7 26c0-5 4-9 9-9s9 4 9 9" />
-                <path d="M22 6l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-        ),
-        gradient: "from-emerald-500 to-teal-500",
-        lightBg: "bg-emerald-50",
-        accent: "text-emerald-600",
-    },
-    {
-        title: "School Leaders",
-        description: "Strategic partnership to build the systems, culture, and capacity for meaningful change.",
-        cta: "Explore Services",
-        href: "/services",
-        icon: (
-            <svg className="w-7 h-7" fill="none" viewBox="0 0 32 32" stroke="currentColor" strokeWidth={1.5}>
-                <rect x="6" y="12" width="20" height="14" rx="2" />
-                <path d="M16 4v8M10 8l6-4 6 4" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-        ),
-        gradient: "from-blue-500 to-indigo-500",
-        lightBg: "bg-blue-50",
-        accent: "text-blue-600",
-    },
-    {
-        title: "Parents",
-        description: "Professional support to understand your child's learning profile and advocate effectively.",
-        cta: "Explore Services",
-        href: "/services",
-        icon: (
-            <svg className="w-7 h-7" fill="none" viewBox="0 0 32 32" stroke="currentColor" strokeWidth={1.5}>
-                <circle cx="12" cy="10" r="4" />
-                <circle cx="22" cy="12" r="3" />
-                <path d="M5 26c0-4 3-7 7-7 2 0 4 1 5 2.5" />
-                <path d="M16 26c0-3 2.5-5.5 6-5.5s5 2 5 5.5" />
-            </svg>
-        ),
-        gradient: "from-primary to-purple-500",
-        lightBg: "bg-purple-50",
-        accent: "text-primary",
-    },
+/* ── community data ─────────────────────────────────────────────── */
+const COMMUNITIES = [
+  {
+    title: "Educators",
+    subtitle: "Sustainable Practice",
+    description: "Practical frameworks and job-embedded support to make responsive, differentiated teaching sustainable—not exhausting.",
+    href: "/services/for-educators",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l9-5-9-5-9 5 9 5z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+      </svg>
+    ),
+    accent: "#10b981",      /* emerald */
+    accentLight: "#d1fae5",
+    num: "01",
+  },
+  {
+    title: "School Leaders",
+    subtitle: "Strategic Partnership",
+    description: "Systems thinking and strategic partnership to build the culture, capacity, and infrastructure for lasting educational change.",
+    href: "/services/for-leaders",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      </svg>
+    ),
+    accent: "#6366f1",      /* indigo */
+    accentLight: "#e0e7ff",
+    num: "02",
+  },
+  {
+    title: "Parents",
+    subtitle: "Family Empowerment",
+    description: "Professional support to understand your child's unique learning profile and become a confident, effective advocate in their education.",
+    href: "/services/for-parents",
+    icon: (
+      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+      </svg>
+    ),
+    accent: "#A066AA",      /* brand primary */
+    accentLight: "#f3e8ff",
+    num: "03",
+  },
 ];
 
+/* ── 3-D card variants ──────────────────────────────────────────── */
+const cardVariants = {
+  hidden: { opacity: 0, y: 50, rotateX: -12, scale: 0.94 },
+  show: (i) => ({
+    opacity: 1, y: 0, rotateX: 0, scale: 1,
+    transition: { duration: 0.75, delay: i * 0.14, ease: [0.22, 1, 0.36, 1] },
+  }),
+};
+
 export default function WhatWeDo() {
-    return (
-        <section className="relative bg-soft-bg py-24 md:py-32 overflow-hidden">
-            {/* Soft decorative blur */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
-            <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[100px] pointer-events-none" />
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, 40]);
 
-            <div className="container-max relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+  return (
+    <section
+      ref={sectionRef}
+      className="relative overflow-hidden"
+      style={{ background: "linear-gradient(180deg, #faf7fc 0%, #ffffff 100%)" }}
+    >
+      {/* ── floating 3-D orbs (parallax) ── */}
+      <motion.div style={{ y: y1 }} className="pointer-events-none absolute -top-32 -right-32 h-[520px] w-[520px] rounded-full opacity-25 blur-[90px]"
+        aria-hidden style={{ y: y1, background: "linear-gradient(135deg, #A066AA 0%, #7a45a0 60%, #4e2a7a 100%)" }} />
+      <motion.div style={{ y: y2 }} className="pointer-events-none absolute bottom-0 -left-32 h-[420px] w-[420px] rounded-full opacity-15 blur-[80px]"
+        aria-hidden style={{ y: y2, background: "radial-gradient(circle, #E2C473, transparent 70%)" }} />
 
-                    {/* Left: Text & Image */}
-                    <div className="lg:col-span-5 space-y-8">
-                        <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            {/* <div className="inline-block px-4 py-1.5 rounded-full bg-white shadow-sm border border-border/50 text-primary font-semibold text-xs mb-6 tracking-widest uppercase">
-                                What We Do
-                            </div> */}
-                            <p className="text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4">
-                                What We Do
-                            </p>
-                            <h2 className="text-4xl md:text-5xl font-bold text-foreground leading-tight tracking-tight mb-6">
-                                Supporting your <br />
-                                <span className="text-gradient">educational community</span>
-                            </h2>
-                            <p className="text-lg text-muted font-secondary leading-relaxed mb-8">
-                                We work with three interconnected groups to build truly learner-centered environments. Real change happens when educators, leaders, and parents row in the same direction.
-                            </p>
+      {/* ── 3-D perspective grid in bg ── */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.025]"
+        style={{ backgroundImage: "linear-gradient(#A066AA 1px, transparent 1px), linear-gradient(90deg, #A066AA 1px, transparent 1px)", backgroundSize: "60px 60px", perspective: "600px", transform: "rotateX(55deg) scale(2.5)", transformOrigin: "bottom" }} />
 
-                            <div className="relative h-[280px] w-full rounded-2xl overflow-hidden shadow-2xl shadow-primary/10">
-                                <Image
-                                    src="/about-web.jpg"
-                                    alt="Educational community working together"
-                                    fill
-                                    className="object-cover"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                            </div>
-                        </motion.div>
+      <div className="container-max relative z-10 py-24 md:py-32">
+
+        {/* ── heading ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="max-w-2xl mb-16 md:mb-20"
+        >
+          <span className="inline-flex items-center gap-2 mb-5">
+            <span className="h-[2px] w-6 rounded-full" style={{ background: "#A066AA" }} />
+            <p className="text-[11px] font-bold uppercase tracking-[0.32em]" style={{ color: "#A066AA" }}>Who We Serve</p>
+          </span>
+          <h2 className="text-4xl md:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#171717]">
+            Supporting your<br />
+            <span style={{
+              background: "linear-gradient(135deg, #A066AA 0%, #7a45a0 60%, #4e2a7a 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}>educational community</span>
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-[#6b7280]" style={{ fontFamily: "var(--font-secondary)" }}>
+            Real change happens when educators, leaders, and parents work together. We partner with all three.
+          </p>
+        </motion.div>
+
+        {/* ── 3-D cards grid ── */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3" style={{ perspective: "1200px" }}>
+          {COMMUNITIES.map((item, i) => (
+            <motion.div
+              key={i}
+              custom={i}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.2 }}
+              whileHover={{ y: -8, rotateX: 3, rotateY: i === 0 ? 2 : i === 2 ? -2 : 0, scale: 1.02, transition: { duration: 0.3 } }}
+              style={{ transformStyle: "preserve-3d" }}
+            >
+              <div className="group relative h-full rounded-[24px] overflow-hidden border border-[#e5e7eb] bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-shadow duration-300 hover:shadow-[0_24px_60px_rgba(0,0,0,0.12)]">
+
+                {/* top accent line */}
+                <div className="h-[3px] w-full" style={{ background: item.accent }} />
+
+                <div className="p-8">
+                  {/* number + icon row */}
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl shadow-sm"
+                      style={{ background: item.accentLight, color: item.accent }}>
+                      {item.icon}
                     </div>
+                    <span className="text-4xl font-black leading-none" style={{ color: item.accent + "18" }}>{item.num}</span>
+                  </div>
 
-                    {/* Right: Cards */}
-                    <div className="lg:col-span-7">
-                        <motion.div
-                            variants={containerVariants}
-                            initial="hidden"
-                            whileInView="show"
-                            viewport={{ once: true }}
-                            className="space-y-6"
-                        >
-                            {communities.map((item, i) => (
-                                <motion.div
-                                    variants={itemVariants}
-                                    key={i}
-                                    className="group relative bg-white rounded-2xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-border/40 hover:border-transparent overflow-hidden"
-                                >
-                                    {/* Hover gradient line on left */}
-                                    {/* <div className={`absolute left-0 top-0 bottom-0 w-1.5 bg-gradient-to-b ${item.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`} /> */}
+                  {/* text */}
+                  <p className="mb-1 text-[11px] font-bold uppercase tracking-[0.22em]" style={{ color: item.accent }}>
+                    {item.subtitle}
+                  </p>
+                  <h3 className="mb-3 text-2xl font-bold text-[#171717]">{item.title}</h3>
+                  <p className="text-[15px] leading-7 text-[#6b7280]" style={{ fontFamily: "var(--font-secondary)" }}>
+                    {item.description}
+                  </p>
 
-                                    <div className="flex flex-col sm:flex-row gap-6 items-start">
-                                        <div className={`shrink-0 w-16 h-16 rounded-2xl ${item.lightBg} ${item.accent} flex items-center justify-center group-hover:scale-110 transition-transform duration-500`}>
-                                            {item.icon}
-                                        </div>
-                                        <div>
-                                            <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
-                                            <p className="text-muted font-secondary leading-relaxed mb-4">
-                                                {item.description}
-                                            </p>
-                                            <Link
-                                                href={item.href}
-                                                className={`inline-flex items-center gap-2 font-semibold text-sm ${item.accent} group-hover:gap-3 transition-all`}
-                                            >
-                                                {item.cta}
-                                                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                                </svg>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </motion.div>
-                    </div>
-
+                  {/* cta */}
+                  <Link
+                    href={item.href}
+                    className="mt-6 inline-flex items-center gap-2 text-sm font-bold transition-all duration-300 group-hover:gap-3"
+                    style={{ color: item.accent }}
+                  >
+                    Explore Services
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </Link>
                 </div>
+
+                {/* 3D shine layer */}
+                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[24px]"
+                  style={{ background: `linear-gradient(135deg, ${item.accent}08 0%, transparent 60%)` }} />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* ── bottom image strip ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 40, rotateX: -6 }}
+          whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+          style={{ transformStyle: "preserve-3d", perspective: "800px" }}
+          className="mt-16 relative rounded-[28px] overflow-hidden h-[200px] md:h-[260px] shadow-[0_30px_80px_rgba(0,0,0,0.12)]"
+        >
+          <Image src="/about-web.jpg" alt="Educational community" fill className="object-cover" />
+          <div className="absolute inset-0" style={{ background: "linear-gradient(90deg, #A066AAcc 0%, #A066AA44 40%, transparent 70%)" }} />
+          <div className="absolute inset-0 flex items-center px-10 md:px-14">
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-[0.28em] text-[#E2C473] mb-2">Trusted by schools across India</p>
+              <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">
+                Real change happens when<br className="hidden md:block" /> your whole community aligns.
+              </h3>
             </div>
-        </section>
-    );
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
 }

@@ -26,7 +26,7 @@ const secondaryFont = Inter({
 export const metadata = {
   metadataBase: new URL("https://sarvata.in"),
   title: {
-    default: "Sarvata – Transforming Educators & Schools, Every Day",
+    default: "Sarvata - Transforming Educators & Schools, Every Day",
     template: "%s | Sarvata",
   },
   description:
@@ -46,14 +46,14 @@ export const metadata = {
     locale: "en_IN",
     url: "https://sarvata.in",
     siteName: "Sarvata",
-    title: "Sarvata – Transforming Educators & Schools, Every Day",
+    title: "Sarvata - Transforming Educators & Schools, Every Day",
     description:
       "Practical, research-driven educational consulting for schools, educators, and families.",
-    images: [{ url: "/og-home.jpg", width: 1200, height: 630, alt: "Sarvata – Transforming Learning" }],
+    images: [{ url: "/og-home.jpg", width: 1200, height: 630, alt: "Sarvata - Transforming Learning" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sarvata – Transforming Educators & Schools, Every Day",
+    title: "Sarvata - Transforming Educators & Schools, Every Day",
     description:
       "Practical, research-driven educational consulting for schools, educators, and families.",
     images: ["/og-home.jpg"],
@@ -83,7 +83,7 @@ export default function RootLayout({ children }) {
             <ScrollUI />
           </Suspense>
           <Footer />
-          {/* Single modal instance – driven by global ConsultationContext */}
+          {/* Single modal instance - driven by global ConsultationContext */}
           <ConsultationModalWrapper />
         </ConsultationProvider>
       </body>

@@ -33,8 +33,7 @@ export default function Header() {
     isActive("/services") ||
     isActive("/services/for-educators") ||
     isActive("/services/for-leaders") ||
-    isActive("/services/for-parents") ||
-    isActive("/services/for-learners");
+    isActive("/services/for-parents");
 
   return (
     <>
@@ -47,15 +46,15 @@ export default function Header() {
         <div className="px-4 pt-4 md:px-6 lg:px-8">
           <div
             className={`mx-auto max-w-7xl rounded-2xl transition-all duration-300 ${scrolled
-                ? "bg-white/80 backdrop-blur-2xl shadow-[0_12px_40px_rgba(15,23,42,0.08)] ring-1 ring-black/5"
-                : "bg-white/65 backdrop-blur-xl ring-1 ring-white/40"
+              ? "bg-white/80 backdrop-blur-2xl shadow-[0_12px_40px_rgba(15,23,42,0.08)] ring-1 ring-black/5"
+              : "bg-white/65 backdrop-blur-xl ring-1 ring-white/40"
               }`}
           >
             <div className="flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
               {/* LOGO */}
               <Link href="/" className="flex items-center shrink-0">
                 <Image
-                  src="/logo-new.png"
+                  src="/logo.png"
                   alt="Sarvata"
                   width={160}
                   height={64}
@@ -77,7 +76,6 @@ export default function Header() {
                       { name: "For Educators", href: "/services/for-educators" },
                       { name: "For School Leaders", href: "/services/for-leaders" },
                       { name: "For Parents", href: "/services/for-parents" },
-                      { name: "For Learners", href: "/services/for-learners" },
                     ]}
                   />
                   <NavItem name="Contact" href="/contact" active={isActive("/contact")} />
@@ -172,13 +170,6 @@ export default function Header() {
                           <MobileLink
                             name="For Parents"
                             href="/services/for-parents"
-                            pathname={pathname}
-                            setMenuOpen={setMenuOpen}
-                            isSub
-                          />
-                          <MobileLink
-                            name="For Learners"
-                            href="/services/for-learners"
                             pathname={pathname}
                             setMenuOpen={setMenuOpen}
                             isSub

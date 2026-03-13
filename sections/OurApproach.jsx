@@ -1,142 +1,222 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 
-const differentiators = [
-    {
-        title: "Grounded in Practice",
-        description: "We're educators who've lived the gap between vision and reality.",
-        icon: "🌱",
-        color: "text-emerald-500",
-        bg: "bg-emerald-50"
-    },
-    {
-        title: "Systems Thinking",
-        description: "We address culture, pedagogy, and operational systems together.",
-        icon: "🔗",
-        color: "text-blue-500",
-        bg: "bg-blue-50"
-    },
-    {
-        title: "Building Independence",
-        description: "Our goal is your capacity, not your dependency.",
-        icon: "🏗️",
-        color: "text-amber-500",
-        bg: "bg-amber-50"
-    },
-    {
-        title: "Sustained Partnership",
-        description: "We support implementation, not just deliver workshops.",
-        icon: "🤝",
-        color: "text-purple-500",
-        bg: "bg-purple-50"
-    },
+/* ── differentiator data ──────────────────────────────────────── */
+const ITEMS = [
+  {
+    title: "Grounded in Practice",
+    description: "We're educators who've lived the gap between vision and reality. Our frameworks are shaped by classrooms, not just research papers.",
+    icon: "M12 3v1m0 16v1m8.66-13l-.87.5M4.21 16.5l-.87.5M20.66 16.5l-.87-.5M4.21 7.5l-.87-.5M21 12h-1M4 12H3",
+    color: "#10b981",
+    bg: "rgba(16,185,129,0.10)",
+  },
+  {
+    title: "Systems Thinking",
+    description: "Real change isn't one workshop. We address culture, pedagogy, and operational systems in tandem so improvements compound.",
+    icon: "M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1",
+    color: "#6366f1",
+    bg: "rgba(99,102,241,0.10)",
+  },
+  {
+    title: "Building Independence",
+    description: "We build your internal capacity, not dependence on us. Success is when our approaches become how you naturally operate.",
+    icon: "M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z",
+    color: "#E2C473",
+    bg: "rgba(226,196,115,0.15)",
+  },
+  {
+    title: "Sustained Partnership",
+    description: "We stay through implementation. Showing up for after the workshop is where the most important work happens.",
+    icon: "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0",
+    color: "#A066AA",
+    bg: "rgba(160,102,170,0.10)",
+  },
 ];
 
+/* ── floating particle ──────────────────────────────────────────── */
+function Particle({ x, y, size, color, delay }) {
+  return (
+    <motion.div
+      className="pointer-events-none absolute rounded-full"
+      style={{ left: x, top: y, width: size, height: size, background: color }}
+      animate={{ y: [0, -18, 0], opacity: [0.4, 0.8, 0.4] }}
+      transition={{ duration: 4 + delay, repeat: Infinity, ease: "easeInOut", delay }}
+    />
+  );
+}
+
 export default function OurApproach() {
-    return (
-        <section className="relative bg-white py-24 md:py-32 overflow-hidden">
-            {/* Soft decorative background elements */}
-            <div className="absolute top-[10%] right-[-5%] w-[400px] h-[400px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
-            <div className="absolute bottom-[10%] left-[-5%] w-[500px] h-[500px] bg-emerald-500/5 rounded-full blur-[120px] pointer-events-none" />
-            
-            <div className="container-max relative z-10">
-                
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-                    
-                    {/* Left side: Images & Visuals */}
-                    <div className="relative order-2 lg:order-1 hidden md:block">
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="relative h-[600px] w-full rounded-[2rem] overflow-hidden shadow-2xl shadow-primary/10 border border-border/50"
-                        >
-                            <Image 
-                                src="/home-contact.jpg" 
-                                alt="Teachers collaborating"
-                                fill
-                                className="object-cover"
-                            />
-                        </motion.div>
-                        
-                        {/* Floating stat card */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: 0.4 }}
-                            className="absolute -bottom-8 -right-8 bg-white p-6 rounded-2xl shadow-xl shadow-black/5 border border-border/60 max-w-[240px]"
-                        >
-                            <div className="flex gap-4 items-center mb-2">
-                                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 className="text-2xl font-bold text-foreground">2000+</h4>
-                                    <p className="text-xs text-muted font-secondary uppercase tracking-wider">Educators</p>
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
+  const imgY = useTransform(scrollYProgress, [0, 1], [30, -30]);
+  const badgeY = useTransform(scrollYProgress, [0, 1], [0, -20]);
 
-                    {/* Right side: Text & Differentiators */}
-                    <div className="order-1 lg:order-2">
-                        <motion.div 
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                            className="mb-14"
-                        >
-                            <p className="text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4">
-                                Our Approach
-                            </p>
-                            <h2 className="text-4xl font-bold leading-tight text-foreground md:text-5xl lg:text-6xl tracking-tight mb-6">
-                                Partnership,<br />
-                                <span className="text-gradient">Not Prescription</span>
-                            </h2>
-                            <p className="text-lg leading-relaxed text-muted mb-4 font-secondary">
-                                We don&apos;t arrive with generic solutions. We begin by understanding your context,
-                                your goals, and your challenges. You bring expertise in your community. We bring
-                                frameworks, research, and external perspectives. 
-                            </p>
-                            <p className="text-lg leading-relaxed text-foreground font-medium font-secondary">
-                                Together, we build approaches that are both aspirational and realistic.
-                            </p>
-                        </motion.div>
+  return (
+    <section ref={sectionRef} className="relative overflow-hidden bg-white py-24 md:py-32">
 
-                        <div className="space-y-6">
-                            {differentiators.map((item, i) => (
-                                <motion.div
-                                    key={i}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                                    className="flex gap-5 group items-start"
-                                >
-                                    <div className={`w-14 h-14 shrink-0 rounded-2xl ${item.bg} flex items-center justify-center text-2xl shadow-sm border border-black/5 group-hover:scale-110 group-hover:shadow-md transition-all duration-300`}>
-                                        {item.icon}
-                                    </div>
-                                    <div className="pt-1">
-                                        <h4 className={`text-lg font-bold text-foreground mb-1 group-hover:${item.color} transition-colors`}>
-                                            {item.title}
-                                        </h4>
-                                        <p className="text-base text-muted font-secondary leading-relaxed">
-                                            {item.description}
-                                        </p>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
+      {/* ── particles ── */}
+      {[
+        { x: "8%",  y: "15%", size: 10, color: "#A066AA40", delay: 0 },
+        { x: "85%", y: "20%", size: 7,  color: "#E2C47360", delay: 1.2 },
+        { x: "70%", y: "70%", size: 12, color: "#6366f130", delay: 0.7 },
+        { x: "20%", y: "75%", size: 8,  color: "#10b98130", delay: 1.8 },
+        { x: "50%", y: "10%", size: 6,  color: "#A066AA50", delay: 2.4 },
+      ].map((p, i) => <Particle key={i} {...p} />)}
+
+      {/* ambient glows */}
+      <div className="pointer-events-none absolute -top-20 right-0 h-[500px] w-[500px] rounded-full blur-[120px] opacity-20"
+        style={{ background: "linear-gradient(135deg, #A066AA 0%, #7a45a0 60%, #4e2a7a 100%)" }} />
+      <div className="pointer-events-none absolute bottom-0 left-0 h-[400px] w-[400px] rounded-full blur-[100px] opacity-10"
+        style={{ background: "radial-gradient(circle, #E2C473, transparent 70%)" }} />
+
+      <div className="container-max relative z-10">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20 items-center">
+
+          {/* ══ LEFT — 3D Image Stack ══ */}
+          <div className="relative h-[520px] hidden lg:block" style={{ perspective: "1000px" }}>
+
+            {/* back plate */}
+            <motion.div
+              initial={{ opacity: 0, rotateY: -15, x: -40 }}
+              whileInView={{ opacity: 1, rotateY: -6, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+              style={{ y: imgY, transformStyle: "preserve-3d" }}
+              className="absolute -left-6 top-8 h-[88%] w-[88%] rounded-[28px] border border-[#A066AA20]"
+              aria-hidden
+            >
+              <div className="h-full w-full rounded-[28px]" style={{ background: "linear-gradient(135deg, #f3e8ff, #faf7fc)" }} />
+            </motion.div>
+
+            {/* main image */}
+            <motion.div
+              initial={{ opacity: 0, rotateY: 10, rotateX: 4, scale: 0.95 }}
+              whileInView={{ opacity: 1, rotateY: 0, rotateX: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.9, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ rotateY: -3, rotateX: 2, scale: 1.02 }}
+              style={{ transformStyle: "preserve-3d" }}
+              className="absolute inset-0 rounded-[28px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.18)] border border-white/80"
+            >
+              <motion.div style={{ y: imgY }} className="h-full w-full">
+                <Image src="/home-contact.jpg" alt="Educators collaborating" fill className="object-cover" />
+              </motion.div>
+              {/* overlay */}
+              <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(78,42,122,0.45) 0%, rgba(160,102,170,0.15) 50%, transparent 100%)" }} />
+            </motion.div>
+
+            {/* floating stat badge */}
+            <motion.div
+              style={{ y: badgeY }}
+              initial={{ opacity: 0, scale: 0.8, y: 20 }}
+              whileInView={{ opacity: 1, scale: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="absolute -bottom-6 -right-6 rounded-[20px] border border-[#e5e7eb] bg-white p-5 shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
+            >
+              <div className="flex items-center gap-3 mb-1">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl" style={{ background: "#f3e8ff" }}>
+                  <svg className="h-5 w-5" style={{ color: "#A066AA" }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                  </svg>
                 </div>
+                <div>
+                  <p className="text-2xl font-black text-[#171717]">2,000+</p>
+                  <p className="text-[11px] font-semibold uppercase tracking-widest text-[#6b7280]">Educators mentored</p>
+                </div>
+              </div>
+              <div className="flex gap-0.5 mt-2">
+                {[...Array(5)].map((_, i) => (
+                  <svg key={i} className="h-3.5 w-3.5" style={{ color: "#E2C473" }} fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                ))}
+                <span className="ml-1.5 text-[11px] font-semibold text-[#6b7280]">5.0 avg. rating</span>
+              </div>
+            </motion.div>
+
+            {/* small top badge */}
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.7 }}
+              className="absolute -right-4 top-8 rounded-[14px] border border-[#e5d0f0] bg-white px-3 py-2 shadow-lg"
+            >
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#A066AA]">50+ Schools</p>
+              <p className="text-[13px] font-bold text-[#171717]">Trusted Partner</p>
+            </motion.div>
+          </div>
+
+          {/* ══ RIGHT — text + items ══ */}
+          <div>
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="mb-12"
+            >
+              <span className="inline-flex items-center gap-2 mb-5">
+                <span className="h-[2px] w-6 rounded-full" style={{ background: "#A066AA" }} />
+                <p className="text-[11px] font-bold uppercase tracking-[0.32em]" style={{ color: "#A066AA" }}>Our Approach</p>
+              </span>
+              <h2 className="text-4xl font-bold leading-[1.12] tracking-tight text-[#171717] md:text-5xl mb-5">
+                Partnership,<br />
+                <span style={{
+                  background: "linear-gradient(135deg, #A066AA 0%, #7a45a0 60%, #4e2a7a 100%)",
+                  WebkitBackgroundClip: "text",
+                  WebkitTextFillColor: "transparent",
+                  backgroundClip: "text",
+                }}>Not Prescription</span>
+              </h2>
+              <p className="text-[17px] leading-8 text-[#6b7280]" style={{ fontFamily: "var(--font-secondary)" }}>
+                We don't arrive with generic solutions. We begin by understanding your context, goals, and challenges—then co-create approaches that are both aspirational and realistic.
+              </p>
+            </motion.div>
+
+            <div className="space-y-5">
+              {ITEMS.map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.55, delay: i * 0.09, ease: [0.22, 1, 0.36, 1] }}
+                  whileHover={{ x: 4 }}
+                  className="group flex gap-4 items-start rounded-2xl border border-transparent p-4 transition-all duration-300 hover:border-[#e5e7eb] hover:shadow-[0_8px_30px_rgba(0,0,0,0.06)]"
+                  style={{ background: "transparent" }}
+                >
+                  {/* icon */}
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl shadow-sm transition-transform duration-300 group-hover:scale-110"
+                    style={{ background: item.bg, color: item.color }}>
+                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
+                    </svg>
+                  </div>
+                  {/* text */}
+                  <div>
+                    <h4 className="mb-1 text-[16px] font-bold text-[#171717]">{item.title}</h4>
+                    <p className="text-[14px] leading-6 text-[#6b7280]" style={{ fontFamily: "var(--font-secondary)" }}>
+                      {item.description}
+                    </p>
+                  </div>
+                  {/* arrow */}
+                  <div className="ml-auto shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-1">
+                    <svg className="h-4 w-4" style={{ color: item.color }} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-        </section>
-    );
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
 }

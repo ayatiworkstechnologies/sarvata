@@ -136,10 +136,10 @@ export default function ContactInfo() {
               Office Hours
             </h3>
             <div className="space-y-2 text-sm font-secondary text-muted">
-              <p className="font-medium text-foreground">Monday – Friday</p>
-              <p>9:00 AM – 5:00 PM IST</p>
+              <p className="font-medium text-foreground">Monday - Friday</p>
+              <p>9:00 AM - 5:00 PM IST</p>
               <p className="text-xs italic mt-3 text-muted/70">
-                We typically respond within 1–2 business days.
+                We typically respond within 1-2 business days.
               </p>
             </div>
           </div>

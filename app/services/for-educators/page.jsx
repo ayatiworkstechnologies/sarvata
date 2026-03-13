@@ -5,7 +5,7 @@ import PathwayServicesSection from "@/components/services/PathwayServicesSection
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 
 export const metadata = {
-  title: "Services for Educators – Sustainable Differentiation & Mentoring | Sarvata",
+  title: "Services for Educators - Sustainable Differentiation & Mentoring | Sarvata",
   description:
     "Sarvata helps educators build sustainable, structured differentiation through workshops, in-class mentoring, and practical frameworks. Move from intuitive response to systematic, learner-centered practice.",
   keywords: [
@@ -18,7 +18,7 @@ export const metadata = {
     "Sarvata for educators",
   ],
   openGraph: {
-    title: "Services for Educators – Sustainable Differentiation & Mentoring | Sarvata",
+    title: "Services for Educators - Sustainable Differentiation & Mentoring | Sarvata",
     description:
       "Practical workshops, in-class mentoring, and frameworks that help educators build sustainable, learner-centered practice—without burning out.",
     url: "https://sarvata.in/services/for-educators",
@@ -28,7 +28,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Services for Educators – Sarvata",
+    title: "Services for Educators - Sarvata",
     description:
       "Sustainable differentiation frameworks and in-class mentoring for educators who want to meet every learner's needs without burning out.",
     images: ["/og-educators.jpg"],

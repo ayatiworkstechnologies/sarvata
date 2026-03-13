@@ -5,7 +5,7 @@ import PathwayServicesSection from "@/components/services/PathwayServicesSection
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 
 export const metadata = {
-  title: "Services for Parents – Understanding & Supporting Your Child's Learning | Sarvata",
+  title: "Services for Parents - Understanding & Supporting Your Child's Learning | Sarvata",
   description:
     "Sarvata partners with parents to understand their child's unique learning profile, navigate educational challenges, and build a strong home-school connection. Professional guidance, workshops, and advocacy support.",
   keywords: [
@@ -18,7 +18,7 @@ export const metadata = {
     "Sarvata for parents",
   ],
   openGraph: {
-    title: "Services for Parents – Understanding & Supporting Your Child's Learning | Sarvata",
+    title: "Services for Parents - Understanding & Supporting Your Child's Learning | Sarvata",
     description:
       "Professional guidance, workshops, and advocacy support to help parents understand their child's learning profile and champion their educational journey.",
     url: "https://sarvata.in/services/for-parents",
@@ -28,7 +28,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Services for Parents – Sarvata",
+    title: "Services for Parents - Sarvata",
     description:
       "Professional support to understand your child's learning profile and advocate effectively in their educational journey.",
     images: ["/og-parents.jpg"],

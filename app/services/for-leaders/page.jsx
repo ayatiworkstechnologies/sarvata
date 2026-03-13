@@ -5,7 +5,7 @@ import PathwayServicesSection from "@/components/services/PathwayServicesSection
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 
 export const metadata = {
-  title: "Services for School Leaders – Strategic Partnership & School Transformation | Sarvata",
+  title: "Services for School Leaders - Strategic Partnership & School Transformation | Sarvata",
   description:
     "Sarvata partners with school leaders to build systems, culture, and capacity for meaningful, lasting educational change. From inclusion audits to faculty mentoring—strategic support grounded in your school's reality.",
   keywords: [
@@ -18,7 +18,7 @@ export const metadata = {
     "Sarvata school leaders",
   ],
   openGraph: {
-    title: "Services for School Leaders – Strategic Partnership for Lasting Change | Sarvata",
+    title: "Services for School Leaders - Strategic Partnership for Lasting Change | Sarvata",
     description:
       "Strategic consultancy for school principals and leaders: inclusion audits, faculty development, systems design, and cultural transformation rooted in your school's unique context.",
     url: "https://sarvata.in/services/for-leaders",
@@ -28,7 +28,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Services for School Leaders – Sarvata",
+    title: "Services for School Leaders - Sarvata",
     description:
       "Strategic partnership to build systems, culture, and capacity for meaningful educational change.",
     images: ["/og-leaders.jpg"],

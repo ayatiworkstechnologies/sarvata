@@ -16,7 +16,6 @@ export default function Hero() {
     { href: "/services/for-educators", cls: "node-educators", label: "Educators Pathway" },
     { href: "/services/for-leaders", cls: "node-leaders", label: "Leaders Pathway" },
     { href: "/services/for-parents", cls: "node-parents", label: "Parents Pathway" },
-    { href: "/services/for-learners", cls: "node-learners", label: "Learners Pathway" },
   ];
 
   const showTooltip = (e, label) => {

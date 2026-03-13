@@ -30,8 +30,9 @@ export default function GetStarted() {
   const { openModal } = useConsultation();
     return (
         <section className="relative overflow-hidden bg-white py-24 md:py-32">
-            <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(160,102,170,0.05),transparent_50%)]" />
-            <div className="pointer-events-none absolute bottom-0 left-1/2 h-[400px] w-[800px] -translate-x-1/2 rounded-full bg-primary/10 blur-[120px]" />
+            <div className="pointer-events-none absolute inset-0" style={{ background: "radial-gradient(ellipse at top right, rgba(160,102,170,0.07), transparent 55%)" }} />
+            <div className="pointer-events-none absolute bottom-0 left-1/2 h-[400px] w-[800px] -translate-x-1/2 rounded-full blur-[120px] opacity-30"
+              style={{ background: "linear-gradient(135deg, #A066AA 0%, #7a45a0 60%, #4e2a7a 100%)" }} />
 
             <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-10">
                 <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12">
@@ -57,7 +58,12 @@ export default function GetStarted() {
                         >
                             Ready to transform
                             <br />
-                            <span className="text-gradient">your community?</span>
+                            <span style={{
+                              background: "linear-gradient(135deg, #A066AA 0%, #7a45a0 60%, #4e2a7a 100%)",
+                              WebkitBackgroundClip: "text",
+                              WebkitTextFillColor: "transparent",
+                              backgroundClip: "text",
+                            }}>your community?</span>
                         </motion.h2>
 
                         <motion.p

@@ -17,7 +17,6 @@ const serviceLinks = [
   { name: "For Educators", href: "/services/for-educators" },
   { name: "For School Leaders", href: "/services/for-leaders" },
   { name: "For Parents", href: "/services/for-parents" },
-  { name: "For Learners", href: "/services/for-learners" },
 ];
 
 const socials = [
@@ -41,7 +40,7 @@ export default function Footer() {
               <div>
                 <div className="flex items-center">
                   <Image
-                    src="/logo-new.png"
+                    src="/logo.png"
                     alt="Sarvata"
                     width={170}
                     height={64}
@@ -113,11 +112,11 @@ export default function Footer() {
                 Designed & Developed by
               </span>
               <Image
-                src="/ayatiworks-logo.png"
+                src="/ayati-logo-web.png"
                 alt="Ayatiworks"
                 width={120}
                 height={32}
-                className="h-7 w-auto object-contain"
+                className="h-15 w-auto object-contain"
               />
             </Link>
           </div>

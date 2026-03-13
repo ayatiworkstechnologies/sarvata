@@ -99,7 +99,7 @@ export default function ConsultationModal({ open, onClose }) {
                 </div>
                 <div className="min-w-0">
                   <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-white/60 leading-none mb-1">
-                    Free · 20–30 min
+                    Free · 20-30 min
                   </p>
                   <h2 className="text-lg sm:text-xl font-bold text-white leading-tight truncate">
                     Schedule a Consultation
@@ -138,7 +138,7 @@ export default function ConsultationModal({ open, onClose }) {
                   <div className="flex flex-wrap gap-3">
                     <InfoChip
                       icon="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      text="20–30 minutes"
+                      text="20-30 minutes"
                     />
                     <InfoChip
                       icon="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"

@@ -7,7 +7,7 @@ import TestimonialsSection from "@/components/about/TestimonialsSection";
 import ImpactSection from "@/components/about/ImpactSection";
 
 export const metadata = {
-  title: "About Sarvata – Our Story, Mission & Philosophy",
+  title: "About Sarvata - Our Story, Mission & Philosophy",
   description:
     "Learn about Sarvata's founding mission: to inspire and create better educators and schools, every day. Discover our philosophy of personalized learning, expanding learner agency, and building self-directed education environments.",
   keywords: [
@@ -19,7 +19,7 @@ export const metadata = {
     "inclusive education mission",
   ],
   openGraph: {
-    title: "About Sarvata – Our Story, Mission & Philosophy",
+    title: "About Sarvata - Our Story, Mission & Philosophy",
     description:
       "Discover why Sarvata exists: to bridge the gap between aspirational pedagogy and daily classroom practice, empowering every learner's unique potential.",
     url: "https://sarvata.in/about",
@@ -29,7 +29,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Sarvata – Our Story, Mission & Philosophy",
+    title: "About Sarvata - Our Story, Mission & Philosophy",
     description:
       "Discover why Sarvata exists and how we partner with schools to build truly inclusive, learner-centered environments.",
     images: ["/og-about.jpg"],
