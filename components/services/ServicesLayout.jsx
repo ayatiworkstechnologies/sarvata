@@ -2,13 +2,14 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import ScheduleConsultationButton from "@/components/ScheduleConsultationButton";
 
 const services = [
   {
     audience: "For Educators",
     description:
       "Practical frameworks, workshops, mentoring, and resources to make responsive practice sustainable.",
-    href: "/pathway-educators",
+    href: "/services/for-educators",
     cta: "Explore Educator Services",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -22,7 +23,7 @@ const services = [
     audience: "For School Leaders",
     description:
       "Strategic partnership to build the systems, culture, and capacity needed for meaningful change.",
-    href: "/pathway-leaders",
+    href: "/services/for-leaders",
     cta: "Explore Leader Services",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -36,7 +37,7 @@ const services = [
     audience: "For Parents",
     description:
       "Professional support to understand your child's learning profile and advocate effectively.",
-    href: "/pathway-parents",
+    href: "/services/for-parents",
     cta: "Explore Parent Services",
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -169,12 +170,7 @@ export default function ServicesLayout() {
               </svg>
             </Link>
 
-            <Link href="/contact" className="btn btn-secondary w-full sm:w-auto">
-              Schedule Consultation
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
+            <ScheduleConsultationButton className="w-full sm:w-auto" />
 
             <Link href="/contact" className="btn btn-outline w-full sm:w-auto">
               Contact Us

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
+import { useConsultation } from "@/context/ConsultationContext";
 
 const actions = [
     {
@@ -14,7 +15,7 @@ const actions = [
     {
         tag: "Ready to talk?",
         label: "Schedule a consultation",
-        href: "/contact",
+        isModal: true,
         variant: "secondary",
     },
     {
@@ -26,6 +27,7 @@ const actions = [
 ];
 
 export default function GetStarted() {
+  const { openModal } = useConsultation();
     return (
         <section className="relative overflow-hidden bg-white py-24 md:py-32">
             <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(160,102,170,0.05),transparent_50%)]" />
@@ -83,31 +85,31 @@ export default function GetStarted() {
                                         {action.tag}
                                     </span>
 
-                                    <Link
-                                        href={action.href}
-                                        className={`group inline-flex min-h-[58px] w-full items-center justify-between rounded-2xl px-5 py-4 text-left text-sm font-semibold transition-all duration-300 ${action.variant === "primary"
-                                            ? "bg-primary text-white shadow-lg shadow-primary/20 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/25"
-                                            : action.variant === "secondary"
-                                                ? "bg-secondary text-white shadow-lg shadow-secondary/20 hover:-translate-y-1 hover:shadow-xl hover:shadow-secondary/25"
-                                                : "border border-border bg-white text-foreground shadow-sm hover:-translate-y-1 hover:border-primary/30 hover:text-primary hover:shadow-lg"
-                                            }`}
-                                    >
-                                        <span className="pr-4 leading-snug">{action.label}</span>
-
-                                        <svg
-                                            className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                            strokeWidth={2.5}
+                                    {action.isModal ? (
+                                        <button
+                                            type="button"
+                                            onClick={openModal}
+                                            className={`group inline-flex min-h-[58px] w-full items-center justify-between rounded-2xl px-5 py-4 text-left text-sm font-semibold transition-all duration-300 bg-secondary text-white shadow-lg shadow-secondary/20 hover:-translate-y-1 hover:shadow-xl hover:shadow-secondary/25`}
                                         >
-                                            <path
-                                                d="M5 12h14M12 5l7 7-7 7"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                            />
-                                        </svg>
-                                    </Link>
+                                            <span className="pr-4 leading-snug">{action.label}</span>
+                                            <svg className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
+                                        </button>
+                                    ) : (
+                                        <Link
+                                            href={action.href}
+                                            className={`group inline-flex min-h-[58px] w-full items-center justify-between rounded-2xl px-5 py-4 text-left text-sm font-semibold transition-all duration-300 ${action.variant === "primary"
+                                                ? "bg-primary text-white shadow-lg shadow-primary/20 hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/25"
+                                                : "border border-border bg-white text-foreground shadow-sm hover:-translate-y-1 hover:border-primary/30 hover:text-primary hover:shadow-lg"
+                                                }`}
+                                        >
+                                            <span className="pr-4 leading-snug">{action.label}</span>
+                                            <svg className="h-4 w-4 shrink-0 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                                                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+                                            </svg>
+                                        </Link>
+                                    )}
                                 </div>
                             ))}
                         </motion.div>

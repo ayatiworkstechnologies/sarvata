@@ -2,11 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import {
-  FaLinkedinIn,
-  FaInstagram,
-  FaFacebookF,
-} from "react-icons/fa";
+import ScheduleConsultationButton from "@/components/ScheduleConsultationButton";
+import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const pageLinks = [
@@ -17,9 +14,10 @@ const pageLinks = [
 ];
 
 const serviceLinks = [
-  { name: "For Educators", href: "/pathway-educators" },
-  { name: "For School Leaders", href: "/pathway-leaders" },
-  { name: "For Parents", href: "/pathway-parents" },
+  { name: "For Educators", href: "/services/for-educators" },
+  { name: "For School Leaders", href: "/services/for-leaders" },
+  { name: "For Parents", href: "/services/for-parents" },
+  { name: "For Learners", href: "/services/for-learners" },
 ];
 
 const socials = [
@@ -92,25 +90,7 @@ export default function Footer() {
                   </p>
                 </div>
 
-                <Link
-                  href="/contact"
-                  className="
-        inline-flex h-12 shrink-0 items-center justify-center
-        rounded-full
-        bg-primary
-        px-6
-        text-sm font-semibold tracking-[0.01em] text-white
-        shadow-[0_10px_24px_rgba(160,102,170,0.22)]
-        ring-1 ring-primary/10
-        transition-all duration-300
-        hover:-translate-y-0.5
-        hover:bg-primary/95
-        hover:shadow-[0_14px_32px_rgba(160,102,170,0.28)]
-        active:translate-y-0 active:scale-[0.98]
-      "
-                >
-                  Schedule Consultation
-                </Link>
+                <ScheduleConsultationButton />
               </div>
             </div>
           </div>

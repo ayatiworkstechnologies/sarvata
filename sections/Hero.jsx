@@ -13,10 +13,10 @@ export default function Hero() {
   });
 
   const seeds = [
-    { href: "/pathway-educators", cls: "node-educators", label: "Educators Pathway" },
-    { href: "/pathway-leaders", cls: "node-leaders", label: "Leaders Pathway" },
-    { href: "/pathway-parents", cls: "node-parents", label: "Parents Pathway" },
-    { href: "/pathway-learners", cls: "node-learners", label: "Learners Pathway" },
+    { href: "/services/for-educators", cls: "node-educators", label: "Educators Pathway" },
+    { href: "/services/for-leaders", cls: "node-leaders", label: "Leaders Pathway" },
+    { href: "/services/for-parents", cls: "node-parents", label: "Parents Pathway" },
+    { href: "/services/for-learners", cls: "node-learners", label: "Learners Pathway" },
   ];
 
   const showTooltip = (e, label) => {

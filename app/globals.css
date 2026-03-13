@@ -500,3 +500,92 @@ p {
   cursor: pointer;
   padding-right: 2.8rem;
 }
+
+/* ======================================================
+   CONSULTATION MODAL UTILITIES
+====================================================== */
+
+/* ── Form input ── */
+.form-input {
+  width: 100%;
+  min-height: 50px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  background: #fdfcff;
+  padding: 0.78rem 1rem;
+  font-size: 0.9rem;
+  font-family: var(--font-secondary);
+  color: var(--foreground);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input::placeholder {
+  color: #a0aec0;
+  font-size: 0.875rem;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(160, 102, 170, 0.10);
+}
+
+.form-input.error {
+  border-color: #ef4444;
+  background: #fff8f8;
+}
+
+.form-input.error:focus {
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.10);
+}
+
+.select-arrow {
+  appearance: none;
+  cursor: pointer;
+  padding-right: 2.5rem;
+}
+
+/* ── Field label ── */
+.field-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #374151;
+  font-family: var(--font-primary);
+}
+
+/* ── Submit button ── */
+.submit-btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 52px;
+  border-radius: 999px;
+  padding: 0 2rem;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #A066AA 0%, #7a45a0 100%);
+  box-shadow: 0 8px 24px rgba(160, 102, 170, 0.30);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(160, 102, 170, 0.38);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+}

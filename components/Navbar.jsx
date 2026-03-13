@@ -6,13 +6,13 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import ConsultationModal from "./ConsultationModal";
+import { useConsultation } from "@/context/ConsultationContext";
 
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [openConsultation, setOpenConsultation] = useState(false);
+  const { openModal } = useConsultation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 16);
@@ -31,9 +31,10 @@ export default function Header() {
 
   const servicesActive =
     isActive("/services") ||
-    isActive("/pathway-educators") ||
-    isActive("/pathway-leaders") ||
-    isActive("/pathway-parents");
+    isActive("/services/for-educators") ||
+    isActive("/services/for-leaders") ||
+    isActive("/services/for-parents") ||
+    isActive("/services/for-learners");
 
   return (
     <>
@@ -73,9 +74,10 @@ export default function Header() {
                     href="/services"
                     active={servicesActive}
                     dropdownItems={[
-                      { name: "For Educators", href: "/pathway-educators" },
-                      { name: "For School Leaders", href: "/pathway-leaders" },
-                      { name: "For Parents", href: "/pathway-parents" },
+                      { name: "For Educators", href: "/services/for-educators" },
+                      { name: "For School Leaders", href: "/services/for-leaders" },
+                      { name: "For Parents", href: "/services/for-parents" },
+                      { name: "For Learners", href: "/services/for-learners" },
                     ]}
                   />
                   <NavItem name="Contact" href="/contact" active={isActive("/contact")} />
@@ -86,7 +88,7 @@ export default function Header() {
               <div className="hidden md:flex items-center shrink-0">
                 <button
                   type="button"
-                  onClick={() => setOpenConsultation(true)}
+                  onClick={openModal}
                   className="inline-flex items-center justify-center rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-black/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary"
                 >
                   Schedule Consultation
@@ -155,21 +157,28 @@ export default function Header() {
                         <div className="ml-3 mt-1 space-y-1 border-l border-primary/15 pl-3">
                           <MobileLink
                             name="For Educators"
-                            href="/pathway-educators"
+                            href="/services/for-educators"
                             pathname={pathname}
                             setMenuOpen={setMenuOpen}
                             isSub
                           />
                           <MobileLink
                             name="For School Leaders"
-                            href="/pathway-leaders"
+                            href="/services/for-leaders"
                             pathname={pathname}
                             setMenuOpen={setMenuOpen}
                             isSub
                           />
                           <MobileLink
                             name="For Parents"
-                            href="/pathway-parents"
+                            href="/services/for-parents"
+                            pathname={pathname}
+                            setMenuOpen={setMenuOpen}
+                            isSub
+                          />
+                          <MobileLink
+                            name="For Learners"
+                            href="/services/for-learners"
                             pathname={pathname}
                             setMenuOpen={setMenuOpen}
                             isSub
@@ -190,7 +199,7 @@ export default function Header() {
                         type="button"
                         onClick={() => {
                           setMenuOpen(false);
-                          setOpenConsultation(true);
+                          openModal();
                         }}
                         className="inline-flex w-full items-center justify-center rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-primary"
                       >
@@ -205,10 +214,6 @@ export default function Header() {
         </div>
       </motion.header>
 
-      <ConsultationModal
-        open={openConsultation}
-        onClose={() => setOpenConsultation(false)}
-      />
     </>
   );
 }
