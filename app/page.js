@@ -2,6 +2,7 @@ import ThreeDExperience from "@/components/ThreeDExperience";
 import WhatWeDo from "@/sections/WhatWeDo";
 import OurApproach from "@/sections/OurApproach";
 import GetStarted from "@/sections/GetStarted";
+import Hero from "@/sections/Hero";
 
 export const metadata = {
   title: "Sarvata - Transforming Educators & Schools, Every Day",
@@ -36,7 +37,8 @@ export const metadata = {
 export default function Home() {
   return (
     <main>
-      <ThreeDExperience />
+      {/* <ThreeDExperience /> */}
+      <Hero />
       <WhatWeDo />
       <OurApproach />
       <GetStarted />
