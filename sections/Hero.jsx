@@ -43,14 +43,14 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
           className="max-w-2xl"
         >
-          <motion.p
+          {/* <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.9 }}
             className="text-[10px] md:text-[12px] mt-4 uppercase tracking-[0.3em] text-primary font-semibold mb-4"
           >
             Sarvata
-          </motion.p>
+          </motion.p> */}
           <h1 className="text-3xl font-bold leading-[1.15] text-white md:text-5xl lg:text-7xl tracking-tight">
             Transforming <br /> Educators &<br />
             <span className="font-extrabold text-primary">Schools, Every Day</span>
