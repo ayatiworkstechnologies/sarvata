@@ -90,28 +90,28 @@ export default function ParentsPage() {
             title: "Insights & Guidance",
             description:
               "Professional assessment and counseling to understand your child's unique learning profile, strengths, and growth areas - delivered with clarity and compassion.",
-            href: "#insights",
+            href: "/services/for-parents/insights-guidance",
             cta: "Learn More",
           },
           {
             title: "Parent Workshops",
             description:
               "Practical, evidence-based workshops offering strategies to support diverse learning needs at home, including neurodiversity and learning differences.",
-            href: "#workshops",
+            href: "/services/for-parents/parent-workshops",
             cta: "Explore Workshops",
           },
           {
             title: "School Partnership & Advocacy",
             description:
               "Strategies to foster open communication with educators and strengthen the home-school connection for your child's long-term success.",
-            href: "#advocacy",
+            href: "/services/for-parents/school-partnership-advocacy",
             cta: "Learn More",
           },
           {
             title: "For Your Child",
             description:
               "Help your child develop metacognitive awareness and effective learning strategies for long-term academic confidence and self-direction.",
-            href: "#for-child",
+            href: "/services/for-parents/for-your-child",
             cta: "Learn More",
           },
         ]}

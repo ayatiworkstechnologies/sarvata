@@ -1,0 +1,163 @@
+import InnerHero from "@/components/InnerHero";
+import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
+import PathwayNextSteps from "@/components/services/PathwayNextSteps";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+export const metadata = {
+  title: "Student Programs - For Leaders | Sarvata",
+  description:
+    "Student Programs for Your School Community. These programs provide developmentally appropriate workshops addressing real challenges students face.",
+};
+
+export default function StudentProgramsPage() {
+  const programs = [
+    {
+      title: "Cyber Safety & Digital Citizenship",
+      description: "Navigate the online world with confidence and smart choices. Real talk about digital reality.",
+      href: "/services/for-leaders/student-programs/cyber-safety-digital-citizenship",
+      icon: (
+        <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+        </svg>
+      )
+    },
+    {
+      title: "Mental Health & Well-Being",
+      description: "Practical tools for managing stress and difficult emotions. Skills that actually work.",
+      href: "/services/for-leaders/student-programs/mental-health-well-being",
+      icon: (
+        <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+        </svg>
+      )
+    },
+    {
+      title: "Healthy Relationships & Boundaries",
+      description: "Education about consent, boundaries, and navigating social complexities. Mature conversations about real topics.",
+      href: "/services/for-leaders/student-programs/healthy-relationships-boundaries",
+      icon: (
+        <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+      )
+    }
+  ];
+
+  const implementationDetails = [
+    { label: "Format", value: "60-90 minute interactive sessions (not lectures)" },
+    { label: "Adaptation", value: "Content tailored to middle school vs. high school" },
+    { label: "Delivery", value: "Class-based or assembly, depending on your needs" },
+    { label: "Support", value: "Teacher and parent resources to reinforce concepts" }
+  ];
+
+  return (
+    <main className="bg-white">
+      {/* ── HERO ────────────────────────────────────────────────── */}
+      <InnerHero
+        title="Student Programs"
+        breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Leaders", href: "/services/for-leaders" }, { label: "Student Programs" }]}
+       variant="mental-health" />
+
+      {/* ── INTRO ───────────────────────────────────────── */}
+      <PathwayChallengeSection
+        eyebrow="Student Programs for Your School Community"
+        title="More Than Subject Knowledge"
+        paragraphs={[
+          "Students need more than subject knowledge to thrive. They need skills for navigating digital life, managing stress, and understanding healthy relationships.",
+          "These programs provide developmentally appropriate workshops addressing real challenges students face."
+        ]}
+      />
+
+      {/* ── CORE PROGRAMS ──────────────────────────────────────── */}
+      <section className="bg-soft-bg py-16 md:py-24 relative overflow-hidden">
+        <div className="container-max relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
+              Three Core Programs
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {programs.map((program, i) => (
+              <div key={i} className="group flex flex-col items-center text-center bg-white p-10 rounded-[2rem] border border-border/60 hover:border-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+                <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 border border-primary/20">
+                  {program.icon}
+                </div>
+                <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight">{program.title}</h3>
+                <p className="text-muted text-[16px] leading-relaxed mb-8 flex-1">
+                  {program.description}
+                </p>
+                <Link
+                  href={program.href}
+                  className="mt-auto inline-flex items-center gap-2 text-primary font-semibold text-[15px] group-hover:gap-3 transition-all duration-300 bg-primary/5 px-6 py-3 rounded-full hover:bg-primary/10"
+                >
+                  Learn More
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── IMPLEMENTATION & WHY THIS MATTERS ────────────────── */}
+      <section className="bg-white py-16 md:py-24 relative overflow-hidden">
+        <div className="container-max relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
+                Implementation
+              </h2>
+              <div className="bg-secondary/5 rounded-3xl p-8 border border-secondary/20">
+                <ul className="space-y-6">
+                  {implementationDetails.map((item, i) => (
+                    <li key={i} className="flex flex-col sm:flex-row sm:items-baseline gap-2">
+                       <span className="font-bold text-foreground min-w-[120px]">{item.label}:</span>
+                       <span className="text-muted text-[15px] leading-relaxed">{item.value}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className="flex flex-col justify-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
+                Why This Matters
+              </h2>
+              <div className="pl-6 border-l-4 border-primary/30">
+                 <p className="text-muted text-lg leading-relaxed italic">
+                   &quot;These programs develop students&apos; capacity for self-awareness, healthy decision-making, and well-being—essential foundations for all learning.&quot;
+                 </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── NEXT STEPS ──────────────────────────────────────────── */}
+      <PathwayNextSteps
+        eyebrow="Next Steps"
+        title="Ready to Offer Support?"
+        steps={[
+          {
+            label: "Review",
+            title: "Download Programs Overview",
+            description: "Detailed information on all our student-facing sessions.",
+            href: "#",
+            cta: "Download PDF",
+          },
+          {
+            label: "Discuss",
+            title: "Schedule Consultation",
+            description: "Contact us to plan workshops tailored to your student body.",
+            href: "/contact",
+            cta: "Schedule Consultation",
+          },
+        ]}
+      />
+    </main>
+  );
+}

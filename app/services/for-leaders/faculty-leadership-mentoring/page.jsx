@@ -1,0 +1,199 @@
+import InnerHero from "@/components/InnerHero";
+import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
+import PathwayNextSteps from "@/components/services/PathwayNextSteps";
+import { motion } from "framer-motion";
+
+export const metadata = {
+  title: "Faculty & Leadership Mentoring - For Leaders | Sarvata",
+  description:
+    "Building Capacity at All Levels. Traditional professional development rarely translates to practice change. We provide sustained focus over time.",
+};
+
+export default function FacultyMentoringPage() {
+  const leadershipMentoring = [
+    {
+      title: "Navigating complexity",
+      description: "Seeing patterns, identifying root causes, making values-aligned decisions under pressure."
+    },
+    {
+      title: "Leading change strategically",
+      description: "Building coalition, addressing resistance, maintaining momentum."
+    },
+    {
+      title: "Developing others",
+      description: "Mentoring teacher leaders, providing feedback that builds capacity."
+    },
+    {
+      title: "Managing yourself",
+      description: "Recognizing stress responses, maintaining perspective, sustainable boundaries."
+    }
+  ];
+
+  const capacityBuilding = [
+    {
+      title: "1. Developing Internal Instructional Coaches",
+      description: "Train teacher leaders to provide ongoing peer coaching for sustainable capacity."
+    },
+    {
+      title: "2. Professional Learning Communities (PLC) Design",
+      description: "Create structures for collaborative teacher learning focused on examining student work and refining practice."
+    },
+    {
+      title: "3. Customized Faculty Professional Learning",
+      description: "Multi-session learning sequences aligned with your school goals: differentiation, metacognition, student agency, formative assessment, inclusive practice."
+    },
+    {
+      title: "4. New Teacher Induction",
+      description: "Accelerate development and increase retention through structured support beyond “sink or swim.”"
+    }
+  ];
+
+  const independenceTimeline = [
+    {
+      year: "Year 1",
+      description: "We lead, you observe. We identify internal leaders."
+    },
+    {
+      year: "Year 2",
+      description: "Internal leaders take primary roles. We provide behind-the-scenes mentoring."
+    },
+    {
+      year: "Year 3+",
+      description: "You operate independently. Optional consultation available."
+    }
+  ];
+
+  return (
+    <main className="bg-white">
+      {/* ── HERO ────────────────────────────────────────────────── */}
+      <InnerHero
+        title="Faculty & Leadership Mentoring"
+        breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Leaders", href: "/services/for-leaders" }, { label: "Faculty & Leadership Mentoring" }]}
+       variant="mentoring" />
+
+      {/* ── INTRO ───────────────────────────────────────── */}
+      <PathwayChallengeSection
+        eyebrow="Building Capacity at All Levels"
+        title="Why Traditional PD Often Falls Short"
+        paragraphs={[
+          "Your faculty is your greatest asset. But traditional professional development—episodic workshops with no follow-up—rarely translates to practice change.",
+          "Isolation. One-and-done events. Disconnection from practice. No follow-through.",
+          "In our experience, what tends to make a difference: sustained focus over time, job-embedded learning, collaborative structures, direct connection to practice, regular feedback."
+        ]}
+      />
+
+      {/* ── THE ISOLATION OF LEADERSHIP ─────────────────────── */}
+      <section className="bg-soft-bg py-16 md:py-24 relative overflow-hidden">
+        <div className="container-max relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 leading-tight tracking-tight">
+                The Isolation of Leadership
+              </h2>
+              <p className="text-muted text-[16px] leading-relaxed mb-6">
+                School leadership is inherently lonely. You hold information you can&apos;t share, make decisions that disappoint some stakeholders, and project confidence while navigating uncertainty.
+              </p>
+              <p className="text-muted text-[16px] leading-relaxed mb-10">
+                Leadership mentoring provides a trusted thought partner outside your system who understands educational leadership deeply and with whom you can think through complexity without performance or politics.
+              </p>
+
+              <div className="bg-white p-6 rounded-3xl border border-border/50">
+                 <h3 className="text-lg font-bold text-foreground mb-4">Practical Details</h3>
+                 <ul className="space-y-3">
+                   <li className="flex items-start gap-3">
+                     <span className="font-semibold text-foreground shrink-0 w-32">Who we mentor:</span>
+                     <span className="text-muted">Principals, vice principals, coordinators, department heads, teacher leaders</span>
+                   </li>
+                   <li className="flex items-start gap-3">
+                     <span className="font-semibold text-foreground shrink-0 w-32">How it works:</span>
+                     <span className="text-muted">60-90 minute sessions, typically twice monthly. Your agenda. Complete confidentiality.</span>
+                   </li>
+                 </ul>
+              </div>
+            </div>
+
+            <div className="bg-white p-8 md:p-10 rounded-[2rem] border border-border/60 shadow-lg shadow-black/5">
+              <h3 className="text-2xl font-bold text-foreground mb-8">What Mentoring Provides</h3>
+              <div className="space-y-6">
+                {leadershipMentoring.map((item, i) => (
+                  <div key={i} className="flex gap-4 items-start">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                       <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                       </svg>
+                    </div>
+                    <div>
+                      <strong className="block text-foreground mb-1">{item.title}</strong>
+                      <p className="text-muted text-sm">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── BUILDING INTERNAL CAPACITY ───────────────────────── */}
+      <section className="bg-white py-16 md:py-24 relative overflow-hidden">
+        <div className="container-max relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
+              Building Internal Capacity
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-20">
+            {capacityBuilding.map((item, i) => (
+              <div key={i} className="p-8 rounded-[1.75rem] bg-soft-bg/50 border border-border/60 hover:bg-soft-bg transition-colors duration-300">
+                <h3 className="text-xl font-bold text-foreground mb-4">{item.title}</h3>
+                <p className="text-muted text-[15px] leading-relaxed">{item.description}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Timeline to independence */}
+          <div className="max-w-4xl mx-auto">
+             <div className="text-center mb-10">
+               <h3 className="text-2xl font-bold text-foreground">Building Toward Independence</h3>
+             </div>
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+               {independenceTimeline.map((phase, i) => (
+                 <div key={i} className="relative p-8 rounded-[1.5rem] bg-secondary/5 border border-secondary/20 text-center">
+                   <div className="inline-flex px-4 py-1.5 rounded-full bg-secondary/10 text-secondary font-bold text-sm mb-4">
+                     {phase.year}
+                   </div>
+                   <p className="text-foreground text-[15px] leading-relaxed font-medium">
+                     {phase.description}
+                   </p>
+                 </div>
+               ))}
+             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── NEXT STEPS ──────────────────────────────────────────── */}
+      <PathwayNextSteps
+        eyebrow="Next Steps"
+        title="Ready to Build Capacity?"
+        steps={[
+          {
+            label: "Review",
+            title: "Faculty Development Overview",
+            description: "Download detailed information on our capacity building models.",
+            href: "#",
+            cta: "Download PDF",
+          },
+          {
+            label: "Discuss",
+            title: "Schedule Consultation",
+            description: "Talk with us about your leadership challenges and goals.",
+            href: "/contact",
+            cta: "Schedule Consultation",
+          },
+        ]}
+      />
+    </main>
+  );
+}

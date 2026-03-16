@@ -61,7 +61,7 @@ export default function MainHero({
                 initial={{ opacity: 0, y: 22 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15, duration: 0.65 }}
-                className="max-w-3xl text-2xl font-bold leading-[1.05] tracking-tight text-black/80 sm:text-3xl md:text-4xl lg:text-5xl"
+                className="max-w-3xl text-2xl font-bold leading-[1.05] tracking-tight text-secondary sm:text-3xl md:text-4xl lg:text-5xl"
               >
                 {title}
               </motion.h1>

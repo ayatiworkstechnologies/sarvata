@@ -90,28 +90,28 @@ export default function LeadersPage() {
             title: "Inclusion Audits & Strategic Roadmaps",
             description:
               "Objective assessment of current practices and data-driven planning for systemic improvement - giving you a clear, actionable picture of where you are and where you're headed.",
-            href: "#audits",
+            href: "/services/for-leaders/inclusion-audits-roadmaps",
             cta: "Learn More",
           },
           {
             title: "Faculty & Leadership Mentoring",
             description:
               "Develop your team's capacity through confidential mentoring and job-embedded professional learning that meets educators where they are.",
-            href: "#mentoring",
+            href: "/services/for-leaders/faculty-leadership-mentoring",
             cta: "Learn More",
           },
           {
             title: "Strategic Planning & Systems",
             description:
               "Design operational infrastructure enabling your vision: curriculum alignment, assessment frameworks, scheduling, and change management support.",
-            href: "#planning",
+            href: "/services/for-leaders/strategic-planning-systems",
             cta: "Learn More",
           },
           {
             title: "Programs for Your Students",
             description:
               "Workshops on digital citizenship, mental health and well-being, and healthy relationships - directly serving the young people in your care.",
-            href: "#student-programs",
+            href: "/services/for-leaders/student-programs",
             cta: "Learn More",
           },
         ]}

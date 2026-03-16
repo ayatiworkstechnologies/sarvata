@@ -90,21 +90,21 @@ export default function EducatorsPage() {
             title: "Workshops & Training",
             description:
               "Interactive, hands-on learning that gives you practical frameworks and tools you can use immediately - differentiation, metacognition, true personalization.",
-            href: "#workshops",
+            href: "/services/for-educators/workshops-training",
             cta: "Explore Workshops",
           },
           {
             title: "Teacher Mentoring",
             description:
               "Confidential, in-class partnership to help you implement new approaches with your actual students - real context, real feedback.",
-            href: "#mentoring",
+            href: "/services/for-educators/teacher-mentoring",
             cta: "Learn About Mentoring",
           },
           {
             title: "Free Resources & Tools",
             description:
               "Download free checklists for identifying student strengths, lesson plan templates, and guides for creating choice-based activities.",
-            href: "#resources",
+            href: "/services/for-educators/free-resources-tools",
             cta: "Access Resources",
           },
 
@@ -121,7 +121,7 @@ export default function EducatorsPage() {
             title: "Start with Free Resources",
             description:
               "Browse our library of templates, checklists, and guides - no commitment required.",
-            href: "#resources",
+            href: "/services/for-educators/free-resources-tools",
             cta: "Access Free Resources",
           },
           {
@@ -129,7 +129,7 @@ export default function EducatorsPage() {
             title: "Browse Workshops & Training",
             description:
               "Find hands-on workshops designed to build practical, immediately usable frameworks.",
-            href: "#workshops",
+            href: "/services/for-educators/workshops-training",
             cta: "View workshops and training",
           },
           {
@@ -137,7 +137,7 @@ export default function EducatorsPage() {
             title: "Explore Teacher Mentoring",
             description:
               "Partner with a consultant who works alongside you in your actual classroom.",
-            href: "#mentoring",
+            href: "/services/for-educators/teacher-mentoring",
             cta: "Learn About Mentoring",
           },
         ]}
