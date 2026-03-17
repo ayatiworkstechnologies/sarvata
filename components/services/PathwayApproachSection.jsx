@@ -1,10 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FloatingShapes, SubtleGrid } from "@/components/VectorDecorations";
 
 export default function PathwayApproachSection({ eyebrow = "Our Approach", title, items = [] }) {
   return (
     <section className="relative bg-[#f6f4f9] overflow-hidden py-20 md:py-28">
+      {/* Background decoration */}
+      <SubtleGrid />
+      <FloatingShapes />
+
       {/* Decorative glows */}
       <div className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full bg-primary/8 blur-[100px]" />
 

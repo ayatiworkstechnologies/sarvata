@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { useConsultation } from "@/context/ConsultationContext";
+import { FloatingShapes, SubtleGrid } from "@/components/VectorDecorations";
 
 
 export default function GetStarted() {
@@ -11,6 +12,8 @@ export default function GetStarted() {
 
     return (
         <section className="relative overflow-hidden bg-white py-24 md:py-32">
+            <SubtleGrid />
+            <FloatingShapes />
             <div
                 className="pointer-events-none absolute inset-0"
                 style={{

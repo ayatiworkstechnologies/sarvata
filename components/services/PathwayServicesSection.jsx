@@ -2,10 +2,14 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { FloatingShapes, SubtleGrid } from "@/components/VectorDecorations";
 
 export default function PathwayServicesSection({ eyebrow = "Services", title, services = [] }) {
   return (
     <section className="relative bg-white overflow-hidden py-20 md:py-28">
+      {/* Background decoration */}
+      <SubtleGrid />
+      <FloatingShapes />
       <div className="pointer-events-none absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-secondary/10 blur-[100px]" />
 
       <div className="container-max relative z-10">

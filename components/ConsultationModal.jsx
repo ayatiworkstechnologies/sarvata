@@ -81,9 +81,14 @@ export default function ConsultationModal({ open, onClose }) {
             style={{ "--tw-enter-translate-y": "0" }}
           >
 
+            {/* ── mobile grabber ── */}
+            <div className="flex w-full items-center justify-center pt-3 sm:hidden">
+              <div className="h-1.5 w-12 rounded-full bg-white/20" />
+            </div>
+
             {/* ═══════════ HEADER BAND ═══════════ */}
             <div
-              className="shrink-0 flex items-center justify-between gap-4 px-6 pt-5 pb-5 sm:px-8 sm:pt-6"
+              className="shrink-0 flex items-center justify-between gap-4 px-6 pt-2 pb-5 sm:px-8 sm:pt-6"
               style={{ background: "linear-gradient(135deg, #A066AA 0%, #7a45a0 60%, #4e2a7a 100%)" }}
             >
               {/* left */}
@@ -101,7 +106,7 @@ export default function ConsultationModal({ open, onClose }) {
                   <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-white/60 leading-none mb-1">
                     Free · 20-30 min
                   </p>
-                  <h2 className="text-lg sm:text-xl font-bold text-white leading-tight truncate">
+                  <h2 className="text-base sm:text-xl font-bold text-white leading-tight truncate">
                     Schedule a Consultation
                   </h2>
                 </div>
@@ -128,25 +133,25 @@ export default function ConsultationModal({ open, onClose }) {
             <div className="h-[3px] w-full shrink-0" style={{ background: "linear-gradient(90deg,#E2C473,#c8a84e,#E2C473)" }} />
 
             {/* ═══════════ SCROLLABLE BODY ═══════════ */}
-            <div className="flex-1 overflow-y-auto overscroll-contain">
+            <div className="flex-1 overflow-y-auto overscroll-contain custom-scrollbar">
               {isSubmitSuccessful ? (
                 <SuccessState onClose={onClose} />
               ) : (
-                <div className="px-6 py-7 sm:px-8 sm:py-8 space-y-6">
+                <div className="px-5 py-6 sm:px-8 sm:py-8 space-y-6">
 
                   {/* info row */}
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
                     <InfoChip
                       icon="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                       text="20-30 minutes"
                     />
                     <InfoChip
                       icon="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      text="Confirmation via email"
+                      text="Email Confirmation"
                     />
                     <InfoChip
                       icon="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                      text="No commitment required"
+                      text="No Commitment"
                     />
                   </div>
 
@@ -335,39 +340,39 @@ function ChevronIcon() {
 function SuccessState({ onClose }) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-      className="flex flex-col items-center justify-center gap-5 px-8 py-14 text-center"
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      className="flex flex-col items-center justify-center gap-6 px-6 py-12 sm:px-8 sm:py-16 text-center"
     >
       {/* check circle */}
-      <div className="relative flex h-24 w-24 items-center justify-center rounded-full"
+      <div className="relative flex h-20 w-20 sm:h-24 sm:w-24 items-center justify-center rounded-full"
         style={{ background: "linear-gradient(135deg,#A066AA20,#E2C47320)" }}>
         <div className="absolute inset-0 rounded-full animate-ping opacity-20"
           style={{ background: "linear-gradient(135deg,#A066AA,#E2C473)" }} />
-        <div className="flex h-16 w-16 items-center justify-center rounded-full"
+        <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full"
           style={{ background: "linear-gradient(135deg,#A066AA,#7a45a0)" }}>
-          <svg className="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+          <svg className="h-7 w-7 sm:h-8 sm:w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
           </svg>
         </div>
       </div>
 
       {/* text */}
-      <div>
-        <h3 className="text-2xl font-bold text-[#171717] mb-2">You're All Set!</h3>
-        <p className="text-[16px] leading-7 text-[#6b7280] max-w-xs" style={{ fontFamily: "var(--font-secondary)" }}>
+      <div className="max-w-xs sm:max-w-sm">
+        <h3 className="text-xl sm:text-2xl font-black text-[#171717] mb-2 tracking-tight">You're All Set!</h3>
+        <p className="text-[14px] sm:text-[16px] leading-relaxed text-[#6b7280]" style={{ fontFamily: "var(--font-secondary)" }}>
           Thank you for reaching out. We'll review your details and confirm your consultation slot shortly.
         </p>
       </div>
 
       {/* gold badge */}
-      <div className="flex items-center gap-2 rounded-full px-4 py-2 border"
-        style={{ background: "#fffbee", borderColor: "#E2C47350" }}>
-        <svg className="h-4 w-4 text-[#c8a84e]" fill="currentColor" viewBox="0 0 20 20">
+      <div className="flex items-center gap-2 rounded-2xl px-4 py-2.5 border"
+        style={{ background: "#fffbee", borderColor: "#E2C47360" }}>
+        <svg className="h-4 w-4 shrink-0 text-[#c8a84e]" fill="currentColor" viewBox="0 0 20 20">
           <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
         </svg>
-        <span className="text-[13px] font-semibold text-[#7a5c1e]" style={{ fontFamily: "var(--font-secondary)" }}>
+        <span className="text-[12px] sm:text-[13px] font-bold text-[#7a5c1e] text-left" style={{ fontFamily: "var(--font-secondary)" }}>
           Expect a response within 1 business day
         </span>
       </div>

@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { SubtleGrid } from "@/components/VectorDecorations";
 
 /* ── differentiator data ──────────────────────────────────────── */
 const ITEMS = [
@@ -56,6 +57,7 @@ export default function OurApproach() {
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden bg-white py-24 md:py-32">
+      <SubtleGrid />
 
       {/* ── particles ── */}
       {[

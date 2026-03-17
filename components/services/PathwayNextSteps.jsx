@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { FloatingShapes, SubtleGrid } from "@/components/VectorDecorations";
 import ScheduleConsultationButton from "@/components/ScheduleConsultationButton";
 import { useConsultation } from "@/context/ConsultationContext";
 
@@ -11,6 +12,8 @@ export default function PathwayNextSteps({ eyebrow = "Next Steps", title, steps 
   return (
     <section className="relative bg-[#f6f4f9] overflow-hidden py-16 md:py-20">
       {/* Background decoration */}
+      <SubtleGrid />
+      <FloatingShapes />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(160,102,170,0.08),transparent_50%),radial-gradient(ellipse_at_bottom_left,rgba(226,196,115,0.08),transparent_50%)]" />
 
       <div className="container-max relative z-10">

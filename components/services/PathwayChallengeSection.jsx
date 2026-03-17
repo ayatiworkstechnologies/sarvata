@@ -1,11 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FloatingShapes, SubtleGrid } from "@/components/VectorDecorations";
 
 export default function PathwayChallengeSection({ eyebrow, title, paragraphs, accentColor = "primary" }) {
   return (
     <section className="relative bg-white overflow-hidden py-20 md:py-28">
-      {/* Subtle background blobs */}
+      {/* Background decoration */}
+      <SubtleGrid />
+      <FloatingShapes />
+
+      {/* Subtle background blobs (Legacy kept for layering) */}
       <div className="pointer-events-none absolute top-0 right-0 w-[480px] h-[480px] rounded-full bg-primary/5 blur-[120px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 w-[380px] h-[380px] rounded-full bg-secondary/8 blur-[100px]" />
 
@@ -52,7 +57,7 @@ export default function PathwayChallengeSection({ eyebrow, title, paragraphs, ac
 
             <div className="relative z-10">
               {/* Big decorative quote mark */}
-              <div className="text-[120px] leading-none font-bold text-primary/10 select-none mb-2">"</div>
+              <div className="text-[120px] leading-none font-bold text-primary/10 select-none mb-2">&quot;</div>
               <p className="text-xl md:text-2xl font-semibold text-foreground leading-snug tracking-tight -mt-10">
                 The goal is not to cover the curriculum - it is to uncover the learner.
               </p>

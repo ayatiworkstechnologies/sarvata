@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { SubtleGrid } from "@/components/VectorDecorations";
 
 /* ── community data ─────────────────────────────────────────────── */
 const COMMUNITIES = [
@@ -69,6 +70,7 @@ export default function WhatWeDo() {
       className="relative overflow-hidden"
       style={{ background: "linear-gradient(180deg, #faf7fc 0%, #ffffff 100%)" }}
     >
+      <SubtleGrid />
       {/* ── floating 3-D orbs (parallax) ── */}
       <motion.div className="pointer-events-none absolute -top-32 -right-32 h-[520px] w-[520px] rounded-full opacity-25 blur-[90px]"
         aria-hidden style={{ y: y1, background: "linear-gradient(135deg, #A066AA 0%, #7a45a0 60%, #4e2a7a 100%)" }} />

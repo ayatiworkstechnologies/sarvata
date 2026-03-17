@@ -244,6 +244,7 @@ p {
 .glass-panel {
 
   background: rgba(255, 255, 255, .03);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
 
   border: 1px solid rgba(255, 255, 255, .08);
@@ -317,6 +318,23 @@ p {
 ::-webkit-scrollbar-thumb {
   background: var(--primary);
   border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(160, 102, 170, 0.2);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(160, 102, 170, 0.4);
 }
 
 /* ======================================================
