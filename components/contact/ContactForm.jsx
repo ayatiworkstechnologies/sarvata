@@ -12,8 +12,27 @@ export default function ContactForm() {
   } = useForm();
 
   const onSubmit = async (data) => {
-    await new Promise((r) => setTimeout(r, 1500));
-    reset();
+    try {
+      const response = await fetch("https://api.ayatiworks.com/api/v1/public/sarvata/sarvata_contact_us/records", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-API-Key": "43219e836c683d557e9e15ab623586a147aa22f6639b8253f2a6863330fdedd5"
+        },
+        body: JSON.stringify({ data: data })
+      });
+
+      if (!response.ok) {
+        throw new Error("API request failed");
+      }
+
+      const result = await response.json();
+      console.log("Contact submission success:", result);
+      reset();
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Something went wrong while sending your message. Please try again.");
+    }
   };
 
   return (

@@ -54,19 +54,7 @@ export default function ScrollUI() {
       <button
         onClick={handleScroll}
         aria-label="Scroll control"
-        className="
-        fixed right-6 bottom-6 z-[9999]
-        w-12 h-12
-        rounded-full
-        bg-primary
-        text-white
-        flex items-center justify-center
-        shadow-lg
-        hover:scale-105
-        hover:-translate-y-1
-        active:scale-95
-        transition-all duration-300
-      "
+        className="fixed right-6 bottom-6 z-[9999] w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg hover:scale-105 hover:-translate-y-1 active:scale-95 transition-all duration-300"
       >
         {isTop ? <ArrowDown size={20} /> : <ArrowUp size={20} />}
       </button>

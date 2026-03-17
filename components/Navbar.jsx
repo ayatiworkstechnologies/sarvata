@@ -87,8 +87,9 @@ export default function Header() {
                         href: "/services/for-leaders",
                         subLinks: [
                           { name: "Inclusion Audits", href: "/services/for-leaders/inclusion-audits-roadmaps" },
-                          { name: "Leadership Coaching", href: "/services/for-leaders/leadership-coaching" },
-                          { name: "Systems Design", href: "/services/for-leaders/systems-design" },
+                          { name: "Faculty & Leadership Mentoring", href: "/services/for-leaders/faculty-leadership-mentoring" },
+                          { name: "Strategic Planning & Systems", href: "/services/for-leaders/strategic-planning-systems" },
+                          { name: "Programs for Students", href: "/services/for-leaders/student-programs" },
                         ]
                       },
                       { 
@@ -194,8 +195,9 @@ export default function Header() {
                             setMenuOpen={setMenuOpen}
                             subLinks={[
                               { name: "Inclusion Audits", href: "/services/for-leaders/inclusion-audits-roadmaps" },
-                              { name: "Leadership Coaching", href: "/services/for-leaders/leadership-coaching" },
-                              { name: "Systems Design", href: "/services/for-leaders/systems-design" },
+                              { name: "Faculty & Leadership Mentoring", href: "/services/for-leaders/faculty-leadership-mentoring" },
+                              { name: "Strategic Planning & Systems", href: "/services/for-leaders/strategic-planning-systems" },
+                              { name: "Programs for Students", href: "/services/for-leaders/student-programs" },
                             ]}
                           />
                           <MobileAccordion 

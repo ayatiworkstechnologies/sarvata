@@ -39,9 +39,27 @@ export default function ConsultationModal({ open, onClose }) {
   }, [open, onClose]);
 
   const onSubmit = async (data) => {
-    await new Promise((r) => setTimeout(r, 1400));
-    console.log("Consultation data:", data);
-    reset();
+    try {
+      const response = await fetch("https://api.ayatiworks.com/api/v1/public/sarvata/consultation_booking/records", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-API-Key": "43219e836c683d557e9e15ab623586a147aa22f6639b8253f2a6863330fdedd5"
+        },
+        body: JSON.stringify({ data: data })
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit consultation booking");
+      }
+
+      const result = await response.json();
+      console.log("Success:", result);
+      reset();
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong. Please try again later.");
+    }
   };
 
   return (
