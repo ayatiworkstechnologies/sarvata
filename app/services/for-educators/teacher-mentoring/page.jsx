@@ -3,6 +3,7 @@ import InnerHero from "@/components/InnerHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
+import { Shield, Briefcase, HeartHandshake } from "lucide-react";
 
 
 
@@ -133,18 +134,25 @@ export default function TeacherMentoringPage() {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {differentiators.map((diff, i) => (
-              <div key={i} className="text-center p-8 border border-border/50 rounded-3xl hover:border-primary/20 hover:shadow-xl transition-all duration-500">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 mx-auto flex items-center justify-center mb-6">
-                  {/* Icon placeholder */}
-                  <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
+            {differentiators.map((diff, i) => {
+              const Icon = i === 0 ? Shield : i === 1 ? Briefcase : HeartHandshake;
+              return (
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="text-center p-8 border border-border/50 rounded-3xl hover:border-primary/20 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 bg-white"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 mx-auto flex items-center justify-center mb-6 ring-1 ring-primary/20 shadow-inner">
+                  <Icon className="w-8 h-8 text-primary" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-2xl font-bold text-foreground mb-3">{diff.title}</h3>
                 <p className="text-muted text-[16px] leading-relaxed">{diff.description}</p>
-              </div>
-            ))}
+              </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

@@ -54,7 +54,7 @@ export default function EducatorsPage() {
         paragraphs={[
           "You're already responding to diverse learners - the student who finishes early, the one who struggles with pace, the creative thinker whose brilliance doesn't fit the test. The challenge is making it sustainable.",
           "Limited time, large classes, curriculum requirements, and the cognitive load of attending to 25+ individuals simultaneously make responsive practice exhausting.",
-          <><strong>What we offer:</strong> Frameworks that systematize what you already do intuitively, moving from moment-to-moment responses to sustainable, structured differentiation.</>,
+          <span key="what-we-offer"><strong>What we offer:</strong> Frameworks that systematize what you already do intuitively, moving from moment-to-moment responses to sustainable, structured differentiation.</span>,
         ]}
       />
 

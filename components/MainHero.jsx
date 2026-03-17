@@ -48,20 +48,15 @@ export default function MainHero({
       </div>
 
       {/* Main Content */}
-      <div className="absolute inset-0 flex items-center">
-        <div className="container-max pt-20 md:pt-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-4xl rounded-3xl border border-white/30 bg-white/15 p-6 shadow-xl sm:p-8 md:p-10"
-          >
+      <div className="absolute inset-0 flex items-end justify-start">
+        <div className="px-8 pb-12 md:pb-16 text-left">
+          <div className="max-w-4xl relative z-10 w-full text-left">
             {title && (
               <motion.h1
                 initial={{ opacity: 0, y: 22 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15, duration: 0.65 }}
-                className="max-w-3xl text-2xl font-bold leading-[1.05] tracking-tight text-red-500 sm:text-3xl md:text-4xl lg:text-5xl"
+                className="max-w-3xl text-xl font-extrabold leading-[1.15] tracking-tight text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)] sm:text-2xl md:text-3xl lg:text-4xl"
               >
                 {title}
               </motion.h1>
@@ -72,7 +67,7 @@ export default function MainHero({
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.25, duration: 0.6 }}
-                className="mt-4 max-w-2xl text-[15px] leading-7 text-white/90 md:mt-5 md:text-lg"
+                className="mt-3 max-w-2xl text-[14px] leading-6 text-white/90 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)] md:text-[16px]"
               >
                 {subtitle}
               </motion.p>
@@ -82,47 +77,43 @@ export default function MainHero({
               initial={{ opacity: 0, scaleX: 0.7 }}
               animate={{ opacity: 1, scaleX: 1 }}
               transition={{ delay: 0.35, duration: 0.6 }}
-              className="mt-6 h-[3px] w-24 origin-left rounded-full bg-gradient-to-r from-primary via-secondary to-white/70 md:mt-8"
+              className="mt-5 h-[2px] w-20 origin-left rounded-full bg-gradient-to-r from-primary to-secondary md:mt-6"
             />
-          </motion.div>
-        </div>
-      </div>
 
-      {/* Bottom Breadcrumb Bar */}
-      {breadcrumbs.length > 0 && (
-        <div className="absolute inset-x-0 bottom-0">
-          <div className="container-max pb-5 md:pb-6">
-            <motion.nav
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.2 }}
-              className="inline-flex max-w-full rounded-full border border-white/30 bg-white/15 px-5 py-2.5 shadow-lg"
-            >
-              <ol className="flex flex-wrap items-center gap-2.5 text-[15px] font-semibold text-white">
-                <li className="flex items-center gap-2">
-                  <HiHome className="text-lg text-white" />
-                  <Link href="/" className="transition hover:text-white/80">
-                    Home
-                  </Link>
-                </li>
-
-                {breadcrumbs.map((item, i) => (
-                  <li key={i} className="flex items-center gap-2.5">
-                    <GrNext className="text-[11px] text-white/70" />
-                    {item.href ? (
-                      <Link href={item.href} className="transition hover:text-white/80">
-                        {item.label}
-                      </Link>
-                    ) : (
-                      <span className="text-white">{item.label}</span>
-                    )}
+            {/* Breadcrumbs below title */}
+            {breadcrumbs.length > 0 && (
+              <motion.nav
+                initial={{ opacity: 0, y: 14 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55, delay: 0.45 }}
+                className="mt-8 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-white/10 px-5 py-2.5 backdrop-blur-md shadow-xl"
+              >
+                <ol className="flex flex-wrap items-center gap-2.5 text-[14px] font-bold text-white">
+                  <li className="flex items-center gap-2">
+                    <HiHome className="text-lg text-white" />
+                    <Link href="/" className="transition hover:text-white/80">
+                      Home
+                    </Link>
                   </li>
-                ))}
-              </ol>
-            </motion.nav>
+
+                  {breadcrumbs.map((item, i) => (
+                    <li key={i} className="flex items-center gap-2.5">
+                      <GrNext className="text-[10px] text-white/50" />
+                      {item.href ? (
+                        <Link href={item.href} className="transition hover:text-white/80">
+                          {item.label}
+                        </Link>
+                      ) : (
+                        <span className="text-white">{item.label}</span>
+                      )}
+                    </li>
+                  ))}
+                </ol>
+              </motion.nav>
+            )}
           </div>
         </div>
-      )}
+      </div>
     </section>
   );
 }

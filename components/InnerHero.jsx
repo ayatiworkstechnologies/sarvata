@@ -134,55 +134,51 @@ export default function InnerHero({
         
         {/* Common Accents */}
         <motion.div animate={{ y: [0, -30, 0] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }} className="absolute top-[20%] left-[10%] w-24 h-24 rounded-full bg-gradient-to-br from-primary/5 to-transparent border border-white/20 backdrop-blur-sm" />
-      </div>
-      
-      {/* ── Content ── */}
-      <div className="container-max pt-28 pb-32 md:pt-44 md:pb-40 relative z-10">
-         <div className="max-w-4xl relative">
-            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.6 }} className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-[3.5rem] leading-[1.1]">
-              {title}
+      </div>      {/* ── Content ── */}
+      <div className="container-max pt-40 pb-16 md:pt-64 md:pb-24 relative z-10 text-left">
+         <div className="max-w-4xl relative z-10 w-full text-left">
+            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.6 }} className="text-xl font-extrabold tracking-tight text-foreground sm:text-2xl md:text-3xl lg:text-4xl leading-[1.1] drop-shadow-[0_4px_4px_rgba(0,0,0,0.1)]">
+               {title}
             </motion.h1>
 
             {subtitle && (
-              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.6 }} className="mt-6 text-lg leading-8 text-muted max-w-2xl">
-                {subtitle}
-              </motion.p>
+               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.6 }} className="mt-4 text-[14px] leading-relaxed text-muted max-w-2xl font-medium md:text-[16px]">
+                  {subtitle}
+               </motion.p>
             )}
 
-            <motion.div initial={{ opacity: 0, scaleX: 0 }} animate={{ opacity: 1, scaleX: 1 }} transition={{ delay: 0.35, duration: 0.6 }} className="mt-10 h-1.5 w-24 rounded-full bg-gradient-to-r from-primary to-secondary origin-left" />
+            <motion.div initial={{ opacity: 0, scaleX: 0 }} animate={{ opacity: 1, scaleX: 1 }} transition={{ delay: 0.35, duration: 0.6 }} className="mt-6 h-[2px] w-16 rounded-full bg-gradient-to-r from-primary to-secondary origin-left" />
+
+            {/* Breadcrumbs below title */}
+            {breadcrumbs.length > 0 && (
+               <motion.div 
+                  initial={{ opacity: 0, y: 15 }} 
+                  animate={{ opacity: 1, y: 0 }} 
+                  transition={{ duration: 0.5, delay: 0.45 }}
+                  className="mt-8"
+               >
+                  <nav className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-black/5 px-5 py-2.5 backdrop-blur-md shadow-sm">
+                     <ol className="flex flex-wrap items-center gap-2.5 text-[14px] font-bold text-black/70">
+                        <li className="flex items-center gap-2">
+                           <HiHome className="text-[18px] text-primary" />
+                           <Link href="/" className="transition hover:text-foreground">Home</Link>
+                        </li>
+                        {breadcrumbs.map((item, i) => (
+                           <li key={i} className="flex items-center gap-2.5">
+                              <GrNext className="text-[10px] text-muted/40" />
+                              {item.href ? (
+                                 <Link href={item.href} className="transition hover:text-foreground">{item.label}</Link>
+                              ) : (
+                                 <span className="text-foreground font-bold">{item.label}</span>
+                              )}
+                           </li>
+                        ))}
+                     </ol>
+                  </nav>
+               </motion.div>
+            )}
          </div>
       </div>
-
-      {/* ── Bottom Breadcrumbs ── */}
-      {breadcrumbs.length > 0 && (
-        <div className="absolute inset-x-0 bottom-0 z-20">
-          <div className="container-max pb-8 md:pb-10">
-            <motion.nav 
-              initial={{ opacity: 0, y: 15 }} 
-              animate={{ opacity: 1, y: 0 }} 
-              transition={{ duration: 0.5, delay: 0.4 }} 
-              className="inline-flex max-w-full rounded-2xl border border-border/40 bg-white/60 backdrop-blur-md px-5 py-2.5 shadow-sm shadow-black/5"
-            >
-              <ol className="flex flex-wrap items-center gap-2.5 text-[14px] font-medium text-muted">
-                <li className="flex items-center gap-2">
-                  <HiHome className="text-[18px] text-primary" />
-                  <Link href="/" className="transition hover:text-foreground">Home</Link>
-                </li>
-                {breadcrumbs.map((item, i) => (
-                  <li key={i} className="flex items-center gap-2.5">
-                    <GrNext className="text-[10px] text-muted/50" />
-                    {item.href ? (
-                      <Link href={item.href} className="transition hover:text-foreground">{item.label}</Link>
-                    ) : (
-                      <span className="text-foreground font-semibold">{item.label}</span>
-                    )}
-                  </li>
-                ))}
-              </ol>
-            </motion.nav>
-          </div>
-        </div>
-      )}
     </section>
   );
 }

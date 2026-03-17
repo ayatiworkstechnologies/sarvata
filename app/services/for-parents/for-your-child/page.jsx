@@ -5,8 +5,6 @@ import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-
-
 export default function ForYourChildPage() {
   const programs = [
     {
@@ -27,7 +25,7 @@ export default function ForYourChildPage() {
       <InnerHero
         title="For Your Child"
         breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Parents", href: "/services/for-parents" }, { label: "For Your Child" }]}
-       variant="mental-health" />
+        variant="mental-health" />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection

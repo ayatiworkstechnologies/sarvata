@@ -89,28 +89,32 @@ export default function UnderstandingChildLearnsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-16 max-w-6xl mx-auto">
             
             {/* Formats & Included */}
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Program Formats</h2>
-              <ul className="space-y-4 mb-12">
-                {details.formats.map((item, i) => (
-                  <li key={i} className="flex gap-3">
-                    <span className="font-bold text-foreground shrink-0">{item.label}:</span>
-                    <span className="text-muted text-[15px]">{item.value}</span>
-                  </li>
-                ))}
-              </ul>
+            <div className="space-y-8">
+              <div className="bg-primary/5 border border-primary/20 rounded-3xl p-8">
+                <h2 className="text-2xl font-bold text-foreground mb-6">Program Formats</h2>
+                <ul className="space-y-4">
+                  {details.formats.map((item, i) => (
+                    <li key={i} className="flex flex-col sm:flex-row sm:items-baseline gap-2 pb-4 border-b border-primary/10 last:border-0 last:pb-0">
+                      <span className="font-bold text-primary shrink-0 min-w-[180px]">{item.label}:</span>
+                      <span className="text-muted text-[15px] leading-relaxed">{item.value}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">What&apos;s Included</h2>
-              <ul className="space-y-3">
-                {details.included.map((item, i) => (
-                  <li key={i} className="flex gap-4 items-center">
-                    <span className="w-5 h-5 shrink-0 rounded-full bg-primary/10 flex items-center justify-center">
-                      <svg className="w-3 h-3 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
-                    </span>
-                    <span className="text-muted text-[15px]">{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="bg-white border border-border/60 shadow-sm rounded-3xl p-8">
+                <h2 className="text-2xl font-bold text-foreground mb-6">What&apos;s Included</h2>
+                <ul className="space-y-4">
+                  {details.included.map((item, i) => (
+                    <li key={i} className="flex gap-4 items-center">
+                      <span className="w-6 h-6 shrink-0 rounded-full bg-secondary/10 flex items-center justify-center">
+                        <svg className="w-3.5 h-3.5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                      </span>
+                      <span className="text-muted text-[16px] leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             {/* Parent Involvement Timeline */}

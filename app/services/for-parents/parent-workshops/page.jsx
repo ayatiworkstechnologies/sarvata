@@ -75,6 +75,15 @@ export default function ParentWorkshopsPage() {
         </div>
       </section>
 
+      {/* ── TESTIMONIALS PLACEHOLDER ────────────────────────────── */}
+      <section className="bg-white py-16 text-center">
+        <div className="container-max">
+          <p className="text-muted italic border border-dashed border-primary/40 bg-primary/5 rounded-2xl p-8 max-w-2xl mx-auto">
+            [PLACEHOLDER: Include 1-2 parent testimonials here]
+          </p>
+        </div>
+      </section>
+
       {/* ── NEXT STEPS ──────────────────────────────────────────── */}
       <PathwayNextSteps
         eyebrow="Join Our Community"

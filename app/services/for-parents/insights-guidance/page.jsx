@@ -4,6 +4,7 @@ import PathwayChallengeSection from "@/components/services/PathwayChallengeSecti
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { GraduationCap, HeartPulse, Compass } from "lucide-react";
 
 
 
@@ -52,17 +53,18 @@ export default function InsightsGuidancePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {services.map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-[1.75rem] border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                  <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+            {services.map((item, i) => {
+              const Icon = [GraduationCap, HeartPulse, Compass][i] || Compass;
+              return (
+              <div key={i} className="bg-white p-8 rounded-[1.75rem] border border-border/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center group">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 ring-1 ring-primary/20 shadow-inner group-hover:bg-primary group-hover:text-white group-hover:rotate-6 transition-all duration-500">
+                  <Icon className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-4">{item.title}</h3>
                 <p className="text-muted text-[15px] leading-relaxed">{item.description}</p>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -125,6 +127,15 @@ export default function InsightsGuidancePage() {
               </motion.div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── TESTIMONIALS PLACEHOLDER ────────────────────────────── */}
+      <section className="bg-soft-bg py-16 text-center">
+        <div className="container-max">
+          <p className="text-muted italic border border-dashed border-primary/40 bg-primary/5 rounded-2xl p-8 max-w-2xl mx-auto">
+            [PLACEHOLDER: Include 2-3 parent testimonials here]
+          </p>
         </div>
       </section>
 

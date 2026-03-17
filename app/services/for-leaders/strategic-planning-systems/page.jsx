@@ -3,6 +3,7 @@ import InnerHero from "@/components/InnerHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
+import { BookOpen, LineChart, Calendar, LifeBuoy, Laptop, FileText } from "lucide-react";
 
 
 
@@ -90,18 +91,19 @@ export default function StrategicPlanningPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {coreSystems.map((sys, i) => (
-              <div key={i} className="bg-white p-8 rounded-[1.75rem] border border-border/50 shadow-[0_4px_16px_rgba(0,0,0,0.02)] hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 text-primary">
-                  {/* Icon placeholder for visual hierarchy */}
-                  <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
-                  </svg>
+            {coreSystems.map((sys, i) => {
+              const Icon = [BookOpen, LineChart, Calendar, LifeBuoy, Laptop, FileText][i] || FileText;
+              return (
+              <div key={i} className="group bg-white p-8 rounded-[1.75rem] border border-border/50 shadow-[0_4px_16px_rgba(0,0,0,0.02)] hover:shadow-xl hover:border-primary/20 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500" />
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 text-primary ring-1 ring-primary/20 shadow-inner group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+                  <Icon className="w-7 h-7" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-3">{sys.title}</h3>
                 <p className="text-muted text-[15px] leading-relaxed">{sys.description}</p>
               </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

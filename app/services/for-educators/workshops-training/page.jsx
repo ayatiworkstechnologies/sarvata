@@ -84,32 +84,40 @@ export default function WorkshopsTrainingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {workshops.map((workshop, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="group relative rounded-[1.75rem] border border-border/60 bg-soft-bg p-8 lg:p-10 overflow-hidden hover:shadow-2xl hover:border-transparent hover:-translate-y-2 transition-all duration-500"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group relative rounded-[1.75rem] border border-border/60 bg-white p-8 lg:p-10 overflow-hidden hover:shadow-2xl hover:border-transparent transition-all duration-500"
               >
-                <div className="mb-4">
-                  <h3 className="text-2xl font-bold text-foreground mb-2">{workshop.title}</h3>
-                  <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-sm font-semibold rounded-full">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10 mb-6">
+                  <h3 className="text-2xl font-bold text-foreground mb-3">{workshop.title}</h3>
+                  <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/10 text-primary text-sm font-semibold rounded-full">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
                     {workshop.duration}
                   </span>
                 </div>
                 
-                <div className="space-y-4 text-[15px] leading-relaxed">
-                  <div>
-                    <strong className="text-foreground">The challenge: </strong>
+                <div className="relative z-10 space-y-4 text-[15px] leading-relaxed">
+                  <div className="bg-soft-bg/80 p-4 rounded-xl border border-border/50">
+                    <strong className="block text-secondary mb-1">The challenge</strong>
                     <span className="text-muted">{workshop.challenge}</span>
                   </div>
-                  <div>
-                    <strong className="text-foreground">What you’ll do: </strong>
+                  <div className="p-4 rounded-xl border border-border/20">
+                    <strong className="block text-foreground mb-1">What you&apos;ll do</strong>
                     <span className="text-muted">{workshop.whatYouDo}</span>
                   </div>
-                  <div>
-                    <strong className="text-foreground">You leave with: </strong>
-                    <span className="text-muted">{workshop.youLeaveWith}</span>
+                  <div className="p-4 bg-primary/5 rounded-xl border border-primary/10">
+                    <strong className="block text-primary mb-1">You leave with</strong>
+                    <span className="text-foreground/80">{workshop.youLeaveWith}</span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

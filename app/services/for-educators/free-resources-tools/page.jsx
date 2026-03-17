@@ -11,36 +11,42 @@ export default function FreeResourcesPage() {
     {
       title: "Choice Board Design Kit",
       description: "Offering choice without creating 25 different lessons.",
+      whenToUse: "Offering choice without creating 25 different lessons",
       details: ["Choice board templates", "Decision making framework"],
       link: "#"
     },
     {
       title: "Metacognitive Question Stems",
       description: "Question stems organized by purpose, grade-band adaptations, sentence starters, protocols for independent use.",
+      whenToUse: "Deepening student self-awareness about learning",
       details: ["Organized by purpose", "Grade-band adaptations"],
       link: "#"
     },
     {
       title: "Strength-Spotting Observation Guide",
       description: "Observable indicators, prompts for noticing abilities beyond tests, note-taking template, conversation guide.",
+      whenToUse: "Planning enrichment or building fuller student profiles",
       details: ["Observable indicators", "Note-taking template"],
       link: "#"
     },
     {
       title: "Differentiation Decision Framework",
       description: "Questions for when/where to differentiate, three-tier framework, time-saving approaches, troubleshooting.",
+      whenToUse: "Differentiation feels overwhelming and needs strategic focus",
       details: ["Three-tier framework", "Decision tree"],
       link: "#"
     },
     {
       title: "Formative Assessment Quick-Checks",
       description: "15 fast techniques, guidance on what each reveals, question stems, flexible grouping strategies.",
+      whenToUse: "Need real-time data without piles of papers to grade",
       details: ["15 fast techniques", "Grouping strategies"],
       link: "#"
     },
     {
       title: "Building Independence Scaffolding Planner",
       description: "Framework for identifying independence skills, lesson template, gradual release model, troubleshooting guide.",
+      whenToUse: "Students always need you and you want to build capacity",
       details: ["Gradual release model", "Troubleshooting guide"],
       link: "#"
     }
@@ -68,14 +74,29 @@ export default function FreeResourcesPage() {
         <div className="container-max relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {resources.map((resource, i) => (
-              <div
+              <motion.div
                 key={i}
-                className="group relative rounded-[1.75rem] border border-border/60 bg-white p-8 overflow-hidden hover:shadow-2xl hover:border-transparent hover:-translate-y-2 transition-all duration-500 flex flex-col h-full"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group relative rounded-[1.75rem] border border-border/60 bg-white p-8 overflow-hidden hover:shadow-2xl hover:border-transparent transition-all duration-500 flex flex-col h-full"
               >
-                <div className="flex-1">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="relative z-10 flex-1">
                   <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight group-hover:text-primary transition-colors">{resource.title}</h3>
-                  <p className="text-muted text-[15px] leading-relaxed mb-8">{resource.description}</p>
+                  <p className="text-muted text-[15px] leading-relaxed mb-6">{resource.description}</p>
                   
+                  <div className="bg-soft-bg/80 rounded-2xl p-4 mb-6 border border-border/50">
+                    <p className="text-sm font-semibold text-foreground mb-1 flex items-center gap-2">
+                       <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                       </svg>
+                       When to use:
+                    </p>
+                    <p className="text-sm text-muted">{resource.whenToUse}</p>
+                  </div>
+
                   <div className="space-y-3 mb-8">
                     {resource.details.map((detail, j) => (
                       <div key={j} className="flex items-center gap-3 text-sm text-foreground/70">
@@ -86,7 +107,7 @@ export default function FreeResourcesPage() {
                   </div>
                 </div>
 
-                <div className="mt-auto pt-6 border-t border-border/40">
+                <div className="relative z-10 mt-auto pt-6 border-t border-border/40">
                   <a
                     href={resource.link}
                     className="inline-flex w-full items-center justify-center gap-2 bg-primary text-white py-4 px-6 rounded-2xl font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/10 active:scale-[0.98]"
@@ -97,7 +118,7 @@ export default function FreeResourcesPage() {
                     </svg>
                   </a>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

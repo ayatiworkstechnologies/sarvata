@@ -4,6 +4,7 @@ import PathwayChallengeSection from "@/components/services/PathwayChallengeSecti
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Shield, Brain, Users } from "lucide-react";
 
 
 
@@ -13,31 +14,19 @@ export default function StudentProgramsPage() {
       title: "Cyber Safety & Digital Citizenship",
       description: "Navigate the online world with confidence and smart choices. Real talk about digital reality.",
       href: "/services/for-leaders/student-programs/cyber-safety-digital-citizenship",
-      icon: (
-        <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-        </svg>
-      )
+      icon: <Shield className="w-8 h-8 text-primary" strokeWidth={1.5} />
     },
     {
       title: "Mental Health & Well-Being",
       description: "Practical tools for managing stress and difficult emotions. Skills that actually work.",
       href: "/services/for-leaders/student-programs/mental-health-well-being",
-      icon: (
-        <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
-      )
+      icon: <Brain className="w-8 h-8 text-primary" strokeWidth={1.5} />
     },
     {
       title: "Healthy Relationships & Boundaries",
       description: "Education about consent, boundaries, and navigating social complexities. Mature conversations about real topics.",
       href: "/services/for-leaders/student-programs/healthy-relationships-boundaries",
-      icon: (
-        <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      )
+      icon: <Users className="w-8 h-8 text-primary" strokeWidth={1.5} />
     }
   ];
 
