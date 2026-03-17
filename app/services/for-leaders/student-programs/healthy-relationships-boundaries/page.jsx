@@ -54,7 +54,7 @@ export default function HealthyRelationshipsPage() {
       <InnerHero
         title="Healthy Relationships & Boundaries"
         breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Leaders", href: "/services/for-leaders" }, { label: "Student Programs", href: "/services/for-leaders/student-programs" }, { label: "Healthy Relationships" }]}
-       variant="advocacy" />
+        variant="advocacy" />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
@@ -91,13 +91,13 @@ export default function HealthyRelationshipsPage() {
       <section className="bg-white py-16 md:py-24 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-20 max-w-6xl mx-auto">
-            
+
             {/* Approach */}
             <div>
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Workshop Approach</h2>
               <div className="space-y-4 text-muted text-[16px] leading-relaxed">
-                 <p className="font-medium text-foreground">Respectful. Mature. Judgment-free. We don&apos;t tell students what to do—we build skills for navigating relationships thoughtfully.</p>
-                 <p><strong className="text-foreground">Age-appropriate:</strong> Middle school focuses on consent and friendship. High school addresses romantic relationships and complex dynamics.</p>
+                <p className="font-medium text-foreground">Respectful. Mature. Judgment-free. We don&apos;t tell students what to do - we build skills for navigating relationships thoughtfully.</p>
+                <p><strong className="text-foreground">Age-appropriate:</strong> Middle school focuses on consent and friendship. High school addresses romantic relationships and complex dynamics.</p>
               </div>
             </div>
 
@@ -126,14 +126,14 @@ export default function HealthyRelationshipsPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">Implementation</h2>
           </div>
           <div className="bg-white rounded-3xl p-8 border border-border shadow-sm">
-             <ul className="space-y-6">
-                {implementationDetails.map((item, i) => (
-                  <li key={i} className="flex flex-col sm:flex-row sm:items-baseline gap-2">
-                     <span className="font-bold text-foreground min-w-[200px]">{item.label}:</span>
-                     <span className="text-muted text-[15px] leading-relaxed">{item.value}</span>
-                  </li>
-                ))}
-             </ul>
+            <ul className="space-y-6">
+              {implementationDetails.map((item, i) => (
+                <li key={i} className="flex flex-col sm:flex-row sm:items-baseline gap-2">
+                  <span className="font-bold text-foreground min-w-[200px]">{item.label}:</span>
+                  <span className="text-muted text-[15px] leading-relaxed">{item.value}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

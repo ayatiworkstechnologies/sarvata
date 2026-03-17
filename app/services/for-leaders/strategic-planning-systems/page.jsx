@@ -1,13 +1,10 @@
+"use client";
 import InnerHero from "@/components/InnerHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
 
-export const metadata = {
-  title: "Strategic Planning & Systems - For Leaders | Sarvata",
-  description:
-    "Building Infrastructure That Enables Vision. Redesign systems to support rather than undermine your goals.",
-};
+
 
 export default function StrategicPlanningPage() {
   const coreSystems = [
@@ -69,14 +66,14 @@ export default function StrategicPlanningPage() {
       <InnerHero
         title="Strategic Planning & Systems"
         breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Leaders", href: "/services/for-leaders" }, { label: "Strategic Planning & Systems" }]}
-       variant="planning" />
+        variant="planning" />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="Building Infrastructure That Enables Vision"
         title="When Systems and Vision Collide"
         paragraphs={[
-          "Many schools articulate compelling visions: personalized learning, student agency, deep understanding. Yet daily reality often contradicts these aspirations—not because people don't care, but because operational systems were designed for a different educational model.",
+          "Many schools articulate compelling visions: personalized learning, student agency, deep understanding. Yet daily reality often contradicts these aspirations - not because people don't care, but because operational systems were designed for a different educational model.",
           "You can't layer new pedagogical approaches onto old industrial-age systems and expect coherence. Sustainable change requires redesigning the infrastructure itself.",
           "Our Approach: We help you examine operational infrastructure through the lens of your instructional vision, identify misalignments, and redesign systems to support rather than undermine your goals.",
           "This is collaborative work: you know your constraints and community; we bring frameworks and external perspective."
@@ -109,64 +106,105 @@ export default function StrategicPlanningPage() {
         </div>
       </section>
 
-      {/* ── THE PROCESS & CHALLENGES ───────────────────────────── */}
-      <section className="bg-white py-16 md:py-24 relative overflow-hidden">
+      {/* ── THE PROCESS ──────────────────────────────────────── */}
+      <section className="relative bg-white overflow-hidden py-20 md:py-32">
         <div className="container-max relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
-            {/* The Process */}
-            <div>
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-10">
-                The Process
-              </h2>
-              <div className="space-y-8 relative">
-                {/* Timeline line */}
-                <div className="absolute left-[27px] top-6 bottom-6 w-0.5 bg-border -z-10" />
+          <div className="text-center max-w-2xl mx-auto mb-20">
+            <motion.span 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4 block"
+            >
+              Our Methodology
+            </motion.span>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight tracking-tight">
+              The Process
+            </h2>
+          </div>
 
-                {processSteps.map((step, i) => (
-                  <div key={i} className="flex gap-6 relative">
-                    <div className="w-14 h-14 rounded-full bg-soft-bg border-4 border-white flex items-center justify-center shrink-0 z-10 shadow-sm">
-                      <span className="text-primary font-bold">{i + 1}</span>
-                    </div>
-                    <div className="pt-2">
-                       <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
-                       <p className="text-muted text-[15px]">{step.description}</p>
+          <div className="max-w-5xl mx-auto relative px-4">
+            {/* Timeline Line */}
+            <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/30 via-secondary/30 to-transparent -translate-x-1/2 hidden sm:block" />
+
+            <div className="space-y-12 md:space-y-0 relative">
+              {processSteps.map((step, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  className={`relative flex flex-col md:flex-row items-start md:items-center ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+                >
+                  {/* Content Card */}
+                  <div className="w-full md:w-5/12">
+                    <div className={`p-8 rounded-[2rem] bg-soft-bg/50 border border-border/60 hover:border-primary/30 hover:bg-white hover:shadow-xl transition-all duration-500 group ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                      <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{step.title}</h3>
+                      <p className="text-muted text-[16px] leading-relaxed">{step.description}</p>
                     </div>
                   </div>
-                ))}
-              </div>
-            </div>
 
-            {/* Why Ideas Struggle */}
-            <div>
-              <div className="bg-secondary/5 rounded-[2rem] p-8 md:p-10 border border-secondary/20 h-full">
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
-                  Why Good Ideas Sometimes Struggle
-                </h2>
-                <p className="text-muted text-[16px] leading-relaxed mb-10">
-                  Educational change can falter not because ideas are unsound, but because changing schools is about changing human behavior and culture.
-                </p>
-
-                <h3 className="text-lg font-bold text-foreground mb-6">We support:</h3>
-                <div className="space-y-4 mb-10">
-                  {whatWeSupport.map((item, i) => (
-                    <div key={i} className="flex gap-4 items-center bg-white p-4 rounded-2xl border border-white/50 shadow-sm">
-                      <div className="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
-                         <svg className="w-4 h-4 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                         </svg>
-                      </div>
-                      <span className="text-foreground font-medium text-[15px]">{item}</span>
+                  {/* Step Number Indicator */}
+                  <div className="absolute left-0 md:left-1/2 top-0 md:top-auto translate-y-2 md:translate-y-0 -translate-x-1/2 flex items-center justify-center z-10">
+                    <div className="w-12 h-12 rounded-full bg-white border-4 border-primary/20 shadow-lg flex items-center justify-center">
+                       <span className="text-primary font-bold text-lg">{i + 1}</span>
                     </div>
-                  ))}
-                </div>
+                  </div>
 
-                <div className="pt-8 border-t border-border">
-                  <h3 className="text-lg font-bold text-foreground mb-4">Investment</h3>
-                  <p className="text-muted text-[15px] leading-relaxed">
-                    Varies by scope: comprehensive multi-year redesign, focused single-year improvement, audit and recommendations only, or ongoing consultation.
-                  </p>
+                  {/* Spacer for MD screens */}
+                  <div className="hidden md:block md:w-2/12" />
+                  <div className="hidden md:block md:w-5/12" />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CHALLENGES & SUPPORT ───────────────────────────── */}
+      <section className="bg-soft-bg py-20 md:py-32 relative overflow-hidden">
+        <div className="container-max relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <div className="bg-white rounded-[2.5rem] p-10 md:p-16 border border-border shadow-xl shadow-black/5">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 leading-tight">
+                            Why Good Ideas Sometimes Struggle
+                        </h2>
+                        <p className="text-muted text-[17px] leading-relaxed mb-8">
+                            Educational change can falter not because ideas are unsound, but because changing schools is about changing human behavior and culture.
+                        </p>
+                        <div className="pt-8 border-t border-border mt-auto">
+                            <h3 className="text-xl font-bold text-foreground mb-4">Investment</h3>
+                            <p className="text-muted text-[15px] leading-relaxed">
+                                Varies by scope: comprehensive multi-year redesign, focused single-year improvement, audit and recommendations only, or ongoing consultation.
+                            </p>
+                        </div>
+                    </div>
+                    <div className="bg-secondary/5 rounded-3xl p-8 border border-secondary/20 h-full">
+                        <h3 className="text-xl font-bold text-foreground mb-6">How We Support You:</h3>
+                        <div className="space-y-4">
+                            {whatWeSupport.map((item, i) => (
+                                <motion.div 
+                                    key={i} 
+                                    initial={{ opacity: 0, x: 20 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: i * 0.1 }}
+                                    className="flex gap-4 items-center bg-white p-4 rounded-xl border border-secondary/10 shadow-sm"
+                                >
+                                    <div className="w-6 h-6 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
+                                        <svg className="w-3.5 h-3.5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                                        </svg>
+                                    </div>
+                                    <span className="text-foreground font-medium text-[15px]">{item}</span>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
           </div>
         </div>

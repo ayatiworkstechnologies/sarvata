@@ -1,13 +1,10 @@
+"use client";
 import InnerHero from "@/components/InnerHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
 
-export const metadata = {
-  title: "Faculty & Leadership Mentoring - For Leaders | Sarvata",
-  description:
-    "Building Capacity at All Levels. Traditional professional development rarely translates to practice change. We provide sustained focus over time.",
-};
+
 
 export default function FacultyMentoringPage() {
   const leadershipMentoring = [
@@ -69,14 +66,14 @@ export default function FacultyMentoringPage() {
       <InnerHero
         title="Faculty & Leadership Mentoring"
         breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Leaders", href: "/services/for-leaders" }, { label: "Faculty & Leadership Mentoring" }]}
-       variant="mentoring" />
+        variant="mentoring" />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="Building Capacity at All Levels"
         title="Why Traditional PD Often Falls Short"
         paragraphs={[
-          "Your faculty is your greatest asset. But traditional professional development—episodic workshops with no follow-up—rarely translates to practice change.",
+          "Your faculty is your greatest asset. But traditional professional development - episodic workshops with no follow-up - rarely translates to practice change.",
           "Isolation. One-and-done events. Disconnection from practice. No follow-through.",
           "In our experience, what tends to make a difference: sustained focus over time, job-embedded learning, collaborative structures, direct connection to practice, regular feedback."
         ]}
@@ -98,17 +95,17 @@ export default function FacultyMentoringPage() {
               </p>
 
               <div className="bg-white p-6 rounded-3xl border border-border/50">
-                 <h3 className="text-lg font-bold text-foreground mb-4">Practical Details</h3>
-                 <ul className="space-y-3">
-                   <li className="flex items-start gap-3">
-                     <span className="font-semibold text-foreground shrink-0 w-32">Who we mentor:</span>
-                     <span className="text-muted">Principals, vice principals, coordinators, department heads, teacher leaders</span>
-                   </li>
-                   <li className="flex items-start gap-3">
-                     <span className="font-semibold text-foreground shrink-0 w-32">How it works:</span>
-                     <span className="text-muted">60-90 minute sessions, typically twice monthly. Your agenda. Complete confidentiality.</span>
-                   </li>
-                 </ul>
+                <h3 className="text-lg font-bold text-foreground mb-4">Practical Details</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <span className="font-semibold text-foreground shrink-0 w-32">Who we mentor:</span>
+                    <span className="text-muted">Principals, vice principals, coordinators, department heads, teacher leaders</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="font-semibold text-foreground shrink-0 w-32">How it works:</span>
+                    <span className="text-muted">60-90 minute sessions, typically twice monthly. Your agenda. Complete confidentiality.</span>
+                  </li>
+                </ul>
               </div>
             </div>
 
@@ -118,9 +115,9 @@ export default function FacultyMentoringPage() {
                 {leadershipMentoring.map((item, i) => (
                   <div key={i} className="flex gap-4 items-start">
                     <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                       <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                       </svg>
+                      <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+                      </svg>
                     </div>
                     <div>
                       <strong className="block text-foreground mb-1">{item.title}</strong>
@@ -153,22 +150,50 @@ export default function FacultyMentoringPage() {
           </div>
 
           {/* Timeline to independence */}
-          <div className="max-w-4xl mx-auto">
-             <div className="text-center mb-10">
-               <h3 className="text-2xl font-bold text-foreground">Building Toward Independence</h3>
-             </div>
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-               {independenceTimeline.map((phase, i) => (
-                 <div key={i} className="relative p-8 rounded-[1.5rem] bg-secondary/5 border border-secondary/20 text-center">
-                   <div className="inline-flex px-4 py-1.5 rounded-full bg-secondary/10 text-secondary font-bold text-sm mb-4">
-                     {phase.year}
-                   </div>
-                   <p className="text-foreground text-[15px] leading-relaxed font-medium">
-                     {phase.description}
-                   </p>
-                 </div>
-               ))}
-             </div>
+          <div className="max-w-4xl mx-auto mt-20 md:mt-32">
+            <div className="text-center mb-16">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground">Building Toward Independence</h3>
+            </div>
+
+            <div className="relative px-4">
+              {/* Timeline Line */}
+              <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-secondary/30 via-secondary/10 to-transparent -translate-x-1/2 hidden sm:block" />
+
+              <div className="space-y-10 md:space-y-0 relative">
+                {independenceTimeline.map((phase, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    className={`relative flex flex-col md:flex-row items-start md:items-center ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+                  >
+                    {/* Content Card */}
+                    <div className="w-full md:w-5/12">
+                      <div className={`p-8 rounded-[2rem] bg-secondary/5 border border-secondary/20 hover:bg-white hover:shadow-xl transition-all duration-500 group ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                        <div className={`inline-flex px-4 py-1.5 rounded-full bg-secondary/10 text-secondary font-bold text-sm mb-4 ${i % 2 === 0 ? 'md:ml-auto' : ''}`}>
+                          {phase.year}
+                        </div>
+                        <p className="text-foreground text-[17px] leading-relaxed font-semibold">
+                          {phase.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Dot Indicator */}
+                    <div className="absolute left-0 md:left-1/2 top-0 md:top-auto translate-y-2 md:translate-y-0 -translate-x-1/2 flex items-center justify-center z-10">
+                      <div className="w-10 h-10 rounded-full bg-white border-4 border-secondary/40 shadow-sm flex items-center justify-center">
+                         <div className="w-3 h-3 rounded-full bg-secondary" />
+                      </div>
+                    </div>
+
+                    <div className="hidden md:block md:w-2/12" />
+                    <div className="hidden md:block md:w-5/12" />
+                  </motion.div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>

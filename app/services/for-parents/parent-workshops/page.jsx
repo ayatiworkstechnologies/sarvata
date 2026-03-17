@@ -1,13 +1,10 @@
+"use client";
 import InnerHero from "@/components/InnerHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
 
-export const metadata = {
-  title: "Parent Workshops - For Parents | Sarvata",
-  description:
-    "Practical, evidence-based workshops to support your child's unique journey at home.",
-};
+
 
 export default function ParentWorkshopsPage() {
   const topics = [

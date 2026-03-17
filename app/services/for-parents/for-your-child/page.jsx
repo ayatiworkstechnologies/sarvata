@@ -1,14 +1,11 @@
+"use client";
 import InnerHero from "@/components/InnerHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-export const metadata = {
-  title: "For Your Child - For Parents | Sarvata",
-  description:
-    "Understanding How They Learn. Helping your child develop metacognitive awareness and effective learning strategies.",
-};
+
 
 export default function ForYourChildPage() {
   const programs = [

@@ -1,12 +1,8 @@
+"use client";
 import InnerHero from "@/components/InnerHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
-
-export const metadata = {
-  title: "Understanding How Your Child Learns | Sarvata",
-  description:
-    "Building Self-Aware, Independent Learners. Individual and group programs for students in grades 4-12.",
-};
+import { motion } from "framer-motion";
 
 export default function UnderstandingChildLearnsPage() {
   const whatStudentsLearn = [
@@ -117,18 +113,49 @@ export default function UnderstandingChildLearnsPage() {
               </ul>
             </div>
 
-            {/* Parent Involvement */}
-            <div>
-              <div className="bg-secondary/5 rounded-3xl p-8 border border-secondary/20 h-full">
-                <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">Parent Involvement</h2>
-                <ul className="space-y-6">
+            {/* Parent Involvement Timeline */}
+            <div className="lg:col-span-2 mt-20">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
+                  Parent Involvement Process
+                </h2>
+              </div>
+              
+              <div className="max-w-5xl mx-auto relative px-4">
+                {/* Timeline Line */}
+                <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/30 via-secondary/30 to-transparent -translate-x-1/2 hidden sm:block" />
+
+                <div className="space-y-12 md:space-y-0 relative">
                   {details.parentInvolvement.map((item, i) => (
-                    <li key={i} className="flex gap-4 items-start">
-                      <span className="font-bold text-secondary text-lg leading-none mt-0.5">{i+1}.</span>
-                      <span className="text-foreground text-[15px] font-medium">{item}</span>
-                    </li>
+                    <motion.div
+                      key={i}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.5, delay: i * 0.1 }}
+                      className={`relative flex flex-col md:flex-row items-start md:items-center ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+                    >
+                      {/* Content Card */}
+                      <div className="w-full md:w-5/12">
+                        <div className={`p-8 rounded-[2rem] bg-soft-bg/50 border border-border/60 hover:bg-white hover:shadow-xl transition-all duration-500 group ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                          <p className="text-foreground text-[17px] leading-relaxed font-semibold">
+                            {item}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Dot Indicator */}
+                      <div className="absolute left-0 md:left-1/2 top-0 md:top-auto translate-y-2 md:translate-y-0 -translate-x-1/2 flex items-center justify-center z-10">
+                        <div className="w-12 h-12 rounded-full bg-white border-4 border-primary/20 shadow-lg flex items-center justify-center">
+                           <span className="text-primary font-bold text-sm">{i + 1}</span>
+                        </div>
+                      </div>
+
+                      <div className="hidden md:block md:w-2/12" />
+                      <div className="hidden md:block md:w-5/12" />
+                    </motion.div>
                   ))}
-                </ul>
+                </div>
               </div>
             </div>
           </div>

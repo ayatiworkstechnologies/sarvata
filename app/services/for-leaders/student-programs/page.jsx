@@ -1,14 +1,11 @@
+"use client";
 import InnerHero from "@/components/InnerHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-export const metadata = {
-  title: "Student Programs - For Leaders | Sarvata",
-  description:
-    "Student Programs for Your School Community. These programs provide developmentally appropriate workshops addressing real challenges students face.",
-};
+
 
 export default function StudentProgramsPage() {
   const programs = [
@@ -57,7 +54,7 @@ export default function StudentProgramsPage() {
       <InnerHero
         title="Student Programs"
         breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Leaders", href: "/services/for-leaders" }, { label: "Student Programs" }]}
-       variant="mental-health" />
+        variant="mental-health" />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
@@ -115,8 +112,8 @@ export default function StudentProgramsPage() {
                 <ul className="space-y-6">
                   {implementationDetails.map((item, i) => (
                     <li key={i} className="flex flex-col sm:flex-row sm:items-baseline gap-2">
-                       <span className="font-bold text-foreground min-w-[120px]">{item.label}:</span>
-                       <span className="text-muted text-[15px] leading-relaxed">{item.value}</span>
+                      <span className="font-bold text-foreground min-w-[120px]">{item.label}:</span>
+                      <span className="text-muted text-[15px] leading-relaxed">{item.value}</span>
                     </li>
                   ))}
                 </ul>
@@ -128,9 +125,9 @@ export default function StudentProgramsPage() {
                 Why This Matters
               </h2>
               <div className="pl-6 border-l-4 border-primary/30">
-                 <p className="text-muted text-lg leading-relaxed italic">
-                   &quot;These programs develop students&apos; capacity for self-awareness, healthy decision-making, and well-being—essential foundations for all learning.&quot;
-                 </p>
+                <p className="text-muted text-lg leading-relaxed italic">
+                  &quot;These programs develop students&apos; capacity for self-awareness, healthy decision-making, and well-being - essential foundations for all learning.&quot;
+                </p>
               </div>
             </div>
           </div>

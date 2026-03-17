@@ -1,13 +1,10 @@
+"use client";
 import InnerHero from "@/components/InnerHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
 
-export const metadata = {
-  title: "Teacher Mentoring - For Educators | Sarvata",
-  description:
-    "From Workshop to Classroom. Mentoring helps you implement strategies with your actual students in a confidential, non-evaluative partnership.",
-};
+
 
 export default function TeacherMentoringPage() {
   const steps = [
@@ -54,44 +51,75 @@ export default function TeacherMentoringPage() {
       <InnerHero
         title="Teacher Mentoring"
         breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Educators", href: "/services/for-educators" }, { label: "Teacher Mentoring" }]}
-       variant="mentoring" />
+        variant="mentoring" />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="From Workshop to Classroom"
         title="Implement Strategies with Real Support"
         paragraphs={[
-          "Workshops provide tools. Mentoring helps you implement them with your actual students. This is a confidential, non-evaluative partnership—not supervision."
+          "Workshops provide tools. Mentoring helps you implement them with your actual students. This is a confidential, non-evaluative partnership - not supervision."
         ]}
       />
 
       {/* ── HOW IT WORKS ──────────────────────────────────────── */}
-      <section className="relative bg-soft-bg overflow-hidden py-16 md:py-24">
+      <section className="relative bg-white overflow-hidden py-20 md:py-32">
         <div className="container-max relative z-10">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
+          <div className="text-center max-w-2xl mx-auto mb-20">
+            <motion.span 
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4 block"
+            >
+              Our Process
+            </motion.span>
+            <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight tracking-tight">
               How It Works
             </h2>
-            <p className="mt-4 text-muted text-lg">
-              Typical commitment: 4-6 cycles over a semester, meeting every 2-3 weeks
-            </p>
+            <div className="mt-6 inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-secondary/5 border border-secondary/20 shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+                <p className="text-foreground font-medium text-[15px]">
+                  Typical commitment: 4-6 cycles over a semester, meeting every 2-3 weeks
+                </p>
+            </div>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
-            {steps.map((step, i) => (
-              <div
-                key={i}
-                className="flex items-center group relative rounded-[1.5rem] border border-border/60 bg-white p-6 overflow-hidden hover:shadow-lg transition-all duration-300"
-              >
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mr-6">
-                  <span className="text-primary font-bold text-lg">Step {i + 1}</span>
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-foreground mb-1">{step.title}</h3>
-                  <p className="text-muted text-[15px]">{step.description}</p>
-                </div>
-              </div>
-            ))}
+          <div className="max-w-5xl mx-auto relative px-4">
+            {/* Timeline Line */}
+            <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/30 via-secondary/30 to-transparent -translate-x-1/2 hidden sm:block" />
+
+            <div className="space-y-12 md:space-y-0 relative">
+              {steps.map((step, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  className={`relative flex flex-col md:flex-row items-start md:items-center ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+                >
+                  {/* Content Card */}
+                  <div className="w-full md:w-5/12">
+                    <div className={`p-8 rounded-[2rem] bg-soft-bg/50 border border-border/60 hover:border-primary/30 hover:bg-white hover:shadow-xl transition-all duration-500 group ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                      <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{step.title}</h3>
+                      <p className="text-muted text-[16px] leading-relaxed">{step.description}</p>
+                    </div>
+                  </div>
+
+                  {/* Step Number Indicator */}
+                  <div className="absolute left-0 md:left-1/2 top-0 md:top-auto translate-y-2 md:translate-y-0 -translate-x-1/2 flex items-center justify-center z-10">
+                    <div className="w-12 h-12 rounded-full bg-white border-4 border-primary/20 shadow-lg flex items-center justify-center">
+                       <span className="text-primary font-bold text-lg">{i + 1}</span>
+                    </div>
+                  </div>
+
+                  {/* Spacer for MD screens */}
+                  <div className="hidden md:block md:w-2/12" />
+                  <div className="hidden md:block md:w-5/12" />
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

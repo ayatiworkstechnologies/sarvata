@@ -128,7 +128,7 @@ export default function ThreeDExperience() {
 
 function Scene() {
     useFrame((state, delta) => {
-        // Smoothly interpolate the scroll offset — clamp delta to prevent jumps on tab-switch
+        // Smoothly interpolate the scroll offset  -  clamp delta to prevent jumps on tab-switch
         const clampedDelta = Math.min(delta, 0.1);
         scrollCtx.offset = THREE.MathUtils.damp(scrollCtx.offset, scrollCtx.target, 3, clampedDelta);
 
@@ -688,7 +688,7 @@ function OrganicSeed({ position, rotation, scale, color, seedId }) {
     useFrame(({ clock }) => {
         if (matRef.current && meshRef.current) {
             const t = clock.getElapsedTime();
-            // Gentle bio-luminescent glow — softened to prevent visual glitch/flash
+            // Gentle bio-luminescent glow  -  softened to prevent visual glitch/flash
             const glow = Math.pow(Math.abs(Math.sin(t * 1.2 + seedId * 2.5)), 6);
             matRef.current.emissiveIntensity = 0.15 + glow * 1.5;
 
@@ -853,10 +853,10 @@ function HubNode({ pos, title, href, delay, color }) {
                     </mesh>
 
                     {/* Glowing dense core (Clickable) */}
-                    <mesh 
+                    <mesh
                         onClick={() => router.push(href)}
                         onPointerEnter={() => { document.body.style.cursor = "pointer"; }}
-                                onPointerLeave={() => { document.body.style.cursor = "auto"; }}
+                        onPointerLeave={() => { document.body.style.cursor = "auto"; }}
                     >
                         <octahedronGeometry args={[0.12, 0]} />
                         <meshStandardMaterial color={color} roughness={0.2} emissive={color} emissiveIntensity={1.8} toneMapped={false} />
