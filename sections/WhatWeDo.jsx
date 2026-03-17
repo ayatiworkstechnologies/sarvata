@@ -92,8 +92,8 @@ export default function WhatWeDo() {
           className="max-w-2xl mb-16 md:mb-20"
         >
           <span className="inline-flex items-center gap-2 mb-5">
-            <span className="h-[2px] w-6 rounded-full" style={{ background: "#A066AA" }} />
-            <p className="text-[11px] font-bold uppercase tracking-[0.32em]" style={{ color: "#A066AA" }}>Who We Do</p>
+
+            <p className="text-[11px] font-bold uppercase tracking-[0.32em]" style={{ color: "#A066AA" }}>What We Do</p>
           </span>
           <h2 className="text-4xl md:text-5xl xl:text-6xl font-bold leading-[1.12] tracking-tight text-[#171717]">
             Supporting your<br />
