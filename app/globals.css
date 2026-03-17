@@ -55,6 +55,13 @@ body {
   scroll-behavior: smooth;
 }
 
+button,
+[role="button"],
+.btn,
+.submit-btn {
+  cursor: pointer;
+}
+
 h1,
 h2,
 h3,
@@ -420,7 +427,7 @@ p {
   }
 
   .node-learners {
-    top: 78%;
+    top: 70%;
     left: 50%
   }
 

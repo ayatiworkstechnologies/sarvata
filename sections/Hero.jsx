@@ -77,7 +77,7 @@ export default function Hero() {
       <div className="absolute inset-0 block md:hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/home.mp4"
+          src="/home-mob.mp4"
           autoPlay
           loop
           muted
