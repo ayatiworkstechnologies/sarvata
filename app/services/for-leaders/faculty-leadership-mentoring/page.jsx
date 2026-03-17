@@ -3,6 +3,7 @@ import InnerHero from "@/components/InnerHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
+import TestimonialsSection from "@/components/about/TestimonialsSection";
 
 
 
@@ -197,6 +198,21 @@ export default function FacultyMentoringPage() {
           </div>
         </div>
       </section>
+
+      {/* ── TESTIMONIALS ────────────────────────────── */}
+      <TestimonialsSection
+        title="What Our Leaders Say"
+        testimonials={[
+          {
+            quote: "Leadership mentoring provides the thought-partnership necessary for authentic growth. Having an external mentor who understands educational complexity is invaluable.",
+            author: "Rachel G., Principal"
+          },
+          {
+            quote: "Mentoring transformed our teacher leaders from subject experts to true instructional coaches. The impact on faculty morale was immediate.",
+            author: "S. Kulkarni, Head of School"
+          }
+        ]}
+      />
 
       {/* ── NEXT STEPS ──────────────────────────────────────────── */}
       <PathwayNextSteps

@@ -20,23 +20,23 @@ const serviceLinks = [
 ];
 
 const socials = [
-  { Icon: FaLinkedinIn, href: "#" },
-  { Icon: FaInstagram, href: "#" },
-  { Icon: FaFacebookF, href: "#" },
-  { Icon: FaXTwitter, href: "#" },
+  { Icon: FaLinkedinIn, href: "https://in.linkedin.com/in/sarvata-educational-consultancy-6ab205321?trk=public_post_feed-actor-name" },
+  { Icon: FaInstagram, href: "https://www.instagram.com/sarvata_edu_consultancy_?igsh=MTkwdmk0eW15MGZ6dA%3D%3D&utm_source=qr" },
+  { Icon: FaFacebookF, href: "https://www.facebook.com/people/Sarvata-Educational-Consultancy/" },
+
 ];
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-soft text-foreground">
+    <footer className="relative overflow-hidden bg-white text-foreground">
       {/* Background accents */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(160,102,170,0.08),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(226,196,115,0.12),transparent_30%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(160,102,170,0.05),transparent_40%)]" />
 
       <div className="relative container-max py-14 md:py-20">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
           {/* Left Brand Card */}
           <div className="lg:col-span-5">
-            <div className="flex h-full min-h-[320px] flex-col justify-between rounded-[28px] border border-border bg-background p-7 shadow-[0_16px_40px_rgba(23,23,23,0.06)] md:p-10">
+            <div className="flex h-full min-h-[320px] flex-col justify-between rounded-[28px] border border-border bg-soft-bg/30 p-7 shadow-sm md:p-10">
               <div>
                 <div className="flex items-center">
                   <Image
@@ -55,16 +55,16 @@ export default function Footer() {
                 </p>
               </div>
 
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div className="mt-10 flex flex-wrap gap-6">
                 {socials.map(({ Icon, href }, i) => (
                   <a
                     key={i}
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-background text-muted transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:text-primary hover:shadow-md"
+                    className="flex items-center justify-center text-primary transition-all duration-300 hover:-translate-y-1 hover:text-primary/70"
                   >
-                    <Icon size={16} />
+                    <Icon size={20} />
                   </a>
                 ))}
               </div>
@@ -78,7 +78,7 @@ export default function Footer() {
               <FooterCard title="Services" links={serviceLinks} />
             </div>
 
-            <div className="rounded-[28px] border border-border bg-background px-6 py-7 shadow-[0_16px_36px_rgba(23,23,23,0.05)] md:px-8 md:py-8">
+            <div className="rounded-[28px] border border-border bg-soft-bg/30 px-6 py-7 shadow-sm md:px-8 md:py-8">
               <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
                 <div>
                   <h3 className="text-2xl font-bold tracking-tight text-foreground">
@@ -128,7 +128,7 @@ export default function Footer() {
 
 function FooterCard({ title, links }) {
   return (
-    <div className="rounded-[28px] border border-border bg-background p-7 shadow-[0_14px_36px_rgba(23,23,23,0.05)] md:p-8">
+    <div className="rounded-[28px] border border-border bg-soft-bg/30 p-7 shadow-sm md:p-8">
       <div className="mb-6 flex items-center gap-3">
         <span className="h-2 w-2 rounded-full bg-primary" />
         <h4 className="text-[14px] font-bold uppercase tracking-[0.18em] text-foreground">

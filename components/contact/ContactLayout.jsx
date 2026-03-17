@@ -24,18 +24,19 @@ const audiences = [
 ];
 
 const socials = [
-  { Icon: FaFacebookF, href: "#", label: "Facebook" },
-  { Icon: FaInstagram, href: "#", label: "Instagram" },
-  { Icon: FaLinkedinIn, href: "#", label: "LinkedIn" },
+  { Icon: FaFacebookF, href: "https://www.facebook.com/people/Sarvata-Educational-Consultancy/", label: "Facebook" },
+  { Icon: FaInstagram, href: "https://www.instagram.com/sarvata_edu_consultancy_?igsh=MTkwdmk0eW15MGZ6dA%3D%3D&utm_source=qr", label: "Instagram" },
+  { Icon: FaLinkedinIn, href: "https://in.linkedin.com/in/sarvata-educational-consultancy-6ab205321?trk=public_post_feed-actor-name", label: "LinkedIn" },
 ];
 
 export default function ContactLayout() {
   return (
     <section className="section relative overflow-hidden bg-background">
-      <div className="pointer-events-none absolute -right-10 top-0 -z-10 h-80 w-80 rounded-full bg-primary/8 blur-[100px]" />
-      <div className="pointer-events-none absolute bottom-0 left-0 -z-10 h-80 w-80 rounded-full bg-secondary/10 blur-[90px]" />
+      {/* Background accents */}
+      <div className="pointer-events-none absolute -right-10 top-0 h-80 w-80 rounded-full bg-primary/5 blur-[100px]" />
+      <div className="pointer-events-none absolute bottom-0 left-0 h-80 w-80 rounded-full bg-secondary/5 blur-[90px]" />
 
-      <div className="container-max space-y-16">
+      <div className="container-max space-y-16 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,7 +49,7 @@ export default function ContactLayout() {
           </p>
 
           <h2 className="heading-xl mb-4 text-foreground">
-            Let&apos;s Start a <span className="text-gradient">Conversation</span>
+            Let&apos;s Start a <span className="text-primary">Conversation</span>
           </h2>
 
           <p className="max-w-xl text-lg leading-relaxed text-muted">
@@ -69,15 +70,15 @@ export default function ContactLayout() {
               Get in Touch
             </h3>
 
-            <div className="space-y-3">
+            <div className="space-y-4">
               {audiences.map((a) => (
                 <div
                   key={a.title}
-                  className="group rounded-xl border border-border bg-background p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/20 hover:shadow-lg"
+                  className="group rounded-xl border border-border bg-soft-bg/30 p-5 transition-all duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-lg"
                 >
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-4">
                     <div
-                      className={`mt-1.5 h-2 w-2 shrink-0 rounded-full bg-gradient-to-br ${a.color}`}
+                      className={`mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary shadow-[0_0_8px_rgba(160,102,170,0.4)]`}
                     />
                     <div>
                       <h4 className="mb-1 text-sm font-bold text-foreground transition-colors group-hover:text-primary">
@@ -111,11 +112,11 @@ export default function ContactLayout() {
               Direct Contact
             </h3>
 
-            <ul className="space-y-3 text-sm text-muted">
-              <li className="flex items-center gap-3">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+            <ul className="space-y-4 text-sm text-muted">
+              <li className="flex items-center gap-4">
+                <span className="text-primary">
                   <svg
-                    className="h-4 w-4 text-primary"
+                    className="h-5 w-5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -136,10 +137,10 @@ export default function ContactLayout() {
                 </a>
               </li>
 
-              <li className="flex items-center gap-3">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+              <li className="flex items-center gap-4">
+                <span className="text-primary">
                   <svg
-                    className="h-4 w-4 text-primary"
+                    className="h-5 w-5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -160,10 +161,10 @@ export default function ContactLayout() {
                 </a>
               </li>
 
-              <li className="flex items-center gap-3">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+              <li className="flex items-center gap-4">
+                <span className="text-primary">
                   <svg
-                    className="h-4 w-4 text-primary"
+                    className="h-5 w-5"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -182,7 +183,7 @@ export default function ContactLayout() {
                     />
                   </svg>
                 </span>
-                <span>Chennai, Tamil Nadu, India</span>
+                <span>Chennai, Tamil Nadu</span>
               </li>
             </ul>
           </div>
@@ -196,7 +197,7 @@ export default function ContactLayout() {
             <div className="space-y-1 text-sm text-muted">
               <p className="font-medium text-foreground">Monday - Friday</p>
               <p>9:00 AM - 5:00 PM IST</p>
-              <p className="mt-2 text-xs italic text-muted/70">
+              <p className="mt-2 text-xs italic text-muted/60">
                 We typically respond within 1-2 business days.
               </p>
             </div>
@@ -208,11 +209,11 @@ export default function ContactLayout() {
               Follow Us
             </h3>
 
-            <p className="text-xs text-muted/70">
+            <p className="text-xs text-muted/60">
               Stay connected for updates & insights.
             </p>
 
-            <div className="flex gap-2.5">
+            <div className="flex gap-4">
               {socials.map(({ Icon, href, label }) => (
                 <a
                   key={label}
@@ -220,9 +221,9 @@ export default function ContactLayout() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="flex h-9 w-9 items-center justify-center rounded-lg border border-border bg-background text-muted transition-all duration-200 hover:border-primary/40 hover:bg-primary/5 hover:text-primary"
+                  className="text-primary transition-all duration-200 hover:-translate-y-1 hover:text-primary/70"
                 >
-                  <Icon size={14} />
+                  <Icon size={18} />
                 </a>
               ))}
             </div>
@@ -235,7 +236,7 @@ export default function ContactLayout() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="rounded-2xl border border-primary/15 bg-[linear-gradient(135deg,rgba(160,102,170,0.06),rgba(226,196,115,0.08),rgba(160,102,170,0.05))] p-8 sm:p-12"
+          className="rounded-[2rem] border border-border bg-soft-bg/30 p-8 sm:p-12"
         >
           <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <div className="max-w-xl">
@@ -250,9 +251,9 @@ export default function ContactLayout() {
 
             <Link
               href="/contact"
-              className="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(160,102,170,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(160,102,170,0.28)] active:scale-[0.98]"
+              className="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-primary px-8 text-sm font-bold text-white shadow-xl shadow-primary/20 transition-all duration-300 hover:-translate-y-1 active:scale-[0.98]"
             >
-              Schedule Consultation
+              Consultation
             </Link>
           </div>
         </motion.div>

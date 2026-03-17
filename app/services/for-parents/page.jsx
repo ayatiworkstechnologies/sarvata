@@ -85,32 +85,33 @@ export default function ParentsPage() {
       <PathwayServicesSection
         eyebrow="Services"
         title="Support Built Around Your Family"
+        columns={2}
         services={[
           {
             title: "Insights & Guidance",
             description:
-              "Professional assessment and counseling to understand your child's unique learning profile, strengths, and growth areas - delivered with clarity and compassion.",
+              "Professional assessment and counseling to understand your child’s unique learning profile, strengths, and growth areas.",
             href: "/services/for-parents/insights-guidance",
             cta: "Learn More",
           },
           {
             title: "Parent Workshops",
             description:
-              "Practical, evidence-based workshops offering strategies to support diverse learning needs at home, including neurodiversity and learning differences.",
+              "Practical, evidence-based workshops offering strategies to support diverse learning needs at home.",
             href: "/services/for-parents/parent-workshops",
             cta: "Explore Workshops",
           },
           {
             title: "School Partnership & Advocacy",
             description:
-              "Strategies to foster open communication with educators and strengthen the home-school connection for your child's long-term success.",
+              "Strategies to foster open communication with educators and strengthen the home-school connection.",
             href: "/services/for-parents/school-partnership-advocacy",
             cta: "Learn More",
           },
           {
             title: "For Your Child",
             description:
-              "Help your child develop metacognitive awareness and effective learning strategies for long-term academic confidence and self-direction.",
+              "Help your child develop metacognitive awareness and effective learning strategies for long-term success.",
             href: "/services/for-parents/for-your-child",
             cta: "Learn More",
           },

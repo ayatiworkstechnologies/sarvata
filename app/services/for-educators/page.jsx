@@ -89,14 +89,14 @@ export default function EducatorsPage() {
           {
             title: "Workshops & Training",
             description:
-              "Interactive, hands-on learning that gives you practical frameworks and tools you can use immediately - differentiation, metacognition, true personalization.",
+              "Interactive, hands-on learning that gives you practical frameworks and tools you can use immediately.",
             href: "/services/for-educators/workshops-training",
             cta: "Explore Workshops",
           },
           {
             title: "Teacher Mentoring",
             description:
-              "Confidential, in-class partnership to help you implement new approaches with your actual students - real context, real feedback.",
+              "Confidential, in-class partnership to help you implement new approaches with your actual students.",
             href: "/services/for-educators/teacher-mentoring",
             cta: "Learn About Mentoring",
           },

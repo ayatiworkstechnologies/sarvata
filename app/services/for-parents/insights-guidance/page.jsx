@@ -5,10 +5,25 @@ import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { GraduationCap, HeartPulse, Compass } from "lucide-react";
+import TestimonialsSection from "@/components/about/TestimonialsSection";
 
 
 
 export default function InsightsGuidancePage() {
+  const testimonials = [
+    {
+      quote: "Sarvata helped us see our daughter's potential beyond the challenges she was facing at school. The insights we gained changed how we support her at home and how her teachers understand her.",
+      author: "Meera K., Parent"
+    },
+    {
+      quote: "The transition to middle school was overwhelming for our son. Sarvata provided the clarity and strategies we needed to navigate the system and boost his confidence as a learner.",
+      author: "Rajiv S., Parent"
+    },
+    {
+      quote: "Finally, we found a path that values our child's unique way of thinking. The psychological support combined with academic insights made all the difference.",
+      author: "Ananya M., Parent"
+    }
+  ];
   const services = [
     {
       title: "Academic & Learning Profiles",
@@ -52,17 +67,17 @@ export default function InsightsGuidancePage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
             {services.map((item, i) => {
               const Icon = [GraduationCap, HeartPulse, Compass][i] || Compass;
               return (
-              <div key={i} className="bg-white p-8 rounded-[1.75rem] border border-border/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center group">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 ring-1 ring-primary/20 shadow-inner group-hover:bg-primary group-hover:text-white group-hover:rotate-6 transition-all duration-500">
-                  <Icon className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
+                <div key={i} className="bg-white group w-full max-w-sm p-8 rounded-[1.75rem] border border-border/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 ring-1 ring-primary/20 shadow-inner group-hover:bg-primary group-hover:text-white group-hover:rotate-6 transition-all duration-500">
+                    <Icon className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-4">{item.title}</h3>
+                  <p className="text-muted text-[15px] leading-relaxed flex-1">{item.description}</p>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-4">{item.title}</h3>
-                <p className="text-muted text-[15px] leading-relaxed">{item.description}</p>
-              </div>
               );
             })}
           </div>
@@ -74,7 +89,7 @@ export default function InsightsGuidancePage() {
         <div className="container-max relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <motion.span 
+              <motion.span
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -84,9 +99,9 @@ export default function InsightsGuidancePage() {
               </motion.span>
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Our Approach</h2>
             </div>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -101,12 +116,12 @@ export default function InsightsGuidancePage() {
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-secondary transition-colors">A &quot;Whole Child&quot; Perspective</h3>
                   <p className="text-muted text-[17px] leading-relaxed">
-                    We connect the dots between academic, social, and emotional well-being. We don&apos;t just look at scores; we look at the human behind them.
+                    We connect the dots between academic, social, and emotional well-being.
                   </p>
                 </div>
               </motion.div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -121,7 +136,7 @@ export default function InsightsGuidancePage() {
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors">Empowering Your Advocacy</h3>
                   <p className="text-muted text-[17px] leading-relaxed">
-                    We provide clear language, concrete data, and professional reports to partner confidently with your child&apos;s school. You become the expert the school listens to.
+                    We provide clear language, concrete data, and professional reports to partner confidently with your child’s school.
                   </p>
                 </div>
               </motion.div>
@@ -130,14 +145,11 @@ export default function InsightsGuidancePage() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS PLACEHOLDER ────────────────────────────── */}
-      <section className="bg-soft-bg py-16 text-center">
-        <div className="container-max">
-          <p className="text-muted italic border border-dashed border-primary/40 bg-primary/5 rounded-2xl p-8 max-w-2xl mx-auto">
-            [PLACEHOLDER: Include 2-3 parent testimonials here]
-          </p>
-        </div>
-      </section>
+      {/* ── TESTIMONIALS ────────────────────────────── */}
+      <TestimonialsSection
+        title="What Parents Say"
+        testimonials={testimonials}
+      />
 
       {/* ── NEXT STEPS ──────────────────────────────────────────── */}
       <PathwayNextSteps

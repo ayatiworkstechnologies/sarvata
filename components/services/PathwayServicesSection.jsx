@@ -4,7 +4,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { FloatingShapes, SubtleGrid } from "@/components/VectorDecorations";
 
-export default function PathwayServicesSection({ eyebrow = "Services", title, services = [] }) {
+export default function PathwayServicesSection({ eyebrow = "Services", title, services = [], columns = 3 }) {
+  const columnClass = columns === 2 
+    ? "lg:w-[calc(50%-1rem)]" 
+    : "lg:w-[calc(33.333%-1.5rem)]";
+
   return (
     <section className="relative bg-white overflow-hidden py-20 md:py-28">
       {/* Background decoration */}
@@ -30,7 +34,7 @@ export default function PathwayServicesSection({ eyebrow = "Services", title, se
         </motion.div>
 
         {/* Service Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
           {services.map((svc, i) => (
             <motion.div
               key={i}
@@ -38,8 +42,8 @@ export default function PathwayServicesSection({ eyebrow = "Services", title, se
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group relative rounded-[1.75rem] border border-border/60 bg-soft-bg p-8 lg:p-9 overflow-hidden
-                         hover:shadow-2xl hover:border-transparent hover:-translate-y-2 transition-all duration-500"
+              className={`group relative w-full md:w-[calc(50%-1rem)] ${columnClass} max-w-md rounded-[2rem] border border-border/60 bg-soft-bg p-8 lg:p-9 overflow-hidden
+                         hover:shadow-2xl hover:border-transparent hover:-translate-y-2 transition-all duration-500 flex flex-col`}
             >
               {/* Hover accent glow */}
               <div className="pointer-events-none absolute -top-16 -right-16 w-40 h-40 rounded-full bg-primary/12 blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-600" />

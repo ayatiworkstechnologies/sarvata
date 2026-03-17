@@ -41,14 +41,8 @@ export default function ContactForm() {
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
-      className="relative overflow-hidden rounded-[28px] border border-border bg-background p-6 shadow-[0_16px_40px_rgba(23,23,23,0.06)] sm:p-8"
+      className="relative overflow-hidden rounded-[2rem] border border-border bg-soft-bg/30 p-6 shadow-sm sm:p-8"
     >
-      {/* Top Accent */}
-      {/* <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-primary via-secondary to-primary" /> */}
-
-      {/* Soft glow */}
-      {/* <div className="pointer-events-none absolute right-0 top-0 h-36 w-36 rounded-full bg-primary/8 blur-3xl" /> */}
-
       <div className="relative">
         <div className="mb-6">
           <p className="mb-2 text-[12px] font-semibold uppercase tracking-[0.25em] text-primary">
@@ -69,11 +63,11 @@ export default function ContactForm() {
               initial={{ opacity: 0, scale: 0.96, y: 12 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.96, y: -12 }}
-              className="rounded-2xl border border-green-200 bg-green-50 p-6 text-center"
+              className="rounded-2xl border border-primary/20 bg-primary/5 p-6 text-center"
             >
-              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-100">
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
                 <svg
-                  className="h-7 w-7 text-green-600"
+                  className="h-7 w-7 text-primary"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -87,8 +81,8 @@ export default function ContactForm() {
                 </svg>
               </div>
 
-              <h4 className="text-lg font-bold text-green-800">Thank You!</h4>
-              <p className="mt-2 text-sm leading-7 text-green-700">
+              <h4 className="text-lg font-bold text-foreground">Thank You!</h4>
+              <p className="mt-2 text-sm leading-7 text-muted">
                 Your message has been sent successfully. We&apos;ll reply within
                 1-2 business days.
               </p>
@@ -97,7 +91,7 @@ export default function ContactForm() {
                 onClick={() =>
                   reset({}, { keepValues: false, keepIsSubmitSuccessful: false })
                 }
-                className="mt-5 inline-flex h-10 items-center justify-center rounded-full border border-green-300 bg-white px-5 text-sm font-semibold text-green-700 transition hover:bg-green-100"
+                className="mt-5 inline-flex h-10 items-center justify-center rounded-full border border-primary/30 bg-white px-5 text-sm font-semibold text-primary transition hover:bg-primary/5"
               >
                 Send Another Message
               </button>
@@ -116,7 +110,7 @@ export default function ContactForm() {
                   <input
                     {...register("name", { required: "Name is required" })}
                     placeholder="John Doe"
-                    className={`form-control ${errors.name ? "form-control-error" : ""}`}
+                    className="form-control border-border/60 bg-white focus:border-primary"
                   />
                 </FormField>
 
@@ -131,7 +125,7 @@ export default function ContactForm() {
                       },
                     })}
                     placeholder="john@example.com"
-                    className={`form-control ${errors.email ? "form-control-error" : ""}`}
+                    className="form-control border-border/60 bg-white focus:border-primary"
                   />
                 </FormField>
               </div>
@@ -141,7 +135,7 @@ export default function ContactForm() {
                   <input
                     {...register("phone")}
                     placeholder="+91 98765 43210"
-                    className={`form-control ${errors.phone ? "form-control-error" : ""}`}
+                    className="form-control border-border/60 bg-white focus:border-primary"
                   />
                 </FormField>
 
@@ -149,8 +143,7 @@ export default function ContactForm() {
                   <div className="relative">
                     <select
                       {...register("role", { required: "Please select your role" })}
-                      className={`form-control form-select ${errors.role ? "form-control-error" : ""
-                        }`}
+                      className="form-control border-border/60 bg-white appearance-none focus:border-primary"
                     >
                       <option value="">Select your role</option>
                       <option value="Educator">Educator</option>
@@ -182,22 +175,21 @@ export default function ContactForm() {
                 <textarea
                   {...register("message", { required: "Message is required" })}
                   placeholder="Tell us about your needs..."
-                  rows={5}
-                  className={`form-control resize-none ${errors.message ? "form-control-error" : ""
-                    }`}
+                  rows={4}
+                  className="form-control resize-none border-border/60 bg-white focus:border-primary"
                 />
               </FormField>
 
               <motion.button
-                whileHover={{ scale: 1.01 }}
+                whileHover={{ scale: 1.01, y: -2 }}
                 whileTap={{ scale: 0.985 }}
                 disabled={isSubmitting}
-                className="inline-flex h-12 w-full items-center justify-center rounded-full bg-primary px-6 text-sm font-semibold text-white shadow-[0_10px_24px_rgba(160,102,170,0.22)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_14px_32px_rgba(160,102,170,0.28)] disabled:cursor-not-allowed disabled:opacity-70"
+                className="inline-flex h-12 w-full items-center justify-center rounded-full bg-primary text-white font-bold shadow-xl shadow-primary/20 transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-70"
               >
                 {isSubmitting ? (
                   <span className="flex items-center gap-2">
                     <svg
-                      className="h-4 w-4 animate-spin text-white"
+                      className="h-4 w-4 animate-spin"
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
@@ -233,7 +225,7 @@ export default function ContactForm() {
 function FormField({ label, children, error }) {
   return (
     <div className="flex flex-col gap-2">
-      <label className="pl-0.5 text-xs font-semibold uppercase tracking-[0.08em] text-foreground/80">
+      <label className="pl-0.5 text-xs font-bold uppercase tracking-[0.1em] text-foreground/80">
         {label}
       </label>
       {children}

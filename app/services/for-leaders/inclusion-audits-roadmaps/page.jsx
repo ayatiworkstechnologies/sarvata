@@ -2,6 +2,7 @@
 import InnerHero from "@/components/InnerHero";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
+import TestimonialsSection from "@/components/about/TestimonialsSection";
 
 
 
@@ -95,9 +96,9 @@ export default function InclusionAuditsPage() {
               What This Provides
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto">
             {["Collaborative discovery of your current inclusive practices", "Objective, evidence-based assessment", "Confidential report with prioritized, actionable recommendations", "Strategic roadmap sequencing changes thoughtfully"].map((item, i) => (
-              <div key={i} className="flex gap-4 items-start bg-white p-6 rounded-[1.25rem] shadow-sm border border-border/50">
+              <div key={i} className="flex gap-4 items-start bg-white p-6 rounded-[1.25rem] shadow-sm border border-border/50 w-full md:w-[calc(50%-1rem)] max-w-sm">
                 <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                   <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
@@ -254,6 +255,21 @@ export default function InclusionAuditsPage() {
           </div>
         </div>
       </section>
+
+      {/* ── TESTIMONIALS ────────────────────────────── */}
+      <TestimonialsSection
+        title="What School Leaders Say"
+        testimonials={[
+          {
+            quote: "The inclusion audit gave us what our internal teams couldn't: an objective, systemic view of our gaps. The resulting roadmap is now our primary strategic document.",
+            author: "Dr. Aruna V., Head of School"
+          },
+          {
+            quote: "Finally, a framework that moves beyond compliance toward genuine culture change. The audit was the catalyst we needed to align our practice with our mission.",
+            author: "S. Murthy, Principal"
+          }
+        ]}
+      />
 
       {/* ── NEXT STEPS ──────────────────────────────────────────── */}
       <PathwayNextSteps

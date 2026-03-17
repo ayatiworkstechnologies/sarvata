@@ -4,6 +4,7 @@ import PathwayChallengeSection from "@/components/services/PathwayChallengeSecti
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
 import { Shield, Briefcase, HeartHandshake } from "lucide-react";
+import TestimonialsSection from "@/components/about/TestimonialsSection";
 
 
 
@@ -157,6 +158,23 @@ export default function TeacherMentoringPage() {
         </div>
       </section>
 
+      {/* ── TESTIMONIALS ────────────────────────────── */}
+      <div id="testimonials">
+        <TestimonialsSection
+          title="What Mentees Say"
+          testimonials={[
+            {
+              quote: "Mentoring provides the bridge between theory and practice. Having a trusted partner to co-plan and observe with no evaluation pressure changed my practice forever.",
+              author: "Lin M., Grade 5 Teacher"
+            },
+            {
+              quote: "Job-embedded support is the only way professional development sticks. The reflection cycles were the most valuable 20 minutes of my week.",
+              author: "David K., Early Years Educator"
+            }
+          ]}
+        />
+      </div>
+
       {/* ── NEXT STEPS ──────────────────────────────────────────── */}
       <PathwayNextSteps
         eyebrow="Next Steps"
@@ -173,7 +191,7 @@ export default function TeacherMentoringPage() {
             label: "Testimonials",
             title: "See What Teachers Say",
             description: "Hear from educators who have partnered with us.",
-            href: "#",
+            href: "#testimonials",
             cta: "View Testimonials",
           },
           {

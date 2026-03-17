@@ -13,10 +13,10 @@ export default function Hero() {
   });
 
   const seeds = [
-    { href: "/services/for-educators", cls: "node-educators", label: "for Educators " },
+    // { href: "/services/for-educators", cls: "node-educators", label: "for Educators " },
     { href: "/services/for-leaders", cls: "node-leaders", label: "for Leaders " },
     { href: "/services/for-parents", cls: "node-parents", label: "for Parents " },
-    { href: "#", cls: "node-learners", label: "for Learners " },
+    { href: "/services/for-educators", cls: "node-learners", label: "for Educators " },
   ];
 
   const showTooltip = (e, label) => {
@@ -66,7 +66,7 @@ export default function Hero() {
       <div className="absolute inset-0 hidden md:block">
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/hero.mp4"
+          src="/home.mp4"
           autoPlay
           loop
           muted

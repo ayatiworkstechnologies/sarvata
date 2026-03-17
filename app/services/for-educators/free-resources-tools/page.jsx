@@ -3,6 +3,7 @@ import InnerHero from "@/components/InnerHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
+import TestimonialsSection from "@/components/about/TestimonialsSection";
 
 
 
@@ -72,7 +73,7 @@ export default function FreeResourcesPage() {
       {/* ── RESOURCES GRID ─────────────────────────────────────── */}
       <section className="relative bg-soft-bg overflow-hidden py-16 md:py-24">
         <div className="container-max relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
             {resources.map((resource, i) => (
               <motion.div
                 key={i}
@@ -80,7 +81,7 @@ export default function FreeResourcesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group relative rounded-[1.75rem] border border-border/60 bg-white p-8 overflow-hidden hover:shadow-2xl hover:border-transparent transition-all duration-500 flex flex-col h-full"
+                className="group relative w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md rounded-[1.75rem] border border-border/60 bg-white p-8 overflow-hidden hover:shadow-2xl hover:border-transparent transition-all duration-500 flex flex-col h-full"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10 flex-1">
@@ -122,16 +123,16 @@ export default function FreeResourcesPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight mb-8">
               Using These Resources
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-               <div className="p-6 rounded-2xl bg-secondary/10 border border-secondary/20">
+            <div className="flex flex-wrap justify-center gap-6 text-left">
+               <div className="p-6 rounded-2xl bg-secondary/10 border border-secondary/20 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-sm">
                  <h3 className="font-bold text-foreground mb-2">Adapt Freely</h3>
                  <p className="text-sm text-muted">Make them fit your specific context and students.</p>
                </div>
-               <div className="p-6 rounded-2xl bg-secondary/10 border border-secondary/20">
+               <div className="p-6 rounded-2xl bg-secondary/10 border border-secondary/20 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-sm">
                  <h3 className="font-bold text-foreground mb-2">Share Generously</h3>
                  <p className="text-sm text-muted">Pass them along to colleagues who might benefit.</p>
                </div>
-               <div className="p-6 rounded-2xl bg-secondary/10 border border-secondary/20">
+               <div className="p-6 rounded-2xl bg-secondary/10 border border-secondary/20 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-sm">
                  <h3 className="font-bold text-foreground mb-2">Start Small</h3>
                  <p className="text-sm text-muted">Focus on one pressing challenge at a time.</p>
                </div>
@@ -139,6 +140,21 @@ export default function FreeResourcesPage() {
           </div>
         </div>
       </section>
+
+      {/* ── TESTIMONIALS ────────────────────────────── */}
+      <TestimonialsSection
+        title="What Our Community Says"
+        testimonials={[
+          {
+            quote: "Sharing these resources freely shows how much Sarvata cares about classroom transformation. The choice-board kit alone saved me hours of planning.",
+            author: "P. Sharma, Educator"
+          },
+          {
+            quote: "These aren't just templates; they are deep frameworks that shift how you think about teaching. I use the metacognitive stems in every lesson now.",
+            author: "A. Reddy, Teacher"
+          }
+        ]}
+      />
 
       {/* ── NEXT STEPS ──────────────────────────────────────────── */}
       <PathwayNextSteps

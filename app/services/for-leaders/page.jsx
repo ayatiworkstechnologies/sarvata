@@ -73,11 +73,7 @@ export default function LeadersPage() {
             description:
               "You know your institution. We bring research, frameworks, and external perspectives. Together we develop approaches that are both aspirational and realistic.",
           },
-          {
-            title: "Deep Cultural Shifts",
-            description:
-              "Real change goes beyond policy updates. We help you build the cultural shifts, shared language, and internal capacity that make transformation lasting.",
-          },
+
         ]}
       />
 
@@ -85,32 +81,33 @@ export default function LeadersPage() {
       <PathwayServicesSection
         eyebrow="Services"
         title="Strategic Support for School Leaders"
+        columns={2}
         services={[
           {
             title: "Inclusion Audits & Strategic Roadmaps",
             description:
-              "Objective assessment of current practices and data-driven planning for systemic improvement - giving you a clear, actionable picture of where you are and where you're headed.",
+              "Objective assessment of current practices and data-driven planning for systemic improvement.",
             href: "/services/for-leaders/inclusion-audits-roadmaps",
             cta: "Learn More",
           },
           {
             title: "Faculty & Leadership Mentoring",
             description:
-              "Develop your team's capacity through confidential mentoring and job-embedded professional learning that meets educators where they are.",
+              "Develop your team’s capacity through confidential mentoring and job-embedded professional learning.",
             href: "/services/for-leaders/faculty-leadership-mentoring",
             cta: "Learn More",
           },
           {
             title: "Strategic Planning & Systems",
             description:
-              "Design operational infrastructure enabling your vision: curriculum alignment, assessment frameworks, scheduling, and change management support.",
+              "Design operational infrastructure enabling your vision: curriculum, assessment, scheduling, change management.",
             href: "/services/for-leaders/strategic-planning-systems",
             cta: "Learn More",
           },
           {
             title: "Programs for Your Students",
             description:
-              "Workshops on digital citizenship, mental health and well-being, and healthy relationships - directly serving the young people in your care.",
+              "Workshops on digital citizenship, mental health, and healthy relationships.",
             href: "/services/for-leaders/student-programs",
             cta: "Learn More",
           },

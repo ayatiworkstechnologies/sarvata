@@ -11,7 +11,7 @@ const COMMUNITIES = [
   {
     title: "Educators",
     subtitle: "Sustainable Practice",
-    description: "Practical frameworks and job-embedded support to make responsive, differentiated teaching sustainable - not exhausting.",
+    description: "Practical frameworks and job-embedded support to make responsive practice sustainable.",
     href: "/services/for-educators",
     icon: (
       <Image src="/icon/icons-1.svg" alt="Educators Icon" width={64} height={64} className="h-16 w-auto object-contain drop-shadow-sm" />
@@ -24,7 +24,7 @@ const COMMUNITIES = [
   {
     title: "School Leaders",
     subtitle: "Strategic Partnership",
-    description: "Systems thinking and strategic partnership to build the culture, capacity, and infrastructure for lasting educational change.",
+    description: "Strategic partnership to build the systems, culture, and capacity for meaningful educational change.",
     href: "/services/for-leaders",
     button: "Explore Services for Leaders",
     icon: (
@@ -37,7 +37,7 @@ const COMMUNITIES = [
   {
     title: "Parents",
     subtitle: "Family Empowerment",
-    description: "Professional support to understand your child's unique learning profile and become a confident, effective advocate in their education.",
+    description: "Professional support to understand your child’s learning profile and advocate effectively.",
     href: "/services/for-parents",
     button: "Explore Services for Parents",
     icon: (
@@ -110,7 +110,7 @@ export default function WhatWeDo() {
         </motion.div>
 
         {/* ── 3-D cards grid ── */}
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3" style={{ perspective: "1200px" }}>
+        <div className="flex flex-wrap justify-center gap-6 md:gap-8" style={{ perspective: "1200px" }}>
           {COMMUNITIES.map((item, i) => (
             <motion.div
               key={i}
@@ -121,6 +121,7 @@ export default function WhatWeDo() {
               viewport={{ once: true, amount: 0.2 }}
               whileHover={{ y: -8, rotateX: 3, rotateY: i === 0 ? 2 : i === 2 ? -2 : 0, scale: 1.02, transition: { duration: 0.3 } }}
               style={{ transformStyle: "preserve-3d" }}
+              className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md"
             >
               <div className="group relative h-full rounded-[24px] overflow-hidden border border-[#e5e7eb] bg-white shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-shadow duration-300 hover:shadow-[0_24px_60px_rgba(0,0,0,0.12)]">
 

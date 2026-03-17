@@ -31,7 +31,7 @@ export default function PathwayApproachSection({ eyebrow = "Our Approach", title
         </motion.div>
 
         {/* Approach Items */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="flex flex-wrap justify-center gap-6 lg:gap-8 max-w-7xl mx-auto">
           {items.map((item, i) => (
             <motion.div
               key={i}
@@ -39,8 +39,8 @@ export default function PathwayApproachSection({ eyebrow = "Our Approach", title
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.12 }}
-              className="group relative rounded-[1.75rem] bg-white border border-border/60 p-8 overflow-hidden
-                         hover:shadow-xl hover:-translate-y-1.5 hover:border-primary/30 transition-all duration-400"
+              className="group relative w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md rounded-[1.75rem] bg-white border border-border/60 p-8 overflow-hidden
+                         hover:shadow-xl hover:-translate-y-1.5 hover:border-primary/30 transition-all duration-400 flex flex-col"
             >
               {/* Hover glow */}
               <div className="pointer-events-none absolute -top-12 -right-12 w-36 h-36 rounded-full bg-primary/10 blur-[50px] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

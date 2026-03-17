@@ -3,6 +3,7 @@ import InnerHero from "@/components/InnerHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
+import TestimonialsSection from "@/components/about/TestimonialsSection";
 
 
 
@@ -153,6 +154,21 @@ export default function SchoolPartnershipPage() {
           </div>
         </div>
       </section>
+
+      {/* ── TESTIMONIALS ────────────────────────────── */}
+      <TestimonialsSection
+        title="What Families Say"
+        testimonials={[
+          {
+            quote: "I finally feel like a partner in my child's education. Sarvata helped me decode the assessments and walk into meetings with constructive, clear goals.",
+            author: "Priya R., Parent"
+          },
+          {
+            quote: "Advocating for your child shouldn't feel like a battle. These strategies helped me build a positive team with the school that actually gets results.",
+            author: "T. Sharma, Parent"
+          }
+        ]}
+      />
 
       {/* ── NEXT STEPS ──────────────────────────────────────────── */}
       <PathwayNextSteps

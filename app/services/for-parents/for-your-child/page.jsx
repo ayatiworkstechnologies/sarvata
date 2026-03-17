@@ -4,6 +4,7 @@ import PathwayChallengeSection from "@/components/services/PathwayChallengeSecti
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import TestimonialsSection from "@/components/about/TestimonialsSection";
 
 export default function ForYourChildPage() {
   const programs = [
@@ -47,9 +48,9 @@ export default function ForYourChildPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
             {programs.map((program, i) => (
-              <div key={i} className="group flex flex-col items-center text-center bg-white p-10 rounded-[2rem] border border-border/60 hover:border-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+              <div key={i} className="group w-full max-w-md flex flex-col items-center text-center bg-white p-10 rounded-[2rem] border border-border/60 hover:border-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
                 <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 border border-primary/20">
                   {program.icon}
                 </div>
@@ -71,6 +72,21 @@ export default function ForYourChildPage() {
           </div>
         </div>
       </section>
+
+      {/* ── TESTIMONIALS ────────────────────────────── */}
+      <TestimonialsSection
+        title="What Students & Parents Say"
+        testimonials={[
+          {
+            quote: "I finally understand how I learn. It's not that I wasn't smart; I just needed a different way to organize my thoughts.",
+            author: "Maya, Grade 8 Student"
+          },
+          {
+            quote: "Watching my child move from frustration to independence has been the greatest gift. They actually enjoy planning their study time now.",
+            author: "R. Khanna, Parent"
+          }
+        ]}
+      />
 
       {/* ── NEXT STEPS ──────────────────────────────────────────── */}
       <PathwayNextSteps

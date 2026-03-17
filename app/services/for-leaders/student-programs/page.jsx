@@ -4,6 +4,7 @@ import PathwayChallengeSection from "@/components/services/PathwayChallengeSecti
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import TestimonialsSection from "@/components/about/TestimonialsSection";
 import { Shield, Brain, Users } from "lucide-react";
 
 
@@ -64,9 +65,9 @@ export default function StudentProgramsPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
             {programs.map((program, i) => (
-              <div key={i} className="group flex flex-col items-center text-center bg-white p-10 rounded-[2rem] border border-border/60 hover:border-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+              <div key={i} className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md flex flex-col items-center text-center bg-white p-10 rounded-[2rem] border border-border/60 hover:border-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
                 <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 border border-primary/20">
                   {program.icon}
                 </div>
@@ -122,6 +123,21 @@ export default function StudentProgramsPage() {
           </div>
         </div>
       </section>
+
+      {/* ── TESTIMONIALS ────────────────────────────── */}
+      <TestimonialsSection
+        title="What Students & Teachers Say"
+        testimonials={[
+          {
+            quote: "These sessions weren't regular lectures. They felt like real conversations that actually helped us understand why we act the way we do online and with each other.",
+            author: "A. Bhatnagar, Grade 10 Student"
+          },
+          {
+            quote: "The mental health tools provided were extremely practical. Our students use the breathing and grounding techniques daily now.",
+            author: "Ms. Gupta, Student Counselor"
+          }
+        ]}
+      />
 
       {/* ── NEXT STEPS ──────────────────────────────────────────── */}
       <PathwayNextSteps

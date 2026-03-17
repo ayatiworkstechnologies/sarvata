@@ -114,11 +114,11 @@ This mentorship dimension helps students understand not just what they learn but
       />
 
       <TestimonialsSection
-        title="What Educators Say"
+        title="What Our Community Says"
         testimonials={[
-          { quote: "Sarvata transformed how we approach inclusive education. Their strategies are practical and immediately applicable.", author: "Sarah Jenkins, School Principal" },
-          { quote: "The mentorship provided by Sarvata gave our teachers the confidence to truly personalize learning for every student.", author: "David Chen, Lead Educator" },
-          { quote: "As a parent, seeing the shift in my child's engagement and autonomy has been nothing short of remarkable.", author: "Priya Sharma, Parent" },
+          { quote: "Sarvata helped us see our daughter's potential beyond the challenges she was facing at school. The insights we gained changed how we support her at home and how her teachers understand her.", author: "Meera K., Parent" },
+          { quote: "The transition to middle school was overwhelming for our son. Sarvata provided the clarity and strategies we needed to navigate the system and boost his confidence as a learner.", author: "Rajiv S., Parent" },
+          { quote: "Finally, we found a path that values our child's unique way of thinking. The psychological support combined with academic insights made all the difference.", author: "Ananya M., Parent" },
         ]}
       />
 

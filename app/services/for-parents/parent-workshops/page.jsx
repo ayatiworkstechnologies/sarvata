@@ -3,6 +3,7 @@ import InnerHero from "@/components/InnerHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
+import TestimonialsSection from "@/components/about/TestimonialsSection";
 
 
 
@@ -58,11 +59,11 @@ export default function ParentWorkshopsPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
             {topics.map((item, i) => (
-              <div key={i} className="group relative rounded-[1.75rem] border border-border/60 bg-white p-8 overflow-hidden hover:shadow-2xl hover:border-transparent hover:-translate-y-2 transition-all duration-500">
+              <div key={i} className="group relative w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md rounded-[1.75rem] border border-border/60 bg-white p-8 overflow-hidden hover:shadow-2xl hover:border-transparent hover:-translate-y-2 transition-all duration-500 flex flex-col">
                 <h3 className="text-xl font-bold text-foreground mb-4 leading-tight">{item.title}</h3>
-                <p className="text-muted text-[15px] leading-relaxed mb-6">{item.description}</p>
+                <p className="text-muted text-[15px] leading-relaxed mb-6 flex-1">{item.description}</p>
                 
                 <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                    <svg className="w-5 h-5 text-primary group-hover:rotate-45 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -75,14 +76,20 @@ export default function ParentWorkshopsPage() {
         </div>
       </section>
 
-      {/* ── TESTIMONIALS PLACEHOLDER ────────────────────────────── */}
-      <section className="bg-white py-16 text-center">
-        <div className="container-max">
-          <p className="text-muted italic border border-dashed border-primary/40 bg-primary/5 rounded-2xl p-8 max-w-2xl mx-auto">
-            [PLACEHOLDER: Include 1-2 parent testimonials here]
-          </p>
-        </div>
-      </section>
+      {/* ── TESTIMONIALS ────────────────────────────── */}
+      <TestimonialsSection
+        title="What Parents Say"
+        testimonials={[
+          {
+            quote: "The workshop on 'Cyber Safety' was eye-opening. It moved beyond just rules and gave us a framework for real conversations with our teenagers.",
+            author: "Sarah L., Parent"
+          },
+          {
+            quote: "Finally, a parent session that isn't just theory. We left with concrete strategies we could use at the dinner table that very night.",
+            author: "Mark J., Parent"
+          }
+        ]}
+      />
 
       {/* ── NEXT STEPS ──────────────────────────────────────────── */}
       <PathwayNextSteps

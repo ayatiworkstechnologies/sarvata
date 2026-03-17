@@ -3,6 +3,7 @@ import InnerHero from "@/components/InnerHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
+import TestimonialsSection from "@/components/about/TestimonialsSection";
 import { BookOpen, LineChart, Calendar, LifeBuoy, Laptop, FileText } from "lucide-react";
 
 
@@ -90,17 +91,17 @@ export default function StrategicPlanningPage() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
             {coreSystems.map((sys, i) => {
               const Icon = [BookOpen, LineChart, Calendar, LifeBuoy, Laptop, FileText][i] || FileText;
               return (
-              <div key={i} className="group bg-white p-8 rounded-[1.75rem] border border-border/50 shadow-[0_4px_16px_rgba(0,0,0,0.02)] hover:shadow-xl hover:border-primary/20 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden">
+              <div key={i} className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md bg-white p-8 rounded-[1.75rem] border border-border/50 shadow-[0_4px_16px_rgba(0,0,0,0.02)] hover:shadow-xl hover:border-primary/20 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden flex flex-col">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500" />
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 text-primary ring-1 ring-primary/20 shadow-inner group-hover:bg-primary group-hover:text-white transition-colors duration-500">
                   <Icon className="w-7 h-7" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-3">{sys.title}</h3>
-                <p className="text-muted text-[15px] leading-relaxed">{sys.description}</p>
+                <p className="text-muted text-[15px] leading-relaxed flex-1">{sys.description}</p>
               </div>
               );
             })}
@@ -211,6 +212,21 @@ export default function StrategicPlanningPage() {
           </div>
         </div>
       </section>
+
+      {/* ── TESTIMONIALS ────────────────────────────── */}
+      <TestimonialsSection
+        title="What Our Partners Say"
+        testimonials={[
+          {
+            quote: "Finally, our operational systems support our educational vision instead of competing with it. The redesign of our assessment framework was a game-changer.",
+            author: "Mark S., Operations Director"
+          },
+          {
+            quote: "Strategic planning with Sarvata isn't about documents; it's about shifting the behavior of our entire school community toward our goals.",
+            author: "L. Fernandez, Principal"
+          }
+        ]}
+      />
 
       {/* ── NEXT STEPS ──────────────────────────────────────────── */}
       <PathwayNextSteps
