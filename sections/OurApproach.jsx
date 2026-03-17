@@ -115,6 +115,7 @@ export default function OurApproach() {
 
           {/* ══ RIGHT  -  text + items ══ */}
           <div>
+
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -122,6 +123,7 @@ export default function OurApproach() {
               transition={{ duration: 0.7 }}
               className="mb-12"
             >
+
               <span className="inline-flex items-center gap-2 mb-5">
                 <span className="h-[2px] w-6 rounded-full" style={{ background: "#A066AA" }} />
                 <p className="text-[11px] font-bold uppercase tracking-[0.32em]" style={{ color: "#A066AA" }}>Our Approach</p>
@@ -141,6 +143,9 @@ export default function OurApproach() {
             </motion.div>
 
             <div className="space-y-5">
+              <h2 className="text-3xl font-bold leading-[1.12] tracking-tight text-[#A066AA] md:text-3xl mb-5">
+                What Makes Us Different
+              </h2>
               {ITEMS.map((item, i) => (
                 <motion.div
                   key={i}

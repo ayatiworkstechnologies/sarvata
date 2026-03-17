@@ -28,11 +28,11 @@ export default function StorySection({
             transition={{ duration: 0.8 }}
           >
             <p className="text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4">
-              Our Story
+              {title}
             </p>
-            {/* <h2 className="text-4xl font-light leading-tight text-foreground md:text-5xl lg:text-6xl tracking-tight mb-8">
-              &ldquo;The education is not the learning of facts, but the training of the mind to think.&rdquo;
-            </h2> */}
+            <h2 className="text-4xl font-light leading-tight text-foreground md:text-5xl lg:text-6xl tracking-tight mb-8">
+              {subtitle}
+            </h2>
             <div className="space-y-6 text-[17px] leading-relaxed text-muted-foreground font-light text-justify">
               {paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
