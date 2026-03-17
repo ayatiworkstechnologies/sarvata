@@ -74,7 +74,7 @@ export default function ServicesLayout() {
           </motion.div>
 
           {/* ================= SERVICE CARDS ================= */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+          <div className="flex flex-wrap justify-center gap-8 lg:gap-10">
             {services.map((service, i) => (
               <motion.div
                 key={service.audience}
@@ -82,7 +82,7 @@ export default function ServicesLayout() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
-                className="group relative"
+                className="group relative w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-2rem)] max-w-md"
               >
                 <div className="relative h-full rounded-[2rem] border border-border/60 bg-white p-8 lg:p-10 overflow-hidden transition-all duration-500 hover:shadow-2xl hover:border-transparent hover:-translate-y-2">
                   {/* Hover glow */}

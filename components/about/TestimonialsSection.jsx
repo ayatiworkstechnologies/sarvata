@@ -21,7 +21,7 @@ export default function TestimonialsSection({ title, testimonials }) {
           {title}
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
@@ -29,7 +29,7 @@ export default function TestimonialsSection({ title, testimonials }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: i * 0.15, ease: "easeOut" }}
-              className="group relative flex flex-col p-8 rounded-3xl bg-white border border-black/5 shadow-sm hover:shadow-xl transition-all duration-300"
+              className="group relative flex flex-col p-8 rounded-3xl bg-white border border-black/5 shadow-sm hover:shadow-xl transition-all duration-300 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md"
             >
               {/* Quote Icon */}
               <div className="text-secondary/20 mb-6">
@@ -39,7 +39,7 @@ export default function TestimonialsSection({ title, testimonials }) {
               </div>
 
               <p className="text-[16px] md:text-[18px] font-secondary text-foreground leading-relaxed italic mb-8 flex-grow">
-                "{t.quote}"
+                &quot;{t.quote}&quot;
               </p>
 
               <div className="flex items-center gap-4 mt-auto pt-6 border-t border-black/5">

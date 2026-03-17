@@ -35,7 +35,7 @@ export default function PhilosophySection({ title, subtitle, intro, points, rese
         </motion.div>
 
         {/* THREE PRINCIPLES GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div className="flex flex-wrap justify-center gap-8 mb-20">
           {points.map((pt, i) => (
             <motion.div
               key={i}
@@ -44,7 +44,7 @@ export default function PhilosophySection({ title, subtitle, intro, points, rese
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: i * 0.15 }}
               whileHover={{ y: -8 }}
-              className="group relative rounded-3xl p-8 md:p-10 border border-black/5 bg-white shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden"
+              className="group relative rounded-3xl p-8 md:p-10 border border-black/5 bg-white shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-sm"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#6bcf8e]/20 to-transparent rounded-bl-full opacity-50 group-hover:scale-110 transition-transform duration-500 pointer-events-none" />
               <div className="text-[#6bcf8e] text-5xl font-light mb-6 font-primary opacity-30">

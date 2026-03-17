@@ -72,7 +72,7 @@ export default function TakeFirstStep() {
           </motion.p>
 
           {/* Action Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
+          <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
             {actions.map((action, i) => (
               <motion.div
                 key={action.question}
@@ -80,7 +80,7 @@ export default function TakeFirstStep() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
-                className="flex flex-col items-center gap-5"
+                className="flex flex-col items-center gap-5 w-full md:w-[calc(33.333%-1.5rem)] max-w-sm"
               >
                 <p className="text-muted font-secondary font-medium text-sm tracking-wide">
                   {action.question}
