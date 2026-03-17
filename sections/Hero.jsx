@@ -14,9 +14,9 @@ export default function Hero() {
 
   const seeds = [
     // { href: "/services/for-educators", cls: "node-educators", label: "for Educators " },
-    { href: "/services/for-leaders", cls: "node-leaders", label: "for Leaders " },
-    { href: "/services/for-parents", cls: "node-parents", label: "for Parents " },
-    { href: "/services/for-educators", cls: "node-learners", label: "for Educators " },
+    { href: "/services/for-leaders", cls: "node-leaders", label: "for Leaders" },
+    { href: "/services/for-parents", cls: "node-parents", label: "for Parents" },
+    { href: "/services/for-educators", cls: "node-learners", label: "for Educators" },
   ];
 
   const showTooltip = (e, label) => {
@@ -36,7 +36,7 @@ export default function Hero() {
 
   return (
     <section className="relative w-full overflow-hidden h-screen">
-      <div className="pointer-events-none absolute top-0 left-0 w-full h-screen z-20 flex items-end justify-between p-6 pb-10 md:p-14 md:pb-12">
+      <div className="pointer-events-none absolute top-0 left-0 w-full h-screen z-20 flex items-end justify-between p-6 pb-32 md:p-14 md:pb-12">
         <motion.div
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
@@ -77,7 +77,7 @@ export default function Hero() {
       <div className="absolute inset-0 block md:hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/hero.mp4"
+          src="/home.mp4"
           autoPlay
           loop
           muted

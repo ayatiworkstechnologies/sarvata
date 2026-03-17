@@ -379,17 +379,17 @@ p {
 }
 
 .node-leaders {
-  top: 67%;
+  top: 62%;
   left: 39%
 }
 
 .node-parents {
-  top: 65%;
+  top: 60%;
   left: 56%
 }
 
 .node-learners {
-  top: 80%;
+  top: 75%;
   left: 47%
 }
 
@@ -400,28 +400,28 @@ p {
 @media (max-width:640px) {
 
   .static-node {
-    width: 72px;
-    height: 72px;
+    width: 42px;
+    height: 42px;
   }
 
   .node-educators {
-    top: 60%;
-    left: 50%
+    top: 56%;
+    left: 49%
   }
 
   .node-leaders {
-    top: 67%;
-    left: 81%
+    top: 56%;
+    left: 28%
   }
 
   .node-parents {
-    top: 69%;
-    left: 8%
+    top: 56%;
+    left: 65%
   }
 
   .node-learners {
-    top: 83%;
-    left: 46%
+    top: 78%;
+    left: 50%
   }
 
 }
