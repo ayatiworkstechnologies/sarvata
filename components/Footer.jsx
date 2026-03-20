@@ -1,10 +1,10 @@
 "use client";
 
+import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import ScheduleConsultationButton from "@/components/ScheduleConsultationButton";
 import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
 
 const pageLinks = [
   { name: "Home", href: "/" },
@@ -20,133 +20,139 @@ const serviceLinks = [
 ];
 
 const socials = [
-  { Icon: FaLinkedinIn, href: "https://in.linkedin.com/in/sarvata-educational-consultancy-6ab205321?trk=public_post_feed-actor-name" },
-  { Icon: FaInstagram, href: "https://www.instagram.com/sarvata_edu_consultancy_?igsh=MTkwdmk0eW15MGZ6dA%3D%3D&utm_source=qr" },
-  { Icon: FaFacebookF, href: "https://www.facebook.com/people/Sarvata-Educational-Consultancy/" },
-
+  { Icon: FaLinkedinIn, href: "https://in.linkedin.com/..." },
+  { Icon: FaInstagram, href: "https://www.instagram.com/..." },
+  { Icon: FaFacebookF, href: "https://www.facebook.com/..." },
 ];
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-white text-foreground">
-      {/* Background accents */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(160,102,170,0.05),transparent_40%)]" />
+    <footer className="relative overflow-hidden bg-white pt-20 pb-10">
+      {/* Cinematic Ambient Glow */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute top-0 right-0 h-[400px] w-[400px] bg-primary/5 blur-[100px]" />
+        <div className="absolute bottom-0 left-0 h-[300px] w-[300px] bg-secondary/5 blur-[80px]" />
+      </div>
 
-      <div className="relative container-max py-14 md:py-20">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-          {/* Left Brand Card */}
-          <div className="lg:col-span-5">
-            <div className="flex h-full min-h-[320px] flex-col justify-between rounded-[28px] border border-border bg-soft-bg/30 p-7 shadow-sm md:p-10">
-              <div>
-                <div className="flex items-center">
-                  <Image
-                    src="/logo.png"
-                    alt="Sarvata"
-                    width={170}
-                    height={64}
-                    className="h-14 w-auto object-contain"
-                    priority
+      <div className="container-max relative z-10 px-6">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 items-stretch">
+          {/* 1. BRAND PROFILE CARD (Z-Index Anchor) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="lg:col-span-5 flex flex-col justify-between p-10 rounded-[40px] bg-soft border border-border shadow-[0_8px_40px_rgba(0,0,0,0.02)]"
+          >
+            <div>
+              <Image
+                src="/logo.png"
+                alt="Sarvata"
+                width={160}
+                height={50}
+                className="h-12 w-auto object-contain mb-10"
+                priority
+              />
+              <p className="text-lg leading-relaxed text-muted font-light max-w-sm">
+                Empowering educators, school leaders, and families with clear,
+                structured, and actionable learning support.
+              </p>
+            </div>
+
+            <div className="mt-12 flex items-center gap-6">
+              {socials.map(({ Icon, href }, i) => (
+                <Link
+                  key={i}
+                  href={href}
+                  className="group relative flex h-12 w-12 items-center justify-center rounded-full bg-white border border-border transition-all hover:bg-primary hover:border-primary shadow-sm"
+                >
+                  <Icon
+                    className="text-primary group-hover:text-white transition-colors"
+                    size={18}
                   />
-                </div>
-
-                <p className="mt-8 max-w-md text-[17px] leading-8 text-muted">
-                  Empowering educators, school leaders, and families with clear,
-                  structured, and actionable learning support.
-                </p>
-              </div>
-
-              <div className="mt-10 flex flex-wrap gap-6">
-                {socials.map(({ Icon, href }, i) => (
-                  <a
-                    key={i}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center text-primary transition-all duration-300 hover:-translate-y-1 hover:text-primary/70"
-                  >
-                    <Icon size={20} />
-                  </a>
-                ))}
-              </div>
+                </Link>
+              ))}
             </div>
-          </div>
+          </motion.div>
 
-          {/* Right Side */}
-          <div className="flex flex-col gap-6 lg:col-span-7">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              <FooterCard title="Pages" links={pageLinks} />
-              <FooterCard title="Services" links={serviceLinks} />
+          {/* 2. NAVIGATION GRID & CTA BOX */}
+          <div className="lg:col-span-7 flex flex-col gap-8">
+            {/* Quick Links Group */}
+            <div className="grid grid-cols-2 gap-8 flex-grow">
+              <FooterList title="Pathways" links={pageLinks} />
+              <FooterList title="Support" links={serviceLinks} />
             </div>
 
-            <div className="rounded-[28px] border border-border bg-soft-bg/30 px-6 py-7 shadow-sm md:px-8 md:py-8">
-              <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+            {/* Bottom Glass CTA */}
+            <motion.div
+              whileHover={{ scale: 1.01 }}
+              className="relative overflow-hidden rounded-[32px] bg-foreground p-8 md:p-10 shadow-2xl"
+            >
+              <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                 <div>
-                  <h3 className="text-2xl font-bold tracking-tight text-foreground">
-                    Ready to grow with Sarvata?
+                  <h3 className="text-2xl font-bold text-white tracking-tight">
+                    Ready to grow?
                   </h3>
-                  <p className="mt-2 text-lg text-muted">
-                    Explore pathways built for educators, leaders, and parents.
+                  <p className="text-white/60 text-sm mt-1">
+                    Explore pathways built for the community.
                   </p>
                 </div>
-
                 <ScheduleConsultationButton />
               </div>
-            </div>
+              {/* Abstract Shine */}
+              <div className="absolute -top-1/2 -right-1/4 h-full w-full bg-gradient-to-br from-white/10 to-transparent rotate-45 pointer-events-none" />
+            </motion.div>
           </div>
         </div>
 
-        {/* Bottom Row */}
-        <div className="mt-8 border-t border-border pt-6">
-          <div className="flex flex-col gap-4 text-sm text-muted md:flex-row md:items-center md:justify-between">
-            <p className="text-center md:text-left">
-              © {new Date().getFullYear()} Sarvata Transforming Learning. All rights reserved.
-            </p>
+        {/* 3. LEGAL & ATTRIBUTION FOOTNOTE */}
+        <div className="mt-20 pt-10 border-t border-border flex flex-col md:flex-row items-center justify-between gap-8">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-muted">
+            © {new Date().getFullYear()} Sarvata Educational Consultancy
+          </p>
 
-            <Link
-              href="https://ayatiworks.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 transition-opacity duration-300 hover:opacity-80 md:justify-end"
-            >
-              <span className="text-sm text-muted">
-                Designed & Developed by
-              </span>
-              <Image
-                src="/ayati-logo-web.png"
-                alt="Ayatiworks"
-                width={120}
-                height={32}
-                className="h-15 w-auto object-contain"
-              />
-            </Link>
-          </div>
+          <Link
+            href="https://ayatiworks.com"
+            target="_blank"
+            className="group flex items-center gap-4 px-6 py-2 rounded-full border border-border bg-soft hover:bg-white transition-all shadow-sm"
+          >
+            <span className="text-[10px] font-black uppercase tracking-widest text-muted/60">
+              Built By
+            </span>
+            <Image
+              src="/ayati-logo-web.png"
+              alt="Ayatiworks"
+              width={100}
+              height={24}
+              className="h-5 w-auto object-contain grayscale group-hover:grayscale-0 transition-all"
+            />
+          </Link>
         </div>
       </div>
     </footer>
   );
 }
 
-function FooterCard({ title, links }) {
+function FooterList({ title, links }) {
   return (
-    <div className="rounded-[28px] border border-border bg-soft-bg/30 p-7 shadow-sm md:p-8">
-      <div className="mb-6 flex items-center gap-3">
-        <span className="h-2 w-2 rounded-full bg-primary" />
-        <h4 className="text-[14px] font-bold uppercase tracking-[0.18em] text-foreground">
+    <div className="px-4">
+      <div className="flex items-center gap-3 mb-8">
+        <div className="h-1.5 w-1.5 rounded-full bg-primary" />
+        <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-foreground/40">
           {title}
         </h4>
       </div>
-
-      <div className="space-y-4">
+      <ul className="space-y-5">
         {links.map((link) => (
-          <Link
-            key={link.name}
-            href={link.href}
-            className="block text-[16px] font-medium text-muted transition-all duration-300 hover:translate-x-1 hover:text-primary"
-          >
-            {link.name}
-          </Link>
+          <li key={link.name}>
+            <Link
+              href={link.href}
+              className="text-base font-medium text-muted transition-all hover:text-primary hover:pl-2"
+            >
+              {link.name}
+            </Link>
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

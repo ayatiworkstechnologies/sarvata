@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useState } from "react";
-
+import Image from "next/image";
 export default function Hero() {
   const [tooltip, setTooltip] = useState({
     label: "",
@@ -38,10 +38,13 @@ export default function Hero() {
     <section className="relative w-full overflow-hidden h-screen">
       <div className="pointer-events-none absolute top-0 left-0 w-full h-screen z-20 flex items-end justify-between p-6 pb-32 md:p-14 md:pb-12">
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
-          className="max-w-2xl"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.4 } },
+          }}
+          className="max-w-2xl relative z-20 pointer-events-auto"
         >
           {/* <motion.p
             initial={{ opacity: 0, y: 15 }}
@@ -51,14 +54,21 @@ export default function Hero() {
           >
             Sarvata
           </motion.p> */}
-          <h1 className="text-3xl font-bold leading-[1.15] text-white md:text-5xl lg:text-7xl tracking-tight">
-            Transforming <br /> Educators &<br />
-            <span className="font-extrabold text-primary">Schools, Every Day</span>
-          </h1>
-          <p className="mt-4 md:mt-6 max-w-[90%] md:max-w-xl text-[15px] md:text-[17px] leading-relaxed text-white font-secondary">
+          <motion.h1 
+            variants={{ hidden: { opacity: 0, y: 25 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } } }}
+            className="text-3xl font-bold leading-[1.15] text-white md:text-[42px] lg:text-[54px] tracking-tight mb-2 md:mb-4"
+          >
+            <span className="text-[#E2C473] drop-shadow-sm inline-block">Transforming</span> <br />
+            <span className="inline-block mt-2">Educators & Schools,</span><br />
+            <span className="font-extrabold text-[#10b981] drop-shadow-sm inline-block mt-1">Every Day.</span>
+          </motion.h1>
+          <motion.p 
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } } }}
+            className="mt-4 md:mt-6 max-w-[85%] md:max-w-md text-[15px] md:text-[17px] leading-relaxed text-white/90 font-secondary"
+          >
             We partner with schools, educators, and parents to create truly
             inclusive, learner-centered educational environments.
-          </p>
+          </motion.p>
         </motion.div>
 
       </div>
@@ -85,8 +95,20 @@ export default function Hero() {
         />
       </div>
 
-      {/* OVERLAY */}
-      <div className="absolute inset-0 bg-black/20 z-10" />
+      {/* OVERLAY & BACKGROUND ACCENTS */}
+      <div className="absolute inset-0 bg-black/40 z-10" />
+      <div 
+        className="absolute inset-0 z-10 opacity-[0.08] pointer-events-none" 
+        style={{ backgroundImage: "linear-gradient(#E2C473 1px, transparent 1px), linear-gradient(90deg, #E2C473 1px, transparent 1px)", backgroundSize: "40px 40px" }} 
+      />
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 0.08, scale: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        className="absolute -bottom-[20%] -right-[10%] z-10 pointer-events-none w-[70vw] h-[70vw] max-w-[800px] max-h-[800px]"
+      >
+         <Image src="/logo.png" alt="" fill className="object-contain" priority />
+      </motion.div>
 
       {/* DYNAMIC TOOLTIP */}
       <motion.div
