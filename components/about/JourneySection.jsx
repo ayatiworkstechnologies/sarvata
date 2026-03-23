@@ -23,8 +23,16 @@ export default function JourneySection({ title, intro, steps, image }) {
   return (
     <section
       ref={containerRef}
-      className="relative bg-white py-24 md:py-40 overflow-hidden"
+      className="relative bg-[#faf9ff] py-16 md:py-24 overflow-hidden"
     >
+      {/* Subtle Background Pattern */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(#E2C473 1px, transparent 1px)`,
+          backgroundSize: "40px 40px",
+        }}
+      />
       <div className="container-max relative z-10">
         {/* --- HEADER --- */}
         <motion.div
@@ -34,7 +42,7 @@ export default function JourneySection({ title, intro, steps, image }) {
           className="text-center max-w-3xl mx-auto mb-24 md:mb-40"
         >
           <span className="eyebrow text-primary mb-6 block">Our Process</span>
-          <h2 className="heading-xl text-foreground mb-8 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-800 mb-8 tracking-tight">
             {title}
           </h2>
           <p className="section-body text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
@@ -84,10 +92,10 @@ export default function JourneySection({ title, intro, steps, image }) {
                             </span>
                           )}
                         </div>
-                        <h3 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-[1.1] tracking-tighter">
+                        <h3 className="text-2xl md:text-4xl font-bold text-slate-800 mb-6 leading-[1.1] tracking-tighter">
                           {step.title}
                         </h3>
-                        <p className="text-muted-foreground text-lg md:text-xl leading-relaxed font-light max-w-lg">
+                        <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-light max-w-lg">
                           {step.desc}
                         </p>
                       </div>
@@ -120,19 +128,6 @@ export default function JourneySection({ title, intro, steps, image }) {
                           fill
                           className="object-cover transition-transform duration-1000 group-hover:scale-105"
                         />
-                        {/* High-End Glass Label */}
-                        <div className="absolute bottom-8 left-8 right-8">
-                          <div className="p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl">
-                            <p className="text-white text-[10px] font-black uppercase tracking-[0.3em] leading-none mb-2 opacity-60">
-                              Phase Segment
-                            </p>
-                            <p className="text-white font-bold tracking-tight">
-                              Deployment Framework 0{i + 1}
-                            </p>
-                          </div>
-                        </div>
-                        {/* Ambient Shine Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
                       </div>
                     </motion.div>
                   </div>

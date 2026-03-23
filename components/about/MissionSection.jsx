@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function MissionSection({ title, highlight, paragraphs }) {
   return (
-    <section className="relative bg-white py-24 md:py-32 overflow-hidden">
+    <section className="relative bg-white py-16 md:py-24 overflow-hidden">
       {/* ── AMBIENT MESH BACKGROUND ── */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(160,102,170,0.03),transparent_70%)]" />
@@ -31,7 +31,7 @@ export default function MissionSection({ title, highlight, paragraphs }) {
               {title}
             </motion.span>
 
-            <h2 className="heading-xl text-foreground leading-[1.1] tracking-tight max-w-4xl">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-800 leading-[1.1] tracking-tight max-w-4xl">
               {/* Splitting to highlight the "Every Day" promise */}
               {highlight.split(", every day.").map((part, i, arr) => (
                 <span key={i}>
@@ -62,10 +62,10 @@ export default function MissionSection({ title, highlight, paragraphs }) {
               {paragraphs.map((p, idx) => (
                 <p
                   key={idx}
-                  className={`text-xl md:text-2xl leading-relaxed text-center font-light ${
+                  className={`text-lg md:text-xl lg:text-2xl leading-relaxed text-center ${
                     idx === paragraphs.length - 1
-                      ? "text-foreground font-medium italic"
-                      : "text-muted-foreground"
+                      ? "text-primary font-bold italic text-xl md:text-2xl lg:text-3xl"
+                      : "text-muted-foreground font-light"
                   }`}
                 >
                   {p}

@@ -26,7 +26,7 @@ export default function PhilosophyScroll({ title, intro, points }) {
             viewport={{ once: true }}
           >
             <span className="eyebrow text-primary mb-6 block">{title}</span>
-            <h2 className="heading-xl text-foreground mb-8 leading-[0.95]">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-800 mb-8 leading-[0.95]">
               Learning is a{" "}
               <span className="text-primary italic font-light">Verb</span>,{" "}
               <br />
@@ -65,13 +65,13 @@ export default function PhilosophyScroll({ title, intro, points }) {
 function PrincipleItem({ pt, index, scrollYProgress, range }) {
   const opacity = useTransform(
     scrollYProgress,
-    [range[0], range[0] + 0.1, range[1] - 0.1, range[1]],
+    [range[0], range[0] + 0.05, range[1] - 0.05, range[1]],
     [0, 1, 1, 0],
   );
   const y = useTransform(
     scrollYProgress,
-    [range[0], range[0] + 0.1, range[1] - 0.1, range[1]],
-    [40, 0, 0, -40],
+    [range[0], range[0] + 0.05, range[1] - 0.05, range[1]],
+    [30, 0, 0, -30],
   );
 
   return (
@@ -81,13 +81,13 @@ function PrincipleItem({ pt, index, scrollYProgress, range }) {
     >
       <div className="flex flex-col">
         <div className="flex items-center gap-4 mb-6">
-          <span className="text-7xl font-black text-primary tabular-nums tracking-tighter">
+          <span className="text-7xl font-black text-primary/80 tabular-nums tracking-tighter drop-shadow-md">
             0{index + 1}
           </span>
           <div className="h-[2px] flex-1 bg-gradient-to-r from-primary/20 to-transparent" />
         </div>
         <div className="pl-2">
-          <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-6 tracking-tight leading-tight">
+          <h3 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6 tracking-tight leading-tight">
             {pt.title}
           </h3>
           <p className="text-muted-foreground text-lg leading-relaxed font-light max-w-md">

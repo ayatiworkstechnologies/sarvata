@@ -1,5 +1,6 @@
 import MainHero from "@/components/MainHero";
 import StorySection from "@/components/about/StorySection";
+import FounderSection from "@/components/about/FounderSection";
 import MissionSection from "@/components/about/MissionSection";
 import PhilosophySection from "@/components/about/PhilosophySection";
 import JourneySection from "@/components/about/JourneySection";
@@ -8,7 +9,7 @@ import ImpactSection from "@/components/about/ImpactSection";
 import ResearchFoundation from "@/components/about/ResearchFoundation";
 
 export const metadata = {
-  title: "About Sarvata - Our Story, Mission & Philosophy",
+  title: "About Us - Sarvata Educational Consultancy",
   description:
     "Learn about Sarvata's founding mission: to inspire and create better educators and schools, every day. Discover our philosophy of personalized learning, expanding learner agency, and building self-directed education environments.",
   keywords: [
@@ -20,7 +21,7 @@ export const metadata = {
     "inclusive education mission",
   ],
   openGraph: {
-    title: "About Sarvata - Our Story, Mission & Philosophy",
+    title: "About Us - Sarvata Educational Consultancy",
     description:
       "Discover why Sarvata exists: to bridge the gap between aspirational pedagogy and daily classroom practice, empowering every learner's unique potential.",
     url: "https://sarvata.in/about",
@@ -32,7 +33,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Sarvata - Our Story, Mission & Philosophy",
+    title: "About Us - Sarvata Educational Consultancy",
     description:
       "Discover why Sarvata exists and how we partner with schools to build truly inclusive, learner-centered environments.",
     images: ["/og-about.jpg"],
@@ -45,7 +46,7 @@ export default function AboutPage() {
       <MainHero
         webImage="/banners/about.jpg"
         mobileImage="/banners/about-mob.jpg"
-        title="Want to Learn More About Our Approach? Start a Conversation"
+        title="Who We Are & Why We Do What We Do"
         breadcrumbs={[{ label: "About Us" }]}
       />
 
@@ -57,9 +58,13 @@ export default function AboutPage() {
           "We were born from years of working alongside teachers and school leaders wrestling with how to translate ideals of inclusion and personalization into systematic, sustainable practice. We guide teachers and school leaders to become truly inclusive and responsive in their practice. We embed practical, research-driven strategies into the daily life of schools, moving educators from aspiration to implementation.",
           "At the heart of everything we do is Personalised Learning, not as a technique, but as a fundamental belief in the unique potential of every learner. We partner with schools to build the environments, systems, and educator capacities where this potential can truly flourish.",
         ]}
+        image="/about.jpg"
+      />
+
+      <FounderSection
         founderTitle="Founder's Journey"
         founderText="Our founder established Sarvata with a profound commitment to educational equity and the belief that every child deserves a school environment designed for their unique potential. Drawing from decades of firsthand experience in diverse classrooms, the vision was to bridge the gap between aspirational pedagogy and daily practice."
-        image="/about.jpg"
+        founderImage="/about-1.jpg"
       />
 
       <MissionSection

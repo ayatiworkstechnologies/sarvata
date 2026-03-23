@@ -8,8 +8,6 @@ export default function StorySection({
   title,
   subtitle,
   paragraphs,
-  founderTitle,
-  founderText,
   image,
 }) {
   const containerRef = useRef(null);
@@ -69,7 +67,7 @@ export default function StorySection({
               transition={{ duration: 0.8 }}
             >
               <span className="eyebrow text-primary mb-6 block">{title}</span>
-              <h2 className="heading-xl text-foreground mb-10 leading-[0.9] tracking-tighter">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-800 mb-10 leading-[0.9] tracking-tighter">
                 {subtitle}
               </h2>
 
@@ -81,7 +79,11 @@ export default function StorySection({
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: 0.2 + i * 0.1 }}
-                    className="text-lg md:text-xl text-muted-foreground leading-relaxed font-light"
+                    className={`text-lg md:text-xl leading-relaxed font-light ${
+                      p.startsWith("At the heart") 
+                        ? "text-primary font-medium" 
+                        : "text-muted-foreground"
+                    }`}
                   >
                     {p}
                   </motion.p>
@@ -90,46 +92,6 @@ export default function StorySection({
             </motion.div>
           </div>
         </div>
-
-        {/* ── SECTION 2: FOUNDER'S MANIFESTO CARD (NO CHANGES) ── */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="relative mx-auto max-w-7xl overflow-hidden rounded-[40px] bg-white border border-primary/10 shadow-[0_30px_60px_rgba(0,0,0,0.02)]"
-        >
-          <div
-            className="absolute inset-0 opacity-[0.02] pointer-events-none"
-            style={{
-              backgroundImage: `radial-gradient(circle at 2px 2px, var(--color-primary) 1px, transparent 0)`,
-              backgroundSize: "32px 32px",
-            }}
-          />
-
-          <div className="relative z-10 px-8 py-8 md:px-10 md:py-12 text-center">
-            <h3 className="text-[10px] font-black uppercase tracking-[0.5em] text-primary/60 mb-8">
-              {founderTitle}
-            </h3>
-
-            <blockquote className="relative max-w-4xl mx-auto">
-              <p className="text-xl md:text-3xl font-light text-foreground/80 leading-[1.6] italic relative z-10">
-                &ldquo;{founderText}&rdquo;
-              </p>
-            </blockquote>
-
-            <div className="mt-12 flex flex-col items-center">
-              <div className="space-y-1">
-                <p className="text-foreground font-bold tracking-widest text-[11px] uppercase">
-                  Founder & Visionary
-                </p>
-                <p className="text-muted text-[10px] uppercase tracking-tighter">
-                  Sarvata Educational Consultancy
-                </p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
