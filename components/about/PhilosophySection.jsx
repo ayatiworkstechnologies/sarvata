@@ -23,13 +23,13 @@ export default function PhilosophySection({ title, subtitle, intro, points, rese
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <p className="text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4 text-center">
+          <p className="eyebrow text-center">
             Our Philosophy
           </p>
-          <h2 className="text-3xl md:text-5xl lg:text-5xl font-light leading-tight text-foreground mb-6 tracking-tight">
+          <h2 className="heading-xl text-foreground mb-6">
             {subtitle}
           </h2>
-          <p className="text-[18px] leading-relaxed text-muted-foreground font-light">
+          <p className="section-body leading-relaxed">
             {intro}
           </p>
         </motion.div>
@@ -50,10 +50,10 @@ export default function PhilosophySection({ title, subtitle, intro, points, rese
               <div className="text-[#6bcf8e] text-5xl font-light mb-6 font-primary opacity-30">
                 0{i + 1}
               </div>
-              <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-4 pr-6 leading-snug relative z-10">
+              <h3 className="card-title mb-4 pr-6 leading-snug relative z-10">
                 {pt.title}
               </h3>
-              <p className="text-muted-foreground font-light leading-relaxed text-[15px] relative z-10 whitespace-pre-line">
+              <p className="card-body leading-relaxed relative z-10 whitespace-pre-line">
                 {pt.desc}
               </p>
             </motion.div>

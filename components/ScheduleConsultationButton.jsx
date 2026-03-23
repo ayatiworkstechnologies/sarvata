@@ -1,73 +1,46 @@
 "use client";
 
 import { useConsultation } from "@/context/ConsultationContext";
+import AnimatedButton from "@/components/AnimatedButton";
 
 /**
  * ScheduleConsultationButton
  *
  * Drop-in button that opens the global consultation modal.
+ * Now standardized using the AnimatedButton design.
  *
  * Props:
  *  - label    : button text (default "Schedule Consultation")
- *  - variant  : "primary" | "secondary" | "outline" | "ghost" (default "primary")
- *  - size     : "sm" | "md" | "lg" (default "md")
+ *  - variant  : historical prop, maps to accentColor
+ *               ("primary" -> #703b7b, "secondary" -> #a066aa, "outline" -> #1e293b, etc)
  *  - className: extra Tailwind classes to merge in
  *  - fullWidth: boolean (default false)
  */
 export default function ScheduleConsultationButton({
   label = "Schedule Consultation",
   variant = "primary",
-  size = "md",
   className = "",
   fullWidth = false,
 }) {
   const { openModal } = useConsultation();
 
-  /* Size map */
-  const sizeClass = {
-    sm: "h-10 px-4 text-[13px]",
-    md: "h-12 px-6 text-sm",
-    lg: "h-14 px-8 text-base",
-  }[size];
+  // Map old variants to accent colors
+  const accentColorMap = {
+    primary: "var(--primary)",
+    secondary: "var(--secondary)",
+    outline: "#1e293b",
+    ghost: "var(--primary)",
+  };
 
-  /* Variant map  -  mirrors the existing .btn system but as inline Tailwind */
-  const variantClass = {
-    primary:
-      "bg-primary text-white shadow-[0_8px_24px_rgba(160,102,170,0.28)] hover:shadow-[0_14px_32px_rgba(160,102,170,0.36)] hover:-translate-y-0.5",
-    secondary:
-      "bg-primary/90 text-white hover:bg-primary hover:-translate-y-0.5 shadow-md shadow-primary/10",
-    outline:
-      "border border-primary text-foreground hover:bg-primary hover:text-white hover:-translate-y-0.5",
-    ghost:
-      "text-primary underline-offset-4 hover:underline",
-  }[variant];
+  const accentColor = accentColorMap[variant] || "var(--primary)";
 
   return (
-    <button
-      type="button"
+    <AnimatedButton
       onClick={openModal}
-      className={`
-        inline-flex items-center justify-center gap-2
-        rounded-full font-semibold
-        transition-all duration-300
-        ${sizeClass}
-        ${variantClass}
-        ${fullWidth ? "w-full" : ""}
-        ${className}
-      `}
+      className={`${fullWidth ? "w-full" : ""} ${className}`}
+      accentColor={accentColor}
     >
       {label}
-      {variant !== "ghost" && (
-        <svg
-          className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          strokeWidth={2.5}
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
-        </svg>
-      )}
-    </button>
+    </AnimatedButton>
   );
 }

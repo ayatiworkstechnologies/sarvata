@@ -27,13 +27,13 @@ export default function StorySection({
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4">
+            <p className="eyebrow">
               {title}
             </p>
-            <h2 className="text-4xl font-light leading-tight text-foreground md:text-5xl lg:text-6xl tracking-tight mb-8">
+            <h2 className="heading-xl text-foreground mb-8">
               {subtitle}
             </h2>
-            <div className="space-y-6 text-[17px] leading-relaxed text-muted-foreground font-light text-justify">
+            <div className="space-y-6 section-body text-justify">
               {paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}

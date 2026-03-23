@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { FloatingShapes, SubtleGrid } from "@/components/VectorDecorations";
 import ScheduleConsultationButton from "@/components/ScheduleConsultationButton";
 import { useConsultation } from "@/context/ConsultationContext";
+import SectionHeading from "@/components/SectionHeading";
 
 export default function PathwayNextSteps({ eyebrow = "Next Steps", title, steps = [] }) {
   const { openModal } = useConsultation();
@@ -25,12 +26,10 @@ export default function PathwayNextSteps({ eyebrow = "Next Steps", title, steps 
           transition={{ duration: 0.65 }}
           className="text-center max-w-xl mx-auto mb-10"
         >
-          <p className="text-[11px] uppercase tracking-[0.35em] text-primary font-semibold mb-4">
+          <p className="eyebrow">
             {eyebrow}
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
-            {title}
-          </h2>
+          <SectionHeading title={title} className="text-foreground" />
         </motion.div>
 
         {/* Steps */}
@@ -59,8 +58,8 @@ export default function PathwayNextSteps({ eyebrow = "Next Steps", title, steps 
                 <p className="text-[11px] uppercase tracking-[0.25em] text-secondary font-semibold mb-2">
                   {step.label}
                 </p>
-                <h4 className="text-lg font-bold text-foreground mb-2 tracking-tight">{step.title}</h4>
-                <p className="text-muted font-secondary text-[14px] leading-relaxed">{step.description}</p>
+                <h4 className="card-title mb-2">{step.title}</h4>
+                <p className="card-body leading-relaxed">{step.description}</p>
 
                 {step.href && (
                   isConsultation ? (
@@ -103,11 +102,7 @@ export default function PathwayNextSteps({ eyebrow = "Next Steps", title, steps 
           transition={{ duration: 0.5, delay: 0.25, type: "spring", stiffness: 100 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4 relative"
         >
-          <div className="relative group/btn">
-            {/* Animated Glow behind the button */}
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-secondary rounded-full opacity-30 group-hover/btn:opacity-60 blur-md transition-all duration-500 will-change-transform"></div>
-            <ScheduleConsultationButton className="relative z-10 px-8 py-4 text-sm tracking-wide bg-gradient-to-r from-primary to-[#703b7b] hover:from-[#703b7b] hover:to-primary" />
-          </div>
+          <ScheduleConsultationButton />
         </motion.div>
       </div>
     </section>

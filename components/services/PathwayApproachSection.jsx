@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import SectionHeading from "@/components/SectionHeading";
 import { FloatingShapes, SubtleGrid } from "@/components/VectorDecorations";
 
 export default function PathwayApproachSection({ eyebrow = "Our Approach", title, items = [] }) {
@@ -22,12 +23,10 @@ export default function PathwayApproachSection({ eyebrow = "Our Approach", title
           transition={{ duration: 0.65 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <p className="text-[11px] uppercase tracking-[0.35em] text-primary font-semibold mb-4">
+          <p className="eyebrow">
             {eyebrow}
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
-            {title}
-          </h2>
+          <SectionHeading title={title} className="text-foreground" />
         </motion.div>
 
         {/* Approach Items */}
@@ -53,8 +52,8 @@ export default function PathwayApproachSection({ eyebrow = "Our Approach", title
                 <div className="h-px flex-1 bg-border group-hover:bg-primary/30 transition-colors duration-300" />
               </div>
 
-              <h3 className="text-xl font-bold text-foreground mb-3 tracking-tight">{item.title}</h3>
-              <p className="text-muted font-secondary text-[15px] leading-relaxed">{item.description}</p>
+              <h3 className="card-title mb-3">{item.title}</h3>
+              <p className="card-body leading-relaxed">{item.description}</p>
             </motion.div>
           ))}
         </div>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FloatingShapes, SubtleGrid } from "@/components/VectorDecorations";
+import SectionHeading from "@/components/SectionHeading";
 
 export default function PathwayServicesSection({ eyebrow = "Services", title, services = [], columns = 3 }) {
   const columnClass = columns === 2 
@@ -25,12 +26,10 @@ export default function PathwayServicesSection({ eyebrow = "Services", title, se
           transition={{ duration: 0.65 }}
           className="text-center max-w-2xl mx-auto mb-16"
         >
-          <p className="text-[11px] uppercase tracking-[0.35em] text-primary font-semibold mb-4">
+          <p className="eyebrow">
             {eyebrow}
           </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
-            {title}
-          </h2>
+          <SectionHeading title={title} className="text-foreground" />
         </motion.div>
 
         {/* Service Cards */}
@@ -68,8 +67,8 @@ export default function PathwayServicesSection({ eyebrow = "Services", title, se
                 </div>
               </div>
 
-              <h3 className="text-xl font-bold text-foreground mb-3 tracking-tight">{svc.title}</h3>
-              <p className="text-muted font-secondary text-[15px] leading-relaxed mb-6 flex-1">{svc.description}</p>
+              <h3 className="card-title mb-3">{svc.title}</h3>
+              <p className="card-body leading-relaxed mb-6 flex-1">{svc.description}</p>
 
               {/* CTA Link */}
               {svc.href && (

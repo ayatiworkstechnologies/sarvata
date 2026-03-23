@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function MissionSection({ title, highlight, paragraphs }) {
   return (
-    <section className="relative bg-emerald-50/30 py-32 md:py-48 overflow-hidden text-center flex items-center justify-center">
+    <section className="relative bg-emerald-50/30 py-24 md:py-32 overflow-hidden text-center flex items-center justify-center">
       {/* VIBRANT LIGHT GLOWS */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-emerald-500/10 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[400px] h-[400px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
@@ -16,11 +16,11 @@ export default function MissionSection({ title, highlight, paragraphs }) {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
         >
-          <p className="text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4 text-center">
+          <p className="eyebrow text-center">
             {title}
           </p>
           
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-light leading-tight text-foreground mb-12 tracking-tight max-w-4xl mx-auto">
+          <h2 className="heading-xl text-foreground mb-12 max-w-4xl mx-auto">
              {highlight.split('every day.').map((part, i, arr) => (
                 <span key={i}>
                   {part}
@@ -33,7 +33,7 @@ export default function MissionSection({ title, highlight, paragraphs }) {
           
           <div className="max-w-3xl mx-auto space-y-6">
             {paragraphs && paragraphs.map((p, idx) => (
-              <p key={idx} className="text-[18px] md:text-[21px] leading-relaxed text-muted font-light font-secondary">
+              <p key={idx} className="section-body leading-relaxed">
                 {p}
               </p>
             ))}

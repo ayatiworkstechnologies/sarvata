@@ -1,124 +1,78 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
-const DIFFERENTIATORS = [
-  {
-    title: "Grounded in Practice",
-    description:
-      "We’re educators who’ve lived the gap between vision and reality.",
-    icon: "/icon/1.svg",
-    accent: "var(--primary)",
-  },
-  {
-    title: "Systems Thinking",
-    description:
-      "We address culture, pedagogy, and operational systems together.",
-    icon: "/icon/2.svg",
-    accent: "#6366f1",
-  },
-  {
-    title: "Building Independence",
-    description: "Our goal is your capacity, not your dependency.",
-    icon: "/icon/3.svg",
-    accent: "var(--secondary)",
-  },
-  {
-    title: "Sustained Partnership",
-    description: "We support implementation, not just deliver workshops.",
-    icon: "/icon/4.svg",
-    accent: "var(--primary)",
-  },
-];
-
-export default function OurApproach() {
-  const targetRef = useRef(null);
-
+export default function ApproachHero() {
   return (
-    <section ref={targetRef} className="relative bg-white py-24 md:py-32">
+    <section className="relative overflow-hidden bg-white py-12 lg:py-20">
       <div className="container-max">
-        <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
-          {/* LEFT SIDE: Sticky Content (Our Approach) */}
-          <div className="w-full lg:w-5/12">
-            <div className="lg:sticky lg:top-32">
-              <span className="text-[11px] font-black uppercase tracking-[0.4em] text-primary mb-6 block">
+        {/* Changed items-center to items-stretch to sync heights */}
+        <div className="flex flex-col lg:flex-row items-stretch gap-12 lg:gap-24">
+          {/* LEFT: Cinematic Image Portal (Now Dynamic Height) */}
+          <motion.div
+            initial={{ opacity: 0, x: -40, rotateY: -10 }}
+            whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+            /* min-h-[450px] ensures it looks good on mobile 
+               lg:h-auto + flex-1 allows it to grow with the right-side text
+            */
+            className="relative w-full lg:flex-1 min-h-[450px] lg:h-auto rounded-[40px] overflow-hidden shadow-2xl border border-border"
+          >
+            <Image
+              src="/approach.jpg"
+              alt="Educators collaborating"
+              fill
+              className="object-cover transition-transform duration-1000 hover:scale-105"
+              priority
+            />
+            {/* Selective Vignette to ground the image */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60" />
+
+            {/* Top Industrial Accent */}
+            <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+          </motion.div>
+
+          {/* RIGHT: Narrative Focus */}
+          <div className="w-full lg:w-1/2 flex flex-col justify-center py-4">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="eyebrow text-primary mb-6 block">
                 Our Approach
               </span>
               <h2 className="heading-xl mb-8 leading-[1.1]">
                 Partnership, <br />
-                <span className="text-primary italic">Not Prescription</span>
+                <span className="text-primary italic font-bold text-gradient">
+                  Not Prescription
+                </span>
               </h2>
-              <p className="text-muted text-lg leading-relaxed mb-8 max-w-md">
+
+              <p className="section-body text-lg leading-relaxed text-muted mb-10">
                 We don’t arrive with generic solutions. We begin by
                 understanding your context, your goals, and your challenges. You
-                bring expertise in your community. We bring frameworks,
-                research, and external perspectives.
+                bring expertise in your community; we bring frameworks,
+                research, and external perspectives. We work alongside you to
+                ensure the systems we build are sustainable long after our
+                partnership ends.
               </p>
-              <div className="p-6 rounded-[var(--radius-lg)] bg-soft border border-border/50">
-                <p className="text-sm font-bold text-foreground italic">
+
+              <div className="p-8 rounded-[var(--radius-lg)] bg-soft border border-primary/10 relative overflow-hidden group">
+                <p className="text-base font-bold text-foreground italic leading-relaxed relative z-10">
                   "Together, we build approaches that are both aspirational and
                   realistic."
                 </p>
+                {/* Interactive background element */}
+                <div className="absolute top-0 right-0 h-32 w-32 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors duration-700" />
               </div>
-            </div>
-          </div>
-
-          {/* RIGHT SIDE: Differentation List */}
-          <div className="w-full lg:w-7/12">
-            <div className="mb-12">
-              <h3 className="text-2xl font-bold tracking-tight text-foreground uppercase border-b border-border pb-4 mb-8">
-                What Makes Us Different
-              </h3>
-              <div className="flex flex-col gap-6">
-                {DIFFERENTIATORS.map((item, i) => (
-                  <DifferentiatorCard key={i} item={item} index={i} />
-                ))}
-              </div>
-            </div>
-
-            {/* Large Display Image (Bottom Right) */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              className="relative h-64 w-full rounded-[var(--radius-lg)] overflow-hidden mt-12 grayscale hover:grayscale-0 transition-all duration-700 shadow-xl"
-            >
-              <Image
-                src="/approach.jpg"
-                alt="Partnership focus"
-                fill
-                className="object-cover"
-              />
             </motion.div>
           </div>
         </div>
       </div>
     </section>
-  );
-}
-
-function DifferentiatorCard({ item, index }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.1 }}
-      whileHover={{ scale: 1.02 }}
-      className="group flex gap-6 p-8 rounded-[var(--radius-md)] bg-white border border-border hover:border-primary/30 hover:shadow-lg transition-all"
-    >
-      <div className="flex-shrink-0">
-        <div className="h-14 w-14 rounded-2xl flex items-center justify-center bg-soft border border-border group-hover:bg-primary/5 transition-colors">
-          <Image src={item.icon} alt="" width={32} height={32} />
-        </div>
-      </div>
-      <div>
-        <h4 className="text-xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors">
-          {item.title}
-        </h4>
-        <p className="text-muted leading-relaxed">{item.description}</p>
-      </div>
-    </motion.div>
   );
 }

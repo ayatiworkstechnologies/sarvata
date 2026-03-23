@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import SectionHeading from "@/components/SectionHeading";
 
 export default function InsightSplitSection({
   title,
@@ -33,12 +34,10 @@ export default function InsightSplitSection({
           transition={{ duration: 0.6 }}
         >
           {/* TITLE */}
-          <h2 className="heading-lg text-lg sm:text-xl md:text-3xl">
-            {title}
-          </h2>
+          <SectionHeading title={title} />
 
           {/* INTRO */}
-          <p className="text-muted font-secondary text-sm sm:text-base max-w-xl mx-auto md:mx-0">
+          <p className="section-body max-w-xl mx-auto md:mx-0">
             {intro}
           </p>
 
@@ -47,7 +46,7 @@ export default function InsightSplitSection({
             {highlights.map((item, i) => (
               <div key={i} className="relative pl-5">
                 <span className="absolute left-0 top-2 w-2 h-px bg-secondary" />
-                <p className="font-secondary text-sm sm:text-base">
+                <p className="card-body">
                   {item}
                 </p>
               </div>
@@ -55,7 +54,7 @@ export default function InsightSplitSection({
           </div>
 
           {/* DESCRIPTION */}
-          <p className="text-muted font-secondary text-sm sm:text-base max-w-xl mx-auto md:mx-0 pt-2">
+          <p className="section-body max-w-xl mx-auto md:mx-0 pt-2">
             {description}
           </p>
 

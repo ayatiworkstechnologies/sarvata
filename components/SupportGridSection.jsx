@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-
+import SectionHeading from "@/components/SectionHeading";
 export default function SupportGridSection({
   eyebrow,
   title,
@@ -36,7 +36,7 @@ export default function SupportGridSection({
               {eyebrow}
             </span>
           )}
-          <h2 className="heading-xl">{title}</h2>
+          <SectionHeading title={title} />
         </motion.div>
 
         {/* ================= GRID ================= */}
@@ -79,7 +79,7 @@ export default function SupportGridSection({
 
               {/* CONTENT */}
               <div className="flex-1">
-                <h4 className="font-semibold text-2xl mb-3">
+                <h4 className="card-title mb-3">
                   {item.title}
                 </h4>
                 <p className="text-muted font-secondary leading-relaxed">

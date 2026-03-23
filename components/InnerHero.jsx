@@ -142,7 +142,7 @@ export default function InnerHero({
             </motion.h1>
 
             {subtitle && (
-               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.6 }} className="mt-4 text-[14px] leading-relaxed text-muted max-w-2xl font-medium md:text-[16px]">
+               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.6 }} className="mt-4 section-body text-muted max-w-2xl font-medium">
                   {subtitle}
                </motion.p>
             )}

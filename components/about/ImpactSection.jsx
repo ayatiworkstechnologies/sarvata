@@ -18,7 +18,7 @@ function AnimatedNumber({ value }) {
 
 export default function ImpactSection({ title, metrics }) {
   return (
-    <section className="relative bg-white py-24 md:py-40">
+    <section className="relative bg-white py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
@@ -29,10 +29,10 @@ export default function ImpactSection({ title, metrics }) {
             viewport={{ once: true }}
             className="lg:col-span-4"
           >
-            <h2 className="text-4xl md:text-5xl font-extralight text-slate-900 leading-[1.1] mb-6">
+            <h2 className="heading-xl text-slate-900 mb-6">
               Empowering <span className="text-primary font-medium italic">growth</span> at every scale.
             </h2>
-            <p className="text-slate-500 text-lg font-light leading-relaxed">
+            <p className="section-body">
               Our data reflects a commitment to transforming the educational landscape through inclusive practices and dedicated mentorship.
             </p>
           </motion.div>

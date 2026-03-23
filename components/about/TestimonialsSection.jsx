@@ -17,7 +17,7 @@ export default function TestimonialsSection({ title, testimonials }) {
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10">
 
-        <p className="text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-16 text-center">
+        <p className="eyebrow mb-16 text-center">
           {title}
         </p>
 
@@ -38,7 +38,7 @@ export default function TestimonialsSection({ title, testimonials }) {
                 </svg>
               </div>
 
-              <p className="text-[16px] md:text-[18px] font-secondary text-foreground leading-relaxed italic mb-8 flex-grow">
+              <p className="section-body text-foreground italic mb-8 flex-grow">
                 &quot;{t.quote}&quot;
               </p>
 

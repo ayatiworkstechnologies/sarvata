@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FloatingShapes, SubtleGrid } from "@/components/VectorDecorations";
+import SectionHeading from "@/components/SectionHeading";
 
 export default function PathwayChallengeSection({ eyebrow, title, paragraphs, accentColor = "primary" }) {
   return (
@@ -23,19 +24,17 @@ export default function PathwayChallengeSection({ eyebrow, title, paragraphs, ac
           transition={{ duration: 0.75 }}
           className="flex flex-col justify-center"
         >
-          <p className="text-[11px] uppercase tracking-[0.35em] text-primary font-semibold mb-5">
+          <p className="eyebrow mb-5">
             {eyebrow}
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold leading-[1.1] tracking-tight text-foreground mb-8">
-            {title}
-          </h2>
+          <SectionHeading title={title} className="text-foreground" />
 
           {/* Accent bar */}
           <div className="h-[3px] w-20 rounded-full bg-gradient-to-r from-primary to-secondary mb-8" />
 
           <div className="space-y-5">
             {paragraphs.map((p, i) => (
-              <p key={i} className="text-muted font-secondary leading-relaxed text-[17px]">
+              <p key={i} className="section-body leading-relaxed">
                 {p}
               </p>
             ))}

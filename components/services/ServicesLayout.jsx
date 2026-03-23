@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import ScheduleConsultationButton from "@/components/ScheduleConsultationButton";
+import AnimatedButton from "@/components/AnimatedButton";
+import SectionHeading from "@/components/SectionHeading";
 
 const services = [
   {
@@ -60,14 +62,11 @@ export default function ServicesLayout() {
             transition={{ duration: 0.7 }}
             className="text-center max-w-3xl mx-auto mb-20"
           >
-            <p className="text-[12px] uppercase tracking-[0.3em] text-primary font-semibold mb-4">
+            <p className="eyebrow">
               SERVICES
             </p>
-            <h2 className="heading-xl mb-6">
-              How We Support Your{" "}
-              <span className="text-gradient">Educational Community</span>
-            </h2>
-            <p className="text-xl text-muted font-secondary leading-relaxed">
+            <SectionHeading title="How We Support Your Educational Community" />
+            <p className="section-body leading-relaxed">
               We work with three interconnected communities to build truly
               learner-centered educational environments.
             </p>
@@ -97,12 +96,12 @@ export default function ServicesLayout() {
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-2xl font-bold text-foreground mb-4 tracking-tight">
+                    <h3 className="card-title mb-4 tracking-tight">
                       {service.audience}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-muted font-secondary text-base leading-relaxed mb-8 flex-grow">
+                    <p className="card-body leading-relaxed mb-8 flex-grow">
                       {service.description}
                     </p>
 
@@ -147,30 +146,22 @@ export default function ServicesLayout() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 tracking-tight">
-            Ready to <span className="text-gradient">Schedule Consultation?</span>
-          </h2>
-          <p className="text-muted font-secondary text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed">
+          <SectionHeading title="Ready to Schedule Consultation?" className="text-foreground" />
+          <p className="section-body max-w-2xl mx-auto mb-12 leading-relaxed">
             Take the first step toward building a truly learner-centered
             educational environment.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
-            <Link href="/services" className="btn btn-primary w-full sm:w-auto">
+            <AnimatedButton href="/services" className="w-full sm:w-auto" accentColor="var(--primary)">
               Download Services Guide
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
+            </AnimatedButton>
 
-            <ScheduleConsultationButton className="w-full sm:w-auto" />
+            <ScheduleConsultationButton className="w-full sm:w-auto" variant="secondary" />
 
-            <Link href="/contact" className="btn btn-outline w-full sm:w-auto">
+            <AnimatedButton href="/contact" className="w-full sm:w-auto" accentColor="#1e293b">
               Contact Us
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
+            </AnimatedButton>
           </div>
         </motion.div>
       </section>

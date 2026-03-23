@@ -15,10 +15,10 @@ export default function JourneySection({ title, intro, steps }) {
            transition={{ duration: 0.8 }}
            className="text-center max-w-3xl mx-auto mb-20 md:mb-32"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight text-foreground mb-6 tracking-tight">
+          <h2 className="heading-xl text-foreground mb-6">
             {title}
           </h2>
-          <p className="text-[18px] md:text-[20px] leading-relaxed text-muted font-secondary">
+          <p className="section-body">
             {intro}
           </p>
         </motion.div>
@@ -59,10 +59,10 @@ export default function JourneySection({ title, intro, steps }) {
 
                   {/* Content Box */}
                   <div className={`w-full md:w-1/2 ${isEven ? 'md:text-right md:pr-12' : 'md:text-left md:pl-12'}`}>
-                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                    <h3 className="heading-lg text-foreground mb-4">
                       {step.title}
                     </h3>
-                    <p className="text-muted font-secondary leading-relaxed text-[17px]">
+                    <p className="section-body leading-relaxed">
                       {step.desc}
                     </p>
                   </div>

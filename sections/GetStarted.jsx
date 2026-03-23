@@ -1,15 +1,18 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useConsultation } from "@/context/ConsultationContext";
+import AnimatedButton from "@/components/AnimatedButton";
+import SectionHeading from "@/components/SectionHeading";
 import { SubtleGrid } from "@/components/VectorDecorations";
 
 export default function GetStarted() {
   const { openModal } = useConsultation();
 
   return (
-    <section className="relative overflow-hidden bg-white py-20 md:py-32">
+    <section className="relative overflow-hidden bg-white">
       <SubtleGrid />
 
       <div className="container-max relative z-10">
@@ -51,70 +54,47 @@ export default function GetStarted() {
               </motion.div>
 
               {/* Headline */}
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white leading-[0.95] mb-6">
-                Ready to transform <br />
-                <span className="text-secondary italic font-light">
-                  your community?
-                </span>
-              </h2>
+              <SectionHeading title="Ready to transform your community?" light className="text-white" />
 
               {/* Description */}
-              <p className="text-lg md:text-xl text-white/70 leading-relaxed mb-12 max-w-lg font-light">
+              <p className="section-body text-white/70 leading-relaxed mb-12 max-w-lg">
                 Wherever you are in your journey, we&apos;re ready to meet you
                 there with tailored, actionable support that builds capacity
                 from within.
               </p>
 
-              {/* CTA BUTTON - Industrial Glass Style */}
-              <button
-                onClick={openModal}
-                className="group relative inline-flex items-center gap-6 rounded-2xl bg-white px-10 py-6 text-black transition-all duration-500 hover:bg-secondary hover:scale-[1.02] active:scale-[0.98] shadow-2xl"
-              >
-                <div className="flex flex-col items-start">
-                  <span className="text-[10px] uppercase tracking-[0.2em] font-bold opacity-50">
-                    Inquiry
-                  </span>
-                  <span className="text-lg font-black tracking-tight leading-none">
-                    Schedule Consultation
-                  </span>
-                </div>
+              {/* 3 ACTION BUTTONS */}
+              <div className="flex flex-wrap items-center gap-4">
+                {/* Learn about our services */}
+                <AnimatedButton
+                  href="/services"
+                  accentColor="#703b7b"
+                >
+                  Learn about our services
+                </AnimatedButton>
 
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-black/5 group-hover:bg-black/10 transition-transform duration-500 group-hover:rotate-90">
-                  <svg
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="3"
-                  >
-                    <path
-                      d="M5 12h14M12 5l7 7-7 7"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </div>
-              </button>
+                {/* Schedule a consultation */}
+                <AnimatedButton
+                  onClick={openModal}
+                  accentColor="#a066aa"
+                >
+                  Schedule a consultation
+                </AnimatedButton>
+
+                {/* Contact us */}
+                <AnimatedButton
+                  href="/contact"
+                  accentColor="#1e293b"
+                >
+                  Contact us
+                </AnimatedButton>
+              </div>
             </div>
           </div>
 
           {/* 3. DECORATIVE TOP LINE */}
           <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/30 to-transparent" />
         </motion.div>
-
-        {/* BOTTOM METRIC BAR (Subtle Credibility) */}
-        <div className="mt-12 flex flex-wrap justify-center gap-12 opacity-40 grayscale pointer-events-none">
-          <p className="text-xs font-bold uppercase tracking-widest text-foreground">
-            50+ Institutions
-          </p>
-          <p className="text-xs font-bold uppercase tracking-widest text-foreground">
-            India-Wide Reach
-          </p>
-          <p className="text-xs font-bold uppercase tracking-widest text-foreground">
-            Research Backed
-          </p>
-        </div>
       </div>
     </section>
   );
