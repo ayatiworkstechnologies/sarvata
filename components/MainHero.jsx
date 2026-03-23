@@ -49,7 +49,7 @@ export default function MainHero({
 
       {/* Main Content */}
       <div className="absolute inset-0 flex items-end justify-start">
-        <div className="px-8 pb-12 md:pb-16 text-left">
+        <div className="container-max w-full pb-12 md:pb-16 text-left">
           <div className="max-w-4xl relative z-10 w-full text-left">
             {title && (
               <motion.h1

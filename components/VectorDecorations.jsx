@@ -1,10 +1,28 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export const FloatingShapes = () => {
   return (
-    <div className="pointer-events-none absolute inset-0 overflow-hidden z-0 opacity-20">
+    <div className="pointer-events-none absolute inset-0 overflow-hidden z-0 opacity-[0.15]">
+      {/* Brand Watermarks */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.06 }}
+        transition={{ duration: 2 }}
+        className="absolute -top-[10%] -left-[10%] w-[600px] h-[600px] md:w-[800px] md:h-[800px] rotate-[-15deg]"
+      >
+        <Image src="/logo.png" alt="" fill className="object-contain" />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.04 }}
+        transition={{ duration: 2, delay: 1 }}
+        className="absolute top-[40%] -right-[20%] w-[500px] h-[500px] rotate-[10deg]"
+      >
+        <Image src="/logo.png" alt="" fill className="object-contain" />
+      </motion.div>
       {/* Soft Blobs */}
       <motion.div
         animate={{
@@ -56,9 +74,9 @@ export const FloatingShapes = () => {
 export const SubtleGrid = () => {
   return (
     <div 
-      className="pointer-events-none absolute inset-0 z-0 opacity-[0.02]" 
+      className="pointer-events-none absolute inset-0 z-0 opacity-[0.06]" 
       style={{ 
-        backgroundImage: `linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)`, 
+        backgroundImage: `linear-gradient(#E2C473 1px, transparent 1px), linear-gradient(90deg, #E2C473 1px, transparent 1px)`, 
         backgroundSize: '60px 60px' 
       }} 
     />

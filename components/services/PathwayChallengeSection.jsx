@@ -3,8 +3,9 @@
 import { motion } from "framer-motion";
 import { FloatingShapes, SubtleGrid } from "@/components/VectorDecorations";
 import SectionHeading from "@/components/SectionHeading";
+import Image from "next/image";
 
-export default function PathwayChallengeSection({ eyebrow, title, paragraphs, accentColor = "primary" }) {
+export default function PathwayChallengeSection({ eyebrow, title, paragraphs, accentColor = "primary", image }) {
   return (
     <section className="relative bg-white overflow-hidden py-20 md:py-28">
       {/* Background decoration */}
@@ -49,22 +50,15 @@ export default function PathwayChallengeSection({ eyebrow, title, paragraphs, ac
           transition={{ duration: 0.75, delay: 0.1 }}
           className="relative"
         >
-          <div className="relative rounded-[2rem] bg-soft-bg border border-border/60 p-8 md:p-10 overflow-hidden">
-            {/* Inner glow */}
-            <div className="pointer-events-none absolute -top-16 -right-16 w-56 h-56 rounded-full bg-primary/10 blur-[60px]" />
-            <div className="pointer-events-none absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-secondary/15 blur-[60px]" />
-
-            <div className="relative z-10">
-              {/* Big decorative quote mark */}
-              <div className="text-[120px] leading-none font-bold text-primary/10 select-none mb-2">&quot;</div>
-              <p className="text-xl md:text-2xl font-semibold text-foreground leading-snug tracking-tight -mt-10">
-                The goal is not to cover the curriculum, it is to uncover the learner.
-              </p>
-              <div className="mt-6 h-px w-full bg-border" />
-              <p className="mt-5 text-sm text-muted font-secondary">
-                Sarvata Educational Consultancy
-              </p>
-            </div>
+          <div className="relative aspect-[4/5] lg:aspect-square overflow-hidden rounded-[40px] shadow-2xl border-[10px] border-white">
+            <Image
+              src={image || "/approach.jpg"}
+              alt={title || "Pathway Challenge"}
+              fill
+              className="object-cover transition-transform duration-1000 group-hover:scale-105"
+            />
+            {/* Ambient Shine Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent opacity-60 pointer-events-none" />
           </div>
         </motion.div>
       </div>

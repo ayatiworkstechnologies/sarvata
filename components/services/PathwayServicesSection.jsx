@@ -7,82 +7,89 @@ import SectionHeading from "@/components/SectionHeading";
 
 export default function PathwayServicesSection({ eyebrow = "Services", title, services = [], columns = 3 }) {
   const columnClass = columns === 2 
-    ? "lg:w-[calc(50%-1rem)]" 
-    : "lg:w-[calc(33.333%-1.5rem)]";
+    ? "md:w-[calc(50%-1rem)]" 
+    : "md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]";
 
   return (
-    <section className="relative bg-white overflow-hidden py-20 md:py-28">
+    <section className="relative bg-white overflow-hidden py-24 md:py-32">
       {/* Background decoration */}
-      <SubtleGrid />
+      <div
+        className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(circle at 2px 2px, #a066aa 1px, transparent 0)`,
+          backgroundSize: "32px 32px",
+        }}
+      />
       <FloatingShapes />
-      <div className="pointer-events-none absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-secondary/10 blur-[100px]" />
+      <div className="pointer-events-none absolute top-0 right-0 w-[400px] h-[400px] rounded-full bg-secondary/5 blur-[100px]" />
 
       <div className="container-max relative z-10">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.65 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+           initial={{ opacity: 0, x: -30 }}
+           whileInView={{ opacity: 1, x: 0 }}
+           viewport={{ once: true }}
+           className="max-w-2xl mb-16 md:mb-24"
         >
-          <p className="eyebrow">
+          <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#a066aa] mb-6 block">
             {eyebrow}
           </p>
-          <SectionHeading title={title} className="text-foreground" />
+          <SectionHeading title={title} className="text-slate-900 leading-[1.1] tracking-tight" />
         </motion.div>
 
         {/* Service Cards */}
-        <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
+        <div className="flex flex-wrap justify-start gap-6 lg:gap-8">
           {services.map((svc, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 34 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`group relative w-full md:w-[calc(50%-1rem)] ${columnClass} max-w-md rounded-[2rem] border border-border/60 bg-soft-bg p-8 lg:p-9 overflow-hidden
-                         hover:shadow-2xl hover:border-transparent hover:-translate-y-2 transition-all duration-500 flex flex-col`}
+              transition={{ duration: 0.8, delay: i * 0.15, ease: [0.21, 1, 0.36, 1] }}
+              className={`group relative w-full ${columnClass} h-full`}
             >
-              {/* Hover accent glow */}
-              <div className="pointer-events-none absolute -top-16 -right-16 w-40 h-40 rounded-full bg-primary/12 blur-[60px] opacity-0 group-hover:opacity-100 transition-opacity duration-600" />
+              <div className="relative h-full p-8 lg:p-12 rounded-[40px] border border-slate-200 bg-white transition-all duration-700 hover:shadow-2xl overflow-hidden flex flex-col">
+                {/* Background Number Accent */}
+                <span className="absolute -bottom-4 -right-2 text-[120px] font-black text-slate-50 select-none group-hover:text-[#a066aa]/5 transition-colors duration-700 pointer-events-none">
+                  0{i + 1}
+                </span>
 
-              {/* Service icon / number badge */}
-              <div className="flex items-start justify-between mb-6">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                  {svc.icon ? (
-                    <span className="text-primary text-xl">{svc.icon}</span>
-                  ) : (
-                    <span className="text-primary font-bold text-sm">{String(i + 1).padStart(2, "0")}</span>
+                <div className="relative z-10 flex flex-col h-full">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 leading-tight pr-12">
+                    {svc.title}
+                  </h3>
+
+                  <p className="text-slate-500 text-base lg:text-lg leading-relaxed mb-12 flex-grow font-light">
+                    {svc.description}
+                  </p>
+
+                  {svc.href && (
+                    <Link
+                      href={svc.href}
+                      className="group/link inline-flex items-center gap-4 w-fit mt-auto"
+                    >
+                      <div className="h-10 w-10 rounded-full border border-slate-200 flex items-center justify-center group-hover/link:bg-[#a066aa] group-hover/link:border-[#a066aa] transition-all duration-300">
+                        <svg
+                          className="w-4 h-4 text-slate-400 group-hover/link:text-white transition-colors"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2.5"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          />
+                        </svg>
+                      </div>
+                      <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 group-hover/link:text-[#a066aa] transition-colors">
+                        {svc.cta || "Learn More"}
+                      </span>
+                    </Link>
                   )}
                 </div>
-
-                {/* Arrow indicator */}
-                <div className="w-8 h-8 rounded-full border border-border flex items-center justify-center
-                               group-hover:border-primary group-hover:bg-primary group-hover:text-white
-                               transition-all duration-300">
-                  <svg className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
-                  </svg>
-                </div>
               </div>
-
-              <h3 className="card-title mb-3">{svc.title}</h3>
-              <p className="card-body leading-relaxed mb-6 flex-1">{svc.description}</p>
-
-              {/* CTA Link */}
-              {svc.href && (
-                <Link
-                  href={svc.href}
-                  className="inline-flex items-center gap-2 text-primary font-semibold text-sm
-                             group-hover:gap-3 transition-all duration-300"
-                >
-                  {svc.cta || "Learn More"}
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              )}
             </motion.div>
           ))}
         </div>

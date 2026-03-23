@@ -36,7 +36,7 @@ export default function Hero() {
 
   return (
     <section className="relative w-full overflow-hidden h-screen">
-      <div className="pointer-events-none absolute top-0 left-0 w-full h-screen z-20 flex items-end justify-between p-6 pb-32 md:p-14 md:pb-12">
+      <div className="pointer-events-none absolute top-0 inset-0 container-max mx-auto w-full h-screen z-20 flex items-start md:items-end justify-between pt-40 md:pt-0 pb-12 md:pb-24">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -56,11 +56,10 @@ export default function Hero() {
           </motion.p> */}
           <motion.h1 
             variants={{ hidden: { opacity: 0, y: 25 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } } }}
-            className="text-3xl font-bold leading-[1.15] text-white md:text-[42px] lg:text-[54px] tracking-tight mb-2 md:mb-4"
+            className="text-2xl font-bold leading-[1.15] text-white md:text-4xl lg:text-[46px] tracking-tight mb-2 md:mb-4"
           >
-            <span className="text-[#E2C473] drop-shadow-sm inline-block">Transforming</span> <br />
-            <span className="inline-block mt-2">Educators & Schools,</span><br />
-            <span className="font-extrabold text-[#10b981] drop-shadow-sm inline-block mt-1">Every Day.</span>
+            <span className="text-[#E2C473] drop-shadow-sm inline-block uppercase">Transforming</span> <br />
+            <span className="inline-block mt-2 font-extrabold text-[#10b981] drop-shadow-sm uppercase">Educators & Schools, Every Day.</span>
           </motion.h1>
           <motion.p 
             variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } } }}
@@ -97,10 +96,6 @@ export default function Hero() {
 
       {/* OVERLAY & BACKGROUND ACCENTS */}
       <div className="absolute inset-0 bg-black/40 z-10" />
-      <div 
-        className="absolute inset-0 z-10 opacity-[0.08] pointer-events-none" 
-        style={{ backgroundImage: "linear-gradient(#E2C473 1px, transparent 1px), linear-gradient(90deg, #E2C473 1px, transparent 1px)", backgroundSize: "40px 40px" }} 
-      />
       <motion.div 
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 0.08, scale: 1 }}

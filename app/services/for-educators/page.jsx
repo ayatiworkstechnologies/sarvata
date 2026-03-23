@@ -50,6 +50,7 @@ export default function EducatorsPage() {
       {/* ── THE CHALLENGE ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="The Challenge"
+        image="/approach.jpg"
         // title="Responsive Teaching Is Exhausting Without the Right Structures"
         paragraphs={[
           "You're already responding to diverse learners - the student who finishes early, the one who struggles with pace, the creative thinker whose brilliance doesn't fit the test. The challenge is making it sustainable.",
@@ -61,6 +62,7 @@ export default function EducatorsPage() {
       {/* ── OUR APPROACH ────────────────────────────────────────── */}
       <PathwayApproachSection
         eyebrow="Our Approach"
+        image="/about-web.jpg"
         title="From Intuitive Response to Sustainable, Structured Practice"
         items={[
           {

@@ -50,6 +50,7 @@ export default function LeadersPage() {
       {/* ── THE CHALLENGE ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="The Leadership Challenge"
+        image="/about-web.jpg"
         // title="Holding Competing Imperatives with Clarity & Conviction"
         paragraphs={[
           "In your hands rests not just an institution, but the promise of tomorrow. As school leaders, you stand at the crossroads of powerful and often competing imperatives.",
@@ -61,6 +62,7 @@ export default function LeadersPage() {
       {/* ── OUR APPROACH ────────────────────────────────────────── */}
       <PathwayApproachSection
         eyebrow="Our Approach"
+        image="/approach.jpg"
         title="Partnership, Not Prescription"
         items={[
           {

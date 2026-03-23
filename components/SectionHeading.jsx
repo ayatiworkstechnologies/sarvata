@@ -14,9 +14,11 @@ import React from "react";
  *  - light: boolean (if true, uses a lighter gradient suitable for dark backgrounds)
  */
 export default function SectionHeading({ title, children, className = "", light = false }) {
+  const baseClasses = `text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-8 leading-[1.05] tracking-tight ${className}`;
+
   if (children) {
     return (
-      <h2 className={`heading-xl mb-8 leading-[1.1] ${className}`}>
+      <h2 className={baseClasses}>
         {children}
       </h2>
     );
@@ -37,16 +39,16 @@ export default function SectionHeading({ title, children, className = "", light 
        firstPart = words[0];
        secondPart = words[1];
     } else {
-       return <h2 className={`heading-xl mb-8 leading-[1.1] ${className}`}>{title}</h2>;
+       return <h2 className={baseClasses}>{title}</h2>;
     }
 
     const spanClass = light 
-      ? "text-secondary italic font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#e0c4e8] to-white" 
-      : "text-primary italic font-bold text-gradient";
+      ? "text-secondary italic font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#e0c4e8] to-white lg:leading-tight" 
+      : "text-primary italic font-bold text-gradient lg:leading-tight";
 
     return (
-      <h2 className={`heading-xl mb-8 leading-[1.1] ${className}`}>
-        {firstPart} <br />
+      <h2 className={baseClasses}>
+        {firstPart} <br className="hidden sm:block" />
         <span className={spanClass}>
           {secondPart}
         </span>

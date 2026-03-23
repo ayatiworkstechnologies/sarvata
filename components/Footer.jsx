@@ -58,8 +58,7 @@ export default function Footer() {
                 </div>
 
                 <p className="mt-8 max-w-md text-[17px] leading-8 text-muted">
-                  Empowering educators, school leaders, and families with clear,
-                  structured, and actionable learning support.
+                  Sarvata Educational Consultancy partners directly with educators, school leaders, and families to design actionable, lasting improvements for your unique learning environments.
                 </p>
               </div>
 

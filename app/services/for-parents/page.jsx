@@ -50,6 +50,7 @@ export default function ParentsPage() {
       {/* ── THE CHALLENGE ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="Navigating Education, Together"
+        image="/about.jpg"
         // title="You Champion Your Child's Potential - We Help You Understand It"
         paragraphs={[
           "You celebrate your child's strengths, navigate their challenges, and champion their unique potential. This journey can feel complex, especially when supporting diverse learning needs.",
@@ -59,9 +60,10 @@ export default function ParentsPage() {
       />
 
       {/* ── OUR APPROACH ────────────────────────────────────────── */}
-      {/* <PathwayApproachSection
+      <PathwayApproachSection
         eyebrow="How We Work With You"
         title="Understanding, Empowering, Advocating"
+        image="/approach.jpg"
         items={[
           {
             title: "Understanding Your Child",
@@ -79,7 +81,7 @@ export default function ParentsPage() {
               "Strategies to foster open communication with educators and build a strong, collaborative partnership between home and school.",
           },
         ]}
-      /> */}
+      />
 
       {/* ── SERVICES ────────────────────────────────────────────── */}
       <PathwayServicesSection

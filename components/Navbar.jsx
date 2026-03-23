@@ -46,8 +46,8 @@ export default function Header() {
         <div className="px-4 pt-4 md:px-6 lg:px-8">
           <div
             className={`mx-auto max-w-7xl rounded-2xl transition-all duration-300 ${scrolled
-              ? "bg-white/80 backdrop-blur-2xl shadow-[0_12px_40px_rgba(15,23,42,0.08)] ring-1 ring-black/5"
-              : "bg-white/65 backdrop-blur-xl ring-1 ring-white/40"
+              ? "bg-white shadow-[0_12px_40px_rgba(15,23,42,0.08)] ring-1 ring-black/5"
+              : "bg-white ring-1 ring-black/5 shadow-sm"
               }`}
           >
             <div className="flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
