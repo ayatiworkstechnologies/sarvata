@@ -5,6 +5,7 @@ import PhilosophySection from "@/components/about/PhilosophySection";
 import JourneySection from "@/components/about/JourneySection";
 import TestimonialsSection from "@/components/about/TestimonialsSection";
 import ImpactSection from "@/components/about/ImpactSection";
+import ResearchFoundation from "@/components/about/ResearchFoundation";
 
 export const metadata = {
   title: "About Sarvata - Our Story, Mission & Philosophy",
@@ -24,7 +25,9 @@ export const metadata = {
       "Discover why Sarvata exists: to bridge the gap between aspirational pedagogy and daily classroom practice, empowering every learner's unique potential.",
     url: "https://sarvata.in/about",
     siteName: "Sarvata",
-    images: [{ url: "/og-about.jpg", width: 1200, height: 630, alt: "About Sarvata" }],
+    images: [
+      { url: "/og-about.jpg", width: 1200, height: 630, alt: "About Sarvata" },
+    ],
     type: "website",
   },
   twitter: {
@@ -77,7 +80,7 @@ export default function AboutPage() {
             title: "Expanding Learner Agency",
             desc: `Personalization isn’t about optimizing a single pathway for each student. It’s about creating multiple pathways and progressively giving learners choice over which route they take.
 
-When students experience genuine autonomy in how they explore a concept, many often demonstrate stronger intrinsic motivation. This doesn’t mean eliminating structure. It means building agency as competence develops.`
+When students experience genuine autonomy in how they explore a concept, many often demonstrate stronger intrinsic motivation. This doesn’t mean eliminating structure. It means building agency as competence develops.`,
           },
           {
             title: "Guiding the Internal Environment",
@@ -93,6 +96,10 @@ This mentorship dimension helps students understand not just what they learn but
         researchTitle="Research Foundation"
         researchText="These principles draw from decades of research in metacognition, self-determination theory, and expertise development. We also acknowledge reality: implementation varies by context, developmental stage matters, and real-world constraints shape what’s possible. Our role is helping schools navigate that complexity."
       />
+      <ResearchFoundation
+        researchTitle="Research Foundation"
+        researchText="These principles draw from decades of research in metacognition, self-determination theory, and expertise development. We also acknowledge reality: implementation varies by context, developmental stage matters, and real-world constraints shape what’s possible. Our role is helping schools navigate that complexity."
+      />
 
       <JourneySection
         title="Our Collaborative Journey"
@@ -101,14 +108,17 @@ This mentorship dimension helps students understand not just what they learn but
           {
             title: "Phase 1: Understand Your Context",
             desc: "We begin by learning from you. What are your goals? What's working? Where's the friction between aspiration and reality? This isn't a generic audit. It's a genuine discovery of your unique culture, constraints, and aspirations - what you're building toward and what's standing in the way.",
+            image: "/approach.jpg",
           },
           {
             title: "Phase 2: Co-Create Solutions",
             desc: "We adapt frameworks to your context and co-develop materials with your team. You bring deep expertise in your students and setting. We bring additional perspectives, research-informed strategies, and tools refined across diverse contexts. Together, we create approaches that fit your reality, not a template.",
+            image: "/approach.jpg",
           },
           {
             title: "Phase 3: Build Sustainability",
             desc: "We develop your internal capacity by mentoring teacher leaders, embedding practices into your daily routines, and creating structures that sustain themselves. Success means the approaches become how you naturally operate - part of your culture, not an initiative.",
+            image: "/approach.jpg",
           },
         ]}
       />
@@ -116,9 +126,21 @@ This mentorship dimension helps students understand not just what they learn but
       <TestimonialsSection
         title="What Our Community Says"
         testimonials={[
-          { quote: "Sarvata helped us see our daughter's potential beyond the challenges she was facing at school. The insights we gained changed how we support her at home and how her teachers understand her.", author: "Meera K., Parent" },
-          { quote: "The transition to middle school was overwhelming for our son. Sarvata provided the clarity and strategies we needed to navigate the system and boost his confidence as a learner.", author: "Rajiv S., Parent" },
-          { quote: "Finally, we found a path that values our child's unique way of thinking. The psychological support combined with academic insights made all the difference.", author: "Ananya M., Parent" },
+          {
+            quote:
+              "Sarvata helped us see our daughter's potential beyond the challenges she was facing at school. The insights we gained changed how we support her at home and how her teachers understand her.",
+            author: "Meera K., Parent",
+          },
+          {
+            quote:
+              "The transition to middle school was overwhelming for our son. Sarvata provided the clarity and strategies we needed to navigate the system and boost his confidence as a learner.",
+            author: "Rajiv S., Parent",
+          },
+          {
+            quote:
+              "Finally, we found a path that values our child's unique way of thinking. The psychological support combined with academic insights made all the difference.",
+            author: "Ananya M., Parent",
+          },
         ]}
       />
 

@@ -1,81 +1,146 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
+import { useRef } from "react";
+import Image from "next/image";
 
-export default function JourneySection({ title, intro, steps }) {
+export default function JourneySection({ title, intro, steps, image }) {
+  const containerRef = useRef(null);
+
+  // Track scroll for the center animated drawing line
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start center", "end center"],
+  });
+
+  // Smooth out the line drawing effect
+  const pathLength = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   return (
-    <section className="relative bg-white py-24 md:py-32 overflow-hidden border-t border-border/50">
-      <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-10">
-        
-        {/* HEADER */}
+    <section
+      ref={containerRef}
+      className="relative bg-white py-24 md:py-40 overflow-hidden"
+    >
+      <div className="container-max relative z-10">
+        {/* --- HEADER --- */}
         <motion.div
-           initial={{ opacity: 0, y: 30 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true, margin: "-100px" }}
-           transition={{ duration: 0.8 }}
-           className="text-center max-w-3xl mx-auto mb-20 md:mb-32"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center max-w-3xl mx-auto mb-24 md:mb-40"
         >
-          <h2 className="heading-xl text-foreground mb-6">
+          <span className="eyebrow text-primary mb-6 block">Our Process</span>
+          <h2 className="heading-xl text-foreground mb-8 tracking-tight">
             {title}
           </h2>
-          <p className="section-body">
+          <p className="section-body text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
             {intro}
           </p>
         </motion.div>
 
-        {/* TIMELINE */}
-        <div className="relative max-w-4xl mx-auto">
-          {/* Vertical Line Desktop */}
-          <div className="absolute left-[28px] md:left-1/2 top-4 bottom-4 w-1 bg-gradient-to-b from-primary/20 via-primary/40 to-transparent md:-translate-x-1/2 hidden md:block rounded-full" />
+        {/* --- TIMELINE TRACK --- */}
+        <div className="relative max-w-6xl mx-auto">
+          {/* Animated Center Line (Desktop) */}
+          <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-slate-100 -translate-x-1/2 hidden md:block">
+            <motion.div
+              style={{ scaleY: pathLength, transformOrigin: "top" }}
+              className="absolute inset-0 bg-primary shadow-[0_0_20px_rgba(160,102,170,0.4)]"
+            />
+          </div>
 
-          {/* Vertical Line Mobile */}
-          <div className="absolute left-[25px] top-4 bottom-4 w-1 bg-gradient-to-b from-primary/20 via-primary/40 to-transparent md:hidden block rounded-full" />
-
-
-          <div className="space-y-16 md:space-y-32">
+          <div className="space-y-32 md:space-y-56">
             {steps.map((step, i) => {
               const isEven = i % 2 === 0;
               return (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.8 }}
-                  className={`relative flex flex-col md:flex-row items-center gap-8 md:gap-16 pl-16 md:pl-0 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                >
-                  
-                  {/* Timeline Dot (Desktop & Mobile Unified relative to line) */}
-                  <div className={`absolute md:left-1/2 top-0 left-0 md:-translate-x-1/2 md:-translate-y-0 w-[50px] h-[50px] md:w-16 md:h-16 flex items-center justify-center pointer-events-none`}>
-                     <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-white border-4 border-white flex items-center justify-center relative shadow-xl z-10">
-                       <span className="text-primary font-secondary font-bold text-sm md:text-lg">0{i + 1}</span>
-                       <motion.div 
-                          animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0, 0.3] }}
-                          transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut", delay: i * 0.5 }}
-                          className="absolute inset-0 rounded-full border border-primary/50" 
-                       />
-                     </div>
-                  </div>
+                <div key={i} className="relative">
+                  <div
+                    className={`flex flex-col md:flex-row items-center gap-12 md:gap-24 ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}
+                  >
+                    {/* 1. TEXT CONTENT COLUMN */}
+                    <motion.div
+                      initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                      className="w-full md:w-1/2"
+                    >
+                      <div
+                        className={`flex flex-col ${isEven ? "md:items-end md:text-right" : "md:items-start md:text-left"}`}
+                      >
+                        <div className="flex items-center gap-4 mb-6">
+                          {!isEven && (
+                            <span className="text-4xl font-black text-primary/20 tabular-nums">
+                              0{i + 1}
+                            </span>
+                          )}
+                          <div className="h-[2px] w-12 bg-primary/20" />
+                          {isEven && (
+                            <span className="text-4xl font-black text-primary/20 tabular-nums">
+                              0{i + 1}
+                            </span>
+                          )}
+                        </div>
+                        <h3 className="text-3xl md:text-5xl font-bold text-foreground mb-6 leading-[1.1] tracking-tighter">
+                          {step.title}
+                        </h3>
+                        <p className="text-muted-foreground text-lg md:text-xl leading-relaxed font-light max-w-lg">
+                          {step.desc}
+                        </p>
+                      </div>
+                    </motion.div>
 
-                  {/* Content Box */}
-                  <div className={`w-full md:w-1/2 ${isEven ? 'md:text-right md:pr-12' : 'md:text-left md:pl-12'}`}>
-                    <h3 className="heading-lg text-foreground mb-4">
-                      {step.title}
-                    </h3>
-                    <p className="section-body leading-relaxed">
-                      {step.desc}
-                    </p>
-                  </div>
+                    {/* 2. CENTER NODE (Desktop Anchor) */}
+                    <div className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-0 hidden md:flex items-center justify-center z-20">
+                      <motion.div
+                        initial={{ scale: 0, rotate: -45 }}
+                        whileInView={{ scale: 1, rotate: 0 }}
+                        viewport={{ once: true }}
+                        className="w-14 h-14 rounded-2xl bg-white border border-border flex items-center justify-center shadow-2xl"
+                      >
+                        <div className="w-3 h-3 rounded-full bg-primary animate-pulse" />
+                      </motion.div>
+                    </div>
 
-                  {/* Empty Spacer */}
-                  <div className="hidden md:block w-1/2" />
-                  
-                </motion.div>
+                    {/* 3. IMAGE COLUMN: Cinematic Feature */}
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9, x: isEven ? 50 : -50 }}
+                      whileInView={{ opacity: 1, scale: 1, x: 0 }}
+                      viewport={{ once: true, margin: "-100px" }}
+                      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                      className="w-full md:w-1/2"
+                    >
+                      <div className="relative aspect-[4/3] rounded-[48px] overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.1)] group border border-border bg-soft">
+                        <Image
+                          src={step.image || `/approach.jpg`}
+                          alt={step.title}
+                          fill
+                          className="object-cover transition-transform duration-1000 group-hover:scale-105"
+                        />
+                        {/* High-End Glass Label */}
+                        <div className="absolute bottom-8 left-8 right-8">
+                          <div className="p-6 rounded-3xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl">
+                            <p className="text-white text-[10px] font-black uppercase tracking-[0.3em] leading-none mb-2 opacity-60">
+                              Phase Segment
+                            </p>
+                            <p className="text-white font-bold tracking-tight">
+                              Deployment Framework 0{i + 1}
+                            </p>
+                          </div>
+                        </div>
+                        {/* Ambient Shine Overlay */}
+                        <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                      </div>
+                    </motion.div>
+                  </div>
+                </div>
               );
             })}
           </div>
         </div>
-
       </div>
     </section>
   );
