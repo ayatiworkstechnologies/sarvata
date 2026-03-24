@@ -113,7 +113,7 @@ export default function Header() {
                 <button
                   type="button"
                   onClick={openModal}
-                  className="inline-flex items-center justify-center rounded-full bg-foreground px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-black/10 transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary"
+                  className="btn btn-primary !h-11 !px-6 !py-0 !min-h-0 text-sm shadow-lg shadow-primary/20"
                 >
                   Schedule Consultation
                 </button>
@@ -223,16 +223,16 @@ export default function Header() {
                     </div>
 
                     <div className="pt-4">
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setMenuOpen(false);
-                          openModal();
-                        }}
-                        className="inline-flex w-full items-center justify-center rounded-full bg-foreground px-5 py-3 text-sm font-semibold text-white transition-all duration-300 hover:bg-primary"
-                      >
-                        Schedule Consultation
-                      </button>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setMenuOpen(false);
+                            openModal();
+                          }}
+                          className="btn btn-primary w-full shadow-lg shadow-primary/20"
+                        >
+                          Schedule Consultation
+                        </button>
                     </div>
                   </div>
                 </motion.div>

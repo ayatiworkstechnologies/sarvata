@@ -67,11 +67,11 @@ export default function InsightsGuidancePage() {
             </h2>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {services.map((item, i) => {
               const Icon = [GraduationCap, HeartPulse, Compass][i] || Compass;
               return (
-                <div key={i} className="bg-white group w-full max-w-sm p-8 rounded-[1.75rem] border border-border/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center">
+                <div key={i} className="bg-white h-full group p-8 rounded-[1.75rem] border border-border/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center">
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 ring-1 ring-primary/20 shadow-inner group-hover:bg-primary group-hover:text-white group-hover:rotate-6 transition-all duration-500">
                     <Icon className="w-8 h-8 text-primary group-hover:text-white transition-colors duration-500" strokeWidth={1.5} />
                   </div>

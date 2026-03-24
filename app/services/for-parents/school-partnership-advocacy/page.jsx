@@ -135,9 +135,9 @@ export default function SchoolPartnershipPage() {
             </h2>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {communicationStrategies.map((group, i) => (
-              <div key={i} className="bg-primary/5 rounded-[1.5rem] p-8 border border-primary/20 hover:border-primary/40 transition-colors w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md">
+              <div key={i} className="bg-primary/5 h-full flex flex-col rounded-[1.5rem] p-8 border border-primary/20 hover:border-primary/40 transition-colors w-full">
                 <h3 className="text-2xl font-bold text-primary mb-6">{group.label}</h3>
                 <ul className="space-y-4">
                   {group.tips.map((tip, j) => (

@@ -21,7 +21,7 @@ export default function ApproachHero() {
             className="relative w-full lg:flex-1 min-h-[450px] lg:h-auto rounded-[40px] overflow-hidden shadow-2xl border border-border"
           >
             <Image
-              src="/approach.jpg"
+              src="/assets/home-sec-1.webp"
               alt="Educators collaborating"
               fill
               className="object-cover transition-transform duration-1000 hover:scale-105"

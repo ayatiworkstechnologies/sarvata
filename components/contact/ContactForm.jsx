@@ -184,7 +184,7 @@ export default function ContactForm() {
                 whileHover={{ scale: 1.01, y: -2 }}
                 whileTap={{ scale: 0.985 }}
                 disabled={isSubmitting}
-                className="inline-flex h-12 w-full items-center justify-center rounded-full bg-primary text-white font-bold shadow-xl shadow-primary/20 transition-all duration-300 disabled:cursor-not-allowed disabled:opacity-70"
+                className="submit-btn h-12"
               >
                 {isSubmitting ? (
                   <span className="flex items-center gap-2">

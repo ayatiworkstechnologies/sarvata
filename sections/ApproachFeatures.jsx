@@ -10,7 +10,7 @@ const DIFFERENTIATORS = [
     description:
       "We’re educators who’ve lived the gap between vision and reality.",
     icon: "/icon/1.svg",
-    image: "/approach.jpg",
+    image: "/assets/home-sec-3-1.webp",
     accent: "var(--primary)",
   },
   {
@@ -18,21 +18,21 @@ const DIFFERENTIATORS = [
     description:
       "We address culture, pedagogy, and operational systems together.",
     icon: "/icon/2.svg",
-    image: "/about-web.jpg",
+    image: "/assets/home-sec-3-2.webp",
     accent: "#6366f1",
   },
   {
     title: "Building Independence",
     description: "Our goal is your capacity, not your dependency.",
     icon: "/icon/3.svg",
-    image: "/approach.jpg",
+    image: "/assets/home-sec-3-3.webp",
     accent: "var(--secondary)",
   },
   {
     title: "Sustained Partnership",
     description: "We support implementation, not just deliver workshops.",
     icon: "/icon/4.svg",
-    image: "/about-web.jpg",
+    image: "/assets/home-sec-3-4.webp",
     accent: "var(--primary)",
   },
 ];

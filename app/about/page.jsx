@@ -58,13 +58,13 @@ export default function AboutPage() {
           "We were born from years of working alongside teachers and school leaders wrestling with how to translate ideals of inclusion and personalization into systematic, sustainable practice. We guide teachers and school leaders to become truly inclusive and responsive in their practice. We embed practical, research-driven strategies into the daily life of schools, moving educators from aspiration to implementation.",
           "At the heart of everything we do is Personalised Learning, not as a technique, but as a fundamental belief in the unique potential of every learner. We partner with schools to build the environments, systems, and educator capacities where this potential can truly flourish.",
         ]}
-        image="/about.jpg"
+        image="/assets/ab-sec-1.webp"
       />
 
       <FounderSection
         founderTitle="Founder's Journey"
         founderText="Our founder established Sarvata with a profound commitment to educational equity and the belief that every child deserves a school environment designed for their unique potential. Drawing from decades of firsthand experience in diverse classrooms, the vision was to bridge the gap between aspirational pedagogy and daily practice."
-        founderImage="/about-1.jpg"
+        founderImage="/assets/ab-sec-2.webp"
       />
 
       <MissionSection
@@ -113,17 +113,17 @@ This mentorship dimension helps students understand not just what they learn but
           {
             title: "Phase 1: Understand Your Context",
             desc: "We begin by learning from you. What are your goals? What's working? Where's the friction between aspiration and reality? This isn't a generic audit. It's a genuine discovery of your unique culture, constraints, and aspirations - what you're building toward and what's standing in the way.",
-            image: "/approach.jpg",
+            image: "/assets/ab-sec-5-1.webp",
           },
           {
             title: "Phase 2: Co-Create Solutions",
             desc: "We adapt frameworks to your context and co-develop materials with your team. You bring deep expertise in your students and setting. We bring additional perspectives, research-informed strategies, and tools refined across diverse contexts. Together, we create approaches that fit your reality, not a template.",
-            image: "/approach.jpg",
+            image: "/assets/ab-sec-5-2.webp",
           },
           {
             title: "Phase 3: Build Sustainability",
             desc: "We develop your internal capacity by mentoring teacher leaders, embedding practices into your daily routines, and creating structures that sustain themselves. Success means the approaches become how you naturally operate - part of your culture, not an initiative.",
-            image: "/approach.jpg",
+            image: "/assets/ab-sec-5-3.webp",
           },
         ]}
       />

@@ -179,6 +179,7 @@ p {
    PREMIUM BUTTON SYSTEM
 ====================================================== */
 
+@layer components {
 .btn {
 
   --btn-bg: var(--primary);
@@ -209,6 +210,9 @@ p {
 
 .btn:hover {
   transform: translateY(-4px) scale(1.02);
+  background: var(--btn-bg) !important;
+  color: var(--btn-text) !important;
+  border-color: var(--btn-border) !important;
 }
 
 .btn svg {
@@ -225,37 +229,64 @@ p {
 
 .btn-primary {
   --btn-bg: var(--primary);
+  --btn-text: #fff;
+  --btn-border: var(--primary);
+}
+
+.btn-primary:hover {
+  --btn-bg: var(--secondary);
+  --btn-text: var(--foreground);
+  --btn-border: var(--secondary);
+}
+
+.btn-white {
+  --btn-bg: #fff;
+  --btn-text: var(--foreground);
+  --btn-border: var(--border);
+}
+
+.btn-white:hover {
+  --btn-bg: var(--secondary);
+  --btn-text: var(--foreground);
+  --btn-border: var(--secondary);
+}
+
+.btn-outline {
+  --btn-bg: transparent;
+  --btn-text: var(--foreground);
+  --btn-border: var(--primary);
+}
+
+.btn-outline:hover {
+  --btn-bg: var(--secondary);
+  --btn-text: var(--foreground);
+  --btn-border: var(--secondary);
 }
 
 .btn-secondary {
   --btn-bg: var(--foreground);
-}
-
-.btn-secondary:hover {
-  --btn-bg: var(--primary);
-}
-
-.btn-outline {
-
-  --btn-bg: transparent;
-  --btn-text: var(--foreground);
-  --btn-border: var(--primary);
-
-}
-
-.btn-outline:hover {
-
-  --btn-bg: var(--primary);
   --btn-text: #fff;
-
+  --btn-border: var(--foreground);
 }
 
-.btn-gold {
+  .btn-secondary:hover {
+    --btn-bg: var(--primary);
+    --btn-text: #fff;
+    --btn-border: var(--primary);
+  }
 
-  --btn-bg: var(--secondary);
-  --btn-text: #2a1b0f;
-
+  /* Force gold hover for all buttons using high specificity */
+  body .btn-primary:hover,
+  body .btn-white:hover,
+  body .btn-outline:hover,
+  body .btn:hover {
+    background-color: #E2C473 !important;
+    color: #171717 !important;
+    border-color: #E2C473 !important;
+  }
 }
+
+
 
 /* ======================================================
    FORM ELEMENTS
@@ -629,14 +660,17 @@ p {
   font-size: 0.95rem;
   font-weight: 700;
   color: #fff;
-  background: linear-gradient(135deg, #A066AA 0%, #7a45a0 100%);
-  box-shadow: 0 8px 24px rgba(160, 102, 170, 0.30);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  transition: all 0.35s ease;
 }
 
 .submit-btn:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 36px rgba(160, 102, 170, 0.38);
+  transform: translateY(-4px) scale(1.02);
+  background: var(--secondary) !important;
+  color: var(--foreground) !important;
+  border-color: var(--secondary) !important;
+  box-shadow: 0 10px 25px rgba(226, 196, 115, 0.3) !important;
 }
 
 .submit-btn:active:not(:disabled) {

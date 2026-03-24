@@ -6,9 +6,9 @@ import { FloatingShapes, SubtleGrid } from "@/components/VectorDecorations";
 import SectionHeading from "@/components/SectionHeading";
 
 export default function PathwayServicesSection({ eyebrow = "Services", title, services = [], columns = 3 }) {
-  const columnClass = columns === 2 
-    ? "md:w-[calc(50%-1rem)]" 
-    : "md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]";
+  const gridClass = columns === 2 
+    ? "grid-cols-1 md:grid-cols-2" 
+    : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
 
   return (
     <section className="relative bg-white overflow-hidden py-24 md:py-32">
@@ -38,7 +38,7 @@ export default function PathwayServicesSection({ eyebrow = "Services", title, se
         </motion.div>
 
         {/* Service Cards */}
-        <div className="flex flex-wrap justify-start gap-6 lg:gap-8">
+        <div className={`grid ${gridClass} gap-6 lg:gap-8`}>
           {services.map((svc, i) => (
             <motion.div
               key={i}
@@ -46,9 +46,9 @@ export default function PathwayServicesSection({ eyebrow = "Services", title, se
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: i * 0.15, ease: [0.21, 1, 0.36, 1] }}
-              className={`group relative w-full ${columnClass} h-full`}
+              className="group relative h-full flex flex-col"
             >
-              <div className="relative h-full p-8 lg:p-12 rounded-[40px] border border-slate-200 bg-white transition-all duration-700 hover:shadow-2xl overflow-hidden flex flex-col">
+              <div className="relative flex-1 p-8 lg:p-12 rounded-[40px] border border-slate-200 bg-white transition-all duration-700 hover:shadow-2xl overflow-hidden flex flex-col">
                 {/* Background Number Accent */}
                 <span className="absolute -bottom-4 -right-2 text-[120px] font-black text-slate-50 select-none group-hover:text-[#a066aa]/5 transition-colors duration-700 pointer-events-none">
                   0{i + 1}
@@ -68,9 +68,9 @@ export default function PathwayServicesSection({ eyebrow = "Services", title, se
                       href={svc.href}
                       className="group/link inline-flex items-center gap-4 w-fit mt-auto"
                     >
-                      <div className="h-10 w-10 rounded-full border border-slate-200 flex items-center justify-center group-hover/link:bg-[#a066aa] group-hover/link:border-[#a066aa] transition-all duration-300">
+                      <div className="h-10 w-10 rounded-full border border-slate-200 flex items-center justify-center group-hover/link:bg-secondary group-hover/link:border-secondary transition-all duration-300 shadow-sm">
                         <svg
-                          className="w-4 h-4 text-slate-400 group-hover/link:text-white transition-colors"
+                          className="w-4 h-4 text-slate-400 group-hover/link:text-foreground transition-colors"
                           fill="none"
                           viewBox="0 0 24 24"
                           stroke="currentColor"
@@ -83,7 +83,7 @@ export default function PathwayServicesSection({ eyebrow = "Services", title, se
                           />
                         </svg>
                       </div>
-                      <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 group-hover/link:text-[#a066aa] transition-colors">
+                      <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 group-hover/link:text-primary transition-colors">
                         {svc.cta || "Learn More"}
                       </span>
                     </Link>

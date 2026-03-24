@@ -48,7 +48,7 @@ export default function PathwayNextSteps({ eyebrow = "Next Steps", title, steps 
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: i * 0.1 }}
-                className="group relative rounded-2xl bg-white border border-border/60 p-6
+                className="group relative h-full flex flex-col rounded-2xl bg-white border border-border/60 p-6
                            hover:border-primary/30 hover:shadow-lg transition-all duration-300"
               >
                 {/* Number */}
@@ -59,7 +59,7 @@ export default function PathwayNextSteps({ eyebrow = "Next Steps", title, steps 
                   {step.label}
                 </p>
                 <h4 className="card-title mb-2">{step.title}</h4>
-                <p className="card-body leading-relaxed">{step.description}</p>
+                <p className="card-body leading-relaxed flex-grow">{step.description}</p>
 
                 {step.href && (
                   isConsultation ? (
@@ -68,22 +68,22 @@ export default function PathwayNextSteps({ eyebrow = "Next Steps", title, steps 
                         e.preventDefault();
                         openModal();
                       }}
-                      className="inline-flex items-center gap-1.5 mt-4 text-primary font-semibold text-sm
-                                 hover:gap-3 transition-all duration-300 outline-none focus:outline-none"
+                      className="inline-flex items-center gap-1.5 mt-4 text-primary font-bold text-sm
+                                 hover:text-secondary hover:gap-3 transition-all duration-300 outline-none focus:outline-none group/link"
                     >
                       {step.cta}
-                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <svg className="w-3.5 h-3.5 transition-colors group-hover/link:text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
                     </button>
                   ) : (
                     <Link
                       href={step.href}
-                      className="inline-flex items-center gap-1.5 mt-4 text-primary font-semibold text-sm
-                                 hover:gap-3 transition-all duration-300"
+                      className="inline-flex items-center gap-1.5 mt-4 text-primary font-bold text-sm
+                                 hover:text-secondary hover:gap-3 transition-all duration-300 group/link"
                     >
                       {step.cta}
-                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                      <svg className="w-3.5 h-3.5 transition-colors group-hover/link:text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                       </svg>
                     </Link>

@@ -38,7 +38,8 @@ export default function ScheduleConsultationButton({
     <AnimatedButton
       onClick={openModal}
       className={`${fullWidth ? "w-full" : ""} ${className}`}
-      accentColor={accentColor}
+      variant={variant === "outline" ? "white" : "primary"}
+      accentColor="var(--secondary)"
     >
       {label}
     </AnimatedButton>

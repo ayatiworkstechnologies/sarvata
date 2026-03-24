@@ -27,7 +27,7 @@ export default function GetStarted() {
           {/* 1. BACKGROUND IMAGE PORTAL */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/img-home.jpg"
+              src="/assets/home-cta.webp"
               alt="Partnership with Sarvata"
               fill
               className="object-cover transition-transform duration-1000 hover:scale-105"
@@ -54,7 +54,11 @@ export default function GetStarted() {
               </motion.div>
 
               {/* Headline */}
-              <SectionHeading title="Ready to transform your community?" light className="text-white" />
+              <SectionHeading
+                title="Ready to transform your community?"
+                light
+                className="text-white"
+              />
 
               {/* Description */}
               <p className="section-body text-white/70 leading-relaxed mb-12 max-w-lg">
@@ -68,7 +72,8 @@ export default function GetStarted() {
                 {/* Learn about our services */}
                 <AnimatedButton
                   href="/services"
-                  accentColor="#703b7b"
+                  variant="white"
+                  accentColor="var(--secondary)"
                 >
                   Learn about our services
                 </AnimatedButton>
@@ -76,7 +81,8 @@ export default function GetStarted() {
                 {/* Schedule a consultation */}
                 <AnimatedButton
                   onClick={openModal}
-                  accentColor="#a066aa"
+                  variant="primary"
+                  accentColor="var(--secondary)"
                 >
                   Schedule a consultation
                 </AnimatedButton>
@@ -84,7 +90,8 @@ export default function GetStarted() {
                 {/* Contact us */}
                 <AnimatedButton
                   href="/contact"
-                  accentColor="#1e293b"
+                  variant="white"
+                  accentColor="var(--secondary)"
                 >
                   Contact us
                 </AnimatedButton>

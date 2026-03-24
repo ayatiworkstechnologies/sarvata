@@ -83,7 +83,7 @@ export default function WorkshopsTrainingPage() {
             </h2>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {workshops.map((workshop, i) => (
               <motion.div
                 key={i}
@@ -91,7 +91,7 @@ export default function WorkshopsTrainingPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group relative w-full md:w-[calc(50%-1rem)] max-w-lg rounded-[1.75rem] border border-border/60 bg-white p-8 lg:p-10 overflow-hidden hover:shadow-2xl hover:border-transparent transition-all duration-500 flex flex-col"
+                className="group relative h-full rounded-[1.75rem] border border-border/60 bg-white p-8 lg:p-10 overflow-hidden hover:shadow-2xl hover:border-transparent transition-all duration-500 flex flex-col"
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10 mb-6">
@@ -147,9 +147,9 @@ export default function WorkshopsTrainingPage() {
               Workshop Formats
             </h2>
           </div>
-          <div className="flex flex-wrap justify-center gap-6 max-w-5xl mx-auto text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
             {formats.map((format, i) => (
-              <div key={i} className="bg-white p-6 lg:p-8 rounded-[1.25rem] shadow-sm border border-border/50 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-sm flex flex-col">
+              <div key={i} className="bg-white p-6 lg:p-8 rounded-[1.25rem] shadow-sm border border-border/50 h-full flex flex-col">
                 <h3 className="text-xl font-bold text-foreground mb-3">{format.title}</h3>
                 <p className="text-muted text-[15px] leading-relaxed flex-1">{format.description}</p>
               </div>

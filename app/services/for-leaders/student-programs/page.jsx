@@ -65,9 +65,9 @@ export default function StudentProgramsPage() {
             </h2>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {programs.map((program, i) => (
-              <div key={i} className="group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md flex flex-col items-center text-center bg-white p-10 rounded-[2rem] border border-border/60 hover:border-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
+              <div key={i} className="group h-full flex flex-col items-center text-center bg-white p-10 rounded-[2rem] border border-border/60 hover:border-primary/20 hover:shadow-2xl hover:-translate-y-2 transition-all duration-500">
                 <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-8 border border-primary/20">
                   {program.icon}
                 </div>
@@ -77,10 +77,11 @@ export default function StudentProgramsPage() {
                 </p>
                 <Link
                   href={program.href}
-                  className="mt-auto inline-flex items-center gap-2 text-primary font-semibold text-[15px] group-hover:gap-3 transition-all duration-300 bg-primary/5 px-6 py-3 rounded-full hover:bg-primary/10"
+                  className="mt-auto inline-flex items-center gap-2 text-primary font-bold text-[15px] group-hover:gap-3 transition-all duration-300 bg-soft-bg px-6 py-3 rounded-full hover:bg-secondary/100 hover:text-foreground shadow-sm hover:shadow-md transition-colors"
+                  style={{ '--hover-bg': 'var(--secondary)' }}
                 >
                   Learn More
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </Link>

@@ -123,9 +123,9 @@ export default function ServicesMain() {
                     href={service.href}
                     className="group/link inline-flex items-center gap-4 w-fit"
                   >
-                    <div className="h-10 w-10 rounded-full border border-slate-200 flex items-center justify-center group-hover/link:bg-[#a066aa] group-hover/link:border-[#a066aa] transition-all duration-300">
+                    <div className="h-10 w-10 rounded-full border border-slate-200 flex items-center justify-center group-hover/link:bg-secondary group-hover/link:border-secondary transition-all duration-300 shadow-sm">
                       <svg
-                        className={`w-4 h-4 ${service.accent} group-hover/link:text-white transition-colors`}
+                        className={`w-4 h-4 ${service.accent} group-hover/link:text-foreground transition-colors`}
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -138,7 +138,7 @@ export default function ServicesMain() {
                         />
                       </svg>
                     </div>
-                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 group-hover/link:text-[#a066aa] transition-colors">
+                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400 group-hover/link:text-primary transition-colors">
                       {service.cta}
                     </span>
                   </Link>

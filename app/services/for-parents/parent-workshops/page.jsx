@@ -59,9 +59,9 @@ export default function ParentWorkshopsPage() {
             </h2>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {topics.map((item, i) => (
-              <div key={i} className="group relative w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md rounded-[1.75rem] border border-border/60 bg-white p-8 overflow-hidden hover:shadow-2xl hover:border-transparent hover:-translate-y-2 transition-all duration-500 flex flex-col">
+              <div key={i} className="group relative h-full rounded-[1.75rem] border border-border/60 bg-white p-8 overflow-hidden hover:shadow-2xl hover:border-transparent hover:-translate-y-2 transition-all duration-500 flex flex-col">
                 <h3 className="text-xl font-bold text-foreground mb-4 leading-tight">{item.title}</h3>
                 <p className="text-muted text-[15px] leading-relaxed mb-6 flex-1">{item.description}</p>
                 

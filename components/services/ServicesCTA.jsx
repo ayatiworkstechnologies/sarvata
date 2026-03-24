@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import AnimatedButton from "@/components/AnimatedButton";
 
 export default function ServicesCTA() {
   return (
@@ -47,12 +48,14 @@ export default function ServicesCTA() {
 
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
             {/* Primary Action Button */}
-            <Link
+            <AnimatedButton
               href="/contact"
-              className="px-10 py-5 bg-[#a066aa] text-white font-bold uppercase tracking-[0.2em] text-[11px] rounded-full hover:bg-[#8a5394] hover:scale-105 transition-all shadow-xl shadow-[#a066aa]/20"
+              variant="primary"
+              accentColor="var(--secondary)"
+              className="px-10"
             >
               Schedule Consultation
-            </Link>
+            </AnimatedButton>
 
             {/* Vertical Divider (Desktop) */}
             <div className="h-12 w-[1px] bg-slate-200 hidden sm:block" />
@@ -61,18 +64,18 @@ export default function ServicesCTA() {
             <div className="flex flex-col sm:flex-row gap-8 items-center">
               <Link
                 href="/services"
-                className="text-slate-600 font-bold uppercase tracking-[0.2em] text-[11px] hover:text-[#a066aa] transition-colors relative group"
+                className="text-slate-600 font-bold uppercase tracking-[0.2em] text-[11px] hover:text-primary transition-colors relative group"
               >
                 Download Guide
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#a066aa] transition-all group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-secondary transition-all group-hover:w-full" />
               </Link>
 
               <Link
                 href="/contact"
-                className="text-slate-600 font-bold uppercase tracking-[0.2em] text-[11px] hover:text-[#a066aa] transition-colors relative group"
+                className="text-slate-600 font-bold uppercase tracking-[0.2em] text-[11px] hover:text-primary transition-colors relative group"
               >
                 Contact Us
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#a066aa] transition-all group-hover:w-full" />
+                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-secondary transition-all group-hover:w-full" />
               </Link>
             </div>
           </div>

@@ -134,7 +134,7 @@ export default function TeacherMentoringPage() {
               What Makes This Different
             </h2>
           </div>
-          <div className="flex flex-wrap justify-center gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {differentiators.map((diff, i) => {
               const Icon = i === 0 ? Shield : i === 1 ? Briefcase : HeartHandshake;
               return (
@@ -144,7 +144,7 @@ export default function TeacherMentoringPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="text-center p-8 border border-border/50 rounded-3xl hover:border-primary/20 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 bg-white w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-sm"
+                className="text-center p-8 border border-border/50 rounded-3xl hover:border-primary/20 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 bg-white h-full flex flex-col"
               >
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 mx-auto flex items-center justify-center mb-6 ring-1 ring-primary/20 shadow-inner">
                   <Icon className="w-8 h-8 text-primary" strokeWidth={1.5} />

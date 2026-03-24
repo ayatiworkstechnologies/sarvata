@@ -15,7 +15,7 @@ const COMMUNITIES = [
       "Practical frameworks and job-embedded support to make responsive practice sustainable.",
     href: "/services/for-educators",
     button: "Explore Services for Educators ",
-    image: "/approach.jpg",
+    image: "/assets/home-sec-1.webp",
     accent: "var(--secondary)",
     IconComponent: BookOpenCheck,
   },
@@ -25,7 +25,7 @@ const COMMUNITIES = [
       "Strategic partnership to build the systems, culture, and capacity for meaningful change.",
     href: "/services/for-leaders",
     button: "Explore Services for Leaders",
-    image: "/about-web.jpg",
+    image: "/assets/home-sec-2.webp",
     accent: "var(--primary)",
     IconComponent: Users,
   },
@@ -35,7 +35,7 @@ const COMMUNITIES = [
       "Professional support to understand your child's learning profile and advocate effectively.",
     href: "/services/for-parents",
     button: "Explore Services for Parents ",
-    image: "/approach.jpg",
+    image: "/assets/home-sec-3.webp",
     accent: "#10b981",
     IconComponent: HeartHandshake,
   },
@@ -124,7 +124,7 @@ function CommunityCard({ card, index }) {
         className="relative w-full h-[500px] sm:h-[600px] md:h-[750px] max-h-[85vh] rounded-[32px] md:rounded-[48px] overflow-hidden bg-slate-900 group shadow-2xl"
       >
         {/* Cinematic Parallax Background */}
-        <div className="absolute inset-0 overflow-hidden bg-[#1a1a1a]">
+        <div className="absolute inset-0 overflow-hidden ">
           <motion.div
             style={{ scale: imgScale }}
             className="relative h-full w-full opacity-80"
@@ -179,7 +179,7 @@ function CommunityCard({ card, index }) {
           <AnimatedButton
             href={card.href}
             className="w-full sm:w-fit justify-center"
-            accentColor={card.accent}
+            accentColor="var(--secondary)"
           >
             {card.button}
           </AnimatedButton>
