@@ -61,7 +61,7 @@ export default function GetStarted() {
               />
 
               {/* Description */}
-              <p className="section-body text-white/70 leading-relaxed mb-12 max-w-lg">
+              <p className="section-body !text-white leading-relaxed mb-12 max-w-lg">
                 Wherever you are in your journey, we&apos;re ready to meet you
                 there with tailored, actionable support that builds capacity
                 from within.
