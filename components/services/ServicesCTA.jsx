@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import AnimatedButton from "@/components/AnimatedButton";
+import { useConsultation } from "@/context/ConsultationContext";
 
 export default function ServicesCTA() {
+  const { openModal } = useConsultation();
   return (
     <section className="relative py-12 md:py-18 bg-[#faf9ff] overflow-hidden border-t border-slate-100">
       {/* ── SOFT MESH GRADIENTS (Light Mode) ── */}
@@ -49,7 +51,7 @@ export default function ServicesCTA() {
           <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
             {/* Primary Action Button */}
             <AnimatedButton
-              href="/contact"
+              onClick={openModal}
               variant="primary"
               accentColor="var(--secondary)"
               className="px-10"

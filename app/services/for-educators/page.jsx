@@ -5,7 +5,8 @@ import PathwayServicesSection from "@/components/services/PathwayServicesSection
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 
 export const metadata = {
-  title: "Services for Educators - Sustainable Differentiation & Mentoring | Sarvata",
+  title:
+    "Services for Educators - Sustainable Differentiation & Mentoring | Sarvata",
   description:
     "Sarvata helps educators build sustainable, structured differentiation through workshops, in-class mentoring, and practical frameworks. Move from intuitive response to systematic, learner-centered practice.",
   keywords: [
@@ -18,12 +19,20 @@ export const metadata = {
     "Sarvata for educators",
   ],
   openGraph: {
-    title: "Services for Educators - Sustainable Differentiation & Mentoring | Sarvata",
+    title:
+      "Services for Educators - Sustainable Differentiation & Mentoring | Sarvata",
     description:
       "Practical workshops, in-class mentoring, and frameworks that help educators build sustainable, learner-centered practice - without burning out.",
     url: "https://sarvata.in/services/for-educators",
     siteName: "Sarvata",
-    images: [{ url: "/og-educators.jpg", width: 1200, height: 630, alt: "Sarvata Services for Educators" }],
+    images: [
+      {
+        url: "/og-educators.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Sarvata Services for Educators",
+      },
+    ],
     type: "website",
   },
   twitter: {
@@ -38,31 +47,42 @@ export const metadata = {
 export default function EducatorsPage() {
   return (
     <main className="bg-white">
-
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
         webImage="/banners/for-eudcators.jpg"
         mobileImage="/banners/for-eudcators-mob.jpg"
         title="You're Already Doing This Work. We Help You Do It More Sustainably."
-        breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Educators" }]}
+        breadcrumbs={[
+          { label: "Services", href: "/services" },
+          { label: "For Educators" },
+        ]}
       />
 
       {/* ── THE CHALLENGE ───────────────────────────────────────── */}
       <PathwayChallengeSection
-        eyebrow="The Challenge"
-        image="/approach.jpg"
-        // title="Responsive Teaching Is Exhausting Without the Right Structures"
+        title="The Challenge"
+        image="/assets/service-edu-1.webp"
         paragraphs={[
-          "You're already responding to diverse learners - the student who finishes early, the one who struggles with pace, the creative thinker whose brilliance doesn't fit the test. The challenge is making it sustainable.",
-          "Limited time, large classes, curriculum requirements, and the cognitive load of attending to 25+ individuals simultaneously make responsive practice exhausting.",
-          <span key="what-we-offer"><strong>What we offer:</strong> Frameworks that systematize what you already do intuitively, moving from moment-to-moment responses to sustainable, structured differentiation.</span>,
+          <span key="p1">
+            You&apos;re already responding to diverse learners - the student who finishes early, the one who struggles with pace, the creative thinker whose brilliance doesn&apos;t fit the test.{" "}
+            <span className="text-primary italic font-bold">The challenge is making it sustainable.</span>
+          </span>,
+          <span key="p2">
+            Limited time, large classes, curriculum requirements, and the cognitive load of attending to 25+ individuals simultaneously make{" "}
+            <span className="text-primary italic font-bold">responsive practice exhausting.</span>
+          </span>,
+          <span key="what-we-offer">
+            <strong>What we offer:</strong> Frameworks that systematize what you
+            already do intuitively, moving from moment-to-moment responses to{" "}
+            <span className="text-primary italic font-bold">sustainable, structured differentiation.</span>
+          </span>,
         ]}
       />
 
       {/* ── OUR APPROACH ────────────────────────────────────────── */}
       <PathwayApproachSection
         eyebrow="Our Approach"
-        image="/about-web.jpg"
+        image="/assets/service-edu-2.webp"
         title="From Intuitive Response to Sustainable, Structured Practice"
         items={[
           {
@@ -109,7 +129,6 @@ export default function EducatorsPage() {
             href: "/services/for-educators/free-resources-tools",
             cta: "Access Resources",
           },
-
         ]}
       />
 
@@ -144,7 +163,6 @@ export default function EducatorsPage() {
           },
         ]}
       />
-
     </main>
   );
 }

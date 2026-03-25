@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useConsultation } from "@/context/ConsultationContext";
 
 const actions = [
   {
@@ -25,6 +26,7 @@ const actions = [
 ];
 
 export default function TakeFirstStep() {
+  const { openModal } = useConsultation();
   return (
     <section className="relative bg-soft-bg overflow-hidden border-t border-border/50">
       {/* Vibrant ambient glow */}
@@ -86,12 +88,22 @@ export default function TakeFirstStep() {
                   {action.question}
                 </p>
 
-                <Link
-                  href={action.href}
-                  className={`btn w-full ${action.variant === "primary" ? "btn-primary" : "btn-outline"}`}
-                >
-                  {action.cta}
-                </Link>
+                {action.cta.toLowerCase().includes("consultation") ? (
+                  <button
+                    type="button"
+                    onClick={openModal}
+                    className={`btn w-full ${action.variant === "primary" ? "btn-primary" : "btn-outline"}`}
+                  >
+                    {action.cta}
+                  </button>
+                ) : (
+                  <Link
+                    href={action.href}
+                    className={`btn w-full ${action.variant === "primary" ? "btn-primary" : "btn-outline"}`}
+                  >
+                    {action.cta}
+                  </Link>
+                )}
               </motion.div>
             ))}
           </div>

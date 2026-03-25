@@ -5,7 +5,8 @@ import PathwayServicesSection from "@/components/services/PathwayServicesSection
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 
 export const metadata = {
-  title: "Services for Parents - Understanding & Supporting Your Child's Learning | Sarvata",
+  title:
+    "Services for Parents - Understanding & Supporting Your Child's Learning | Sarvata",
   description:
     "Sarvata partners with parents to understand their child's unique learning profile, navigate educational challenges, and build a strong home-school connection. Professional guidance, workshops, and advocacy support.",
   keywords: [
@@ -18,12 +19,20 @@ export const metadata = {
     "Sarvata for parents",
   ],
   openGraph: {
-    title: "Services for Parents - Understanding & Supporting Your Child's Learning | Sarvata",
+    title:
+      "Services for Parents - Understanding & Supporting Your Child's Learning | Sarvata",
     description:
       "Professional guidance, workshops, and advocacy support to help parents understand their child's learning profile and champion their educational journey.",
     url: "https://sarvata.in/services/for-parents",
     siteName: "Sarvata",
-    images: [{ url: "/og-parents.jpg", width: 1200, height: 630, alt: "Sarvata Services for Parents" }],
+    images: [
+      {
+        url: "/og-parents.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Sarvata Services for Parents",
+      },
+    ],
     type: "website",
   },
   twitter: {
@@ -38,24 +47,30 @@ export const metadata = {
 export default function ParentsPage() {
   return (
     <main className="bg-white">
-
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
         webImage="/banners/for-parents.jpg"
         mobileImage="/banners/for-parents-mob.jpg"
         title="Partnering in Your Child's Journey"
-        breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Parents" }]}
+        breadcrumbs={[
+          { label: "Services", href: "/services" },
+          { label: "For Parents" },
+        ]}
       />
 
       {/* ── THE CHALLENGE ───────────────────────────────────────── */}
       <PathwayChallengeSection
-        eyebrow="Navigating Education, Together"
-        image="/about.jpg"
-        // title="You Champion Your Child's Potential - We Help You Understand It"
+        title="Navigating Education, Together"
+        image="/assets/service-par-1.webp"
         paragraphs={[
-          "You celebrate your child's strengths, navigate their challenges, and champion their unique potential. This journey can feel complex, especially when supporting diverse learning needs.",
-          "Sarvata partners with you to understand your child's learning profile and empowers you to become a stronger advocate in their educational journey.",
-
+          <span key="p1">
+            You celebrate your child&apos;s strengths, navigate their challenges, and champion their unique potential. This journey can feel complex, {" "}
+            <span className="text-primary italic font-bold">especially when supporting diverse learning needs.</span>
+          </span>,
+          <span key="p2">
+            Sarvata partners with you to understand your child&apos;s learning profile and {" "}
+            <span className="text-primary italic font-bold">empowers you to become a stronger advocate</span> in their educational journey.
+          </span>,
         ]}
       />
 
@@ -63,7 +78,7 @@ export default function ParentsPage() {
       <PathwayApproachSection
         eyebrow="How We Work With You"
         title="Understanding, Empowering, Advocating"
-        image="/approach.jpg"
+        image="/assets/service-par-2.webp"
         items={[
           {
             title: "Understanding Your Child",
@@ -151,7 +166,6 @@ export default function ParentsPage() {
           },
         ]}
       />
-
     </main>
   );
 }

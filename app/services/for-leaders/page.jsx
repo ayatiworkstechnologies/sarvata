@@ -5,7 +5,8 @@ import PathwayServicesSection from "@/components/services/PathwayServicesSection
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 
 export const metadata = {
-  title: "Services for School Leaders - Strategic Partnership & School Transformation | Sarvata",
+  title:
+    "Services for School Leaders - Strategic Partnership & School Transformation | Sarvata",
   description:
     "Sarvata partners with school leaders to build systems, culture, and capacity for meaningful, lasting educational change. From inclusion audits to faculty mentoring - strategic support grounded in your school's reality.",
   keywords: [
@@ -18,12 +19,20 @@ export const metadata = {
     "Sarvata school leaders",
   ],
   openGraph: {
-    title: "Services for School Leaders - Strategic Partnership for Lasting Change | Sarvata",
+    title:
+      "Services for School Leaders - Strategic Partnership for Lasting Change | Sarvata",
     description:
       "Strategic consultancy for school principals and leaders: inclusion audits, faculty development, systems design, and cultural transformation rooted in your school's unique context.",
     url: "https://sarvata.in/services/for-leaders",
     siteName: "Sarvata",
-    images: [{ url: "/og-leaders.jpg", width: 1200, height: 630, alt: "Sarvata Services for School Leaders" }],
+    images: [
+      {
+        url: "/og-leaders.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Sarvata Services for School Leaders",
+      },
+    ],
     type: "website",
   },
   twitter: {
@@ -38,31 +47,41 @@ export const metadata = {
 export default function LeadersPage() {
   return (
     <main className="bg-white">
-
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
         webImage="/banners/for-school-leaders.jpg"
         mobileImage="/banners/for-school-leaders-mob.jpg"
         title="Leading Sustainable Educational Change"
-        breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Leaders" }]}
+        breadcrumbs={[
+          { label: "Services", href: "/services" },
+          { label: "For Leaders" },
+        ]}
       />
 
       {/* ── THE CHALLENGE ───────────────────────────────────────── */}
       <PathwayChallengeSection
-        eyebrow="The Leadership Challenge"
-        image="/about-web.jpg"
-        // title="Holding Competing Imperatives with Clarity & Conviction"
+        title="The Leadership Challenge"
+        image="/assets/service-lea-1.webp"
         paragraphs={[
-          "In your hands rests not just an institution, but the promise of tomorrow. As school leaders, you stand at the crossroads of powerful and often competing imperatives.",
-          "Managing the immediacy of daily operations while safeguarding long-term vision, upholding accountability without losing sight of authentic learning, empowering faculty despite constraints, and harmonising the varied expectations of stakeholders.",
-          "Meaningful change is slow, contextual, and requires deep cultural shifts - far beyond policy updates. That's where partnership makes the difference.",
+          <span key="p1">
+            In your hands rests not just an institution, but the promise of tomorrow. As school leaders, you stand at the crossroads of {" "}
+            <span className="text-primary italic font-bold">powerful and often competing imperatives.</span>
+          </span>,
+          <span key="p2">
+            Managing the immediacy of daily operations while safeguarding long-term vision, upholding accountability without losing sight of authentic learning, empowering faculty despite constraints, and {" "}
+            <span className="text-primary italic font-bold">harmonising the varied expectations of stakeholders.</span>
+          </span>,
+          <span key="p3">
+            Meaningful change is slow, contextual, and requires deep cultural shifts - far beyond policy updates. {" "}
+            <span className="text-primary italic font-bold">That&apos;s where partnership makes the difference.</span>
+          </span>,
         ]}
       />
 
       {/* ── OUR APPROACH ────────────────────────────────────────── */}
       <PathwayApproachSection
         eyebrow="Our Approach"
-        image="/approach.jpg"
+        image="/assets/service-lea-2.webp"
         title="Partnership, Not Prescription"
         items={[
           {
@@ -75,7 +94,6 @@ export default function LeadersPage() {
             description:
               "You know your institution. We bring research, frameworks, and external perspectives. Together we develop approaches that are both aspirational and realistic.",
           },
-
         ]}
       />
 
@@ -147,7 +165,6 @@ export default function LeadersPage() {
           },
         ]}
       />
-
     </main>
   );
 }

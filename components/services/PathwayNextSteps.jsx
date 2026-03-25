@@ -10,6 +10,15 @@ import SectionHeading from "@/components/SectionHeading";
 export default function PathwayNextSteps({ eyebrow = "Next Steps", title, steps = [] }) {
   const { openModal } = useConsultation();
 
+  const hasConsultationCard = steps.some(
+    (step) =>
+      step.href === "/contact" &&
+      step.cta &&
+      (step.cta.toLowerCase().includes("consultation") ||
+        step.cta.toLowerCase().includes("book") ||
+        step.cta.toLowerCase().includes("call"))
+  );
+
   return (
     <section className="relative bg-[#f6f4f9] overflow-hidden py-16 md:py-20">
       {/* Background decoration */}
@@ -95,15 +104,17 @@ export default function PathwayNextSteps({ eyebrow = "Next Steps", title, steps 
         </div>
 
         {/* Bottom CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 16 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.25, type: "spring", stiffness: 100 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 relative"
-        >
-          <ScheduleConsultationButton />
-        </motion.div>
+        {!hasConsultationCard && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 16 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.25, type: "spring", stiffness: 100 }}
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 relative"
+          >
+            <ScheduleConsultationButton />
+          </motion.div>
+        )}
       </div>
     </section>
   );

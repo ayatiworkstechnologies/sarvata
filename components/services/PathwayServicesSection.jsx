@@ -31,7 +31,7 @@ export default function PathwayServicesSection({ eyebrow = "Services", title, se
            viewport={{ once: true }}
            className="max-w-2xl mb-16 md:mb-24"
         >
-          <p className="text-[10px] font-black uppercase tracking-[0.4em] text-[#a066aa] mb-6 block">
+          <p className="eyebrow mb-6">
             {eyebrow}
           </p>
           <SectionHeading title={title} className="text-slate-900 leading-[1.1] tracking-tight" />

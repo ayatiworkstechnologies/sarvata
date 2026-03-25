@@ -5,7 +5,13 @@ import { FloatingShapes, SubtleGrid } from "@/components/VectorDecorations";
 import SectionHeading from "@/components/SectionHeading";
 import Image from "next/image";
 
-export default function PathwayChallengeSection({ eyebrow, title, paragraphs, accentColor = "primary", image }) {
+export default function PathwayChallengeSection({
+  eyebrow,
+  title,
+  paragraphs,
+  accentColor = "primary",
+  image,
+}) {
   return (
     <section className="relative bg-white overflow-hidden py-20 md:py-28">
       {/* Background decoration */}
@@ -25,9 +31,7 @@ export default function PathwayChallengeSection({ eyebrow, title, paragraphs, ac
           transition={{ duration: 0.75 }}
           className="flex flex-col justify-center"
         >
-          <p className="eyebrow mb-5">
-            {eyebrow}
-          </p>
+          {eyebrow && <p className="eyebrow mb-5">{eyebrow}</p>}
           <SectionHeading title={title} className="text-foreground" />
 
           {/* Accent bar */}

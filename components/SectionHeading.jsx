@@ -1,20 +1,8 @@
 import React from "react";
 
-/**
- * SectionHeading
- * 
- * Automatically applies the "Partnership, Not Prescription" global H2 design.
- * It intelligently splits string titles into two halves, inserting a <br /> and 
- * applying an italicized text gradient to the second half.
- * 
- * Props:
- *  - title: string to automatically format
- *  - children: manual string/JSX override (bypasses auto-format)
- *  - className: applied to the root <h2>
- *  - light: boolean (if true, uses a lighter gradient suitable for dark backgrounds)
- */
-export default function SectionHeading({ title, children, className = "", light = false }) {
-  const baseClasses = `text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-8 leading-[1.05] tracking-tight ${className}`;
+
+export default function SectionHeading({ title, children, className = "", light = false, split = true }) {
+  const baseClasses = `text-2xl sm:text-3xl lg:text-4xl font-extrabold mb-8 leading-[1.05] tracking-tight ${className}`;
 
   if (children) {
     return (
@@ -29,17 +17,17 @@ export default function SectionHeading({ title, children, className = "", light 
     let firstPart = title;
     let secondPart = "";
 
+    // Optional explicit control over splitting
+    if (split === false || words.length <= 3) {
+      return <h2 className={baseClasses}>{title}</h2>;
+    }
+
     // Split logic
-    if (words.length > 2) {
+    if (words.length > 3) {
        // Split roughly in half. E.g "Why Traditional PD Often Falls Short" -> 6/2 = 3.
        const splitIndex = Math.ceil(words.length / 2);
        firstPart = words.slice(0, splitIndex).join(" ");
        secondPart = words.slice(splitIndex).join(" ");
-    } else if (words.length === 2) {
-       firstPart = words[0];
-       secondPart = words[1];
-    } else {
-       return <h2 className={baseClasses}>{title}</h2>;
     }
 
     const spanClass = light 
