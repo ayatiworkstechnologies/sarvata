@@ -58,7 +58,8 @@ export default function SchoolPartnershipPage() {
       <InnerHero
         title="School Partnership & Advocacy"
         breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Parents", href: "/services/for-parents" }, { label: "Partnership & Advocacy" }]}
-       variant="advocacy" />
+       variant="advocacy" 
+        image="/assets/service-par-2.webp" />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
@@ -72,14 +73,14 @@ export default function SchoolPartnershipPage() {
       />
 
       {/* ── OUR SERVICES ──────────────────────────────────────── */}
-      <section className="bg-soft-bg py-20 md:py-32 relative overflow-hidden">
+      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <motion.span 
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-secondary font-bold tracking-[0.2em] uppercase text-sm mb-4 block"
+              className="eyebrow"
             >
               How We Help
             </motion.span>
@@ -127,7 +128,7 @@ export default function SchoolPartnershipPage() {
       </section>
 
       {/* ── COMMUNICATION THAT WORKS ────────────────────────────── */}
-      <section className="bg-white py-16 md:py-24 relative overflow-hidden">
+      <section className="bg-white py-6 md:py-12 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
@@ -137,19 +138,19 @@ export default function SchoolPartnershipPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {communicationStrategies.map((group, i) => (
-              <div key={i} className="bg-primary/5 h-full flex flex-col rounded-[1.5rem] p-8 border border-primary/20 hover:border-primary/40 transition-colors w-full">
-                <h3 className="text-2xl font-bold text-primary mb-6">{group.label}</h3>
-                <ul className="space-y-4">
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="bg-white p-8 rounded-[1.75rem] border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+              >
+                <h3 className="text-xl font-bold text-foreground mb-4">{group.label}</h3>
+                <ul className="space-y-3">
                   {group.tips.map((tip, j) => (
-                    <li key={j} className="flex gap-3 items-start">
-                      <span className="w-6 h-6 shrink-0 rounded bg-primary/20 flex items-center justify-center mt-0.5">
-                        <svg className="w-3.5 h-3.5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
-                      </span>
-                      <span className="text-foreground text-[15px]">{tip}</span>
+                    <li key={j} className="flex gap-3 items-center text-sm text-muted">
+                      <span className="w-1.5 h-1.5 rounded-full bg-secondary/40 shrink-0" />
+                      {tip}
                     </li>
                   ))}
                 </ul>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

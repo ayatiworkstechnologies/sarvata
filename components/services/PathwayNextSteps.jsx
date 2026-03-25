@@ -20,7 +20,7 @@ export default function PathwayNextSteps({ eyebrow = "Next Steps", title, steps 
   );
 
   return (
-    <section className="relative bg-[#f6f4f9] overflow-hidden py-16 md:py-20">
+    <section className="relative bg-[#f6f4f9] overflow-hidden py-6 md:py-12">
       {/* Background decoration */}
       <SubtleGrid />
       <FloatingShapes />
@@ -33,7 +33,7 @@ export default function PathwayNextSteps({ eyebrow = "Next Steps", title, steps 
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.65 }}
-          className="text-center max-w-xl mx-auto mb-10"
+          className="text-center max-w-xl mx-auto mb-8"
         >
           <p className="eyebrow">
             {eyebrow}
@@ -57,8 +57,7 @@ export default function PathwayNextSteps({ eyebrow = "Next Steps", title, steps 
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.55, delay: i * 0.1 }}
-                className="group relative h-full flex flex-col rounded-2xl bg-white border border-border/60 p-6
-                           hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+                className="group relative h-full flex flex-col rounded-2xl bg-white border border-border/60 p-6 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
               >
                 {/* Number */}
                 <span className="block text-4xl font-bold text-primary/15 leading-none mb-3 select-none">
@@ -77,8 +76,7 @@ export default function PathwayNextSteps({ eyebrow = "Next Steps", title, steps 
                         e.preventDefault();
                         openModal();
                       }}
-                      className="inline-flex items-center gap-1.5 mt-4 text-primary font-bold text-sm
-                                 hover:text-secondary hover:gap-3 transition-all duration-300 outline-none focus:outline-none group/link"
+                      className="inline-flex items-center gap-1.5 mt-4 text-primary font-bold text-sm hover:text-secondary hover:gap-3 transition-all duration-300 outline-none focus:outline-none group/link"
                     >
                       {step.cta}
                       <svg className="w-3.5 h-3.5 transition-colors group-hover/link:text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -88,8 +86,7 @@ export default function PathwayNextSteps({ eyebrow = "Next Steps", title, steps 
                   ) : (
                     <Link
                       href={step.href}
-                      className="inline-flex items-center gap-1.5 mt-4 text-primary font-bold text-sm
-                                 hover:text-secondary hover:gap-3 transition-all duration-300 group/link"
+                      className="inline-flex items-center gap-1.5 mt-4 text-primary font-bold text-sm hover:text-secondary hover:gap-3 transition-all duration-300 group/link"
                     >
                       {step.cta}
                       <svg className="w-3.5 h-3.5 transition-colors group-hover/link:text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

@@ -53,7 +53,8 @@ export default function TeacherMentoringPage() {
       <InnerHero
         title="Teacher Mentoring"
         breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Educators", href: "/services/for-educators" }, { label: "Teacher Mentoring" }]}
-        variant="mentoring" />
+        variant="mentoring" 
+        image="/assets/service-edu-2.webp" />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
@@ -65,14 +66,14 @@ export default function TeacherMentoringPage() {
       />
 
       {/* ── HOW IT WORKS ──────────────────────────────────────── */}
-      <section className="relative bg-white overflow-hidden py-20 md:py-32">
+      <section className="relative bg-white overflow-hidden py-6 md:py-12">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <motion.span 
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4 block"
+              className="eyebrow"
             >
               Our Process
             </motion.span>
@@ -127,7 +128,7 @@ export default function TeacherMentoringPage() {
       </section>
 
       {/* ── WHAT MAKES THIS DIFFERENT ──────────────────────────── */}
-      <section className="bg-white py-16 md:py-24 relative overflow-hidden">
+      <section className="bg-white py-6 md:py-12 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">

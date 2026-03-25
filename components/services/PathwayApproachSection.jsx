@@ -12,7 +12,7 @@ export default function PathwayApproachSection({
   image,
 }) {
   return (
-    <section className="relative bg-[#faf9ff] py-12 md:py-20">
+    <section className="relative bg-[#faf9ff] py-6 md:py-12">
       {/* Background decoration */}
       <SubtleGrid />
       <FloatingShapes />
@@ -50,7 +50,7 @@ export default function PathwayApproachSection({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.65 }}
-              className="mb-6 lg:mb-10"
+              className="mb-10"
             >
               <p className="eyebrow">
                 {eyebrow}

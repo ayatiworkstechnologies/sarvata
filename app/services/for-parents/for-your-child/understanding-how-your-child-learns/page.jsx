@@ -51,7 +51,8 @@ export default function UnderstandingChildLearnsPage() {
       <InnerHero
         title="Understanding How Your Child Learns"
         breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Parents", href: "/services/for-parents" }, { label: "For Your Child", href: "/services/for-parents/for-your-child" }, { label: "Understanding Learning" }]}
-       variant="planning" />
+       variant="planning" 
+        image="/assets/service-par-2.webp" />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
@@ -64,7 +65,7 @@ export default function UnderstandingChildLearnsPage() {
       />
 
       {/* ── WHAT STUDENTS LEARN ──────────────────────────────────────── */}
-      <section className="bg-soft-bg py-16 md:py-24 relative overflow-hidden">
+      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
@@ -74,47 +75,46 @@ export default function UnderstandingChildLearnsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {whatStudentsLearn.map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-[1.75rem] border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: (i || 0) * 0.1 }} key={i} className="bg-white p-8 rounded-[1.75rem] border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
                 <p className="text-muted text-[15px] leading-relaxed">{item.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* ── PROGRAM DETAILS ─────────────────────────── */}
-      <section className="bg-white py-16 md:py-24 relative overflow-hidden">
+      <section className="bg-white py-6 md:py-12 relative overflow-hidden">
         <div className="container-max relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-16 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 max-w-6xl mx-auto">
             
-            {/* Formats & Included */}
-            <div className="space-y-8">
-              <div className="bg-primary/5 border border-primary/20 rounded-3xl p-8">
-                <h2 className="text-2xl font-bold text-foreground mb-6">Program Formats</h2>
-                <ul className="space-y-4">
-                  {details.formats.map((item, i) => (
-                    <li key={i} className="flex flex-col sm:flex-row sm:items-baseline gap-2 pb-4 border-b border-primary/10 last:border-0 last:pb-0">
-                      <span className="font-bold text-primary shrink-0 min-w-[180px]">{item.label}:</span>
-                      <span className="text-muted text-[15px] leading-relaxed">{item.value}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {/* Formats */}
+            <div className="bg-primary/5 border border-primary/20 rounded-[2rem] p-8 h-full flex flex-col">
+              <h2 className="text-2xl font-bold text-foreground mb-6">Program Formats</h2>
+              <ul className="space-y-4 flex-grow">
+                {details.formats.map((item, i) => (
+                  <li key={i} className="flex flex-col sm:flex-row sm:items-baseline gap-2 pb-4 border-b border-primary/10 last:border-0 last:pb-0">
+                    <span className="font-bold text-primary shrink-0 min-w-[180px]">{item.label}:</span>
+                    <span className="text-muted text-[15px] leading-relaxed">{item.value}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-              <div className="bg-white border border-border/60 shadow-sm rounded-3xl p-8">
-                <h2 className="text-2xl font-bold text-foreground mb-6">What&apos;s Included</h2>
-                <ul className="space-y-4">
-                  {details.included.map((item, i) => (
-                    <li key={i} className="flex gap-4 items-center">
-                      <span className="w-6 h-6 shrink-0 rounded-full bg-secondary/10 flex items-center justify-center">
-                        <svg className="w-3.5 h-3.5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
-                      </span>
-                      <span className="text-muted text-[16px] leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            {/* Included */}
+            <div className="bg-white border border-border/60 shadow-sm rounded-[2rem] p-8 h-full flex flex-col">
+              <h2 className="text-2xl font-bold text-foreground mb-6">What&apos;s Included</h2>
+              <ul className="space-y-4 flex-grow">
+                {details.included.map((item, i) => (
+                  <li key={i} className="flex gap-4 items-center">
+                    <span className="w-6 h-6 shrink-0 rounded-full bg-secondary/10 flex items-center justify-center">
+                      <svg className="w-3.5 h-3.5 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg>
+                    </span>
+                    <span className="text-muted text-[16px] leading-relaxed">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             {/* Parent Involvement Timeline */}

@@ -38,7 +38,7 @@ export default function ApproachHero() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <span className="eyebrow text-primary mb-6 block">
+              <span className="eyebrow">
                 Our Approach
               </span>
               <h2 className="heading-xl mb-8 leading-[1.1]">

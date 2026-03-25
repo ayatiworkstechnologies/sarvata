@@ -67,7 +67,8 @@ export default function FacultyMentoringPage() {
       <InnerHero
         title="Faculty & Leadership Mentoring"
         breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Leaders", href: "/services/for-leaders" }, { label: "Faculty & Leadership Mentoring" }]}
-        variant="mentoring" />
+        variant="mentoring" 
+        image="/assets/service-lea-2.webp" />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
@@ -81,7 +82,7 @@ export default function FacultyMentoringPage() {
       />
 
       {/* ── THE ISOLATION OF LEADERSHIP ─────────────────────── */}
-      <section className="bg-soft-bg py-16 md:py-24 relative overflow-hidden">
+      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div>
@@ -114,7 +115,7 @@ export default function FacultyMentoringPage() {
               <h3 className="text-2xl font-bold text-foreground mb-8">What Mentoring Provides</h3>
               <div className="space-y-6">
                 {leadershipMentoring.map((item, i) => (
-                  <div key={i} className="flex gap-4 items-start">
+                  <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: (i || 0) * 0.1 }} key={i} className="flex gap-4 items-start">
                     <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
                       <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
@@ -124,7 +125,7 @@ export default function FacultyMentoringPage() {
                       <strong className="block text-foreground mb-1">{item.title}</strong>
                       <p className="text-muted text-sm">{item.description}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -133,7 +134,7 @@ export default function FacultyMentoringPage() {
       </section>
 
       {/* ── BUILDING INTERNAL CAPACITY ───────────────────────── */}
-      <section className="bg-white py-16 md:py-24 relative overflow-hidden">
+      <section className="bg-white py-6 md:py-12 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
@@ -143,10 +144,10 @@ export default function FacultyMentoringPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-20">
             {capacityBuilding.map((item, i) => (
-              <div key={i} className="p-8 rounded-[1.75rem] bg-soft-bg/50 border border-border/60 hover:bg-soft-bg transition-colors duration-300">
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }} className="p-8 rounded-[1.75rem] bg-soft-bg/50 border border-border/60 hover:bg-soft-bg transition-colors duration-300">
                 <h3 className="text-xl font-bold text-foreground mb-4">{item.title}</h3>
                 <p className="text-muted text-[15px] leading-relaxed">{item.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
 

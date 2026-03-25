@@ -11,7 +11,7 @@ export default function PathwayServicesSection({ eyebrow = "Services", title, se
     : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
 
   return (
-    <section className="relative bg-white overflow-hidden py-24 md:py-32">
+    <section className="relative bg-white overflow-hidden py-6 md:py-12">
       {/* Background decoration */}
       <div
         className="absolute inset-0 opacity-[0.02] pointer-events-none"
@@ -54,12 +54,12 @@ export default function PathwayServicesSection({ eyebrow = "Services", title, se
                   0{i + 1}
                 </span>
 
-                <div className="relative z-10 flex flex-col h-full">
-                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6 leading-tight pr-12">
+                <div className="relative z-10 flex flex-col h-full space-y-10 lg:space-y-14">
+                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 leading-tight pr-12">
                     {svc.title}
                   </h3>
 
-                  <p className="text-slate-500 text-base lg:text-lg leading-relaxed mb-12 flex-grow font-light">
+                  <p className="text-slate-500 text-base lg:text-lg leading-relaxed flex-grow font-light">
                     {svc.description}
                   </p>
 

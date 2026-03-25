@@ -68,7 +68,8 @@ export default function StrategicPlanningPage() {
       <InnerHero
         title="Strategic Planning & Systems"
         breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Leaders", href: "/services/for-leaders" }, { label: "Strategic Planning & Systems" }]}
-        variant="planning" />
+        variant="planning" 
+        image="/assets/service-lea-2.webp" />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
@@ -83,7 +84,7 @@ export default function StrategicPlanningPage() {
       />
 
       {/* ── CORE SYSTEMS ───────────────────────────────────────── */}
-      <section className="bg-soft-bg py-16 md:py-24 relative overflow-hidden">
+      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
@@ -95,14 +96,14 @@ export default function StrategicPlanningPage() {
             {coreSystems.map((sys, i) => {
               const Icon = [BookOpen, LineChart, Calendar, LifeBuoy, Laptop, FileText][i] || FileText;
               return (
-              <div key={i} className="group h-full bg-white p-8 rounded-[1.75rem] border border-border/50 shadow-[0_4px_16px_rgba(0,0,0,0.02)] hover:shadow-xl hover:border-primary/20 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden flex flex-col">
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: (i || 0) * 0.1 }} key={i} className="group h-full bg-white p-8 rounded-[1.75rem] border border-border/50 shadow-[0_4px_16px_rgba(0,0,0,0.02)] hover:shadow-xl hover:border-primary/20 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden flex flex-col">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500" />
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 text-primary ring-1 ring-primary/20 shadow-inner group-hover:bg-primary group-hover:text-white transition-colors duration-500">
                   <Icon className="w-7 h-7" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-xl font-bold text-foreground mb-3">{sys.title}</h3>
                 <p className="text-muted text-[15px] leading-relaxed flex-1">{sys.description}</p>
-              </div>
+              </motion.div>
               );
             })}
           </div>
@@ -110,14 +111,14 @@ export default function StrategicPlanningPage() {
       </section>
 
       {/* ── THE PROCESS ──────────────────────────────────────── */}
-      <section className="relative bg-white overflow-hidden py-20 md:py-32">
+      <section className="relative bg-white overflow-hidden py-6 md:py-12">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <motion.span 
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4 block"
+              className="eyebrow"
             >
               Our Methodology
             </motion.span>
@@ -166,7 +167,7 @@ export default function StrategicPlanningPage() {
       </section>
 
       {/* ── CHALLENGES & SUPPORT ───────────────────────────── */}
-      <section className="bg-soft-bg py-20 md:py-32 relative overflow-hidden">
+      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-[2.5rem] p-10 md:p-16 border border-border shadow-xl shadow-black/5">

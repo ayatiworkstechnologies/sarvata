@@ -4,12 +4,14 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { HiHome } from "react-icons/hi";
 import { GrNext } from "react-icons/gr";
+import Image from "next/image";
 
 export default function InnerHero({
   title,
   subtitle,
   breadcrumbs = [],
-  variant = "default"
+  variant = "default",
+  image
 }) {
   const getVariantVectors = () => {
     switch (variant) {
@@ -130,16 +132,18 @@ export default function InnerHero({
       <div className="absolute inset-0 z-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
       
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
-        {getVariantVectors()}
+        {!image && getVariantVectors()}
         
         {/* Common Accents */}
         <motion.div animate={{ y: [0, -30, 0] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }} className="absolute top-[20%] left-[10%] w-24 h-24 rounded-full bg-gradient-to-br from-primary/5 to-transparent border border-white/20 backdrop-blur-sm" />
       </div>      {/* ── Content ── */}
-      <div className="container-max pt-40 pb-16 md:pt-64 md:pb-24 relative z-10 text-left">
-         <div className="max-w-4xl relative z-10 w-full text-left">
-            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.6 }} className="text-xl font-extrabold tracking-tight text-foreground sm:text-2xl md:text-3xl lg:text-4xl leading-[1.1] drop-shadow-[0_4px_4px_rgba(0,0,0,0.1)]">
-               {title}
-            </motion.h1>
+      <div className="container-max pt-24 pb-16 md:pt-28 md:pb-20 relative z-10 text-left">
+         <div className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-20 ${image ? 'lg:justify-between' : ''}`}>
+           {/* Left text */}
+           <div className={`relative z-10 w-full text-left ${image ? 'lg:w-[55%]' : 'max-w-4xl'}`}>
+              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.6 }} className="text-xl font-extrabold tracking-tight text-foreground sm:text-2xl md:text-3xl lg:text-4xl leading-[1.1] drop-shadow-[0_4px_4px_rgba(0,0,0,0.1)]">
+                 {title}
+              </motion.h1>
 
             {subtitle && (
                <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.6 }} className="mt-4 section-body text-muted max-w-2xl font-medium">
@@ -177,6 +181,22 @@ export default function InnerHero({
                   </nav>
                </motion.div>
             )}
+           </div>
+
+           {/* Right image */}
+           {image && (
+             <div className="relative z-10 w-full lg:w-[45%] flex justify-end">
+               <motion.div 
+                 initial={{ opacity: 0, scale: 0.95, x: 20 }}
+                 animate={{ opacity: 1, scale: 1, x: 0 }}
+                 transition={{ delay: 0.3, duration: 0.8 }}
+                 className="relative aspect-square md:aspect-[4/3] w-full max-w-[500px] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 md:border-8 border-white/40"
+               >
+                 <Image src={image} priority alt={title || "Illustration"} fill className="object-cover" />
+                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none" />
+               </motion.div>
+             </div>
+           )}
          </div>
       </div>
     </section>

@@ -47,10 +47,11 @@ export default function InclusionAuditsPage() {
       <InnerHero
         title="Inclusion Audits & Roadmaps"
         breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Leaders", href: "/services/for-leaders" }, { label: "Inclusion Audits & Roadmaps" }]}
-        variant="planning" />
+        variant="planning" 
+        image="/assets/service-lea-2.webp" />
 
       {/* ── FROM ASPIRATION TO ACTION & THE GAP ────────────────── */}
-      <section className="bg-white py-20 md:py-32 relative overflow-hidden">
+      <section className="bg-white py-6 md:py-12 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
@@ -89,7 +90,7 @@ export default function InclusionAuditsPage() {
       </section>
 
       {/* ── WHAT THIS PROVIDES ─────────────────────────────────── */}
-      <section className="bg-soft-bg py-16 md:py-24 relative overflow-hidden">
+      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="max-w-3xl mx-auto mb-16 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
@@ -98,28 +99,28 @@ export default function InclusionAuditsPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {["Collaborative discovery of your current inclusive practices", "Objective, evidence-based assessment", "Confidential report with prioritized, actionable recommendations", "Strategic roadmap sequencing changes thoughtfully"].map((item, i) => (
-              <div key={i} className="flex gap-4 items-start bg-white h-full p-6 rounded-[1.25rem] shadow-sm border border-border/50">
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: (i || 0) * 0.1 }} key={i} className="flex gap-4 items-start bg-white h-full p-6 rounded-[1.25rem] shadow-sm border border-border/50">
                 <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                   <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
                 <p className="text-foreground font-medium text-[15px] pt-1 leading-relaxed">{item}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* ── THE PROCESS ──────────────────────────────────────── */}
-      <section className="relative bg-white overflow-hidden py-20 md:py-32">
+      <section className="relative bg-white overflow-hidden py-6 md:py-12">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <motion.span 
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-primary font-bold tracking-[0.2em] uppercase text-sm mb-4 block"
+              className="eyebrow"
             >
               Our Methodology
             </motion.span>
@@ -168,7 +169,7 @@ export default function InclusionAuditsPage() {
       </section>
 
       {/* ── KEY DOMAINS & DETAILS ─────────────────────────────────── */}
-      <section className="bg-soft-bg py-16 md:py-24 relative overflow-hidden">
+      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             <div>
@@ -177,10 +178,10 @@ export default function InclusionAuditsPage() {
               </h2>
               <div className="space-y-6">
                 {domains.map((domain, i) => (
-                  <div key={i} className="bg-white p-6 rounded-2xl border border-border/50 shadow-sm">
+                  <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }} className="bg-white p-6 rounded-2xl border border-border/50 shadow-sm">
                     <h3 className="text-lg font-bold text-foreground mb-2">{domain.title}</h3>
                     <p className="text-muted text-sm">{domain.description}</p>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -235,7 +236,7 @@ export default function InclusionAuditsPage() {
       </section>
 
       {/* ── WHEN THIS MAKES SENSE ─────────────────────────────────── */}
-      <section className="bg-white py-16 md:py-24 relative overflow-hidden">
+      <section className="bg-white py-6 md:py-12 relative overflow-hidden">
         <div className="container-max relative z-10 max-w-4xl mx-auto">
           <div className="p-8 md:p-12 rounded-[2rem] bg-secondary/5 border border-secondary/20">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">

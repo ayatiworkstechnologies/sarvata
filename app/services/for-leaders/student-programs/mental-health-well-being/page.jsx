@@ -1,12 +1,9 @@
+"use client";
+
+import { motion } from "framer-motion";
 import InnerHero from "@/components/InnerHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
-
-export const metadata = {
-  title: "Mental Health & Well-Being | Sarvata",
-  description:
-    "Your Mental Health Matters. It's okay to feel overwhelmed. Let's build skills that work.",
-};
 
 export default function MentalHealthPage() {
   const coverage = [
@@ -54,7 +51,8 @@ export default function MentalHealthPage() {
       <InnerHero
         title="Mental Health & Well-Being"
         breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Leaders", href: "/services/for-leaders" }, { label: "Student Programs", href: "/services/for-leaders/student-programs" }, { label: "Mental Health" }]}
-        variant="mental-health" />
+        variant="mental-health" 
+        image="/assets/service-lea-2.webp" />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
@@ -67,7 +65,7 @@ export default function MentalHealthPage() {
       />
 
       {/* ── WHAT WE COVER ──────────────────────────────────────── */}
-      <section className="bg-soft-bg py-16 md:py-24 relative overflow-hidden">
+      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
@@ -77,17 +75,17 @@ export default function MentalHealthPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {coverage.map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-[1.75rem] border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }} key={i} className="bg-white p-8 rounded-[1.75rem] border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
                 <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
                 <p className="text-muted text-[15px] leading-relaxed">{item.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* ── APPROACH & LEADERSHIP VIEW ─────────────────────────── */}
-      <section className="bg-white py-16 md:py-24 relative overflow-hidden">
+      <section className="bg-white py-6 md:py-12 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-20 max-w-6xl mx-auto">
 
@@ -119,7 +117,7 @@ export default function MentalHealthPage() {
       </section>
 
       {/* ── IMPLEMENTATION ──────────────────────────────────────── */}
-      <section className="bg-secondary/5 py-16 md:py-24 relative overflow-hidden">
+      <section className="bg-secondary/5 py-6 md:py-12 relative overflow-hidden">
         <div className="container-max relative z-10 max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">Implementation</h2>

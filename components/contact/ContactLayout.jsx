@@ -5,6 +5,7 @@ import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import ContactForm from "./ContactForm";
 import { useConsultation } from "@/context/ConsultationContext";
+import ScheduleConsultationButton from "@/components/ScheduleConsultationButton";
 
 const audiences = [
   {
@@ -251,13 +252,7 @@ export default function ContactLayout() {
               </p>
             </div>
 
-            <button
-              type="button"
-              onClick={openModal}
-              className="inline-flex h-12 shrink-0 items-center justify-center rounded-full bg-primary px-8 text-sm font-bold text-white shadow-xl shadow-primary/20 transition-all duration-300 hover:-translate-y-1 active:scale-[0.98]"
-            >
-              Schedule a Consultation
-            </button>
+            <ScheduleConsultationButton label="Schedule a Consultation" />
           </div>
         </motion.div>
       </div>

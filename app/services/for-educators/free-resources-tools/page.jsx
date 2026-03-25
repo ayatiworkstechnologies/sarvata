@@ -59,7 +59,8 @@ export default function FreeResourcesPage() {
       <InnerHero
         title="Free Resources & Tools"
         breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Educators", href: "/services/for-educators" }, { label: "Free Resources & Tools" }]}
-       variant="resources" />
+       variant="resources" 
+        image="/assets/service-edu-2.webp" />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
@@ -71,7 +72,7 @@ export default function FreeResourcesPage() {
       />
 
       {/* ── RESOURCES GRID ─────────────────────────────────────── */}
-      <section className="relative bg-soft-bg overflow-hidden py-16 md:py-24">
+      <section className="relative bg-soft-bg overflow-hidden py-6 md:py-12">
         <div className="container-max relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {resources.map((resource, i) => (
@@ -91,10 +92,10 @@ export default function FreeResourcesPage() {
 
                   <div className="space-y-3 mb-8">
                     {resource.details.map((detail, j) => (
-                      <div key={j} className="flex items-center gap-3 text-sm text-foreground/70">
+                      <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: (i || 0) * 0.1 }} key={j} className="flex items-center gap-3 text-sm text-foreground/70">
                         <span className="w-1.5 h-1.5 rounded-full bg-primary/40" />
                         {detail}
-                      </div>
+                      </motion.div>
                     ))}
                   </div>
                 </div>
@@ -117,7 +118,7 @@ export default function FreeResourcesPage() {
       </section>
 
       {/* ── USING THESE RESOURCES ────────────────────────────────── */}
-      <section className="bg-white py-16 md:py-24 relative overflow-hidden text-center">
+      <section className="bg-white py-6 md:py-12 relative overflow-hidden text-center">
         <div className="container-max relative z-10">
            <div className="max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight mb-8">

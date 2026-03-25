@@ -39,7 +39,7 @@ const services = [
 
 export default function ServicesMain() {
   return (
-    <section className="relative py-24 md:py-32 bg-white overflow-hidden">
+    <section className="relative py-6 md:py-12 bg-white overflow-hidden">
       {/* Background Architectural Elements - Using a standard hex fallback for the primary color */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-[0.03] pointer-events-none"
