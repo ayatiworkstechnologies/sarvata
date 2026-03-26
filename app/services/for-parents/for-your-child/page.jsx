@@ -10,14 +10,25 @@ export default function ForYourChildPage() {
   const programs = [
     {
       title: "Understanding How Your Child Learns",
-      description: "Individual and group programs helping students develop self-awareness and independence as learners.",
+      description:
+        "Individual and group programs helping students develop self-awareness and independence as learners.",
       href: "/services/for-parents/for-your-child/understanding-how-your-child-learns",
       icon: (
-        <svg className="w-8 h-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+        <svg
+          className="w-8 h-8 text-primary"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M13 10V3L4 14h7v7l9-11h-7z"
+          />
         </svg>
-      )
-    }
+      ),
+    },
   ];
 
   return (
@@ -25,9 +36,14 @@ export default function ForYourChildPage() {
       {/* ── HERO ────────────────────────────────────────────────── */}
       <InnerHero
         title="For Your Child"
-        breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Parents", href: "/services/for-parents" }, { label: "For Your Child" }]}
-        variant="mental-health" 
-        image="/assets/service-par-2.webp" />
+        breadcrumbs={[
+          { label: "Services", href: "/services" },
+          { label: "For Parents", href: "/services/for-parents" },
+          { label: "For Your Child" },
+        ]}
+        variant="mental-health"
+        image="/assets/service-par-2.webp"
+      />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
@@ -36,7 +52,7 @@ export default function ForYourChildPage() {
         paragraphs={[
           "Beyond subject content, developing awareness of how they learn can support both academic progress and longer-term learning independence.",
           "We work with children and teens to discover their learning preferences, develop effective strategies, build self-regulation skills, and become increasingly independent learners.",
-          "Helping your child develop metacognitive awareness and effective learning strategies."
+          "Helping your child develop metacognitive awareness and effective learning strategies.",
         ]}
       />
 
@@ -51,16 +67,40 @@ export default function ForYourChildPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {programs.map((program, i) => (
-              <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
                 className="group bg-white p-8 rounded-[1.75rem] border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="mb-6">{program.icon}</div>
-                <h3 className="text-xl font-bold text-foreground mb-3">{program.title}</h3>
-                <p className="text-muted text-[15px] leading-relaxed mb-4">{program.description}</p>
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  {program.title}
+                </h3>
+                <p className="text-muted text-[15px] leading-relaxed mb-4">
+                  {program.description}
+                </p>
                 {program.href && (
-                  <a href={program.href} className="inline-flex items-center gap-1.5 text-primary font-bold text-sm hover:text-secondary hover:gap-3 transition-all duration-300">
+                  <a
+                    href={program.href}
+                    className="inline-flex items-center gap-1.5 text-primary font-bold text-sm hover:text-secondary hover:gap-3 transition-all duration-300"
+                  >
                     Learn More
-                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+                    <svg
+                      className="w-3.5 h-3.5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
                   </a>
                 )}
               </motion.div>
@@ -74,13 +114,15 @@ export default function ForYourChildPage() {
         title="What Students & Parents Say"
         testimonials={[
           {
-            quote: "I finally understand how I learn. It's not that I wasn't smart; I just needed a different way to organize my thoughts.",
-            author: "Maya, Grade 8 Student"
+            quote:
+              "I finally understand how I learn. It's not that I wasn't smart; I just needed a different way to organize my thoughts.",
+            author: "Maya, Grade 8 Student",
           },
           {
-            quote: "Watching my child move from frustration to independence has been the greatest gift. They actually enjoy planning their study time now.",
-            author: "R. Khanna, Parent"
-          }
+            quote:
+              "Watching my child move from frustration to independence has been the greatest gift. They actually enjoy planning their study time now.",
+            author: "R. Khanna, Parent",
+          },
         ]}
       />
 
@@ -99,8 +141,9 @@ export default function ForYourChildPage() {
           {
             label: "Discuss",
             title: "Schedule Consultation",
-            description: "Contact us to plan workshops tailored to your child's needs.",
-            href: "/contact",
+            description:
+              "Contact us to plan workshops tailored to your child's needs.",
+            href: "/contact-us",
             cta: "Schedule Consultation",
           },
         ]}

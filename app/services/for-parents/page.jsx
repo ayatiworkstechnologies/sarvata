@@ -64,12 +64,20 @@ export default function ParentsPage() {
         image="/assets/service-par-1.webp"
         paragraphs={[
           <span key="p1">
-            You celebrate your child&apos;s strengths, navigate their challenges, and champion their unique potential. This journey can feel complex, {" "}
-            <span className="text-primary italic font-bold">especially when supporting diverse learning needs.</span>
+            You celebrate your child&apos;s strengths, navigate their
+            challenges, and champion their unique potential. This journey can
+            feel complex,{" "}
+            <span className="text-primary italic font-bold">
+              especially when supporting diverse learning needs.
+            </span>
           </span>,
           <span key="p2">
-            Sarvata partners with you to understand your child&apos;s learning profile and {" "}
-            <span className="text-primary italic font-bold">empowers you to become a stronger advocate</span> in their educational journey.
+            Sarvata partners with you to understand your child&apos;s learning
+            profile and{" "}
+            <span className="text-primary italic font-bold">
+              empowers you to become a stronger advocate
+            </span>{" "}
+            in their educational journey.
           </span>,
         ]}
       />
@@ -153,7 +161,7 @@ export default function ParentsPage() {
             title: "Schedule a Consultation",
             description:
               "Book a confidential consultation to discuss your child's specific needs and learning profile.",
-            href: "/contact",
+            href: "/contact-us",
             cta: "Book a Consultation",
           },
           {
@@ -161,7 +169,7 @@ export default function ParentsPage() {
             title: "Contact Us",
             description:
               "Have questions? Reach out directly and we'll be in touch within one business day.",
-            href: "/contact",
+            href: "/contact-us",
             cta: "Get in Touch",
           },
         ]}

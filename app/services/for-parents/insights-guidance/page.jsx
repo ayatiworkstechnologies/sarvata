@@ -102,7 +102,7 @@ export default function InsightsGuidancePage() {
             label: "Discuss",
             title: "Schedule a Consultation",
             description: "Speak with our professionals about your child's unique needs.",
-            href: "/contact",
+            href: "/contact-us",
             cta: "Schedule a Consultation",
           },
         ]}

@@ -6,45 +6,43 @@ import { motion } from "framer-motion";
 import { Shield, Briefcase, HeartHandshake } from "lucide-react";
 import TestimonialsSection from "@/components/about/TestimonialsSection";
 
-
-
 export default function TeacherMentoringPage() {
   const steps = [
     {
       title: "Partnership",
-      description: "We meet to understand your goals and context."
+      description: "We meet to understand your goals and context.",
     },
     {
       title: "Co-Planning",
-      description: "Together we design lessons incorporating new strategies."
+      description: "Together we design lessons incorporating new strategies.",
     },
     {
       title: "Observation",
-      description: "We observe focused on what you asked us to notice."
+      description: "We observe focused on what you asked us to notice.",
     },
     {
       title: "Reflection",
-      description: "Protected debrief time to analyze and plan next steps."
+      description: "Protected debrief time to analyze and plan next steps.",
     },
     {
       title: "Iteration",
-      description: "You try again, we support, we refine."
-    }
+      description: "You try again, we support, we refine.",
+    },
   ];
 
   const differentiators = [
     {
       title: "Confidential",
-      description: "What we discuss stays between us."
+      description: "What we discuss stays between us.",
     },
     {
       title: "Job-embedded",
-      description: "Your classroom, your students, your curriculum."
+      description: "Your classroom, your students, your curriculum.",
     },
     {
       title: "Non-evaluative",
-      description: "Partnership for growth, not assessment."
-    }
+      description: "Partnership for growth, not assessment.",
+    },
   ];
 
   return (
@@ -52,16 +50,21 @@ export default function TeacherMentoringPage() {
       {/* ── HERO ────────────────────────────────────────────────── */}
       <InnerHero
         title="Teacher Mentoring"
-        breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Educators", href: "/services/for-educators" }, { label: "Teacher Mentoring" }]}
-        variant="mentoring" 
-        image="/assets/service-edu-2.webp" />
+        breadcrumbs={[
+          { label: "Services", href: "/services" },
+          { label: "For Educators", href: "/services/for-educators" },
+          { label: "Teacher Mentoring" },
+        ]}
+        variant="mentoring"
+        image="/assets/service-edu-2.webp"
+      />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="From Workshop to Classroom"
         title="Implement Strategies with Real Support"
         paragraphs={[
-          "Workshops provide tools. Mentoring helps you implement them with your actual students. This is a confidential, non-evaluative partnership - not supervision."
+          "Workshops provide tools. Mentoring helps you implement them with your actual students. This is a confidential, non-evaluative partnership - not supervision.",
         ]}
       />
 
@@ -69,7 +72,7 @@ export default function TeacherMentoringPage() {
       <section className="relative bg-white overflow-hidden py-6 md:py-12">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-20">
-            <motion.span 
+            <motion.span
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -81,10 +84,11 @@ export default function TeacherMentoringPage() {
               How It Works
             </h2>
             <div className="mt-6 inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-secondary/5 border border-secondary/20 shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-                <p className="text-foreground font-medium text-[15px]">
-                  Typical commitment: 4-6 cycles over a semester, meeting every 2-3 weeks
-                </p>
+              <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+              <p className="text-foreground font-medium text-[15px]">
+                Typical commitment: 4-6 cycles over a semester, meeting every
+                2-3 weeks
+              </p>
             </div>
           </div>
 
@@ -100,20 +104,28 @@ export default function TeacherMentoringPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: i * 0.1 }}
-                  className={`relative flex flex-col md:flex-row items-start md:items-center ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+                  className={`relative flex flex-col md:flex-row items-start md:items-center ${i % 2 === 0 ? "md:flex-row-reverse" : ""}`}
                 >
                   {/* Content Card */}
                   <div className="w-full md:w-5/12">
-                    <div className={`p-8 rounded-[2rem] bg-soft-bg/50 border border-border/60 hover:border-primary/30 hover:bg-white hover:shadow-xl transition-all duration-500 group ${i % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                      <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{step.title}</h3>
-                      <p className="text-muted text-[16px] leading-relaxed">{step.description}</p>
+                    <div
+                      className={`p-8 rounded-[2rem] bg-soft-bg/50 border border-border/60 hover:border-primary/30 hover:bg-white hover:shadow-xl transition-all duration-500 group ${i % 2 === 0 ? "md:text-right" : "md:text-left"}`}
+                    >
+                      <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                        {step.title}
+                      </h3>
+                      <p className="text-muted text-[16px] leading-relaxed">
+                        {step.description}
+                      </p>
                     </div>
                   </div>
 
                   {/* Step Number Indicator */}
                   <div className="absolute left-0 md:left-1/2 top-0 md:top-auto translate-y-2 md:translate-y-0 -translate-x-1/2 flex items-center justify-center z-10">
                     <div className="w-12 h-12 rounded-full bg-white border-4 border-primary/20 shadow-lg flex items-center justify-center">
-                       <span className="text-primary font-bold text-lg">{i + 1}</span>
+                      <span className="text-primary font-bold text-lg">
+                        {i + 1}
+                      </span>
                     </div>
                   </div>
 
@@ -137,22 +149,27 @@ export default function TeacherMentoringPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {differentiators.map((diff, i) => {
-              const Icon = i === 0 ? Shield : i === 1 ? Briefcase : HeartHandshake;
+              const Icon =
+                i === 0 ? Shield : i === 1 ? Briefcase : HeartHandshake;
               return (
-              <motion.div 
-                key={i} 
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="text-center p-8 border border-border/50 rounded-3xl hover:border-primary/20 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 bg-white h-full flex flex-col"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 mx-auto flex items-center justify-center mb-6 ring-1 ring-primary/20 shadow-inner">
-                  <Icon className="w-8 h-8 text-primary" strokeWidth={1.5} />
-                </div>
-                <h3 className="text-2xl font-bold text-foreground mb-3">{diff.title}</h3>
-                <p className="text-muted text-[16px] leading-relaxed">{diff.description}</p>
-              </motion.div>
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="text-center p-8 border border-border/50 rounded-3xl hover:border-primary/20 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 bg-white h-full flex flex-col"
+                >
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 mx-auto flex items-center justify-center mb-6 ring-1 ring-primary/20 shadow-inner">
+                    <Icon className="w-8 h-8 text-primary" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-3">
+                    {diff.title}
+                  </h3>
+                  <p className="text-muted text-[16px] leading-relaxed">
+                    {diff.description}
+                  </p>
+                </motion.div>
               );
             })}
           </div>
@@ -165,13 +182,15 @@ export default function TeacherMentoringPage() {
           title="What Mentees Say"
           testimonials={[
             {
-              quote: "Mentoring provides the bridge between theory and practice. Having a trusted partner to co-plan and observe with no evaluation pressure changed my practice forever.",
-              author: "Lin M., Grade 5 Teacher"
+              quote:
+                "Mentoring provides the bridge between theory and practice. Having a trusted partner to co-plan and observe with no evaluation pressure changed my practice forever.",
+              author: "Lin M., Grade 5 Teacher",
             },
             {
-              quote: "Job-embedded support is the only way professional development sticks. The reflection cycles were the most valuable 20 minutes of my week.",
-              author: "David K., Early Years Educator"
-            }
+              quote:
+                "Job-embedded support is the only way professional development sticks. The reflection cycles were the most valuable 20 minutes of my week.",
+              author: "David K., Early Years Educator",
+            },
           ]}
         />
       </div>
@@ -198,8 +217,9 @@ export default function TeacherMentoringPage() {
           {
             label: "Discuss",
             title: "Schedule Consultation",
-            description: "Speak directly with us to explore how mentoring might help.",
-            href: "/contact",
+            description:
+              "Speak directly with us to explore how mentoring might help.",
+            href: "/contact-us",
             cta: "Schedule Consultation",
           },
         ]}

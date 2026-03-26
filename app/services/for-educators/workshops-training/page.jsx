@@ -236,7 +236,7 @@ export default function WorkshopsTrainingPage() {
             label: "Plan",
             title: "Contact Us to Schedule",
             description: "Ready to set up a workshop for your school or team?",
-            href: "/contact",
+            href: "/contact-us",
             cta: "Contact Us",
           },
           {
@@ -244,7 +244,7 @@ export default function WorkshopsTrainingPage() {
             title: "Schedule Consultation",
             description:
               "Speak with our team to find the best fit for your educators.",
-            href: "/contact",
+            href: "/contact-us",
             cta: "Schedule Consultation",
           },
         ]}

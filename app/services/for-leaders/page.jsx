@@ -64,16 +64,26 @@ export default function LeadersPage() {
         image="/assets/service-lea-1.webp"
         paragraphs={[
           <span key="p1">
-            In your hands rests not just an institution, but the promise of tomorrow. As school leaders, you stand at the crossroads of {" "}
-            <span className="text-primary italic font-bold">powerful and often competing imperatives.</span>
+            In your hands rests not just an institution, but the promise of
+            tomorrow. As school leaders, you stand at the crossroads of{" "}
+            <span className="text-primary italic font-bold">
+              powerful and often competing imperatives.
+            </span>
           </span>,
           <span key="p2">
-            Managing the immediacy of daily operations while safeguarding long-term vision, upholding accountability without losing sight of authentic learning, empowering faculty despite constraints, and {" "}
-            <span className="text-primary italic font-bold">harmonising the varied expectations of stakeholders.</span>
+            Managing the immediacy of daily operations while safeguarding
+            long-term vision, upholding accountability without losing sight of
+            authentic learning, empowering faculty despite constraints, and{" "}
+            <span className="text-primary italic font-bold">
+              harmonising the varied expectations of stakeholders.
+            </span>
           </span>,
           <span key="p3">
-            Meaningful change is slow, contextual, and requires deep cultural shifts - far beyond policy updates. {" "}
-            <span className="text-primary italic font-bold">That&apos;s where partnership makes the difference.</span>
+            Meaningful change is slow, contextual, and requires deep cultural
+            shifts - far beyond policy updates.{" "}
+            <span className="text-primary italic font-bold">
+              That&apos;s where partnership makes the difference.
+            </span>
           </span>,
         ]}
       />
@@ -152,7 +162,7 @@ export default function LeadersPage() {
             title: "Schedule a Consultation",
             description:
               "Have a confidential, no-obligation conversation about your school's specific context and needs.",
-            href: "/contact",
+            href: "/contact-us",
             cta: "Book a Call",
           },
           {
@@ -160,7 +170,7 @@ export default function LeadersPage() {
             title: "Contact Us Directly",
             description:
               "Send us a message and we'll respond within one business day to discuss how we can help.",
-            href: "/contact",
+            href: "/contact-us",
             cta: "Get in Touch",
           },
         ]}

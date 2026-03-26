@@ -8,9 +8,9 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const pageLinks = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
+  { name: "About Us", href: "/about-us" },
   { name: "Services", href: "/services" },
-  { name: "Contact", href: "/contact" },
+  { name: "Contact Us", href: "/contact-us" },
 ];
 
 const serviceLinks = [
@@ -58,7 +58,9 @@ export default function Footer() {
                 </div>
 
                 <p className="mt-8 max-w-md text-[17px] leading-8 text-muted">
-                  Sarvata Educational Consultancy partners directly with educators, school leaders, and families to design actionable, lasting improvements for your unique learning environments.
+                  Sarvata Educational Consultancy partners directly with
+                  educators, school leaders, and families to design actionable,
+                  lasting improvements for your unique learning environments.
                 </p>
               </div>
 

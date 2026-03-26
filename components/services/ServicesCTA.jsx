@@ -73,7 +73,7 @@ export default function ServicesCTA() {
               </Link>
 
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="text-slate-600 font-bold uppercase tracking-[0.2em] text-[11px] hover:text-primary transition-colors relative group"
               >
                 Contact Us

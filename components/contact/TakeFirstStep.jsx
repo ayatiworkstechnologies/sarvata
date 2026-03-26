@@ -14,13 +14,13 @@ const actions = [
   {
     question: "Ready to talk?",
     cta: "Schedule a consultation",
-    href: "/contact",
+    href: "/contact-us",
     variant: "primary",
   },
   {
     question: "Questions?",
     cta: "Contact us",
-    href: "/contact",
+    href: "/contact-us",
     variant: "outline",
   },
 ];
@@ -56,9 +56,7 @@ export default function TakeFirstStep() {
           >
             Ready to transform
             <br />
-            <span className="text-primary">
-              your community?
-            </span>
+            <span className="text-primary">your community?</span>
           </motion.h2>
 
           {/* Subtitle */}

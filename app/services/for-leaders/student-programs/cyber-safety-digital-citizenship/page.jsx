@@ -100,7 +100,11 @@ export default function CyberSafetyPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {coverage.map((item, i) => (
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
                 key={i}
                 className="bg-white p-8 rounded-[1.75rem] border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
@@ -214,7 +218,7 @@ export default function CyberSafetyPage() {
             label: "Discuss",
             title: "Schedule Consultation",
             description: "Let's align this program with your tech policies.",
-            href: "/contact",
+            href: "/contact-us",
             cta: "Schedule Consultation",
           },
         ]}

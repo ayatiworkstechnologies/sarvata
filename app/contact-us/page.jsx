@@ -1,5 +1,6 @@
 import MainHero from "@/components/MainHero";
 import ContactLayout from "@/components/contact/ContactLayout";
+import ContactMap from "@/components/contact/ContactMap";
 
 export const metadata = {
   title: "Contact Sarvata - Get in Touch with Our Team",
@@ -40,6 +41,7 @@ export default function ContactPage() {
         breadcrumbs={[{ label: "Contact Us" }]}
       />
       <ContactLayout />
+      {/* <ContactMap /> */}
     </main>
   );
 }

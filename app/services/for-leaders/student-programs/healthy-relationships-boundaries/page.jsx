@@ -152,7 +152,7 @@ export default function HealthyRelationshipsPage() {
             label: "Discuss",
             title: "Schedule Consultation",
             description: "Let's align this program with your school's policies.",
-            href: "/contact",
+            href: "/contact-us",
             cta: "Schedule Consultation",
           },
         ]}

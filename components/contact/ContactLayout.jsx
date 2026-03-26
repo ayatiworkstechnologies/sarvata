@@ -6,6 +6,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import ContactForm from "./ContactForm";
 import { useConsultation } from "@/context/ConsultationContext";
 import ScheduleConsultationButton from "@/components/ScheduleConsultationButton";
+import ContactMap from "./ContactMap";
 
 const audiences = [
   {
@@ -26,9 +27,21 @@ const audiences = [
 ];
 
 const socials = [
-  { Icon: FaFacebookF, href: "https://www.facebook.com/people/Sarvata-Educational-Consultancy/", label: "Facebook" },
-  { Icon: FaInstagram, href: "https://www.instagram.com/sarvata_edu_consultancy_?igsh=MTkwdmk0eW15MGZ6dA%3D%3D&utm_source=qr", label: "Instagram" },
-  { Icon: FaLinkedinIn, href: "https://in.linkedin.com/in/sarvata-educational-consultancy-6ab205321?trk=public_post_feed-actor-name", label: "LinkedIn" },
+  {
+    Icon: FaFacebookF,
+    href: "https://www.facebook.com/people/Sarvata-Educational-Consultancy/",
+    label: "Facebook",
+  },
+  {
+    Icon: FaInstagram,
+    href: "https://www.instagram.com/sarvata_edu_consultancy_?igsh=MTkwdmk0eW15MGZ6dA%3D%3D&utm_source=qr",
+    label: "Instagram",
+  },
+  {
+    Icon: FaLinkedinIn,
+    href: "https://in.linkedin.com/in/sarvata-educational-consultancy-6ab205321?trk=public_post_feed-actor-name",
+    label: "LinkedIn",
+  },
 ];
 
 export default function ContactLayout() {
@@ -52,11 +65,13 @@ export default function ContactLayout() {
           </p>
 
           <h2 className="heading-xl mb-4 text-foreground">
-            Let&apos;s Start a <span className="text-primary">Conversation</span>
+            Let&apos;s Start a{" "}
+            <span className="text-primary">Conversation</span>
           </h2>
 
           <p className="max-w-xl text-lg leading-relaxed text-muted">
-            Whether you&apos;re exploring options or ready to partner, we&apos;re here to help.
+            Whether you&apos;re exploring options or ready to partner,
+            we&apos;re here to help.
           </p>
         </motion.div>
 
@@ -201,7 +216,7 @@ export default function ContactLayout() {
               <p className="font-medium text-foreground">Monday - Friday</p>
               <p>9:00 AM - 5:00 PM IST</p>
               <p className="mt-2 text-xs italic text-muted/60">
-                We typically respond within 1-2 business days.
+                We respond within 1-2 business days.
               </p>
             </div>
           </div>
@@ -233,6 +248,8 @@ export default function ContactLayout() {
           </div>
         </motion.div>
 
+        <ContactMap />
+
         {/* Consultation CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -247,8 +264,8 @@ export default function ContactLayout() {
                 Schedule a Consultation
               </h3>
               <p className="leading-relaxed text-muted">
-                Ready to discuss your specific needs? Schedule a free 20-30 minute
-                consultation to explore how we can support your goals.
+                Ready to discuss your specific needs? Schedule a free 20-30
+                minute consultation to explore how we can support your goals.
               </p>
             </div>
 

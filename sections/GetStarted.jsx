@@ -89,7 +89,7 @@ export default function GetStarted() {
 
                 {/* Contact us */}
                 <AnimatedButton
-                  href="/contact"
+                  href="/contact-us"
                   variant="white"
                   accentColor="var(--secondary)"
                 >
