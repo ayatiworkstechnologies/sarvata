@@ -456,16 +456,16 @@ p {
 
 .node-leaders {
   top: 62%;
-  left: 39%
+  left: 35%
 }
 
 .node-parents {
   top: 60%;
-  left: 56%
+  left: 55%
 }
 
 .node-learners {
-  top: 75%;
+  top: 74%;
   left: 47%
 }
 
@@ -492,7 +492,7 @@ p {
 
   .node-parents {
     top: 56%;
-    left: 69%
+    left: 60%
   }
 
   .node-learners {
