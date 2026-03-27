@@ -20,12 +20,12 @@ export default function InnerHero({
           <>
             <motion.div animate={{ opacity: [0.03, 0.08, 0.03] }} transition={{ duration: 4, repeat: Infinity }} className="absolute top-1/4 right-[10%] w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
             <div className="absolute top-20 right-20 w-72 h-72 text-primary opacity-[0.08]">
-               <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M100 20L180 60V140L100 180L20 140V60L100 20Z" stroke="currentColor" strokeWidth="1"/>
-                  <path d="M100 60L180 100V180L100 140L20 180V100L100 60Z" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4"/>
-                  <circle cx="100" cy="100" r="40" stroke="currentColor" strokeWidth="1" />
-                  <path d="M60 100H140M100 60V140" stroke="currentColor" strokeWidth="1" />
-               </svg>
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 20L180 60V140L100 180L20 140V60L100 20Z" stroke="currentColor" strokeWidth="1" />
+                <path d="M100 60L180 100V180L100 140L20 180V100L100 60Z" stroke="currentColor" strokeWidth="1" strokeDasharray="4 4" />
+                <circle cx="100" cy="100" r="40" stroke="currentColor" strokeWidth="1" />
+                <path d="M60 100H140M100 60V140" stroke="currentColor" strokeWidth="1" />
+              </svg>
             </div>
             <div className="absolute bottom-1/4 left-[5%] grid grid-cols-6 gap-2 opacity-[0.05]">
               {[...Array(24)].map((_, i) => <div key={i} className="w-1 h-1 bg-primary rounded-full" />)}
@@ -37,18 +37,20 @@ export default function InnerHero({
           <>
             <motion.div animate={{ scale: [1, 1.15, 1], opacity: [0.05, 0.12, 0.05] }} transition={{ duration: 10, repeat: Infinity }} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-secondary/15 rounded-full blur-[100px]" />
             <div className="absolute -bottom-20 -right-20 w-[400px] h-[400px] text-secondary opacity-[0.06]">
-               <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <motion.path 
-                    animate={{ d: [
-                        "M100,20 C120,20 180,60 180,100 C180,140 120,180 100,180 C80,180 20,140 20,100 C20,60 80,20 100,20",
-                        "M100,30 C130,10 170,50 170,100 C170,150 130,190 100,170 C70,190 30,150 30,100 C30,50 70,10 100,30"
-                    ]}}
-                    transition={{ duration: 4, repeat: Infinity, repeatType: "mirror" }}
-                    stroke="currentColor" strokeWidth="1"
-                  />
-                  <circle cx="100" cy="100" r="60" stroke="currentColor" strokeWidth="0.5" strokeDasharray="5 5" />
-                  <circle cx="100" cy="100" r="40" stroke="currentColor" strokeWidth="0.5" />
-               </svg>
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <motion.path
+                  animate={{
+                    d: [
+                      "M100,20 C120,20 180,60 180,100 C180,140 120,180 100,180 C80,180 20,140 20,100 C20,60 80,20 100,20",
+                      "M100,30 C130,10 170,50 170,100 C170,150 130,190 100,170 C70,190 30,150 30,100 C30,50 70,10 100,30"
+                    ]
+                  }}
+                  transition={{ duration: 4, repeat: Infinity, repeatType: "mirror" }}
+                  stroke="currentColor" strokeWidth="1"
+                />
+                <circle cx="100" cy="100" r="60" stroke="currentColor" strokeWidth="0.5" strokeDasharray="5 5" />
+                <circle cx="100" cy="100" r="40" stroke="currentColor" strokeWidth="0.5" />
+              </svg>
             </div>
           </>
         );
@@ -57,19 +59,19 @@ export default function InnerHero({
           <>
             <div className="absolute top-1/4 right-1/4 w-[300px] h-32 bg-gradient-to-r from-primary/10 to-transparent rotate-12 blur-2xl" />
             <div className="absolute top-10 right-10 w-64 h-64 text-primary opacity-[0.07]">
-               <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="40" y="140" width="20" height="40" fill="currentColor" />
-                  <rect x="70" y="110" width="20" height="70" fill="currentColor" />
-                  <rect x="100" y="80" width="20" height="100" fill="currentColor" />
-                  <rect x="130" y="50" width="20" height="130" fill="currentColor" />
-                  <motion.path 
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: 1 }}
-                    transition={{ duration: 2 }}
-                    d="M40,130 L70,100 L100,70 L130,40 L160,10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
-                  />
-                  <circle cx="160" cy="10" r="4" fill="currentColor" />
-               </svg>
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="40" y="140" width="20" height="40" fill="currentColor" />
+                <rect x="70" y="110" width="20" height="70" fill="currentColor" />
+                <rect x="100" y="80" width="20" height="100" fill="currentColor" />
+                <rect x="130" y="50" width="20" height="130" fill="currentColor" />
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 2 }}
+                  d="M40,130 L70,100 L100,70 L130,40 L160,10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"
+                />
+                <circle cx="160" cy="10" r="4" fill="currentColor" />
+              </svg>
             </div>
           </>
         );
@@ -78,12 +80,12 @@ export default function InnerHero({
           <>
             <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(rgba(0,0,0,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.5) 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
             <div className="absolute top-1/4 right-1/4 w-80 h-80 text-foreground opacity-[0.06]">
-               <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="20" y="20" width="160" height="160" stroke="currentColor" strokeWidth="1" strokeDasharray="5 5" />
-                  <path d="M20 100H180M100 20V180" stroke="currentColor" strokeWidth="0.5" />
-                  <circle cx="100" cy="100" r="80" stroke="currentColor" strokeWidth="1" />
-                  <rect x="80" y="80" width="40" height="40" fill="currentColor" />
-               </svg>
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="20" width="160" height="160" stroke="currentColor" strokeWidth="1" strokeDasharray="5 5" />
+                <path d="M20 100H180M100 20V180" stroke="currentColor" strokeWidth="0.5" />
+                <circle cx="100" cy="100" r="80" stroke="currentColor" strokeWidth="1" />
+                <rect x="80" y="80" width="40" height="40" fill="currentColor" />
+              </svg>
             </div>
           </>
         );
@@ -92,12 +94,12 @@ export default function InnerHero({
           <>
             <motion.div animate={{ rotate: 360 }} transition={{ duration: 30, repeat: Infinity, ease: "linear" }} className="absolute -top-[10%] left-[5%] w-[400px] h-[400px] border border-secondary/10 rounded-full border-dashed" />
             <div className="absolute bottom-10 right-10 w-72 h-72 text-secondary opacity-[0.08]">
-               <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="100" cy="80" r="30" stroke="currentColor" strokeWidth="1.5" />
-                  <path d="M50 160C50 130 72.3858 106 100 106C127.614 106 150 130 150 160" stroke="currentColor" strokeWidth="1.5" />
-                  <path d="M150 100L180 70M180 130L150 100" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                  <circle cx="180" cy="70" r="5" fill="currentColor" />
-               </svg>
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="80" r="30" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M50 160C50 130 72.3858 106 100 106C127.614 106 150 130 150 160" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M150 100L180 70M180 130L150 100" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <circle cx="180" cy="70" r="5" fill="currentColor" />
+              </svg>
             </div>
           </>
         );
@@ -106,11 +108,11 @@ export default function InnerHero({
           <>
             <div className="absolute bottom-0 right-0 w-[500px] h-full bg-gradient-to-tl from-primary/5 to-transparent" />
             <div className="absolute top-20 right-20 w-64 h-64 text-primary opacity-[0.08]">
-               <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M40 40H140L160 60V160H40V40Z" stroke="currentColor" strokeWidth="1.5" />
-                  <path d="M140 40V60H160" stroke="currentColor" strokeWidth="1.5" />
-                  <path d="M60 80H120M60 110H140M60 140H100" stroke="currentColor" strokeWidth="1" />
-               </svg>
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M40 40H140L160 60V160H40V40Z" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M140 40V60H160" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M60 80H120M60 110H140M60 140H100" stroke="currentColor" strokeWidth="1" />
+              </svg>
             </div>
           </>
         );
@@ -130,74 +132,74 @@ export default function InnerHero({
     <section className="relative w-full overflow-hidden bg-[#fafafa]">
       {/* ── Decorative Background Elements ── */}
       <div className="absolute inset-0 z-0 opacity-[0.05]" style={{ backgroundImage: 'radial-gradient(circle, #000 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
-      
+
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
         {!image && getVariantVectors()}
-        
+
         {/* Common Accents */}
         <motion.div animate={{ y: [0, -30, 0] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }} className="absolute top-[20%] left-[10%] w-24 h-24 rounded-full bg-gradient-to-br from-primary/5 to-transparent border border-white/20 backdrop-blur-sm" />
       </div>      {/* ── Content ── */}
       <div className="container-max pt-24 pb-16 md:pt-28 md:pb-20 relative z-10 text-left">
-         <div className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-20 ${image ? 'lg:justify-between' : ''}`}>
-           {/* Left text */}
-           <div className={`relative z-10 w-full text-left ${image ? 'lg:w-[55%]' : 'max-w-4xl'}`}>
-              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.6 }} className="text-xl font-extrabold tracking-tight text-foreground sm:text-2xl md:text-3xl lg:text-4xl leading-[1.1]">
-                 {title}
-              </motion.h1>
+        <div className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-20 ${image ? 'lg:justify-between' : ''}`}>
+          {/* Left text */}
+          <div className={`relative z-10 w-full text-left ${image ? 'lg:w-[55%]' : 'max-w-4xl'}`}>
+            <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.6 }} className="text-xl font-extrabold tracking-tight text-foreground sm:text-2xl md:text-3xl lg:text-4xl leading-[1.1]">
+              {title}
+            </motion.h1>
 
             {subtitle && (
-               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.6 }} className="mt-4 section-body text-muted max-w-2xl font-medium">
-                  {subtitle}
-               </motion.p>
+              <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25, duration: 0.6 }} className="mt-4 section-body text-muted max-w-2xl font-medium">
+                {subtitle}
+              </motion.p>
             )}
 
             <motion.div initial={{ opacity: 0, scaleX: 0 }} animate={{ opacity: 1, scaleX: 1 }} transition={{ delay: 0.35, duration: 0.6 }} className="mt-6 h-[2px] w-16 rounded-full bg-gradient-to-r from-primary to-secondary origin-left" />
 
             {/* Breadcrumbs below title */}
             {breadcrumbs.length > 0 && (
-               <motion.div 
-                  initial={{ opacity: 0, y: 15 }} 
-                  animate={{ opacity: 1, y: 0 }} 
-                  transition={{ duration: 0.5, delay: 0.45 }}
-                  className="mt-8"
-               >
-                  <nav className="inline-flex items-center gap-1.5 rounded-full bg-black/5 px-5 py-2.5 backdrop-blur-md">
-                     <ol className="flex flex-wrap items-center gap-2.5 text-[14px] font-bold text-black/70">
-                        <li className="flex items-center gap-2">
-                           <HiHome className="text-[18px] text-primary" />
-                           <Link href="/" className="transition hover:text-foreground">Home</Link>
-                        </li>
-                        {breadcrumbs.map((item, i) => (
-                           <li key={i} className="flex items-center gap-2.5">
-                              <GrNext className="text-[10px] text-muted/40" />
-                              {item.href ? (
-                                 <Link href={item.href} className="transition hover:text-foreground">{item.label}</Link>
-                              ) : (
-                                 <span className="text-foreground font-bold">{item.label}</span>
-                              )}
-                           </li>
-                        ))}
-                     </ol>
-                  </nav>
-               </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.45 }}
+                className="mt-8"
+              >
+                <nav className="inline-flex items-center gap-1.5 rounded-full bg-black/5 px-5 py-2.5 backdrop-blur-md">
+                  <ol className="flex flex-wrap items-center gap-2.5 text-[14px] font-bold text-black/70">
+                    <li className="flex items-center gap-2">
+                      <HiHome className="text-[18px] text-primary" />
+                      <Link href="/" className="transition hover:text-foreground">Home</Link>
+                    </li>
+                    {breadcrumbs.map((item, i) => (
+                      <li key={i} className="flex items-center gap-2.5">
+                        <GrNext className="text-[10px] text-muted/40" />
+                        {item.href ? (
+                          <Link href={item.href} className="transition hover:text-foreground">{item.label}</Link>
+                        ) : (
+                          <span className="text-foreground font-bold">{item.label}</span>
+                        )}
+                      </li>
+                    ))}
+                  </ol>
+                </nav>
+              </motion.div>
             )}
-           </div>
+          </div>
 
-           {/* Right image */}
-           {image && (
-             <div className="relative z-10 w-full lg:w-[45%] flex justify-end">
-               <motion.div 
-                 initial={{ opacity: 0, scale: 0.95, x: 20 }}
-                 animate={{ opacity: 1, scale: 1, x: 0 }}
-                 transition={{ delay: 0.3, duration: 0.8 }}
-                  className="relative aspect-square md:aspect-[4/3] w-full max-w-[500px] rounded-3xl overflow-hidden"
-               >
-                 <Image src={image} priority alt={title || "Illustration"} fill className="object-cover" />
-                 <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none" />
-               </motion.div>
-             </div>
-           )}
-         </div>
+          {/* Right image */}
+          {image && (
+            <div className="relative z-10 w-full lg:w-[45%] flex justify-end">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95, x: 20 }}
+                animate={{ opacity: 1, scale: 1, x: 0 }}
+                transition={{ delay: 0.3, duration: 0.8 }}
+                className="relative aspect-square md:aspect-[4/3] w-full max-w-[500px] rounded-3xl overflow-hidden"
+              >
+                <Image src={image} priority alt={title || "Illustration"} fill className="object-cover" />
+                {/* <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none" /> */}
+              </motion.div>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

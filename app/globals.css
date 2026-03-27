@@ -451,22 +451,22 @@ p {
 
 .node-educators {
   top: 59%;
-  left: 49%
+  left: 49%;
 }
 
 .node-leaders {
-  top: 62%;
-  left: 35%
+  top: 65%;
+  left: 35%;
 }
 
 .node-parents {
-  top: 60%;
-  left: 55%
+  top: 64%;
+  left: 60%;
 }
 
 .node-learners {
-  top: 74%;
-  left: 47%
+  top: 76%;
+  left: 48%;
 }
 
 /* ======================================================
@@ -482,22 +482,22 @@ p {
 
   .node-educators {
     top: 56%;
-    left: 49%
+    left: 49%;
   }
 
   .node-leaders {
-    top: 56%;
-    left: 24%
+    top: 68%;
+    left: 20%;
   }
 
   .node-parents {
-    top: 56%;
-    left: 60%
+    top: 67%;
+    left: 80%;
   }
 
   .node-learners {
-    top: 70%;
-    left: 50%
+    top: 89%;
+    left: 50%;
   }
 
 }
