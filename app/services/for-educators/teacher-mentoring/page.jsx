@@ -56,20 +56,21 @@ export default function TeacherMentoringPage() {
           { label: "Teacher Mentoring" },
         ]}
         variant="mentoring"
-        image="/assets/service-edu-2.webp"
+        image="/banners/sub-2-banner.svg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="From Workshop to Classroom"
         title="Implement Strategies with Real Support"
+        image="/assets/ser-img-2.webp"
         paragraphs={[
           "Workshops provide tools. Mentoring helps you implement them with your actual students. This is a confidential, non-evaluative partnership - not supervision.",
         ]}
       />
 
       {/* ── HOW IT WORKS ──────────────────────────────────────── */}
-      <section className="relative bg-white overflow-hidden py-6 md:py-12">
+      <section className="relative bg-white overflow-hidden py-8 md:py-16">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <motion.span
@@ -140,7 +141,7 @@ export default function TeacherMentoringPage() {
       </section>
 
       {/* ── WHAT MAKES THIS DIFFERENT ──────────────────────────── */}
-      <section className="bg-white py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-white py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">

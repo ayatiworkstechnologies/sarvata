@@ -39,16 +39,30 @@ const DIFFERENTIATORS = [
 
 export default function ApproachFeatures() {
   return (
-    <section className="bg-soft/40 py-6 md:py-12">
-      <div className="container-max">
-        <div className="mb-16 flex flex-col items-center text-center">
-          <h3 className="text-xs font-black uppercase tracking-[0.4em] text-muted mb-4">
-            What Makes Us Different
-          </h3>
-          <div className="h-1 w-12 bg-primary/20 rounded-full" />
+    <section className="relative overflow-hidden bg-white py-16 md:py-24">
+      {/* Subtle decorative background gradient instead of dots */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-40 pointer-events-none">
+        <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-soft to-transparent" />
+      </div>
+
+      <div className="container-max relative z-10">
+        <div className="mb-20 flex flex-col items-center text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="flex flex-col items-center"
+          >
+            <span className="eyebrow">What Makes Us Different</span>
+            <h2 className="heading-lg max-w-2xl">
+              Our unique approach to{" "}
+              <span className="text-primary italic">transformative</span>{" "}
+              education
+            </h2>
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {DIFFERENTIATORS.map((item, i) => (
             <FeatureCard key={i} item={item} i={i} />
           ))}
@@ -65,67 +79,63 @@ function FeatureCard({ item, i }) {
     offset: ["start end", "end start"],
   });
 
-  // Suble Parallax: Image moves from 15% to -15% during the scroll
-  const y = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
+  // Balanced Parallax: Image moves within its container
+  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   return (
     <motion.div
       ref={cardRef}
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{
-        duration: 0.7,
+        duration: 0.8,
         delay: i * 0.1,
-        ease: [0.21, 1, 0.36, 1],
+        ease: [0.16, 1, 0.3, 1],
       }}
-      className="group relative flex flex-col rounded-[32px] bg-white border border-border shadow-sm hover:shadow-xl transition-all overflow-hidden"
+      whileHover={{ y: -10 }}
+      className="group relative flex flex-col rounded-[44px] bg-white border border-border/60 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] hover:border-primary/20 transition-all duration-500 overflow-hidden h-full"
     >
       {/* 1. Cinematic Header with Parallax */}
-      <div className="relative h-44 w-full overflow-hidden">
+      <div className="relative h-48 w-full overflow-hidden">
         <motion.div
-          style={{ y, height: "130%", top: "-15%" }}
+          style={{ y, height: "110%", top: "-5%" }}
           className="relative w-full"
         >
           <Image
             src={item.image}
             alt={item.title}
             fill
-            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            quality={100}
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 300px"
+            className="object-cover"
           />
         </motion.div>
-        {/* Subtle top edge highlight */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/10 to-transparent opacity-40" />
       </div>
 
       {/* 2. Content Area */}
-      <div className="p-8 flex flex-col flex-grow">
+      <div className="p-9 flex flex-col flex-grow">
         {/* Icon & Title Row */}
-        <div className="flex items-center gap-4 mb-5">
-          <div className="flex-shrink-0 h-10 w-10 rounded-xl bg-soft border border-border flex items-center justify-center group-hover:bg-primary/5 group-hover:border-primary/20 transition-all duration-500">
-            <Image
-              src={item.icon}
-              alt=""
-              width={22}
-              height={22}
-              className="group-hover:scale-110 transition-transform"
-            />
+        <div className="flex flex-col gap-5 mb-5">
+          <div className="flex-shrink-0 h-14 w-14 rounded-2xl bg-soft border border-border/40 flex items-center justify-center group-hover:bg-primary/5 group-hover:border-primary/30 group-hover:shadow-inner transition-all duration-500">
+            <div className="relative h-7 w-7">
+              <Image
+                src={item.icon}
+                alt=""
+                fill
+                className="group-hover:scale-110 transition-transform object-contain"
+              />
+            </div>
           </div>
-          <h4 className="text-[17px] font-bold text-foreground leading-tight group-hover:text-primary transition-colors">
+          <h4 className="text-[19px] font-bold text-foreground leading-tight group-hover:text-primary transition-colors duration-300">
             {item.title}
           </h4>
         </div>
 
-        <p className="text-[14px] leading-relaxed text-muted font-medium">
+        <p className="text-[15px] leading-relaxed text-muted/80 font-medium">
           {item.description}
         </p>
       </div>
-
-      {/* 3. Mechanical Progress Line */}
-      <div
-        className="absolute bottom-0 left-8 right-8 h-1 rounded-t-full scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center"
-        style={{ background: item.accent }}
-      />
     </motion.div>
   );
 }

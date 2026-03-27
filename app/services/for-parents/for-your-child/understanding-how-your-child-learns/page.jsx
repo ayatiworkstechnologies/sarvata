@@ -70,13 +70,14 @@ export default function UnderstandingChildLearnsPage() {
           { label: "Understanding Learning" },
         ]}
         variant="planning"
-        image="/assets/service-par-2.webp"
+       image="/banners/sub-1-banner.svg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="Building Self-Aware, Independent Learners"
         title="Individual and Group Programs (Grades 4-12)"
+        image="/assets/ab-sec-5-2.webp"
         paragraphs={[
           "Students who understand how they learn are better equipped to navigate challenges, advocate for themselves, and succeed independently.",
           "Our programs are designed to help your child develop the self-awareness and strategies they need to own their learning journey.",
@@ -84,7 +85,7 @@ export default function UnderstandingChildLearnsPage() {
       />
 
       {/* ── WHAT STUDENTS LEARN ──────────────────────────────────────── */}
-      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-soft-bg py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
@@ -115,7 +116,7 @@ export default function UnderstandingChildLearnsPage() {
       </section>
 
       {/* ── PROGRAM DETAILS ─────────────────────────── */}
-      <section className="bg-white py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-white py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 max-w-6xl mx-auto">
             {/* Formats */}

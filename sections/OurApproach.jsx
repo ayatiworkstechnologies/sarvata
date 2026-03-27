@@ -5,29 +5,28 @@ import Image from "next/image";
 
 export default function ApproachHero() {
   return (
-    <section className="relative overflow-hidden bg-white py-24 md:py-32">
+    <section className="relative overflow-hidden bg-white  py-8 md:py-16">
       <div className="container-max relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
-          
           {/* LEFT: Sticky Cinematic Image */}
           <div className="lg:col-span-6 lg:sticky lg:top-32 relative order-1">
-             <motion.div
-               initial={{ opacity: 0, x: -40, rotateY: -10 }}
-               whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
-               viewport={{ once: true }}
-               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-               className="relative aspect-[4/3] lg:aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl border border-border bg-white"
-             >
-               <Image
-                 src="/assets/home-sec2.webp"
-                 alt="Educators collaborating"
-                 fill
-                 className="object-cover transition-transform duration-1000 hover:scale-105"
-                 priority
-               />
-               <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60" />
-               <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
-             </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: -40, rotateY: -10 }}
+              whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+              className="relative aspect-[4/3] lg:aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl border border-border bg-white"
+            >
+              <Image
+                src="/assets/home-sec2.webp"
+                alt="Educators collaborating"
+                fill
+                className="object-cover transition-transform duration-1000 hover:scale-105"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-60" />
+              <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+            </motion.div>
           </div>
 
           {/* RIGHT: Narrative Focus */}
@@ -38,9 +37,7 @@ export default function ApproachHero() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <span className="eyebrow">
-                Our Approach
-              </span>
+              <span className="eyebrow">Our Approach</span>
               <h2 className="heading-xl mb-8 leading-[1.1]">
                 Partnership, <br />
                 <span className="text-primary italic font-bold text-gradient">

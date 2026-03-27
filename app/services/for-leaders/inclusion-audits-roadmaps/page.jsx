@@ -56,11 +56,11 @@ export default function InclusionAuditsPage() {
           { label: "Inclusion Audits & Roadmaps" },
         ]}
         variant="planning"
-        image="/assets/service-lea-2.webp"
+        image="/banners/sub-4-banner.svg"
       />
 
       {/* ── FROM ASPIRATION TO ACTION & THE GAP ────────────────── */}
-      <section className="bg-white py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-white py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
@@ -113,7 +113,7 @@ export default function InclusionAuditsPage() {
       </section>
 
       {/* ── WHAT THIS PROVIDES ─────────────────────────────────── */}
-      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-soft-bg py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="max-w-3xl mx-auto mb-16 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
@@ -160,7 +160,7 @@ export default function InclusionAuditsPage() {
       </section>
 
       {/* ── THE PROCESS ──────────────────────────────────────── */}
-      <section className="relative bg-white overflow-hidden py-6 md:py-12">
+      <section className="relative bg-white overflow-hidden py-8 md:py-16">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <motion.span
@@ -224,7 +224,7 @@ export default function InclusionAuditsPage() {
       </section>
 
       {/* ── KEY DOMAINS & DETAILS ─────────────────────────────────── */}
-      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-soft-bg py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
             <div>
@@ -351,7 +351,7 @@ export default function InclusionAuditsPage() {
       </section>
 
       {/* ── WHEN THIS MAKES SENSE ─────────────────────────────────── */}
-      <section className="bg-white py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-white py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10 max-w-4xl mx-auto">
           <div className="p-8 md:p-12 rounded-[2rem] bg-secondary/5 border border-secondary/20">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">

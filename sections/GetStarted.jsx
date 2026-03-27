@@ -45,12 +45,10 @@ export default function GetStarted() {
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.2 }}
-                className="mb-8 inline-flex items-center gap-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2"
+                className=""
               >
-                <span className="h-2 w-2 rounded-full bg-secondary animate-pulse" />
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white">
-                  Take the First Step
-                </span>
+                {/* <span className="h-2 w-2 rounded-full bg-secondary animate-pulse" /> */}
+                <span className="eyebrow">Take the First Step</span>
               </motion.div>
 
               {/* Headline */}

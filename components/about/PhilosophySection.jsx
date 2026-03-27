@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 
-export default function PhilosophyScroll({ title, intro, points }) {
+export default function PhilosophyScroll({ id, title, intro, points }) {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -16,7 +16,7 @@ export default function PhilosophyScroll({ title, intro, points }) {
   });
 
   return (
-    <section ref={containerRef} className="relative bg-white h-[250vh]">
+    <section ref={containerRef} id={id} className="relative bg-white h-[250vh]">
       <div className="sticky top-0 h-screen w-full flex flex-col lg:flex-row overflow-hidden">
         {/* LEFT: Fixed Branding */}
         <div className="w-full lg:w-1/2 h-[40vh] lg:h-screen flex flex-col justify-center px-8 md:px-12 bg-soft/30 relative border-r border-border/50">

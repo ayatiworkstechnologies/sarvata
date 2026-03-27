@@ -83,13 +83,14 @@ export default function StrategicPlanningPage() {
           { label: "Strategic Planning & Systems" },
         ]}
         variant="planning"
-        image="/assets/service-lea-2.webp"
+        image="/banners/sub-6-banner.svg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="Building Infrastructure That Enables Vision"
         title="When Systems and Vision Collide"
+        image="/assets/home-sec-3-1.webp"
         paragraphs={[
           "Many schools articulate compelling visions: personalized learning, student agency, deep understanding. Yet daily reality often contradicts these aspirations - not because people don't care, but because operational systems were designed for a different educational model.",
           "You can't layer new pedagogical approaches onto old industrial-age systems and expect coherence. Sustainable change requires redesigning the infrastructure itself.",
@@ -99,7 +100,7 @@ export default function StrategicPlanningPage() {
       />
 
       {/* ── CORE SYSTEMS ───────────────────────────────────────── */}
-      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-soft-bg py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
@@ -124,7 +125,7 @@ export default function StrategicPlanningPage() {
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500" />
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 text-primary ring-1 ring-primary/20 shadow-inner group-hover:bg-primary group-hover:text-white transition-colors duration-500">
-                    <Icon className="w-7 h-7" strokeWidth={1.5} />
+                    <Icon className="w-7 h-7 transition-colors duration-500 group-hover:text-white" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-3">
                     {sys.title}
@@ -140,7 +141,7 @@ export default function StrategicPlanningPage() {
       </section>
 
       {/* ── THE PROCESS ──────────────────────────────────────── */}
-      <section className="relative bg-white overflow-hidden py-6 md:py-12">
+      <section className="relative bg-white overflow-hidden py-8 md:py-16">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <motion.span
@@ -204,7 +205,7 @@ export default function StrategicPlanningPage() {
       </section>
 
       {/* ── CHALLENGES & SUPPORT ───────────────────────────── */}
-      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-soft-bg py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white rounded-[2.5rem] p-10 md:p-16 border border-border shadow-xl shadow-black/5">

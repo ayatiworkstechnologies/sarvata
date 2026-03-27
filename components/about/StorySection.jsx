@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 
 export default function StorySection({
+  id,
   title,
   subtitle,
   paragraphs,
@@ -22,6 +23,7 @@ export default function StorySection({
   return (
     <section
       ref={containerRef}
+      id={id}
       className="relative bg-[#faf9ff] py-12 lg:py-18 overflow-hidden"
     >
       {/* ── BACKGROUND ACCENTS ── */}

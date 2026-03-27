@@ -35,7 +35,7 @@ for (let f of allFiles) {
   ];
 
   paddingRegexes.forEach(regex => {
-    content = content.replace(regex, 'py-6 md:py-12');
+    content = content.replace(regex, 'py-8 md:py-16');
   });
 
   // 2. Inject framer-motion into inner pages if they map an array and don't use motion

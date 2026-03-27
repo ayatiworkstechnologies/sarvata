@@ -12,7 +12,7 @@ export default function PathwayApproachSection({
   image,
 }) {
   return (
-    <section className="relative bg-[#faf9ff] py-6 md:py-12">
+    <section className="relative bg-[#faf9ff] py-8 md:py-16">
       {/* Background decoration */}
       <SubtleGrid />
       <FloatingShapes />

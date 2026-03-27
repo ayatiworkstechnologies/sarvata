@@ -40,7 +40,7 @@ export default function Footer() {
       {/* Background accents */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(160,102,170,0.05),transparent_40%)]" />
 
-      <div className="relative container-max py-14 md:py-20">
+      <div className="relative container-max  py-8 md:py-16">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
           {/* Left Brand Card */}
           <div className="lg:col-span-5">

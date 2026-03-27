@@ -47,7 +47,7 @@ export default function ModernWhatWeDo() {
   return (
     <section
       ref={containerRef}
-      className="relative bg-[#fcfcfc] text-foreground py-8"
+      className="relative bg-[#fcfcfc] text-foreground py-8 md:py-16"
     >
       <div className="flex flex-col lg:flex-row min-h-screen max-w-[1400px] w-full mx-auto">
         {/* LEFT: Branding Narrative */}
@@ -58,9 +58,7 @@ export default function ModernWhatWeDo() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <span className="text-[10px] font-black uppercase tracking-[0.5em] text-primary mb-6 block">
-              What We Do
-            </span>
+            <span className="eyebrow">What We Do</span>
             <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold mb-8 leading-[1.05] tracking-tight text-slate-900">
               We work with three <br className="hidden sm:block" />
               <span className="text-primary italic font-bold text-gradient lg:leading-tight">
@@ -71,16 +69,6 @@ export default function ModernWhatWeDo() {
               We connect educators, schools, and families to build meaningful,
               sustainable learning environments.
             </p>
-
-            {/* Optional Thumbnail to cover emptiness on large screens */}
-            <div className="hidden lg:block relative w-100 h-40 rounded-2xl overflow-hidden shadow-lg border border-border/50">
-              <Image
-                src="/about-1.jpg"
-                alt="Educational Impact"
-                fill
-                className="object-cover"
-              />
-            </div>
           </motion.div>
         </div>
 

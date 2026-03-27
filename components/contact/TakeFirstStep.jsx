@@ -41,9 +41,8 @@ export default function TakeFirstStep() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-block px-4 py-1.5 rounded-full bg-primary/5 text-primary font-bold text-sm mb-6 tracking-wide border border-primary/20 shadow-sm"
           >
-            TAKE THE FIRST STEP
+            <span className="eyebrow">TAKE THE FIRST STEP</span>
           </motion.div>
 
           {/* Heading */}

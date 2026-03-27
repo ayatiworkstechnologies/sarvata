@@ -14,21 +14,21 @@ export default function StudentProgramsPage() {
       description:
         "Navigate the online world with confidence and smart choices. Real talk about digital reality.",
       href: "/services/for-leaders/student-programs/cyber-safety-digital-citizenship",
-      icon: <Shield className="w-8 h-8 text-primary" strokeWidth={1.5} />,
+      icon: <Shield className="w-8 h-8 transition-colors duration-500" strokeWidth={1.5} />,
     },
     {
       title: "Mental Health & Well-Being",
       description:
         "Practical tools for managing stress and difficult emotions. Skills that actually work.",
       href: "/services/for-leaders/student-programs/mental-health-well-being",
-      icon: <Brain className="w-8 h-8 text-primary" strokeWidth={1.5} />,
+      icon: <Brain className="w-8 h-8 transition-colors duration-500" strokeWidth={1.5} />,
     },
     {
       title: "Healthy Relationships & Boundaries",
       description:
         "Education about consent, boundaries, and navigating social complexities. Mature conversations about real topics.",
       href: "/services/for-leaders/student-programs/healthy-relationships-boundaries",
-      icon: <Users className="w-8 h-8 text-primary" strokeWidth={1.5} />,
+      icon: <Users className="w-8 h-8 transition-colors duration-500" strokeWidth={1.5} />,
     },
   ];
 
@@ -62,13 +62,14 @@ export default function StudentProgramsPage() {
           { label: "Student Programs" },
         ]}
         variant="mental-health"
-        image="/assets/service-lea-2.webp"
+        image="/banners/sub-7-banner.svg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="Student Programs for Your School Community"
         title="More Than Subject Knowledge"
+        image="/assets/ab-sec-5-3.webp"
         paragraphs={[
           "Students need more than subject knowledge to thrive. They need skills for navigating digital life, managing stress, and understanding healthy relationships.",
           "These programs provide developmentally appropriate workshops addressing real challenges students face.",
@@ -76,7 +77,7 @@ export default function StudentProgramsPage() {
       />
 
       {/* ── CORE PROGRAMS ──────────────────────────────────────── */}
-      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-soft-bg py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
@@ -129,7 +130,7 @@ export default function StudentProgramsPage() {
       </section>
 
       {/* ── IMPLEMENTATION & WHY THIS MATTERS ────────────────── */}
-      <section className="bg-white py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-white py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
             <div>

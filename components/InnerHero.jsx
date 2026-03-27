@@ -141,7 +141,7 @@ export default function InnerHero({
          <div className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-20 ${image ? 'lg:justify-between' : ''}`}>
            {/* Left text */}
            <div className={`relative z-10 w-full text-left ${image ? 'lg:w-[55%]' : 'max-w-4xl'}`}>
-              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.6 }} className="text-xl font-extrabold tracking-tight text-foreground sm:text-2xl md:text-3xl lg:text-4xl leading-[1.1] drop-shadow-[0_4px_4px_rgba(0,0,0,0.1)]">
+              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15, duration: 0.6 }} className="text-xl font-extrabold tracking-tight text-foreground sm:text-2xl md:text-3xl lg:text-4xl leading-[1.1]">
                  {title}
               </motion.h1>
 
@@ -161,7 +161,7 @@ export default function InnerHero({
                   transition={{ duration: 0.5, delay: 0.45 }}
                   className="mt-8"
                >
-                  <nav className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-black/5 px-5 py-2.5 backdrop-blur-md shadow-sm">
+                  <nav className="inline-flex items-center gap-1.5 rounded-full bg-black/5 px-5 py-2.5 backdrop-blur-md">
                      <ol className="flex flex-wrap items-center gap-2.5 text-[14px] font-bold text-black/70">
                         <li className="flex items-center gap-2">
                            <HiHome className="text-[18px] text-primary" />
@@ -190,7 +190,7 @@ export default function InnerHero({
                  initial={{ opacity: 0, scale: 0.95, x: 20 }}
                  animate={{ opacity: 1, scale: 1, x: 0 }}
                  transition={{ delay: 0.3, duration: 0.8 }}
-                 className="relative aspect-square md:aspect-[4/3] w-full max-w-[500px] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 md:border-8 border-white/40"
+                  className="relative aspect-square md:aspect-[4/3] w-full max-w-[500px] rounded-3xl overflow-hidden"
                >
                  <Image src={image} priority alt={title || "Illustration"} fill className="object-cover" />
                  <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent pointer-events-none" />

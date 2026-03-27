@@ -64,13 +64,14 @@ export default function SchoolPartnershipPage() {
           { label: "Partnership & Advocacy" },
         ]}
         variant="advocacy"
-        image="/assets/service-par-2.webp"
+        image="/banners/sub-10-banner.svg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="Building the Home-School Bridge"
         title="The Power of a United Team"
+        image="/assets/ab-sec-1.webp"
         paragraphs={[
           "You know your child best. Teachers know them differently. When parents and educators work together respectfully, the child wins.",
           "But navigating school systems, understanding educational terms, and participating in meetings can be intimidating.",
@@ -79,7 +80,7 @@ export default function SchoolPartnershipPage() {
       />
 
       {/* ── OUR SERVICES ──────────────────────────────────────── */}
-      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-soft-bg py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <motion.span
@@ -142,7 +143,7 @@ export default function SchoolPartnershipPage() {
       </section>
 
       {/* ── COMMUNICATION THAT WORKS ────────────────────────────── */}
-      <section className="bg-white py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-white py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">

@@ -78,25 +78,24 @@ export default function WorkshopsTrainingPage() {
           { label: "Workshops & Training" },
         ]}
         variant="mentoring"
-        image="/assets/service-edu-1.webp"
+        image="/banners/sub-1-banner.svg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="Overview"
         title="Practical Strategies That Work"
+        image="/assets/ser-img-1.webp"
         paragraphs={[
           "Our workshops give you tools you can actually use. No lectures. No theory without practice. Just collaborative work on real teaching challenges.",
         ]}
       />
 
       {/* ── FEATURED WORKSHOPS ─────────────────────────────────── */}
-      <section className="relative bg-white overflow-hidden py-6 md:py-12">
+      <section className="relative bg-white overflow-hidden py-8 md:py-16">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <p className="eyebrow">
-              Featured
-            </p>
+            <p className="eyebrow">Featured</p>
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
               Workshops
             </h2>
@@ -110,7 +109,7 @@ export default function WorkshopsTrainingPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="group flex flex-col lg:flex-row gap-8 lg:gap-16 py-8 md:py-12 border-t border-border/50 first:border-none"
+                className="group flex flex-col lg:flex-row gap-8 lg:gap-16 py-8 md:py-16 border-t border-border/50 first:border-none"
               >
                 {/* Left Side: Title & Duration */}
                 <div className="lg:w-2/5 flex flex-col items-start pr-0 lg:pr-8">
@@ -142,9 +141,7 @@ export default function WorkshopsTrainingPage() {
                 <div className="lg:w-3/5 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 pt-2 lg:pt-6">
                   {/* The Challenge - Full Width */}
                   <div className="md:col-span-2 space-y-3">
-                    <h4 className="eyebrow">
-                      The Challenge
-                    </h4>
+                    <h4 className="eyebrow">The Challenge</h4>
                     <p className="text-lg md:text-xl text-foreground font-medium leading-relaxed">
                       {workshop.challenge}
                     </p>
@@ -194,7 +191,7 @@ export default function WorkshopsTrainingPage() {
       />
 
       {/* ── WORKSHOP FORMATS ───────────────────────────────────── */}
-      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden text-center">
+      <section className="bg-soft-bg py-8 md:py-16 relative overflow-hidden text-center">
         <div className="container-max relative z-10">
           <div className="max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
@@ -211,8 +208,12 @@ export default function WorkshopsTrainingPage() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-white p-8 rounded-[1.75rem] border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
-                <h3 className="text-xl font-bold text-foreground mb-3">{format.title}</h3>
-                <p className="text-muted text-[15px] leading-relaxed">{format.description}</p>
+                <h3 className="text-xl font-bold text-foreground mb-3">
+                  {format.title}
+                </h3>
+                <p className="text-muted text-[15px] leading-relaxed">
+                  {format.description}
+                </p>
               </motion.div>
             ))}
           </div>

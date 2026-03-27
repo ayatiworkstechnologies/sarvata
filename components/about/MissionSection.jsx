@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 
-export default function MissionSection({ title, highlight, paragraphs }) {
+export default function MissionSection({ id, title, highlight, paragraphs }) {
   return (
-    <section className="relative bg-white py-16 md:py-24 overflow-hidden">
+    <section id={id} className="relative bg-white py-16 md:py-24 overflow-hidden">
       {/* ── AMBIENT MESH BACKGROUND ── */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(160,102,170,0.03),transparent_70%)]" />

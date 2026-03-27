@@ -80,13 +80,14 @@ export default function MentalHealthPage() {
           { label: "Mental Health" },
         ]}
         variant="mental-health"
-        image="/assets/service-lea-2.webp"
+        image="/banners/sub-3-banner.svg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="Your Mental Health Matters"
         title="School is More Than Just Schoolwork"
+        image="/assets/home-sec-3.webp"
         paragraphs={[
           "It's okay to feel overwhelmed. Let's build skills that work.",
           "Being a student is stressful. Your students don't have to just “push through it.” These workshops provide practical skills to take care of their minds.",
@@ -94,7 +95,7 @@ export default function MentalHealthPage() {
       />
 
       {/* ── WHAT WE COVER ──────────────────────────────────────── */}
-      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-soft-bg py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
@@ -125,7 +126,7 @@ export default function MentalHealthPage() {
       </section>
 
       {/* ── APPROACH & LEADERSHIP VIEW ─────────────────────────── */}
-      <section className="bg-white py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-white py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-20 max-w-6xl mx-auto">
             {/* Approach */}
@@ -179,7 +180,7 @@ export default function MentalHealthPage() {
       </section>
 
       {/* ── IMPLEMENTATION ──────────────────────────────────────── */}
-      <section className="bg-secondary/5 py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-secondary/5 py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10 max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">

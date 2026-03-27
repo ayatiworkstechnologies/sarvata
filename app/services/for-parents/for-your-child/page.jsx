@@ -15,7 +15,7 @@ export default function ForYourChildPage() {
       href: "/services/for-parents/for-your-child/understanding-how-your-child-learns",
       icon: (
         <svg
-          className="w-8 h-8 text-primary"
+          className="w-8 h-8 transition-colors duration-500"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -42,13 +42,14 @@ export default function ForYourChildPage() {
           { label: "For Your Child" },
         ]}
         variant="mental-health"
-        image="/assets/service-par-2.webp"
+        image="/banners/sub-11-banner.svg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="Understanding How They Learn"
         title="The Most Important Skill"
+        image="/assets/service-par-1.webp"
         paragraphs={[
           "Beyond subject content, developing awareness of how they learn can support both academic progress and longer-term learning independence.",
           "We work with children and teens to discover their learning preferences, develop effective strategies, build self-regulation skills, and become increasingly independent learners.",
@@ -57,7 +58,7 @@ export default function ForYourChildPage() {
       />
 
       {/* ── PROGRAMS ──────────────────────────────────────── */}
-      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-soft-bg py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">

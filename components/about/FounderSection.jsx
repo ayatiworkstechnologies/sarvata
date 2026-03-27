@@ -3,7 +3,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-export default function FounderSection({ founderTitle, founderText, founderImage }) {
+export default function FounderSection({
+  founderTitle,
+  founderText,
+  founderImage,
+}) {
   return (
     <section className="relative bg-[#faf9ff] pb-12 lg:pb-18 overflow-hidden z-10">
       <div className="container-max relative">
@@ -24,12 +28,13 @@ export default function FounderSection({ founderTitle, founderText, founderImage
           />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center p-8 md:p-12 lg:p-16">
-            
             {/* Left: Founder Image */}
             <div className="lg:col-span-5 flex justify-center">
               <div className="relative w-full max-w-[320px] aspect-[4/5] rounded-[32px] overflow-hidden shadow-2xl border-8 border-white">
                 <Image
-                  src={founderImage || "/about-1.jpg"} /* Fallback placeholder */
+                  src={
+                    founderImage || "/about-1.jpg"
+                  } /* Fallback placeholder */
                   alt="Founder of Sarvata"
                   fill
                   className="object-cover"
@@ -39,9 +44,7 @@ export default function FounderSection({ founderTitle, founderText, founderImage
 
             {/* Right: Narrative / Quote */}
             <div className="lg:col-span-7 flex flex-col justify-center text-left">
-              <h3 className="text-[11px] font-black uppercase tracking-[0.5em] text-primary/70 mb-8 inline-block">
-                {founderTitle}
-              </h3>
+              <h3 className="eyebrow mb-8 inline-block">{founderTitle}</h3>
 
               <blockquote className="relative mb-10">
                 <p className="text-xl md:text-2xl font-light text-foreground/80 leading-[1.7] italic relative z-10">
@@ -58,7 +61,6 @@ export default function FounderSection({ founderTitle, founderText, founderImage
                 </p>
               </div>
             </div>
-
           </div>
         </motion.div>
       </div>

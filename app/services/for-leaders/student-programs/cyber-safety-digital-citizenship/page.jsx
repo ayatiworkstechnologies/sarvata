@@ -76,13 +76,14 @@ export default function CyberSafetyPage() {
           { label: "Cyber Safety" },
         ]}
         variant="digital"
-        image="/assets/service-lea-2.webp"
+        image="/banners/sub-2-banner.svg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="Your Digital World. Your Rules."
         title="Be Smart, Be Safe, Be You"
+        image="/assets/home-sec-3-4.webp"
         paragraphs={[
           "Your students' online lives are huge parts of their social lives. These workshops give them tools to be smart, confident, and powerful in digital spaces.",
           "No “don't use your phone” lectures. Real talk about what actually happens online and practical strategies that work.",
@@ -90,7 +91,7 @@ export default function CyberSafetyPage() {
       />
 
       {/* ── WHAT WE COVER ──────────────────────────────────────── */}
-      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-soft-bg py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
@@ -121,7 +122,7 @@ export default function CyberSafetyPage() {
       </section>
 
       {/* ── APPROACH & LEADERSHIP VIEW ─────────────────────────── */}
-      <section className="bg-white py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-white py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-20 max-w-6xl mx-auto">
             {/* Approach */}
@@ -175,7 +176,7 @@ export default function CyberSafetyPage() {
       </section>
 
       {/* ── IMPLEMENTATION ──────────────────────────────────────── */}
-      <section className="bg-secondary/5 py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-secondary/5 py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10 max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">

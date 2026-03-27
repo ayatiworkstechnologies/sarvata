@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function TestimonialsSection({ title, testimonials }) {
   return (
-    <section className="relative bg-white py-24 md:py-32 overflow-hidden border-t border-border/50">
+    <section className="relative bg-white py-8 md:py-16 overflow-hidden border-t border-border/50">
 
       {/* Primary blob */}
       <div className="absolute -top-32 -left-32 w-[420px] h-[420px] bg-primary/10 rounded-full blur-[140px] opacity-70 pointer-events-none" />

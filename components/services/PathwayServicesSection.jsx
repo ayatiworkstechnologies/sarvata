@@ -11,7 +11,7 @@ export default function PathwayServicesSection({ eyebrow = "Services", title, se
     : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
 
   return (
-    <section className="relative bg-white overflow-hidden py-6 md:py-12">
+    <section className="relative bg-white overflow-hidden py-8 md:py-16">
       {/* Background decoration */}
       <div
         className="absolute inset-0 opacity-[0.02] pointer-events-none"

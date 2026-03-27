@@ -78,6 +78,9 @@ export default function ContactLayout() {
         {/* 2 Column */}
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left */}
+          <ContactForm />
+
+          {/* Right */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -111,9 +114,6 @@ export default function ContactLayout() {
               ))}
             </div>
           </motion.div>
-
-          {/* Right */}
-          <ContactForm />
         </div>
 
         {/* Info Row */}

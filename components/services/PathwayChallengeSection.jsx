@@ -13,7 +13,7 @@ export default function PathwayChallengeSection({
   image,
 }) {
   return (
-    <section className="relative bg-white overflow-hidden py-6 md:py-12">
+    <section className="relative bg-white overflow-hidden py-8 md:py-16">
       {/* Background decoration */}
       <SubtleGrid />
       <FloatingShapes />
@@ -54,11 +54,13 @@ export default function PathwayChallengeSection({
           transition={{ duration: 0.75, delay: 0.1 }}
           className="relative"
         >
-          <div className="relative aspect-[4/5] lg:aspect-square overflow-hidden rounded-[40px] shadow-2xl border-[10px] border-white">
+          <div className="relative aspect-[4/5] lg:aspect-square overflow-hidden rounded-[40px] shadow-2xl border-[10px] border-white group">
             <Image
               src={image || "/approach.jpg"}
               alt={title || "Pathway Challenge"}
               fill
+              quality={100}
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover transition-transform duration-1000 group-hover:scale-105"
             />
             {/* Ambient Shine Overlay */}

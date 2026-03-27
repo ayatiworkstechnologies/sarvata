@@ -50,9 +50,7 @@ export default function ResearchFoundation({ researchTitle, researchText }) {
               <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-primary via-secondary to-transparent" />
 
               <div className="flex items-center gap-4 mb-10">
-                <h3 className="text-primary text-[11px] font-black uppercase tracking-[0.5em]">
-                  {researchTitle}
-                </h3>
+                <h3 className="eyebrow">{researchTitle}</h3>
               </div>
 
               <blockquote className="text-2xl md:text-3xl font-light text-foreground leading-[1.6] italic mb-12">

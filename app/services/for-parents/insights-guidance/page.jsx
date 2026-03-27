@@ -7,36 +7,40 @@ import Link from "next/link";
 import { GraduationCap, HeartPulse, Compass } from "lucide-react";
 import TestimonialsSection from "@/components/about/TestimonialsSection";
 
-
-
 export default function InsightsGuidancePage() {
   const testimonials = [
     {
-      quote: "Sarvata helped us see our daughter's potential beyond the challenges she was facing at school. The insights we gained changed how we support her at home and how her teachers understand her.",
-      author: "Meera K., Parent"
+      quote:
+        "Sarvata helped us see our daughter's potential beyond the challenges she was facing at school. The insights we gained changed how we support her at home and how her teachers understand her.",
+      author: "Meera K., Parent",
     },
     {
-      quote: "The transition to middle school was overwhelming for our son. Sarvata provided the clarity and strategies we needed to navigate the system and boost his confidence as a learner.",
-      author: "Rajiv S., Parent"
+      quote:
+        "The transition to middle school was overwhelming for our son. Sarvata provided the clarity and strategies we needed to navigate the system and boost his confidence as a learner.",
+      author: "Rajiv S., Parent",
     },
     {
-      quote: "Finally, we found a path that values our child's unique way of thinking. The psychological support combined with academic insights made all the difference.",
-      author: "Ananya M., Parent"
-    }
+      quote:
+        "Finally, we found a path that values our child's unique way of thinking. The psychological support combined with academic insights made all the difference.",
+      author: "Ananya M., Parent",
+    },
   ];
   const services = [
     {
       title: "Academic & Learning Profiles",
-      description: "Assessments identifying unique learning preferences, cognitive strengths, and areas for growth - giving you a clear picture of their academic potential."
+      description:
+        "Assessments identifying unique learning preferences, cognitive strengths, and areas for growth - giving you a clear picture of their academic potential.",
     },
     {
       title: "Psycho-Counseling Support",
-      description: "A caring space for children and adolescents to explore social-emotional challenges, manage anxiety, build resilience, and develop healthy coping strategies."
+      description:
+        "A caring space for children and adolescents to explore social-emotional challenges, manage anxiety, build resilience, and develop healthy coping strategies.",
     },
     {
       title: "Guidance for Diverse Learners",
-      description: "Expert guidance for parents of neurodiverse children, helping you understand and support learning differences while navigating school systems."
-    }
+      description:
+        "Expert guidance for parents of neurodiverse children, helping you understand and support learning differences while navigating school systems.",
+    },
   ];
 
   return (
@@ -44,23 +48,29 @@ export default function InsightsGuidancePage() {
       {/* ── HERO ────────────────────────────────────────────────── */}
       <InnerHero
         title="Insights & Guidance"
-        breadcrumbs={[{ label: "Services", href: "/services" }, { label: "For Parents", href: "/services/for-parents" }, { label: "Insights & Guidance" }]}
-        variant="planning" 
-        image="/assets/service-par-2.webp" />
+        breadcrumbs={[
+          { label: "Services", href: "/services" },
+          { label: "For Parents", href: "/services/for-parents" },
+          { label: "Insights & Guidance" },
+        ]}
+        variant="planning"
+        image="/banners/sub-8-banner.svg"
+      />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="Understanding Your Unique Child"
-        title="You Are Your Child&apos;s Greatest Advocate"
+        title="You Are Your Child's Greatest Advocate"
+        image="/assets/home-sec-3-3.webp"
         paragraphs={[
           "You might be asking: “Why is my bright child struggling?” “How can I support their unique gifts?” “Is this anxiety or normal development?” “How do I navigate the school system?”",
           "We provide a safe, confidential space to find clear answers and practical strategies.",
-          "Professional assessment and counseling to help you confidently support your child's journey."
+          "Professional assessment and counseling to help you confidently support your child's journey.",
         ]}
       />
 
       {/* ── OUR SERVICES ──────────────────────────────────────── */}
-      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-soft-bg py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">
@@ -72,14 +82,23 @@ export default function InsightsGuidancePage() {
             {services.map((item, i) => {
               const Icon = [GraduationCap, HeartPulse, Compass][i] || Compass;
               return (
-                <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }}
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="group bg-white p-8 rounded-[1.75rem] border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 text-primary ring-1 ring-primary/20 shadow-inner group-hover:bg-primary group-hover:text-white transition-colors duration-500">
-                    <Icon className="w-7 h-7" strokeWidth={1.5} />
+                    <Icon className="w-7 h-7 transition-colors duration-500 group-hover:text-white" strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">{item.title}</h3>
-                  <p className="text-muted text-[15px] leading-relaxed">{item.description}</p>
+                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted text-[15px] leading-relaxed">
+                    {item.description}
+                  </p>
                 </motion.div>
               );
             })}
@@ -101,7 +120,8 @@ export default function InsightsGuidancePage() {
           {
             label: "Discuss",
             title: "Schedule a Consultation",
-            description: "Speak with our professionals about your child's unique needs.",
+            description:
+              "Speak with our professionals about your child's unique needs.",
             href: "/contact-us",
             cta: "Schedule a Consultation",
           },

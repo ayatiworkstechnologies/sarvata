@@ -7,7 +7,9 @@ function AnimatedNumber({ value }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-10px" });
   const spring = useSpring(0, { stiffness: 40, damping: 20 });
-  const display = useTransform(spring, (current) => Math.floor(current).toLocaleString());
+  const display = useTransform(spring, (current) =>
+    Math.floor(current).toLocaleString(),
+  );
 
   useEffect(() => {
     if (inView) spring.set(value);
@@ -18,9 +20,8 @@ function AnimatedNumber({ value }) {
 
 export default function ImpactSection({ title, metrics }) {
   return (
-    <section className="relative bg-white py-24 md:py-32">
+    <section className="relative bg-white  py-8 md:py-16">
       <div className="mx-auto max-w-7xl px-6">
-
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           {/* Text Content */}
           <motion.div
@@ -30,10 +31,13 @@ export default function ImpactSection({ title, metrics }) {
             className="lg:col-span-4"
           >
             <h2 className="heading-xl text-slate-900 mb-6">
-              Empowering <span className="text-primary font-medium italic">growth</span> at every scale.
+              Empowering{" "}
+              <span className="text-primary font-medium italic">growth</span> at
+              every scale.
             </h2>
             <p className="section-body">
-              Our data reflects a commitment to transforming the educational landscape through inclusive practices and dedicated mentorship.
+              Our data reflects a commitment to transforming the educational
+              landscape through inclusive practices and dedicated mentorship.
             </p>
           </motion.div>
 
@@ -47,7 +51,7 @@ export default function ImpactSection({ title, metrics }) {
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
                 className={`p-10 rounded-[2.5rem] border border-slate-100 flex flex-col justify-between group transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.08)] hover:-translate-y-2 
-                ${i % 2 === 1 ? 'mt-0 md:mt-12 bg-primary/[0.02]' : 'bg-white'}`}
+                ${i % 2 === 1 ? "mt-0 md:mt-12 bg-primary/[0.02]" : "bg-white"}`}
               >
                 <div>
                   <span className="text-5xl md:text-6xl font-secondary text-slate-900 tracking-tighter block mb-4">

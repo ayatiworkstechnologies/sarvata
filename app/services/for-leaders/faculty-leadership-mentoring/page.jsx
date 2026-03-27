@@ -80,13 +80,14 @@ export default function FacultyMentoringPage() {
           { label: "Faculty & Leadership Mentoring" },
         ]}
         variant="mentoring"
-        image="/assets/service-lea-2.webp"
+        image="/banners/sub-5-banner.svg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="Building Capacity at All Levels"
         title="Why Traditional PD Often Falls Short"
+        image="/assets/service-lea-1.webp"
         paragraphs={[
           "Your faculty is your greatest asset. But traditional professional development - episodic workshops with no follow-up - rarely translates to practice change.",
           "Isolation. One-and-done events. Disconnection from practice. No follow-through.",
@@ -95,7 +96,7 @@ export default function FacultyMentoringPage() {
       />
 
       {/* ── THE ISOLATION OF LEADERSHIP ─────────────────────── */}
-      <section className="bg-soft-bg py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-soft-bg py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             <div>
@@ -186,7 +187,7 @@ export default function FacultyMentoringPage() {
       </section>
 
       {/* ── BUILDING INTERNAL CAPACITY ───────────────────────── */}
-      <section className="bg-white py-6 md:py-12 relative overflow-hidden">
+      <section className="bg-white py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight tracking-tight">

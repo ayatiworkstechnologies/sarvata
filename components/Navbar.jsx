@@ -227,6 +227,7 @@ export default function Header() {
                         <div className="ml-3 mt-1 space-y-2 border-l border-primary/10 pl-3 py-2">
                           <MobileAccordion
                             name="For Educators"
+                            href="/services/for-educators"
                             pathname={pathname}
                             setMenuOpen={setMenuOpen}
                             subLinks={[
@@ -246,6 +247,7 @@ export default function Header() {
                           />
                           <MobileAccordion
                             name="For School Leaders"
+                            href="/services/for-leaders"
                             pathname={pathname}
                             setMenuOpen={setMenuOpen}
                             subLinks={[
@@ -269,6 +271,7 @@ export default function Header() {
                           />
                           <MobileAccordion
                             name="For Parents"
+                            href="/services/for-parents"
                             pathname={pathname}
                             setMenuOpen={setMenuOpen}
                             subLinks={[
@@ -487,28 +490,37 @@ function NavItem({ name, href, active, dropdownItems }) {
 
 /* ================= MOBILE LINK ================= */
 
-function MobileAccordion({ name, subLinks, pathname, setMenuOpen }) {
+function MobileAccordion({ name, href, subLinks, pathname, setMenuOpen }) {
   const [isOpen, setIsOpen] = useState(false);
-  const active = subLinks.some((link) => pathname === link.href);
+  const active = subLinks.some((link) => pathname === link.href) || (href && pathname.startsWith(href));
 
   return (
     <div className="space-y-1">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
+      <div
         className={`flex w-full items-center justify-between rounded-xl px-4 py-2.5 text-[14px] font-semibold transition-all duration-300 ${
           isOpen || active
             ? "bg-white text-primary shadow-sm ring-1 ring-black/5"
             : "text-foreground/70 hover:text-primary"
         }`}
       >
-        <div className="flex items-center gap-2">
+        <Link 
+          href={href || "#"} 
+          onClick={() => href && setMenuOpen(false)}
+          className="flex items-center gap-2 flex-grow"
+        >
           {active && <div className="h-1.5 w-1.5 rounded-full bg-primary" />}
           <span>{name}</span>
-        </div>
-        <ChevronDown
-          className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
-        />
-      </button>
+        </Link>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="p-1 hover:bg-black/5 rounded-lg transition-colors"
+          aria-label="Toggle sub-menu"
+        >
+          <ChevronDown
+            className={`h-4 w-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+          />
+        </button>
+      </div>
 
       <AnimatePresence>
         {isOpen && (
