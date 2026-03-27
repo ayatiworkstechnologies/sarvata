@@ -505,7 +505,6 @@ function MobileAccordion({ name, href, subLinks, pathname, setMenuOpen }) {
       >
         <Link 
           href={href || "#"} 
-          onClick={() => href && setMenuOpen(false)}
           className="flex items-center gap-2 flex-grow"
         >
           {active && <div className="h-1.5 w-1.5 rounded-full bg-primary" />}

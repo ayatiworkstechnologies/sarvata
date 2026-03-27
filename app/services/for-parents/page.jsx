@@ -49,8 +49,8 @@ export default function ParentsPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        webImage="/banners/for-parents.jpg"
-        mobileImage="/banners/for-parents-mob.jpg"
+        webImage="/banners/for-parents-1.jpg"
+        mobileImage="/banners/for-parents-mob-1.jpg"
         title="Partnering in Your Child's Journey"
         breadcrumbs={[
           { label: "Services", href: "/services" },

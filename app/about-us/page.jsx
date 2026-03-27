@@ -44,8 +44,8 @@ export default function AboutPage() {
   return (
     <main className="bg-background">
       <MainHero
-        webImage="/banners/about.jpg"
-        mobileImage="/banners/about-mob.jpg"
+        webImage="/banners/about-1.jpg"
+        mobileImage="/banners/about-mob-1.jpg"
         title="Who We Are & Why We Do"
         breadcrumbs={[{ label: "About Us" }]}
       />
@@ -64,7 +64,7 @@ export default function AboutPage() {
       <FounderSection
         founderTitle="Founder's Journey"
         founderText="Our founder established Sarvata with a profound commitment to educational equity and the belief that every child deserves a school environment designed for their unique potential. Drawing from decades of firsthand experience in diverse classrooms, the vision was to bridge the gap between aspirational pedagogy and daily practice."
-        founderImage="/assets/ab-sec-2.webp"
+        founderImage="/assets/ab-sec-2-1.jpg"
       />
 
       <MissionSection

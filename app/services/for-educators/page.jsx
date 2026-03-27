@@ -49,8 +49,8 @@ export default function EducatorsPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        webImage="/banners/for-eudcators.jpg"
-        mobileImage="/banners/for-eudcators-mob.jpg"
+        webImage="/banners/for-eudcators-1.jpg"
+        mobileImage="/banners/for-eudcators-mob-1.jpg"
         title="You're Already Doing This Work. We Help You Do It More Sustainably."
         breadcrumbs={[
           { label: "Services", href: "/services" },
@@ -64,17 +64,26 @@ export default function EducatorsPage() {
         image="/assets/service-edu-1.webp"
         paragraphs={[
           <span key="p1">
-            You&apos;re already responding to diverse learners - the student who finishes early, the one who struggles with pace, the creative thinker whose brilliance doesn&apos;t fit the test.{" "}
-            <span className="text-primary italic font-bold">The challenge is making it sustainable.</span>
+            You&apos;re already responding to diverse learners - the student who
+            finishes early, the one who struggles with pace, the creative
+            thinker whose brilliance doesn&apos;t fit the test.{" "}
+            <span className="text-primary italic font-bold">
+              The challenge is making it sustainable.
+            </span>
           </span>,
           <span key="p2">
-            Limited time, large classes, curriculum requirements, and the cognitive load of attending to 25+ individuals simultaneously make{" "}
-            <span className="text-primary italic font-bold">responsive practice exhausting.</span>
+            Limited time, large classes, curriculum requirements, and the
+            cognitive load of attending to 25+ individuals simultaneously make{" "}
+            <span className="text-primary italic font-bold">
+              responsive practice exhausting.
+            </span>
           </span>,
           <span key="what-we-offer">
             <strong>What we offer:</strong> Frameworks that systematize what you
             already do intuitively, moving from moment-to-moment responses to{" "}
-            <span className="text-primary italic font-bold">sustainable, structured differentiation.</span>
+            <span className="text-primary italic font-bold">
+              sustainable, structured differentiation.
+            </span>
           </span>,
         ]}
       />

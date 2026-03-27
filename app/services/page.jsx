@@ -47,8 +47,8 @@ export default function ServicesPage() {
   return (
     <main className="bg-white">
       <MainHero
-        webImage="/banners/services.jpg"
-        mobileImage="/banners/services-mob.jpg"
+        webImage="/banners/service.jpg"
+        mobileImage="/banners/service-mob.jpg"
         title="How We Support Your Educational Community"
         breadcrumbs={[{ label: "Services" }]}
       />
