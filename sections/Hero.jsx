@@ -14,9 +14,21 @@ export default function Hero() {
 
   const seeds = [
     // { href: "/services/for-educators", cls: "node-educators", label: "for Educators " },
-    { href: "/services/for-leaders", cls: "node-leaders", label: "for Leaders" },
-    { href: "/services/for-parents", cls: "node-parents", label: "for Parents" },
-    { href: "/services/for-educators", cls: "node-learners", label: "for Educators" },
+    {
+      href: "/services/for-leaders",
+      cls: "node-leaders",
+      label: "for Leaders",
+    },
+    {
+      href: "/services/for-parents",
+      cls: "node-parents",
+      label: "for Parents",
+    },
+    {
+      href: "/services/for-educators",
+      cls: "node-learners",
+      label: "for Educators",
+    },
   ];
 
   const showTooltip = (e, label) => {
@@ -42,7 +54,10 @@ export default function Hero() {
           animate="visible"
           variants={{
             hidden: { opacity: 0 },
-            visible: { opacity: 1, transition: { staggerChildren: 0.2, delayChildren: 0.4 } },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.2, delayChildren: 0.4 },
+            },
           }}
           className="max-w-2xl relative z-20 pointer-events-auto"
         >
@@ -54,28 +69,46 @@ export default function Hero() {
           >
             Sarvata
           </motion.p> */}
-          <motion.h1 
-            variants={{ hidden: { opacity: 0, y: 25 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } } }}
+          <motion.h1
+            variants={{
+              hidden: { opacity: 0, y: 25 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+              },
+            }}
             className="text-2xl font-bold leading-[1.15] text-white md:text-4xl lg:text-[46px] tracking-tight mb-2 md:mb-4"
           >
-            <span className="text-[#E2C473] drop-shadow-sm inline-block uppercase">Transforming</span> <br />
-            <span className="inline-block mt-2 font-extrabold text-[#10b981] drop-shadow-sm uppercase">Educators & Schools, Every Day.</span>
+            <span className="text-[#E2C473] drop-shadow-sm inline-block uppercase">
+              Transforming
+            </span>{" "}
+            <br />
+            <span className="inline-block mt-2 font-extrabold text-[#10b981] drop-shadow-sm uppercase">
+              Educators & Schools, Every Day.
+            </span>
           </motion.h1>
-          <motion.p 
-            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } } }}
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+              },
+            }}
             className="mt-4 md:mt-6 max-w-[85%] md:max-w-md text-[15px] md:text-[17px] leading-relaxed text-white/90 font-secondary"
           >
             We partner with schools, educators, and parents to create truly
             inclusive, learner-centered educational environments.
           </motion.p>
         </motion.div>
-
       </div>
       {/* VIDEO */}
       <div className="absolute inset-0 hidden md:block">
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/home.mp4"
+          src="/home-video.mp4"
           autoPlay
           loop
           muted
@@ -86,7 +119,7 @@ export default function Hero() {
       <div className="absolute inset-0 block md:hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/home-mob.mp4"
+          src="/home-video-mob.mp4"
           autoPlay
           loop
           muted
@@ -96,13 +129,19 @@ export default function Hero() {
 
       {/* OVERLAY & BACKGROUND ACCENTS */}
       <div className="absolute inset-0 bg-black/40 z-10" />
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 0.08, scale: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
         className="absolute -bottom-[20%] -right-[10%] z-10 pointer-events-none w-[70vw] h-[70vw] max-w-[800px] max-h-[800px]"
       >
-         <Image src="/logo.png" alt="" fill className="object-contain" priority />
+        <Image
+          src="/logo.png"
+          alt=""
+          fill
+          className="object-contain"
+          priority
+        />
       </motion.div>
 
       {/* DYNAMIC TOOLTIP */}
@@ -119,7 +158,9 @@ export default function Hero() {
         style={{ transform: "translate(-50%, -100%)" }}
       >
         {tooltip.visible && (
-          <div className="seed-tooltip text-white font-semibold tracking-wide drop-shadow-md bg-black/40 px-3 py-1 rounded-md backdrop-blur-sm border border-white/20 whitespace-nowrap">{tooltip.label}</div>
+          <div className="seed-tooltip text-white font-semibold tracking-wide drop-shadow-md bg-black/40 px-3 py-1 rounded-md backdrop-blur-sm border border-white/20 whitespace-nowrap">
+            {tooltip.label}
+          </div>
         )}
       </motion.div>
 
