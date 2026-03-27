@@ -70,7 +70,7 @@ export default function UnderstandingChildLearnsPage() {
           { label: "Understanding Learning" },
         ]}
         variant="planning"
-       image="/banners/sub-1-banner.svg"
+        image="/banners/service-par-1.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

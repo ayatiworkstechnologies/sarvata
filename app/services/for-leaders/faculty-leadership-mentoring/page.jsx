@@ -80,7 +80,7 @@ export default function FacultyMentoringPage() {
           { label: "Faculty & Leadership Mentoring" },
         ]}
         variant="mentoring"
-        image="/banners/sub-5-banner.svg"
+        image="/banners/service-par-4.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

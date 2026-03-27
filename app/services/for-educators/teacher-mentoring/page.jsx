@@ -56,7 +56,7 @@ export default function TeacherMentoringPage() {
           { label: "Teacher Mentoring" },
         ]}
         variant="mentoring"
-        image="/banners/sub-2-banner.svg"
+        image="/banners/service-par-2.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

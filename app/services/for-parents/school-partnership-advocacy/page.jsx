@@ -64,7 +64,7 @@ export default function SchoolPartnershipPage() {
           { label: "Partnership & Advocacy" },
         ]}
         variant="advocacy"
-        image="/banners/sub-10-banner.svg"
+        image="/banners/service-par-9.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

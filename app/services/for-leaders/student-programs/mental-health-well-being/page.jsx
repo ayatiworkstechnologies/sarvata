@@ -80,7 +80,7 @@ export default function MentalHealthPage() {
           { label: "Mental Health" },
         ]}
         variant="mental-health"
-        image="/banners/sub-3-banner.svg"
+        image="/banners/service-par-4.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

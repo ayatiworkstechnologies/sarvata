@@ -83,7 +83,7 @@ export default function StrategicPlanningPage() {
           { label: "Strategic Planning & Systems" },
         ]}
         variant="planning"
-        image="/banners/sub-6-banner.svg"
+        image="/banners/service-par-5.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}
@@ -112,7 +112,7 @@ export default function StrategicPlanningPage() {
             {coreSystems.map((sys, i) => {
               const Icon =
                 [BookOpen, LineChart, Calendar, LifeBuoy, Laptop, FileText][
-                  i
+                i
                 ] || FileText;
               return (
                 <motion.div

@@ -76,7 +76,7 @@ export default function CyberSafetyPage() {
           { label: "Cyber Safety" },
         ]}
         variant="digital"
-        image="/banners/sub-2-banner.svg"
+        image="/banners/service-par-2.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

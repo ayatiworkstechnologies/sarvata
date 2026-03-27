@@ -56,7 +56,7 @@ export default function InclusionAuditsPage() {
           { label: "Inclusion Audits & Roadmaps" },
         ]}
         variant="planning"
-        image="/banners/sub-4-banner.svg"
+        image="/banners/service-par-3.jpg"
       />
 
       {/* ── FROM ASPIRATION TO ACTION & THE GAP ────────────────── */}
