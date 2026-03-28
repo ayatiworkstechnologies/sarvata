@@ -67,7 +67,8 @@ export default function FreeResourcesPage() {
           { label: "Free Resources & Tools" },
         ]}
         variant="resources"
-        image="/banners/service-par-5.jpg"
+        webImage="/banners/service-5.jpg"
+        mobileImage="/banners/service-mob-5.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

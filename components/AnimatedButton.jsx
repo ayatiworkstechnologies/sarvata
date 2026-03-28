@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
+import { LuArrowRight } from "react-icons/lu";
 
 /**
  * AnimatedButton
@@ -36,22 +37,13 @@ export default function AnimatedButton({
         </span>
       </div>
 
-      <div className={`relative z-10 flex h-9 w-9 md:h-11 md:w-11 items-center justify-center rounded-lg md:rounded-xl transition-all duration-500 group-hover/btn:bg-black group-hover/btn:text-white group-hover/btn:rotate-[360deg] shrink-0 ${
+      <div className={`relative z-10 flex h-9 w-9 md:h-11 md:w-11 items-center justify-center rounded-lg md:rounded-xl transition-all duration-500 group-hover/btn:bg-black group-hover/btn:text-white group-hover/btn:rotate-360 shrink-0 ${
         isPrimary ? 'bg-white/20 text-white' : 'bg-black/5 text-black'
       }`}>
-        <svg
+        <LuArrowRight
           className="w-4 h-4 md:w-5 md:h-5"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="3"
-        >
-          <path
-            d="M5 12h14M12 5l7 7-7 7"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+          strokeWidth={3}
+        />
       </div>
 
       <div

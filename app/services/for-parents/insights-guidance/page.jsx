@@ -54,7 +54,8 @@ export default function InsightsGuidancePage() {
           { label: "Insights & Guidance" },
         ]}
         variant="planning"
-        image="/banners/service-par-7.jpg"
+        webImage="/banners/service-7.jpg"
+        mobileImage="/banners/service-mob-7.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

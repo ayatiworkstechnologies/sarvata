@@ -44,7 +44,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
           {/* Left Brand Card */}
           <div className="lg:col-span-5">
-            <div className="flex h-full min-h-[320px] flex-col justify-between rounded-[28px] border border-border bg-soft-bg/30 p-7 shadow-sm md:p-10">
+            <div className="flex h-full min-h-[320px] flex-col justify-between rounded-4xl border border-border bg-soft-bg/30 p-7 shadow-sm md:p-10">
               <div>
                 <div className="flex items-center">
                   <Image
@@ -87,7 +87,7 @@ export default function Footer() {
               <FooterCard title="Services" links={serviceLinks} />
             </div>
 
-            <div className="rounded-[28px] border border-border bg-soft-bg/30 px-6 py-7 shadow-sm md:px-8 md:py-8">
+            <div className="rounded-4xl border border-border bg-soft-bg/30 px-6 py-7 shadow-sm md:px-8 md:py-8">
               <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
                 <div>
                   <h3 className="text-2xl font-bold tracking-tight text-foreground">
@@ -138,7 +138,7 @@ export default function Footer() {
 
 function FooterCard({ title, links }) {
   return (
-    <div className="rounded-[28px] border border-border bg-soft-bg/30 p-7 shadow-sm md:p-8">
+    <div className="rounded-4xl border border-border bg-soft-bg/30 p-7 shadow-sm md:p-8">
       <div className="mb-6 flex items-center gap-3">
         <span className="h-2 w-2 rounded-full bg-primary" />
         <h4 className="text-[14px] font-bold uppercase tracking-[0.18em] text-foreground">

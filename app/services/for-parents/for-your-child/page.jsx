@@ -42,7 +42,8 @@ export default function ForYourChildPage() {
           { label: "For Your Child" },
         ]}
         variant="mental-health"
-        image="/banners/service-par-10.jpg"
+        webImage="/banners/service-10.jpg"
+        mobileImage="/banners/service-mob-10.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

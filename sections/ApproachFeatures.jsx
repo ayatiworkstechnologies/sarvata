@@ -3,13 +3,14 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { LuPuzzle, LuSettings, LuTarget, LuHandshake } from "react-icons/lu";
 
 const DIFFERENTIATORS = [
   {
     title: "Grounded in Practice",
     description:
       "We’re educators who’ve lived the gap between vision and reality.",
-    icon: "/icon/1.svg",
+    icon: LuPuzzle,
     image: "/assets/home-sec-3-1.webp",
     accent: "var(--primary)",
   },
@@ -17,21 +18,21 @@ const DIFFERENTIATORS = [
     title: "Systems Thinking",
     description:
       "We address culture, pedagogy, and operational systems together.",
-    icon: "/icon/2.svg",
+    icon: LuSettings,
     image: "/assets/home-sec-3-2.webp",
     accent: "#6366f1",
   },
   {
     title: "Building Independence",
     description: "Our goal is your capacity, not your dependency.",
-    icon: "/icon/3.svg",
+    icon: LuTarget,
     image: "/assets/home-sec-3-3.webp",
     accent: "var(--secondary)",
   },
   {
     title: "Sustained Partnership",
     description: "We support implementation, not just deliver workshops.",
-    icon: "/icon/4.svg",
+    icon: LuHandshake,
     image: "/assets/home-sec-3-4.webp",
     accent: "var(--primary)",
   },
@@ -42,7 +43,7 @@ export default function ApproachFeatures() {
     <section className="relative overflow-hidden bg-white py-16 md:py-24">
       {/* Subtle decorative background gradient instead of dots */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-40 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-soft to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-64 bg-linear-to-b from-soft to-transparent" />
       </div>
 
       <div className="container-max relative z-10">
@@ -82,6 +83,8 @@ function FeatureCard({ item, i }) {
   // Balanced Parallax: Image moves within its container
   const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
+  const Icon = item.icon;
+
   return (
     <motion.div
       ref={cardRef}
@@ -114,17 +117,12 @@ function FeatureCard({ item, i }) {
       </div>
 
       {/* 2. Content Area */}
-      <div className="p-9 flex flex-col flex-grow">
+      <div className="p-9 flex flex-col grow">
         {/* Icon & Title Row */}
         <div className="flex flex-col gap-5 mb-5">
-          <div className="flex-shrink-0 h-14 w-14 rounded-2xl bg-soft border border-border/40 flex items-center justify-center group-hover:bg-primary/5 group-hover:border-primary/30 group-hover:shadow-inner transition-all duration-500">
-            <div className="relative h-7 w-7">
-              <Image
-                src={item.icon}
-                alt=""
-                fill
-                className="group-hover:scale-110 transition-transform object-contain"
-              />
+          <div className="shrink-0 h-14 w-14 rounded-2xl bg-soft border border-border/40 flex items-center justify-center group-hover:bg-primary/5 group-hover:border-primary/30 group-hover:shadow-inner transition-all duration-500">
+            <div className="relative h-7 w-7 flex items-center justify-center">
+              <Icon className="w-full h-full transition-transform group-hover:scale-110 text-primary" />
             </div>
           </div>
           <h4 className="text-[19px] font-bold text-foreground leading-tight group-hover:text-primary transition-colors duration-300">
@@ -139,3 +137,4 @@ function FeatureCard({ item, i }) {
     </motion.div>
   );
 }
+

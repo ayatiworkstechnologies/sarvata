@@ -56,7 +56,8 @@ export default function InclusionAuditsPage() {
           { label: "Inclusion Audits & Roadmaps" },
         ]}
         variant="planning"
-        image="/banners/service-par-3.jpg"
+        webImage="/banners/service-3.jpg"
+        mobileImage="/banners/service-mob-3.jpg"
       />
 
       {/* ── FROM ASPIRATION TO ACTION & THE GAP ────────────────── */}
@@ -178,7 +179,7 @@ export default function InclusionAuditsPage() {
 
           <div className="max-w-5xl mx-auto relative px-4">
             {/* Timeline Line */}
-            <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/30 via-secondary/30 to-transparent -translate-x-1/2 hidden sm:block" />
+            <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-linear-to-b from-primary/30 via-secondary/30 to-transparent -translate-x-1/2 hidden sm:block" />
 
             <div className="space-y-12 md:space-y-0 relative">
               {processSteps.map((step, i) => (
@@ -193,7 +194,7 @@ export default function InclusionAuditsPage() {
                   {/* Content Card */}
                   <div className="w-full md:w-5/12">
                     <div
-                      className={`p-8 rounded-[2rem] bg-soft-bg/50 border border-border/60 hover:border-primary/30 hover:bg-white hover:shadow-xl transition-all duration-500 group ${i % 2 === 0 ? "md:text-right" : "md:text-left"}`}
+                      className={`p-8 rounded-4xl bg-soft-bg/50 border border-border/60 hover:border-primary/30 hover:bg-white hover:shadow-xl transition-all duration-500 group ${i % 2 === 0 ? "md:text-right" : "md:text-left"}`}
                     >
                       <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                         {step.title}
@@ -353,7 +354,7 @@ export default function InclusionAuditsPage() {
       {/* ── WHEN THIS MAKES SENSE ─────────────────────────────────── */}
       <section className="bg-white py-8 md:py-16 relative overflow-hidden">
         <div className="container-max relative z-10 max-w-4xl mx-auto">
-          <div className="p-8 md:p-12 rounded-[2rem] bg-secondary/5 border border-secondary/20">
+          <div className="p-8 md:p-12 rounded-4xl bg-secondary/5 border border-secondary/20">
             <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">
               When This Makes Sense
             </h2>
@@ -367,7 +368,7 @@ export default function InclusionAuditsPage() {
                 All well-intentioned initiatives introduced have not sustained
                 itself school-wide.
               </p>
-              <p className="text-muted text-[16px] leading-relaxed font-medium text-foreground">
+              <p className="text-muted text-[16px] leading-relaxed font-medium">
                 A more structured, data-informed review will ensure inclusion
                 becomes embedded rather than existing as isolated efforts.
               </p>

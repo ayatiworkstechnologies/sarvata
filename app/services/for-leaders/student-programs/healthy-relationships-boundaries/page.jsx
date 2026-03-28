@@ -83,7 +83,8 @@ export default function HealthyRelationshipsPage() {
           { label: "Healthy Relationships" },
         ]}
         variant="advocacy"
-        image="/banners/service-par-3.jpg"
+        webImage="/banners/service-3.jpg"
+        mobileImage="/banners/service-mob-3.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

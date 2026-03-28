@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { FaQuoteLeft } from "react-icons/fa";
 
 export default function TestimonialsSection({ title, testimonials }) {
   return (
@@ -13,7 +14,7 @@ export default function TestimonialsSection({ title, testimonials }) {
       <div className="absolute bottom-[-120px] right-[-100px] w-[420px] h-[420px] bg-secondary/15 rounded-full blur-[140px] opacity-70 pointer-events-none" />
 
       {/* Center aurora glow */}
-      <div className="absolute top-1/2 left-1/2 w-[600px] h-[300px] -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 w-[600px] h-[300px] -translate-x-1/2 -translate-y-1/2 bg-linear-to-r from-primary/5 via-secondary/5 to-primary/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-10">
 
@@ -33,12 +34,10 @@ export default function TestimonialsSection({ title, testimonials }) {
             >
               {/* Quote Icon */}
               <div className="text-secondary/20 mb-6">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" />
-                </svg>
+                <FaQuoteLeft size={32} />
               </div>
 
-              <p className="section-body text-foreground italic mb-8 flex-grow">
+              <p className="section-body text-foreground italic mb-8 grow">
                 &quot;{t.quote}&quot;
               </p>
 

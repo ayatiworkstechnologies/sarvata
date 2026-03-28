@@ -78,7 +78,8 @@ export default function WorkshopsTrainingPage() {
           { label: "Workshops & Training" },
         ]}
         variant="mentoring"
-        image="/banners/service-par-1.jpg"
+        webImage="/banners/service-1.jpg"
+        mobileImage="/banners/service-mob-1.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

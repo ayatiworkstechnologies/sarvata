@@ -42,7 +42,7 @@ export default function MainHero({
         </motion.div>
 
         {/* Light premium overlay only */}
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.06)_0%,rgba(255,255,255,0.02)_35%,rgba(0,0,0,0.12)_100%)]" />
+
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(160,102,170,0.16),transparent_28%),radial-gradient(circle_at_bottom_left,rgba(226,196,115,0.12),transparent_30%)]" />
 
       </div>
@@ -73,12 +73,6 @@ export default function MainHero({
               </motion.p>
             )}
 
-            <motion.div
-              initial={{ opacity: 0, scaleX: 0.7 }}
-              animate={{ opacity: 1, scaleX: 1 }}
-              transition={{ delay: 0.35, duration: 0.6 }}
-              className="mt-5 h-[2px] w-20 origin-left rounded-full bg-gradient-to-r from-primary to-secondary md:mt-6"
-            />
 
             {/* Breadcrumbs below title */}
             {breadcrumbs.length > 0 && (

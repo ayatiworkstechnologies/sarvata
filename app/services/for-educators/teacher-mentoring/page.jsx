@@ -56,7 +56,8 @@ export default function TeacherMentoringPage() {
           { label: "Teacher Mentoring" },
         ]}
         variant="mentoring"
-        image="/banners/service-par-2.jpg"
+        webImage="/banners/service-2.jpg"
+        mobileImage="/banners/service-mob-2.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}
@@ -95,7 +96,7 @@ export default function TeacherMentoringPage() {
 
           <div className="max-w-5xl mx-auto relative px-4">
             {/* Timeline Line */}
-            <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/30 via-secondary/30 to-transparent -translate-x-1/2 hidden sm:block" />
+            <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-linear-to-b from-primary/30 via-secondary/30 to-transparent -translate-x-1/2 hidden sm:block" />
 
             <div className="space-y-12 md:space-y-0 relative">
               {steps.map((step, i) => (
@@ -161,7 +162,7 @@ export default function TeacherMentoringPage() {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="text-center p-8 border border-border/50 rounded-3xl hover:border-primary/20 hover:shadow-xl hover:-translate-y-2 transition-all duration-500 bg-white h-full flex flex-col"
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 mx-auto flex items-center justify-center mb-6 ring-1 ring-primary/20 shadow-inner">
+                  <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-primary/10 to-secondary/10 mx-auto flex items-center justify-center mb-6 ring-1 ring-primary/20 shadow-inner">
                     <Icon className="w-8 h-8 text-primary" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground mb-3">

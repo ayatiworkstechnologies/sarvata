@@ -3,18 +3,16 @@
 import { useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useForm } from "react-hook-form";
+import { 
+  LuCalendar, LuX, LuClock, LuMail, LuCheck, 
+  LuVideo, LuChevronDown, LuStar, LuArrowRight 
+} from "react-icons/lu";
 
 /* ─── data ─────────────────────────────────────────────────────── */
 const ROLES = ["Educator", "School Leader", "Parent", "Learner", "Other"];
 const TIMES = ["09:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "01:00 PM", "02:00 PM", "03:00 PM", "04:00 PM", "05:00 PM"];
 
-/* ─── tiny svg helpers ─────────────────────────────────────────── */
-const Icon = ({ d, size = 18, ...p }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" {...p}>
-    <path d={d} />
-  </svg>
-);
+
 
 /* ─── main ─────────────────────────────────────────────────────── */
 export default function ConsultationModal({ open, onClose }) {
@@ -65,7 +63,7 @@ export default function ConsultationModal({ open, onClose }) {
   return (
     <AnimatePresence>
       {open && (
-        <div className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center sm:p-4 md:p-6">
+        <div className="fixed inset-0 z-9999 flex items-end sm:items-center justify-center sm:p-4 md:p-6">
 
           {/* ── backdrop ── */}
           <motion.div
@@ -113,12 +111,7 @@ export default function ConsultationModal({ open, onClose }) {
               <div className="flex items-center gap-3 min-w-0">
                 {/* calendar icon badge */}
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-white/15">
-                  <svg className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                    <line x1="16" y1="2" x2="16" y2="6" />
-                    <line x1="8" y1="2" x2="8" y2="6" />
-                    <line x1="3" y1="10" x2="21" y2="10" />
-                  </svg>
+                  <LuCalendar className="h-5 w-5 text-white" />
                 </div>
                 <div className="min-w-0">
                   <p className="text-[10px] font-bold uppercase tracking-[0.28em] text-white/60 leading-none mb-1">
@@ -132,8 +125,8 @@ export default function ConsultationModal({ open, onClose }) {
 
               {/* pills */}
               <div className="hidden sm:flex items-center gap-2 shrink-0">
-                <Pill icon="M15 10l4.553-2.277A1 1 0 0121 8.677v6.646a1 1 0 01-1.447.894L15 14M3 8a2 2 0 012-2h8a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" label="Online" />
-                <Pill icon="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" label="Free" />
+                <Pill Icon={LuVideo} label="Online" />
+                <Pill Icon={LuCheck} label="Free" />
               </div>
 
               {/* close */}
@@ -141,9 +134,7 @@ export default function ConsultationModal({ open, onClose }) {
                 type="button" onClick={onClose} aria-label="Close"
                 className="ml-2 flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10 text-white/80 transition hover:bg-white/20 hover:text-white"
               >
-                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                <LuX className="h-4 w-4" strokeWidth={2.5} />
               </button>
             </div>
 
@@ -160,15 +151,15 @@ export default function ConsultationModal({ open, onClose }) {
                   {/* info row */}
                   <div className="flex flex-wrap gap-2 sm:gap-3">
                     <InfoChip
-                      icon="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      Icon={LuClock}
                       text="20-30 minutes"
                     />
                     <InfoChip
-                      icon="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                      Icon={LuMail}
                       text="Email Confirmation"
                     />
                     <InfoChip
-                      icon="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      Icon={LuCheck}
                       text="No Commitment"
                     />
                   </div>
@@ -256,7 +247,7 @@ export default function ConsultationModal({ open, onClose }) {
                     </Field>
 
                     {/* divider */}
-                    <div className="h-px bg-gradient-to-r from-transparent via-[#e5e7eb] to-transparent" />
+                    <div className="h-px bg-linear-to-r from-transparent via-[#e5e7eb] to-transparent" />
 
                     {/* submit */}
                     <button
@@ -265,7 +256,7 @@ export default function ConsultationModal({ open, onClose }) {
                       className="submit-btn group"
                     >
                       {/* shimmer */}
-                      <span className="pointer-events-none absolute inset-0 translate-x-[-100%] bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-[100%] transition-transform duration-700" />
+                      <span className="pointer-events-none absolute inset-0 -translate-x-full bg-linear-to-r from-transparent via-white/20 to-transparent group-hover:translate-x-full transition-transform duration-700" />
 
                       {isSubmitting ? (
                         <span className="flex items-center gap-2.5">
@@ -278,15 +269,13 @@ export default function ConsultationModal({ open, onClose }) {
                       ) : (
                         <span className="flex items-center gap-2.5">
                           Book Consultation
-                          <svg className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M12 5l7 7-7 7" />
-                          </svg>
+                          <LuArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={2.5} />
                         </span>
                       )}
                     </button>
 
                     <p className="text-center text-[12px] text-[#6b7280]" style={{ fontFamily: "var(--font-secondary)" }}>
-                      We'll confirm your slot by email or phone. No spam, ever.
+                      We&apos;ll confirm your slot by email or phone. No spam, ever.
                     </p>
 
                   </form>
@@ -309,9 +298,7 @@ function Field({ label, children, error }) {
       {children}
       {error && (
         <p className="flex items-center gap-1 text-[11.5px] font-medium text-red-500">
-          <svg className="h-3 w-3 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-          </svg>
+          <LuCheck className="h-3 w-3 shrink-0" />
           {error.message}
         </p>
       )}
@@ -320,24 +307,20 @@ function Field({ label, children, error }) {
 }
 
 /* ─── InfoChip ─────────────────────────────────────────────────── */
-function InfoChip({ icon, text }) {
+function InfoChip({ Icon, text }) {
   return (
     <div className="flex items-center gap-1.5 rounded-full bg-[#faf7fc] px-3 py-1.5 border border-[#e5d0f0]">
-      <svg className="h-3.5 w-3.5 shrink-0 text-[#A066AA]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d={icon} />
-      </svg>
+      <Icon className="h-3.5 w-3.5 shrink-0 text-[#A066AA]" strokeWidth={2} />
       <span className="text-[12px] font-semibold text-[#4a3a5a]" style={{ fontFamily: "var(--font-secondary)" }}>{text}</span>
     </div>
   );
 }
 
 /* ─── Pill (header badge) ──────────────────────────────────────── */
-function Pill({ icon, label }) {
+function Pill({ Icon, label }) {
   return (
     <div className="flex items-center gap-1.5 rounded-full bg-white/12 px-3 py-1 border border-white/20">
-      <svg className="h-3 w-3 text-[#E2C473]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d={icon} />
-      </svg>
+      <Icon className="h-3 w-3 text-[#E2C473]" strokeWidth={2.5} />
       <span className="text-[11px] font-bold text-white/80 uppercase tracking-[0.12em]">{label}</span>
     </div>
   );
@@ -347,9 +330,7 @@ function Pill({ icon, label }) {
 function ChevronIcon() {
   return (
     <span className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-[#6b7280]">
-      <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-      </svg>
+      <LuChevronDown className="h-4 w-4" strokeWidth={2} />
     </span>
   );
 }
@@ -370,26 +351,22 @@ function SuccessState({ onClose }) {
           style={{ background: "linear-gradient(135deg,#A066AA,#E2C473)" }} />
         <div className="flex h-14 w-14 sm:h-16 sm:w-16 items-center justify-center rounded-full"
           style={{ background: "linear-gradient(135deg,#A066AA,#7a45a0)" }}>
-          <svg className="h-7 w-7 sm:h-8 sm:w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={3}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-          </svg>
+          <LuCheck className="h-7 w-7 sm:h-8 sm:w-8 text-white" strokeWidth={3} />
         </div>
       </div>
 
       {/* text */}
       <div className="max-w-xs sm:max-w-sm">
-        <h3 className="text-xl sm:text-2xl font-black text-[#171717] mb-2 tracking-tight">You're All Set!</h3>
+        <h3 className="text-xl sm:text-2xl font-black text-[#171717] mb-2 tracking-tight">You&apos;re All Set!</h3>
         <p className="text-[14px] sm:text-[16px] leading-relaxed text-[#6b7280]" style={{ fontFamily: "var(--font-secondary)" }}>
-          Thank you for reaching out. We'll review your details and confirm your consultation slot shortly.
+          Thank you for reaching out. We&apos;ll review your details and confirm your consultation slot shortly.
         </p>
       </div>
 
       {/* gold badge */}
       <div className="flex items-center gap-2 rounded-2xl px-4 py-2.5 border"
         style={{ background: "#fffbee", borderColor: "#E2C47360" }}>
-        <svg className="h-4 w-4 shrink-0 text-[#c8a84e]" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-        </svg>
+        <LuStar className="h-4 w-4 shrink-0 text-[#c8a84e]" fill="currentColor" />
         <span className="text-[12px] sm:text-[13px] font-bold text-[#7a5c1e] text-left" style={{ fontFamily: "var(--font-secondary)" }}>
           Expect a response within 1 business day
         </span>

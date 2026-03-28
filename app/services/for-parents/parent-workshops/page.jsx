@@ -45,7 +45,8 @@ export default function ParentWorkshopsPage() {
           { label: "Parent Workshops" },
         ]}
         variant="mentoring"
-        image="/banners/service-par-8.jpg"
+        webImage="/banners/service-8.jpg"
+        mobileImage="/banners/service-mob-8.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

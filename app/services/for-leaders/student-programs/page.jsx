@@ -62,7 +62,8 @@ export default function StudentProgramsPage() {
           { label: "Student Programs" },
         ]}
         variant="mental-health"
-        image="/banners/service-par-6.jpg"
+        webImage="/banners/service-6.jpg"
+        mobileImage="/banners/service-mob-6.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

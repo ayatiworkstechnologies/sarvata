@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { LuArrowRight } from "react-icons/lu";
 
 const services = [
   {
@@ -107,19 +108,10 @@ export default function ServicesMain() {
                     className="group/link inline-flex items-center gap-4 pt-4"
                   >
                     <div className="h-12 w-12 rounded-full border border-slate-200 flex items-center justify-center group-hover/link:bg-[#a066aa] group-hover/link:border-[#a066aa] transition-all duration-300 shadow-sm">
-                      <svg
+                      <LuArrowRight
                         className={`w-5 h-5 ${service.accent} group-hover/link:text-white transition-colors`}
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2.5"
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        />
-                      </svg>
+                        strokeWidth={2.5}
+                      />
                     </div>
                     <span className="text-xs font-black uppercase tracking-[0.2em] text-slate-400 group-hover/link:text-slate-900 transition-colors">
                       {service.cta}
@@ -135,7 +127,7 @@ export default function ServicesMain() {
                   transition={{ duration: 0.9, ease: [0.21, 1, 0.36, 1] }}
                   className="flex-1 w-full"
                 >
-                  <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl">
+                  <div className="relative aspect-4/3 rounded-[40px] overflow-hidden shadow-2xl">
                     <Image
                       src={service.image}
                       alt={service.audience}
