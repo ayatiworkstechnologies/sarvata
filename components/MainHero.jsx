@@ -17,7 +17,7 @@ export default function MainHero({
   return (
     <section className="relative isolate w-full overflow-hidden">
       {/* Background Image Area */}
-      <div className="relative h-[500px] sm:h-[550px] md:h-[600px] w-full">
+      <div className="relative h-[600px] sm:h-[600px] md:h-[600px] w-full">
         <motion.div
           initial={{ scale: 1.06 }}
           animate={{ scale: 1 }}

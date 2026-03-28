@@ -82,7 +82,7 @@ export default function StrategicPlanningPage() {
           { label: "For Leaders", href: "/services/for-leaders" },
           { label: "Strategic Planning & Systems" },
         ]}
-        webImage="/banners/service-5.jpg"
+        webImage="/banners/services-5.jpg"
         mobileImage="/banners/services-mob-5.jpg"
       />
 
