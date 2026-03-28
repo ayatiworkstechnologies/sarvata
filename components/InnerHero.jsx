@@ -24,7 +24,7 @@ export default function InnerHero({
   return (
     <section className="relative isolate w-full overflow-hidden">
       {/* Background Image Area */}
-      <div className="relative h-[420px] w-full sm:h-[420px] md:h-[520px] lg:h-[600px]">
+      <div className="relative h-[500px] sm:h-[550px] md:h-[600px] w-full">
         <motion.div
           initial={{ scale: 1.06 }}
           animate={{ scale: 1 }}
@@ -90,7 +90,7 @@ export default function InnerHero({
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, delay: 0.45 }}
-                className="mt-10 inline-flex items-center gap-1.5 rounded-full border border-white/20 bg-black/20 px-6 py-3 backdrop-blur-md shadow-2xl"
+                className="mt-10 flex w-fit items-center gap-1.5 rounded-2xl border border-white/20 bg-black/20 px-4 py-3 backdrop-blur-md shadow-2xl sm:rounded-full sm:px-6"
               >
                 <ol className="flex flex-wrap items-center gap-2.5 text-[14px] font-bold text-white/80">
                   <li className="flex items-center gap-2">
