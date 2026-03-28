@@ -66,8 +66,8 @@ export default function FreeResourcesPage() {
           { label: "For Educators", href: "/services/for-educators" },
           { label: "Free Resources & Tools" },
         ]}
-        webImage="/banners/service-5.jpg"
-        mobileImage="/banners/service-mob-5.jpg"
+        webImage="/banners/services-5.jpg"
+        mobileImage="/banners/services-mob-5.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

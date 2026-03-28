@@ -63,8 +63,8 @@ export default function SchoolPartnershipPage() {
           { label: "For Parents", href: "/services/for-parents" },
           { label: "Partnership & Advocacy" },
         ]}
-        webImage="/banners/service-9.jpg"
-        mobileImage="/banners/service-mob-9.jpg"
+        webImage="/banners/services-9.jpg"
+        mobileImage="/banners/services-mob-9.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

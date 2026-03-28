@@ -53,8 +53,8 @@ export default function InsightsGuidancePage() {
           { label: "For Parents", href: "/services/for-parents" },
           { label: "Insights & Guidance" },
         ]}
-        webImage="/banners/service-7.jpg"
-        mobileImage="/banners/service-mob-7.jpg"
+        webImage="/banners/services-7.jpg"
+        mobileImage="/banners/services-mob-7.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

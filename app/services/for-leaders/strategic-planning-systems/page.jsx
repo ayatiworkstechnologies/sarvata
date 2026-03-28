@@ -82,8 +82,8 @@ export default function StrategicPlanningPage() {
           { label: "For Leaders", href: "/services/for-leaders" },
           { label: "Strategic Planning & Systems" },
         ]}
-        webImage="/banners/service-5.jpg"
-        mobileImage="/banners/service-mob-5.jpg"
+        webImage="/banners/services-5.jpg"
+        mobileImage="/banners/services-mob-5.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}
@@ -124,7 +124,7 @@ export default function StrategicPlanningPage() {
                   className="group h-full bg-white p-8 rounded-[1.75rem] border border-border/50 shadow-[0_4px_16px_rgba(0,0,0,0.02)] hover:shadow-xl hover:border-primary/20 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden flex flex-col"
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500" />
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 text-primary ring-1 ring-primary/20 shadow-inner group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+                  <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 text-primary ring-1 ring-primary/20 shadow-inner group-hover:bg-primary group-hover:text-white transition-colors duration-500">
                     <Icon className="w-7 h-7 transition-colors duration-500 group-hover:text-white" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-3">
@@ -159,7 +159,7 @@ export default function StrategicPlanningPage() {
 
           <div className="max-w-5xl mx-auto relative px-4">
             {/* Timeline Line */}
-            <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/30 via-secondary/30 to-transparent -translate-x-1/2 hidden sm:block" />
+            <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-linear-to-b from-primary/30 via-secondary/30 to-transparent -translate-x-1/2 hidden sm:block" />
 
             <div className="space-y-12 md:space-y-0 relative">
               {processSteps.map((step, i) => (

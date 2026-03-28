@@ -61,8 +61,8 @@ export default function StudentProgramsPage() {
           { label: "For Leaders", href: "/services/for-leaders" },
           { label: "Student Programs" },
         ]}
-        webImage="/banners/service-6.jpg"
-        mobileImage="/banners/service-mob-6.jpg"
+        webImage="/banners/services-6.jpg"
+        mobileImage="/banners/services-mob-6.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

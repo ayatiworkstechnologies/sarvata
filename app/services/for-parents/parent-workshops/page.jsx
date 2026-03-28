@@ -44,8 +44,8 @@ export default function ParentWorkshopsPage() {
           { label: "For Parents", href: "/services/for-parents" },
           { label: "Parent Workshops" },
         ]}
-        webImage="/banners/service-8.jpg"
-        mobileImage="/banners/service-mob-8.jpg"
+        webImage="/banners/services-8.jpg"
+        mobileImage="/banners/services-mob-8.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

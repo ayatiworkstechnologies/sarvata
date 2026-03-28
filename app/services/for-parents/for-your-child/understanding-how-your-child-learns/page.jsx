@@ -69,8 +69,8 @@ export default function UnderstandingChildLearnsPage() {
           },
           { label: "Understanding Learning" },
         ]}
-        webImage="/banners/service-1.jpg"
-        mobileImage="/banners/service-mob-1.jpg"
+        webImage="/banners/services-1.jpg"
+        mobileImage="/banners/services-mob-1.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

@@ -82,8 +82,8 @@ export default function HealthyRelationshipsPage() {
           },
           { label: "Healthy Relationships" },
         ]}
-        webImage="/banners/service-3.jpg"
-        mobileImage="/banners/service-mob-3.jpg"
+        webImage="/banners/services-3.jpg"
+        mobileImage="/banners/services-mob-3.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

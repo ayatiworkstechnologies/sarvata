@@ -55,8 +55,8 @@ export default function TeacherMentoringPage() {
           { label: "For Educators", href: "/services/for-educators" },
           { label: "Teacher Mentoring" },
         ]}
-        webImage="/banners/service-2.jpg"
-        mobileImage="/banners/service-mob-2.jpg"
+        webImage="/banners/services-2.jpg"
+        mobileImage="/banners/services-mob-2.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

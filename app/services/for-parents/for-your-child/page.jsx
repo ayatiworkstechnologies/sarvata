@@ -41,8 +41,8 @@ export default function ForYourChildPage() {
           { label: "For Parents", href: "/services/for-parents" },
           { label: "For Your Child" },
         ]}
-        webImage="/banners/service-10.jpg"
-        mobileImage="/banners/service-mob-10.jpg"
+        webImage="/banners/services-10.jpg"
+        mobileImage="/banners/services-mob-10.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

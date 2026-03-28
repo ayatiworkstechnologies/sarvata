@@ -79,8 +79,8 @@ export default function MentalHealthPage() {
           },
           { label: "Mental Health" },
         ]}
-        webImage="/banners/service-4.jpg"
-        mobileImage="/banners/service-mob-4.jpg"
+        webImage="/banners/services-4.jpg"
+        mobileImage="/banners/services-mob-4.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

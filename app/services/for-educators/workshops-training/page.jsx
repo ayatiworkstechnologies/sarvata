@@ -77,8 +77,8 @@ export default function WorkshopsTrainingPage() {
           { label: "For Educators", href: "/services/for-educators" },
           { label: "Workshops & Training" },
         ]}
-        webImage="/banners/service-1.jpg"
-        mobileImage="/banners/service-mob-1.jpg"
+        webImage="/banners/services-1.jpg"
+        mobileImage="/banners/services-mob-1.jpg"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}
