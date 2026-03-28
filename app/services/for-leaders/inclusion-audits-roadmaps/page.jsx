@@ -55,7 +55,7 @@ export default function InclusionAuditsPage() {
           { label: "For Leaders", href: "/services/for-leaders" },
           { label: "Inclusion Audits & Roadmaps" },
         ]}
-        webImage="/banners/services-3.jpg"
+        webImage="/banners/service-7.jpg"
         mobileImage="/banners/services-mob-3.jpg"
       />
 
