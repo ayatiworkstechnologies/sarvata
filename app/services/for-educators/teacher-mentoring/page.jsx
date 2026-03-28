@@ -110,7 +110,7 @@ export default function TeacherMentoringPage() {
                   {/* Content Card */}
                   <div className="w-full md:w-5/12">
                     <div
-                      className={`p-8 rounded-[2rem] bg-soft-bg/50 border border-border/60 hover:border-primary/30 hover:bg-white hover:shadow-xl transition-all duration-500 group ${i % 2 === 0 ? "md:text-right" : "md:text-left"}`}
+                      className={`p-8 rounded-4xl bg-soft-bg/50 border border-border/60 hover:border-primary/30 hover:bg-white hover:shadow-xl transition-all duration-500 group ${i % 2 === 0 ? "md:text-right" : "md:text-left"}`}
                     >
                       <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                         {step.title}

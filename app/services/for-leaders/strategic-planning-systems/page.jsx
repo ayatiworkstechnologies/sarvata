@@ -1,5 +1,5 @@
 "use client";
-import InnerHero from "@/components/InnerHero";
+import MainHero from "@/components/MainHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
@@ -75,14 +75,13 @@ export default function StrategicPlanningPage() {
   return (
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
-      <InnerHero
+      <MainHero
         title="Strategic Planning & Systems"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders", href: "/services/for-leaders" },
           { label: "Strategic Planning & Systems" },
         ]}
-        variant="planning"
         webImage="/banners/service-5.jpg"
         mobileImage="/banners/service-mob-5.jpg"
       />
@@ -175,7 +174,7 @@ export default function StrategicPlanningPage() {
                   {/* Content Card */}
                   <div className="w-full md:w-5/12">
                     <div
-                      className={`p-8 rounded-[2rem] bg-soft-bg/50 border border-border/60 hover:border-primary/30 hover:bg-white hover:shadow-xl transition-all duration-500 group ${i % 2 === 0 ? "md:text-right" : "md:text-left"}`}
+                      className={`p-8 rounded-4xl bg-soft-bg/50 border border-border/60 hover:border-primary/30 hover:bg-white hover:shadow-xl transition-all duration-500 group ${i % 2 === 0 ? "md:text-right" : "md:text-left"}`}
                     >
                       <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                         {step.title}

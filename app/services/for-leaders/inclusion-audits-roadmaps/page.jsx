@@ -1,5 +1,5 @@
 "use client";
-import InnerHero from "@/components/InnerHero";
+import MainHero from "@/components/MainHero";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
 import TestimonialsSection from "@/components/about/TestimonialsSection";
@@ -48,14 +48,13 @@ export default function InclusionAuditsPage() {
   return (
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
-      <InnerHero
+      <MainHero
         title="Inclusion Audits & Roadmaps"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders", href: "/services/for-leaders" },
           { label: "Inclusion Audits & Roadmaps" },
         ]}
-        variant="planning"
         webImage="/banners/service-3.jpg"
         mobileImage="/banners/service-mob-3.jpg"
       />

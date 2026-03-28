@@ -1,5 +1,5 @@
 "use client";
-import InnerHero from "@/components/InnerHero";
+import MainHero from "@/components/MainHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
@@ -72,14 +72,13 @@ export default function FacultyMentoringPage() {
   return (
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
-      <InnerHero
+      <MainHero
         title="Faculty & Leadership Mentoring"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders", href: "/services/for-leaders" },
           { label: "Faculty & Leadership Mentoring" },
         ]}
-        variant="mentoring"
         webImage="/banners/service-4.jpg"
         mobileImage="/banners/service-mob-4.jpg"
       />
@@ -144,7 +143,7 @@ export default function FacultyMentoringPage() {
               </div>
             </div>
 
-            <div className="bg-white p-8 md:p-10 rounded-[2rem] border border-border/60 shadow-lg shadow-black/5">
+            <div className="bg-white p-8 md:p-10 rounded-4xl border border-border/60 shadow-lg shadow-black/5">
               <h3 className="text-2xl font-bold text-foreground mb-8">
                 What Mentoring Provides
               </h3>
@@ -226,7 +225,7 @@ export default function FacultyMentoringPage() {
 
             <div className="relative px-4">
               {/* Timeline Line */}
-              <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-secondary/30 via-secondary/10 to-transparent -translate-x-1/2 hidden sm:block" />
+              <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-linear-to-b from-secondary/30 via-secondary/10 to-transparent -translate-x-1/2 hidden sm:block" />
 
               <div className="space-y-10 md:space-y-0 relative">
                 {independenceTimeline.map((phase, i) => (
@@ -241,7 +240,7 @@ export default function FacultyMentoringPage() {
                     {/* Content Card */}
                     <div className="w-full md:w-5/12">
                       <div
-                        className={`p-8 rounded-[2rem] bg-secondary/5 border border-secondary/20 hover:bg-white hover:shadow-xl transition-all duration-500 group ${i % 2 === 0 ? "md:text-right" : "md:text-left"}`}
+                        className={`p-8 rounded-4xl bg-secondary/5 border border-secondary/20 hover:bg-white hover:shadow-xl transition-all duration-500 group ${i % 2 === 0 ? "md:text-right" : "md:text-left"}`}
                       >
                         <div
                           className={`inline-flex px-4 py-1.5 rounded-full bg-secondary/10 text-secondary font-bold text-sm mb-4 ${i % 2 === 0 ? "md:ml-auto" : ""}`}

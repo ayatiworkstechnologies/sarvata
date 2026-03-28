@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import InnerHero from "@/components/InnerHero";
+import MainHero from "@/components/MainHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 
@@ -64,7 +64,7 @@ export default function CyberSafetyPage() {
   return (
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
-      <InnerHero
+      <MainHero
         title="Cyber Safety & Digital Citizenship"
         breadcrumbs={[
           { label: "Services", href: "/services" },
@@ -75,7 +75,6 @@ export default function CyberSafetyPage() {
           },
           { label: "Cyber Safety" },
         ]}
-        variant="digital"
         webImage="/banners/service-2.jpg"
         mobileImage="/banners/service-mob-2.jpg"
       />

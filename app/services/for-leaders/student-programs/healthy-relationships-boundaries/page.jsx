@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import InnerHero from "@/components/InnerHero";
+import MainHero from "@/components/MainHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 
@@ -71,7 +71,7 @@ export default function HealthyRelationshipsPage() {
   return (
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
-      <InnerHero
+      <MainHero
         title="Healthy Relationships & Boundaries"
         breadcrumbs={[
           { label: "Services", href: "/services" },
@@ -82,7 +82,6 @@ export default function HealthyRelationshipsPage() {
           },
           { label: "Healthy Relationships" },
         ]}
-        variant="advocacy"
         webImage="/banners/service-3.jpg"
         mobileImage="/banners/service-mob-3.jpg"
       />

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import InnerHero from "@/components/InnerHero";
+import MainHero from "@/components/MainHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 
@@ -68,7 +68,7 @@ export default function MentalHealthPage() {
   return (
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
-      <InnerHero
+      <MainHero
         title="Mental Health & Well-Being"
         breadcrumbs={[
           { label: "Services", href: "/services" },
@@ -79,7 +79,6 @@ export default function MentalHealthPage() {
           },
           { label: "Mental Health" },
         ]}
-        variant="mental-health"
         webImage="/banners/service-4.jpg"
         mobileImage="/banners/service-mob-4.jpg"
       />
