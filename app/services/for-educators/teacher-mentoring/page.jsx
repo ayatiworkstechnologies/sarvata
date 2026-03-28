@@ -1,5 +1,5 @@
 "use client";
-import InnerHero from "@/components/InnerHero";
+import MainHero from "@/components/MainHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
@@ -48,14 +48,13 @@ export default function TeacherMentoringPage() {
   return (
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
-      <InnerHero
+      <MainHero
         title="Teacher Mentoring"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Educators", href: "/services/for-educators" },
           { label: "Teacher Mentoring" },
         ]}
-        variant="mentoring"
         webImage="/banners/service-2.jpg"
         mobileImage="/banners/service-mob-2.jpg"
       />

@@ -1,5 +1,5 @@
 "use client";
-import InnerHero from "@/components/InnerHero";
+import MainHero from "@/components/MainHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
@@ -59,14 +59,13 @@ export default function FreeResourcesPage() {
   return (
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
-      <InnerHero
+      <MainHero
         title="Free Resources & Tools"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Educators", href: "/services/for-educators" },
           { label: "Free Resources & Tools" },
         ]}
-        variant="resources"
         webImage="/banners/service-5.jpg"
         mobileImage="/banners/service-mob-5.jpg"
       />
@@ -94,7 +93,7 @@ export default function FreeResourcesPage() {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="group relative h-full rounded-[1.75rem] border border-border/60 bg-white p-8 overflow-hidden hover:shadow-2xl hover:border-transparent transition-all duration-500 flex flex-col"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10 flex-1">
                   <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight group-hover:text-primary transition-colors">
                     {resource.title}

@@ -1,5 +1,5 @@
 "use client";
-import InnerHero from "@/components/InnerHero";
+import MainHero from "@/components/MainHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import Link from "next/link";
@@ -34,14 +34,13 @@ export default function ForYourChildPage() {
   return (
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
-      <InnerHero
+      <MainHero
         title="For Your Child"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Parents", href: "/services/for-parents" },
           { label: "For Your Child" },
         ]}
-        variant="mental-health"
         webImage="/banners/service-10.jpg"
         mobileImage="/banners/service-mob-10.jpg"
       />

@@ -1,5 +1,5 @@
 "use client";
-import InnerHero from "@/components/InnerHero";
+import MainHero from "@/components/MainHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
@@ -46,14 +46,13 @@ export default function InsightsGuidancePage() {
   return (
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
-      <InnerHero
+      <MainHero
         title="Insights & Guidance"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Parents", href: "/services/for-parents" },
           { label: "Insights & Guidance" },
         ]}
-        variant="planning"
         webImage="/banners/service-7.jpg"
         mobileImage="/banners/service-mob-7.jpg"
       />
@@ -91,7 +90,7 @@ export default function InsightsGuidancePage() {
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="group bg-white p-8 rounded-[1.75rem] border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 text-primary ring-1 ring-primary/20 shadow-inner group-hover:bg-primary group-hover:text-white transition-colors duration-500">
+                  <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 text-primary ring-1 ring-primary/20 shadow-inner group-hover:bg-primary group-hover:text-white transition-colors duration-500">
                     <Icon className="w-7 h-7 transition-colors duration-500 group-hover:text-white" strokeWidth={1.5} />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">

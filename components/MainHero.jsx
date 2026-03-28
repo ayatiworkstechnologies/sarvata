@@ -56,7 +56,7 @@ export default function MainHero({
                 initial={{ opacity: 0, y: 22 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.15, duration: 0.65 }}
-                className="max-w-3xl text-xl font-extrabold leading-[1.15] tracking-tight text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)] sm:text-2xl md:text-3xl lg:text-4xl"
+                className="max-w-3xl text-xl font-extrabold leading-none tracking-tighter text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] sm:text-2xl md:text-3xl lg:text-4xl uppercase"
               >
                 {title}
               </motion.h1>
@@ -80,7 +80,7 @@ export default function MainHero({
                 initial={{ opacity: 0, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, delay: 0.45 }}
-                className="mt-8 flex w-fit items-center gap-1.5 rounded-2xl border border-white/20 bg-white/10 px-4 py-2.5 backdrop-blur-md shadow-xl sm:rounded-full sm:px-5 lg:mt-10"
+                className="mt-8 flex w-fit items-center gap-1.5 rounded-2xl border border-white/20 bg-black/20 px-4 py-2.5 backdrop-blur-md shadow-xl sm:rounded-full sm:px-5 lg:mt-10"
               >
                 <ol className="flex flex-wrap items-center gap-2.5 text-[14px] font-bold text-white">
                   <li className="flex items-center gap-2">

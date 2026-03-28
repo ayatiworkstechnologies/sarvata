@@ -1,5 +1,5 @@
 "use client";
-import InnerHero from "@/components/InnerHero";
+import MainHero from "@/components/MainHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
@@ -56,14 +56,13 @@ export default function SchoolPartnershipPage() {
   return (
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
-      <InnerHero
+      <MainHero
         title="School Partnership & Advocacy"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Parents", href: "/services/for-parents" },
           { label: "Partnership & Advocacy" },
         ]}
-        variant="advocacy"
         webImage="/banners/service-9.jpg"
         mobileImage="/banners/service-mob-9.jpg"
       />
@@ -99,7 +98,7 @@ export default function SchoolPartnershipPage() {
 
           <div className="max-w-5xl mx-auto relative px-4">
             {/* Timeline Line */}
-            <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-secondary/30 via-secondary/10 to-transparent -translate-x-1/2 hidden sm:block" />
+            <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-linear-to-b from-secondary/30 via-secondary/10 to-transparent -translate-x-1/2 hidden sm:block" />
 
             <div className="space-y-12 md:space-y-0 relative">
               {services.map((item, i) => (
@@ -114,7 +113,7 @@ export default function SchoolPartnershipPage() {
                   {/* Content Card */}
                   <div className="w-full md:w-5/12">
                     <div
-                      className={`p-8 rounded-[2rem] bg-white border border-border/60 hover:border-secondary/30 hover:shadow-2xl transition-all duration-500 group ${i % 2 === 0 ? "md:text-right" : "md:text-left"}`}
+                      className={`p-8 rounded-4xl bg-white border border-border/60 hover:border-secondary/30 hover:shadow-2xl transition-all duration-500 group ${i % 2 === 0 ? "md:text-right" : "md:text-left"}`}
                     >
                       <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-secondary transition-colors">
                         {item.title}

@@ -1,9 +1,9 @@
 "use client";
-import InnerHero from "@/components/InnerHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
 import TestimonialsSection from "@/components/about/TestimonialsSection";
+import MainHero from "@/components/MainHero";
 
 export default function WorkshopsTrainingPage() {
   const workshops = [
@@ -70,14 +70,13 @@ export default function WorkshopsTrainingPage() {
   return (
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
-      <InnerHero
+      <MainHero
         title="Workshops & Training"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Educators", href: "/services/for-educators" },
           { label: "Workshops & Training" },
         ]}
-        variant="mentoring"
         webImage="/banners/service-1.jpg"
         mobileImage="/banners/service-mob-1.jpg"
       />

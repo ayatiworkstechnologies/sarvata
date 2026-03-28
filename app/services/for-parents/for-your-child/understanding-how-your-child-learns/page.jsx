@@ -1,5 +1,5 @@
 "use client";
-import InnerHero from "@/components/InnerHero";
+import MainHero from "@/components/MainHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
@@ -58,7 +58,7 @@ export default function UnderstandingChildLearnsPage() {
   return (
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
-      <InnerHero
+      <MainHero
         title="Understanding How Your Child Learns"
         breadcrumbs={[
           { label: "Services", href: "/services" },
@@ -69,7 +69,6 @@ export default function UnderstandingChildLearnsPage() {
           },
           { label: "Understanding Learning" },
         ]}
-        variant="planning"
         webImage="/banners/service-1.jpg"
         mobileImage="/banners/service-mob-1.jpg"
       />
@@ -121,11 +120,11 @@ export default function UnderstandingChildLearnsPage() {
         <div className="container-max relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-16 max-w-6xl mx-auto">
             {/* Formats */}
-            <div className="bg-primary/5 border border-primary/20 rounded-[2rem] p-8 h-full flex flex-col">
+            <div className="bg-primary/5 border border-primary/20 rounded-4xl p-8 h-full flex flex-col">
               <h2 className="text-2xl font-bold text-foreground mb-6">
                 Program Formats
               </h2>
-              <ul className="space-y-4 flex-grow">
+              <ul className="space-y-4 grow">
                 {details.formats.map((item, i) => (
                   <li
                     key={i}
@@ -143,11 +142,11 @@ export default function UnderstandingChildLearnsPage() {
             </div>
 
             {/* Included */}
-            <div className="bg-white border border-border/60 shadow-sm rounded-[2rem] p-8 h-full flex flex-col">
+            <div className="bg-white border border-border/60 shadow-sm rounded-4xl p-8 h-full flex flex-col">
               <h2 className="text-2xl font-bold text-foreground mb-6">
                 What&apos;s Included
               </h2>
-              <ul className="space-y-4 flex-grow">
+              <ul className="space-y-4 grow">
                 {details.included.map((item, i) => (
                   <li key={i} className="flex gap-4 items-center">
                     <span className="w-6 h-6 shrink-0 rounded-full bg-secondary/10 flex items-center justify-center">
@@ -183,7 +182,7 @@ export default function UnderstandingChildLearnsPage() {
 
               <div className="max-w-5xl mx-auto relative px-4">
                 {/* Timeline Line */}
-                <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/30 via-secondary/30 to-transparent -translate-x-1/2 hidden sm:block" />
+                <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-linear-to-b from-primary/30 via-secondary/30 to-transparent -translate-x-1/2 hidden sm:block" />
 
                 <div className="space-y-12 md:space-y-0 relative">
                   {details.parentInvolvement.map((item, i) => (
@@ -198,7 +197,7 @@ export default function UnderstandingChildLearnsPage() {
                       {/* Content Card */}
                       <div className="w-full md:w-5/12">
                         <div
-                          className={`p-8 rounded-[2rem] bg-soft-bg/50 border border-border/60 hover:bg-white hover:shadow-xl transition-all duration-500 group ${i % 2 === 0 ? "md:text-right" : "md:text-left"}`}
+                          className={`p-8 rounded-4xl bg-soft-bg/50 border border-border/60 hover:bg-white hover:shadow-xl transition-all duration-500 group ${i % 2 === 0 ? "md:text-right" : "md:text-left"}`}
                         >
                           <p className="text-foreground text-[17px] leading-relaxed font-semibold">
                             {item}
@@ -226,7 +225,7 @@ export default function UnderstandingChildLearnsPage() {
 
           {/* Who This Helps */}
           <div className="max-w-4xl mx-auto">
-            <div className="p-8 md:p-12 rounded-[2rem] bg-soft-bg border border-border text-center">
+            <div className="p-8 md:p-12 rounded-4xl bg-soft-bg border border-border text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-6">
                 Who This Helps
               </h2>
