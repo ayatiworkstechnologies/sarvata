@@ -35,7 +35,7 @@ export default function ForYourChildPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="For Your Child"
+        title="Personalised support for your child's unique learning journey"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Parents", href: "/services/for-parents" },

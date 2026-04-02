@@ -72,7 +72,7 @@ export default function HealthyRelationshipsPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Healthy Relationships & Boundaries"
+        title="Building respectful relationships and strong personal boundaries"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders", href: "/services/for-leaders" },

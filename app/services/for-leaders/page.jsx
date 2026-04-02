@@ -51,7 +51,7 @@ export default function LeadersPage() {
       <MainHero
         webImage="/banners/for-school-leaders-1.jpg"
         mobileImage="/banners/for-school-leaders-mob-1.jpg"
-        title="Leading Sustainable Educational Change"
+        title="Transforming schools through purposeful leadership"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders" },

@@ -49,7 +49,7 @@ export default function InclusionAuditsPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Inclusion Audits & Roadmaps"
+        title="Assess, align, and build inclusive systems that work for every learner"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders", href: "/services/for-leaders" },

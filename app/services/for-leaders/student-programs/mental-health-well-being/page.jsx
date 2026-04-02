@@ -69,7 +69,7 @@ export default function MentalHealthPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Mental Health & Well-Being"
+        title="Supporting student well-being for confident, resilient learners"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders", href: "/services/for-leaders" },

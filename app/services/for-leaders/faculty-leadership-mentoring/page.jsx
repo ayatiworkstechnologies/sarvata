@@ -73,7 +73,7 @@ export default function FacultyMentoringPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Faculty & Leadership Mentoring"
+        title="Integrated mentoring for leaders shaping high-impact schools"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders", href: "/services/for-leaders" },

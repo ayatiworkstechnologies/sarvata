@@ -65,7 +65,7 @@ export default function CyberSafetyPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Cyber Safety & Digital Citizenship"
+        title="Building safe, responsible, and confident digital citizens"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders", href: "/services/for-leaders" },

@@ -76,7 +76,7 @@ export default function StrategicPlanningPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Strategic Planning & Systems"
+        title="Building systems that drive sustainable school transformation"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders", href: "/services/for-leaders" },

@@ -49,7 +49,7 @@ export default function TeacherMentoringPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Teacher Mentoring"
+        title="Personalised mentoring for lasting teaching impact"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Educators", href: "/services/for-educators" },

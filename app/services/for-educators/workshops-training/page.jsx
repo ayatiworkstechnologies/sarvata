@@ -71,7 +71,7 @@ export default function WorkshopsTrainingPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Workshops & Training"
+        title="Experiential training designed for real classroom change"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Educators", href: "/services/for-educators" },

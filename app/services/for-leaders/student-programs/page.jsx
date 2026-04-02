@@ -55,7 +55,7 @@ export default function StudentProgramsPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Student Programs"
+        title="Programs that build confident, future-ready learners"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders", href: "/services/for-leaders" },

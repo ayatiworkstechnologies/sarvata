@@ -59,7 +59,7 @@ export default function UnderstandingChildLearnsPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Understanding How Your Child Learns"
+        title="Understand how your child learns to support them better"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Parents", href: "/services/for-parents" },

@@ -49,7 +49,7 @@ export default function ServicesPage() {
       <MainHero
         webImage="/banners/ser-1.jpg"
         mobileImage="/banners/ser-mob-1.jpg"
-        title="How We Support Your Educational Community"
+        title="Comprehensive solutions for educators, schools, and learners"
         breadcrumbs={[{ label: "Services" }]}
       />
       <ServicesLayout />

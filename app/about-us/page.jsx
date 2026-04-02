@@ -46,7 +46,7 @@ export default function AboutPage() {
       <MainHero
         webImage="/banners/about-1.jpg"
         mobileImage="/banners/about-mob-1.jpg"
-        title="Who We Are & Why We Do"
+        title="Shaping better educators and future-ready schools"
         breadcrumbs={[{ label: "About Us" }]}
       />
 

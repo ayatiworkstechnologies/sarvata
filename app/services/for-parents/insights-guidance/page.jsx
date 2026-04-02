@@ -47,7 +47,7 @@ export default function InsightsGuidancePage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Insights & Guidance"
+        title="Supporting parents with clarity in a complex learning world"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Parents", href: "/services/for-parents" },

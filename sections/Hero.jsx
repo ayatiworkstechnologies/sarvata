@@ -81,11 +81,11 @@ export default function Hero() {
             className="text-2xl font-bold leading-[1.15] text-white md:text-4xl lg:text-[46px] tracking-tight mb-2 md:mb-4"
           >
             <span className="text-[#E2C473] drop-shadow-sm inline-block uppercase">
-              Transforming
+              Building schools where every learner belongs
             </span>{" "}
             <br />
             <span className="inline-block mt-2 font-extrabold text-[#10b981] drop-shadow-sm uppercase">
-              Educators & Schools, Every Day.
+              and every educator thrives.
             </span>
           </motion.h1>
           <motion.p

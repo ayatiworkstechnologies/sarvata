@@ -57,7 +57,7 @@ export default function SchoolPartnershipPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="School Partnership & Advocacy"
+        title="Building stronger parent-school partnerships for better student outcomes"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Parents", href: "/services/for-parents" },

@@ -51,7 +51,7 @@ export default function EducatorsPage() {
       <MainHero
         webImage="/banners/for-eudcators-1.jpg"
         mobileImage="/banners/for-eudcators-mob-1.jpg"
-        title="You're Already Doing This Work. We Help You Do It More Sustainably."
+        title="Sustain your impact. Elevate your teaching"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Educators" },

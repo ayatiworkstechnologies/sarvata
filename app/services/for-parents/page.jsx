@@ -51,7 +51,7 @@ export default function ParentsPage() {
       <MainHero
         webImage="/banners/for-parents-1.jpg"
         mobileImage="/banners/for-parents-mob-1.jpg"
-        title="Partnering in Your Child's Journey"
+        title="Supporting you in every step of your child's learning journey."
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Parents" },

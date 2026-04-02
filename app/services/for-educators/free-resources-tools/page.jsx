@@ -60,7 +60,7 @@ export default function FreeResourcesPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Free Resources & Tools"
+        title="Ready-to-use resources for real classroom impact"
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Educators", href: "/services/for-educators" },

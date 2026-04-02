@@ -37,7 +37,7 @@ export default function ContactPage() {
       <MainHero
         webImage="/banners/con1.jpg"
         mobileImage="/banners/con-mob.jpg"
-        title="Have a Question or Need Support? We're Here to Help"
+        title="Let's discuss how we can support your learning goals"
         breadcrumbs={[{ label: "Contact Us" }]}
       />
       <ContactLayout />
