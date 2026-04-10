@@ -24,7 +24,7 @@ const COMMUNITIES = [
     href: "/services/for-leaders",
     button: "Explore Service for Leaders",
     image: "/assets/home-sec-2.webp",
-    accent: "var(--primary)",
+    accent: "var(--secondary)",
     IconComponent: Users,
   },
   {
@@ -34,7 +34,7 @@ const COMMUNITIES = [
     href: "/services/for-parents",
     button: "Explore Service for Parents",
     image: "/assets/home-sec-3.webp",
-    accent: "#10b981",
+    accent: "var(--secondary)",
     IconComponent: HeartHandshake,
   },
 ];
@@ -64,17 +64,17 @@ export default function ModernWhatWeDo() {
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            className="text-sm font-bold uppercase tracking-[0.3em] text-primary/60 mb-4 block"
+            className="eyebrow !text-sm !mb-4"
           >
             What We Do
           </motion.span>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900">
+          <h2 className="heading-xl text-foreground">
             We work with three{" "}
-            <span className="text-primary italic font-serif">
+            <span className="text-primary italic font-bold">
               interconnected communities
             </span>
           </h2>
-          <p>
+          <p className="section-body text-muted max-w-2xl mx-auto mt-4">
             We connect educators, schools, and families to build meaningful,
             sustainable learning environments.
           </p>
@@ -133,35 +133,53 @@ function SplitCard({ card, index, progress }) {
         className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-80"
       />
 
-      {/* Content */}
-      <div className="absolute inset-0 p-8 flex flex-col justify-end text-white">
-        <motion.div
-          style={{ opacity: useTransform(progress, [0.6, 1], [0, 1]) }} // Fade text in last
-          className="mb-4"
-        >
-          <div
-            className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-6 border border-white/20"
-            style={{ color: card.accent }}
-          >
-            <card.IconComponent size={24} />
-          </div>
-          <h3
-            className="text-3xl font-bold mb-3"
-            style={{ color: card.accent }}
-          >
-            {card.title}
-          </h3>
-          <p className="text-white/80 text-sm leading-relaxed mb-8 font-light">
-            {card.description}
-          </p>
+      {/* Dark gradient base for readability */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
-          <AnimatedButton
-            href={card.href}
-            className="w-full justify-center"
-            accentColor={card.accent}
-          >
-            {card.button}
-          </AnimatedButton>
+      {/* Content */}
+      <div className="absolute inset-x-0 bottom-0 p-4 md:p-5 flex flex-col justify-end text-white">
+        <motion.div
+          style={{ opacity: useTransform(progress, [0.6, 1], [0, 1]) }}
+        >
+          {/* Glassmorphic Card */}
+          <div className="relative rounded-[20px] md:rounded-[24px] overflow-hidden border border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
+            {/* Glass background */}
+            <div className="absolute inset-0 bg-white/10 backdrop-blur-xl" />
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
+
+            {/* Glass content */}
+            <div className="relative z-10 p-5 md:p-6">
+              {/* Icon + Title row */}
+              <div className="flex items-center gap-3 mb-3">
+                <div
+                  className="w-10 h-10 rounded-xl bg-white/15 backdrop-blur-sm flex items-center justify-center border border-white/20 shrink-0"
+                  style={{ color: card.accent }}
+                >
+                  <card.IconComponent size={20} />
+                </div>
+                <h3
+                  className="text-xl md:text-2xl font-bold leading-tight"
+                  style={{ color: card.accent }}
+                >
+                  {card.title}
+                </h3>
+              </div>
+
+              {/* Description */}
+              <p className="text-white/80 text-[13px] md:text-sm leading-relaxed mb-5 font-light">
+                {card.description}
+              </p>
+
+              {/* CTA Button */}
+              <AnimatedButton
+                href={card.href}
+                className="w-full justify-center"
+                accentColor={card.accent}
+              >
+                {card.button}
+              </AnimatedButton>
+            </div>
+          </div>
         </motion.div>
       </div>
     </motion.div>

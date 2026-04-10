@@ -84,7 +84,7 @@ export default function Hero() {
               Building schools where every learner belongs
             </span>{" "}
             <br />
-            <span className="inline-block mt-2 font-extrabold text-[#10b981] drop-shadow-sm uppercase">
+            <span className="inline-block mt-2 font-extrabold text-white drop-shadow-sm uppercase">
               and every educator thrives.
             </span>
           </motion.h1>

@@ -20,7 +20,7 @@ const DIFFERENTIATORS = [
       "We address culture, pedagogy, and operational systems together.",
     icon: LuSettings,
     image: "/assets/home-sec-3-2.webp",
-    accent: "#6366f1",
+    accent: "var(--secondary)",
   },
   {
     title: "Building Independence",
