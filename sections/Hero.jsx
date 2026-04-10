@@ -78,7 +78,7 @@ export default function Hero() {
                 transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
               },
             }}
-            className="text-2xl font-bold leading-[1.15] text-white md:text-4xl lg:text-[46px] tracking-tight mb-2 md:mb-4"
+            className="text-2xl font-bold leading-[1.15] text-white md:text-3xl lg:text-4xl tracking-tight mb-2 md:mb-4"
           >
             <span className="text-[#E2C473] drop-shadow-sm inline-block uppercase">
               Building schools where every learner belongs

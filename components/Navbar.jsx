@@ -115,6 +115,20 @@ export default function Header() {
                           {
                             name: "Programs for Students",
                             href: "/services/for-leaders/student-programs",
+                            subLinks: [
+                              {
+                                name: "Cyber Safety & Digital Citizenship",
+                                href: "/services/for-leaders/student-programs/cyber-safety-digital-citizenship",
+                              },
+                              {
+                                name: "Mental Health & Well-Being",
+                                href: "/services/for-leaders/student-programs/mental-health-well-being",
+                              },
+                              {
+                                name: "Healthy Relationships & Boundaries",
+                                href: "/services/for-leaders/student-programs/healthy-relationships-boundaries",
+                              },
+                            ],
                           },
                         ],
                       },
@@ -137,6 +151,12 @@ export default function Header() {
                           {
                             name: "For Your Child",
                             href: "/services/for-parents/for-your-child",
+                            subLinks: [
+                              {
+                                name: "Understanding How Your Child Learns",
+                                href: "/services/for-parents/for-your-child/understanding-how-your-child-learns",
+                              },
+                            ],
                           },
                         ],
                       },
@@ -266,6 +286,20 @@ export default function Header() {
                               {
                                 name: "Programs for Students",
                                 href: "/services/for-leaders/student-programs",
+                                subLinks: [
+                                  {
+                                    name: "Cyber Safety & Digital Citizenship",
+                                    href: "/services/for-leaders/student-programs/cyber-safety-digital-citizenship",
+                                  },
+                                  {
+                                    name: "Mental Health & Well-Being",
+                                    href: "/services/for-leaders/student-programs/mental-health-well-being",
+                                  },
+                                  {
+                                    name: "Healthy Relationships & Boundaries",
+                                    href: "/services/for-leaders/student-programs/healthy-relationships-boundaries",
+                                  },
+                                ],
                               },
                             ]}
                           />
@@ -290,6 +324,12 @@ export default function Header() {
                               {
                                 name: "For Your Child",
                                 href: "/services/for-parents/for-your-child",
+                                subLinks: [
+                                  {
+                                    name: "Understanding How Your Child Learns",
+                                    href: "/services/for-parents/for-your-child/understanding-how-your-child-learns",
+                                  },
+                                ],
                               },
                             ]}
                           />
@@ -444,35 +484,70 @@ function NavItem({ name, href, active, dropdownItems }) {
                       >
                         {hoveredCategory.subLinks?.map((sub, sIdx) => {
                           const isSubActive = pathname === sub.href;
+                          const hasChildren = sub.subLinks && sub.subLinks.length > 0;
+                          const isChildActive = hasChildren && sub.subLinks.some(c => pathname === c.href);
                           return (
-                            <Link
-                              key={sIdx}
-                              href={sub.href}
-                              className={`group relative flex items-center justify-between rounded-xl px-4 py-3 transition-all duration-300 ${
-                                isSubActive
-                                  ? "bg-primary/10 text-primary"
-                                  : "text-muted hover:bg-black/[0.02] hover:text-primary"
-                              }`}
-                            >
-                              <div className="flex items-center gap-2.5 relative z-10">
-                                {isSubActive && (
-                                  <motion.div
-                                    layoutId="active-sub-dot"
-                                    className="h-1.5 w-1.5 rounded-full bg-primary"
-                                  />
-                                )}
-                                <span
-                                  className={`text-[13.5px] font-bold ${isSubActive ? "text-primary" : ""}`}
-                                >
-                                  {sub.name}
-                                </span>
-                              </div>
-                              <span
-                                className={`relative z-10 transition-all duration-300 group-hover:translate-x-1 ${isSubActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
+                            <div key={sIdx}>
+                              <Link
+                                href={sub.href}
+                                className={`group relative flex items-center justify-between rounded-xl px-4 py-3 transition-all duration-300 ${
+                                  isSubActive || isChildActive
+                                    ? "bg-primary/10 text-primary"
+                                    : "text-muted hover:bg-black/[0.02] hover:text-primary"
+                                }`}
                               >
-                                →
-                              </span>
-                            </Link>
+                                <div className="flex items-center gap-2.5 relative z-10">
+                                  {(isSubActive || isChildActive) && (
+                                    <motion.div
+                                      layoutId="active-sub-dot"
+                                      className="h-1.5 w-1.5 rounded-full bg-primary"
+                                    />
+                                  )}
+                                  <span
+                                    className={`text-[13.5px] font-bold ${isSubActive || isChildActive ? "text-primary" : ""}`}
+                                  >
+                                    {sub.name}
+                                  </span>
+                                </div>
+                                <span
+                                  className={`relative z-10 transition-all duration-300 group-hover:translate-x-1 ${isSubActive || isChildActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
+                                >
+                                  →
+                                </span>
+                              </Link>
+                              {hasChildren && (
+                                <div className="ml-6 mt-1 space-y-0.5 border-l-2 border-primary/10 pl-3">
+                                  {sub.subLinks.map((child, cIdx) => {
+                                    const isChildLinkActive = pathname === child.href;
+                                    return (
+                                      <Link
+                                        key={cIdx}
+                                        href={child.href}
+                                        className={`group relative flex items-center justify-between rounded-lg px-3 py-2 transition-all duration-300 ${
+                                          isChildLinkActive
+                                            ? "bg-primary/8 text-primary"
+                                            : "text-muted/80 hover:bg-black/[0.02] hover:text-primary"
+                                        }`}
+                                      >
+                                        <div className="flex items-center gap-2 relative z-10">
+                                          {isChildLinkActive && (
+                                            <div className="h-1 w-1 rounded-full bg-primary" />
+                                          )}
+                                          <span className={`text-[12.5px] font-semibold ${isChildLinkActive ? "text-primary" : ""}`}>
+                                            {child.name}
+                                          </span>
+                                        </div>
+                                        <span
+                                          className={`relative z-10 text-xs transition-all duration-300 group-hover:translate-x-1 ${isChildLinkActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`}
+                                        >
+                                          →
+                                        </span>
+                                      </Link>
+                                    );
+                                  })}
+                                </div>
+                              )}
+                            </div>
                           );
                         })}
                       </motion.div>
@@ -531,6 +606,78 @@ function MobileAccordion({ name, href, subLinks, pathname, setMenuOpen }) {
             className="overflow-hidden"
           >
             <div className="ml-4 mt-1 space-y-1 border-l border-primary/10 pl-3 py-1">
+              {subLinks.map((link, idx) => (
+                <div key={idx}>
+                  {link.subLinks && link.subLinks.length > 0 ? (
+                    <MobileNestedAccordion
+                      name={link.name}
+                      href={link.href}
+                      pathname={pathname}
+                      setMenuOpen={setMenuOpen}
+                      subLinks={link.subLinks}
+                    />
+                  ) : (
+                    <MobileLink
+                      name={link.name}
+                      href={link.href}
+                      pathname={pathname}
+                      setMenuOpen={setMenuOpen}
+                      isSub
+                      fontSmall
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
+
+function MobileNestedAccordion({ name, href, subLinks, pathname, setMenuOpen }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const active = pathname === href || subLinks.some((link) => pathname === link.href);
+
+  return (
+    <div className="space-y-0.5">
+      <div
+        className={`flex w-full items-center justify-between rounded-xl px-4 py-1.5 text-[12.5px] font-medium transition-all duration-300 ${
+          isOpen || active
+            ? "bg-white/80 text-primary shadow-sm ring-1 ring-black/5"
+            : "text-foreground/70 hover:text-primary"
+        }`}
+      >
+        <Link
+          href={href || "#"}
+          className="flex items-center gap-2 flex-grow"
+          onClick={() => setMenuOpen(false)}
+        >
+          {active && <div className="h-1 w-1 rounded-full bg-primary" />}
+          <span>{name}</span>
+        </Link>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="p-1 hover:bg-black/5 rounded-lg transition-colors"
+          aria-label="Toggle sub-menu"
+        >
+          <ChevronDown
+            className={`h-3.5 w-3.5 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+          />
+        </button>
+      </div>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden"
+          >
+            <div className="ml-4 mt-0.5 space-y-0.5 border-l border-primary/10 pl-3 py-0.5">
               {subLinks.map((link, idx) => (
                 <MobileLink
                   key={idx}

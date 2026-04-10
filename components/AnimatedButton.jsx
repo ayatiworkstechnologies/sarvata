@@ -6,8 +6,8 @@ import { LuArrowRight } from "react-icons/lu";
 
 /**
  * AnimatedButton
- * 
- * Reusable component for the liquid-fill animated button based on WhatWeDo section. 
+ *
+ * Reusable component for the liquid-fill animated button based on WhatWeDo section.
  * Defaults to a button, but renders as a Link if href is provided.
  *
  * Props:
@@ -37,13 +37,12 @@ export default function AnimatedButton({
         </span>
       </div>
 
-      <div className={`relative z-10 flex h-9 w-9 md:h-11 md:w-11 items-center justify-center rounded-lg md:rounded-xl transition-all duration-500 group-hover/btn:bg-black group-hover/btn:text-white group-hover/btn:rotate-360 shrink-0 ${
-        isPrimary ? 'bg-white/20 text-white' : 'bg-black/5 text-black'
-      }`}>
-        <LuArrowRight
-          className="w-4 h-4 md:w-5 md:h-5"
-          strokeWidth={3}
-        />
+      <div
+        className={`relative z-10 flex h-9 w-9 md:h-11 md:w-11 items-center justify-center rounded-lg md:rounded-xl transition-all duration-500 group-hover/btn:bg-black group-hover/btn:text-white group-hover/btn:rotate-360 shrink-0 ${
+          isPrimary ? "bg-white/20 text-white" : "bg-black/5 text-black"
+        }`}
+      >
+        <LuArrowRight className="w-4 h-4 md:w-5 md:h-5" strokeWidth={3} />
       </div>
 
       <div
@@ -54,7 +53,9 @@ export default function AnimatedButton({
   );
 
   const baseClasses = `group/btn relative inline-flex items-center justify-between overflow-hidden rounded-xl md:rounded-2xl px-6 py-4 md:px-8 md:py-5 transition-all duration-500 hover:scale-[1.02] active:scale-[0.98] shadow-[0_10px_40px_rgba(0,0,0,0.1)] hover:shadow-2xl ${
-    isPrimary ? 'bg-primary text-white hover:text-foreground' : 'bg-white text-black hover:text-foreground'
+    isPrimary
+      ? "bg-primary text-white hover:text-foreground"
+      : "bg-white text-black hover:text-foreground"
   } ${className}`;
 
   if (href) {

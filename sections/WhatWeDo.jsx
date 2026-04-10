@@ -4,17 +4,15 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
 import AnimatedButton from "@/components/AnimatedButton";
-import SectionHeading from "@/components/SectionHeading";
 import { Users, BookOpenCheck, HeartHandshake } from "lucide-react";
 
 const COMMUNITIES = [
   {
     title: "Educators",
-
     description:
       "Practical frameworks and job-embedded support to make responsive practice sustainable.",
     href: "/services/for-educators",
-    button: "Explore Services for Educators ",
+    button: "Explore Service for Educators",
     image: "/assets/home-sec-1.webp",
     accent: "var(--secondary)",
     IconComponent: BookOpenCheck,
@@ -24,7 +22,7 @@ const COMMUNITIES = [
     description:
       "Strategic partnership to build the systems, culture, and capacity for meaningful change.",
     href: "/services/for-leaders",
-    button: "Explore Services for Leaders",
+    button: "Explore Service for Leaders",
     image: "/assets/home-sec-2.webp",
     accent: "var(--primary)",
     IconComponent: Users,
@@ -34,7 +32,7 @@ const COMMUNITIES = [
     description:
       "Professional support to understand your child's learning profile and advocate effectively.",
     href: "/services/for-parents",
-    button: "Explore Services for Parents ",
+    button: "Explore Service for Parents",
     image: "/assets/home-sec-3.webp",
     accent: "#10b981",
     IconComponent: HeartHandshake,
@@ -44,38 +42,53 @@ const COMMUNITIES = [
 export default function ModernWhatWeDo() {
   const containerRef = useRef(null);
 
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "center center"], // Animation completes when section hits center
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 80,
+    damping: 25,
+    restDelta: 0.001,
+  });
+
   return (
     <section
       ref={containerRef}
-      className="relative bg-[#fcfcfc] text-foreground py-8 md:py-16"
+      className="relative bg-[#fcfcfc] py-8 md:py-12  overflow-hidden"
     >
-      <div className="flex flex-col lg:flex-row min-h-screen max-w-[1400px] w-full mx-auto">
-        {/* LEFT: Branding Narrative */}
-        <div className="w-full lg:w-1/2 lg:h-screen lg:sticky lg:top-0 flex flex-col justify-center px-8 md:px-12 py-8 lg:py-0 z-20">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
+      <div className="max-w-[1400px] mx-auto px-6">
+        {/* Header */}
+        <div className="text-center mb-6">
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            className="text-sm font-bold uppercase tracking-[0.3em] text-primary/60 mb-4 block"
           >
-            <span className="eyebrow">What We Do</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold mb-8 leading-[1.05] tracking-tight text-slate-900">
-              We work with three <br className="hidden sm:block" />
-              <span className="text-primary italic font-bold text-gradient lg:leading-tight">
-                interconnected communities
-              </span>
-            </h2>
-            <p className="text-muted text-lg max-w-sm font-light leading-relaxed mb-12">
-              We connect educators, schools, and families to build meaningful,
-              sustainable learning environments.
-            </p>
-          </motion.div>
+            What We Do
+          </motion.span>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900">
+            We work with three{" "}
+            <span className="text-primary italic font-serif">
+              interconnected communities
+            </span>
+          </h2>
+          <p>
+            We connect educators, schools, and families to build meaningful,
+            sustainable learning environments.
+          </p>
         </div>
 
-        {/* RIGHT: Stacking Card Track */}
-        <div className="w-full lg:w-1/2 px-4 md:px-12 pb-32">
+        {/* Splitting Container */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
           {COMMUNITIES.map((card, i) => (
-            <CommunityCard key={i} card={card} index={i} />
+            <SplitCard
+              key={i}
+              card={card}
+              index={i}
+              progress={smoothProgress}
+            />
           ))}
         </div>
       </div>
@@ -83,99 +96,74 @@ export default function ModernWhatWeDo() {
   );
 }
 
-function CommunityCard({ card, index }) {
-  const cardRef = useRef(null);
+function SplitCard({ card, index, progress }) {
+  // 1. Initial Group Entrance (Top to Bottom)
+  const translateY = useTransform(progress, [0, 0.4], [-150, 0]);
 
-  const { scrollYProgress } = useScroll({
-    target: cardRef,
-    offset: ["start end", "start start"],
-  });
+  // 2. THE SPLIT LOGIC
+  // On Desktop: Card 0 starts shifted right, Card 2 starts shifted left.
+  // This makes them appear as "one" card in the center initially.
+  // '105%' ensures they are completely hidden behind the middle card.
+  const translateX = useTransform(
+    progress,
+    [0.3, 0.8], // Starts splitting after they've moved down a bit
+    [index === 0 ? "105%" : index === 2 ? "-105%" : "0%", "0%"],
+  );
 
-  // Smooth out the motion for an industrial feel
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 20,
-  });
-
-  const scale = useTransform(smoothProgress, [0, 1], [0.85, 1]);
-  const imgScale = useTransform(smoothProgress, [0, 1], [1.3, 1]); // Image "shrinks" into place
-  const textY = useTransform(smoothProgress, [0, 1], [100, 0]);
-  const textOpacity = useTransform(smoothProgress, [0.5, 1], [0, 1]);
+  // 3. Visual Polish
+  const opacity = useTransform(progress, [0, 0.3, 0.5], [0, 0, 1]);
+  const scale = useTransform(progress, [0.3, 0.8], [0.9, 1]);
 
   return (
-    <div
-      ref={cardRef}
-      className="h-screen flex items-center justify-center sticky top-0 py-10 lg:py-0"
+    <motion.div
+      style={{
+        y: translateY,
+        x: translateX,
+        opacity,
+        scale,
+        zIndex: index === 1 ? 20 : 10, // Keep center card on top during split
+      }}
+      className="group relative h-[550px] md:h-[650px] rounded-[32px] overflow-hidden shadow-2xl transition-shadow duration-500 bg-slate-900"
     >
-      <motion.div
-        style={{ scale }}
-        className="relative w-full h-[500px] sm:h-[600px] md:h-[750px] max-h-[85vh] rounded-[32px] md:rounded-[48px] overflow-hidden bg-slate-900 group shadow-2xl"
-      >
-        {/* Cinematic Parallax Background */}
-        <div className="absolute inset-0 overflow-hidden ">
-          <motion.div
-            style={{ scale: imgScale }}
-            className="relative h-full w-full opacity-80"
-          >
-            <Image
-              src={card.image}
-              alt={card.title}
-              fill
-              className="object-cover transition-transform duration-700"
-              priority={index === 0}
-            />
-          </motion.div>
+      {/* Background Image */}
+      <Image
+        src={card.image}
+        alt={card.title}
+        fill
+        className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-80"
+      />
 
-          {/* Enhanced Dark Gradient to ensure text readability on mobile */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent lg:from-black/80 lg:via-black/20" />
-        </div>
-
-        {/* Content Body */}
+      {/* Content */}
+      <div className="absolute inset-0 p-8 flex flex-col justify-end text-white">
         <motion.div
-          style={{ y: textY, opacity: textOpacity }}
-          className="absolute inset-0 p-6 sm:p-10 md:p-14 flex flex-col justify-end text-white"
+          style={{ opacity: useTransform(progress, [0.6, 1], [0, 1]) }} // Fade text in last
+          className="mb-4"
         >
-          {/* Header row with Icon */}
-          <div className="flex items-center gap-4 sm:gap-6 mb-6 sm:mb-8">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center shrink-0 text-white opacity-90">
-              {card.IconComponent && (
-                <card.IconComponent className="w-full h-full" />
-              )}
-            </div>
-            <div className="h-[1px] flex-grow bg-white/20" />
-            <span className="text-4xl sm:text-5xl font-black text-white/50 drop-shadow-md tabular-nums tracking-tighter">
-              0{index + 1}
-            </span>
-          </div>
-
-          <p
-            className="text-[9px] sm:text-[11px] font-black uppercase tracking-[0.4em] mb-2 sm:mb-3"
+          <div
+            className="w-12 h-12 rounded-xl bg-white/10 backdrop-blur-md flex items-center justify-center mb-6 border border-white/20"
             style={{ color: card.accent }}
           >
-            {card.subtitle || "Sarvata"}
-          </p>
+            <card.IconComponent size={24} />
+          </div>
           <h3
-            className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tight mb-3 sm:mb-6 leading-[1.1] md:leading-none"
+            className="text-3xl font-bold mb-3"
             style={{ color: card.accent }}
           >
             {card.title}
           </h3>
-          <p className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed max-w-md mb-6 sm:mb-10 font-light">
+          <p className="text-white/80 text-sm leading-relaxed mb-8 font-light">
             {card.description}
           </p>
 
           <AnimatedButton
             href={card.href}
-            className="w-full sm:w-fit justify-center"
-            accentColor="var(--secondary)"
+            className="w-full justify-center"
+            accentColor={card.accent}
           >
             {card.button}
           </AnimatedButton>
         </motion.div>
-
-        {/* Top Edge Detail */}
-        <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-      </motion.div>
-    </div>
+      </div>
+    </motion.div>
   );
 }
