@@ -22,7 +22,7 @@ export default function ResearchFoundation({ researchTitle, researchText }) {
             className="lg:col-span-5 relative w-full flex min-h-[450px] lg:h-auto rounded-[40px] overflow-hidden shadow-2xl border border-border"
           >
             <Image
-              src="/assets/about-3.jpg"
+              src="/assets/about-3.png"
               alt="Research & Evidence"
               fill
               className="object-cover transition-transform duration-1000 hover:scale-105"
