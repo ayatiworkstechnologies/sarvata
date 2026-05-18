@@ -65,7 +65,15 @@ export default function CyberSafetyPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Building safe, responsible, and confident digital citizens"
+        title={
+          <>
+            Building safe, responsible, <br />
+            <span className="text-[#D9A63A]">and</span>{" "}
+            <span className="text-[#6B4A8E]">confident</span> <br />
+            <span className="text-[#D9A63A]">digital</span>{" "}
+            <span className="text-[#6B4A8E]">citizens</span>
+          </>
+        }
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders", href: "/services/for-leaders" },
@@ -75,8 +83,8 @@ export default function CyberSafetyPage() {
           },
           { label: "Cyber Safety" },
         ]}
-        webImage="/banners/services-2.jpg"
-        mobileImage="/banners/services-mob-2.jpg"
+        webImage="/banners/cyber-web.png"
+        mobileImage="/banners/cyber-mob.png"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

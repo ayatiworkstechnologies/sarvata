@@ -69,7 +69,15 @@ export default function MentalHealthPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Supporting student well-being for confident, resilient learners"
+        title={
+          <>
+            Supporting student well-being <br />
+            <span className="text-[#D9A63A]">for</span>{" "}
+            <span className="text-[#6B4A8E]">confident,</span> <br />
+            <span className="text-[#D9A63A]">resilient</span>{" "}
+            <span className="text-[#6B4A8E]">learners</span>
+          </>
+        }
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders", href: "/services/for-leaders" },
@@ -79,8 +87,8 @@ export default function MentalHealthPage() {
           },
           { label: "Mental Health" },
         ]}
-        webImage="/banners/services-4.jpg"
-        mobileImage="/banners/services-mob-4.jpg"
+        webImage="/banners/mental-web.png"
+        mobileImage="/banners/mental-mob.png"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

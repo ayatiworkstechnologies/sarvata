@@ -60,14 +60,22 @@ export default function FreeResourcesPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Ready-to-use resources for real classroom impact"
+        title={
+          <>
+            Ready-to-use resources <br />
+            <span className="text-[#D9A63A]">for</span>{" "}
+            <span className="text-[#6B4A8E]">real</span> <br />
+            <span className="text-[#D9A63A]">classroom</span>{" "}
+            <span className="text-[#6B4A8E]">impact</span>
+          </>
+        }
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Educators", href: "/services/for-educators" },
           { label: "Free Resources & Tools" },
         ]}
-        webImage="/banners/services-5.jpg"
-        mobileImage="/banners/services-mob-5.jpg"
+        webImage="/banners/tools-web.png"
+        mobileImage="/banners/tools-mob.png"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

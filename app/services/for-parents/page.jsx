@@ -49,9 +49,17 @@ export default function ParentsPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        webImage="/banners/for-parents-1.jpg"
-        mobileImage="/banners/for-parents-mob-1.jpg"
-        title="Supporting you in every step of your child's learning journey."
+        webImage="/banners/advocacy-web.png"
+        mobileImage="/banners/advocacy-mob.png"
+        title={
+          <>
+            Supporting you in <br />
+            <span className="text-[#D9A63A]">every step</span>{" "}
+            <span className="text-[#6B4A8E]">of your</span> <br />
+            <span className="text-[#D9A63A]">child's learning</span>{" "}
+            <span className="text-[#6B4A8E]">journey.</span>
+          </>
+        }
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Parents" },

@@ -49,21 +49,29 @@ export default function TeacherMentoringPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Personalised mentoring for lasting teaching impact"
+        title={
+          <>
+            Personalised mentoring <br />
+            <span className="text-[#D9A63A]">for</span>{" "}
+            <span className="text-[#6B4A8E]">lasting</span> <br />
+            <span className="text-[#D9A63A]">teaching</span>{" "}
+            <span className="text-[#6B4A8E]">impact</span>
+          </>
+        }
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Educators", href: "/services/for-educators" },
           { label: "Teacher Mentoring" },
         ]}
-        webImage="/banners/services-2.jpg"
-        mobileImage="/banners/services-mob-2.jpg"
+        webImage="/banners/teacher-web.png"
+        mobileImage="/banners/teacher-mob.png"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="From Workshop to Classroom"
         title="Implement Strategies with Real Support"
-        image="/assets/ser-img-2.webp"
+        image="/assets/teacher-1.png"
         paragraphs={[
           "Workshops provide tools. Mentoring helps you implement them with your actual students. This is a confidential, non-evaluative partnership - not supervision.",
         ]}

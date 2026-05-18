@@ -27,7 +27,7 @@ export default function GetStarted() {
           {/* 1. BACKGROUND IMAGE PORTAL */}
           <div className="absolute inset-0 z-0">
             <Image
-              src="/assets/home-cta.webp"
+              src="/assets/home-cta.png"
               alt="Partnership with Sarvata"
               fill
               className="object-cover transition-transform duration-1000 hover:scale-105"

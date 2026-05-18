@@ -72,7 +72,15 @@ export default function HealthyRelationshipsPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Building respectful relationships and strong personal boundaries"
+        title={
+          <>
+            Building respectful relationships <br />
+            <span className="text-[#D9A63A]">and</span>{" "}
+            <span className="text-[#6B4A8E]">strong</span> <br />
+            <span className="text-[#D9A63A]">personal</span>{" "}
+            <span className="text-[#6B4A8E]">boundaries</span>
+          </>
+        }
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders", href: "/services/for-leaders" },
@@ -82,8 +90,8 @@ export default function HealthyRelationshipsPage() {
           },
           { label: "Healthy Relationships" },
         ]}
-        webImage="/banners/services-3.jpg"
-        mobileImage="/banners/services-mob-3.jpg"
+        webImage="/banners/healthy-web.png"
+        mobileImage="/banners/healthy-mob.png"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

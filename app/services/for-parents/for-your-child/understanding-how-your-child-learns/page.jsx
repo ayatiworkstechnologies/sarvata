@@ -59,7 +59,14 @@ export default function UnderstandingChildLearnsPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Understand how your child learns to support them better"
+        title={
+          <>
+            Understand how your <br />
+            <span className="text-[#D9A63A]">child learns</span>{" "}
+            <span className="text-[#6B4A8E]">to support</span> <br />
+            <span className="text-[#D9A63A]">them better</span>
+          </>
+        }
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Parents", href: "/services/for-parents" },
@@ -69,8 +76,8 @@ export default function UnderstandingChildLearnsPage() {
           },
           { label: "Understanding Learning" },
         ]}
-        webImage="/banners/services-1.jpg"
-        mobileImage="/banners/services-mob-1.jpg"
+        webImage="/banners/child-web.png"
+        mobileImage="/banners/child-mob.png"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

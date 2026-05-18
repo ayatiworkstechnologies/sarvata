@@ -14,21 +14,36 @@ export default function StudentProgramsPage() {
       description:
         "Navigate the online world with confidence and smart choices. Real talk about digital reality.",
       href: "/services/for-leaders/student-programs/cyber-safety-digital-citizenship",
-      icon: <Shield className="w-8 h-8 transition-colors duration-500" strokeWidth={1.5} />,
+      icon: (
+        <Shield
+          className="w-8 h-8 transition-colors duration-500"
+          strokeWidth={1.5}
+        />
+      ),
     },
     {
       title: "Mental Health & Well-Being",
       description:
         "Practical tools for managing stress and difficult emotions. Skills that actually work.",
       href: "/services/for-leaders/student-programs/mental-health-well-being",
-      icon: <Brain className="w-8 h-8 transition-colors duration-500" strokeWidth={1.5} />,
+      icon: (
+        <Brain
+          className="w-8 h-8 transition-colors duration-500"
+          strokeWidth={1.5}
+        />
+      ),
     },
     {
       title: "Healthy Relationships & Boundaries",
       description:
         "Education about consent, boundaries, and navigating social complexities. Mature conversations about real topics.",
       href: "/services/for-leaders/student-programs/healthy-relationships-boundaries",
-      icon: <Users className="w-8 h-8 transition-colors duration-500" strokeWidth={1.5} />,
+      icon: (
+        <Users
+          className="w-8 h-8 transition-colors duration-500"
+          strokeWidth={1.5}
+        />
+      ),
     },
   ];
 
@@ -55,14 +70,22 @@ export default function StudentProgramsPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Programs that build confident, future-ready learners"
+        title={
+          <>
+            Programs that <br />
+            <span className="text-[#D9A63A]">build</span>{" "}
+            <span className="text-[#6B4A8E]">confident,</span> <br />
+            <span className="text-[#D9A63A]">future-ready</span>{" "}
+            <span className="text-[#6B4A8E]">learners</span>
+          </>
+        }
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders", href: "/services/for-leaders" },
           { label: "Student Programs" },
         ]}
-        webImage="/banners/services-6.jpg"
-        mobileImage="/banners/services-mob-6.jpg"
+        webImage="/banners/student-web.png"
+        mobileImage="/banners/student-mob.png"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

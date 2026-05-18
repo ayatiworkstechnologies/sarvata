@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { LuMail, LuPhone, LuMapPin } from "react-icons/lu";
 import ContactForm from "./ContactForm";
 import { useConsultation } from "@/context/ConsultationContext";
@@ -30,18 +31,28 @@ const audiences = [
 const socials = [
   {
     Icon: FaFacebookF,
-    href: "https://www.facebook.com/people/Sarvata-Educational-Consultancy/",
+    href: "https://www.facebook.com/profile.php?id=61566288371125",
     label: "Facebook",
   },
   {
     Icon: FaInstagram,
-    href: "https://www.instagram.com/sarvata_edu_consultancy_?igsh=MTkwdmk0eW15MGZ6dA%3D%3D&utm_source=qr",
+    href: "https://www.instagram.com/sarvata_edu_consultancy_/",
     label: "Instagram",
   },
   {
     Icon: FaLinkedinIn,
-    href: "https://in.linkedin.com/in/sarvata-educational-consultancy-6ab205321?trk=public_post_feed-actor-name",
+    href: "https://www.linkedin.com/company/sarvata-transform-learning",
     label: "LinkedIn",
+  },
+  {
+    Icon: FaXTwitter,
+    href: "https://x.com/SarvataOfficial",
+    label: "X",
+  },
+  {
+    Icon: FaYoutube,
+    href: "https://www.youtube.com/@SarvataTransformingLearning",
+    label: "YouTube",
   },
 ];
 

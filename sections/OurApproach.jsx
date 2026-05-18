@@ -18,7 +18,7 @@ export default function ApproachHero() {
               className="relative aspect-[4/3] lg:aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl border border-border bg-white"
             >
               <Image
-                src="/assets/home-sec2.webp"
+                src="/assets/home-4.png"
                 alt="Educators collaborating"
                 fill
                 className="object-cover transition-transform duration-1000 hover:scale-105"

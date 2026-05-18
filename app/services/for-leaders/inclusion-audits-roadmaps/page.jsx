@@ -49,14 +49,22 @@ export default function InclusionAuditsPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Assess, align, and build inclusive systems that work for every learner"
+        title={
+          <>
+            Assess, align, and build <br />
+            <span className="text-[#D9A63A]">inclusive systems</span>{" "}
+            <span className="text-[#6B4A8E]">that work</span> <br />
+            <span className="text-[#D9A63A]">for every</span>{" "}
+            <span className="text-[#6B4A8E]">learner</span>
+          </>
+        }
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders", href: "/services/for-leaders" },
           { label: "Inclusion Audits & Roadmaps" },
         ]}
-        webImage="/banners/services-3.jpg"
-        mobileImage="/banners/services-mob-3.jpg"
+        webImage="/banners/roadmap-web.png"
+        mobileImage="/banners/roadmap-mob.png"
       />
 
       {/* ── FROM ASPIRATION TO ACTION & THE GAP ────────────────── */}

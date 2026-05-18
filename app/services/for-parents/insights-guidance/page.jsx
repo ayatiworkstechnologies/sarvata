@@ -47,14 +47,21 @@ export default function InsightsGuidancePage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Supporting parents with clarity in a complex learning world"
+        title={
+          <>
+            Supporting parents with <br />
+            <span className="text-[#D9A63A]">clarity in</span>{" "}
+            <span className="text-[#6B4A8E]">a complex</span> <br />
+            <span className="text-[#D9A63A]">learning world</span>
+          </>
+        }
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Parents", href: "/services/for-parents" },
           { label: "Insights & Guidance" },
         ]}
-        webImage="/banners/services-7.jpg"
-        mobileImage="/banners/services-mob-7.jpg"
+        webImage="/banners/insights-web.png"
+        mobileImage="/banners/insights-mob.png"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}
@@ -91,7 +98,10 @@ export default function InsightsGuidancePage() {
                   className="group bg-white p-8 rounded-[1.75rem] border border-border/50 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
                 >
                   <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 text-primary ring-1 ring-primary/20 shadow-inner group-hover:bg-primary group-hover:text-white transition-colors duration-500">
-                    <Icon className="w-7 h-7 transition-colors duration-500 group-hover:text-white" strokeWidth={1.5} />
+                    <Icon
+                      className="w-7 h-7 transition-colors duration-500 group-hover:text-white"
+                      strokeWidth={1.5}
+                    />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
                     {item.title}

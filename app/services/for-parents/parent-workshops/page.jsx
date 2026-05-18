@@ -38,14 +38,22 @@ export default function ParentWorkshopsPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Expert-led workshops for informed, confident parenting"
+        title={
+          <>
+            Expert-led workshops <br />
+            <span className="text-[#D9A63A]">for</span>{" "}
+            <span className="text-[#6B4A8E]">informed,</span> <br />
+            <span className="text-[#D9A63A]">confident</span>{" "}
+            <span className="text-[#6B4A8E]">parenting</span>
+          </>
+        }
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Parents", href: "/services/for-parents" },
           { label: "Parent Workshops" },
         ]}
-        webImage="/banners/services-8.jpg"
-        mobileImage="/banners/services-mob-8.jpg"
+        webImage="/banners/parent-web.png"
+        mobileImage="/banners/parent-mob.png"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

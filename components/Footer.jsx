@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import ScheduleConsultationButton from "@/components/ScheduleConsultationButton";
-import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
+import { FaLinkedinIn, FaInstagram, FaFacebookF, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const pageLinks = [
@@ -21,16 +21,24 @@ const serviceLinks = [
 
 const socials = [
   {
-    Icon: FaLinkedinIn,
-    href: "https://in.linkedin.com/in/sarvata-educational-consultancy-6ab205321?trk=public_post_feed-actor-name",
+    Icon: FaFacebookF,
+    href: "https://www.facebook.com/profile.php?id=61566288371125",
   },
   {
     Icon: FaInstagram,
-    href: "https://www.instagram.com/sarvata_edu_consultancy_?igsh=MTkwdmk0eW15MGZ6dA%3D%3D&utm_source=qr",
+    href: "https://www.instagram.com/sarvata_edu_consultancy_/",
   },
   {
-    Icon: FaFacebookF,
-    href: "https://www.facebook.com/people/Sarvata-Educational-Consultancy/",
+    Icon: FaLinkedinIn,
+    href: "https://www.linkedin.com/company/sarvata-transform-learning",
+  },
+  {
+    Icon: FaXTwitter,
+    href: "https://x.com/SarvataOfficial",
+  },
+  {
+    Icon: FaYoutube,
+    href: "https://www.youtube.com/@SarvataTransformingLearning",
   },
 ];
 

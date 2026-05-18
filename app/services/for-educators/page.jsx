@@ -49,9 +49,17 @@ export default function EducatorsPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        webImage="/banners/for-eudcators-1.jpg"
-        mobileImage="/banners/for-eudcators-mob-1.jpg"
-        title="Sustain your impact. Elevate your teaching"
+        webImage="/banners/edu-web.png"
+        mobileImage="/banners/edu-mob.png"
+        title={
+          <>
+            Shaping better <br />
+            <span className="text-[#D9A63A]">educators</span>{" "}
+            <span className="text-[#6B4A8E]">and</span> <br />
+            <span className="text-[#D9A63A]">future-ready</span>{" "}
+            <span className="text-[#6B4A8E]">schools</span>
+          </>
+        }
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Educators" },
@@ -61,7 +69,7 @@ export default function EducatorsPage() {
       {/* ── THE CHALLENGE ───────────────────────────────────────── */}
       <PathwayChallengeSection
         title="The Challenge"
-        image="/assets/service-edu-1.webp"
+        image="/assets/edu-1.png"
         paragraphs={[
           <span key="p1">
             You&apos;re already responding to diverse learners - the student who
@@ -91,7 +99,7 @@ export default function EducatorsPage() {
       {/* ── OUR APPROACH ────────────────────────────────────────── */}
       <PathwayApproachSection
         eyebrow="Our Approach"
-        image="/assets/service-edu-2.webp"
+        image="/assets/edu-2.png"
         title="From Intuitive Response to Sustainable, Structured Practice"
         items={[
           {

@@ -57,7 +57,14 @@ export default function SchoolPartnershipPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Building stronger parent-school partnerships for better student outcomes"
+        title={
+          <>
+            Building stronger parent-school <br />
+            <span className="text-[#D9A63A]">partnerships for</span>{" "}
+            <span className="text-[#6B4A8E]">better student</span> <br />
+            <span className="text-[#D9A63A]">outcomes</span>
+          </>
+        }
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Parents", href: "/services/for-parents" },

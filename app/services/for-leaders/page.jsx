@@ -49,9 +49,16 @@ export default function LeadersPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        webImage="/banners/for-school-leaders-1.jpg"
-        mobileImage="/banners/for-school-leaders-mob-1.jpg"
-        title="Transforming schools through purposeful leadership"
+        webImage="/banners/lead-web.png"
+        mobileImage="/banners/lead-mob.png"
+        title={
+          <>
+            Transforming schools <br />
+            <span className="text-[#D9A63A]">through</span>{" "}
+            <span className="text-[#6B4A8E]">purposeful</span> <br />
+            <span className="text-[#D9A63A]">leadership</span>
+          </>
+        }
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders" },

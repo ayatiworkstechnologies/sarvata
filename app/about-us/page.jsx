@@ -46,7 +46,15 @@ export default function AboutPage() {
       <MainHero
         webImage="/banners/sarvata-about-web.jpg"
         mobileImage="/banners/sarvata-about-mob.jpg"
-        // title="Shaping better educators. and future-ready schools"
+        title={
+          <>
+            Shaping better <br />
+            <span className="text-[#D9A63A]">educators</span>{" "}
+            <span className="text-[#6B4A8E]">and</span> <br />
+            <span className="text-[#D9A63A]">future-ready</span>{" "}
+            <span className="text-[#6B4A8E]">schools</span>
+          </>
+        }
         breadcrumbs={[{ label: "About Us" }]}
       />
 

@@ -73,14 +73,22 @@ export default function FacultyMentoringPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Integrated mentoring for leaders shaping high-impact schools"
+        title={
+          <>
+            Integrated mentoring for <br />
+            <span className="text-[#D9A63A]">leaders</span>{" "}
+            <span className="text-[#6B4A8E]">shaping</span> <br />
+            <span className="text-[#D9A63A]">high-impact</span>{" "}
+            <span className="text-[#6B4A8E]">schools</span>
+          </>
+        }
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders", href: "/services/for-leaders" },
           { label: "Faculty & Leadership Mentoring" },
         ]}
-        webImage="/banners/services-4.jpg"
-        mobileImage="/banners/services-mob-4.jpg"
+        webImage="/banners/faculty-web.png"
+        mobileImage="/banners/faculty-mob.png"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}

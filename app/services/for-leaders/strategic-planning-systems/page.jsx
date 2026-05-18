@@ -76,14 +76,22 @@ export default function StrategicPlanningPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        title="Building systems that drive sustainable school transformation"
+        title={
+          <>
+            Building systems that <br />
+            <span className="text-[#D9A63A]">drive</span>{" "}
+            <span className="text-[#6B4A8E]">sustainable</span> <br />
+            <span className="text-[#D9A63A]">school</span>{" "}
+            <span className="text-[#6B4A8E]">transformation</span>
+          </>
+        }
         breadcrumbs={[
           { label: "Services", href: "/services" },
           { label: "For Leaders", href: "/services/for-leaders" },
           { label: "Strategic Planning & Systems" },
         ]}
-        webImage="/banners/services-5.jpg"
-        mobileImage="/banners/services-mob-5.jpg"
+        webImage="/banners/strategic-web.png"
+        mobileImage="/banners/strategic-mob.png"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}
@@ -112,7 +120,7 @@ export default function StrategicPlanningPage() {
             {coreSystems.map((sys, i) => {
               const Icon =
                 [BookOpen, LineChart, Calendar, LifeBuoy, Laptop, FileText][
-                i
+                  i
                 ] || FileText;
               return (
                 <motion.div
@@ -125,7 +133,10 @@ export default function StrategicPlanningPage() {
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500" />
                   <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-primary/10 to-secondary/10 flex items-center justify-center mb-6 text-primary ring-1 ring-primary/20 shadow-inner group-hover:bg-primary group-hover:text-white transition-colors duration-500">
-                    <Icon className="w-7 h-7 transition-colors duration-500 group-hover:text-white" strokeWidth={1.5} />
+                    <Icon
+                      className="w-7 h-7 transition-colors duration-500 group-hover:text-white"
+                      strokeWidth={1.5}
+                    />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-3">
                     {sys.title}

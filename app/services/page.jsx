@@ -47,9 +47,17 @@ export default function ServicesPage() {
   return (
     <main className="bg-white">
       <MainHero
-        webImage="/banners/ser-1.jpg"
-        mobileImage="/banners/ser-mob-1.jpg"
-        title="Comprehensive solutions for educators, schools, and learners"
+        webImage="/banners/pare-web.png"
+        mobileImage="/banners/pare-mob.png"
+        title={
+          <>
+            Comprehensive solutions for <br />
+            <span className="text-[#D9A63A]">educators,</span>{" "}
+            <span className="text-[#6B4A8E]">schools,</span> <br />
+            <span className="text-[#D9A63A]">and</span>{" "}
+            <span className="text-[#6B4A8E]">learners</span>
+          </>
+        }
         breadcrumbs={[{ label: "Services" }]}
       />
       <ServicesLayout />
