@@ -78,14 +78,18 @@ export default function Hero() {
                 transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
               },
             }}
-            className="text-2xl font-bold leading-[1.15] text-white md:text-3xl lg:text-4xl tracking-tight mb-2 md:mb-4"
+            className="mb-2 text-2xl font-bold leading-[1.15] tracking-tight text-white md:mb-4 md:text-3xl lg:text-4xl"
           >
-            <span className="text-[#E2C473] drop-shadow-sm inline-block uppercase">
-              Building schools where every learner belongs
+            Building stronger parent-school <br />
+            <span className="text-[#D9A63A]">
+              partnerships for
+            </span>{" "}
+            <span className="text-[#6B4A8E]">
+              better student
             </span>{" "}
             <br />
-            <span className="inline-block mt-2 font-extrabold text-white drop-shadow-sm uppercase">
-              and every educator thrives.
+            <span className="text-[#D9A63A]">
+              outcomes
             </span>
           </motion.h1>
           <motion.p
