@@ -92,7 +92,7 @@ export default function StudentProgramsPage() {
       <PathwayChallengeSection
         eyebrow="Student Programs for Your School Community"
         title="More Than Subject Knowledge"
-        image="/assets/ab-sec-5-3.webp"
+        image="/assets/student-1.png"
         paragraphs={[
           "Students need more than subject knowledge to thrive. They need skills for navigating digital life, managing stress, and understanding healthy relationships.",
           "These programs provide developmentally appropriate workshops addressing real challenges students face.",

@@ -56,7 +56,7 @@ export default function ForYourChildPage() {
       <PathwayChallengeSection
         eyebrow="Understanding How They Learn"
         title="The Most Important Skill"
-        image="/assets/service-par-1.webp"
+        image="/assets/your-child-1.png"
         paragraphs={[
           "Beyond subject content, developing awareness of how they learn can support both academic progress and longer-term learning independence.",
           "We work with children and teens to discover their learning preferences, develop effective strategies, build self-regulation skills, and become increasingly independent learners.",

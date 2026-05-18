@@ -44,8 +44,8 @@ export default function AboutPage() {
   return (
     <main className="bg-background">
       <MainHero
-        webImage="/banners/sarvata-about-web.jpg"
-        mobileImage="/banners/sarvata-about-mob.jpg"
+        webImage="/banners/about-web.png"
+        mobileImage="/banners/about-mob.png"
         title={
           <>
             Shaping better <br />

@@ -25,10 +25,10 @@ export default function ResearchFoundation({ researchTitle, researchText }) {
               src="/assets/about-3.png"
               alt="Research & Evidence"
               fill
-              className="object-cover transition-transform duration-1000 hover:scale-105"
+              quality={100}
+              sizes="(max-width: 1024px) 100vw, 42vw"
+              className="object-cover object-center transition-transform duration-1000 hover:scale-[1.03]"
             />
-            {/* Subtle brand tint Vignette */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/20 via-transparent to-transparent opacity-60" />
 
             {/* Perspective Detailing (Industrial Vibe) */}
             <div className="absolute top-10 right-10 flex flex-col items-end gap-2">

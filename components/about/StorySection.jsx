@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 export default function StorySection({
   id,
@@ -11,18 +10,8 @@ export default function StorySection({
   paragraphs,
   image,
 }) {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  });
-
-  // Smooth parallax effect for the image
-  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-
   return (
     <section
-      ref={containerRef}
       id={id}
       className="relative bg-[#faf9ff] py-12 lg:py-18 overflow-hidden"
     >
@@ -42,21 +31,15 @@ export default function StorySection({
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
               className="relative aspect-[4/5] overflow-hidden rounded-[60px] shadow-2xl border-[12px] border-white"
             >
-              <motion.div
-                style={{ y, height: "120%", top: "-10%" }}
-                className="relative w-full"
-              >
+              <motion.div className="relative h-full w-full">
                 <Image
                   src={image || "/about.jpg"}
                   alt={title}
                   fill
-                  className="object-cover transition-transform duration-1000"
+                  className="object-cover object-center transition-transform duration-1000 hover:scale-[1.03]"
                   priority
                 />
               </motion.div>
-
-              {/* Subtle Inner Glow */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent opacity-60 pointer-events-none" />
             </motion.div>
           </div>
 

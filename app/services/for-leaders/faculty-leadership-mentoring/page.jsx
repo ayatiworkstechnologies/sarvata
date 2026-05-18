@@ -95,7 +95,7 @@ export default function FacultyMentoringPage() {
       <PathwayChallengeSection
         eyebrow="Building Capacity at All Levels"
         title="Why Traditional PD Often Falls Short"
-        image="/assets/service-lea-1.webp"
+        image="/assets/faculty-1.png"
         paragraphs={[
           "Your faculty is your greatest asset. But traditional professional development - episodic workshops with no follow-up - rarely translates to practice change.",
           "Isolation. One-and-done events. Disconnection from practice. No follow-through.",

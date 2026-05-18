@@ -98,7 +98,7 @@ export default function StrategicPlanningPage() {
       <PathwayChallengeSection
         eyebrow="Building Infrastructure That Enables Vision"
         title="When Systems and Vision Collide"
-        image="/assets/home-sec-3-1.webp"
+        image="/assets/strategic-1.png"
         paragraphs={[
           "Many schools articulate compelling visions: personalized learning, student agency, deep understanding. Yet daily reality often contradicts these aspirations - not because people don't care, but because operational systems were designed for a different educational model.",
           "You can't layer new pedagogical approaches onto old industrial-age systems and expect coherence. Sustainable change requires redesigning the infrastructure itself.",

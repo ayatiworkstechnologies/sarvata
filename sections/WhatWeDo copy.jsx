@@ -109,25 +109,22 @@ function CommunityCard({ card, index }) {
     >
       <motion.div
         style={{ scale }}
-        className="relative w-full h-[500px] sm:h-[600px] md:h-[750px] max-h-[85vh] rounded-[32px] md:rounded-[48px] overflow-hidden bg-slate-900 group shadow-2xl"
+        className="relative w-full h-[500px] sm:h-[600px] md:h-[750px] max-h-[85vh] rounded-[32px] md:rounded-[48px] overflow-hidden bg-soft group shadow-2xl"
       >
         {/* Cinematic Parallax Background */}
         <div className="absolute inset-0 overflow-hidden ">
           <motion.div
             style={{ scale: imgScale }}
-            className="relative h-full w-full opacity-80"
+            className="relative h-full w-full"
           >
             <Image
               src={card.image}
               alt={card.title}
               fill
-              className="object-cover transition-transform duration-700"
+              className="object-cover object-center transition-transform duration-700"
               priority={index === 0}
             />
           </motion.div>
-
-          {/* Enhanced Dark Gradient to ensure text readability on mobile */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent lg:from-black/80 lg:via-black/20" />
         </div>
 
         {/* Content Body */}

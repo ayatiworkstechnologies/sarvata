@@ -70,15 +70,15 @@ export default function SchoolPartnershipPage() {
           { label: "For Parents", href: "/services/for-parents" },
           { label: "Partnership & Advocacy" },
         ]}
-        webImage="/banners/services-9.jpg"
-        mobileImage="/banners/services-mob-9.jpg"
+        webImage="/banners/advocacy-web.png"
+        mobileImage="/banners/advocacy-mob.png"
       />
 
       {/* ── INTRO ───────────────────────────────────────── */}
       <PathwayChallengeSection
         eyebrow="Building the Home-School Bridge"
         title="The Power of a United Team"
-        image="/assets/ab-sec-1.webp"
+        image="/assets/advocacy-1.png"
         paragraphs={[
           "You know your child best. Teachers know them differently. When parents and educators work together respectfully, the child wins.",
           "But navigating school systems, understanding educational terms, and participating in meetings can be intimidating.",

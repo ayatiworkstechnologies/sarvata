@@ -1,15 +1,13 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { LuPuzzle, LuSettings, LuTarget, LuHandshake } from "react-icons/lu";
 
 const DIFFERENTIATORS = [
   {
     title: "Grounded in Practice",
-    description:
-      "We’re educators who’ve lived the gap between vision and reality.",
+    description: "We're educators who've lived the gap between vision and reality.",
     icon: LuPuzzle,
     image: "/assets/sq-1.png",
     accent: "var(--primary)",
@@ -42,8 +40,8 @@ export default function ApproachFeatures() {
   return (
     <section className="relative overflow-hidden bg-white py-16 md:py-24">
       {/* Subtle decorative background gradient instead of dots */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-40 pointer-events-none">
-        <div className="absolute top-0 left-0 w-full h-64 bg-linear-to-b from-soft to-transparent" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-full w-full -translate-x-1/2 opacity-40">
+        <div className="absolute left-0 top-0 h-64 w-full bg-linear-to-b from-soft to-transparent" />
       </div>
 
       <div className="container-max relative z-10">
@@ -63,9 +61,9 @@ export default function ApproachFeatures() {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {DIFFERENTIATORS.map((item, i) => (
-            <FeatureCard key={i} item={item} i={i} />
+            <FeatureCard key={item.title} item={item} i={i} />
           ))}
         </div>
       </div>
@@ -74,20 +72,10 @@ export default function ApproachFeatures() {
 }
 
 function FeatureCard({ item, i }) {
-  const cardRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: cardRef,
-    offset: ["start end", "end start"],
-  });
-
-  // Balanced Parallax: Image moves within its container
-  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
-
   const Icon = item.icon;
 
   return (
     <motion.div
-      ref={cardRef}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
@@ -97,13 +85,14 @@ function FeatureCard({ item, i }) {
         ease: [0.16, 1, 0.3, 1],
       }}
       whileHover={{ y: -10 }}
-      className="group relative flex flex-col rounded-[44px] bg-white border border-border/60 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)] hover:border-primary/20 transition-all duration-500 overflow-hidden h-full"
+      className="group relative flex h-full flex-col overflow-hidden rounded-[28px] border border-border/60 bg-white shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] transition-all duration-500 hover:border-primary/20 hover:shadow-[0_20px_40px_-12px_rgba(0,0,0,0.1)]"
     >
-      {/* 1. Cinematic Header with Parallax */}
-      <div className="relative h-48 w-full overflow-hidden">
+      {/* Image Header */}
+      <div className="relative aspect-square w-full overflow-hidden bg-soft">
         <motion.div
-          style={{ y, height: "110%", top: "-5%" }}
-          className="relative w-full"
+          whileHover={{ scale: 1.03 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="relative h-full w-full"
         >
           <Image
             src={item.image}
@@ -111,26 +100,26 @@ function FeatureCard({ item, i }) {
             fill
             quality={100}
             sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 300px"
-            className="object-cover"
+            className="object-cover object-center"
           />
         </motion.div>
       </div>
 
-      {/* 2. Content Area */}
-      <div className="p-9 flex flex-col grow">
+      {/* Content Area */}
+      <div className="flex grow flex-col p-9">
         {/* Icon & Title Row */}
-        <div className="flex flex-col gap-5 mb-5">
-          <div className="shrink-0 h-14 w-14 rounded-2xl bg-soft border border-border/40 flex items-center justify-center group-hover:bg-primary/5 group-hover:border-primary/30 group-hover:shadow-inner transition-all duration-500">
-            <div className="relative h-7 w-7 flex items-center justify-center">
-              <Icon className="w-full h-full transition-transform group-hover:scale-110 text-primary" />
+        <div className="mb-5 flex flex-col gap-5">
+          <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl border border-border/40 bg-soft transition-all duration-500 group-hover:border-primary/30 group-hover:bg-primary/5 group-hover:shadow-inner">
+            <div className="relative flex h-7 w-7 items-center justify-center">
+              <Icon className="h-full w-full text-primary transition-transform group-hover:scale-110" />
             </div>
           </div>
-          <h4 className="text-[19px] font-bold text-foreground leading-tight group-hover:text-primary transition-colors duration-300">
+          <h4 className="text-[19px] font-bold leading-tight text-foreground transition-colors duration-300 group-hover:text-primary">
             {item.title}
           </h4>
         </div>
 
-        <p className="text-[15px] leading-relaxed text-muted/80 font-medium">
+        <p className="text-[15px] font-medium leading-relaxed text-muted/80">
           {item.description}
         </p>
       </div>

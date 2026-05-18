@@ -37,7 +37,9 @@ export default function PathwayApproachSection({
                 src={image || "/about.jpg"}
                 alt={title || "Our Approach"}
                 fill
-                className="object-cover transition-transform duration-1000 hover:scale-105"
+                quality={100}
+                sizes="(max-width: 1024px) 100vw, 42vw"
+                className="object-cover object-center transition-transform duration-1000 hover:scale-[1.03]"
               />
             </motion.div>
           </div>

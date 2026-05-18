@@ -128,7 +128,7 @@ export default function Hero() {
       </div>
 
       {/* OVERLAY & BACKGROUND ACCENTS */}
-      <div className="absolute inset-0 bg-black/40 z-10" />
+      <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/18 via-black/5 to-transparent md:bg-gradient-to-r md:from-black/20 md:via-black/5 md:to-transparent" />
       <motion.div
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 0.08, scale: 1 }}

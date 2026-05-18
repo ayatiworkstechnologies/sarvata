@@ -13,7 +13,7 @@ export default function ContactMap() {
           transition={{ duration: 0.6 }}
           className="relative overflow-hidden rounded-[2rem] border border-border bg-soft-bg/30 p-4 shadow-sm"
         >
-          <div className="h-[450px] w-full overflow-hidden rounded-2xl grayscale-[0.2] transition-all duration-700 hover:grayscale-0">
+          <div className="h-[450px] w-full overflow-hidden rounded-2xl">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.6401614741366!2d80.268482!3d12.994111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5267ecf453a29b%3A0xc3f6050b1076f030!2sT%2077%2C%2029th%20Cross%20St%2C%20Besant%20Nagar%2C%20Chennai%2C%20Tamil%20Nadu%20600090!5e0!3m2!1sen!2sin!4v1711463100000!5m2!1sen!2sin"
               width="100%"

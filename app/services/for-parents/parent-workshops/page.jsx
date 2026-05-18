@@ -60,7 +60,7 @@ export default function ParentWorkshopsPage() {
       <PathwayChallengeSection
         eyebrow="Partnering in Your Child's Learning"
         title="A Shared Language for Success"
-        image="/assets/ab-sec-2.webp"
+        image="/assets/parents-1.png"
         paragraphs={[
           "When parents and educators share the same tools and strategies, it creates a consistent, supportive environment for children to thrive.",
           "Practical, evidence-based workshops to support your child's unique journey at home.",

@@ -68,7 +68,7 @@ export default function InsightsGuidancePage() {
       <PathwayChallengeSection
         eyebrow="Understanding Your Unique Child"
         title="You Are Your Child's Greatest Advocate"
-        image="/assets/home-sec-3-3.webp"
+        image="/assets/insights-1.png"
         paragraphs={[
           "You might be asking: “Why is my bright child struggling?” “How can I support their unique gifts?” “Is this anxiety or normal development?” “How do I navigate the school system?”",
           "We provide a safe, confidential space to find clear answers and practical strategies.",

@@ -47,8 +47,8 @@ export default function ServicesPage() {
   return (
     <main className="bg-white">
       <MainHero
-        webImage="/banners/pare-web.png"
-        mobileImage="/banners/pare-mob.png"
+        webImage="/banners/service-web.png"
+        mobileImage="/banners/service-mob.png"
         title={
           <>
             Comprehensive solutions for <br />

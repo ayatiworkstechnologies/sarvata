@@ -84,7 +84,7 @@ export default function UnderstandingChildLearnsPage() {
       <PathwayChallengeSection
         eyebrow="Building Self-Aware, Independent Learners"
         title="Individual and Group Programs (Grades 4-12)"
-        image="/assets/ab-sec-5-2.webp"
+        image="/assets/child-1.png"
         paragraphs={[
           "Students who understand how they learn are better equipped to navigate challenges, advocate for themselves, and succeed independently.",
           "Our programs are designed to help your child develop the self-awareness and strategies they need to own their learning journey.",

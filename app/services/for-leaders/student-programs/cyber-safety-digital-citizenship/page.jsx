@@ -91,7 +91,7 @@ export default function CyberSafetyPage() {
       <PathwayChallengeSection
         eyebrow="Your Digital World. Your Rules."
         title="Be Smart, Be Safe, Be You"
-        image="/assets/home-sec-3-4.webp"
+        image="/assets/cyber-1.png"
         paragraphs={[
           "Your students' online lives are huge parts of their social lives. These workshops give them tools to be smart, confident, and powerful in digital spaces.",
           "No “don't use your phone” lectures. Real talk about what actually happens online and practical strategies that work.",

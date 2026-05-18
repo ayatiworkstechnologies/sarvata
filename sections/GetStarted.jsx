@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useConsultation } from "@/context/ConsultationContext";
@@ -30,16 +29,14 @@ export default function GetStarted() {
               src="/assets/home-cta.png"
               alt="Partnership with Sarvata"
               fill
-              className="object-cover transition-transform duration-1000 hover:scale-105"
+              className="object-cover object-center transition-transform duration-1000 hover:scale-[1.02]"
               priority
             />
-            {/* Intelligent Gradient: Darkens only where text lives */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent lg:bg-gradient-to-r lg:from-black/70 lg:via-black/20 lg:to-transparent" />
           </div>
 
-          {/* 2. GLASS CONTENT PANEL */}
+          {/* 2. CONTENT PANEL */}
           <div className="relative z-10 h-full w-full flex items-center p-8 md:p-16 lg:p-24">
-            <div className="max-w-2xl">
+            <div className="max-w-2xl rounded-[28px] border border-white/75 bg-white/[0.88] p-6 shadow-[0_18px_50px_rgba(31,41,55,0.14)] md:p-10">
               {/* Animated Badge */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -54,12 +51,11 @@ export default function GetStarted() {
               {/* Headline */}
               <SectionHeading
                 title="Ready to transform your community?"
-                light
-                className="text-white"
+                className="text-foreground"
               />
 
               {/* Description */}
-              <p className="section-body !text-white leading-relaxed mb-12 max-w-lg">
+              <p className="section-body text-muted leading-relaxed mb-12 max-w-lg">
                 Wherever you are in your journey, we&apos;re ready to meet you
                 there with tailored, actionable support that builds capacity
                 from within.

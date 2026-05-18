@@ -61,10 +61,8 @@ export default function PathwayChallengeSection({
               fill
               quality={100}
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover transition-transform duration-1000 group-hover:scale-105"
+              className="object-cover object-center transition-transform duration-1000 group-hover:scale-[1.03]"
             />
-            {/* Ambient Shine Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-transparent opacity-60 pointer-events-none" />
           </div>
         </motion.div>
       </div>

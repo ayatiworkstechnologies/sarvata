@@ -123,36 +123,28 @@ function SplitCard({ card, index, progress }) {
         scale,
         zIndex: index === 1 ? 20 : 10, // Keep center card on top during split
       }}
-      className="group relative h-[550px] md:h-[650px] rounded-[32px] overflow-hidden shadow-2xl transition-shadow duration-500 bg-slate-900"
+      className="group relative h-[550px] md:h-[650px] rounded-[32px] overflow-hidden shadow-xl transition-shadow duration-500 bg-[#f7f3ef]"
     >
       {/* Background Image */}
       <Image
         src={card.image}
         alt={card.title}
         fill
-        className="object-cover transition-transform duration-700 group-hover:scale-110 opacity-80"
+        className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
       />
 
-      {/* Dark gradient base for readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-
       {/* Content */}
-      <div className="absolute inset-x-0 bottom-0 p-4 md:p-5 flex flex-col justify-end text-white">
+      <div className="absolute inset-x-0 bottom-0 p-4 md:p-5 flex flex-col justify-end">
         <motion.div
           style={{ opacity: useTransform(progress, [0.6, 1], [0, 1]) }}
         >
-          {/* Glassmorphic Card */}
-          <div className="relative rounded-[20px] md:rounded-[24px] overflow-hidden border border-white/15 shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
-            {/* Glass background */}
-            <div className="absolute inset-0 bg-white/10 backdrop-blur-xl" />
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
-
-            {/* Glass content */}
+          {/* Content card */}
+          <div className="relative rounded-[20px] md:rounded-[24px] overflow-hidden border border-white/70 bg-white/85 shadow-[0_12px_30px_rgba(31,41,55,0.16)]">
             <div className="relative z-10 p-5 md:p-6">
               {/* Icon + Title row */}
               <div className="flex items-center gap-3 mb-3">
                 <div
-                  className="w-10 h-10 rounded-xl bg-white/15 backdrop-blur-sm flex items-center justify-center border border-white/20 shrink-0"
+                  className="w-10 h-10 rounded-xl bg-white/80 flex items-center justify-center border border-slate-200/80 shrink-0"
                   style={{ color: card.accent }}
                 >
                   <card.IconComponent size={20} />
@@ -166,7 +158,7 @@ function SplitCard({ card, index, progress }) {
               </div>
 
               {/* Description */}
-              <p className="text-white/80 text-[13px] md:text-sm leading-relaxed mb-5 font-light">
+              <p className="text-slate-700 text-[13px] md:text-sm leading-relaxed mb-5 font-light">
                 {card.description}
               </p>
 

@@ -49,8 +49,8 @@ export default function ParentsPage() {
     <main className="bg-white">
       {/* ── HERO ────────────────────────────────────────────────── */}
       <MainHero
-        webImage="/banners/advocacy-web.png"
-        mobileImage="/banners/advocacy-mob.png"
+        webImage="/banners/pare-web.png"
+        mobileImage="/banners/pare-mob.png"
         title={
           <>
             Supporting you in <br />
@@ -69,7 +69,7 @@ export default function ParentsPage() {
       {/* ── THE CHALLENGE ───────────────────────────────────────── */}
       <PathwayChallengeSection
         title="Navigating Education, Together"
-        image="/assets/service-par-1.webp"
+        image="/assets/pare-1.png"
         paragraphs={[
           <span key="p1">
             You celebrate your child&apos;s strengths, navigate their
@@ -94,7 +94,7 @@ export default function ParentsPage() {
       <PathwayApproachSection
         eyebrow="How We Work With You"
         title="Understanding, Empowering, Advocating"
-        image="/assets/service-par-2.webp"
+        image="/assets/pare-2.png"
         items={[
           {
             title: "Understanding Your Child",

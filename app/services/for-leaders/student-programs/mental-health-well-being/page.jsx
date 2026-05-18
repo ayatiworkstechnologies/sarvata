@@ -95,7 +95,7 @@ export default function MentalHealthPage() {
       <PathwayChallengeSection
         eyebrow="Your Mental Health Matters"
         title="School is More Than Just Schoolwork"
-        image="/assets/home-sec-3.webp"
+        image="/assets/mental-1.png"
         paragraphs={[
           "It's okay to feel overwhelmed. Let's build skills that work.",
           "Being a student is stressful. Your students don't have to just “push through it.” These workshops provide practical skills to take care of their minds.",

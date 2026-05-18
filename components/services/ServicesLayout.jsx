@@ -12,7 +12,7 @@ const services = [
       "Practical frameworks, workshops, mentoring, and resources to make responsive practice sustainable.",
     href: "/services/for-educators",
     cta: "Explore Educator Services",
-    image: "/assets/home-sec-1.webp", // Replace with your actual images
+    image: "/assets/educater.png", // Replace with your actual images
     accent: "text-emerald-500",
     bg: "bg-emerald-50/50",
   },
@@ -22,7 +22,7 @@ const services = [
       "Strategic partnership to build the systems, culture, and capacity needed for meaningful change.",
     href: "/services/for-leaders",
     cta: "Explore Leader Services",
-    image: "/assets/home-sec-2.webp",
+    image: "/assets/leaders.png",
     accent: "text-blue-500",
     bg: "bg-blue-50/50",
   },
@@ -32,7 +32,7 @@ const services = [
       "Professional support to understand your child's learning profile and advocate effectively.",
     href: "/services/for-parents",
     cta: "Explore Parent Services",
-    image: "/assets/home-sec-3.webp",
+    image: "/assets/parents.png",
     accent: "text-rose-500",
     bg: "bg-rose-50/50",
   },
@@ -132,11 +132,9 @@ export default function ServicesMain() {
                       src={service.image}
                       alt={service.audience}
                       fill
-                      className="object-cover transition-transform duration-700 hover:scale-105"
-                    />
-                    {/* Decorative colored overlay */}
-                    <div
-                      className={`absolute inset-0 ${service.bg} mix-blend-multiply opacity-20`}
+                      quality={100}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover object-center transition-transform duration-700 hover:scale-[1.03]"
                     />
                   </div>
                 </motion.div>

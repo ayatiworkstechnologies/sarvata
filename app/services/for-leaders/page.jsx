@@ -68,7 +68,7 @@ export default function LeadersPage() {
       {/* ── THE CHALLENGE ───────────────────────────────────────── */}
       <PathwayChallengeSection
         title="The Leadership Challenge"
-        image="/assets/service-lea-1.webp"
+        image="/assets/lead-1.png"
         paragraphs={[
           <span key="p1">
             In your hands rests not just an institution, but the promise of
@@ -98,7 +98,7 @@ export default function LeadersPage() {
       {/* ── OUR APPROACH ────────────────────────────────────────── */}
       <PathwayApproachSection
         eyebrow="Our Approach"
-        image="/assets/service-lea-2.webp"
+        image="/assets/lead-2.png"
         title="Partnership, Not Prescription"
         items={[
           {

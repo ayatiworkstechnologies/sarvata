@@ -40,9 +40,6 @@ export default function MainHero({
             className="block object-cover md:hidden"
           />
         </motion.div>
-
-        {/* Soft overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(160,102,170,0.12),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(226,196,115,0.12),transparent_32%)]" />
       </div>
 
       {/* Content */}

@@ -98,7 +98,7 @@ export default function HealthyRelationshipsPage() {
       <PathwayChallengeSection
         eyebrow="Navigating Your Relationships"
         title="Know Your Boundaries, Find Your Voice"
-        image="/assets/ab-sec-3.webp"
+        image="/assets/healthy-1.png"
         paragraphs={[
           "Relationships are complicated. Understanding your own boundaries and respecting others' doesn't come automatically.",
           "These workshops create mature space to discuss what students are actually navigating.",
