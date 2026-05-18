@@ -82,7 +82,7 @@ export default function FreeResourcesPage() {
       <PathwayChallengeSection
         eyebrow="Tools for Your Practice, Freely Shared"
         title="Resources From Real Classrooms"
-        image="/assets/ser-img-3.webp"
+        image="/assets/tools-1.png"
         paragraphs={[
           "Resources we've developed and used in real classrooms. Download, adapt, share with colleagues. No registration required.",
         ]}

@@ -85,7 +85,7 @@ export default function WorkshopsTrainingPage() {
           { label: "For Educators", href: "/services/for-educators" },
           { label: "Workshops & Training" },
         ]}
-       webImage="/banners/workshop-web.png"
+        webImage="/banners/workshop-web.png"
         mobileImage="/banners/workshop-mob.png"
       />
 
@@ -93,7 +93,7 @@ export default function WorkshopsTrainingPage() {
       <PathwayChallengeSection
         eyebrow="Overview"
         title="Practical Strategies That Work"
-        image="/assets/ser-img-1.webp"
+        image="/assets/workshop-1.png"
         paragraphs={[
           "Our workshops give you tools you can actually use. No lectures. No theory without practice. Just collaborative work on real teaching challenges.",
         ]}
