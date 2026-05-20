@@ -9,7 +9,7 @@ const DIFFERENTIATORS = [
     title: "Grounded in Practice",
     description: "We're educators who've lived the gap between vision and reality.",
     icon: LuPuzzle,
-    image: "/assets/sq-1.png",
+    image: "/assets/home-sec-3-1.webp",
     accent: "var(--primary)",
   },
   {
@@ -17,21 +17,21 @@ const DIFFERENTIATORS = [
     description:
       "We address culture, pedagogy, and operational systems together.",
     icon: LuSettings,
-    image: "/assets/sq-2.png",
+    image: "/assets/home-sec-3-2.webp",
     accent: "var(--secondary)",
   },
   {
     title: "Building Independence",
     description: "Our goal is your capacity, not your dependency.",
     icon: LuTarget,
-    image: "/assets/sq-3.png",
+    image: "/assets/home-sec-3-3.webp",
     accent: "var(--secondary)",
   },
   {
     title: "Sustained Partnership",
     description: "We support implementation, not just deliver workshops.",
     icon: LuHandshake,
-    image: "/assets/sq-4.png",
+    image: "/assets/home-sec-3-4.webp",
     accent: "var(--primary)",
   },
 ];
