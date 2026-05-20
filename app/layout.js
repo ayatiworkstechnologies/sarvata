@@ -69,6 +69,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
+        suppressHydrationWarning
         className={`
           ${primaryFont.variable}
           ${secondaryFont.variable}
