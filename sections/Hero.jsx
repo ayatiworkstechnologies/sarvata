@@ -78,7 +78,7 @@ export default function Hero() {
                 transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
               },
             }}
-            className="mb-2 text-2xl font-bold leading-[1.15] tracking-tight text-white md:mb-4 md:text-3xl lg:text-4xl"
+            className="mb-2 text-2xl font-bold leading-[1.15] tracking-tight text-[#6B4A8E] md:mb-4 md:text-3xl lg:text-4xl"
           >
             Building stronger parent-school <br />
             <span className="text-[#D9A63A]">
@@ -112,7 +112,7 @@ export default function Hero() {
       <div className="absolute inset-0 hidden md:block">
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/home-video.mp4"
+          src="/hero-web.mp4"
           autoPlay
           loop
           muted
@@ -123,7 +123,7 @@ export default function Hero() {
       <div className="absolute inset-0 block md:hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover"
-          src="/home-video-mob.mp4"
+          src="/hero-mob.mp4"
           autoPlay
           loop
           muted
