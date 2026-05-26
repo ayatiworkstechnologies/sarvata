@@ -89,7 +89,7 @@ export default function FreeResourcesPage() {
       />
 
       {/* ── RESOURCES GRID ─────────────────────────────────────── */}
-      <section className="relative bg-soft-bg overflow-hidden py-8 md:py-16">
+      {/* <section className="relative bg-soft-bg overflow-hidden py-8 md:py-16">
         <div className="container-max relative z-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {resources.map((resource, i) => (
@@ -152,7 +152,7 @@ export default function FreeResourcesPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ── USING THESE RESOURCES ────────────────────────────────── */}
       <section className="bg-white py-8 md:py-16 relative overflow-hidden text-center">
