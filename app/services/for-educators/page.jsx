@@ -53,9 +53,9 @@ export default function EducatorsPage() {
         mobileImage="/banners/edu-mob.png"
         title={
           <>
-            Shaping better <br />
+            Shaping better{" "}
             <span className="text-[#D9A63A]">educators</span>{" "}
-            <span className="text-[#6B4A8E]">and</span> <br />
+            <span className="text-[#6B4A8E]">and</span>{" "}
             <span className="text-[#D9A63A]">future-ready</span>{" "}
             <span className="text-[#6B4A8E]">schools</span>
           </>

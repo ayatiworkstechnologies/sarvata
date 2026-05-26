@@ -65,7 +65,7 @@ export default function Header() {
               </Link>
 
               {/* DESKTOP NAV */}
-              <nav className="hidden md:flex items-center">
+              <nav className="hidden lg:flex items-center">
                 <div className="flex items-center gap-2 rounded-full bg-black/[0.03] p-1.5">
                   <NavItem name="Home" href="/" active={isActive("/")} />
                   <NavItem
@@ -171,7 +171,7 @@ export default function Header() {
               </nav>
 
               {/* DESKTOP CTA */}
-              <div className="hidden md:flex items-center shrink-0">
+              <div className="hidden lg:flex items-center shrink-0">
                 <button
                   type="button"
                   onClick={openModal}
@@ -184,7 +184,7 @@ export default function Header() {
               {/* MOBILE TOGGLE */}
               <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className="md:hidden relative flex h-11 w-11 items-center justify-center rounded-full bg-black/[0.04] text-foreground transition hover:bg-black/[0.06]"
+                className="lg:hidden relative flex h-11 w-11 items-center justify-center rounded-full bg-black/[0.04] text-foreground transition hover:bg-black/[0.06]"
                 aria-label="Toggle menu"
               >
                 <motion.span
@@ -220,7 +220,7 @@ export default function Header() {
                   animate={{ height: "auto", opacity: 1 }}
                   exit={{ height: 0, opacity: 0 }}
                   transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                  className="overflow-hidden md:hidden"
+                  className="overflow-hidden lg:hidden"
                 >
                   <div className="border-t border-black/5 px-4 pb-4 pt-3 overflow-y-auto max-h-[calc(100vh-140px)] custom-scrollbar">
                     <div className="space-y-1 rounded-2xl bg-black/[0.02] p-2">
@@ -238,102 +238,96 @@ export default function Header() {
                       />
 
                       <div className="rounded-xl bg-white/70 p-1">
-                        <MobileLink
+                        <MobileAccordion
                           name="Services"
                           href="/services"
                           pathname={pathname}
                           setMenuOpen={setMenuOpen}
+                          subLinks={[
+                            {
+                              name: "For Educators",
+                              href: "/services/for-educators",
+                              subLinks: [
+                                {
+                                  name: "Workshops & Training",
+                                  href: "/services/for-educators/workshops-training",
+                                },
+                                {
+                                  name: "Teacher Mentoring",
+                                  href: "/services/for-educators/teacher-mentoring",
+                                },
+                                {
+                                  name: "Free Resources & Tools",
+                                  href: "/services/for-educators/free-resources-tools",
+                                },
+                              ],
+                            },
+                            {
+                              name: "For School Leaders",
+                              href: "/services/for-leaders",
+                              subLinks: [
+                                {
+                                  name: "Inclusion Audits",
+                                  href: "/services/for-leaders/inclusion-audits-roadmaps",
+                                },
+                                {
+                                  name: "Faculty & Leadership Mentoring",
+                                  href: "/services/for-leaders/faculty-leadership-mentoring",
+                                },
+                                {
+                                  name: "Strategic Planning & Systems",
+                                  href: "/services/for-leaders/strategic-planning-systems",
+                                },
+                                {
+                                  name: "Programs for Students",
+                                  href: "/services/for-leaders/student-programs",
+                                  subLinks: [
+                                    {
+                                      name: "Cyber Safety & Digital Citizenship",
+                                      href: "/services/for-leaders/student-programs/cyber-safety-digital-citizenship",
+                                    },
+                                    {
+                                      name: "Mental Health & Well-Being",
+                                      href: "/services/for-leaders/student-programs/mental-health-well-being",
+                                    },
+                                    {
+                                      name: "Healthy Relationships & Boundaries",
+                                      href: "/services/for-leaders/student-programs/healthy-relationships-boundaries",
+                                    },
+                                  ],
+                                },
+                              ],
+                            },
+                            {
+                              name: "For Parents",
+                              href: "/services/for-parents",
+                              subLinks: [
+                                {
+                                  name: "Insights & Guidance",
+                                  href: "/services/for-parents/insights-guidance",
+                                },
+                                {
+                                  name: "Parent Workshops",
+                                  href: "/services/for-parents/parent-workshops",
+                                },
+                                {
+                                  name: "School Partnership",
+                                  href: "/services/for-parents/school-partnership-advocacy",
+                                },
+                                {
+                                  name: "For Your Child",
+                                  href: "/services/for-parents/for-your-child",
+                                  subLinks: [
+                                    {
+                                      name: "Understanding How Your Child Learns",
+                                      href: "/services/for-parents/for-your-child/understanding-how-your-child-learns",
+                                    },
+                                  ],
+                                },
+                              ],
+                            },
+                          ]}
                         />
-                        <div className="ml-3 mt-1 space-y-2 border-l border-primary/10 pl-3 py-2">
-                          <MobileAccordion
-                            name="For Educators"
-                            href="/services/for-educators"
-                            pathname={pathname}
-                            setMenuOpen={setMenuOpen}
-                            subLinks={[
-                              {
-                                name: "Workshops & Training",
-                                href: "/services/for-educators/workshops-training",
-                              },
-                              {
-                                name: "Teacher Mentoring",
-                                href: "/services/for-educators/teacher-mentoring",
-                              },
-                              {
-                                name: "Free Resources & Tools",
-                                href: "/services/for-educators/free-resources-tools",
-                              },
-                            ]}
-                          />
-                          <MobileAccordion
-                            name="For School Leaders"
-                            href="/services/for-leaders"
-                            pathname={pathname}
-                            setMenuOpen={setMenuOpen}
-                            subLinks={[
-                              {
-                                name: "Inclusion Audits",
-                                href: "/services/for-leaders/inclusion-audits-roadmaps",
-                              },
-                              {
-                                name: "Faculty & Leadership Mentoring",
-                                href: "/services/for-leaders/faculty-leadership-mentoring",
-                              },
-                              {
-                                name: "Strategic Planning & Systems",
-                                href: "/services/for-leaders/strategic-planning-systems",
-                              },
-                              {
-                                name: "Programs for Students",
-                                href: "/services/for-leaders/student-programs",
-                                subLinks: [
-                                  {
-                                    name: "Cyber Safety & Digital Citizenship",
-                                    href: "/services/for-leaders/student-programs/cyber-safety-digital-citizenship",
-                                  },
-                                  {
-                                    name: "Mental Health & Well-Being",
-                                    href: "/services/for-leaders/student-programs/mental-health-well-being",
-                                  },
-                                  {
-                                    name: "Healthy Relationships & Boundaries",
-                                    href: "/services/for-leaders/student-programs/healthy-relationships-boundaries",
-                                  },
-                                ],
-                              },
-                            ]}
-                          />
-                          <MobileAccordion
-                            name="For Parents"
-                            href="/services/for-parents"
-                            pathname={pathname}
-                            setMenuOpen={setMenuOpen}
-                            subLinks={[
-                              {
-                                name: "Insights & Guidance",
-                                href: "/services/for-parents/insights-guidance",
-                              },
-                              {
-                                name: "Parent Workshops",
-                                href: "/services/for-parents/parent-workshops",
-                              },
-                              {
-                                name: "School Partnership",
-                                href: "/services/for-parents/school-partnership-advocacy",
-                              },
-                              {
-                                name: "For Your Child",
-                                href: "/services/for-parents/for-your-child",
-                                subLinks: [
-                                  {
-                                    name: "Understanding How Your Child Learns",
-                                    href: "/services/for-parents/for-your-child/understanding-how-your-child-learns",
-                                  },
-                                ],
-                              },
-                            ]}
-                          />
-                        </div>
                       </div>
 
                       <MobileLink

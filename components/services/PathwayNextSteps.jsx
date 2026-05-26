@@ -24,7 +24,7 @@ export default function PathwayNextSteps({
   );
 
   return (
-    <section className="relative bg-[#f6f4f9] overflow-hidden py-8 md:py-16">
+    <section className="relative py-12 sm:py-12 md:py-18 bg-[#faf9ff] overflow-hidden border-t border-slate-100">
       {/* Background decoration */}
       <SubtleGrid />
       <FloatingShapes />

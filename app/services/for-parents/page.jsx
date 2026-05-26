@@ -53,9 +53,9 @@ export default function ParentsPage() {
         mobileImage="/banners/pare-mob.png"
         title={
           <>
-            Supporting you in <br />
+            Supporting you in{" "}
             <span className="text-[#D9A63A]">every step</span>{" "}
-            <span className="text-[#6B4A8E]">of your</span> <br />
+            <span className="text-[#6B4A8E]">of your</span>{" "}
             <span className="text-[#D9A63A]">child's learning</span>{" "}
             <span className="text-[#6B4A8E]">journey.</span>
           </>

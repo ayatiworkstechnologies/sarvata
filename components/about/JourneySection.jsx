@@ -23,7 +23,7 @@ export default function JourneySection({ title, intro, steps, image }) {
   return (
     <section
       ref={containerRef}
-      className="relative bg-[#faf9ff] py-16 md:py-24 overflow-hidden"
+      className="relative bg-[#faf9ff] py-8 sm:py-16 md:py-24 overflow-hidden"
     >
       {/* Subtle Background Pattern */}
       <div
@@ -60,13 +60,13 @@ export default function JourneySection({ title, intro, steps, image }) {
             />
           </div>
 
-          <div className="space-y-32 md:space-y-56">
+          <div className="space-y-24 sm:space-y-32 md:space-y-56">
             {steps.map((step, i) => {
               const isEven = i % 2 === 0;
               return (
                 <div key={i} className="relative">
                   <div
-                    className={`flex flex-col md:flex-row items-center gap-12 md:gap-24 ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}
+                    className={`flex flex-col md:flex-row items-center gap-8 sm:gap-12 md:gap-24 ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}
                   >
                     {/* 1. TEXT CONTENT COLUMN */}
                     <motion.div
@@ -121,7 +121,7 @@ export default function JourneySection({ title, intro, steps, image }) {
                       transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                       className="w-full md:w-1/2"
                     >
-                      <div className="relative aspect-[4/3] rounded-[48px] overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.1)] group border border-border bg-soft">
+                      <div className="relative aspect-[4/3] rounded-[24px] md:rounded-[48px] overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.1)] group border border-border bg-soft">
                         <Image
                           src={step.image || `/approach.jpg`}
                           alt={step.title}

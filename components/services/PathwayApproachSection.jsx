@@ -12,7 +12,7 @@ export default function PathwayApproachSection({
   image,
 }) {
   return (
-    <section className="relative bg-[#faf9ff] py-8 md:py-16">
+    <section className="relative bg-[#faf9ff] py-10 sm:py-16 md:py-24">
       {/* Background decoration */}
       <SubtleGrid />
       <FloatingShapes />
@@ -22,7 +22,7 @@ export default function PathwayApproachSection({
 
       <div className="container-max relative z-10">
         {/* items-start is crucial for sticky to work correctly */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-20 items-start">
           {/* LEFT: Sticky Cinematic Image */}
           {/* We set a height/min-height on the container to define the 'track' for sticky */}
           <div className="lg:col-span-5 lg:sticky lg:top-32 self-start">
@@ -31,7 +31,7 @@ export default function PathwayApproachSection({
               whileInView={{ opacity: 1, x: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="relative aspect-[4/5] overflow-hidden rounded-[40px] shadow-2xl border-[8px] border-white bg-white"
+              className="relative aspect-[4/3] sm:aspect-[4/5] overflow-hidden rounded-[24px] sm:rounded-[32px] md:rounded-[40px] shadow-2xl border-[4px] sm:border-[6px] md:border-[8px] border-white bg-white"
             >
               <Image
                 src={image || "/about.jpg"}
@@ -73,9 +73,9 @@ export default function PathwayApproachSection({
                     delay: i * 0.1,
                     ease: [0.22, 1, 0.36, 1],
                   }}
-                  className="group relative rounded-[2.5rem] bg-white border border-slate-100 p-8 md:p-12 overflow-hidden shadow-[0_15px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_30px_70px_rgba(160,102,170,0.1)] hover:border-primary/10 transition-all duration-500"
+                  className="group relative rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] bg-white border border-slate-100 p-5 sm:p-6 md:p-8 lg:p-12 overflow-hidden shadow-[0_15px_50px_rgba(0,0,0,0.02)] hover:shadow-[0_30px_70px_rgba(160,102,170,0.1)] hover:border-primary/10 transition-all duration-500"
                 >
-                  <div className="flex flex-col sm:flex-row gap-8 items-start">
+                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 items-start">
                     {/* Number Badge */}
                     <div className="shrink-0">
                       <div className="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center group-hover:bg-primary transition-colors duration-500">
@@ -87,10 +87,10 @@ export default function PathwayApproachSection({
 
                     {/* Text Content */}
                     <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-slate-900 mb-4 tracking-tight">
+                      <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2 sm:mb-4 tracking-tight">
                         {item.title}
                       </h3>
-                      <p className="text-slate-500 leading-relaxed text-lg font-light">
+                      <p className="text-slate-500 leading-relaxed text-base sm:text-lg font-light">
                         {item.description}
                       </p>
                     </div>

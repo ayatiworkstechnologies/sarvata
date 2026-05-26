@@ -13,7 +13,7 @@ export default function StorySection({
   return (
     <section
       id={id}
-      className="relative bg-[#faf9ff] py-12 lg:py-18 overflow-hidden"
+      className="relative bg-[#faf9ff] py-8 sm:py-12 lg:py-18 overflow-hidden"
     >
       {/* ── BACKGROUND ACCENTS ── */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-white/50 -z-0 hidden lg:block" />
@@ -29,7 +29,7 @@ export default function StorySection({
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="relative aspect-[4/5] overflow-hidden rounded-[60px] shadow-2xl border-[12px] border-white"
+              className="relative aspect-[4/5] sm:aspect-square lg:aspect-[4/5] overflow-hidden rounded-[32px] md:rounded-[48px] lg:rounded-[60px] shadow-2xl border-[6px] md:border-[12px] border-white"
             >
               <motion.div className="relative h-full w-full">
                 <Image

@@ -64,7 +64,7 @@ export default function ContactLayout() {
       <div className="pointer-events-none absolute -right-10 top-0 h-80 w-80 rounded-full bg-primary/5 blur-[100px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 h-80 w-80 rounded-full bg-secondary/5 blur-[90px]" />
 
-      <div className="container-max space-y-16 relative z-10">
+      <div className="container-max space-y-10 sm:space-y-16 relative z-10 py-6 sm:py-8 md:py-16">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -226,7 +226,7 @@ export default function ContactLayout() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="rounded-4xl border border-border bg-soft-bg/30 p-8 sm:p-12"
+          className="rounded-[24px] sm:rounded-4xl border border-border bg-soft-bg/30 p-6 sm:p-8 md:p-12"
         >
           <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
             <div className="max-w-xl">

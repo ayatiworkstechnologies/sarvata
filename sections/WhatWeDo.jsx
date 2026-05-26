@@ -56,11 +56,11 @@ export default function ModernWhatWeDo() {
   return (
     <section
       ref={containerRef}
-      className="relative bg-[#fcfcfc] py-8 md:py-12  overflow-hidden"
+      className="relative bg-[#fcfcfc] py-6 sm:py-8 md:py-12 overflow-hidden"
     >
-      <div className="max-w-[1400px] mx-auto px-6">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-6">
+        <div className="text-center mb-4 sm:mb-6">
           <motion.span
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -81,7 +81,7 @@ export default function ModernWhatWeDo() {
         </div>
 
         {/* Splitting Container */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 relative">
           {COMMUNITIES.map((card, i) => (
             <SplitCard
               key={i}
@@ -123,7 +123,7 @@ function SplitCard({ card, index, progress }) {
         scale,
         zIndex: index === 1 ? 20 : 10, // Keep center card on top during split
       }}
-      className="group relative h-[550px] md:h-[650px] rounded-[32px] overflow-hidden shadow-xl transition-shadow duration-500 bg-[#f7f3ef]"
+      className="group relative h-[420px] sm:h-[480px] md:h-[550px] lg:h-[650px] rounded-[20px] sm:rounded-[28px] md:rounded-[32px] overflow-hidden shadow-xl transition-shadow duration-500 bg-[#f7f3ef]"
     >
       {/* Background Image */}
       <Image
@@ -134,13 +134,13 @@ function SplitCard({ card, index, progress }) {
       />
 
       {/* Content */}
-      <div className="absolute inset-x-0 bottom-0 p-4 md:p-5 flex flex-col justify-end">
+      <div className="absolute inset-x-0 bottom-0 p-3 sm:p-4 md:p-5 flex flex-col justify-end">
         <motion.div
           style={{ opacity: useTransform(progress, [0.6, 1], [0, 1]) }}
         >
           {/* Content card */}
-          <div className="relative rounded-[20px] md:rounded-[24px] overflow-hidden border border-white/70 bg-white/85 shadow-[0_12px_30px_rgba(31,41,55,0.16)]">
-            <div className="relative z-10 p-5 md:p-6">
+          <div className="relative rounded-[16px] sm:rounded-[20px] md:rounded-[24px] overflow-hidden border border-white/70 bg-white/85 shadow-[0_12px_30px_rgba(31,41,55,0.16)]">
+            <div className="relative z-10 p-4 sm:p-5 md:p-6">
               {/* Icon + Title row */}
               <div className="flex items-center gap-3 mb-3">
                 <div
@@ -150,7 +150,7 @@ function SplitCard({ card, index, progress }) {
                   <card.IconComponent size={20} />
                 </div>
                 <h3
-                  className="text-xl md:text-2xl font-bold leading-tight"
+                  className="text-lg sm:text-xl md:text-2xl font-bold leading-tight"
                   style={{ color: card.accent }}
                 >
                   {card.title}
@@ -158,7 +158,7 @@ function SplitCard({ card, index, progress }) {
               </div>
 
               {/* Description */}
-              <p className="text-slate-700 text-[13px] md:text-sm leading-relaxed mb-5 font-light">
+              <p className="text-slate-700 text-[12px] sm:text-[13px] md:text-sm leading-relaxed mb-3 sm:mb-5 font-light">
                 {card.description}
               </p>
 

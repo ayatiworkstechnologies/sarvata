@@ -52,6 +52,11 @@ body {
   font-family: var(--font-primary);
   -webkit-font-smoothing: antialiased;
   scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 button,
@@ -71,7 +76,7 @@ h5 {
 
 p {
   font-family: var(--font-secondary);
-  font-size: 18px;
+  font-size: clamp(15px, 2.5vw, 18px);
   line-height: 1.75;
 }
 
@@ -103,19 +108,19 @@ p {
 
 /* ── Eyebrow Label ── */
 .eyebrow {
-  font-size: 18px;
+  font-size: clamp(11px, 2vw, 18px);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.3em;
   color: var(--primary);
   display: block;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 /* ── Section Body Text ── */
 .section-body {
   font-family: var(--font-secondary);
-  font-size: 17px;
+  font-size: clamp(14px, 2.5vw, 17px);
   line-height: 1.75;
   color: var(--muted);
 }
@@ -143,20 +148,47 @@ p {
 .container {
   max-width: 1200px;
   margin: auto;
+  padding-inline: 1rem;
 }
 
 .container-max {
   max-width: 80rem;
   margin-inline: auto;
-  padding-inline: 1.5rem;
+  padding-inline: 1rem;
 }
 
 .section {
-  padding: 6rem 1.5rem;
+  padding: 3rem 1rem;
 }
 
 .section-lg {
-  padding: 8rem 1.5rem;
+  padding: 4rem 1rem;
+}
+
+/* ── Tablet ── */
+@media (min-width: 640px) {
+  .container {
+    padding-inline: 1.5rem;
+  }
+  .container-max {
+    padding-inline: 1.5rem;
+  }
+  .section {
+    padding: 4rem 1.5rem;
+  }
+  .section-lg {
+    padding: 5rem 1.5rem;
+  }
+}
+
+/* ── Desktop ── */
+@media (min-width: 1024px) {
+  .section {
+    padding: 6rem 1.5rem;
+  }
+  .section-lg {
+    padding: 8rem 1.5rem;
+  }
 }
 
 /* ======================================================

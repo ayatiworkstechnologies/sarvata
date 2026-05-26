@@ -47,8 +47,8 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative w-full overflow-hidden h-screen">
-      <div className="pointer-events-none absolute top-0 inset-0 container-max mx-auto w-full h-screen z-20 flex items-start md:items-end justify-between pt-40 md:pt-0 pb-12 md:pb-24">
+    <section className="relative w-full overflow-hidden h-[100svh] min-h-[500px]">
+        <div className="pointer-events-none absolute top-0 inset-0 container-max mx-auto w-full h-full z-20 flex items-start md:items-end justify-between pt-32 sm:pt-36 md:pt-0 pb-8 sm:pb-10 md:pb-24 px-4 sm:px-6">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -78,16 +78,15 @@ export default function Hero() {
                 transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
               },
             }}
-            className="mb-2 text-2xl font-bold leading-[1.15] tracking-tight text-[#6B4A8E] md:mb-4 md:text-3xl lg:text-4xl"
+            className="mb-2 text-xl font-bold leading-[1.15] tracking-tight text-[#6B4A8E] sm:text-2xl md:mb-4 md:text-3xl lg:text-4xl"
           >
-            Building stronger parent-school <br />
+            Building stronger parent-school{" "}
             <span className="text-[#D9A63A]">
               partnerships for
             </span>{" "}
             <span className="text-[#6B4A8E]">
               better student
             </span>{" "}
-            <br />
             <span className="text-[#D9A63A]">
               outcomes
             </span>
@@ -101,7 +100,7 @@ export default function Hero() {
                 transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
               },
             }}
-            className="mt-4 md:mt-6 max-w-[85%] md:max-w-md text-[15px] md:text-[17px] leading-relaxed text-white/90 font-secondary"
+            className="mt-3 sm:mt-4 md:mt-6 max-w-[90%] sm:max-w-[85%] md:max-w-md text-[13px] sm:text-[15px] md:text-[17px] leading-relaxed text-white/90 font-secondary"
           >
             We partner with schools, educators, and parents to create truly
             inclusive, learner-centered educational environments.

@@ -11,7 +11,7 @@ export default function PathwayServicesSection({ eyebrow = "Services", title, se
     : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3";
 
   return (
-    <section className="relative bg-white overflow-hidden py-8 md:py-16">
+    <section className="relative bg-white overflow-hidden py-10 sm:py-16 md:py-24">
       {/* Background decoration */}
       <div
         className="absolute inset-0 opacity-[0.02] pointer-events-none"
@@ -29,7 +29,7 @@ export default function PathwayServicesSection({ eyebrow = "Services", title, se
            initial={{ opacity: 0, x: -30 }}
            whileInView={{ opacity: 1, x: 0 }}
            viewport={{ once: true }}
-           className="max-w-2xl mb-16 md:mb-24"
+           className="max-w-2xl mb-10 sm:mb-14 md:mb-16 lg:mb-24"
         >
           <p className="eyebrow mb-6">
             {eyebrow}
@@ -48,18 +48,18 @@ export default function PathwayServicesSection({ eyebrow = "Services", title, se
               transition={{ duration: 0.8, delay: i * 0.15, ease: [0.21, 1, 0.36, 1] }}
               className="group relative h-full flex flex-col"
             >
-              <div className="relative flex-1 p-8 lg:p-12 rounded-[40px] border border-slate-200 bg-white transition-all duration-700 hover:shadow-2xl overflow-hidden flex flex-col">
+              <div className="relative flex-1 p-5 sm:p-6 md:p-8 lg:p-12 rounded-[20px] sm:rounded-[28px] md:rounded-[40px] border border-slate-200 bg-white transition-all duration-700 hover:shadow-2xl overflow-hidden flex flex-col">
                 {/* Background Number Accent */}
-                <span className="absolute -bottom-4 -right-2 text-[120px] font-black text-slate-50 select-none group-hover:text-[#a066aa]/5 transition-colors duration-700 pointer-events-none">
+                <span className="absolute -bottom-4 -right-2 text-[80px] sm:text-[100px] md:text-[120px] font-black text-slate-50 select-none group-hover:text-[#a066aa]/5 transition-colors duration-700 pointer-events-none">
                   0{i + 1}
                 </span>
 
-                <div className="relative z-10 flex flex-col h-full space-y-10 lg:space-y-14">
-                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 leading-tight pr-12">
+                <div className="relative z-10 flex flex-col h-full space-y-6 sm:space-y-8 lg:space-y-14">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 leading-tight pr-8 sm:pr-12">
                     {svc.title}
                   </h3>
 
-                  <p className="text-slate-500 text-base lg:text-lg leading-relaxed flex-grow font-light">
+                  <p className="text-slate-500 text-sm sm:text-base lg:text-lg leading-relaxed flex-grow font-light">
                     {svc.description}
                   </p>
 

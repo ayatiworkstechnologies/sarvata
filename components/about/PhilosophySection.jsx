@@ -19,7 +19,7 @@ export default function PhilosophyScroll({ id, title, intro, points }) {
     <section ref={containerRef} id={id} className="relative bg-white h-[250vh]">
       <div className="sticky top-0 h-screen w-full flex flex-col lg:flex-row overflow-hidden">
         {/* LEFT: Fixed Branding */}
-        <div className="w-full lg:w-1/2 h-[40vh] lg:h-screen flex flex-col justify-center px-8 md:px-12 bg-soft/30 relative border-r border-border/50">
+        <div className="w-full lg:w-1/2 h-[40vh] lg:h-screen flex flex-col justify-center px-6 sm:px-8 md:px-12 bg-soft/30 relative border-r border-border/50">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -44,7 +44,7 @@ export default function PhilosophyScroll({ id, title, intro, points }) {
         </div>
 
         {/* RIGHT: Step-by-Step System */}
-        <div className="w-full lg:w-1/2 h-screen relative px-8 md:px-20">
+        <div className="w-full lg:w-1/2 h-[60vh] lg:h-screen relative px-6 sm:px-8 md:px-20">
           <div className="relative h-full flex flex-col justify-center">
             {points.map((pt, i) => (
               <PrincipleItem
@@ -81,13 +81,12 @@ function PrincipleItem({ pt, index, scrollYProgress, range }) {
     >
       <div className="flex flex-col">
         <div className="flex items-center gap-4 mb-6">
-          <span className="text-7xl font-black text-primary/80 tabular-nums tracking-tighter drop-shadow-md">
-            0{index + 1}
+          <span className="text-5xl sm:text-7xl font-black text-primary/80 tabular-nums tracking-tighter drop-shadow-md">
           </span>
           <div className="h-[2px] flex-1 bg-gradient-to-r from-primary/20 to-transparent" />
         </div>
         <div className="pl-2">
-          <h3 className="text-3xl md:text-4xl font-bold text-slate-800 mb-6 tracking-tight leading-tight">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4 sm:mb-6 tracking-tight leading-tight">
             {pt.title}
           </h3>
           <p className="text-muted-foreground text-lg leading-relaxed font-light max-w-md">

@@ -48,11 +48,11 @@ export default function Footer() {
       {/* Background accents */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(160,102,170,0.05),transparent_40%)]" />
 
-      <div className="relative container-max  py-8 md:py-16">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
+      <div className="relative container-max py-6 sm:py-8 md:py-16">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 lg:grid-cols-12">
           {/* Left Brand Card */}
           <div className="lg:col-span-5">
-            <div className="flex h-full min-h-[320px] flex-col justify-between rounded-4xl border border-border bg-soft-bg/30 p-7 shadow-sm md:p-10">
+            <div className="flex h-full min-h-[260px] sm:min-h-[300px] md:min-h-[320px] flex-col justify-between rounded-4xl border border-border bg-soft-bg/30 p-5 sm:p-7 shadow-sm md:p-10">
               <div>
                 <div className="flex items-center">
                   <Image
@@ -65,14 +65,14 @@ export default function Footer() {
                   />
                 </div>
 
-                <p className="mt-8 max-w-md text-[17px] leading-8 text-muted">
+                <p className="mt-4 sm:mt-6 md:mt-8 max-w-md text-[15px] sm:text-[16px] md:text-[17px] leading-7 sm:leading-8 text-muted">
                   Sarvata Educational Consultancy partners directly with
                   educators, school leaders, and families to design actionable,
                   lasting improvements for your unique learning environments.
                 </p>
               </div>
 
-              <div className="mt-10 flex flex-wrap gap-6">
+              <div className="mt-6 sm:mt-8 md:mt-10 flex flex-wrap gap-4 sm:gap-6">
                 {socials.map(({ Icon, href }, i) => (
                   <a
                     key={i}
@@ -89,19 +89,19 @@ export default function Footer() {
           </div>
 
           {/* Right Side */}
-          <div className="flex flex-col gap-6 lg:col-span-7">
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="flex flex-col gap-4 sm:gap-6 lg:col-span-7">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
               <FooterCard title="Pages" links={pageLinks} />
               <FooterCard title="Services" links={serviceLinks} />
             </div>
 
-            <div className="rounded-4xl border border-border bg-soft-bg/30 px-6 py-7 shadow-sm md:px-8 md:py-8">
+            <div className="rounded-4xl border border-border bg-soft-bg/30 px-5 py-5 shadow-sm sm:px-6 sm:py-6 md:px-8 md:py-8">
               <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
                 <div>
-                  <h3 className="text-2xl font-bold tracking-tight text-foreground">
+                  <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-foreground">
                     Ready to grow with Sarvata?
                   </h3>
-                  <p className="mt-2 text-lg text-muted">
+                  <p className="mt-1 sm:mt-2 text-base sm:text-lg text-muted">
                     Explore pathways built for educators, leaders, and parents.
                   </p>
                 </div>
@@ -146,7 +146,7 @@ export default function Footer() {
 
 function FooterCard({ title, links }) {
   return (
-    <div className="rounded-4xl border border-border bg-soft-bg/30 p-7 shadow-sm md:p-8">
+    <div className="rounded-4xl border border-border bg-soft-bg/30 p-5 shadow-sm sm:p-6 md:p-8">
       <div className="mb-6 flex items-center gap-3">
         <span className="h-2 w-2 rounded-full bg-primary" />
         <h4 className="text-[14px] font-bold uppercase tracking-[0.18em] text-foreground">

@@ -21,7 +21,7 @@ export default function GetStarted() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="relative min-h-[500px] md:min-h-[600px] w-full rounded-[40px] overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.12)] border border-border"
+          className="relative min-h-[400px] sm:min-h-[500px] md:min-h-[600px] w-full rounded-[24px] sm:rounded-[32px] md:rounded-[40px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.1)] sm:shadow-[0_40px_100px_rgba(0,0,0,0.12)] border border-border"
         >
           {/* 1. BACKGROUND IMAGE PORTAL */}
           <div className="absolute inset-0 z-0">
@@ -35,8 +35,8 @@ export default function GetStarted() {
           </div>
 
           {/* 2. CONTENT PANEL */}
-          <div className="relative z-10 h-full w-full flex items-center p-8 md:p-16 lg:p-24">
-            <div className="max-w-2xl rounded-[28px] border border-white/75 bg-white/[0.88] p-6 shadow-[0_18px_50px_rgba(31,41,55,0.14)] md:p-10">
+          <div className="relative z-10 h-full w-full flex items-center p-5 sm:p-8 md:p-16 lg:p-24">
+            <div className="max-w-2xl rounded-[20px] sm:rounded-[24px] md:rounded-[28px] border border-white/75 bg-white/[0.88] p-5 shadow-[0_18px_50px_rgba(31,41,55,0.14)] sm:p-6 md:p-10">
               {/* Animated Badge */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
@@ -55,14 +55,14 @@ export default function GetStarted() {
               />
 
               {/* Description */}
-              <p className="section-body text-muted leading-relaxed mb-12 max-w-lg">
+              <p className="section-body text-muted leading-relaxed mb-6 sm:mb-8 md:mb-12 max-w-lg">
                 Wherever you are in your journey, we&apos;re ready to meet you
                 there with tailored, actionable support that builds capacity
                 from within.
               </p>
 
               {/* 3 ACTION BUTTONS */}
-              <div className="flex flex-wrap items-center gap-4">
+              <div className="flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
                 {/* Learn about our services */}
                 <AnimatedButton
                   href="/services"

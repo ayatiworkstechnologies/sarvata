@@ -40,7 +40,7 @@ const services = [
 
 export default function ServicesMain() {
   return (
-    <section className="relative py-16 md:py-24 bg-white overflow-hidden">
+    <section className="relative py-10 sm:py-16 md:py-24 bg-white overflow-hidden">
       {/* Background Pattern */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full opacity-[0.03] pointer-events-none"
@@ -50,9 +50,9 @@ export default function ServicesMain() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-10 relative z-10">
         {/* Header Section */}
-        <div className="text-center mb-20 md:mb-32">
+        <div className="text-center mb-12 sm:mb-16 md:mb-20 lg:mb-32">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ export default function ServicesMain() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-bold text-slate-900 tracking-tight"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold text-slate-900 tracking-tight"
           >
             How We Support Your <br />
             <span className="italic font-light text-[#a066aa]">
@@ -75,13 +75,13 @@ export default function ServicesMain() {
         </div>
 
         {/* Alternating Services List */}
-        <div className="flex flex-col gap-24 md:gap-40">
+        <div className="flex flex-col gap-12 sm:gap-16 md:gap-24 lg:gap-40">
           {services.map((service, i) => {
             const isEven = i % 2 === 0;
             return (
               <div
                 key={i}
-                className={`flex flex-col gap-12 items-center ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}
+                className={`flex flex-col gap-8 sm:gap-10 md:gap-12 items-center ${isEven ? "md:flex-row" : "md:flex-row-reverse"}`}
               >
                 {/* Text Content */}
                 <motion.div
@@ -96,10 +96,10 @@ export default function ServicesMain() {
                   >
                     0{i + 1} Pillar
                   </div>
-                  <h3 className="text-3xl md:text-5xl font-bold text-slate-900 leading-tight">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 leading-tight">
                     {service.audience}
                   </h3>
-                  <p className="text-slate-500 text-lg md:text-xl leading-relaxed font-light max-w-xl">
+                  <p className="text-slate-500 text-base sm:text-lg md:text-xl leading-relaxed font-light max-w-xl">
                     {service.description}
                   </p>
 
@@ -127,7 +127,7 @@ export default function ServicesMain() {
                   transition={{ duration: 0.9, ease: [0.21, 1, 0.36, 1] }}
                   className="flex-1 w-full"
                 >
-                  <div className="relative aspect-4/3 rounded-[40px] overflow-hidden shadow-2xl">
+                  <div className="relative aspect-[4/3] rounded-[24px] sm:rounded-[32px] md:rounded-[40px] overflow-hidden shadow-2xl">
                     <Image
                       src={service.image}
                       alt={service.audience}

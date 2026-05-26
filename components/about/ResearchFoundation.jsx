@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function ResearchFoundation({ researchTitle, researchText }) {
   return (
-    <section className="relative bg-[#fafafa] py-24 lg:py-40 overflow-hidden">
+    <section className="relative bg-[#fafafa] py-12 sm:py-24 lg:py-40 overflow-hidden">
       <div className="container-max">
         {/* items-stretch forces the columns to match the height of the tallest one */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-stretch">
@@ -19,7 +19,7 @@ export default function ResearchFoundation({ researchTitle, researchText }) {
                to take the full height of the parent grid cell. We need 'relative flex'
                so the absolute-filled Image knows how to scale. 
                min-h-[450px] is a safe fallback for mobile. */
-            className="lg:col-span-5 relative w-full flex min-h-[450px] lg:h-auto rounded-[40px] overflow-hidden shadow-2xl border border-border"
+            className="lg:col-span-5 relative w-full flex min-h-[300px] sm:min-h-[450px] lg:h-auto rounded-[24px] lg:rounded-[40px] overflow-hidden shadow-2xl border border-border"
           >
             <Image
               src="/assets/about-3.png"
@@ -44,7 +44,7 @@ export default function ResearchFoundation({ researchTitle, researchText }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="relative p-10 md:p-14 rounded-[48px] bg-white border border-primary/10 shadow-[0_30px_70px_rgba(0,0,0,0.04)] overflow-hidden"
+              className="relative p-6 sm:p-10 md:p-14 rounded-[24px] md:rounded-[48px] bg-white border border-primary/10 shadow-[0_30px_70px_rgba(0,0,0,0.04)] overflow-hidden"
             >
               {/* Top Accent Line */}
               <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-primary via-secondary to-transparent" />

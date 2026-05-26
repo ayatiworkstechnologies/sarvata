@@ -20,7 +20,7 @@ function AnimatedNumber({ value }) {
 
 export default function ImpactSection({ title, metrics }) {
   return (
-    <section className="relative bg-white  py-8 md:py-16">
+    <section className="relative bg-white py-6 sm:py-8 md:py-16">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
           {/* Text Content */}
@@ -50,11 +50,11 @@ export default function ImpactSection({ title, metrics }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
                 viewport={{ once: true }}
-                className={`p-10 rounded-[2.5rem] border border-slate-100 flex flex-col justify-between group transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.08)] hover:-translate-y-2 
+                className={`p-6 sm:p-10 rounded-[2rem] sm:rounded-[2.5rem] border border-slate-100 flex flex-col justify-between group transition-all duration-500 hover:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.08)] hover:-translate-y-2
                 ${i % 2 === 1 ? "mt-0 md:mt-12 bg-primary/[0.02]" : "bg-white"}`}
               >
                 <div>
-                  <span className="text-5xl md:text-6xl font-secondary text-slate-900 tracking-tighter block mb-4">
+                  <span className="text-4xl sm:text-5xl md:text-6xl font-secondary text-slate-900 tracking-tighter block mb-4">
                     <AnimatedNumber value={m.value} />
                     <span className="text-primary">{m.suffix}</span>
                   </span>

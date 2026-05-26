@@ -13,7 +13,7 @@ export default function PathwayChallengeSection({
   image,
 }) {
   return (
-    <section className="relative bg-white overflow-hidden py-8 md:py-16">
+    <section className="relative bg-white overflow-hidden py-10 sm:py-16 md:py-24">
       {/* Background decoration */}
       <SubtleGrid />
       <FloatingShapes />
@@ -22,7 +22,7 @@ export default function PathwayChallengeSection({
       <div className="pointer-events-none absolute top-0 right-0 w-[480px] h-[480px] rounded-full bg-primary/5 blur-[120px]" />
       <div className="pointer-events-none absolute bottom-0 left-0 w-[380px] h-[380px] rounded-full bg-secondary/8 blur-[100px]" />
 
-      <div className="container-max relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+      <div className="container-max relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-24 items-start">
         {/* Left: large decorative number + eyebrow */}
         <motion.div
           initial={{ opacity: 0, x: -30 }}
@@ -54,7 +54,7 @@ export default function PathwayChallengeSection({
           transition={{ duration: 0.75, delay: 0.1 }}
           className="relative"
         >
-          <div className="relative aspect-[4/5] lg:aspect-square overflow-hidden rounded-[40px] shadow-2xl border-[10px] border-white group">
+          <div className="relative aspect-[4/5] sm:aspect-[4/4] lg:aspect-square overflow-hidden rounded-[24px] sm:rounded-[32px] md:rounded-[40px] shadow-2xl border-[6px] sm:border-[8px] md:border-[10px] border-white group">
             <Image
               src={image || "/approach.jpg"}
               alt={title || "Pathway Challenge"}

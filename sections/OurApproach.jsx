@@ -5,9 +5,9 @@ import Image from "next/image";
 
 export default function ApproachHero() {
   return (
-    <section className="relative overflow-hidden bg-white py-8 md:py-16">
+    <section className="relative overflow-hidden bg-white py-6 sm:py-8 md:py-16">
       <div className="container-max relative z-10">
-        <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-24">
+        <div className="grid grid-cols-1 items-start gap-8 sm:gap-10 lg:grid-cols-12 lg:gap-24">
           {/* LEFT: Sticky Cinematic Image */}
           <div className="relative order-1 lg:col-span-6 lg:sticky lg:top-32">
             <motion.div
@@ -44,7 +44,7 @@ export default function ApproachHero() {
                 </span>
               </h2>
 
-              <p className="section-body mb-10 text-lg font-light leading-relaxed text-muted md:text-xl">
+              <p className="section-body mb-6 sm:mb-8 md:mb-10 text-base sm:text-lg font-light leading-relaxed text-muted md:text-xl">
                 We don&apos;t arrive with generic solutions. We begin by
                 understanding your context, your goals, and your challenges. You
                 bring expertise in your community; we bring frameworks,
@@ -53,8 +53,8 @@ export default function ApproachHero() {
                 partnership ends.
               </p>
 
-              <div className="group relative overflow-hidden rounded-[2.5rem] border border-primary/10 bg-soft p-10 shadow-sm">
-                <p className="relative z-10 text-lg font-bold italic leading-relaxed text-foreground transition-colors group-hover:text-primary md:text-xl">
+              <div className="group relative overflow-hidden rounded-[1.5rem] sm:rounded-[2rem] md:rounded-[2.5rem] border border-primary/10 bg-soft p-5 sm:p-7 md:p-10 shadow-sm">
+                <p className="relative z-10 text-base sm:text-lg font-bold italic leading-relaxed text-foreground transition-colors group-hover:text-primary md:text-xl">
                   &ldquo;Together, we build approaches that are both aspirational
                   and realistic.&rdquo;
                 </p>

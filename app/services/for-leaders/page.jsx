@@ -53,9 +53,9 @@ export default function LeadersPage() {
         mobileImage="/banners/lead-mob.png"
         title={
           <>
-            Transforming schools <br />
+            Transforming schools{" "}
             <span className="text-[#D9A63A]">through</span>{" "}
-            <span className="text-[#6B4A8E]">purposeful</span> <br />
+            <span className="text-[#6B4A8E]">purposeful</span>{" "}
             <span className="text-[#D9A63A]">leadership</span>
           </>
         }
