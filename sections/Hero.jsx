@@ -78,16 +78,16 @@ export default function Hero() {
                 transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
               },
             }}
-            className="mb-2 text-xl font-bold leading-[1.15] tracking-tight text-[#6B4A8E] sm:text-2xl md:mb-4 md:text-3xl lg:text-4xl"
+            className="mb-2 text-xl font-bold leading-[1.15] tracking-tight text-black drop-shadow-none sm:text-2xl md:mb-4 md:text-3xl md:text-white md:drop-shadow-[0_4px_14px_rgba(0,0,0,0.55)] lg:text-4xl"
           >
             Building stronger parent-school{" "}
-            <span className="text-[#D9A63A]">
+            <span className="text-black md:text-[#D9A63A]">
               partnerships for
             </span>{" "}
-            <span className="text-[#6B4A8E]">
+            <span className="text-black md:text-white">
               better student
             </span>{" "}
-            <span className="text-[#D9A63A]">
+            <span className="text-black md:text-[#D9A63A]">
               outcomes
             </span>
           </motion.h1>
@@ -100,7 +100,7 @@ export default function Hero() {
                 transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
               },
             }}
-            className="mt-3 sm:mt-4 md:mt-6 max-w-[90%] sm:max-w-[85%] md:max-w-md text-[13px] sm:text-[15px] md:text-[17px] leading-relaxed text-white/90 font-secondary"
+            className="mt-3 sm:mt-4 md:mt-6 max-w-[90%] sm:max-w-[85%] md:max-w-md text-[13px] sm:text-[15px] md:text-[17px] leading-relaxed text-black md:text-white/90 drop-shadow-none md:drop-shadow-[0_3px_10px_rgba(0,0,0,0.45)] font-secondary"
           >
             We partner with schools, educators, and parents to create truly
             inclusive, learner-centered educational environments.
