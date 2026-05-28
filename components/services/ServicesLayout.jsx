@@ -29,7 +29,7 @@ const services = [
   {
     audience: "For Parents",
     description:
-      "Professional support to understand your child's learning profile and advocate effectively.",
+      "Professional support to understand your child's unique learning profile and collaboratively map their path to holistic growth.",
     href: "/services/for-parents",
     cta: "Explore Parent Services",
     image: "/assets/parents.png",

@@ -187,13 +187,18 @@ export default function WorkshopsTrainingPage() {
         testimonials={[
           {
             quote:
-              "This wasn't just another PD day. We left with tools we actually use the next morning. The 'Designing for Student Choice' workshop changed how I plan my week.",
-            author: "Elena R., Middle School Teacher",
+              "An informative and well-structured session that provided valuable insights into types of giftedness and practical approaches to differentiated instruction.",
+            author: "Deepeka P S, Facilitator",
           },
           {
             quote:
-              "Practical, high-impact, and respectful of our time. Sarvata understands the reality of 21st-century classrooms.",
-            author: "James T., High School Educator",
+              "The workshop was highly enriching, offering deep insights and encouraging self-reflection. The progression from understanding the learner to applying strategies through discussions, activities, and lesson planning was thoughtfully designed.",
+            author: "Francis Xavier K, Facilitator",
+          },
+          {
+            quote:
+              "The workshop design stood out through intermediate checks, revision recaps, mobility-based activities, discussions, reflections, energizers, and case studies. It has equipped me with practical tools and increased my confidence as an educator.",
+            author: "Preethi Dhanapal, Facilitator",
           },
         ]}
       />
@@ -233,14 +238,6 @@ export default function WorkshopsTrainingPage() {
         eyebrow="Next Steps"
         title="Ready to Transform Your Practice?"
         steps={[
-          {
-            label: "Explore",
-            title: "Download Workshop Catalog",
-            description:
-              "Get the full list of our available workshops and details.",
-            href: "#",
-            cta: "Download Catalog",
-          },
           {
             label: "Plan",
             title: "Contact Us to Schedule",

@@ -59,19 +59,8 @@ export default function ServicesCTA() {
               Schedule Consultation
             </AnimatedButton>
 
-            {/* Vertical Divider (Desktop) */}
-            <div className="h-12 w-[1px] bg-slate-200 hidden sm:block" />
-
             {/* Secondary Links Row */}
             <div className="flex flex-col sm:flex-row gap-8 items-center">
-              <Link
-                href="/services"
-                className="text-slate-600 font-bold uppercase tracking-[0.2em] text-[11px] hover:text-primary transition-colors relative group"
-              >
-                Download Guide
-                <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-secondary transition-all group-hover:w-full" />
-              </Link>
-
               <Link
                 href="/contact-us"
                 className="text-slate-600 font-bold uppercase tracking-[0.2em] text-[11px] hover:text-primary transition-colors relative group"

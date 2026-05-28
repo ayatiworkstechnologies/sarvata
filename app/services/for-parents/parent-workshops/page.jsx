@@ -105,13 +105,18 @@ export default function ParentWorkshopsPage() {
         testimonials={[
           {
             quote:
-              "The workshop on 'Cyber Safety' was eye-opening. It moved beyond just rules and gave us a framework for real conversations with our teenagers.",
-            author: "Sarah L., Parent",
+              "An informative and well-structured session that provided valuable insights into types of giftedness and practical approaches to differentiated instruction.",
+            author: "Deepeka P S, Facilitator",
           },
           {
             quote:
-              "Finally, a parent session that isn't just theory. We left with concrete strategies we could use at the dinner table that very night.",
-            author: "Mark J., Parent",
+              "The workshop was highly enriching, offering deep insights and encouraging self-reflection. The progression from understanding the learner to applying strategies through discussions, activities, and lesson planning was thoughtfully designed.",
+            author: "Francis Xavier K, Facilitator",
+          },
+          {
+            quote:
+              "The explanations were clear and concise, especially the scientific perspective on giftedness, which was explained in a very simple and effective manner. The right balance of content interspersed with activities such as mindfulness and paired work made the session engaging and memorable.",
+            author: "Sangeetha, Facilitator",
           },
         ]}
       />
@@ -120,16 +125,7 @@ export default function ParentWorkshopsPage() {
       <PathwayNextSteps
         eyebrow="Join Our Community"
         title="You are not alone on this journey."
-        steps={[
-          {
-            label: "Explore",
-            title: "See Workshop Schedule",
-            description:
-              "View upcoming dates and times for our interactive workshops.",
-            href: "#",
-            cta: "View Schedule",
-          },
-        ]}
+        steps={[]}
       />
     </main>
   );

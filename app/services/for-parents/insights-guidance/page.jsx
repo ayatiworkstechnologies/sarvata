@@ -11,25 +11,25 @@ export default function InsightsGuidancePage() {
   const testimonials = [
     {
       quote:
-        "Sarvata helped us see our daughter's potential beyond the challenges she was facing at school. The insights we gained changed how we support her at home and how her teachers understand her.",
-      author: "Meera K., Parent",
+        "An informative and well-structured session that provided valuable insights into types of giftedness and practical approaches to differentiated instruction.",
+      author: "Deepeka P S, Facilitator",
     },
     {
       quote:
-        "The transition to middle school was overwhelming for our son. Sarvata provided the clarity and strategies we needed to navigate the system and boost his confidence as a learner.",
-      author: "Rajiv S., Parent",
+        "The workshop was highly enriching, offering deep insights and encouraging self-reflection. The progression from understanding the learner to applying strategies through discussions, activities, and lesson planning was thoughtfully designed.",
+      author: "Francis Xavier K, Facilitator",
     },
     {
       quote:
-        "Finally, we found a path that values our child's unique way of thinking. The psychological support combined with academic insights made all the difference.",
-      author: "Ananya M., Parent",
+        "The explanations were clear and concise, especially the scientific perspective on giftedness, which was explained in a very simple and effective manner. The right balance of content interspersed with activities such as mindfulness and paired work made the session engaging and memorable.",
+      author: "Sangeetha, Facilitator",
     },
   ];
   const services = [
     {
       title: "Academic & Learning Profiles",
       description:
-        "Assessments identifying unique learning preferences, cognitive strengths, and areas for growth - giving you a clear picture of their academic potential.",
+        "Comprehensive evaluations identifying unique learning preferences, cognitive strengths, and areas for growth - giving you a clear picture of their academic potential.",
     },
     {
       title: "Psycho-Counseling Support",
@@ -72,7 +72,7 @@ export default function InsightsGuidancePage() {
         paragraphs={[
           "You might be asking: “Why is my bright child struggling?” “How can I support their unique gifts?” “Is this anxiety or normal development?” “How do I navigate the school system?”",
           "We provide a safe, confidential space to find clear answers and practical strategies.",
-          "Professional assessment and counseling to help you confidently support your child's journey.",
+          "Holistic evaluation and counseling to help you confidently support your child's journey.",
         ]}
       />
 

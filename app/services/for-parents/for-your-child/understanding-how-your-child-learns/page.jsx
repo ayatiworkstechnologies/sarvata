@@ -41,7 +41,7 @@ export default function UnderstandingChildLearnsPage() {
       },
     ],
     included: [
-      "Learning style assessment",
+      "Holistic learner profile mapping",
       "Strategy instruction and practice",
       "Study skills coaching",
       "Metacognitive development activities",
@@ -253,13 +253,6 @@ export default function UnderstandingChildLearnsPage() {
         eyebrow="Empower Your Child's Learning"
         title="Help your child develop the self-awareness and strategies they need to succeed independently."
         steps={[
-          {
-            label: "Review",
-            title: "Download Program Overview",
-            description: "Detailed syllabus and approaches for this program.",
-            href: "#",
-            cta: "Download PDF",
-          },
           {
             label: "Discuss",
             title: "Schedule Consultation",

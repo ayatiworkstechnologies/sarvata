@@ -1,59 +1,35 @@
 "use client";
 
-import { useRef } from "react";
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function PhilosophyScroll({ id, title, intro, points }) {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
-
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-  });
-
   return (
-    <section ref={containerRef} id={id} className="relative bg-white h-[250vh]">
-      <div className="sticky top-0 h-screen w-full flex flex-col lg:flex-row overflow-hidden">
-        {/* LEFT: Fixed Branding */}
-        <div className="w-full lg:w-1/2 h-[40vh] lg:h-screen flex flex-col justify-center px-6 sm:px-8 md:px-12 bg-soft/30 relative border-r border-border/50">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <span className="eyebrow text-primary mb-6 block">{title}</span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-800 mb-8 leading-[0.95]">
-              Learning is a{" "}
-              <span className="text-primary italic font-light">Verb</span>,{" "}
-              <br />
-              Not a Noun.
-            </h2>
-            <p className="section-body text-lg text-muted max-w-md">{intro}</p>
-          </motion.div>
-
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 h-1/2 w-[2px] bg-border/30 hidden lg:block">
+    <section id={id} className="relative bg-white py-12 sm:py-16 lg:py-24">
+      <div className="container-max">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:gap-12">
+          <div className="lg:col-span-5 lg:sticky lg:top-24 lg:self-start">
             <motion.div
-              style={{ scaleY: smoothProgress, transformOrigin: "top" }}
-              className="absolute inset-0 bg-primary w-full shadow-[0_0_15px_rgba(var(--primary-rgb),0.3)]"
-            />
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              className="rounded-[28px] border border-primary/10 bg-soft/40 p-6 sm:p-8 lg:p-10"
+            >
+              <span className="eyebrow text-primary mb-6 block">{title}</span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-800 mb-8 leading-[0.95]">
+                Learning is a{" "}
+                <span className="text-primary italic font-light">Verb</span>,{" "}
+                <br />
+                Not a Noun.
+              </h2>
+              <p className="section-body max-w-md text-lg text-muted">
+                {intro}
+              </p>
+            </motion.div>
           </div>
-        </div>
 
-        {/* RIGHT: Step-by-Step System */}
-        <div className="w-full lg:w-1/2 h-[60vh] lg:h-screen relative px-6 sm:px-8 md:px-20">
-          <div className="relative h-full flex flex-col justify-center">
+          <div className="lg:col-span-7 space-y-6 lg:space-y-8">
             {points.map((pt, i) => (
-              <PrincipleItem
-                key={i}
-                pt={pt}
-                index={i}
-                scrollYProgress={smoothProgress}
-                range={[i / points.length, (i + 1) / points.length]}
-              />
+              <PrincipleItem key={i} pt={pt} index={i} />
             ))}
           </div>
         </div>
@@ -62,34 +38,27 @@ export default function PhilosophyScroll({ id, title, intro, points }) {
   );
 }
 
-function PrincipleItem({ pt, index, scrollYProgress, range }) {
-  const opacity = useTransform(
-    scrollYProgress,
-    [range[0], range[0] + 0.05, range[1] - 0.05, range[1]],
-    [0, 1, 1, 0],
-  );
-  const y = useTransform(
-    scrollYProgress,
-    [range[0], range[0] + 0.05, range[1] - 0.05, range[1]],
-    [30, 0, 0, -30],
-  );
-
+function PrincipleItem({ pt, index }) {
   return (
     <motion.div
-      style={{ opacity, y, position: "absolute" }}
-      className="w-full pr-10"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.55, delay: index * 0.08 }}
+      className="w-full rounded-[28px] border border-primary/10 bg-white p-6 shadow-[0_18px_50px_rgba(31,41,55,0.06)] sm:p-8 lg:p-10"
     >
       <div className="flex flex-col">
-        <div className="flex items-center gap-4 mb-6">
-          <span className="text-5xl sm:text-7xl font-black text-primary/80 tabular-nums tracking-tighter drop-shadow-md">
+        <div className="mb-6 flex items-center gap-4">
+          <span className="text-4xl font-black tracking-tighter text-primary/35 drop-shadow-md sm:text-5xl">
+            0{index + 1}
           </span>
           <div className="h-[2px] flex-1 bg-gradient-to-r from-primary/20 to-transparent" />
         </div>
-        <div className="pl-2">
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4 sm:mb-6 tracking-tight leading-tight">
+        <div className="pl-1">
+          <h3 className="mb-4 text-2xl font-bold leading-tight tracking-tight text-slate-800 sm:mb-6 sm:text-3xl md:text-4xl">
             {pt.title}
           </h3>
-          <p className="text-muted-foreground text-lg leading-relaxed font-light max-w-md">
+          <p className="max-w-2xl whitespace-pre-line text-lg font-light leading-relaxed text-muted">
             {pt.desc}
           </p>
         </div>

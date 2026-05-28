@@ -5,7 +5,6 @@ import MissionSection from "@/components/about/MissionSection";
 import PhilosophySection from "@/components/about/PhilosophySection";
 import JourneySection from "@/components/about/JourneySection";
 import TestimonialsSection from "@/components/about/TestimonialsSection";
-import ImpactSection from "@/components/about/ImpactSection";
 import ResearchFoundation from "@/components/about/ResearchFoundation";
 
 export const metadata = {
@@ -48,11 +47,11 @@ export default function AboutPage() {
         mobileImage="/banners/about-mob.png"
         title={
           <>
-            Shaping better <br />
+            Empowering <br />
             <span className="text-[#D9A63A]">educators</span>{" "}
-            <span className="text-[#6B4A8E]">and</span> <br />
-            <span className="text-[#D9A63A]">future-ready</span>{" "}
-            <span className="text-[#6B4A8E]">schools</span>
+            <span className="text-[#6B4A8E]">and designing</span> <br />
+            <span className="text-[#D9A63A]">truly inclusive,</span>{" "}
+            <span className="text-[#6B4A8E]">learner-centered schools.</span>
           </>
         }
         breadcrumbs={[{ label: "About Us" }]}
@@ -62,7 +61,7 @@ export default function AboutPage() {
         title="Our Story"
         subtitle="Why Sarvata Exists"
         paragraphs={[
-          "Sarvata means ‘whole’. Our work is dedicated to the holistic development of schools and educators.",
+          "Sarvata means 'whole'. Our work is dedicated to the holistic development of schools and educators.",
           "We were born from years of working alongside teachers and school leaders wrestling with how to translate ideals of inclusion and personalization into systematic, sustainable practice. We guide teachers and school leaders to become truly inclusive and responsive in their practice. We embed practical, research-driven strategies into the daily life of schools, moving educators from aspiration to implementation.",
           "At the heart of everything we do is Personalised Learning, not as a technique, but as a fundamental belief in the unique potential of every learner. We partner with schools to build the environments, systems, and educator capacities where this potential can truly flourish.",
         ]}
@@ -71,7 +70,7 @@ export default function AboutPage() {
 
       <FounderSection
         founderTitle="Founder's Journey"
-        founderText="Our founder established Sarvata with a profound commitment to educational equity and the belief that every child deserves a school environment designed for their unique potential. Drawing from decades of firsthand experience in diverse classrooms, the vision was to bridge the gap between aspirational pedagogy and daily practice."
+        founderText="Sarvata was founded through a sustained engagement with both the theory and practice of inclusive education. Alongside years of work in diverse classrooms, the journey has involved shaping educator learning, designing responsive frameworks, and translating research on learner variability, agency, and self-direction into strategies schools can actually use. The vision has always been to move beyond inspiring ideas alone and contribute practical models that help educators build equitable, learner-centered environments with confidence."
         founderImage="/assets/about-2.png"
       />
 
@@ -80,7 +79,7 @@ export default function AboutPage() {
         highlight="Our mission is simple yet profound: to inspire and create better educators and schools, every day."
         paragraphs={[
           "We strive to be mindful in our approach, providing a vibrant and supportive environment for growth. We impart knowledge and experience through reflective teaching and learning, advancing the aspirations of students, teachers, and leaders while upholding integrity and trust.",
-          "It’s not about how good we are. It’s about striving to be better, together.",
+          "It's not about how good we are. It's about striving to be better, together.",
         ]}
       />
 
@@ -91,27 +90,29 @@ export default function AboutPage() {
         points={[
           {
             title: "Expanding Learner Agency",
-            desc: `Personalization isn’t about optimizing a single pathway for each student. It’s about creating multiple pathways and progressively giving learners choice over which route they take.
+            desc: `Personalization isn't about optimizing a single pathway for each student. It's about creating multiple pathways and progressively giving learners choice over which route they take.
 
-When students experience genuine autonomy in how they explore a concept, many often demonstrate stronger intrinsic motivation. This doesn’t mean eliminating structure. It means building agency as competence develops.`,
+When students experience genuine autonomy in how they explore a concept, many often demonstrate stronger intrinsic motivation. This doesn't mean eliminating structure. It means building agency as competence develops.`,
           },
           {
             title: "Guiding the Internal Environment",
-            desc: `Beyond managing classrooms and delivering content, educators have the opportunity to guide students’ internal development: how learners think about their thinking, regulate themselves, and build identity as learners.
+            desc: `Beyond managing classrooms and delivering content, educators have the opportunity to guide students' internal development: how learners think about their thinking, regulate themselves, and build identity as learners.
 
 This mentorship dimension helps students understand not just what they learn but how they learn. Over time, this metacognitive awareness can support greater independence across academic and non-academic contexts.`,
           },
           {
             title: "Developing Self-Direction",
-            desc: "Alongside content mastery, many schools are exploring how to support learners in gradually directing their own growth. This capacity builds through explicit strategy instruction, supported practice, and progressive independence",
+            desc:
+              "Alongside content mastery, many schools are exploring how to support learners in gradually directing their own growth. This capacity builds through explicit strategy instruction, supported practice, and progressive independence.",
           },
         ]}
         researchTitle="Research Foundation"
-        researchText="These principles draw from decades of research in metacognition, self-determination theory, and expertise development. We also acknowledge reality: implementation varies by context, developmental stage matters, and real-world constraints shape what’s possible. Our role is helping schools navigate that complexity."
+        researchText="These principles draw from decades of research in metacognition, self-determination theory, and expertise development. We also acknowledge reality: implementation varies by context, developmental stage matters, and real-world constraints shape what's possible. Our role is helping schools navigate that complexity."
       />
+
       <ResearchFoundation
         researchTitle="Research Foundation"
-        researchText="These principles draw from decades of research in metacognition, self-determination theory, and expertise development. We also acknowledge reality: implementation varies by context, developmental stage matters, and real-world constraints shape what’s possible. Our role is helping schools navigate that complexity."
+        researchText="These principles draw from decades of research in metacognition, self-determination theory, and expertise development. We also acknowledge reality: implementation varies by context, developmental stage matters, and real-world constraints shape what's possible. Our role is helping schools navigate that complexity."
       />
 
       <JourneySection
@@ -141,29 +142,19 @@ This mentorship dimension helps students understand not just what they learn but
         testimonials={[
           {
             quote:
-              "Sarvata helped us see our daughter's potential beyond the challenges she was facing at school. The insights we gained changed how we support her at home and how her teachers understand her.",
-            author: "Meera K., Parent",
+              "An informative and well-structured session that provided valuable insights into types of giftedness and practical approaches to differentiated instruction.",
+            author: "Deepeka P S, Facilitator",
           },
           {
             quote:
-              "The transition to middle school was overwhelming for our son. Sarvata provided the clarity and strategies we needed to navigate the system and boost his confidence as a learner.",
-            author: "Rajiv S., Parent",
+              "The workshop was highly enriching, offering deep insights and encouraging self-reflection. The progression from understanding the learner to applying strategies through discussions, activities, and lesson planning was thoughtfully designed.",
+            author: "Francis Xavier K, Facilitator",
           },
           {
             quote:
-              "Finally, we found a path that values our child's unique way of thinking. The psychological support combined with academic insights made all the difference.",
-            author: "Ananya M., Parent",
+              "The explanations were clear and concise, especially the scientific perspective on giftedness, which was explained in a very simple and effective manner. The right balance of content interspersed with activities such as mindfulness and paired work made the session engaging and memorable.",
+            author: "Sangeetha, Facilitator",
           },
-        ]}
-      />
-
-      <ImpactSection
-        title="Our Impact Snapshot"
-        metrics={[
-          { value: 50, suffix: "+", label: "Partner Schools" },
-          { value: 2000, suffix: "+", label: "Educators Mentored" },
-          { value: 50000, suffix: "+", label: "Students Impacted" },
-          { value: 100, suffix: "%", label: "Commitment to Equity" },
         ]}
       />
     </main>

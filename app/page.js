@@ -4,6 +4,7 @@ import OurApproach from "@/sections/OurApproach";
 import GetStarted from "@/sections/GetStarted";
 import Hero from "@/sections/Hero";
 import ApproachFeatures from "@/sections/ApproachFeatures";
+import HomeTestimonials from "@/sections/HomeTestimonials";
 
 export const metadata = {
   title: "Sarvata - Transforming Educators & Schools, Every Day",
@@ -43,6 +44,7 @@ export default function Home() {
       <WhatWeDo />
       <OurApproach />
       <ApproachFeatures />
+      <HomeTestimonials />
       <GetStarted />
     </main>
   );

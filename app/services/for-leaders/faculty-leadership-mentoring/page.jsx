@@ -284,13 +284,18 @@ export default function FacultyMentoringPage() {
         testimonials={[
           {
             quote:
-              "Leadership mentoring provides the thought-partnership necessary for authentic growth. Having an external mentor who understands educational complexity is invaluable.",
-            author: "Rachel G., Principal",
+              "An informative and well-structured session that provided valuable insights into types of giftedness and practical approaches to differentiated instruction.",
+            author: "Deepeka P S, Facilitator",
           },
           {
             quote:
-              "Mentoring transformed our teacher leaders from subject experts to true instructional coaches. The impact on faculty morale was immediate.",
-            author: "S. Kulkarni, Head of School",
+              "The workshop was highly enriching, offering deep insights and encouraging self-reflection. The progression from understanding the learner to applying strategies through discussions, activities, and lesson planning was thoughtfully designed.",
+            author: "Francis Xavier K, Facilitator",
+          },
+          {
+            quote:
+              "The workshop design stood out through intermediate checks, revision recaps, mobility-based activities, discussions, reflections, energizers, and case studies. It has equipped me with practical tools and increased my confidence as an educator.",
+            author: "Preethi Dhanapal, Facilitator",
           },
         ]}
       />
@@ -300,14 +305,6 @@ export default function FacultyMentoringPage() {
         eyebrow="Next Steps"
         title="Ready to Build Capacity?"
         steps={[
-          {
-            label: "Review",
-            title: "Faculty Development Overview",
-            description:
-              "Download detailed information on our capacity building models.",
-            href: "#",
-            cta: "Download PDF",
-          },
           {
             label: "Discuss",
             title: "Schedule Consultation",

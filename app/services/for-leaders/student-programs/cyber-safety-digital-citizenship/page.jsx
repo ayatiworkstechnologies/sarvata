@@ -217,13 +217,6 @@ export default function CyberSafetyPage() {
         title="Ready to Offer Support?"
         steps={[
           {
-            label: "Review",
-            title: "Download Program Overview",
-            description: "Detailed syllabus and approaches for this workshop.",
-            href: "#",
-            cta: "Download PDF",
-          },
-          {
             label: "Discuss",
             title: "Schedule Consultation",
             description: "Let's align this program with your tech policies.",

@@ -80,16 +80,11 @@ export default function Hero() {
             }}
             className="mb-2 text-xl font-bold leading-[1.15] tracking-tight text-black drop-shadow-none sm:text-2xl md:mb-4 md:text-3xl md:text-white md:drop-shadow-[0_4px_14px_rgba(0,0,0,0.55)] lg:text-4xl"
           >
-            Building stronger parent-school{" "}
-            <span className="text-black md:text-[#D9A63A]">
-              partnerships for
-            </span>{" "}
-            <span className="text-black md:text-white">
-              better student
-            </span>{" "}
-            <span className="text-black md:text-[#D9A63A]">
-              outcomes
-            </span>
+            Transforming{" "}
+            <span className="text-black md:text-[#D9A63A]">Educators</span>{" "}
+            and{" "}
+            <span className="text-black md:text-white">Schools,</span>{" "}
+            <span className="text-black md:text-[#D9A63A]">Every Day.</span>
           </motion.h1>
           <motion.p
             variants={{

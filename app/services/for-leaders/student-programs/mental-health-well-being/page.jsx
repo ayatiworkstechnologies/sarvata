@@ -221,13 +221,6 @@ export default function MentalHealthPage() {
         title="Ready to Offer Support?"
         steps={[
           {
-            label: "Review",
-            title: "Download Program Overview",
-            description: "Detailed syllabus and approaches for this workshop.",
-            href: "#",
-            cta: "Download PDF",
-          },
-          {
             label: "Discuss",
             title: "Schedule Consultation",
             description: "Contact us to coordinate with your counseling team.",

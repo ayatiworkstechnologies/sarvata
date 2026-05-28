@@ -75,8 +75,8 @@ export default function StudentProgramsPage() {
             Programs that <br />
             <span className="text-[#D9A63A]">build</span>{" "}
             <span className="text-[#6B4A8E]">confident,</span> <br />
-            <span className="text-[#D9A63A]">future-ready</span>{" "}
-            <span className="text-[#6B4A8E]">learners</span>
+            <span className="text-[#D9A63A]">self-directed</span>{" "}
+            <span className="text-[#6B4A8E]">learners.</span>
           </>
         }
         breadcrumbs={[
@@ -94,7 +94,7 @@ export default function StudentProgramsPage() {
         title="More Than Subject Knowledge"
         image="/assets/student-1.png"
         paragraphs={[
-          "Students need more than subject knowledge to thrive. They need skills for navigating digital life, managing stress, and understanding healthy relationships.",
+          "Students need more than subject knowledge to thrive. They need to develop native skills like empathy, self-regulation, and pattern recognition, for navigating digital life, managing stress, and building healthy relationships.",
           "These programs provide developmentally appropriate workshops addressing real challenges students face.",
         ]}
       />
@@ -201,13 +201,18 @@ export default function StudentProgramsPage() {
         testimonials={[
           {
             quote:
-              "These sessions weren't regular lectures. They felt like real conversations that actually helped us understand why we act the way we do online and with each other.",
-            author: "A. Bhatnagar, Grade 10 Student",
+              "An informative and well-structured session that provided valuable insights into types of giftedness and practical approaches to differentiated instruction.",
+            author: "Deepeka P S, Facilitator",
           },
           {
             quote:
-              "The mental health tools provided were extremely practical. Our students use the breathing and grounding techniques daily now.",
-            author: "Ms. Gupta, Student Counselor",
+              "The workshop was highly enriching, offering deep insights and encouraging self-reflection. The progression from understanding the learner to applying strategies through discussions, activities, and lesson planning was thoughtfully designed.",
+            author: "Francis Xavier K, Facilitator",
+          },
+          {
+            quote:
+              "The explanations were clear and concise, especially the scientific perspective on giftedness, which was explained in a very simple and effective manner. The right balance of content interspersed with activities such as mindfulness and paired work made the session engaging and memorable.",
+            author: "Sangeetha, Facilitator",
           },
         ]}
       />
@@ -217,14 +222,6 @@ export default function StudentProgramsPage() {
         eyebrow="Next Steps"
         title="Ready to Offer Support?"
         steps={[
-          {
-            label: "Review",
-            title: "Download Programs Overview",
-            description:
-              "Detailed information on all our student-facing sessions.",
-            href: "#",
-            cta: "Download PDF",
-          },
           {
             label: "Discuss",
             title: "Schedule Consultation",

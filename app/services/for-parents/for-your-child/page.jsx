@@ -60,7 +60,7 @@ export default function ForYourChildPage() {
         paragraphs={[
           "Beyond subject content, developing awareness of how they learn can support both academic progress and longer-term learning independence.",
           "We work with children and teens to discover their learning preferences, develop effective strategies, build self-regulation skills, and become increasingly independent learners.",
-          "Helping your child develop metacognitive awareness and effective learning strategies.",
+          "We guide your child in developing metacognitive awareness and core native skills, equipping them for lifelong success.",
         ]}
       />
 
@@ -123,13 +123,18 @@ export default function ForYourChildPage() {
         testimonials={[
           {
             quote:
-              "I finally understand how I learn. It's not that I wasn't smart; I just needed a different way to organize my thoughts.",
-            author: "Maya, Grade 8 Student",
+              "An informative and well-structured session that provided valuable insights into types of giftedness and practical approaches to differentiated instruction.",
+            author: "Deepeka P S, Facilitator",
           },
           {
             quote:
-              "Watching my child move from frustration to independence has been the greatest gift. They actually enjoy planning their study time now.",
-            author: "R. Khanna, Parent",
+              "The workshop was highly enriching, offering deep insights and encouraging self-reflection. The progression from understanding the learner to applying strategies through discussions, activities, and lesson planning was thoughtfully designed.",
+            author: "Francis Xavier K, Facilitator",
+          },
+          {
+            quote:
+              "The explanations were clear and concise, especially the scientific perspective on giftedness, which was explained in a very simple and effective manner. The right balance of content interspersed with activities such as mindfulness and paired work made the session engaging and memorable.",
+            author: "Sangeetha, Facilitator",
           },
         ]}
       />
@@ -139,13 +144,6 @@ export default function ForYourChildPage() {
         eyebrow="Next Steps"
         title="Ready to Help Them Understand Themselves?"
         steps={[
-          {
-            label: "Review",
-            title: "Download Learning Programs Overview",
-            description: "Detailed information on our student sessions.",
-            href: "#",
-            cta: "Download PDF",
-          },
           {
             label: "Discuss",
             title: "Schedule Consultation",

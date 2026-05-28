@@ -23,7 +23,7 @@ export default function StrategicPlanningPage() {
     {
       title: "Assessment & Reporting",
       description:
-        "Systems that measure deep understanding and communicate growth meaningfully.",
+        "Systems that track holistic development and communicate growth meaningfully.",
     },
     {
       title: "Scheduling & Time Allocation",
@@ -289,13 +289,18 @@ export default function StrategicPlanningPage() {
         testimonials={[
           {
             quote:
-              "Finally, our operational systems support our educational vision instead of competing with it. The redesign of our assessment framework was a game-changer.",
-            author: "Mark S., Operations Director",
+              "An informative and well-structured session that provided valuable insights into types of giftedness and practical approaches to differentiated instruction.",
+            author: "Deepeka P S, Facilitator",
           },
           {
             quote:
-              "Strategic planning with Sarvata isn't about documents; it's about shifting the behavior of our entire school community toward our goals.",
-            author: "L. Fernandez, Principal",
+              "The workshop was highly enriching, offering deep insights and encouraging self-reflection. The progression from understanding the learner to applying strategies through discussions, activities, and lesson planning was thoughtfully designed.",
+            author: "Francis Xavier K, Facilitator",
+          },
+          {
+            quote:
+              "The workshop design stood out through intermediate checks, revision recaps, mobility-based activities, discussions, reflections, energizers, and case studies. It has equipped me with practical tools and increased my confidence as an educator.",
+            author: "Preethi Dhanapal, Facilitator",
           },
         ]}
       />
@@ -305,13 +310,6 @@ export default function StrategicPlanningPage() {
         eyebrow="Next Steps"
         title="Ready to Redesign?"
         steps={[
-          {
-            label: "Review",
-            title: "Download Systems Overview",
-            description: "Read more about our approach to systems alignment.",
-            href: "#",
-            cta: "Download PDF",
-          },
           {
             label: "Discuss",
             title: "Schedule Consultation",

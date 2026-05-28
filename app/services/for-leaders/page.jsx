@@ -68,7 +68,7 @@ export default function LeadersPage() {
       {/* ── THE CHALLENGE ───────────────────────────────────────── */}
       <PathwayChallengeSection
         title="The Leadership Challenge"
-        image="/assets/lead-1.png"
+        image="/assets/strategic-1.png"
         paragraphs={[
           <span key="p1">
             In your hands rests not just an institution, but the promise of
@@ -123,7 +123,7 @@ export default function LeadersPage() {
           {
             title: "Inclusion Audits & Strategic Roadmaps",
             description:
-              "Objective assessment of current practices and data-driven planning for systemic improvement.",
+              "Collaborative assessment of current practices and data-driven planning for systemic improvement.",
             href: "/services/for-leaders/inclusion-audits-roadmaps",
             cta: "Learn More",
           },
@@ -156,14 +156,6 @@ export default function LeadersPage() {
         eyebrow="Next Steps"
         title="Ready to Take the Next Step?"
         steps={[
-          {
-            label: "Start Here",
-            title: "Download Services Overview",
-            description:
-              "Get a comprehensive overview of our leadership services and frameworks.",
-            href: "#overview",
-            cta: "Download Overview",
-          },
           {
             label: "Let's Talk",
             title: "Schedule a Consultation",

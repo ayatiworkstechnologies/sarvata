@@ -8,7 +8,7 @@ import TestimonialsSection from "@/components/about/TestimonialsSection";
 export default function SchoolPartnershipPage() {
   const services = [
     {
-      title: "Understanding Reports & Assessments",
+      title: "Understanding Learning Profiles and Reports",
       description:
         "Decode psycho-educational reports, school assessments, and IEPs. We translate the jargon for crystal-clear understanding.",
     },
@@ -61,8 +61,8 @@ export default function SchoolPartnershipPage() {
           <>
             Building stronger parent-school <br />
             <span className="text-[#D9A63A]">partnerships for</span>{" "}
-            <span className="text-[#6B4A8E]">better student</span> <br />
-            <span className="text-[#D9A63A]">outcomes</span>
+            <span className="text-[#6B4A8E]">holistic student</span> <br />
+            <span className="text-[#D9A63A]">growth.</span>
           </>
         }
         breadcrumbs={[
@@ -194,13 +194,18 @@ export default function SchoolPartnershipPage() {
         testimonials={[
           {
             quote:
-              "I finally feel like a partner in my child's education. Sarvata helped me decode the assessments and walk into meetings with constructive, clear goals.",
-            author: "Priya R., Parent",
+              "An informative and well-structured session that provided valuable insights into types of giftedness and practical approaches to differentiated instruction.",
+            author: "Deepeka P S, Facilitator",
           },
           {
             quote:
-              "Advocating for your child shouldn't feel like a battle. These strategies helped me build a positive team with the school that actually gets results.",
-            author: "T. Sharma, Parent",
+              "The workshop was highly enriching, offering deep insights and encouraging self-reflection. The progression from understanding the learner to applying strategies through discussions, activities, and lesson planning was thoughtfully designed.",
+            author: "Francis Xavier K, Facilitator",
+          },
+          {
+            quote:
+              "The explanations were clear and concise, especially the scientific perspective on giftedness, which was explained in a very simple and effective manner. The right balance of content interspersed with activities such as mindfulness and paired work made the session engaging and memorable.",
+            author: "Sangeetha, Facilitator",
           },
         ]}
       />

@@ -131,7 +131,7 @@ export default function InclusionAuditsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {[
               "Collaborative discovery of your current inclusive practices",
-              "Objective, evidence-based assessment",
+              "Evidence-based evaluation and systemic mapping",
               "Confidential report with prioritized, actionable recommendations",
               "Strategic roadmap sequencing changes thoughtfully",
             ].map((item, i) => (
@@ -390,13 +390,18 @@ export default function InclusionAuditsPage() {
         testimonials={[
           {
             quote:
-              "The inclusion audit gave us what our internal teams couldn't: an objective, systemic view of our gaps. The resulting roadmap is now our primary strategic document.",
-            author: "Dr. Aruna V., Head of School",
+              "An informative and well-structured session that provided valuable insights into types of giftedness and practical approaches to differentiated instruction.",
+            author: "Deepeka P S, Facilitator",
           },
           {
             quote:
-              "Finally, a framework that moves beyond compliance toward genuine culture change. The audit was the catalyst we needed to align our practice with our mission.",
-            author: "S. Murthy, Principal",
+              "The workshop was highly enriching, offering deep insights and encouraging self-reflection. The progression from understanding the learner to applying strategies through discussions, activities, and lesson planning was thoughtfully designed.",
+            author: "Francis Xavier K, Facilitator",
+          },
+          {
+            quote:
+              "The explanations were clear and concise, especially the scientific perspective on giftedness, which was explained in a very simple and effective manner. The right balance of content interspersed with activities such as mindfulness and paired work made the session engaging and memorable.",
+            author: "Sangeetha, Facilitator",
           },
         ]}
       />
@@ -406,14 +411,6 @@ export default function InclusionAuditsPage() {
         eyebrow="Next Steps"
         title="Ready to Evaluate and Improve?"
         steps={[
-          {
-            label: "Review",
-            title: "Download Audit Overview",
-            description:
-              "Get detailed information about our process and methodology.",
-            href: "#",
-            cta: "Download PDF",
-          },
           {
             label: "Discuss",
             title: "Schedule Consultation",

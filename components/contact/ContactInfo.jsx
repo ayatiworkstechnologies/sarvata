@@ -19,7 +19,7 @@ const audiences = [
   },
   {
     title: "For Parents",
-    desc: "Looking for assessment, counseling, workshops, or advocacy support? We're here to help you navigate your child's journey.",
+    desc: "Looking for holistic evaluation, counseling, workshops, or advocacy support? We're here to help you navigate your child's journey.",
     color: "from-rose-500 to-pink-600",
   },
 ];

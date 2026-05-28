@@ -39,7 +39,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Services for Parents - Sarvata",
     description:
-      "Professional support to understand your child's learning profile and advocate effectively in their educational journey.",
+      "Professional support to understand your child's unique learning profile and collaboratively map their path to holistic growth.",
     images: ["/og-parents.jpg"],
   },
 };
@@ -99,7 +99,7 @@ export default function ParentsPage() {
           {
             title: "Understanding Your Child",
             description:
-              "Professional assessment and counseling to help you understand your child's unique learning profile, strengths, and areas for growth.",
+              "Holistic evaluation and counseling to help you understand your child's unique learning profile, strengths, and areas for growth.",
           },
           {
             title: "Building Practical Strategies",
@@ -123,7 +123,7 @@ export default function ParentsPage() {
           {
             title: "Insights & Guidance",
             description:
-              "Professional assessment and counseling to understand your child’s unique learning profile, strengths, and growth areas.",
+              "Holistic evaluation and counseling to understand your child’s unique learning profile, strengths, and growth areas.",
             href: "/services/for-parents/insights-guidance",
             cta: "Learn More",
           },
@@ -156,14 +156,6 @@ export default function ParentsPage() {
         eyebrow="Next Steps"
         title="How Can We Support Your Family?"
         steps={[
-          {
-            label: "Get Informed",
-            title: "Download the Parent Services Guide",
-            description:
-              "A clear overview of all the ways Sarvata partners with families - what to expect and how to begin.",
-            href: "#guide",
-            cta: "Download Guide",
-          },
           {
             label: "Let's Connect",
             title: "Schedule a Consultation",
