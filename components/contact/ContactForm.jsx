@@ -17,7 +17,7 @@ export default function ContactForm() {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-API-Key": "43219e836c683d557e9e15ab623586a147aa22f6639b8253f2a6863330fdedd5"
+          "X-API-Key": "1596386488d95a0a8609be0a112d8fdd96049c89664068b7c5f230b5d8ec1caf"
         },
         body: JSON.stringify({ data: data })
       });
