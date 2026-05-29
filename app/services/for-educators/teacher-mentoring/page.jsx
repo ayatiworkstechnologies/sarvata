@@ -210,13 +210,6 @@ export default function TeacherMentoringPage() {
         title="Ready to Partner?"
         steps={[
           {
-            label: "Overview",
-            title: "Detailed Mentoring Overview",
-            description: "Read more about our approach and typical cycles.",
-            href: "#",
-            cta: "Read overview",
-          },
-          {
             label: "Testimonials",
             title: "See What Teachers Say",
             description: "Hear from educators who have partnered with us.",

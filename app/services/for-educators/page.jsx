@@ -124,6 +124,7 @@ export default function EducatorsPage() {
       <PathwayServicesSection
         eyebrow="Services"
         title="Find the Support That Fits Your Practice"
+        columns={2}
         services={[
           {
             title: "Workshops & Training",
@@ -139,13 +140,6 @@ export default function EducatorsPage() {
             href: "/services/for-educators/teacher-mentoring",
             cta: "Learn About Mentoring",
           },
-          {
-            title: "Free Resources & Tools",
-            description:
-              "Download free checklists for identifying student strengths, lesson plan templates, and guides for creating choice-based activities.",
-            href: "/services/for-educators/free-resources-tools",
-            cta: "Access Resources",
-          },
         ]}
       />
 
@@ -154,14 +148,6 @@ export default function EducatorsPage() {
         eyebrow="Next Steps"
         title="Where Would You Like to Start?"
         steps={[
-          {
-            label: "Just Exploring",
-            title: "Start with Free Resources",
-            description:
-              "Browse our library of templates, checklists, and guides - no commitment required.",
-            href: "/services/for-educators/free-resources-tools",
-            cta: "Access Free Resources",
-          },
           {
             label: "Ready to Learn",
             title: "Browse Workshops & Training",

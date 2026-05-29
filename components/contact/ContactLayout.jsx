@@ -184,10 +184,10 @@ export default function ContactLayout() {
 
             <div className="space-y-1 text-sm text-muted">
               <p className="font-medium text-foreground">Monday - Friday</p>
-              <p>9:00 AM - 5:00 PM IST</p>
+              {/* <p>9:00 AM - 5:00 PM IST</p>
               <p className="mt-2 text-xs italic text-muted/60">
                 We respond within 1-2 business days.
-              </p>
+              </p> */}
             </div>
           </div>
 
@@ -218,7 +218,7 @@ export default function ContactLayout() {
           </div>
         </motion.div>
 
-        <ContactMap />
+        {/* <ContactMap /> */}
 
         {/* Consultation CTA */}
         <motion.div

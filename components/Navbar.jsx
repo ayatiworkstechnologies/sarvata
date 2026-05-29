@@ -90,10 +90,6 @@ export default function Header() {
                             name: "Teacher Mentoring",
                             href: "/services/for-educators/teacher-mentoring",
                           },
-                          {
-                            name: "Free Resources & Tools",
-                            href: "/services/for-educators/free-resources-tools",
-                          },
                         ],
                       },
                       {
@@ -255,10 +251,6 @@ export default function Header() {
                                 {
                                   name: "Teacher Mentoring",
                                   href: "/services/for-educators/teacher-mentoring",
-                                },
-                                {
-                                  name: "Free Resources & Tools",
-                                  href: "/services/for-educators/free-resources-tools",
                                 },
                               ],
                             },
