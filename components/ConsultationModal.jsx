@@ -28,11 +28,6 @@ const TIMES = [
   "05:00 PM",
 ];
 
-const API_URL =
-  "https://api.ayatiworks.com/api/v1/public/sarvata/consultation_booking/records";
-const API_KEY =
-  "1596386488d95a0a8609be0a112d8fdd96049c89664068b7c5f230b5d8ec1caf";
-
 function getTodayInputValue() {
   const today = new Date();
   const offset = today.getTimezoneOffset();
@@ -91,11 +86,10 @@ export default function ConsultationModal({ open, onClose }) {
     setSubmitError("");
 
     try {
-      const response = await fetch(API_URL, {
+      const response = await fetch("/api/consultation", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-API-Key": API_KEY,
         },
         body: JSON.stringify({ data }),
       });

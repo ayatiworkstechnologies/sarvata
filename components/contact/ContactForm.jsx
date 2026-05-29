@@ -13,11 +13,10 @@ export default function ContactForm() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch("https://api.ayatiworks.com/api/v1/public/sarvata/sarvata_contact_us/records", {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-API-Key": "1596386488d95a0a8609be0a112d8fdd96049c89664068b7c5f230b5d8ec1caf"
         },
         body: JSON.stringify({ data: data })
       });
