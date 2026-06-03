@@ -159,6 +159,11 @@ export default function Header() {
                     ]}
                   />
                   <NavItem
+                    name="Events"
+                    href="/event"
+                    active={isActive("/event")}
+                  />
+                  <NavItem
                     name="Contact Us"
                     href="/contact-us"
                     active={isActive("/contact-us")}
@@ -322,6 +327,12 @@ export default function Header() {
                         />
                       </div>
 
+                      <MobileLink
+                        name="Events"
+                        href="/event"
+                        pathname={pathname}
+                        setMenuOpen={setMenuOpen}
+                      />
                       <MobileLink
                         name="Contact Us"
                         href="/contact-us"
