@@ -32,11 +32,6 @@ const workshops = [
     title: "The ASUDE Simulation Lab",
     audience: "For Homeroom Teachers, Mentors, Counselors & Value Education Facilitators",
     question: "How can simulation-based learning be used to meaningfully develop life skills, ethics, and social consciousness?"
-  },
-  {
-    title: "The Trust Architecture",
-    audience: "For School Leaders, Coordinators & Team Mentors",
-    question: "How can we explore short-term gains that affect long-term outcomes, with a focus on trust, decision-making, and sustainable relationship-building in organizations?"
   }
 ];
 
@@ -53,8 +48,9 @@ export default function WorkshopsList() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
-          <div className="lg:col-span-5 flex flex-col gap-2">
+        {/* Desktop side-by-side tabs layout */}
+        <div className="hidden lg:grid grid-cols-12 gap-10">
+          <div className="col-span-5 flex flex-col gap-2">
             {workshops.map((ws, idx) => (
               <button
                 key={idx}
@@ -70,24 +66,66 @@ export default function WorkshopsList() {
             ))}
           </div>
 
-          <div className="lg:col-span-7 flex items-stretch">
+          <div className="col-span-7 flex items-stretch">
             <div className="w-full bg-gray-50 border border-black/5 rounded-2xl p-8 md:p-12 relative flex flex-col justify-center min-h-[300px]">
-              <div 
-                className="relative z-10 animate-fade-in-up" 
-                key={activeIndex} 
-              >
-                <div className="inline-block px-3 py-1 rounded-md bg-white border border-black/5 shadow-sm text-xs font-bold tracking-wide text-primary mb-4 uppercase">
-                  {workshops[activeIndex].audience}
+              {activeIndex >= 0 && workshops[activeIndex] && (
+                <div 
+                  className="relative z-10 animate-fade-in-up" 
+                  key={activeIndex} 
+                >
+                  <div className="inline-block px-3 py-1 rounded-md bg-white border border-black/5 shadow-sm text-xs font-bold tracking-wide text-primary mb-4 uppercase">
+                    {workshops[activeIndex].audience}
+                  </div>
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-foreground leading-tight">
+                    {workshops[activeIndex].title}
+                  </h3>
+                  <p className="text-lg md:text-xl text-foreground/70 font-secondary leading-relaxed border-l-4 border-primary pl-4 py-1 italic">
+                    "{workshops[activeIndex].question}"
+                  </p>
                 </div>
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-foreground leading-tight">
-                  {workshops[activeIndex].title}
-                </h3>
-                <p className="text-lg md:text-xl text-foreground/70 font-secondary leading-relaxed border-l-4 border-primary pl-4 py-1 italic">
-                  "{workshops[activeIndex].question}"
-                </p>
-              </div>
+              )}
             </div>
           </div>
+        </div>
+
+        {/* Mobile Accordion Layout */}
+        <div className="lg:hidden flex flex-col gap-3">
+          {workshops.map((ws, idx) => {
+            const isOpen = activeIndex === idx;
+            return (
+              <div 
+                key={idx} 
+                className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
+                  isOpen ? 'border-primary/30 bg-gray-50/50' : 'border-black/5 bg-white'
+                }`}
+              >
+                <button
+                  onClick={() => setActiveIndex(isOpen ? -1 : idx)}
+                  className={`w-full text-left px-5 py-4 font-bold flex justify-between items-center transition-colors ${
+                    isOpen ? 'bg-primary text-white border-primary' : 'bg-white border-black/5 text-foreground/80 hover:bg-gray-50'
+                  }`}
+                >
+                  <span>{ws.title}</span>
+                  <span className="text-xl font-light">{isOpen ? '−' : '+'}</span>
+                </button>
+                
+                <div 
+                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
+                    isOpen ? 'max-h-[350px] opacity-100 border-t border-black/5' : 'max-h-0 opacity-0'
+                  }`}
+                >
+                  <div className="p-6">
+                    <div className="inline-block px-3 py-1 rounded-md bg-white border border-black/5 shadow-sm text-xs font-bold tracking-wide text-primary mb-4 uppercase">
+                      {ws.audience}
+                    </div>
+                    <p className="text-base text-foreground/75 font-secondary leading-relaxed border-l-4 border-primary pl-4 py-1 italic">
+                      "{ws.question}"
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

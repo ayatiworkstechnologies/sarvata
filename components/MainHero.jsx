@@ -13,6 +13,7 @@ export default function MainHero({
   title,
   subtitle,
   breadcrumbs = [],
+  eventLogo,
 }) {
   return (
     <section className="relative isolate w-full overflow-hidden">
@@ -45,38 +46,62 @@ export default function MainHero({
       {/* Content */}
       <div className="absolute inset-0">
         <div className="container-max relative h-full w-full">
-          {/* Title */}
-          {title && (
-            <motion.h1
-              initial={{ opacity: 0, y: 22 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.18, duration: 0.65 }}
-              className="
-                absolute left-4 sm:left-8 md:left-10 lg:left-14 top-[100px] sm:top-[120px] md:top-[150px] lg:top-[180px] z-10
-                max-w-[90%] sm:max-w-[520px] lg:max-w-[700px]
-                text-[24px] sm:text-[36px] md:text-[46px] lg:text-[56px] font-extrabold leading-[1.15]
-                tracking-[-1px] md:tracking-[-1.5px] text-[#6B4A8E]
-              "
-            >
-              {title}
-            </motion.h1>
-          )}
+          {/* Main Info Container (Stacks Logo, Title, and Subtitle) */}
+          <div className="
+            absolute left-4 sm:left-8 md:left-10 lg:left-14
+            top-[95px] sm:top-[115px] md:top-[140px] lg:top-[180px] z-10
+            max-w-[90%] sm:max-w-[520px] lg:max-w-[700px]
+            flex flex-col gap-3.5 sm:gap-5 md:gap-6
+          ">
+            {/* Logo Optional */}
+            {eventLogo && (
+              <motion.div
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1, duration: 0.55 }}
+                className="w-32 sm:w-40 md:w-48 bg-white/70 backdrop-blur-sm p-2 rounded-xl border border-black/5"
+              >
+                <Image
+                  src={eventLogo}
+                  alt="Event Logo"
+                  width={200}
+                  height={60}
+                  className="h-auto w-full object-contain"
+                  priority
+                />
+              </motion.div>
+            )}
 
-          {/* Subtitle optional */}
-          {subtitle && (
-            <motion.p
-              initial={{ opacity: 0, y: 18 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.25, duration: 0.6 }}
-              className="
-                absolute left-4 top-[290px] z-10
-                max-w-[85%] sm:max-w-xl text-[13px] sm:text-[14px] leading-6 sm:leading-7 text-[#5F5570]
-                sm:left-8 sm:top-[320px] md:left-10 md:top-[360px] md:text-[15px] lg:left-14
-              "
-            >
-              {subtitle}
-            </motion.p>
-          )}
+            {/* Title */}
+            {title && (
+              <motion.h1
+                initial={{ opacity: 0, y: 22 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.18, duration: 0.65 }}
+                className="
+                  text-[24px] sm:text-[36px] md:text-[46px] lg:text-[56px] font-extrabold leading-[1.15]
+                  tracking-[-1px] md:tracking-[-1.5px] text-[#6B4A8E]
+                "
+              >
+                {title}
+              </motion.h1>
+            )}
+
+            {/* Subtitle optional */}
+            {subtitle && (
+              <motion.p
+                initial={{ opacity: 0, y: 18 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25, duration: 0.6 }}
+                className="
+                  max-w-[85%] sm:max-w-xl text-[13px] sm:text-[14px] leading-6 sm:leading-7 
+                  text-[#2E2738] font-bold md:text-[#5F5570] md:font-medium md:text-[15px]
+                "
+              >
+                {subtitle}
+              </motion.p>
+            )}
+          </div>
 
           {/* Breadcrumb */}
           {breadcrumbs.length > 0 && (

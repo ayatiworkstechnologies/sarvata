@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import AnimatedButton from '@/components/AnimatedButton';
 import { FiPhone, FiMail, FiGlobe, FiMapPin } from 'react-icons/fi';
 
@@ -11,7 +12,7 @@ export default function EventRegistration() {
 
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
         <div className="bg-white/80 backdrop-blur-xl border border-black/5 rounded-[2.5rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] p-10 md:p-16 flex flex-col md:flex-row items-stretch justify-between gap-12">
-          
+
           {/* Left Column: Contact Info */}
           <div className="flex-1 flex flex-col justify-center">
             <div className="mb-8">
@@ -30,7 +31,7 @@ export default function EventRegistration() {
                   +91 9150418101
                 </a>
               </div>
-              
+
               <div className="flex items-center gap-4 group">
                 <div className="w-10 h-10 rounded-full bg-gray-50 border border-black/5 flex items-center justify-center shadow-sm group-hover:scale-110 group-hover:bg-primary/5 transition-all text-primary">
                   <FiMail className="w-5 h-5" />
@@ -39,7 +40,7 @@ export default function EventRegistration() {
                   sarvata.edu@gmail.com
                 </a>
               </div>
-              
+
               <div className="flex items-center gap-4 group">
                 <div className="w-10 h-10 rounded-full bg-gray-50 border border-black/5 flex items-center justify-center shadow-sm group-hover:scale-110 group-hover:bg-primary/5 transition-all text-primary">
                   <FiGlobe className="w-5 h-5" />
@@ -48,7 +49,7 @@ export default function EventRegistration() {
                   www.sarvata.org
                 </a>
               </div>
-              
+
               <div className="flex items-center gap-4 group">
                 <div className="w-10 h-10 rounded-full bg-gray-50 border border-black/5 flex items-center justify-center shadow-sm group-hover:scale-110 group-hover:bg-primary/5 transition-all text-primary">
                   <FiMapPin className="w-5 h-5" />
@@ -71,7 +72,7 @@ export default function EventRegistration() {
               </span>
               <h2 className="text-3xl font-extrabold text-foreground tracking-tight">For institution Registrations</h2>
             </div>
-            
+
             <div className="mb-8 relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-20 transition duration-1000 group-hover:opacity-40"></div>
               <a href="https://sarvata.org" target="_blank" rel="noopener noreferrer" className="relative block w-full">
@@ -88,7 +89,23 @@ export default function EventRegistration() {
               </p>
             </div>
           </div>
-          
+
+        </div>
+
+        {/* Page End Event Logo Thumbnail */}
+        <div className="mt-16 flex flex-col items-center justify-center gap-3">
+          <div className="relative w-50 h-20  rounded-2xl overflow-hidden border border-black/5 bg-white shadow-md flex items-center justify-center p-3 hover:scale-105 transition-transform duration-300">
+            <Image
+              src="/logo.png"
+              alt="Event Logo Thumbnail"
+              width={200}
+              height={100}
+              className="object-contain"
+            />
+          </div>
+          <p className="text-xs text-foreground/45 font-bold uppercase tracking-[0.25em]">
+            The Sarvata Educators Collective 2026
+          </p>
         </div>
       </div>
     </section>

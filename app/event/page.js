@@ -4,6 +4,7 @@ import EventContext from './components/EventContext';
 import SummitOffers from './components/SummitOffers';
 import WorkshopsList from './components/WorkshopsList';
 import EventRegistration from './components/EventRegistration';
+import EventHighlightBar from './components/EventHighlightBar';
 
 export const metadata = {
   title: "The Sarvata Educators Collective 2026",
@@ -14,8 +15,9 @@ export default function SarvataCollective2026Page() {
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30 selection:text-primary-foreground">
       <MainHero
-        webImage="/banners/event-hero-web.png"
-        mobileImage="/banners/event-hero-mob.png"
+        webImage="/banners/event-banner-web.png"
+        mobileImage="/banners/event-banner-mob.png"
+        eventLogo="/logo.png"
         title={
           <>
             The <span className="text-[#D9A63A]">Sarvata</span>{" "}
@@ -28,6 +30,7 @@ export default function SarvataCollective2026Page() {
           { label: "Events" }
         ]}
       />
+      <EventHighlightBar />
       <EventContext />
       <SummitOffers />
       <WorkshopsList />
