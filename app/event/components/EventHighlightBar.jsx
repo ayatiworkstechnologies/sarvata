@@ -11,12 +11,12 @@ export default function EventHighlightBar() {
           <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-6 lg:gap-10 w-full lg:w-auto">
             {/* Logo Thumbnail (Near Event Info) */}
             <div className="flex items-center gap-4 shrink-0">
-              <div className="relative w-50 h-20 rounded-2xl overflow-hidden border border-black/5 bg-gray-50 flex items-center justify-center p-2 shadow-sm hover:scale-105 transition-transform">
+              <div className="relative w-32 h-32 flex items-center justify-center hover:scale-105 transition-transform">
                 <Image
-                  src="/logo.png"
+                  src="/event-logo.png"
                   alt="Event Logo Thumbnail"
-                  width={200}
-                  height={100}
+                  width={128}
+                  height={128}
                   className="object-contain"
                 />
               </div>
