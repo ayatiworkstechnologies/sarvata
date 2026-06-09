@@ -59,7 +59,7 @@ export default function MainHero({
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1, duration: 0.55 }}
-                className="w-32 sm:w-40 md:w-48 bg-white/70 backdrop-blur-sm p-2 rounded-xl border border-black/5"
+                className="w-25 sm:w-30 md:w-35 "
               >
                 <Image
                   src={eventLogo}
