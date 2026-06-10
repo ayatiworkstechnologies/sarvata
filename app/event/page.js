@@ -15,8 +15,8 @@ export default function SarvataCollective2026Page() {
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/30 selection:text-primary-foreground">
       <MainHero
-        webImage="/banners/event-banner-web.png"
-        mobileImage="/banners/event-banner-mob.png"
+        webImage="/banners/events-banner-web.png"
+        mobileImage="/banners/events-banner-mob.png"
         eventLogo="/event-logo.png"
         title={
           <>
