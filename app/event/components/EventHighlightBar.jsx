@@ -29,7 +29,7 @@ export default function EventHighlightBar() {
               </div>
               <div>
                 <p className="text-xs text-foreground/50 uppercase tracking-wider font-bold">Date</p>
-                <p className="text-[15px] font-bold text-foreground">October 9 & 10, 2026</p>
+                <p className="text-[15px] font-bold text-foreground">July 24, 2026</p>
               </div>
             </div>
 
