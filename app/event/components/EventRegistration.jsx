@@ -36,8 +36,8 @@ export default function EventRegistration() {
                 <div className="w-10 h-10 rounded-full bg-gray-50 border border-black/5 flex items-center justify-center shadow-sm group-hover:scale-110 group-hover:bg-primary/5 transition-all text-primary">
                   <FiMail className="w-5 h-5" />
                 </div>
-                <a href="mailto:sarvata.edu@gmail.com" className="hover:text-primary transition-colors underline decoration-primary/30 underline-offset-4">
-                  sarvata.edu@gmail.com
+                <a href="mailto:events@sarvata.org" className="hover:text-primary transition-colors underline decoration-primary/30 underline-offset-4">
+                  events@sarvata.org
                 </a>
               </div>
 
@@ -75,7 +75,7 @@ export default function EventRegistration() {
 
             <div className="mb-8 relative">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-2xl blur opacity-20 transition duration-1000 group-hover:opacity-40"></div>
-              <a href="https://sarvata.org" target="_blank" rel="noopener noreferrer" className="relative block w-full">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3C7mJjP1EMll4gdWfWlB0gYL0I5p2iHRqOjae_9GhbeRI_Q/viewform?usp=preview" target="_blank" rel="noopener noreferrer" className="relative block w-full">
                 <AnimatedButton variant="primary" className="w-full justify-center shadow-xl">
                   Institution Registration
                 </AnimatedButton>

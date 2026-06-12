@@ -111,10 +111,10 @@ export default function ContactInfo() {
                 <LuMail className="w-4 h-4 text-primary" />
               </span>
               <a
-                href="mailto:sarvata.edu@gmail.com"
+                href="mailto:office@sarvata.org"
                 className="hover:text-primary transition-colors"
               >
-                sarvata.edu@gmail.com
+                office@sarvata.org
               </a>
             </li>
             <li className="flex items-center gap-3">

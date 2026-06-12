@@ -148,10 +148,10 @@ export default function ContactLayout() {
                   <LuMail className="h-5 w-5" />
                 </span>
                 <a
-                  href="mailto:sarvata.edu@gmail.com"
+                  href="mailto:office@sarvata.org"
                   className="transition-colors hover:text-primary"
                 >
-                  sarvata.edu@gmail.com
+                  office@sarvata.org
                 </a>
               </li>
 

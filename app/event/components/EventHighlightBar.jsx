@@ -63,7 +63,7 @@ export default function EventHighlightBar() {
           </div>
 
           {/* Action Button */}
-          <a href="#registration" className="w-full lg:w-auto shrink-0">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSe3C7mJjP1EMll4gdWfWlB0gYL0I5p2iHRqOjae_9GhbeRI_Q/viewform?usp=preview" target="_blank" rel="noopener noreferrer" className="w-full lg:w-auto shrink-0">
             <button className="w-full btn btn-primary shadow-lg shadow-primary/25 !h-12 !px-8 text-sm font-semibold tracking-wide hover:shadow-xl hover:shadow-primary/30 transition-all">
               Register Now
             </button>
