@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { Shield, Briefcase, HeartHandshake } from "lucide-react";
 import TestimonialsSection from "@/components/about/TestimonialsSection";
 
+
 export default function TeacherMentoringPage() {
   const steps = [
     {

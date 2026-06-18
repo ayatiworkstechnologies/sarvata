@@ -5,6 +5,7 @@ import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 import { motion } from "framer-motion";
 import TestimonialsSection from "@/components/about/TestimonialsSection";
 
+
 export default function FreeResourcesPage() {
   const resources = [
     {

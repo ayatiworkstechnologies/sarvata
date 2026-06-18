@@ -7,6 +7,7 @@ import Link from "next/link";
 import { GraduationCap, HeartPulse, Compass } from "lucide-react";
 import TestimonialsSection from "@/components/about/TestimonialsSection";
 
+
 export default function InsightsGuidancePage() {
   const testimonials = [
     {

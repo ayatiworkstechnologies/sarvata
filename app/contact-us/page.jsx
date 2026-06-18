@@ -3,6 +3,7 @@ import ContactLayout from "@/components/contact/ContactLayout";
 import ContactMap from "@/components/contact/ContactMap";
 
 export const metadata = {
+  alternates: { canonical: '/contact-us' },
   title: "Contact Sarvata - Get in Touch with Our Team",
   description:
     "Have a question or ready to get started? Contact the Sarvata team to schedule a consultation, explore our educational services, or simply ask how we can support your school, educators, or family.",
@@ -17,7 +18,7 @@ export const metadata = {
     title: "Contact Sarvata - Get in Touch with Our Team",
     description:
       "Reach out to Sarvata to schedule a consultation or learn more about our educational support services for schools, educators, and families.",
-    url: "https://sarvata.in/contact",
+    url: "https://sarvata.org/contact",
     siteName: "Sarvata",
     images: [
       {

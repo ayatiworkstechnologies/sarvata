@@ -5,6 +5,7 @@ import MainHero from "@/components/MainHero";
 import PathwayChallengeSection from "@/components/services/PathwayChallengeSection";
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 
+
 export default function MentalHealthPage() {
   const coverage = [
     {

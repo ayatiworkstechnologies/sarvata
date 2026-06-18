@@ -25,7 +25,10 @@ const secondaryFont = Mulish({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://sarvata.in"),
+  metadataBase: new URL("https://sarvata.org"),
+  alternates: {
+    canonical: '/',
+  },
   title: {
     default: "Sarvata - Transforming Educators & Schools, Every Day",
     template: "%s | Sarvata",
@@ -40,12 +43,12 @@ export const metadata = {
     "educator professional development",
     "Sarvata",
   ],
-  authors: [{ name: "Sarvata", url: "https://sarvata.in" }],
+  authors: [{ name: "Sarvata", url: "https://sarvata.org" }],
   creator: "Sarvata",
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://sarvata.in",
+    url: "https://sarvata.org",
     siteName: "Sarvata",
     title: "Sarvata - Transforming Educators & Schools, Every Day",
     description:
@@ -63,6 +66,9 @@ export const metadata = {
     index: true,
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+  verification: {
+    google: "BpTNEhMic906_f8ofxX6jP9DmhyCAR3zIjhs-MpSKrI",
   },
 };
 

@@ -8,6 +8,7 @@ import TestimonialsSection from "@/components/about/TestimonialsSection";
 import ResearchFoundation from "@/components/about/ResearchFoundation";
 
 export const metadata = {
+  alternates: { canonical: '/about-us' },
   title: "About Us - Sarvata Educational Consultancy",
   description:
     "Learn about Sarvata's founding mission: to inspire and create better educators and schools, every day. Discover our philosophy of personalized learning, expanding learner agency, and building self-directed education environments.",
@@ -23,7 +24,7 @@ export const metadata = {
     title: "About Us - Sarvata Educational Consultancy",
     description:
       "Discover why Sarvata exists: to bridge the gap between aspirational pedagogy and daily classroom practice, empowering every learner's unique potential.",
-    url: "https://sarvata.in/about",
+    url: "https://sarvata.org/about",
     siteName: "Sarvata",
     images: [
       { url: "/og-about.png", width: 1200, height: 630, alt: "About Sarvata" },

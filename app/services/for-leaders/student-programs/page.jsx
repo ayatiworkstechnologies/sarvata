@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import TestimonialsSection from "@/components/about/TestimonialsSection";
 import { Shield, Brain, Users } from "lucide-react";
 
+
 export default function StudentProgramsPage() {
   const programs = [
     {

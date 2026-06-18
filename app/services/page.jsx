@@ -3,6 +3,7 @@ import ServicesCTA from "@/components/services/ServicesCTA";
 import ServicesLayout from "@/components/services/ServicesLayout";
 
 export const metadata = {
+  alternates: { canonical: '/services' },
   title:
     "Our Services - Educational Support for Schools, Educators & Families | Sarvata",
   description:
@@ -21,7 +22,7 @@ export const metadata = {
       "Our Services - Educational Support for Schools, Educators & Families",
     description:
       "Sarvata offers practical, research-driven services for educators, school leaders, and parents - tailored to your community's unique needs.",
-    url: "https://sarvata.in/services",
+    url: "https://sarvata.org/services",
     siteName: "Sarvata",
     images: [
       {

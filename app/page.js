@@ -7,6 +7,7 @@ import ApproachFeatures from "@/sections/ApproachFeatures";
 import HomeTestimonials from "@/sections/HomeTestimonials";
 
 export const metadata = {
+  alternates: { canonical: '/' },
   title: "Sarvata - Transforming Educators & Schools, Every Day",
   description:
     "Sarvata is a premier educational consultancy empowering educators, school leaders, and families with practical, research-driven strategies to build truly inclusive and learner-centered schools.",
@@ -22,7 +23,7 @@ export const metadata = {
     title: "Sarvata - Transforming Educators & Schools, Every Day",
     description:
       "Practical, research-driven educational consulting for schools, educators, and families. Empowering every learner's unique potential.",
-    url: "https://sarvata.in",
+    url: "https://sarvata.org",
     siteName: "Sarvata",
     images: [{ url: "/og-home.jpg", width: 1200, height: 630, alt: "Sarvata - Transforming Learning" }],
     type: "website",

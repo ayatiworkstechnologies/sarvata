@@ -7,6 +7,7 @@ import EventRegistration from './components/EventRegistration';
 import EventHighlightBar from './components/EventHighlightBar';
 
 export const metadata = {
+  alternates: { canonical: '/event' },
   title: "The Sarvata Educators Collective 2026",
   description: "A premium, high-impact gathering designed for forward-thinking school leaders and educators, hosted by Sarvata Educational Consultancy.",
 };

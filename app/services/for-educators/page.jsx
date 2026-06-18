@@ -5,6 +5,7 @@ import PathwayServicesSection from "@/components/services/PathwayServicesSection
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 
 export const metadata = {
+  alternates: { canonical: '/services/for-educators' },
   title:
     "Services for Educators - Sustainable Differentiation & Mentoring | Sarvata",
   description:
@@ -23,7 +24,7 @@ export const metadata = {
       "Services for Educators - Sustainable Differentiation & Mentoring | Sarvata",
     description:
       "Practical workshops, in-class mentoring, and frameworks that help educators build sustainable, learner-centered practice - without burning out.",
-    url: "https://sarvata.in/services/for-educators",
+    url: "https://sarvata.org/services/for-educators",
     siteName: "Sarvata",
     images: [
       {

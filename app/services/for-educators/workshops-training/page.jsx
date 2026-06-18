@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import TestimonialsSection from "@/components/about/TestimonialsSection";
 import MainHero from "@/components/MainHero";
 
+
 export default function WorkshopsTrainingPage() {
   const workshops = [
     {

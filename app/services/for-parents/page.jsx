@@ -5,6 +5,7 @@ import PathwayServicesSection from "@/components/services/PathwayServicesSection
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 
 export const metadata = {
+  alternates: { canonical: '/services/for-parents' },
   title:
     "Services for Parents - Understanding & Supporting Your Child's Learning | Sarvata",
   description:
@@ -23,7 +24,7 @@ export const metadata = {
       "Services for Parents - Understanding & Supporting Your Child's Learning | Sarvata",
     description:
       "Professional guidance, workshops, and advocacy support to help parents understand their child's learning profile and champion their educational journey.",
-    url: "https://sarvata.in/services/for-parents",
+    url: "https://sarvata.org/services/for-parents",
     siteName: "Sarvata",
     images: [
       {

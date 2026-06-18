@@ -5,6 +5,7 @@ import PathwayServicesSection from "@/components/services/PathwayServicesSection
 import PathwayNextSteps from "@/components/services/PathwayNextSteps";
 
 export const metadata = {
+  alternates: { canonical: '/services/for-leaders' },
   title:
     "Services for School Leaders - Strategic Partnership & School Transformation | Sarvata",
   description:
@@ -23,7 +24,7 @@ export const metadata = {
       "Services for School Leaders - Strategic Partnership for Lasting Change | Sarvata",
     description:
       "Strategic consultancy for school principals and leaders: inclusion audits, faculty development, systems design, and cultural transformation rooted in your school's unique context.",
-    url: "https://sarvata.in/services/for-leaders",
+    url: "https://sarvata.org/services/for-leaders",
     siteName: "Sarvata",
     images: [
       {
