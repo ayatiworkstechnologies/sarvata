@@ -39,7 +39,7 @@ export default function EventContext() {
               </p>
 
               <p>
-                The Sarvata Educators Collective 2026 is a premium, high-impact gathering, designed for forward-thinking school leaders and educators. Unlike conventional conferences filled with passive lectures, this Collective focuses on the human factor that no algorithm can replicate: <strong className="text-foreground">moral discernment, emotional regulation, professional capital, cognitive empathy, and conscious leadership</strong>.
+                The Sarvata Educators Collective 2026 is a premium, high-impact gathering, designed for forward-thinking school leaders and educators. Unlike conventional conferences filled with passive lectures, this Collective focuses on the human factor that no algorithm can replicate: <strong className="text-foreground">moral ethical discernment, emotional regulation, professional capital, cognitive empathy, and conscious leadership</strong>.
               </p>
             </div>
           </div>

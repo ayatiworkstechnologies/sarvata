@@ -43,7 +43,7 @@ export default function EventHighlightBar() {
               </div>
               <div>
                 <p className="text-xs text-foreground/50 uppercase tracking-wider font-bold">Time</p>
-                <p className="text-[15px] font-bold text-foreground">9:30 AM - 4:30 PM IST</p>
+                <p className="text-[15px] font-bold text-foreground">9:00 AM - 4:30 PM IST</p>
               </div>
             </div>
 
@@ -51,15 +51,20 @@ export default function EventHighlightBar() {
             <div className="hidden sm:block w-px h-10 bg-black/10"></div>
 
             {/* Venue */}
-            <div className="flex items-center gap-3 w-full sm:w-auto">
+            <a href="https://maps.app.goo.gl/zf7TwbCFtYuGF1t1A" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 w-full sm:w-auto group">
               <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary text-xl font-bold shrink-0">
                 📍
               </div>
               <div>
                 <p className="text-xs text-foreground/50 uppercase tracking-wider font-bold">Venue</p>
-                <p className="text-[15px] font-bold text-foreground">APL Global School, Chennai</p>
+                <p className="text-[15px] font-bold text-foreground group-hover:text-primary transition-colors flex items-center gap-1">
+                  APL Global School, Chennai
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </p>
               </div>
-            </div>
+            </a>
           </div>
 
           {/* Action Button */}
