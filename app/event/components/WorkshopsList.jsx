@@ -220,24 +220,26 @@ export default function WorkshopsList() {
                     isOpen ? 'bg-primary text-white border-primary' : 'bg-white border-black/5 text-foreground/80 hover:bg-gray-50'
                   }`}
                 >
-                  <span>{ws.title}</span>
-                  <span className="text-xl font-light">{isOpen ? '−' : '+'}</span>
+                  <span className="pr-4">{ws.title}</span>
+                  <span className="text-xl font-light shrink-0">{isOpen ? '−' : '+'}</span>
                 </button>
                 
                 <div 
-                  className={`transition-all duration-300 ease-in-out overflow-hidden ${
-                    isOpen ? 'max-h-[2000px] opacity-100 border-t border-black/5' : 'max-h-0 opacity-0'
+                  className={`grid transition-all duration-300 ease-in-out ${
+                    isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
                   }`}
                 >
-                  <div className="p-6">
-                    <div className="inline-block px-3 py-1 rounded-md bg-white border border-black/5 shadow-sm text-xs font-bold tracking-wide text-primary mb-4 uppercase">
-                      {ws.audience}
+                  <div className="overflow-hidden">
+                    <div className={`p-6 ${isOpen ? 'border-t border-black/5' : ''}`}>
+                      <div className="inline-block px-3 py-1 rounded-md bg-white border border-black/5 shadow-sm text-xs font-bold tracking-wide text-primary mb-4 uppercase">
+                        {ws.audience}
+                      </div>
+                      <p className="text-base text-foreground/75 font-secondary leading-relaxed border-l-4 border-primary pl-4 py-1 italic mb-6">
+                        "{ws.question}"
+                      </p>
+                      
+                      {renderFacilitators(ws.facilitators)}
                     </div>
-                    <p className="text-base text-foreground/75 font-secondary leading-relaxed border-l-4 border-primary pl-4 py-1 italic mb-6">
-                      "{ws.question}"
-                    </p>
-                    
-                    {renderFacilitators(ws.facilitators)}
                   </div>
                 </div>
               </div>

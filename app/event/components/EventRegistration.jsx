@@ -94,9 +94,9 @@ export default function EventRegistration() {
 
         {/* Page End Event Logo Thumbnail */}
         <div className="mt-16 flex flex-col items-center justify-center gap-3">
-          <div className="relative w-50 h-20  rounded-2xl overflow-hidden border border-black/5 bg-white shadow-md flex items-center justify-center p-3 hover:scale-105 transition-transform duration-300">
+          <div className="relative w-50 h-50  rounded-2xl overflow-hidden border border-black/5 bg-white shadow-md flex items-center justify-center p-3 hover:scale-105 transition-transform duration-300">
             <Image
-              src="/logo.png"
+              src="/event-logo.png"
               alt="Event Logo Thumbnail"
               width={200}
               height={100}
