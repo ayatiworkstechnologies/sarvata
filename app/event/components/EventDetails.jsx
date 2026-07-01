@@ -86,7 +86,7 @@ export default function EventDetails() {
                   </div>
                   <div className="h-px flex-1 bg-gradient-to-r from-primary/20 to-transparent"></div>
                 </div>
-                <h3 className="text-xl font-bold text-foreground mb-3">Submit Nominations</h3>
+                <h3 className="text-xl font-bold text-foreground mb-3">Submit Registration</h3>
                 <p className="text-foreground/65 leading-relaxed flex-1 font-secondary">
                   To secure your institution&apos;s presence and your personal seat at the Leadership Track, please submit your 5 official nominations using the secure registration form.
                 </p>
