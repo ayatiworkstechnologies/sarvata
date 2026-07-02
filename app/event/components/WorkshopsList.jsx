@@ -42,7 +42,7 @@ const workshops = [
       {
         name: "Ms Gomathi Prabhakar",
         title: "Head Teacher-Mentor Centre, APL Global School",
-        image: null,
+        image: "/team/Gomathi.jpg",
         bio: "Ms Gomathi is an educator, school leader, and teacher trainer with extensive experience as the Head of Senior School and Head- Teacher Mentor Centre and Training at APL Global School. She has done her masters in History and holds the Cambridge International Diploma for Teachers and Trainers. She has also acquired the IB certificate in Holistic Teaching and Training and trained in Mindfulness Fundamentals. Passionate about nurturing thriving learning communities, she mentors' educators in their professional and personal growth while helping the school build a culture where both teachers and students thrive. Her work focuses on supporting educators in designing human-centered curriculum frameworks that foster both academic excellence and holistic development."
       }
     ]
@@ -93,7 +93,7 @@ const workshops = [
       {
         name: "Ms Soumya Rajan",
         title: "Head of Kamalam, APL Global School",
-        image: null,
+        image: "/team/Soumya.jpg",
         bio: "Ms Soumya is an educator and school leader with nearly two decades of experience in special and inclusive education. A dynamic and deeply committed special educator, she has dedicated herself to empowering children with diverse learning needs. she is guided by the unwavering belief that every child has the ability to succeed when educators are empowered to meet diverse learning needs.\nShe is passionate about supporting educators in creating inclusive, student-centred learning environments through practical strategies and reflective practice. Her work is guided by the belief that every child can thrive when educators are equipped to respond to diverse learning needs."
       },
       {
@@ -168,11 +168,10 @@ export default function WorkshopsList() {
               <button
                 key={idx}
                 onClick={() => setActiveIndex(idx)}
-                className={`text-left px-5 py-4 rounded-xl font-medium transition-all duration-200 border ${
-                  activeIndex === idx 
-                    ? 'bg-primary text-white border-primary shadow-md' 
-                    : 'bg-white border-black/5 text-foreground/70 hover:bg-gray-50'
-                }`}
+                className={`text-left px-5 py-4 rounded-xl font-medium transition-all duration-200 border ${activeIndex === idx
+                  ? 'bg-primary text-white border-primary shadow-md'
+                  : 'bg-white border-black/5 text-foreground/70 hover:bg-gray-50'
+                  }`}
               >
                 {ws.title}
               </button>
@@ -182,9 +181,9 @@ export default function WorkshopsList() {
           <div className="col-span-8 xl:col-span-9 flex items-stretch">
             <div className="w-full bg-gray-50 border border-black/5 rounded-2xl p-8 md:p-12 relative flex flex-col min-h-[300px]">
               {activeIndex >= 0 && workshops[activeIndex] && (
-                <div 
-                  className="relative z-10 animate-fade-in-up flex-1" 
-                  key={activeIndex} 
+                <div
+                  className="relative z-10 animate-fade-in-up flex-1"
+                  key={activeIndex}
                 >
                   <div className="inline-block px-3 py-1 rounded-md bg-white border border-black/5 shadow-sm text-xs font-bold tracking-wide text-primary mb-4 uppercase">
                     {workshops[activeIndex].audience}
@@ -195,7 +194,7 @@ export default function WorkshopsList() {
                   <p className="text-lg md:text-xl text-foreground/70 font-secondary leading-relaxed border-l-4 border-primary pl-4 py-1 italic mb-6">
                     "{workshops[activeIndex].question}"
                   </p>
-                  
+
                   {renderFacilitators(workshops[activeIndex].facilitators)}
                 </div>
               )}
@@ -208,26 +207,23 @@ export default function WorkshopsList() {
           {workshops.map((ws, idx) => {
             const isOpen = activeIndex === idx;
             return (
-              <div 
-                key={idx} 
-                className={`border rounded-2xl overflow-hidden transition-all duration-300 ${
-                  isOpen ? 'border-primary/30 bg-gray-50/50' : 'border-black/5 bg-white'
-                }`}
+              <div
+                key={idx}
+                className={`border rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'border-primary/30 bg-gray-50/50' : 'border-black/5 bg-white'
+                  }`}
               >
                 <button
                   onClick={() => setActiveIndex(isOpen ? -1 : idx)}
-                  className={`w-full text-left px-5 py-4 font-bold flex justify-between items-center transition-colors ${
-                    isOpen ? 'bg-primary text-white border-primary' : 'bg-white border-black/5 text-foreground/80 hover:bg-gray-50'
-                  }`}
+                  className={`w-full text-left px-5 py-4 font-bold flex justify-between items-center transition-colors ${isOpen ? 'bg-primary text-white border-primary' : 'bg-white border-black/5 text-foreground/80 hover:bg-gray-50'
+                    }`}
                 >
                   <span className="pr-4">{ws.title}</span>
                   <span className="text-xl font-light shrink-0">{isOpen ? '−' : '+'}</span>
                 </button>
-                
-                <div 
-                  className={`grid transition-all duration-300 ease-in-out ${
-                    isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-                  }`}
+
+                <div
+                  className={`grid transition-all duration-300 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                    }`}
                 >
                   <div className="overflow-hidden">
                     <div className={`p-6 ${isOpen ? 'border-t border-black/5' : ''}`}>
@@ -237,7 +233,7 @@ export default function WorkshopsList() {
                       <p className="text-base text-foreground/75 font-secondary leading-relaxed border-l-4 border-primary pl-4 py-1 italic mb-6">
                         "{ws.question}"
                       </p>
-                      
+
                       {renderFacilitators(ws.facilitators)}
                     </div>
                   </div>
