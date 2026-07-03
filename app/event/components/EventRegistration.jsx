@@ -103,7 +103,7 @@ export default function EventRegistration() {
               className="object-contain"
             />
           </div>
-          <p className="text-xs text-foreground/45 font-bold uppercase tracking-[0.25em]">
+          <p className="text-xs text-foreground/45 font-bold uppercase tracking-[0.25em] text-center px-4">
             The Sarvata Educators Collective 2026
           </p>
         </div>
