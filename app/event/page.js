@@ -17,9 +17,9 @@ export default function SarvataCollective2026Page() {
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-clip selection:bg-primary/30 selection:text-primary-foreground">
       <MainHero
-        webImage="/banners/event-banner-new-web.png"
+        webImage="/banners/event-banner-new.png"
         mobileImage="/banners/event-banner-new-mob.png"
-        eventLogo="/event-logo.png"
+        // eventLogo="/event-logo.png"
         title={
           <>
             The <span className="text-[#D9A63A]">Sarvata</span>{" "}

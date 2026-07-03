@@ -54,7 +54,7 @@ export default function MainHero({
             flex flex-col gap-3.5 sm:gap-5 md:gap-6
           ">
             {/* Logo Optional */}
-            {/* {eventLogo && (
+            {eventLogo && (
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -70,7 +70,7 @@ export default function MainHero({
                   priority
                 />
               </motion.div>
-            )} */}
+            )}
 
             {/* Title */}
             {title && (
@@ -78,7 +78,7 @@ export default function MainHero({
                 initial={{ opacity: 0, y: 22 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.18, duration: 0.65 }}
-                className=" mt-25
+                className="
                   text-[24px] sm:text-[36px] md:text-[46px] lg:text-[56px] font-extrabold leading-[1.15]
                   tracking-[-1px] md:tracking-[-1.5px] text-[#6B4A8E]
                 "
@@ -94,8 +94,8 @@ export default function MainHero({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.25, duration: 0.6 }}
                 className="
-                  max-w-[85%] sm:max-w-xl text-[13px] sm:text-[14px] leading-6 sm:leading-7 
-                  text-[#2E2738] font-bold md:text-[#5F5570] md:font-medium md:text-[15px]
+                  max-w-[85%] sm:max-w-xl text-[22px] sm:text-[26px] md:text-[30px] leading-relaxed 
+                  text-[#2E2738] font-medium
                 "
               >
                 {subtitle}
