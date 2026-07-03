@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function EventHighlightBar() {
   return (
-    <section className="relative -mt-16 z-30 px-6">
+    <section className="relative -mt-8 z-30 px-6">
       <div className="container mx-auto max-w-6xl">
         <div className="bg-white/90 backdrop-blur-md rounded-3xl border border-black/5 shadow-[0_20px_50px_rgba(0,0,0,0.06)] p-6 md:p-8 flex flex-col lg:flex-row items-center justify-between gap-6 hover:shadow-[0_25px_60px_rgba(0,0,0,0.08)] transition-all duration-300">
 

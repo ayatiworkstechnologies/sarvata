@@ -218,7 +218,7 @@ export default function EventDetails() {
             </p>
           </div>
 
-          {/* Cards Grid — 2 columns on desktop */}
+          {/* Cards Grid - 2 columns on desktop */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-8">
 
             {/* Delegate Limits */}
@@ -286,7 +286,7 @@ export default function EventDetails() {
             </div>
           </div>
 
-          {/* First-come first-served — full-width urgency banner */}
+          {/* First-come first-served - full-width urgency banner */}
           <div className="max-w-5xl mx-auto relative rounded-2xl overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-r from-primary/[0.08] via-primary/[0.04] to-secondary/[0.06]"></div>
             <div className="relative px-7 py-6 md:px-10 md:py-7 flex items-start gap-5 border border-primary/10 rounded-2xl">

@@ -24,7 +24,7 @@ export default function EventContext() {
 
             <div className="p-6 rounded-xl bg-gray-50 border-l-4 border-l-primary relative">
               <p className="text-xl font-medium text-foreground italic leading-snug">
-                "We move beyond reactive policies toward proactive, <span className="text-primary font-bold">human-centered systems</span> where technology supports people—not the other way around."
+                "We move beyond reactive policies toward proactive, <span className="text-primary font-bold">human-centered systems</span> where technology supports people-not the other way around."
               </p>
             </div>
           </div>

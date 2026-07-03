@@ -54,7 +54,7 @@ export default function MainHero({
             flex flex-col gap-3.5 sm:gap-5 md:gap-6
           ">
             {/* Logo Optional */}
-            {eventLogo && (
+            {/* {eventLogo && (
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -64,13 +64,13 @@ export default function MainHero({
                 <Image
                   src={eventLogo}
                   alt="Event Logo"
-                  width={200}
-                  height={60}
+                  width={250}
+                  height={80}
                   className="h-auto w-full object-contain"
                   priority
                 />
               </motion.div>
-            )}
+            )} */}
 
             {/* Title */}
             {title && (
@@ -78,7 +78,7 @@ export default function MainHero({
                 initial={{ opacity: 0, y: 22 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.18, duration: 0.65 }}
-                className="
+                className=" mt-25
                   text-[24px] sm:text-[36px] md:text-[46px] lg:text-[56px] font-extrabold leading-[1.15]
                   tracking-[-1px] md:tracking-[-1.5px] text-[#6B4A8E]
                 "

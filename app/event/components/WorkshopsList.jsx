@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const workshops = [
   {
@@ -12,7 +13,7 @@ const workshops = [
         name: "Sarija Santhosh",
         title: "Principal, APL Global School",
         image: "/team/Sarija.jpg",
-        bio: ""
+        bio: "Ms Sarija is a dynamic educational leader who brings a unique blend of corporate systems expertise and a deep pedagogical vision. With a background in Bio-Medical Engineering and a successful corporate career, she transitioned to education driven by a passion for holistic, experiential learning. Having served in almost every leadership capacity across the school-from mentoring teachers to championing restorative justice and inclusive environments-she assumed the role of Principal in 2020. She successfully navigated the institution through unprecedented global challenges, steadfastly maintaining a balance between an evolving digital ecosystem and meaningful human connection. At the Collective, she will lead the executive policy mastermind, guiding institutional leaders in drafting robust, human-centric AI and digital governance frameworks."
       },
       {
         name: "Ms Fiza Abubacker",
@@ -113,7 +114,7 @@ const workshops = [
         name: "Mr Abdul Rahaman",
         title: "Inventor of ASUDE & Founder, ASUDE Research & Development Foundation",
         image: "/team/Abdul Rahaman.jpg",
-        bio: "Mr. Abdul Rahman is an award-winning psychologist, psychotherapist, and the inventor of ASUDE—the world’s first social thinking game. With a profound commitment to mental wellness and socio-emotional development, his innovative, game-based therapeutic frameworks have positively impacted over 27,000 children, 1,200 educators, and hundreds of law enforcement personnel across the region. Recognized with numerous accolades, including the Outstanding Young Person Award and the Best Social Worker Award for Madurai District, his work focuses heavily on utilizing tactile, experiential therapy to combat digital addiction, foster positive attitudes, and build cognitive resilience. At the Collective, he will lead The ASUDE Simulation Lab, equipping pastoral leads and educators with a continuous, simulation-based framework to meaningfully develop life skills, ethical clarity, and social consciousness in their learners."
+        bio: "Mr. Abdul Rahman is an award-winning psychologist, psychotherapist, and the inventor of ASUDE-the world’s first social thinking game. With a profound commitment to mental wellness and socio-emotional development, his innovative, game-based therapeutic frameworks have positively impacted over 27,000 children, 1,200 educators, and hundreds of law enforcement personnel across the region. Recognized with numerous accolades, including the Outstanding Young Person Award and the Best Social Worker Award for Madurai District, his work focuses heavily on utilizing tactile, experiential therapy to combat digital addiction, foster positive attitudes, and build cognitive resilience. At the Collective, he will lead The ASUDE Simulation Lab, equipping pastoral leads and educators with a continuous, simulation-based framework to meaningfully develop life skills, ethical clarity, and social consciousness in their learners."
       }
     ]
   }
@@ -121,15 +122,38 @@ const workshops = [
 
 export default function WorkshopsList() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const scrollAmount = direction === 'left' ? -200 : 200;
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
+  const handleAccordionClick = (idx) => {
+    const isOpening = activeIndex !== idx;
+    setActiveIndex(isOpening ? idx : -1);
+
+    if (isOpening) {
+      setTimeout(() => {
+        const element = document.getElementById(`mobile-accordion-${idx}`);
+        if (element) {
+          const y = element.getBoundingClientRect().top + window.scrollY - 110; 
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+      }, 250); // wait for accordion animation
+    }
+  };
 
   const renderFacilitators = (facilitators) => {
     if (!facilitators || facilitators.length === 0) return null;
     return (
       <div className="mt-8 space-y-8">
-        <h4 className="text-xl font-bold text-foreground border-b border-black/10 pb-2">Facilitators</h4>
+        <h4 className="text-xl font-bold text-foreground border-b border-black/10 pb-3 mb-6 text-center md:text-left">Facilitators</h4>
         {facilitators.map((fac, idx) => (
-          <div key={idx} className="flex flex-col md:flex-row gap-6 items-start">
-            <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden shrink-0 border-2 border-primary/20 bg-gray-100 flex items-center justify-center">
+          <div key={idx} className="flex flex-col md:flex-row gap-5 md:gap-6 items-center md:items-start text-center md:text-left group">
+            <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden shrink-0 ring-4 ring-primary/10 shadow-lg bg-gray-100 flex items-center justify-center transition-transform duration-300 group-hover:scale-105 group-hover:ring-primary/30">
               {fac.image ? (
                 <img src={fac.image} alt={fac.name} className="w-full h-full object-cover" />
               ) : (
@@ -138,9 +162,9 @@ export default function WorkshopsList() {
             </div>
             <div className="flex-1">
               <h5 className="text-lg font-bold text-foreground">{fac.name}</h5>
-              <p className="text-sm font-bold text-primary mb-2">{fac.title}</p>
+              <p className="text-sm font-bold text-primary mb-3">{fac.title}</p>
               {fac.bio && (
-                <p className="text-sm text-foreground/80 font-secondary leading-relaxed whitespace-pre-line">
+                <p className="text-sm text-foreground/80 font-secondary leading-relaxed whitespace-pre-line text-left md:text-left">
                   {fac.bio}
                 </p>
               )}
@@ -161,16 +185,17 @@ export default function WorkshopsList() {
           </p>
         </div>
 
-        {/* Desktop side-by-side tabs layout */}
-        <div className="hidden lg:grid grid-cols-12 gap-10">
-          <div className="col-span-4 xl:col-span-3 flex flex-col gap-2">
+        {/* Desktop unified card layout with internal scrolling */}
+        <div className="hidden lg:flex items-start bg-white border border-black/5 rounded-[2rem] shadow-[0_20px_60px_rgba(0,0,0,0.06)] overflow-hidden h-[650px]">
+          {/* Sidebar Tabs */}
+          <div className="w-1/3 xl:w-1/4 flex flex-col gap-3 p-6 xl:p-8 bg-gray-50/50 border-r border-black/5 h-full overflow-y-auto" style={{ scrollbarWidth: 'thin' }}>
             {workshops.map((ws, idx) => (
               <button
                 key={idx}
                 onClick={() => setActiveIndex(idx)}
-                className={`text-left px-5 py-4 rounded-xl font-medium transition-all duration-200 border ${activeIndex === idx
-                  ? 'bg-primary text-white border-primary shadow-md'
-                  : 'bg-white border-black/5 text-foreground/70 hover:bg-gray-50'
+                className={`text-left px-5 py-4 rounded-xl font-semibold transition-all duration-300 border ${activeIndex === idx
+                  ? 'bg-gradient-to-r from-primary to-[#8A63B5] text-white border-transparent shadow-lg shadow-primary/25 scale-[1.02]'
+                  : 'bg-white border-black/5 text-foreground/70 hover:bg-white hover:shadow-md hover:scale-[1.02]'
                   }`}
               >
                 {ws.title}
@@ -178,47 +203,49 @@ export default function WorkshopsList() {
             ))}
           </div>
 
-          <div className="col-span-8 xl:col-span-9 flex items-stretch">
-            <div className="w-full bg-gray-50 border border-black/5 rounded-2xl p-8 md:p-12 relative flex flex-col min-h-[300px]">
-              {activeIndex >= 0 && workshops[activeIndex] && (
-                <div
-                  className="relative z-10 animate-fade-in-up flex-1"
-                  key={activeIndex}
-                >
-                  <div className="inline-block px-3 py-1 rounded-md bg-white border border-black/5 shadow-sm text-xs font-bold tracking-wide text-primary mb-4 uppercase">
-                    {workshops[activeIndex].audience}
-                  </div>
-                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-foreground leading-tight">
-                    {workshops[activeIndex].title}
-                  </h3>
-                  <p className="text-lg md:text-xl text-foreground/70 font-secondary leading-relaxed border-l-4 border-primary pl-4 py-1 italic mb-6">
-                    "{workshops[activeIndex].question}"
-                  </p>
-
-                  {renderFacilitators(workshops[activeIndex].facilitators)}
+          {/* Scrollable Content Area */}
+          <div className="w-2/3 xl:w-3/4 p-8 xl:p-12 h-full overflow-y-auto relative bg-white" style={{ scrollbarWidth: 'thin' }}>
+            {activeIndex >= 0 && workshops[activeIndex] && (
+              <div
+                className="relative z-10 animate-fade-in-up flex-1 max-w-4xl"
+                key={activeIndex}
+              >
+                <div className="inline-block px-4 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-xs font-bold tracking-wide text-primary mb-5 uppercase shadow-sm">
+                  {workshops[activeIndex].audience}
                 </div>
-              )}
-            </div>
+                <h3 className="text-3xl lg:text-4xl font-extrabold mb-5 text-foreground leading-tight tracking-tight">
+                  {workshops[activeIndex].title}
+                </h3>
+                <p className="text-xl text-foreground/75 font-secondary leading-relaxed border-l-4 border-primary pl-5 py-2 italic mb-8 bg-gray-50/50 rounded-r-xl">
+                  "{workshops[activeIndex].question}"
+                </p>
+
+                {renderFacilitators(workshops[activeIndex].facilitators)}
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Mobile Accordion Layout */}
-        <div className="lg:hidden flex flex-col gap-3">
+        {/* Mobile Premium Accordion Layout */}
+        <div className="lg:hidden flex flex-col gap-4">
           {workshops.map((ws, idx) => {
             const isOpen = activeIndex === idx;
             return (
               <div
                 key={idx}
-                className={`border rounded-2xl overflow-hidden transition-all duration-300 ${isOpen ? 'border-primary/30 bg-gray-50/50' : 'border-black/5 bg-white'
+                id={`mobile-accordion-${idx}`}
+                className={`border rounded-2xl overflow-hidden transition-all duration-300 shadow-sm ${isOpen ? 'border-primary/30 bg-white shadow-[0_10px_40px_rgba(0,0,0,0.04)]' : 'border-black/5 bg-gray-50'
                   }`}
               >
                 <button
-                  onClick={() => setActiveIndex(isOpen ? -1 : idx)}
-                  className={`w-full text-left px-5 py-4 font-bold flex justify-between items-center transition-colors ${isOpen ? 'bg-primary text-white border-primary' : 'bg-white border-black/5 text-foreground/80 hover:bg-gray-50'
+                  onClick={() => handleAccordionClick(idx)}
+                  className={`w-full text-left px-5 py-4 font-bold flex justify-between items-center transition-colors ${isOpen ? 'bg-gradient-to-r from-primary to-[#8A63B5] text-white border-primary' : 'bg-white border-black/5 text-foreground/80 hover:bg-gray-50'
                     }`}
                 >
                   <span className="pr-4">{ws.title}</span>
-                  <span className="text-xl font-light shrink-0">{isOpen ? '−' : '+'}</span>
+                  <span className="text-xl font-light shrink-0 transition-transform duration-300">
+                    {isOpen ? '−' : '+'}
+                  </span>
                 </button>
 
                 <div
@@ -226,11 +253,11 @@ export default function WorkshopsList() {
                     }`}
                 >
                   <div className="overflow-hidden">
-                    <div className={`p-6 ${isOpen ? 'border-t border-black/5' : ''}`}>
-                      <div className="inline-block px-3 py-1 rounded-md bg-white border border-black/5 shadow-sm text-xs font-bold tracking-wide text-primary mb-4 uppercase">
+                    <div className={`p-6 sm:p-8 ${isOpen ? 'border-t border-black/5' : ''}`}>
+                      <div className="inline-block px-3 py-1.5 rounded-full bg-primary/5 border border-primary/10 text-xs font-bold tracking-wide text-primary mb-4 uppercase">
                         {ws.audience}
                       </div>
-                      <p className="text-base text-foreground/75 font-secondary leading-relaxed border-l-4 border-primary pl-4 py-1 italic mb-6">
+                      <p className="text-lg text-foreground/75 font-secondary leading-relaxed border-l-4 border-primary pl-4 py-2 italic mb-6 bg-gray-50/50 rounded-r-xl">
                         "{ws.question}"
                       </p>
 
