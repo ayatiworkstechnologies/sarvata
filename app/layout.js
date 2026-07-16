@@ -9,6 +9,9 @@ import SarvataLoader from "@/components/SarvataLoader";
 import ScrollUI from "@/components/ScrollUI";
 import { ConsultationProvider } from "@/context/ConsultationContext";
 import ConsultationModalWrapper from "@/components/ConsultationModalWrapper";
+import "./globals.css";
+import FloatingWhatsApp from "@/components/FloatingIcons";
+
 
 /* Primary Heading font - Lexend */
 const primaryFont = Lexend({
@@ -100,6 +103,8 @@ export default function RootLayout({ children }) {
             {children}
             <ScrollUI />
           </Suspense>
+          <FloatingWhatsApp />
+
           <Footer />
           {/* Single modal instance - driven by global ConsultationContext */}
           <ConsultationModalWrapper />
@@ -115,6 +120,7 @@ export default function RootLayout({ children }) {
             })(window,document,'script','dataLayer','GTM-KSB89XSV');
           `}
         </Script>
+
       </body>
     </html>
   );

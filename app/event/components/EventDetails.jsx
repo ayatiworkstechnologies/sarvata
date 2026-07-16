@@ -127,7 +127,7 @@ export default function EventDetails() {
                   </div>
                   <div>
                     <p className="text-xs text-foreground/50 uppercase tracking-wider font-bold">Deadline</p>
-                    <p className="text-base font-bold text-foreground">14th July, 2026</p>
+                    <p className="text-base font-bold text-foreground">20th July, 2026</p>
                   </div>
                 </div>
               </div>
