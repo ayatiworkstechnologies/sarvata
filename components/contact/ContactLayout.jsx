@@ -44,16 +44,16 @@ const socials = [
     href: "https://www.linkedin.com/company/sarvata-transform-learning",
     label: "LinkedIn",
   },
-  {
-    Icon: FaXTwitter,
-    href: "https://x.com/SarvataOfficial",
-    label: "X",
-  },
-  {
-    Icon: FaYoutube,
-    href: "https://www.youtube.com/@SarvataTransformingLearning",
-    label: "YouTube",
-  },
+  // {
+  //   Icon: FaXTwitter,
+  //   href: "https://x.com/SarvataOfficial",
+  //   label: "X",
+  // },
+  // {
+  //   Icon: FaYoutube,
+  //   href: "https://www.youtube.com/@SarvataTransformingLearning",
+  //   label: "YouTube",
+  // },
 ];
 
 export default function ContactLayout() {

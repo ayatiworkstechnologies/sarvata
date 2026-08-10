@@ -28,8 +28,8 @@ const socials = [
   { Icon: FaFacebookF, href: "https://www.facebook.com/profile.php?id=61566288371125", label: "Facebook" },
   { Icon: FaInstagram, href: "https://www.instagram.com/sarvata_edu_consultancy_/", label: "Instagram" },
   { Icon: FaLinkedinIn, href: "https://www.linkedin.com/company/sarvata-transform-learning", label: "LinkedIn" },
-  { Icon: FaXTwitter, href: "https://x.com/SarvataOfficial", label: "X" },
-  { Icon: FaYoutube, href: "https://www.youtube.com/@SarvataTransformingLearning", label: "YouTube" },
+  //{ Icon: FaXTwitter, href: "https://x.com/SarvataOfficial", label: "X" },
+  //{ Icon: FaYoutube, href: "https://www.youtube.com/@SarvataTransformingLearning", label: "YouTube" },
 ];
 
 export default function ContactInfo() {
