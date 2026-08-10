@@ -32,14 +32,14 @@ const socials = [
     Icon: FaLinkedinIn,
     href: "https://www.linkedin.com/company/sarvata-transform-learning",
   },
-  {
-    Icon: FaXTwitter,
-    href: "https://x.com/SarvataOfficial",
-  },
-  {
-    Icon: FaYoutube,
-    href: "https://www.youtube.com/@SarvataTransformingLearning",
-  },
+  // {
+  //   Icon: FaXTwitter,
+  //   href: "https://x.com/SarvataOfficial",
+  // },
+  // {
+  //   Icon: FaYoutube,
+  //   href: "https://www.youtube.com/@SarvataTransformingLearning",
+  // },
 ];
 
 export default function Footer() {
