@@ -2,6 +2,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
 import { X, ChevronLeft, ChevronRight, ChevronDown } from 'lucide-react';
 
 const EVENTS_DATA = {
@@ -11,8 +12,8 @@ const EVENTS_DATA = {
       { title: "Sarvata Educators collective 2026", 
         id: 1, 
         size: 'small',
-        images: ["/gallery/sec/image2.png",
-                  "/gallery/sec/image1.png",
+        images: ["/gallery/sec/image1.png",
+                  "/gallery/sec/image2.png",
                   "/gallery/sec/image3.png",
                   "/gallery/sec/image4.png",
                   "/gallery/sec/image5.png",
@@ -213,10 +214,18 @@ export default function EventsGallery() {
   return (
     <div className="bg-gradient-to-br from-slate-50 via-white to-blue-50 p-4 md:p-8 max-w-[1400px] mx-auto min-h-screen">
 
+      {/* Breadcrumb */}
+      <div className="flex items-center gap-2 mt-8 md:mt-30 text-sm md:text-base">
+        <Link href="/" className="font-semibold text-slate-600">
+          Home
+        </Link>
+        <ChevronRight size={14} className="text-slate-400" />
+        <span className="font-semibold text-slate-800">Gallery</span>
+      </div>
+
       {/* Header */}
-      {/* Header */}
-        <section className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-8 md:mt-16 mb-8 md:mb-12">
-        <h2 className="text-2xl md:text-3xl font-extrabold text-slate-800">Gallery</h2>
+      <section className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mt-4 mb-8 md:mb-12">
+        <h2 className="text-2xl lg:text-3xl font-extrabold text-slate-800">Event Gallery</h2>
 
         <div className="relative w-full sm:w-48" ref={dropdownRef}>
           <button
