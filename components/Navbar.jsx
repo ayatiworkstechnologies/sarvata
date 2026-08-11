@@ -158,10 +158,15 @@ export default function Header() {
                       },
                     ]}
                   />
-                  <NavItem
+                  {/* <NavItem
                     name="Events"
                     href="/event"
                     active={isActive("/event")}
+                  /> */}
+                  <NavItem
+                    name="Gallery"
+                    href="/gallery"
+                    active={isActive("/gallery")}
                   />
                   <NavItem
                     name="Contact Us"
@@ -327,12 +332,19 @@ export default function Header() {
                         />
                       </div>
 
-                      <MobileLink
+                      {/* <MobileLink
                         name="Events"
                         href="/event"
                         pathname={pathname}
                         setMenuOpen={setMenuOpen}
+                      /> */}
+                      <MobileLink
+                        name="Gallery"
+                        href="/gallery"
+                        pathname={pathname}
+                        setMenuOpen={setMenuOpen}
                       />
+
                       <MobileLink
                         name="Contact Us"
                         href="/contact-us"
