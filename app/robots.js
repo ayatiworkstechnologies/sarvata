@@ -1,10 +1,11 @@
+export const dynamic = 'force-static';
+
 export default function robots() {
   return {
     rules: {
-      userAgent: "*",
-      allow: "/",
-      disallow: ["/api/"], // Prevent crawling API routes
+      userAgent: '*',
+      allow: '/',
     },
-    sitemap: "https://sarvata.org/sitemap.xml",
+    sitemap: 'https://yourdomain.com/sitemap.xml',
   };
 }
