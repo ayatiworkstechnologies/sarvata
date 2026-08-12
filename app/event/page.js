@@ -6,6 +6,7 @@ import WorkshopsList from './components/WorkshopsList';
 import EventRegistration from './components/EventRegistration';
 import EventHighlightBar from './components/EventHighlightBar';
 import EventDetails from './components/EventDetails';
+import Testimonial from './components/Testimonial'; 
 
 export const metadata = {
   alternates: { canonical: '/event' },
@@ -36,6 +37,7 @@ export default function SarvataCollective2026Page() {
       <EventContext />
       <SummitOffers />
       <WorkshopsList />
+      <Testimonial />
       <EventDetails />
       <EventRegistration />
     </main>
