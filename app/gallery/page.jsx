@@ -50,7 +50,7 @@ const EVENTS_DATA = {
                   "/gallery/sec/image37.JPG",
                   "/gallery/sec/image38.JPG",
                   "/gallery/sec/image39.JPG",
-                  "/gallery/sec/image40.JPg", 
+                  "/gallery/sec/image40.JPG", 
                   "/gallery/sec/image41.JPG",
                   "/gallery/sec/image42.jpg",
                   "/gallery/sec/image43.jpg",],
