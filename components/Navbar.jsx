@@ -66,24 +66,10 @@ const PRIMARY_LINKS = [
   { name: "Services", href: "/services", dropdownItems: SERVICES_MENU },
   { name: "Events", href: "/event" },
   { name: "Gallery", href: "/gallery" },
-  { name: "Testimonials", href: "/testimonials" },
+  //{ name: "Testimonials", href: "/testimonials" },
   { name: "Contact Us", href: "/contact-us" },
 ];
 
-/* ============================================================
-   TESTIMONIALS DATA
-   Source: SEC_2026_Testimonials_for_website.docx
-   ============================================================ */
-
-const TRACKS = [
-  "All",
-  "The Leadership Engine",
-  "The Unseen Curriculum",
-  "The Learner's Blueprint",
-  "The Conscious Educator",
-  "The Cognitive Spectrum",
-  "The ASUDE Simulation Lab",
-];
 
 const TESTIMONIALS = [
   {
